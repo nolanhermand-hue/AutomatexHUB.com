@@ -1,0 +1,57 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+  functions = "netlify/functions"
+
+# Export statique Next (`output: "export"`). Le dossier `out/` est publié tel quel.
+# Les Netlify Functions sont compilées séparément (pas par Next.js).
+# G12 — Brotli compression : activé automatiquement par Netlify sur tous les assets texte.
+# G11 — Cache-Control par type d'asset.
+
+[build.processing]
+  skip_processing = false
+
+# Assets immuables avec hash (JS/CSS/images Next.js) : cache 1 an
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Assets statiques /public/assets : cache 30 jours, must-revalidate
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, must-revalidate"
+
+# Pages HTML : pas de cache long (contenu peut changer)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Sitemap / robots : 1 jour
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Manifest PWA
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/manifest+json"
+
+# J7 / G15 — Headers de sécurité globaux (RGAA + Lighthouse Security)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
