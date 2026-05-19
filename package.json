@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check:words": "node scripts/check-forbidden-words.mjs"
+    "check:words": "node scripts/check-forbidden-words.mjs",
+    "brand:favicons": "node public/assets/brand/generate-favicons.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -26,7 +27,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.18",
     "playwright": "^1.60.0",
-    "postcss": "^8.5.14",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3"
   }

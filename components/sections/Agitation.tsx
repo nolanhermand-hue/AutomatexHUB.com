@@ -14,8 +14,8 @@ export function Agitation() {
       data-analytics-section="agitation"
     >
       <div className="mx-auto max-w-content">
-        <div className="relative overflow-hidden rounded-xl border border-border bg-bg-card p-8 shadow-[0_0_0_0.5px_var(--color-border)] md:p-12">
-          <p className="label-micro text-faint">{AGITATION_COPY.eyebrow}</p>
+        <div className="relative overflow-hidden rounded-xl border border-border bg-bg-card p-8 md:p-12">
+          <p className="label-micro text-faint uppercase">{AGITATION_COPY.eyebrow}</p>
           <h2 className="mt-2 max-w-readable font-heading text-3xl leading-tight text-text md:text-5xl">
             {AGITATION_COPY.h2}
           </h2>

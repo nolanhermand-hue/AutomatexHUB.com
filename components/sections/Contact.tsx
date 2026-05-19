@@ -33,7 +33,7 @@ function FounderAvatar() {
   }
 
   return (
-    <div className="mx-auto overflow-hidden rounded-full ring-2 ring-primary/50 md:mx-0 md:inline-flex">
+    <div className="mx-auto overflow-hidden rounded-full ring-2 ring-border md:mx-0 md:inline-flex">
       <Image
         src="/assets/images/nolan-placeholder.png"
         alt="Portrait de Nolan Hermand, fondateur d'Automatex à Flers dans l'Orne"
@@ -121,7 +121,7 @@ export function Contact() {
             action="/merci"
             data-netlify="true"
             data-netlify-honeypot="hp-field"
-            className="order-last space-y-6 rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.05),0_12px_40px_rgb(0_0_0/0.4)] backdrop-blur-sm md:order-first md:p-8"
+            className="order-last space-y-6 rounded-xl border border-border bg-bg-card p-6 md:order-first md:p-8"
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value={FORM_NAME} />
@@ -232,7 +232,7 @@ export function Contact() {
               type="submit"
               disabled={pending}
               data-analytics-cta="contact_submit"
-              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-cta px-4 py-[18px] text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_24px_rgb(0_0_0/0.35)] transition-all duration-200 hover:brightness-110 active:brightness-95 active:scale-[0.98] disabled:opacity-70"
+              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-md bg-cta px-4 py-[18px] text-[15px] font-semibold text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all duration-200 hover:brightness-110 active:brightness-95 active:scale-[0.98] disabled:opacity-70"
               data-cursor="cta"
             >
               {pending ? (
@@ -263,6 +263,17 @@ export function Contact() {
                 CONTACT_COPY.submitLabel
               )}
             </button>
+
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-5 text-sm text-muted">
+              {CONTACT_COPY.badges.map((b) => (
+                <li key={b} className="inline-flex items-center gap-1.5">
+                  <span className="text-primary" aria-hidden>
+                    ✓
+                  </span>
+                  {b}
+                </li>
+              ))}
+            </ul>
           </form>
 
           {/* P1-contact-order : order-first sur mobile = preuve sociale visible AVANT le formulaire */}

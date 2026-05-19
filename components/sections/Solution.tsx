@@ -74,7 +74,7 @@ export function Solution() {
                 ref={pathRef}
                 d="M 4 0 L 4 400"
                 fill="none"
-                stroke="var(--color-cta)"
+                stroke="var(--color-border)"
                 strokeWidth="2"
                 strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
@@ -88,10 +88,10 @@ export function Solution() {
                 key={step.kicker}
                 className="md:grid md:grid-cols-[80px_1fr] md:items-start md:gap-4"
               >
-                <span className="font-heading text-4xl text-accent md:text-5xl">
+                <span className="font-heading text-4xl font-medium text-primary md:text-5xl">
                   {step.kicker}
                 </span>
-                <div className="mt-2 border-l-2 border-cta/45 pl-5 md:mt-0 md:border-l-0 md:pl-0">
+                <div className="mt-2 border-l-2 border-border pl-5 md:mt-0 md:border-l-0 md:pl-0">
                   <h3 className="font-heading text-2xl text-text">{step.title}</h3>
                   <p className="mt-3 text-[16px] leading-relaxed text-muted md:text-lg">
                     {step.body}
@@ -106,17 +106,17 @@ export function Solution() {
           {BENEFITS_ITEMS.map((b) => (
             <article
               key={b.title}
-              className="rounded-2xl border border-border bg-bg-card p-5 backdrop-blur-sm"
+              className="rounded-[10px] border border-border bg-bg-card p-5"
             >
-              <p className="font-heading text-xl font-bold text-cta">{b.stat}</p>
+              <p className="font-heading text-xl font-bold text-primary">{b.stat}</p>
               <h4 className="mt-1 text-sm font-semibold text-text">{b.title}</h4>
               <p className="mt-2 text-xs leading-[1.6] text-muted">{b.body}</p>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-cta/20 bg-cta/[0.06] px-5 py-4">
-          <p className="text-sm font-semibold text-cta md:text-base">
+        <div className="mt-10 rounded-[10px] border border-border bg-night px-5 py-4">
+          <p className="text-sm font-semibold text-text md:text-base">
             Vous restez maître de tout.
           </p>
           <p className="mt-1 text-sm text-muted">
@@ -125,11 +125,11 @@ export function Solution() {
           </p>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-2 border-t border-primary/35 pt-6 text-sm text-muted md:text-base">
+        <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-2 border-t border-border pt-6 text-sm text-muted md:text-base">
           {SOLUTION_BADGES.map((b, i) => (
             <Fragment key={b}>
               {i > 0 ? (
-                <span className="text-primary/35" aria-hidden>
+                <span className="text-border" aria-hidden>
                   ·
                 </span>
               ) : null}
@@ -141,7 +141,7 @@ export function Solution() {
         <a
           href="#contact"
           data-analytics-cta="solution_micro"
-          className="mt-8 inline-flex min-h-[48px] items-center gap-1 text-sm font-semibold text-accent-dark underline underline-offset-4 transition-colors hover:text-primary"
+          className="mt-8 inline-flex min-h-[48px] items-center gap-1 text-sm font-semibold text-muted underline underline-offset-4 transition-colors hover:text-text"
         >
           {BOOKING_CTA_LABEL} <span aria-hidden>→</span>
         </a>

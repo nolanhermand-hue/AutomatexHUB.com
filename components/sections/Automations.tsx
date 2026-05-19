@@ -14,7 +14,7 @@ import { useReducedMotionPreference } from "@/providers/AppProviders";
 import { cn } from "@/lib/cn";
 
 function AutomationGlyph({ id }: { id: AutomationIconId }) {
-  const common = "h-6 w-6 text-accent";
+  const common = "h-6 w-6 text-muted";
   const paths: Record<AutomationIconId, ReactNode> = {
     bolt: (
       <svg viewBox="0 0 24 24" fill="none" className={common} aria-hidden>
@@ -89,7 +89,7 @@ export function AutomationCard({
   return (
     <article
       className={cn(
-        "shrink-0 rounded-2xl border border-primary/40 bg-section p-4 shadow-[0_0_24px_rgba(15,110,86,0.12)] transition hover:border-cta hover:shadow-[0_0_28px_rgba(29,158,117,0.25)]",
+        "shrink-0 rounded-xl border border-border bg-bg-card p-4 transition hover:border-accent-mid",
         compact ? "w-[240px] snap-start min-h-[152px] md:w-[260px] md:min-h-[160px]" : "w-[260px] min-h-[160px]",
       )}
       data-cursor="card"
@@ -230,7 +230,7 @@ export function Automations() {
   ));
 
   return (
-    <section id="automations" className="border-y border-primary/25 bg-night">
+    <section id="automations" className="border-y border-border bg-bg-card px-gutter py-12 md:py-16">
       <div className="mx-auto max-w-content px-gutter py-14 md:py-20">
         <h2 className="font-heading text-[clamp(1.75rem,4vw,3rem)] font-medium leading-tight text-text">
           {AUTOMATIONS_SECTION.h2}

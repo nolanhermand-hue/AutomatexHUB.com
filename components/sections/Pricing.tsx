@@ -58,7 +58,7 @@ export function Pricing() {
         <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">
           {PRICING_HEADING.h2}
         </h2>
-        <p className="mt-3 max-w-[52ch] text-sm font-medium leading-relaxed text-primary md:text-[15px]">
+        <p className="mt-3 max-w-[52ch] text-sm font-medium leading-relaxed text-muted md:text-[15px]">
           {PRICING_HEADING.h2SurMesureHint}
         </p>
 
@@ -151,7 +151,7 @@ export function Pricing() {
                     Sans engagement · Résiliable en 1 mail
                   </p>
 
-                  <div className="mt-4 rounded-xl border-[0.5px] border-primary/35 bg-accent-light/55 px-3 py-3">
+                  <div className="mt-4 rounded-xl border border-border bg-night px-3 py-3">
                     <p className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-dark">
                       {PRICING_HEADING.customFitCardTitle}
                     </p>

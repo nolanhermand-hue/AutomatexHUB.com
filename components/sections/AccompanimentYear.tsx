@@ -7,7 +7,7 @@ export function AccompanimentYear() {
   return (
     <section
       id="accompagnement"
-      className="border-y-[0.5px] border-border bg-section px-gutter py-12 md:py-16"
+      className="border-y border-border bg-night px-gutter py-12 md:py-16"
       data-analytics-section="accompaniment_year"
     >
       <div className="mx-auto max-w-content">

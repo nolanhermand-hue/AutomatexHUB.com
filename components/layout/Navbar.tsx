@@ -1,10 +1,10 @@
 "use client";
 
+import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { trackCtaClicked } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS, NAP } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const SECTION_IDS = ["solution", "pricing", "faq", "contact"] as const;
@@ -60,20 +60,13 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex h-full max-w-content items-center justify-between gap-4 px-gutter">
-        <Link
-          href="/#hero"
-          className="flex min-w-0 shrink-0 items-center gap-2 font-semibold tracking-tight text-text"
-          data-cursor="link"
+        <LogoOrbit
+          variant="lockup"
+          theme="light"
+          height={38}
+          className="max-w-[min(100%,12.5rem)] lg:max-h-11"
           onClick={() => handleNavClick("#hero")}
-        >
-          <span
-            className="h-2 w-2 shrink-0 rounded-full bg-primary"
-            aria-hidden
-          />
-          <span className="whitespace-nowrap font-heading text-xl text-text">
-            Automatex
-          </span>
-        </Link>
+        />
 
         {/* Desktop nav — lg+ only (≥ 1024px) */}
         <nav

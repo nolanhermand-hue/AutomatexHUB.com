@@ -1,3 +1,4 @@
+import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { FOOTER_COPY, NAP } from "@/lib/constants";
 import Link from "next/link";
 
@@ -6,10 +7,7 @@ export function Footer() {
     <footer className="relative z-[10] border-t border-[rgb(255_255_255/0.07)] bg-footer py-12">
       <div className="mx-auto flex max-w-content flex-col gap-8 px-gutter text-sm">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div className="flex items-center gap-2 font-heading text-2xl">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden />
-            <span className="font-semibold text-[rgb(250_249_246/0.7)]">Automatex</span>
-          </div>
+          <LogoOrbit variant="lockup" theme="dark" height={44} href="/" className="max-w-[14rem]" />
           <p className="max-w-md text-sm leading-[1.6] text-[rgb(250_249_246/0.3)]">
             L&apos;automatisation française pour mandataires immobiliers indépendants.
             Conçue par Nolan Hermand à Flers, dans l&apos;Orne.

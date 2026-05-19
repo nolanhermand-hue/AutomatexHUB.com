@@ -55,17 +55,17 @@ export function Calculator() {
   return (
     <section
       id="calculator"
-      className="border-b border-primary/35 bg-section px-gutter py-12 md:py-16"
+      className="border-b border-border bg-night px-gutter py-12 md:py-16"
     >
       <div
-        className="mx-auto max-w-[720px] rounded-2xl border border-primary/60 bg-night p-6 shadow-[0_0_40px_rgba(15,110,86,0.22)] md:p-10"
+        className="mx-auto max-w-[720px] rounded-xl border border-border bg-bg-card p-6 md:p-10"
         style={
           {
             "--calc-pct": `${pct}%`,
           } as CSSProperties
         }
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-faint">
           {CALCULATOR_COPY.sectionEyebrow}
         </p>
         <h2 className="mt-2 font-heading text-3xl font-medium text-text md:text-4xl">
@@ -99,7 +99,7 @@ export function Calculator() {
         </div>
 
         <div className="mt-8 grid gap-5">
-          <div className="rounded-2xl border border-primary/35 bg-section/80 p-4">
+          <div className="rounded-xl border border-border bg-night p-4">
             <p className="text-sm font-semibold text-muted">
               {CALCULATOR_COPY.outLeadsLabel}
             </p>
@@ -107,11 +107,11 @@ export function Calculator() {
               <MatrixNumber value={leads} decimals={1} />
             </p>
           </div>
-          <div className="rounded-2xl border border-primary/50 bg-section/80 p-4">
+          <div className="rounded-xl border border-border bg-night p-4">
             <p className="text-sm font-semibold text-muted">
               {CALCULATOR_COPY.outEurosLabel}
             </p>
-            <p className="mt-2 font-heading font-bold leading-none text-cta [font-size:clamp(2.5rem,8vw,4rem)]">
+            <p className="mt-2 font-heading font-bold leading-none text-text [font-size:clamp(2.5rem,8vw,4rem)]">
               <span className="inline-flex items-baseline gap-2">
                 <MatrixNumber value={euros} decimals={0} />
                 <span className="text-3xl">€</span>
@@ -119,7 +119,7 @@ export function Calculator() {
             </p>
           </div>
           {SHOW_CALCULATOR_HOURS_ROW ? (
-            <div className="rounded-2xl border border-primary/35 bg-section/80 p-4">
+            <div className="rounded-xl border border-border bg-night p-4">
               <p className="text-sm font-semibold text-muted">
                 {CALCULATOR_COPY.outHoursLabel}
               </p>
@@ -134,7 +134,7 @@ export function Calculator() {
           <NativeButton
             type="button"
             variant="primary"
-            className="w-full shadow-[0_0_24px_rgba(29,158,117,0.35)]"
+            className="w-full"
             data-cursor="cta"
             onClick={scrollToContact}
           >
@@ -143,7 +143,7 @@ export function Calculator() {
           <a
             href="#solution"
             onClick={() => trackCtaClicked("calculator_scroll_solution")}
-            className="text-center text-sm font-semibold text-cta underline-offset-4 hover:underline"
+            className="text-center text-sm font-semibold text-muted underline-offset-4 hover:underline"
             data-cursor="link"
           >
             {CALCULATOR_COPY.scrollHint} →
@@ -157,7 +157,7 @@ export function Calculator() {
         <button
           type="button"
           onClick={scrollToContact}
-          className="font-semibold text-cta underline-offset-4 hover:underline"
+          className="font-semibold text-text underline-offset-4 hover:underline"
           data-cursor="link"
         >
           Nolan les récupère ou vous rembourse →

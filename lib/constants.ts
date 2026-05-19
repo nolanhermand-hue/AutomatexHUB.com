@@ -121,6 +121,16 @@ export const HERO_COPY = {
     "Conçu pour les mandataires IAD, SAFTI et Capifrance en Orne et Normandie.",
 } as const;
 
+/** Carte stats hero (Framer) — chiffres alignés agitation / commission */
+export const HERO_STATS = [
+  { value: "3 500 €", label: "Commission moyenne par lead qualifié" },
+  { value: "17 500 €", label: "Sur 5 leads ratés en 12 mois" },
+  { value: "< 5 min", label: "Fenêtre de réponse avant le concurrent" },
+] as const;
+
+export const HERO_STATS_SOURCE =
+  "Source : commission moyenne IAD ~3,4 % sur ~250 000 € (Immo Matin, juil. 2025)." as const;
+
 /** A13 / C6 / E6 — Outils intégrés : preuve sociale technique */
 export const INTEGRATIONS_LOGOS: ReadonlyArray<{
   name: string;

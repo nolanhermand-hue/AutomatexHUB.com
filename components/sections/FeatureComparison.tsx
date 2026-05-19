@@ -15,7 +15,7 @@ export function FeatureComparison() {
       data-analytics-section="comparison"
     >
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-accent">Comparatif</p>
+        <p className="label-micro text-faint">Comparatif</p>
         <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">
           Trois offres, une seule garantie.
         </h2>
@@ -33,11 +33,11 @@ export function FeatureComparison() {
                 {OFFERS.map((o) => (
                   <th
                     key={o.id}
-                    className={`px-5 py-4 text-center font-semibold ${o.featured ? "text-cta" : "text-text"}`}
+                    className={`px-5 py-4 text-center font-semibold text-text`}
                   >
                     {o.name}
                     {o.featured ? (
-                      <span className="ml-2 inline-flex rounded-full bg-cta/15 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cta">
+                      <span className="ml-2 inline-flex rounded-full bg-accent-light px-2 py-0.5 text-[10px] uppercase tracking-wider text-primary">
                         Recommandé
                       </span>
                     ) : null}
@@ -49,7 +49,7 @@ export function FeatureComparison() {
               {FEATURE_COMPARISON.map((row, i) => (
                 <tr
                   key={row.feature}
-                  className={i % 2 === 0 ? "bg-transparent" : "bg-bg-card"}
+                  className={i % 2 === 0 ? "bg-bg-card" : "bg-night"}
                 >
                   <td className="px-5 py-3 text-muted">{row.feature}</td>
                   <Cell value={row.essentiel} />
@@ -69,14 +69,12 @@ export function FeatureComparison() {
               className="overflow-hidden rounded-2xl border border-border bg-bg-card backdrop-blur-sm"
             >
               <summary
-                className={`flex cursor-pointer items-center justify-between gap-3 px-5 py-4 text-base font-semibold ${
-                  offer.featured ? "text-cta" : "text-text"
-                }`}
+                className={`flex cursor-pointer items-center justify-between gap-3 px-5 py-4 text-base font-semibold text-text`}
               >
                 <span>
                   {offer.name}
                   {offer.featured ? (
-                    <span className="ml-2 inline-flex rounded-full bg-cta/15 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cta">
+                    <span className="ml-2 inline-flex rounded-full bg-accent-light px-2 py-0.5 text-[10px] uppercase tracking-wider text-primary">
                       Recommandé
                     </span>
                   ) : null}
@@ -91,7 +89,7 @@ export function FeatureComparison() {
                   return (
                     <li key={row.feature} className="flex items-start gap-2 py-1.5">
                       <span
-                        className={`mt-0.5 shrink-0 ${v ? "text-cta" : "text-muted/30"}`}
+                        className={`mt-0.5 shrink-0 ${v ? "text-primary" : "text-border"}`}
                         aria-hidden
                       >
                         {v ? "✓" : "—"}
@@ -111,17 +109,15 @@ export function FeatureComparison() {
   );
 }
 
-function Cell({ value, featured }: { value: boolean | string; featured?: boolean }) {
+function Cell({ value }: { value: boolean | string; featured?: boolean }) {
   return (
-    <td
-      className={`px-5 py-3 text-center ${featured ? "bg-cta/[0.05]" : ""}`}
-    >
+    <td className="px-5 py-3 text-center">
       {value === true ? (
-        <span className="text-cta" aria-label="Inclus">
+        <span className="text-primary" aria-label="Inclus">
           ✓
         </span>
       ) : value === false ? (
-        <span className="text-muted/30" aria-label="Non inclus">
+        <span className="text-border" aria-label="Non inclus">
           —
         </span>
       ) : (

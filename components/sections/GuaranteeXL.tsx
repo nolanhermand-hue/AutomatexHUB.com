@@ -42,7 +42,7 @@ export function GuaranteeXL() {
           </div>
 
           <div>
-            <p className="label-micro text-primary">{GUARANTEE_COPY.eyebrow}</p>
+            <p className="label-micro text-accent-dark">{GUARANTEE_COPY.eyebrow}</p>
             <h2 className="mt-2 font-heading text-3xl leading-tight text-accent-dark md:text-4xl">
               {GUARANTEE_COPY.h2}
             </h2>

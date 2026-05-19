@@ -1,22 +1,22 @@
 {
-  "name": "Automatex — Mandataires Normandie",
+  "name": "Automatex",
   "short_name": "Automatex",
-  "description": "L'automatisation française pour mandataires immobiliers indépendants. Réponse aux leads en 2 min. Hébergé en France.",
+  "description": "Automatisation pour mandataires immobiliers indépendants. Normandie, France.",
   "lang": "fr-FR",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#04342c",
-  "theme_color": "#04342c",
+  "background_color": "#04342C",
+  "theme_color": "#04342C",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/assets/brand/favicons/android-chrome-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/assets/brand/favicons/android-chrome-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description: META.ogDescription,
     images: [
       {
-        url: "/assets/images/og-image.png",
+        url: "/assets/brand/og-image.png",
         width: 1200,
         height: 630,
         alt: "Automatex — mandataires immobiliers en Normandie",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: META.ogTitle,
     description: META.ogDescription,
-    images: ["/assets/images/og-image.png"],
+    images: ["/assets/brand/og-image.png"],
   },
   robots: {
     index: true,
@@ -86,8 +86,29 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      {
+        url: "/assets/brand/favicons/favicon-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/assets/brand/favicons/favicon-16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/assets/brand/favicons/favicon-48.png",
+        sizes: "48x48",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/favicon.png",
+    apple: {
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
   },
 };
 
@@ -95,7 +116,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FAF9F6",
+  themeColor: "#04342C",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -106,7 +127,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://plausible.io" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/brand/favicons/favicon-32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/brand/favicons/favicon-16.png"
+        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         {/* Theme restoration sans flash */}
         <script
           dangerouslySetInnerHTML={{
