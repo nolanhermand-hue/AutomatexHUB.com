@@ -59,8 +59,8 @@ export function Card({
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       className={cn(
-        "group/card relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] p-8 shadow-[0_0_0_0.5px_rgb(255_255_255/0.05),0_8px_32px_rgb(0_0_0/0.35)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_0_0_0.5px_rgb(93_202_165/0.25),0_12px_40px_rgb(0_0_0/0.45)]",
-        featured && "border-cta/40 shadow-[0_0_0_1px_rgb(29_158_117/0.4),0_8px_32px_rgb(0_0_0/0.35)]",
+        "group/card relative overflow-hidden rounded-2xl border border-border bg-bg-card p-8 shadow-[0_0_0_0.5px_var(--color-border),0_8px_32px_rgb(26_26_24/0.06)] transition-shadow duration-300 hover:shadow-[0_0_0_0.5px_rgb(15_110_86/0.25),0_12px_40px_rgb(26_26_24/0.08)]",
+        featured && "border-2 border-primary shadow-[0_0_0_0px,0_8px_32px_rgb(26_26_24/0.06)]",
         dimmed && "opacity-50",
         className,
       )}
@@ -71,7 +71,7 @@ export function Card({
           className="pointer-events-none absolute inset-0 z-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover/card:opacity-100"
           style={{
             background:
-              "radial-gradient(200px circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(93, 202, 165, 0.07), transparent 70%)",
+              "radial-gradient(200px circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(15, 110, 86, 0.06), transparent 70%)",
           }}
           aria-hidden
         />

@@ -50,7 +50,7 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="bg-night px-gutter py-12 md:py-16"
+      className="bg-bg-card px-gutter py-12 md:py-16"
       data-analytics-section="pricing"
     >
       <div className="mx-auto max-w-content">
@@ -58,18 +58,21 @@ export function Pricing() {
         <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">
           {PRICING_HEADING.h2}
         </h2>
+        <p className="mt-3 max-w-[52ch] text-sm font-medium leading-relaxed text-primary md:text-[15px]">
+          {PRICING_HEADING.h2SurMesureHint}
+        </p>
 
         {/* D11 — Toggle visible AU-DESSUS des cards */}
-        <div className="mt-8 inline-flex rounded-full border border-white/[0.08] bg-white/[0.03] p-1 text-sm font-semibold backdrop-blur-sm">
+        <div className="mt-8 inline-flex rounded-md border border-border bg-night p-1 text-sm font-semibold">
           <button
             type="button"
             onClick={() => setCycle("monthly")}
             aria-pressed={cycle === "monthly"}
             data-analytics-cta="pricing_toggle_monthly"
             className={cn(
-              "min-h-[44px] rounded-full px-5 transition-all duration-200",
+              "min-h-[48px] rounded-[4px] px-5 transition-all duration-200",
               cycle === "monthly"
-                ? "bg-cta text-[var(--color-cta-fg,#fff)] shadow-[0_2px_12px_rgb(0_0_0/0.25)]"
+                ? "bg-cta text-cta-fg shadow-sm"
                 : "text-muted hover:text-text",
             )}
           >
@@ -81,9 +84,9 @@ export function Pricing() {
             aria-pressed={cycle === "annual"}
             data-analytics-cta="pricing_toggle_annual"
             className={cn(
-              "min-h-[44px] rounded-full px-5 transition-all duration-200",
+              "min-h-[48px] rounded-[4px] px-5 transition-all duration-200",
               cycle === "annual"
-                ? "bg-cta text-[var(--color-cta-fg,#fff)] shadow-[0_2px_12px_rgb(0_0_0/0.25)]"
+                ? "bg-cta text-cta-fg shadow-sm"
                 : "text-muted hover:text-text",
             )}
           >
@@ -122,7 +125,7 @@ export function Pricing() {
                   featured={offer.featured}
                   className={cn(
                     "h-full",
-                    offer.featured && "ring-2 ring-cta shadow-[0_8px_40px_rgb(0_0_0/0.35)]",
+                    offer.featured && "ring-2 ring-primary/30 shadow-[0_8px_40px_rgb(26_26_24/0.1)]",
                   )}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -148,11 +151,23 @@ export function Pricing() {
                     Sans engagement · Résiliable en 1 mail
                   </p>
 
+                  <div className="mt-4 rounded-xl border-[0.5px] border-primary/35 bg-accent-light/55 px-3 py-3">
+                    <p className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-dark">
+                      {PRICING_HEADING.customFitCardTitle}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-snug text-text md:text-[15px]">
+                      {PRICING_HEADING.customFitCardBody}
+                    </p>
+                    <p className="mt-2 text-xs font-semibold text-primary">
+                      {PRICING_HEADING.allTiersYearlyLine}
+                    </p>
+                  </div>
+
                   {/* Bénéfices */}
                   <ul className="mt-5 space-y-2 text-sm text-muted md:text-[15px]">
                     {offer.benefits.map((b) => (
                       <li key={b} className="flex gap-2">
-                        <span className="mt-1 shrink-0 text-cta" aria-hidden>
+                        <span className="mt-1 shrink-0 text-primary" aria-hidden>
                           ✓
                         </span>
                         <span>{b}</span>
@@ -161,7 +176,7 @@ export function Pricing() {
                   </ul>
 
                   {/* D8 — ROI line */}
-                  <p className="mt-5 text-sm font-semibold text-cta">
+                  <p className="mt-5 text-sm font-medium text-primary">
                     Rentable dès {breakeven} lead{breakeven > 1 ? "s" : ""} récupéré
                     {breakeven > 1 ? "s" : ""} (≈ {reinvest} € investis au départ).
                   </p>
@@ -178,10 +193,10 @@ export function Pricing() {
                     onClick={() => trackCtaClicked(`pricing_${offer.id}`)}
                     data-analytics-cta={`pricing_${offer.id}`}
                     className={cn(
-                      "mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-full px-4 py-3 text-[15px] font-semibold transition-all duration-200 active:scale-[0.97]",
+                      "mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-md px-4 py-3 text-[15px] font-semibold transition-all duration-200 active:scale-[0.97]",
                       offer.featured
-                        ? "bg-cta text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] hover:bg-primary"
-                        : "border border-white/15 bg-white/[0.05] text-text backdrop-blur-sm hover:border-cta/50 hover:bg-cta/10 hover:text-cta",
+                        ? "bg-cta text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] hover:opacity-90"
+                        : "border border-border bg-section text-text backdrop-blur-sm hover:border-primary/40 hover:bg-accent-light hover:text-accent-dark",
                     )}
                   >
                     {offer.cta}
@@ -192,8 +207,12 @@ export function Pricing() {
           })}
         </div>
 
+        <p className="mx-auto mt-10 max-w-[52ch] text-center text-sm leading-relaxed text-muted md:text-[15px]">
+          {PRICING_HEADING.customFitFootnote}
+        </p>
+
         {/* Garantie globale sous le tableau pricing */}
-        <p className="mt-8 text-center text-sm text-muted">
+        <p className="mt-6 text-center text-sm text-muted">
           {PRICING_HEADING.guaranteeLine}
         </p>
       </div>

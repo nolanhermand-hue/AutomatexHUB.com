@@ -13,13 +13,13 @@ export const THEMES: {
   cta: string;
   hint: string;
 }[] = [
-  { id: "foret", label: "Forêt", bg: "#04342C", cta: "#1D9E75", hint: "Teal signature" },
+  { id: "foret", label: "Automatex", bg: "#FAF9F6", cta: "#1A1A18", hint: "Crème & CTA noir" },
   {
     id: "confiance",
     label: "Confiance",
-    bg: "#FAF8F4",
-    cta: "#2D5F3F",
-    hint: "Clair Normandie",
+    bg: "#FAF9F6",
+    cta: "#1A1A18",
+    hint: "Même palette (A/B)",
   },
 ];
 
@@ -75,7 +75,7 @@ export function NavbarThemeSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-haspopup="listbox"
-        className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-2 text-sm font-semibold text-muted backdrop-blur-sm transition hover:text-text"
+        className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-section px-3 py-2 text-sm font-semibold text-muted backdrop-blur-sm transition hover:text-text"
         data-cursor="link"
       >
         <span
@@ -91,7 +91,7 @@ export function NavbarThemeSwitcher() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="absolute right-0 top-full z-[200] mt-2 w-56 rounded-2xl border border-white/[0.08] bg-night/95 p-2 shadow-xl backdrop-blur-xl"
+            className="absolute right-0 top-full z-[200] mt-2 w-56 rounded-2xl border border-border bg-night/95 p-2 shadow-xl backdrop-blur-xl"
             role="listbox"
           >
             {THEMES.map((theme) => (
@@ -104,8 +104,8 @@ export function NavbarThemeSwitcher() {
                 className={cn(
                   "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition",
                   active === theme.id
-                    ? "bg-white/[0.08] text-text"
-                    : "text-muted hover:bg-white/[0.05] hover:text-text",
+                    ? "bg-accent-light text-text"
+                    : "text-muted hover:bg-section hover:text-text",
                 )}
               >
                 <span
@@ -129,7 +129,7 @@ export function NavbarThemeSwitcher() {
 export function MobileThemeList({ onSelect }: { onSelect?: () => void } = {}) {
   const { active, setActive } = useActiveTheme();
   return (
-    <div className="border-t border-white/[0.06] px-gutter py-4">
+    <div className="border-t border-border px-gutter py-4">
       <p className="label-micro mb-3 text-muted">Thème</p>
       <div className="flex gap-2">
         {THEMES.map((theme) => (
@@ -145,7 +145,7 @@ export function MobileThemeList({ onSelect }: { onSelect?: () => void } = {}) {
               "flex flex-1 items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-semibold",
               active === theme.id
                 ? "border-cta/50 bg-cta/15 text-text"
-                : "border-white/[0.08] text-muted",
+                : "border-border text-muted",
             )}
           >
             <span

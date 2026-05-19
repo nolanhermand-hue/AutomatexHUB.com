@@ -13,7 +13,7 @@ export function PressMentions() {
   return (
     <section
       aria-label="Mentions presse"
-      className="border-y border-white/[0.04] bg-night/70 px-gutter py-8 backdrop-blur-sm md:py-10"
+      className="border-y border-border-light bg-section px-gutter py-8 backdrop-blur-sm md:py-10"
       data-analytics-section="press"
     >
       <div className="mx-auto max-w-content">

@@ -10,11 +10,11 @@ import { useEffect, useState } from "react";
 function fieldClass(touched: boolean, value: string, required: boolean) {
   const hasError = touched && required && value.trim() === "";
   return [
-    "mt-2 w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-base text-text outline-none ring-0 transition",
-    "placeholder:text-muted/40 focus:bg-white/[0.07] focus:ring-1 focus:ring-cta/30",
+    "mt-2 w-full rounded-lg border bg-night px-4 py-3 text-base text-text outline-none ring-0 transition",
+    "placeholder:text-faint/60 focus:border-primary focus:ring-1 focus:ring-primary/20",
     hasError
       ? "border-text/50 ring-1 ring-text/20 focus:border-text/70"
-      : "border-white/[0.08] focus:border-cta/60",
+      : "border-border focus:border-primary/50",
   ].join(" ");
 }
 
@@ -24,7 +24,7 @@ function FounderAvatar() {
   if (imgError) {
     return (
       <div
-        className="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-cta text-3xl font-bold text-white ring-2 ring-primary/50 md:mx-0 md:h-44 md:w-44"
+        className="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-accent-light text-3xl font-bold text-primary ring-2 ring-border md:mx-0 md:h-44 md:w-44"
         aria-label="Portrait de Nolan Hermand, fondateur d'Automatex"
       >
         NH
@@ -103,7 +103,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="border-t border-primary/35 bg-night px-gutter py-12 md:py-16"
+      className="border-t border-border bg-night px-gutter py-12 md:py-16"
     >
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text md:text-4xl">
@@ -121,7 +121,7 @@ export function Contact() {
             action="/merci"
             data-netlify="true"
             data-netlify-honeypot="hp-field"
-            className="order-last space-y-6 rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.05),0_12px_40px_rgb(0_0_0/0.4)] backdrop-blur-sm md:order-first md:p-8"
+            className="order-last space-y-6 rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.05),0_12px_40px_rgb(0_0_0/0.4)] backdrop-blur-sm md:order-first md:p-8"
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value={FORM_NAME} />
@@ -232,7 +232,7 @@ export function Contact() {
               type="submit"
               disabled={pending}
               data-analytics-cta="contact_submit"
-              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-cta px-4 py-[18px] text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_24px_rgb(0_0_0/0.35)] transition-all duration-200 hover:bg-primary hover:shadow-[0_6px_32px_rgb(0_0_0/0.45)] active:scale-[0.98] disabled:opacity-70"
+              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-cta px-4 py-[18px] text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_24px_rgb(0_0_0/0.35)] transition-all duration-200 hover:brightness-110 active:brightness-95 active:scale-[0.98] disabled:opacity-70"
               data-cursor="cta"
             >
               {pending ? (
@@ -267,7 +267,7 @@ export function Contact() {
 
           {/* P1-contact-order : order-first sur mobile = preuve sociale visible AVANT le formulaire */}
           <div
-            className="order-first space-y-5 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_8px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm md:order-last md:p-8"
+            className="order-first space-y-5 rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_8px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm md:order-last md:p-8"
             data-cursor="founder"
           >
             <FounderAvatar />

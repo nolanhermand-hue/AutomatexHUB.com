@@ -28,7 +28,7 @@ export default function AProposPage() {
       </nav>
       <h1 className="mt-6 font-heading text-4xl text-text">{ABOUT_PAGE.h1}</h1>
 
-      <dl className="mt-10 grid gap-4 border-y border-white/[0.06] py-8 md:grid-cols-2">
+      <dl className="mt-10 grid gap-4 border-y border-border py-8 md:grid-cols-2">
         {ABOUT_PAGE.facts.map((fact) => (
           <div key={fact.label}>
             <dt className="text-xs font-semibold uppercase tracking-wide text-muted">

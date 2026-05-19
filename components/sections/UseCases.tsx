@@ -24,7 +24,7 @@ export function UseCases() {
           {USE_CASES_ITEMS.map((u, i) => (
             <li
               key={u.time}
-              className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_6px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm"
+              className="relative overflow-hidden rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_6px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm"
             >
               <span
                 className="absolute -right-3 -top-6 font-heading text-[5rem] font-bold leading-none text-primary/[0.08] tabular-nums"

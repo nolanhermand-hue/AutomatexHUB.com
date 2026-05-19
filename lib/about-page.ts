@@ -1,6 +1,6 @@
 import { NAP } from "@/lib/constants";
 
-/** Faits bruts citables (GEO / LLM) — page À propos. */
+/** Faits bruts citables (GEO, extraits structurés) — page À propos. */
 export const ABOUT_PAGE = {
   metaTitle: "À propos d'Automatex — fondateur, méthode, RGPD",
   metaDescription:

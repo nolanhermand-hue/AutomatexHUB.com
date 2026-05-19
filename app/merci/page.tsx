@@ -69,7 +69,7 @@ export default function MerciPage() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-cta px-8 py-3 text-[15px] font-semibold text-white shadow-[0_4px_24px_rgb(29_158_117/0.4)] transition-all duration-200 hover:bg-primary hover:shadow-[0_6px_32px_rgb(29_158_117/0.55)] active:scale-[0.98]"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-cta px-8 py-3 text-[15px] font-semibold text-white shadow-[0_4px_24px_rgb(29_158_117/0.4)] transition-all duration-200 hover:opacity-90 hover:shadow-[0_6px_32px_rgb(29_158_117/0.55)] active:scale-[0.98]"
             >
               Retour au site
             </Link>

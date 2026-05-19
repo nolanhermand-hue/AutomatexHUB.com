@@ -13,6 +13,9 @@ export const CALCULATOR_SALES_MAX = 30;
 /** Valeur anchor par lead immobilier qualifié — défendable d'après commissions IAD 2024-2025 */
 export const VALUE_PER_LEAD_EUROS = 3500;
 
+/** Libellé CTA unique — audit / prise de rendez-vous 20 min */
+export const BOOKING_CTA_LABEL = "Réserver ma démo — 20 min" as const;
+
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
   "IA",
@@ -54,7 +57,7 @@ export const META = {
     "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. 30 jours satisfait ou remboursé. Hébergé en France.",
   ogTitle: "Ne perdez plus jamais un lead à 3 500 €",
   ogDescription:
-    "L'automatisation française pour mandataires indépendants. Installé en 48h. Sans engagement. 30 jours satisfait ou remboursé.",
+    "Automatisations pour mandataires indépendants en Normandie. Installé en 48 h. Sans engagement. 30 jours satisfait ou remboursé. Hébergé en France.",
 } as const;
 
 /** C10 — Navigation : 4 ancres maximum, plus CTA séparé */
@@ -99,13 +102,11 @@ export const HERO_COPY = {
   badgeHosted: "Hébergé en France",
   badgeRgpd: "Conforme RGPD",
   badgeNoCommit: "Sans engagement",
-  /** A1 — H1 loss-frame ≤ 8 mots */
   h1: "Ne perdez plus jamais un lead à 3 500 €.",
-  /** A2 — Sous-titre : qualification + bénéfice + garantie */
   subtitle:
     "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux leads en 2 min pendant vos visites. 30 jours satisfait ou remboursé.",
   /** A3 + B13 — CTA unique primaire, ≤ 5 mots, verbe d'action */
-  ctaPrimary: "Réserver ma démo 15 min",
+  ctaPrimary: BOOKING_CTA_LABEL,
   /** Lien secondaire dégradé en texte simple — pas un bouton */
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
@@ -164,7 +165,7 @@ export const PROBLEM_ITEMS: ReadonlyArray<{
     icon: "lead",
     title: "Vendredi 22h : un lead reçu, perdu à 9h lundi",
     body:
-      "Un acquéreur écrit sur SeLoger pendant que vous êtes en visite. Sans réponse en quelques minutes, il rappelle un autre mandataire du réseau. Le premier qui décroche signe. Pas vous.",
+      "Un acquéreur écrit sur SeLoger pendant que vous êtes en visite. Sans réponse en moins de 5 minutes, il rappelle un autre mandataire du réseau. Le premier qui décroche signe. Pas vous.",
   },
   {
     icon: "mail",
@@ -174,9 +175,9 @@ export const PROBLEM_ITEMS: ReadonlyArray<{
   },
   {
     icon: "document",
-    title: "Heures perdues sur Excel au lieu de visiter",
+    title: "Soirées à trier la boîte mail au lieu de relancer",
     body:
-      "Un diagnostic arrive par mail. Trois jours après, vingt minutes pour le retrouver dans le fil. Vingt minutes de moins pour prospecter, faire la pige, ou visiter un bien.",
+      "Votre fichier de prospection attend. Pendant que vous classez des mails et cherchez un diagnostic dans le fil, vos vendeurs chauds refroidissent. La pige et les visites passent après l’administratif.",
   },
 ];
 
@@ -227,6 +228,58 @@ export const SOLUTION_BADGES = [
   "Installé en 48h",
 ] as const;
 
+/** Ligne commune aux 3 offres — suivi humain 12 mois */
+export const OFFER_YEARLY_HUMAN_BULLET =
+  "Nolan joignable · 1 point de contrôle par trimestre la 1re année" as const;
+
+/** Section accompagnement anti-abandon (12 mois) */
+export const ACCOMPANIMENT_COPY = {
+  eyebrow: "Accompagnement humain",
+  h2: "Vous n’achetez pas une licence. Vous gardez un interlocuteur.",
+  intro:
+    "La peur la plus fréquente : payer, être livré, puis ne plus avoir personne au bout du fil. Chez Automatex, Nolan configure à la main, vous accompagne serré les 30 premiers jours, puis reste joignable toute la première année — avec un bilan chaque trimestre, sur toutes les formules.",
+  timeline: [
+    {
+      step: "J0",
+      title: "Appel découverte",
+      body: "20 minutes pour cadrer votre activité, vos portails et votre ton. Aucun engagement.",
+    },
+    {
+      step: "Semaine 1",
+      title: "Installation & tests",
+      body: "Configuration en 48 h, scénarios réels testés avec vous. Premières réponses actives.",
+    },
+    {
+      step: "Mois 1",
+      title: "30 jours serrés",
+      body: "Ajustements du ton, des relances et des notifications. Garantie satisfait ou remboursé.",
+    },
+    {
+      step: "Trimestres 2 à 4",
+      title: "Suivi toute l’année",
+      body: "Bilan de 15–20 min chaque trimestre : ce qui tourne, ce qu’on affine. Nolan reste joignable.",
+    },
+  ] as const,
+  pillars: [
+    {
+      title: "Joignable",
+      body: "Vous écrivez ou appelez Nolan — pas un ticket anonyme. Réponse selon votre formule (48 h, 24 h ou sous 4 h).",
+    },
+    {
+      title: "Ajustements",
+      body: "Nouveau portail, ton plus formel, saison chargée : la configuration évolue avec vous.",
+    },
+    {
+      title: "Pas de boîte noire",
+      body: "Vous validez les réponses sensibles. Vos comptes restent les vôtres. Résiliation en un mail.",
+    },
+  ] as const,
+  tierNote:
+    "Essentiel, Pro et Cabinet : même socle — suivi 12 mois et bilan trimestriel. Cabinet garde la priorité de réponse la plus rapide.",
+  phoneCta: "Appeler Nolan",
+  cta: BOOKING_CTA_LABEL,
+} as const;
+
 /** B6 / C3 / E1 — Garantie 14-30 jours, formulée en toutes lettres, visible 3x */
 export const GUARANTEE_COPY = {
   eyebrow: "Risque inversé",
@@ -238,10 +291,16 @@ export const GUARANTEE_COPY = {
     "Aucun frais de désinstallation",
     "Vos données vous sont restituées et effacées",
   ],
-  cta: "Réserver ma démo 15 min",
+  cta: BOOKING_CTA_LABEL,
   microNote:
     "Garantie applicable à toutes les offres, sans engagement de durée.",
+  humanFollowLine:
+    "Au-delà du remboursement : un accompagnement humain sur 12 mois, avec Nolan joignable et un point d’étape chaque trimestre.",
+  humanFollowLinkLabel: "Voir le parcours d’accompagnement",
 } as const;
+
+export const FINAL_CTA_HUMAN_LINE =
+  "Vous parlez à Nolan, pas à un ticket anonyme — avant, pendant et après l’installation." as const;
 
 /** C2 — Section Bénéfices : 4 cards, une stat chiffrée par bénéfice */
 export const BENEFITS_HEADING = {
@@ -323,7 +382,9 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
 export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
   h2: "Trois formules. Un lead = rentabilisée.",
-  chooseCta: "Réserver ma démo 15 min",
+  h2SurMesureHint:
+    "Sur mesure possible (plus léger ou plus complet). Sur toutes les formules : suivi humain 12 mois et bilan trimestriel avec Nolan.",
+  chooseCta: BOOKING_CTA_LABEL,
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
   /** D2 — remise annuelle ~17 % = 2 mois offerts */
@@ -331,7 +392,14 @@ export const PRICING_HEADING = {
   annualDiscountPercent: 17,
   monthlySuffix: "/mois",
   annualSuffix: "/an",
+  customFitCardTitle: "Sur mesure",
+  customFitCardBody:
+    "Un tarif plus accessible ou moins de fonctions ? Plus complet ? On adapte périmètre et budget avec vous lors de la démo.",
+  allTiersYearlyLine:
+    "Inclus sur toutes les formules : suivi humain 12 mois + bilan trimestriel.",
   guaranteeLine: "30 jours satisfait ou remboursé · Onboarding offert",
+  customFitFootnote:
+    "Les trois formules sont une base — on construit souvent un sur-mesure avec vous lors de la démo.",
 } as const;
 
 export type PricingOffer = {
@@ -364,6 +432,7 @@ export const OFFERS: PricingOffer[] = [
       "Notification téléphone immédiate sur chaque message urgent",
       "Mise en place en 48 h après l'appel découverte",
       "Onboarding offert + accompagnement 30 premiers jours",
+      OFFER_YEARLY_HUMAN_BULLET,
     ],
     roiLine: "Rentable dès 1 lead récupéré (≈ 3 500 € de commission moyenne).",
     cta: "Récupérer mes leads",
@@ -382,6 +451,7 @@ export const OFFERS: PricingOffer[] = [
       "Résumé du soir + planning du matin sur le téléphone",
       "Documents classés dans Google Drive dès réception",
       "Onboarding offert + accompagnement 30 premiers jours",
+      OFFER_YEARLY_HUMAN_BULLET,
     ],
     roiLine: "1 lead récupéré + 1 h gagnée par jour : rentable en 2 semaines.",
     cta: "Démarrer en 48 h",
@@ -399,6 +469,7 @@ export const OFFERS: PricingOffer[] = [
       "Note vocale après visite transformée en compte-rendu structuré",
       "1 réglage par mois + rapport mensuel d'activité",
       "Onboarding offert + accompagnement 30 premiers jours",
+      OFFER_YEARLY_HUMAN_BULLET,
     ],
     roiLine: "Pour les mandataires qui visent 10 ventes ou plus par an.",
     cta: "Réserver mon onboarding",
@@ -419,6 +490,18 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
   { feature: "Mise en place en 48 h", essentiel: true, pro: true, cabinet: true },
   { feature: "30 jours satisfait ou remboursé", essentiel: true, pro: true, cabinet: true },
   { feature: "Onboarding offert", essentiel: true, pro: true, cabinet: true },
+  {
+    feature: "Suivi humain 12 mois (bilan trimestriel)",
+    essentiel: true,
+    pro: true,
+    cabinet: true,
+  },
+  {
+    feature: "Réponse Nolan en semaine (heures ouvrées)",
+    essentiel: "48 h",
+    pro: "24 h",
+    cabinet: "< 4 h",
+  },
   { feature: "Tri des mails matin/soir", essentiel: false, pro: true, cabinet: true },
   { feature: "Brouillons de réponses prêts", essentiel: false, pro: true, cabinet: true },
   { feature: "Classement Google Drive automatique", essentiel: false, pro: true, cabinet: true },
@@ -431,7 +514,16 @@ export const FAQ_HEADING = {
   h2: "Ce que les mandataires nous demandent avant de démarrer.",
 } as const;
 
+/** Index FAQ ouverte par défaut (objection abandon après paiement) */
+export const FAQ_DEFAULT_OPEN_QUESTION =
+  "Une fois payé, est-ce que quelqu’un s’occupe encore de moi ?";
+
 export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
+  {
+    question: FAQ_DEFAULT_OPEN_QUESTION,
+    answer:
+      "Oui. Nolan installe et configure personnellement, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
+  },
   {
     question: "Est-ce que je dois être à l'aise avec la technologie ?",
     answer:
@@ -472,7 +564,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
-    "Nolan vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien.",
+    "Nolan vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Vous parlez à Nolan, pas à un ticket anonyme.",
   formTitle: "Vos coordonnées",
   firstNameLabel: "Prénom",
   emailLabel: "Email professionnel",
@@ -509,7 +601,14 @@ export const FOOTER_COPY = {
 } as const;
 
 export const STICKY_CTA_COPY = {
-  label: "Réserver ma démo · Sans engagement",
+  label: "Réserver ma démo — 20 min",
+} as const;
+
+/** Remplace les faux témoignages — phase bêta */
+export const BETA_PHASE_COPY = {
+  title: "Phase bêta — places limitées",
+  body: "Automatex onboard au maximum quatre mandataires par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
+  badge: "2 places disponibles en juin",
 } as const;
 
 export const SOCIAL_PROOF_DISCLAIMER =
@@ -546,7 +645,7 @@ export const ABOUT_FOUNDER = {
   eyebrow: "À propos de Nolan",
   h2: "Construit par un expert du terrain, pas par une startup.",
   body:
-    "Nolan Hermand accompagne des mandataires normands depuis ses premières missions dans l'Orne. Il a observé le même problème chez chaque professionnel : des leads perdus faute de réponse rapide, des mails qui s'accumulent, des documents introuvables. Automatex est né de ce constat. Chaque configuration est construite manuellement à Flers, testée sur des cas réels, et ajustée jusqu'à ce qu'elle fonctionne dans votre quotidien.",
+    "Nolan Hermand accompagne des mandataires normands depuis ses premières missions dans l'Orne. Il configure chaque installation à la main à Flers (Google, portails, messagerie). Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.",
   stats: [
     { value: "< 2 min", label: "Délai de réponse moyen" },
     { value: "48 h", label: "Mise en place garantie" },

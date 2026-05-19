@@ -1,6 +1,7 @@
 "use client";
 
 import { trackCtaClicked } from "@/lib/analytics";
+import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { useEffect, useRef, useState } from "react";
 
 /**
@@ -38,7 +39,7 @@ export function DemoVideo() {
           Sans vous, mais avec votre voix.
         </p>
 
-        <div className="mt-8 overflow-hidden rounded-2xl border border-white/[0.08] bg-night/60 shadow-[0_12px_48px_rgb(0_0_0/0.5)] backdrop-blur-sm">
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[0_12px_48px_rgb(26_26_24/0.08)] backdrop-blur-sm">
           {hasVideo ? (
             <video
               ref={videoRef}
@@ -72,15 +73,15 @@ export function DemoVideo() {
                   Démo vidéo bientôt disponible
                 </p>
                 <p className="mt-2 text-sm text-muted">
-                  En attendant, réservez une démonstration en direct avec Nolan (15 min).
+                  En attendant, réservez un audit en direct avec Nolan (20 min).
                 </p>
                 <a
                   href="#contact"
                   data-analytics-cta="demo_video_fallback"
                   onClick={() => trackCtaClicked("demo_video_fallback")}
-                  className="mt-5 inline-flex min-h-[44px] items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] transition-all hover:bg-primary"
+                  className="mt-5 inline-flex min-h-[44px] items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] transition-all hover:opacity-90"
                 >
-                  Réserver ma démo 15 min
+                  {BOOKING_CTA_LABEL}
                 </a>
               </div>
             </div>

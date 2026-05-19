@@ -43,7 +43,7 @@ export function SectionRail() {
 
   return (
     <nav
-      className="pointer-events-auto fixed right-3 top-1/2 z-[850] hidden -translate-y-1/2 flex-col items-end gap-3 lg:flex"
+      className="pointer-events-auto fixed right-3 top-1/2 z-[850] hidden -translate-y-1/2 flex-col items-end gap-3 opacity-25 transition-opacity duration-200 hover:opacity-80 md:flex"
       aria-label="Sections du récit"
     >
       {RAIL.map((s) => {
@@ -59,13 +59,13 @@ export function SectionRail() {
             className={cn(
               "group/rail relative flex items-center justify-center rounded-full transition-[width,padding,background-color] duration-300 ease-in-out",
               on
-                ? "border border-accent/50 bg-[rgb(4_52_44/0.88)] px-3 py-1.5 shadow-[0_0_18px_rgb(15_110_86/0.25)] backdrop-blur-md"
-                : "h-11 w-11 border border-transparent bg-[rgb(4_52_44/0.35)] backdrop-blur-sm hover:border-primary/40",
+                ? "border border-border bg-bg-card px-3 py-1.5 shadow-sm"
+                : "h-11 w-11 border border-border bg-bg-card/90 hover:border-primary/30",
             )}
           >
             <span
               className={cn(
-                "absolute right-[calc(100%+0.5rem)] whitespace-nowrap rounded-md border border-primary/35 bg-section/95 px-2 py-1 font-body text-[11px] font-semibold text-text shadow-lg transition-all duration-200",
+                "absolute right-[calc(100%+0.5rem)] whitespace-nowrap rounded-md border border-border bg-bg-card px-2 py-1 font-body text-[11px] font-semibold text-text shadow-lg transition-all duration-200",
                 hoverId === s.id
                   ? "translate-x-0 opacity-100"
                   : "pointer-events-none translate-x-2 opacity-0",
@@ -81,7 +81,7 @@ export function SectionRail() {
             ) : null}
             {on ? (
               <span className="flex items-center gap-2">
-                <span className="font-body text-[10px] font-semibold uppercase tracking-wide text-accent">
+                <span className="font-body text-[10px] font-semibold uppercase tracking-wide text-text">
                   {s.label}
                 </span>
                 <span

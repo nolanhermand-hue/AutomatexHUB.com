@@ -4,41 +4,53 @@ import { FAQ_HEADING, FAQ_ITEMS } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { useId, useState } from "react";
 
+function initialOpenIndices(): Set<number> {
+  return new Set([0, 1]);
+}
+
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndices, setOpenIndices] = useState<Set<number>>(() => initialOpenIndices());
   const baseId = useId();
 
+  const toggle = (index: number) => {
+    setOpenIndices((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
+  };
+
   return (
-    <section id="faq" className="border-t border-white/[0.05] bg-section px-gutter py-12 md:py-16">
+    <section id="faq" className="border-t border-border bg-night px-gutter py-12 md:py-16">
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text md:text-4xl">
           {FAQ_HEADING.h2}
         </h2>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-white/[0.07] shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_8px_32px_rgb(0_0_0/0.3)]">
+        <div className="mt-8 overflow-hidden rounded-xl border border-border">
           {FAQ_ITEMS.map((item, index) => {
-            const expanded = openIndex === index;
+            const expanded = openIndices.has(index);
             const contentId = `${baseId}-faq-${index}`;
             return (
-              <div key={item.question} className={`border-b border-white/[0.05] bg-white/[0.02] px-5 py-2 last:border-0 md:px-7`}>
+              <div
+                key={item.question}
+                className="border-b border-border bg-bg-card px-5 py-2 last:border-0 md:px-7"
+              >
                 <h3>
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-semibold text-text md:text-lg"
+                    className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-medium text-text md:text-lg"
                     aria-expanded={expanded}
                     aria-controls={contentId}
                     id={`${contentId}-button`}
-                    onClick={() =>
-                      setOpenIndex((current) =>
-                        current === index ? null : index,
-                      )
-                    }
+                    onClick={() => toggle(index)}
                   >
                     <span>{item.question}</span>
                     <span className="text-primary" aria-hidden>
                       <motion.span
                         animate={{ rotate: expanded ? 45 : 0 }}
                         transition={{ duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
-                        className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.04] text-lg font-light leading-none"
+                        className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent-light text-lg font-light leading-none text-primary"
                       >
                         +
                       </motion.span>

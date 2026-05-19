@@ -1,17 +1,13 @@
-import {
-  ABOUT_FOUNDER,
-  SOCIAL_PROOF_DISCLAIMER,
-  SOCIAL_PROOF_ITEMS,
-} from "@/lib/constants";
+import { ABOUT_FOUNDER, BETA_PHASE_COPY } from "@/lib/constants";
 
 export function AboutFounder() {
   return (
     <section
       id="about"
-      className="border-t border-primary/35 bg-section px-gutter py-12 md:py-16"
+      className="border-t border-border bg-bg-card px-gutter py-12 md:py-16"
     >
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-accent">{ABOUT_FOUNDER.eyebrow}</p>
+        <p className="label-micro text-faint">{ABOUT_FOUNDER.eyebrow}</p>
         <h2 className="mt-3 font-heading text-3xl text-text md:text-4xl">
           {ABOUT_FOUNDER.h2}
         </h2>
@@ -22,10 +18,10 @@ export function AboutFounder() {
           <dl className="flex shrink-0 flex-row gap-6 md:flex-col md:gap-8">
             {ABOUT_FOUNDER.stats.map((stat) => (
               <div key={stat.label} className="text-center md:text-right">
-                <dt className="order-2 mt-1 text-xs font-semibold uppercase tracking-wide text-muted">
+                <dt className="order-2 mt-1 text-xs font-semibold uppercase tracking-wide text-faint">
                   {stat.label}
                 </dt>
-                <dd className="order-1 font-heading text-3xl font-bold text-cta md:text-4xl">
+                <dd className="order-1 font-heading text-3xl font-bold text-primary md:text-4xl">
                   {stat.value}
                 </dd>
               </div>
@@ -33,32 +29,19 @@ export function AboutFounder() {
           </dl>
         </div>
 
-        <div className="mt-14 border-t border-white/[0.06] pt-10">
-          <p className="label-micro mb-2 text-center text-accent md:text-left">
-            Ils témoignent
+        <div
+          id="beta"
+          className="mt-14 rounded-xl border border-border bg-night p-8 md:p-10"
+        >
+          <h3 className="font-heading text-2xl text-text md:text-3xl">
+            {BETA_PHASE_COPY.title}
+          </h3>
+          <p className="mt-4 max-w-readable text-base leading-relaxed text-muted md:text-lg">
+            {BETA_PHASE_COPY.body}
           </p>
-          <p className="mb-6 text-center text-xs text-muted/80 md:text-left">
-            {SOCIAL_PROOF_DISCLAIMER}
+          <p className="mt-6 inline-flex rounded-full bg-accent-light px-4 py-2 text-sm font-semibold text-primary">
+            {BETA_PHASE_COPY.badge}
           </p>
-          <div className="grid gap-6 md:grid-cols-3">
-            {SOCIAL_PROOF_ITEMS.map((item) => (
-              <figure
-                key={item.author}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"
-              >
-                <blockquote className="text-sm leading-relaxed text-text md:text-[15px]">
-                  &ldquo;{item.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-4 text-xs text-muted">
-                  <span className="font-semibold text-text">{item.author}</span>
-                  {" · "}
-                  {item.network}
-                  {" · "}
-                  {item.location}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
         </div>
       </div>
     </section>

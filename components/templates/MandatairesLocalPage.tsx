@@ -47,7 +47,7 @@ export function MandatairesLocalPage({ page }: { page: LocalMandatairesPageData 
       <div className="mt-14 rounded-2xl border border-primary/30 bg-section/80 p-8">
         <h2 className="font-heading text-xl text-text">Réserver une démo</h2>
         <p className="mt-3 text-muted">
-          Mandataires {page.city} : démo 15 minutes, mise en route en 48 h.{" "}
+          Mandataires {page.city} : audit 20 minutes, mise en route en 48 h.{" "}
           <a className="text-primary underline" href={`tel:${NAP.phoneE164}`}>
             {NAP.phoneDisplay}
           </a>

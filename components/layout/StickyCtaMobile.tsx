@@ -36,7 +36,7 @@ export function StickyCtaMobile() {
     <AnimatePresence>
       {visible ? (
         <motion.div
-          className="fixed inset-x-0 bottom-0 z-[950] border-t border-white/[0.06] bg-night/85 px-gutter pb-[max(env(safe-area-inset-bottom),1rem)] pt-3 backdrop-blur-2xl lg:hidden"
+          className="fixed inset-x-0 bottom-0 z-[950] border-t border-border bg-night/95 px-gutter pb-[max(env(safe-area-inset-bottom),1rem)] pt-3 backdrop-blur-2xl lg:hidden"
           initial={{ y: 90, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 90, opacity: 0 }}
@@ -46,7 +46,7 @@ export function StickyCtaMobile() {
             href="#contact"
             data-analytics-cta="sticky_mobile"
             onClick={() => trackCtaClicked("sticky_mobile")}
-            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-cta px-4 py-[18px] text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_24px_rgb(0_0_0/0.4)] transition-all active:scale-[0.98] active:opacity-90"
+            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-cta px-4 py-[18px] text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_24px_rgb(0_0_0/0.4)] transition-all hover:brightness-110 active:brightness-95"
           >
             {STICKY_CTA_COPY.label}
           </a>

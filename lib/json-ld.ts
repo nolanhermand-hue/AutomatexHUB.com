@@ -217,6 +217,20 @@ export function buildJsonLdGraph() {
         offers: offerCatalog,
       },
       buildBreadcrumbList([{ name: "Accueil", path: "/" }]),
+      {
+        "@type": "SoftwareApplication",
+        name: "Automatex — réponse aux leads mandataires",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description:
+          "Service de réponse immédiate aux leads et continuité de pipeline pour mandataires immobiliers en Normandie.",
+        provider: { "@id": businessId },
+        offers: {
+          "@type": "Offer",
+          price: String(OFFERS[0]?.monthly ?? 99),
+          priceCurrency: "EUR",
+        },
+      },
     ],
   };
 }

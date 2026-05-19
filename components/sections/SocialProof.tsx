@@ -9,7 +9,7 @@ export function SocialProof() {
           {SOCIAL_PROOF_ITEMS.map((item) => (
             <figure
               key={item.author}
-              className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_8px_24px_rgb(0_0_0/0.2)]"
+              className="rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_8px_24px_rgb(0_0_0/0.2)]"
             >
               <blockquote className="text-sm leading-relaxed text-text md:text-[15px]">
                 &ldquo;{item.quote}&rdquo;

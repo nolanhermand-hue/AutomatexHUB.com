@@ -51,7 +51,7 @@ export function Benefits() {
           {BENEFITS_ITEMS.map((b) => (
             <article
               key={b.title}
-              className="group/benefit relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_6px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_8px_36px_rgb(0_0_0/0.4)]"
+              className="group/benefit relative overflow-hidden rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_6px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_8px_36px_rgb(0_0_0/0.4)]"
             >
               <div className="text-cta">{ICONS[b.icon]}</div>
               <p className="mt-4 font-heading text-2xl font-bold text-cta">{b.stat}</p>

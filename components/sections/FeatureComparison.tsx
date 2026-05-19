@@ -11,7 +11,7 @@ export function FeatureComparison() {
   return (
     <section
       id="comparatif"
-      className="bg-section px-gutter py-12 md:py-16"
+      className="bg-night px-gutter py-12 md:py-16"
       data-analytics-section="comparison"
     >
       <div className="mx-auto max-w-content">
@@ -25,9 +25,9 @@ export function FeatureComparison() {
         </p>
 
         {/* Desktop : table complète */}
-        <div className="mt-8 hidden overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm md:block">
+        <div className="mt-8 hidden overflow-hidden rounded-2xl border border-border bg-bg-card backdrop-blur-sm md:block">
           <table className="w-full text-left">
-            <thead className="border-b border-white/[0.06] bg-white/[0.03] text-sm">
+            <thead className="border-b border-border bg-night text-sm">
               <tr>
                 <th className="px-5 py-4 font-semibold text-text">Fonctionnalité</th>
                 {OFFERS.map((o) => (
@@ -49,7 +49,7 @@ export function FeatureComparison() {
               {FEATURE_COMPARISON.map((row, i) => (
                 <tr
                   key={row.feature}
-                  className={i % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"}
+                  className={i % 2 === 0 ? "bg-transparent" : "bg-bg-card"}
                 >
                   <td className="px-5 py-3 text-muted">{row.feature}</td>
                   <Cell value={row.essentiel} />
@@ -66,7 +66,7 @@ export function FeatureComparison() {
           {OFFERS.map((offer) => (
             <details
               key={offer.id}
-              className="overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm"
+              className="overflow-hidden rounded-2xl border border-border bg-bg-card backdrop-blur-sm"
             >
               <summary
                 className={`flex cursor-pointer items-center justify-between gap-3 px-5 py-4 text-base font-semibold ${
@@ -85,7 +85,7 @@ export function FeatureComparison() {
                   ▾
                 </span>
               </summary>
-              <ul className="border-t border-white/[0.06] p-5 text-sm">
+              <ul className="border-t border-border p-5 text-sm">
                 {FEATURE_COMPARISON.map((row) => {
                   const v = row[offer.id as "essentiel" | "pro" | "cabinet"];
                   return (

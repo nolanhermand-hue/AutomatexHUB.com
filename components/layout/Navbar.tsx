@@ -3,7 +3,6 @@
 import { trackCtaClicked } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS, NAP } from "@/lib/constants";
-import { MobileThemeList, NavbarThemeSwitcher } from "@/components/layout/ThemeSwitcher";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -56,26 +55,23 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-[900] h-[60px] transition-all duration-500 lg:h-[72px]",
         isScrolled
-          ? "border-b border-white/[0.06] bg-night/80 shadow-[0_1px_0_rgb(255_255_255/0.04)] backdrop-blur-2xl backdrop-saturate-[180%]"
+          ? "border-b border-border bg-[rgb(250_249_246/0.92)] shadow-[0_0.5px_0_var(--color-border)] backdrop-blur-[12px]"
           : "border-b border-transparent bg-transparent",
       )}
     >
       <div className="mx-auto flex h-full max-w-content items-center justify-between gap-4 px-gutter">
         <Link
           href="/#hero"
-          className="flex shrink-0 items-center gap-2 font-semibold tracking-tight text-text"
+          className="flex min-w-0 shrink-0 items-center gap-2 font-semibold tracking-tight text-text"
           data-cursor="link"
           onClick={() => handleNavClick("#hero")}
         >
           <span
-            className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cta text-sm font-bold text-white shadow-[0_2px_12px_rgb(29_158_117/0.45)]"
+            className="h-2 w-2 shrink-0 rounded-full bg-primary"
             aria-hidden
-          >
-            A
-          </span>
-          <span className="font-heading text-xl">
-            <span className="text-text">Auto</span>
-            <span className="text-primary">tex</span>
+          />
+          <span className="whitespace-nowrap font-heading text-xl text-text">
+            Automatex
           </span>
         </Link>
 
@@ -95,7 +91,7 @@ export function Navbar() {
                 onClick={() => trackCtaClicked(`nav_${id}`)}
                 className={cn(
                   "group/nav relative whitespace-nowrap overflow-hidden rounded px-1.5 py-1 text-sm font-semibold transition-colors duration-200",
-                  active ? "text-primary" : "text-muted hover:text-text",
+                  active ? "text-text" : "text-muted hover:text-text",
                 )}
               >
                 <span
@@ -115,12 +111,11 @@ export function Navbar() {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
-          <NavbarThemeSwitcher />
           <a
             href="#contact"
             data-cursor="cta"
             onClick={() => trackCtaClicked("navbar_contact")}
-            className="inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-full bg-cta px-6 py-3 text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_0_0_0.5px_rgb(255_255_255/0.1),0_4px_20px_rgb(0_0_0/0.3)] transition-all duration-200 hover:scale-[1.03] hover:bg-primary hover:shadow-[0_4px_28px_rgb(0_0_0/0.4)] active:scale-[0.98]"
+            className="inline-flex min-h-[48px] items-center justify-center whitespace-nowrap rounded-md bg-cta px-6 py-3 text-[15px] font-semibold text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all duration-200 hover:brightness-110 active:brightness-95"
           >
             Réserver 20 min
           </a>
@@ -129,7 +124,7 @@ export function Navbar() {
         {/* Hamburger — affiché jusqu'à lg (< 1024px = mobile + tablette) */}
         <button
           type="button"
-          className="inline-flex h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.05] text-text backdrop-blur-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta lg:hidden"
+          className="inline-flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center rounded-xl border border-border bg-section text-text backdrop-blur-sm transition-colors hover:bg-accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -167,7 +162,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="overflow-hidden border-b border-white/[0.06] bg-night/90 backdrop-blur-2xl lg:hidden"
+            className="overflow-hidden border-b border-border bg-night/95 backdrop-blur-2xl lg:hidden"
           >
             <div className="flex flex-col gap-1 px-gutter py-4">
               {/* F8 — Téléphone fondateur cliquable en première position du menu mobile */}
@@ -186,7 +181,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="rounded-xl px-3 py-3.5 text-base font-semibold text-text active:bg-white/[0.07]"
+                  className="rounded-xl px-3 py-3.5 text-base font-semibold text-text active:bg-section"
                   onClick={() => handleNavClick(link.href)}
                 >
                   {link.label}
@@ -199,9 +194,6 @@ export function Navbar() {
               >
                 Réserver 20 min
               </a>
-              <div className="border-t border-white/[0.06] pt-1">
-                <MobileThemeList onSelect={() => setIsMenuOpen(false)} />
-              </div>
               <p className="text-center text-sm text-muted">
                 {NAP.founder} · {NAP.city} · {NAP.phoneDisplay}
               </p>

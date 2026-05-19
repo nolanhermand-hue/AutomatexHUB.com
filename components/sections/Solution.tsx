@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BOOKING_CTA_LABEL,
   BENEFITS_ITEMS,
   SOLUTION_BADGES,
   SOLUTION_HEADING,
@@ -50,7 +51,7 @@ export function Solution() {
     <section
       ref={sectionRef}
       id="solution"
-      className="border-y border-primary/35 bg-section px-gutter py-12 md:py-16"
+      className="border-y border-border bg-night px-gutter py-12 md:py-16"
     >
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text md:text-4xl">
@@ -105,7 +106,7 @@ export function Solution() {
           {BENEFITS_ITEMS.map((b) => (
             <article
               key={b.title}
-              className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm"
+              className="rounded-2xl border border-border bg-bg-card p-5 backdrop-blur-sm"
             >
               <p className="font-heading text-xl font-bold text-cta">{b.stat}</p>
               <h4 className="mt-1 text-sm font-semibold text-text">{b.title}</h4>
@@ -140,9 +141,9 @@ export function Solution() {
         <a
           href="#contact"
           data-analytics-cta="solution_micro"
-          className="mt-8 inline-flex items-center gap-1 text-sm font-semibold text-accent underline underline-offset-4 transition-colors hover:text-cta"
+          className="mt-8 inline-flex min-h-[48px] items-center gap-1 text-sm font-semibold text-accent-dark underline underline-offset-4 transition-colors hover:text-primary"
         >
-          Réserver ma démo 15 min <span aria-hidden>→</span>
+          {BOOKING_CTA_LABEL} <span aria-hidden>→</span>
         </a>
       </div>
     </section>

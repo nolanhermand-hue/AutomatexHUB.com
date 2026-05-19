@@ -209,7 +209,7 @@ function MobileCarousel() {
             aria-selected={i === activeIdx}
             className={cn(
               "h-1.5 rounded-full transition-all duration-300",
-              i === activeIdx ? "w-5 bg-cta" : "w-1.5 bg-white/20",
+              i === activeIdx ? "w-5 bg-cta" : "w-1.5 bg-border",
             )}
           />
         ))}

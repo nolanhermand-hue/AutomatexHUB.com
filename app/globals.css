@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  /* Couleurs direction « ordre dans l’obscurité » */
-  --color-night: #04342c;
-  --color-section: #062820;
+  /* Notion × cabinet — crème dominant, noir structure, vert signal */
+  --color-night: #faf9f6;
+  --color-section: #faf9f6;
+  --color-bg-card: #ffffff;
   --color-primary: #0f6e56;
-  --color-cta: #1d9e75;
-  --color-accent: #5dcaa5;
-  --color-text: #e1f5ee;
-  --color-muted: #9fe1cb;
-  --color-border-subtle: #0f6e5680;
-  /**
-   * J1 — Texte SUR les boutons CTA.
-   * Forêt #1D9E75 + texte blanc = 3,38:1 (échec WCAG AA).
-   * Forêt #1D9E75 + texte #04342c (night) = 5,2:1 (✅ AA pass).
-   * On utilise le night sombre par défaut ; les thèmes très sombres (indigo/acier/bordeaux)
-   * forcent à nouveau le blanc dans leurs définitions ci-dessous.
-   */
-  --color-cta-fg: #04342c;
+  --color-cta: #1a1a18;
+  --color-accent: #0f6e56;
+  --color-accent-dark: #085041;
+  --color-accent-light: #e1f5ee;
+  --color-accent-mid: #9fe1cb;
+  --color-forest: #04342c;
+  --color-footer: #0d0d0b;
+  --color-text: #1a1a18;
+  --color-muted: #6b6a66;
+  --color-faint: #9b9992;
+  --color-border: #e0ddd6;
+  --color-border-light: #eeece7;
+  --color-border-subtle: #e0ddd6;
+  --color-cta-fg: #faf9f6;
+  --color-black: #1a1a18;
 
   --max-w-content: 1140px;
   --max-w-readable: 680px;
@@ -25,17 +28,16 @@
   --spacing-gutter: 1.5rem;
 }
 
-/* ── Thème Confiance Normande (clair, A/B optionnel) ───── */
 html[data-theme="confiance"] {
-  --color-night: #faf8f4;
-  --color-section: #f3f0ea;
-  --color-primary: #1b2a4e;
-  --color-cta: #2d5f3f;
-  --color-accent: #3d7a55;
-  --color-text: #1b2a4e;
-  --color-muted: #4a5f7a;
-  --color-border-subtle: #1b2a4e40;
-  --color-cta-fg: #faf8f4;
+  --color-night: #faf9f6;
+  --color-section: #faf9f6;
+  --color-bg-card: #ffffff;
+  --color-primary: #0f6e56;
+  --color-cta: #1a1a18;
+  --color-accent: #0f6e56;
+  --color-text: #1a1a18;
+  --color-muted: #6b6a66;
+  --color-cta-fg: #faf9f6;
 }
 
 @layer base {
@@ -44,10 +46,8 @@ html[data-theme="confiance"] {
     scroll-behavior: smooth;
     background-color: var(--color-night);
     color: var(--color-text);
-    /* iOS : empêche le zoom auto sur focus input */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    /* Empêche tout débordement horizontal (GSAP pin spacer, etc.) */
     overflow-x: hidden;
   }
 
@@ -55,16 +55,12 @@ html[data-theme="confiance"] {
     min-height: 100vh;
     font-family: var(--font-body), system-ui, sans-serif;
     @apply text-base text-text;
-    /* Suivi souris : mis à jour par AmbientMouseGradient (desktop) */
     --ambient-x: 50%;
     --ambient-y: 50%;
-    /* iOS : désactive le flash bleu au tap */
     -webkit-tap-highlight-color: transparent;
-    /* Overscroll élastique iOS */
     overscroll-behavior-y: none;
   }
 
-  /* iOS : tous les éléments interactifs sans highlight */
   a,
   button,
   [role="button"] {
@@ -72,7 +68,6 @@ html[data-theme="confiance"] {
     touch-action: manipulation;
   }
 
-  /* Scrollbar discrète façon macOS — J2 : harmonisée sur var(--color-cta) */
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -80,71 +75,53 @@ html[data-theme="confiance"] {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: color-mix(in srgb, var(--color-cta) 25%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 35%, transparent);
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in srgb, var(--color-cta) 45%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 55%, transparent);
   }
 
-  /* J6 — Line-height confortable pour cible 35-50 ans (WCAG 2.1) */
   p,
   li {
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
-  /* F2 — Corps mobile 17px (lisibilité cible 35-50 ans, WCAG 2.5.5)
-     Au-delà de 768px on revient à 16px (taille de base normale desktop). */
-  @media (max-width: 767px) {
-    html {
-      font-size: 17px;
-    }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), Georgia, serif;
+    @apply text-text;
+  }
+
+  .label-micro {
+    font-family: var(--font-body), system-ui, sans-serif;
+    @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-faint;
   }
 }
 
-/* Souffle ambiant — gradient radial centré sur la souris (très subtil) */
 body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body::after {
   content: "";
   pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 0;
   background: radial-gradient(
-    40vw circle at var(--ambient-x, 50%) var(--ambient-y, 50%),
-    rgba(29, 158, 117, 0.04) 0%,
-    transparent 70%
+    900px circle at var(--ambient-x) var(--ambient-y),
+    rgba(15, 110, 86, 0.06) 0%,
+    transparent 55%
   );
-}
-
-/* Grain — toujours sous le contenu, au-dessus du gradient */
-body::after {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-}
-
-/* Curseur : fichier caché sur mobile via media dans CustomCursor */
-@media (hover: hover) and (pointer: fine) {
-  body.cursor-custom {
-    cursor: none;
-  }
-}
-
-@layer utilities {
-  .font-heading {
-    font-family: var(--font-heading), Georgia, "Times New Roman", serif;
-  }
-  .font-body {
-    font-family: var(--font-body), system-ui, sans-serif;
-  }
-  .label-micro {
-    font-family: var(--font-body), system-ui, sans-serif;
-    @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-muted;
-  }
 }
 
 @layer components {
@@ -187,6 +164,47 @@ body::after {
   }
 }
 
+@keyframes automatex-marquee-loop {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.automatex-marquee-strip {
+  overflow: hidden;
+  height: 64px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.automatex-marquee-strip :focus-visible {
+  outline: none;
+}
+
+.automatex-marquee-inner {
+  display: flex;
+  width: max-content;
+  height: 64px;
+  align-items: center;
+  will-change: transform;
+  animation: automatex-marquee-loop linear infinite;
+}
+
+.automatex-marquee-strip:hover .automatex-marquee-inner {
+  animation-play-state: paused;
+}
+
+.automatex-marquee-inner--40 {
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+
+.automatex-marquee-inner--50 {
+  animation-duration: 50s;
+}
+
 input[type="range"].calc-range {
   -webkit-appearance: none;
   appearance: none;
@@ -199,10 +217,10 @@ input[type="range"].calc-range::-webkit-slider-runnable-track {
   border-radius: 999px;
   background: linear-gradient(
     90deg,
-    var(--color-cta) 0%,
-    var(--color-cta) var(--calc-pct, 50%),
-    rgb(15 110 86 / 0.3) var(--calc-pct, 50%),
-    rgb(15 110 86 / 0.3) 100%
+    var(--color-primary) 0%,
+    var(--color-primary) var(--calc-pct, 50%),
+    rgb(224 221 214 / 0.9) var(--calc-pct, 50%),
+    rgb(224 221 214 / 0.9) 100%
   );
 }
 
@@ -212,46 +230,48 @@ input[type="range"].calc-range::-webkit-slider-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--color-cta);
+  background: var(--color-primary);
   border: 3px solid var(--color-night);
   margin-top: -9px;
-  box-shadow: 0 0 12px rgb(93 202 165 / 0.35);
+  box-shadow: 0 0 12px rgb(15 110 86 / 0.3);
 }
 
 input[type="range"].calc-range::-moz-range-track {
   height: 6px;
   border-radius: 999px;
-  background: rgb(15 110 86 / 0.3);
+  background: rgb(224 221 214 / 0.9);
 }
 
 input[type="range"].calc-range::-moz-range-progress {
   height: 6px;
   border-radius: 999px;
-  background: var(--color-cta);
+  background: var(--color-primary);
 }
 
 input[type="range"].calc-range::-moz-range-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--color-cta);
+  background: var(--color-primary);
   border: 3px solid var(--color-night);
 }
 
-/* P3 — Loi de Fitts : thumb agrandi sur écrans tactiles (pointer: coarse) */
-@media (pointer: coarse) {
-  input[type="range"].calc-range::-webkit-slider-thumb {
-    width: 36px;
-    height: 36px;
-    margin-top: -15px;
-  }
-  input[type="range"].calc-range::-moz-range-thumb {
-    width: 36px;
-    height: 36px;
-  }
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-cta);
-  outline-offset: 2px;
+body.cursor-custom,
+body.cursor-custom * {
+  cursor: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee,
+  .automatex-marquee-inner {
+    animation: none !important;
+  }
 }

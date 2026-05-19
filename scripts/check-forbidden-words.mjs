@@ -54,6 +54,7 @@ for (const file of files) {
   const rel = path.relative(root, file);
   if (rel === path.join("scripts", "check-forbidden-words.mjs")) continue;
   if (rel === path.join("lib", "constants.ts")) continue;
+  if (rel.startsWith(`docs${path.sep}audit`)) continue;
   const text = fs.readFileSync(file, "utf8");
   for (const { label, re } of PATTERNS) {
     if (re.test(text)) {

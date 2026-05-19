@@ -59,7 +59,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-alencon",
     metaTitle: "Mandataires immobiliers à Alençon | Automatex Normandie",
     metaDescription:
-      "Ne perdez plus de leads à Alençon et dans l'Orne. Réponse immédiate pour mandataires indépendants. Démo 15 min, satisfait ou remboursé 30 jours.",
+      "Ne perdez plus de leads à Alençon et dans l'Orne. Réponse immédiate pour mandataires indépendants. Audit 20 min, satisfait ou remboursé 30 jours.",
     h1: "Mandataires immobiliers à Alençon : réponse aux leads pendant vos visites",
     city: "Alençon",
     areaServedLabel: "Alençon, agglomération, Orne (61)",
@@ -91,7 +91,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
         title: "Tarification claire",
         paragraphs: [
           "Trois formules (99 €, 199 € et 449 € par mois) avec remise annuelle affichée en pourcentage. Un lead récupéré à 3 500 € de commission potentielle rentabilise plusieurs mois de service.",
-          "Réservez une démo de 15 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
+          "Réservez une audit de 20 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
         ],
       },
     ],
@@ -132,7 +132,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Passer à l'action",
         paragraphs: [
-          "Démo gratuite de 15 minutes, sans engagement. Installation cible en 48 h après validation du périmètre (boîtes mail, modèles de réponse, règles de qualification).",
+          "Audit gratuit de 20 minutes, sans engagement. Installation cible en 48 h après validation du périmètre (boîtes mail, modèles de réponse, règles de qualification).",
           "Retour à l'accueil pour comparer les formules et la garantie étendue affichée sur le site.",
         ],
       },
