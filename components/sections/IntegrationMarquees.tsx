@@ -32,8 +32,8 @@ type Band2Item =
 const BAND2_ITEMS: Band2Item[] = [
   { name: "SeLoger", kind: "card", initials: "SL", bg: "#F0F4FF", text: "#2D4EAA" },
   { name: "Leboncoin", kind: "icon", file: "leboncoin" },
-  { name: "Logic-Immo", kind: "card", initials: "LI", bg: "#FFF0F0", text: "#E30613" },
-  { name: "PAP.fr", kind: "card", initials: "PAP", bg: "#FFF8E1", text: "#F5A623" },
+  { name: "Logic-Immo", kind: "card", initials: "LI", bg: "#FFF0F0", text: "#A00510" },
+  { name: "PAP.fr", kind: "card", initials: "PAP", bg: "#FFF8E1", text: "#8B5A00" },
   { name: "IAD France", kind: "card", initials: "IAD", bg: "#E8F5E9", text: "#2E7D32" },
   { name: "SAFTI", kind: "card", initials: "SAFTI", bg: "#FFF3E8", text: "#E65100" },
   { name: "Capifrance", kind: "card", initials: "CF", bg: "#EDE7F6", text: "#4527A0" },
@@ -158,7 +158,7 @@ function renderBand1Row(keyPrefix: string) {
       ) : null}
       <div className="flex shrink-0 flex-col items-center justify-center px-3 md:px-0">
         <Band1Logo item={item} />
-        <span className="mt-0.5 max-w-[5.5rem] truncate text-center text-[9px] font-medium leading-none text-[#9B9992] md:max-w-[6.5rem] md:text-[10px]">
+        <span className="mt-0.5 max-w-[5.5rem] truncate text-center text-[9px] font-medium leading-none text-muted md:max-w-[6.5rem] md:text-[10px]">
           {item.name}
         </span>
       </div>
@@ -179,7 +179,7 @@ function renderBand2Row(keyPrefix: string) {
       ) : null}
       <div className="flex shrink-0 flex-col items-center justify-center px-3 md:px-0">
         <Band2Logo item={item} />
-        <span className="mt-0.5 max-w-[5.5rem] truncate text-center text-[9px] font-medium leading-none text-[#9B9992] md:max-w-[6.5rem] md:text-[10px]">
+        <span className="mt-0.5 max-w-[5.5rem] truncate text-center text-[9px] font-medium leading-none text-muted md:max-w-[6.5rem] md:text-[10px]">
           {item.name}
         </span>
       </div>
@@ -199,7 +199,7 @@ export function IntegrationMarquees() {
       data-analytics-section="integration-marquees"
     >
       <div className="bg-[#FFFFFF]">
-        <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9B9992]">
+        <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
           Intégrations &amp; automatisation
         </p>
         <div className="automatex-marquee-strip border-b border-[#E0DDD6]">
@@ -211,7 +211,7 @@ export function IntegrationMarquees() {
       </div>
 
       <div className="bg-[#FAF9F6]">
-        <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9B9992]">
+        <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
           Outils métier immobilier
         </p>
         <div className="automatex-marquee-strip">

@@ -96,7 +96,7 @@ export function Pricing() {
             )}
           >
             {PRICING_HEADING.toggleAnnual}
-            <span className="ml-2 inline-flex items-center rounded-full bg-accent/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
+            <span className="ml-2 inline-flex items-center rounded-full bg-accent-light px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-dark">
               {PRICING_HEADING.annualDiscountLabel}
             </span>
           </button>

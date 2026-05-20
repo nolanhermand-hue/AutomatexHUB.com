@@ -6,7 +6,7 @@ export function FooterTrustBadges() {
       {TRUST_BADGES_FOOTER.map((badge) => (
         <li key={badge.title} className="rounded-lg border border-[rgb(255_255_255/0.08)] p-4">
           <p className="font-semibold text-[rgb(250_249_246/0.55)]">{badge.title}</p>
-          <p className="mt-1 text-xs leading-relaxed text-[rgb(250_249_246/0.3)]">{badge.subtitle}</p>
+          <p className="mt-1 text-xs leading-relaxed text-[#b5b3ad]">{badge.subtitle}</p>
         </li>
       ))}
     </ul>
