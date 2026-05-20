@@ -6,6 +6,7 @@ import { FeaturedBadge } from "@/components/ui/Badge";
 import { OFFERS, PRICING_HEADING } from "@/lib/constants";
 import { calculateBreakevenLeads } from "@/lib/calculator";
 import { cn } from "@/lib/cn";
+import { SectionCta } from "@/components/ui/SectionCta";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -20,7 +21,7 @@ type BillingCycle = "monthly" | "annual";
  *           D12 (stack vertical mobile), D15 (accès direct)
  */
 export function Pricing() {
-  const [cycle, setCycle] = useState<BillingCycle>("monthly");
+  const [cycle, setCycle] = useState<BillingCycle>("annual");
 
   useEffect(() => {
     const seen = new Set<string>();
@@ -98,16 +99,21 @@ export function Pricing() {
         </div>
 
         {/* D12 — Stack vertical strict sur mobile, grid sur md+ */}
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {OFFERS.map((offer) => {
-            const breakeven = calculateBreakevenLeads(offer.setup, offer.monthly);
+            const isCustom = offer.customOffer === true;
+            const breakeven = isCustom
+              ? 0
+              : calculateBreakevenLeads(offer.setup, offer.monthly);
             const reinvest = (offer.setup + offer.monthly).toLocaleString("fr-FR");
-            const displayPrice =
-              cycle === "monthly"
+            const displayPrice = isCustom
+              ? null
+              : cycle === "monthly"
                 ? offer.monthly.toLocaleString("fr-FR")
                 : offer.annual.toLocaleString("fr-FR");
-            const priceSuffix =
-              cycle === "monthly"
+            const priceSuffix = isCustom
+              ? null
+              : cycle === "monthly"
                 ? PRICING_HEADING.monthlySuffix
                 : PRICING_HEADING.annualSuffix;
             return (
@@ -138,30 +144,28 @@ export function Pricing() {
                   </div>
 
                   {/* Prix : D4 transparent, mis à jour selon cycle */}
-                  <p className="mt-4 text-sm text-muted">
-                    {offer.setup.toLocaleString("fr-FR")} € d&apos;installation
-                  </p>
-                  <p className="mt-1 flex items-baseline gap-1 text-3xl font-bold text-text">
-                    {displayPrice} €
-                    <span className="text-base font-medium text-muted">
-                      {priceSuffix}
-                    </span>
-                  </p>
-                  <p className="mt-1 text-xs text-muted">
-                    Sans engagement · Résiliable en 1 mail
-                  </p>
-
-                  <div className="mt-4 rounded-xl border border-border bg-night px-3 py-3">
-                    <p className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-dark">
-                      {PRICING_HEADING.customFitCardTitle}
-                    </p>
-                    <p className="mt-1.5 text-sm leading-snug text-text md:text-[15px]">
-                      {PRICING_HEADING.customFitCardBody}
-                    </p>
-                    <p className="mt-2 text-xs font-semibold text-primary">
-                      {PRICING_HEADING.allTiersYearlyLine}
-                    </p>
-                  </div>
+                  {isCustom ? (
+                    <>
+                      <p className="mt-4 text-sm text-muted">{PRICING_HEADING.surMesureIntro}</p>
+                      <p className="mt-2 text-3xl font-bold text-text">
+                        {PRICING_HEADING.surMesurePriceLabel}
+                      </p>
+                      <p className="mt-1 text-xs text-muted">Sans engagement · Devis après l’entretien</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="mt-4 text-sm text-muted">
+                        {offer.setup.toLocaleString("fr-FR")} € d&apos;installation
+                      </p>
+                      <p className="mt-1 flex items-baseline gap-1 text-3xl font-bold text-text">
+                        {displayPrice} €
+                        <span className="text-base font-medium text-muted">{priceSuffix}</span>
+                      </p>
+                      <p className="mt-1 text-xs text-muted">
+                        Sans engagement · Résiliable en 1 mail
+                      </p>
+                    </>
+                  )}
 
                   {/* Bénéfices */}
                   <ul className="mt-5 space-y-2 text-sm text-muted md:text-[15px]">
@@ -176,16 +180,24 @@ export function Pricing() {
                   </ul>
 
                   {/* D8 — ROI line */}
-                  <p className="mt-5 text-sm font-medium text-primary">
-                    Rentable dès {breakeven} lead{breakeven > 1 ? "s" : ""} récupéré
-                    {breakeven > 1 ? "s" : ""} (≈ {reinvest} € investis au départ).
+                  {!isCustom ? (
+                    <>
+                      <p className="mt-5 text-sm font-medium text-primary">
+                        Rentable dès {breakeven} lead{breakeven > 1 ? "s" : ""} récupéré
+                        {breakeven > 1 ? "s" : ""} (≈ {reinvest} € investis au départ).
+                      </p>
+                    </>
+                  ) : null}
+                  <p className={cn("text-sm text-muted", isCustom ? "mt-5" : "mt-1")}>
+                    {offer.roiLine}
                   </p>
-                  <p className="mt-1 text-sm text-muted">{offer.roiLine}</p>
 
                   {/* D5 — Garantie inline dans chaque carte */}
-                  <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
-                    <span aria-hidden>🛡</span> 30 jours satisfait ou remboursé
-                  </p>
+                  {!isCustom ? (
+                    <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
+                      <span aria-hidden>🛡</span> 30 jours satisfait ou remboursé
+                    </p>
+                  ) : null}
 
                   {/* D7 — Lien avec query string pour pré-remplissage formulaire */}
                   <a
@@ -215,6 +227,10 @@ export function Pricing() {
         <p className="mt-6 text-center text-sm text-muted">
           {PRICING_HEADING.guaranteeLine}
         </p>
+
+        <div className="mt-8 flex justify-center">
+          <SectionCta analyticsId="pricing_cta" />
+        </div>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@
 import { trackCtaClicked } from "@/lib/analytics";
 import { HeroScene } from "@/components/three/SceneWrapper";
 import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
-import { HERO_COPY, HERO_STATS, HERO_STATS_SOURCE, NAP } from "@/lib/constants";
+import { HERO_COPY, HERO_STATS, HERO_STATS_SOURCE } from "@/lib/constants";
 
 function ReassuranceIcon({ kind }: { kind: "fr" | "lock" | "hand" }) {
   const common = "h-4 w-4 shrink-0 text-primary";
@@ -108,18 +108,6 @@ export function Hero() {
                   {HERO_COPY.badgeNoCommit}
                 </li>
               </ul>
-
-              <p className="mt-4 text-sm text-muted">
-                {HERO_COPY.phoneCta}{" "}
-                <a
-                  href={`tel:${NAP.phoneE164}`}
-                  data-analytics-cta="hero_phone"
-                  onClick={() => trackCtaClicked("hero_phone")}
-                  className="font-semibold text-text underline underline-offset-2 hover:text-primary"
-                >
-                  {NAP.phoneDisplay}
-                </a>
-              </p>
             </div>
 
             <aside

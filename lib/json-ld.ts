@@ -113,17 +113,17 @@ export function buildJsonLdGraph() {
   ];
 
   // Offer catalog mappé sur les 3 offres réelles (D1)
-  const offerCatalog = OFFERS.map((offer) => ({
+  const offerCatalog = OFFERS.filter((offer) => !offer.customOffer).map((offer) => ({
     "@type": "Offer",
-    name: `${offer.name} — ${offer.monthly} €/mois`,
+    name: `${offer.name} — ${offer.annual} €/an`,
     description: offer.roiLine,
-    price: String(offer.monthly),
+    price: String(offer.annual),
     priceCurrency: "EUR",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
-      price: String(offer.monthly),
+      price: String(offer.annual),
       priceCurrency: "EUR",
-      referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "MON" },
+      referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "ANN" },
     },
   }));
 

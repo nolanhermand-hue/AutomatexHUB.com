@@ -202,8 +202,16 @@ body::after {
   animation-direction: reverse;
 }
 
+.automatex-marquee-inner--45 {
+  animation-duration: 45s;
+}
+
 .automatex-marquee-inner--50 {
   animation-duration: 50s;
+}
+
+.automatex-marquee-inner--reverse {
+  animation-direction: reverse;
 }
 
 input[type="range"].calc-range {

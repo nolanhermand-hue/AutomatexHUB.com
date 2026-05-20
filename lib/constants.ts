@@ -16,6 +16,10 @@ export const VALUE_PER_LEAD_EUROS = 3500;
 /** Libellé CTA unique — audit / prise de rendez-vous 20 min */
 export const BOOKING_CTA_LABEL = "Réserver ma démo — 20 min" as const;
 
+/** Offre sur mesure — entretien de cadrage (distinct de la démo 20 min). */
+export const SUR_MESURE_BOOKING_CTA =
+  "Réserver un rendez-vous sur mesure — 30 min" as const;
+
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
   "IA",
@@ -116,7 +120,6 @@ export const HERO_COPY = {
   /** A15 — Mention hébergeur nommé */
   hostingMention: "Données hébergées sur OVHcloud, Roubaix",
   /** A7 — Téléphone cliquable */
-  phoneCta: "Une question ? Appelez Nolan",
   socialProof:
     "Conçu pour les mandataires IAD, SAFTI et Capifrance en Orne et Normandie.",
 } as const;
@@ -215,7 +218,7 @@ export const SOLUTION_STEPS: ReadonlyArray<{
     kicker: "01",
     title: "On installe",
     body:
-      "20 minutes d'appel avec Nolan à Flers. Il configure votre boîte mail, votre téléphone et votre espace Google. Aucun outil à apprendre. Aucune migration. Tout reste sur vos comptes.",
+      "20 minutes d'appel pour cadrer votre activité. On branche votre boîte mail, votre téléphone et votre espace Google. Aucun outil à apprendre. Aucune migration. Tout reste sur vos comptes.",
   },
   {
     kicker: "02",
@@ -240,7 +243,7 @@ export const SOLUTION_BADGES = [
 
 /** Ligne commune aux 3 offres — suivi humain 12 mois */
 export const OFFER_YEARLY_HUMAN_BULLET =
-  "Nolan joignable · 1 point de contrôle par trimestre la 1re année" as const;
+  "Interlocuteur dédié · 1 point de contrôle par trimestre la 1re année" as const;
 
 /** Section accompagnement anti-abandon (12 mois) */
 export const ACCOMPANIMENT_COPY = {
@@ -304,13 +307,10 @@ export const GUARANTEE_COPY = {
   cta: BOOKING_CTA_LABEL,
   microNote:
     "Garantie applicable à toutes les offres, sans engagement de durée.",
-  humanFollowLine:
-    "Au-delà du remboursement : un accompagnement humain sur 12 mois, avec Nolan joignable et un point d’étape chaque trimestre.",
-  humanFollowLinkLabel: "Voir le parcours d’accompagnement",
 } as const;
 
 export const FINAL_CTA_HUMAN_LINE =
-  "Vous parlez à Nolan, pas à un ticket anonyme — avant, pendant et après l’installation." as const;
+  "Un interlocuteur dédié — avant, pendant et après l’installation." as const;
 
 /** C2 — Section Bénéfices : 4 cards, une stat chiffrée par bénéfice */
 export const BENEFITS_HEADING = {
@@ -391,9 +391,9 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
 /** D1 — 3 packages alignés sur le guide stratégique (Essentiel/Pro/Cabinet) */
 export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
-  h2: "Trois formules. Un lead = rentabilisée.",
+  h2: "Trois formules + sur mesure. Un lead = rentabilisée.",
   h2SurMesureHint:
-    "Sur mesure possible (plus léger ou plus complet). Sur toutes les formules : suivi humain 12 mois et bilan trimestriel avec Nolan.",
+    "Tarifs affichés en annuel par défaut. Sur toutes les formules : suivi humain 12 mois et bilan trimestriel.",
   chooseCta: BOOKING_CTA_LABEL,
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
@@ -402,14 +402,11 @@ export const PRICING_HEADING = {
   annualDiscountPercent: 17,
   monthlySuffix: "/mois",
   annualSuffix: "/an",
-  customFitCardTitle: "Sur mesure",
-  customFitCardBody:
-    "Un tarif plus accessible ou moins de fonctions ? Plus complet ? On adapte périmètre et budget avec vous lors de la démo.",
-  allTiersYearlyLine:
-    "Inclus sur toutes les formules : suivi humain 12 mois + bilan trimestriel.",
   guaranteeLine: "30 jours satisfait ou remboursé · Onboarding offert",
   customFitFootnote:
-    "Les trois formules sont une base — on construit souvent un sur-mesure avec vous lors de la démo.",
+    "Besoin d’un périmètre différent ? Réservez un rendez-vous sur mesure de 30 minutes — devis après cadrage.",
+  surMesurePriceLabel: "Prix sur devis",
+  surMesureIntro: "Entretien de 30 min pour cadrer périmètre, budget et priorités.",
 } as const;
 
 export type PricingOffer = {
@@ -417,6 +414,8 @@ export type PricingOffer = {
   name: string;
   badge?: string;
   featured: boolean;
+  /** Carte sans grille tarifaire (RDV sur mesure) */
+  customOffer?: boolean;
   /** Frais d'installation one-shot */
   setup: number;
   /** Tarif mensuel (€/mois) */
@@ -475,7 +474,7 @@ export const OFFERS: PricingOffer[] = [
     annual: 4490,
     benefits: [
       "Tout le Pro",
-      "Accès direct à Nolan sous 4 h en semaine",
+      "Réponse prioritaire sous 4 h en semaine",
       "Note vocale après visite transformée en compte-rendu structuré",
       "1 réglage par mois + rapport mensuel d'activité",
       "Onboarding offert + accompagnement 30 premiers jours",
@@ -483,6 +482,24 @@ export const OFFERS: PricingOffer[] = [
     ],
     roiLine: "Pour les mandataires qui visent 10 ventes ou plus par an.",
     cta: "Réserver mon onboarding",
+  },
+  {
+    id: "sur-mesure",
+    name: "Sur mesure",
+    badge: "30 min · sans engagement",
+    featured: false,
+    customOffer: true,
+    setup: 0,
+    monthly: 0,
+    annual: 0,
+    benefits: [
+      "Périmètre plus léger ou plus complet que les formules standards",
+      "Devis transparent après l’entretien de cadrage",
+      "Même garantie 30 jours une fois la formule validée",
+      "Hébergement France · RGPD · vos comptes restent les vôtres",
+    ],
+    roiLine: "Idéal si vous hésitez entre deux formules ou si votre activité a des besoins spécifiques.",
+    cta: SUR_MESURE_BOOKING_CTA,
   },
 ];
 
@@ -532,12 +549,12 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: FAQ_DEFAULT_OPEN_QUESTION,
     answer:
-      "Oui. Nolan installe et configure personnellement, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
+      "Oui. Un interlocuteur dédié installe et configure, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
   },
   {
     question: "Est-ce que je dois être à l'aise avec la technologie ?",
     answer:
-      "Non. Vous recevez des messages clairs sur Telegram ou par mail, comme aujourd'hui. Vous validez les réponses quand vous le souhaitez. Aucune application à apprendre, aucun logiciel à installer. Nolan configure tout depuis Flers pendant que vous êtes sur le terrain à Alençon, Argentan, Domfront ou Caen.",
+      "Non. Vous recevez des messages clairs sur Telegram ou par mail, comme aujourd'hui. Vous validez les réponses quand vous le souhaitez. Aucune application à apprendre, aucun logiciel à installer. La configuration se fait à distance pendant que vous êtes sur le terrain.",
   },
   {
     question: "Mes données sont-elles vraiment en France ?",
@@ -547,7 +564,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Combien de temps pour la mise en place ?",
     answer:
-      "48 heures ouvrées après notre appel de validation. Nolan, basé à Flers dans l'Orne, réalise la configuration, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des mandataires de l'Orne — Flers, Alençon, Argentan, Mortagne-au-Perche — repartent avec leurs premières réponses actives dès le week-end suivant.",
+      "48 heures ouvrées après notre appel de validation. L’équipe réalise la configuration, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des mandataires repartent avec leurs premières réponses actives dès le week-end suivant.",
   },
   {
     question: "Et si je veux arrêter ?",
@@ -562,7 +579,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "J'ai déjà essayé des outils qui n'ont pas marché. Pourquoi ce serait différent ?",
     answer:
-      "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement par Nolan sur vos annonces, votre vocabulaire, votre réseau. Vous disposez de 30 jours satisfait ou remboursé pour vérifier le résultat sur votre propre activité dans l'Orne ou en Normandie.",
+      "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous disposez de 30 jours satisfait ou remboursé pour vérifier le résultat sur votre propre activité.",
   },
   {
     question: "En combien de temps un lead non rappelé part-il à la concurrence ?",
@@ -574,7 +591,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
-    "Nolan vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Vous parlez à Nolan, pas à un ticket anonyme.",
+    "On vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Un interlocuteur dédié, pas un ticket anonyme.",
   formTitle: "Vos coordonnées",
   firstNameLabel: "Prénom",
   emailLabel: "Email professionnel",
@@ -583,8 +600,6 @@ export const CONTACT_COPY = {
   networkPlaceholder: "Choisissez votre réseau",
   submitLabel: "Réserver mon créneau de 20 min",
   urgencyLine: "2 créneaux disponibles cette semaine",
-  identityLine: "Nolan Hermand · Fondateur",
-  identitySub: "Répond sous 24 h · Basé à Flers, Orne · 06 45 38 42 33",
   badges: [
     "Hébergé France",
     "RGPD",

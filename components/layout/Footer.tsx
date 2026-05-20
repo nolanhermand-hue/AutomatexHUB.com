@@ -9,8 +9,7 @@ export function Footer() {
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <LogoOrbit variant="lockup" theme="dark" height={44} href="/" className="max-w-[14rem]" />
           <p className="max-w-md text-sm leading-[1.6] text-[rgb(250_249_246/0.3)]">
-            L&apos;automatisation française pour mandataires immobiliers indépendants.
-            Conçue par Nolan Hermand à Flers, dans l&apos;Orne.
+            L&apos;automatisation française pour mandataires immobiliers indépendants — hébergée en France.
           </p>
         </div>
 

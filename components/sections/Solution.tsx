@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  BOOKING_CTA_LABEL,
   BENEFITS_ITEMS,
   SOLUTION_BADGES,
   SOLUTION_HEADING,
   SOLUTION_STEPS,
 } from "@/lib/constants";
+import { SectionCta } from "@/components/ui/SectionCta";
 import { useReducedMotionPreference } from "@/providers/AppProviders";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -138,13 +138,9 @@ export function Solution() {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          data-analytics-cta="solution_micro"
-          className="mt-8 inline-flex min-h-[48px] items-center gap-1 text-sm font-semibold text-muted underline underline-offset-4 transition-colors hover:text-text"
-        >
-          {BOOKING_CTA_LABEL} <span aria-hidden>→</span>
-        </a>
+        <div className="mt-8 flex justify-center">
+          <SectionCta analyticsId="solution_cta" />
+        </div>
       </div>
     </section>
   );

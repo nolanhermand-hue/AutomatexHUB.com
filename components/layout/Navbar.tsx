@@ -166,7 +166,7 @@ export function Navbar() {
                 className="mb-2 inline-flex min-h-[52px] items-center justify-between gap-3 rounded-xl border border-cta/30 bg-cta/10 px-4 py-3 text-base font-semibold text-text"
               >
                 <span className="inline-flex items-center gap-2">
-                  <span aria-hidden>📞</span> Appeler Nolan
+                  <span aria-hidden>📞</span> Nous appeler
                 </span>
                 <span className="text-accent">{NAP.phoneDisplay}</span>
               </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FAQ_HEADING, FAQ_ITEMS } from "@/lib/constants";
+import { SectionCta } from "@/components/ui/SectionCta";
 import { AnimatePresence, motion } from "framer-motion";
 import { useId, useState } from "react";
 
@@ -78,6 +79,9 @@ export function FAQ() {
               </div>
             );
           })}
+        </div>
+        <div className="mt-10 flex justify-center">
+          <SectionCta analyticsId="faq_cta" />
         </div>
       </div>
     </section>

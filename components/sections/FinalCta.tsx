@@ -20,7 +20,7 @@ export function FinalCta() {
           <span className="italic text-accent-mid">Aucun engagement.</span> Aucun préparatif.
         </h2>
         <p className="mx-auto mt-4 max-w-readable text-base leading-[1.6] text-[rgb(250_249_246/0.5)] md:text-lg">
-          Nolan vous montre en direct ce que la configuration fait sur une activité comme la vôtre.
+          On vous montre en direct ce que la configuration fait sur une activité comme la vôtre.
           Si ça ne vous convient pas, vous partez sans rien.
         </p>
 

@@ -71,16 +71,6 @@ export function GuaranteeXL() {
             </a>
 
             <p className="mt-3 text-xs text-accent-dark/80">{GUARANTEE_COPY.microNote}</p>
-            <p className="mt-4 text-sm leading-relaxed text-accent-dark">
-              {GUARANTEE_COPY.humanFollowLine}{" "}
-              <a
-                href="#accompagnement"
-                className="font-semibold text-primary underline underline-offset-2 hover:opacity-80"
-              >
-                {GUARANTEE_COPY.humanFollowLinkLabel}
-              </a>
-              .
-            </p>
           </div>
         </div>
       </div>

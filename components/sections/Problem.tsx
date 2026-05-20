@@ -1,4 +1,5 @@
 import { PROBLEM_HEADING, PROBLEM_ITEMS } from "@/lib/constants";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 export function Problem() {
   return (
@@ -29,6 +30,9 @@ export function Problem() {
               </article>
             );
           })}
+        </div>
+        <div className="mt-10 flex justify-center md:justify-start">
+          <SectionCta analyticsId="problem_cta" />
         </div>
       </div>
     </section>

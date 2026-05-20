@@ -1,6 +1,7 @@
 "use client";
 
 import { AGITATION_COPY } from "@/lib/constants";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 /**
  * AGITATION — B4 / B9
@@ -23,6 +24,9 @@ export function Agitation() {
             {AGITATION_COPY.body}
           </p>
           <p className="mt-6 text-xs text-faint">{AGITATION_COPY.microNote}</p>
+          <div className="mt-8">
+            <SectionCta analyticsId="agitation_cta" />
+          </div>
         </div>
       </div>
     </section>
