@@ -1,5 +1,6 @@
 import { AccompagnementPointMensuelDemo } from "@/components/demo/AccompagnementPointMensuelDemo";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
+import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
 import { BOOKING_CTA_LABEL, NAP } from "@/lib/constants";
 import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
@@ -64,6 +65,11 @@ export default function AccompagnementPage() {
               </a>{" "}
               — {NAP.founder}, {NAP.city}
             </p>
+          </section>
+
+          <section>
+            <h2 className="font-heading text-2xl text-text">Nolan en action (simulation)</h2>
+            <NolanLiveDemo />
           </section>
 
           <section>

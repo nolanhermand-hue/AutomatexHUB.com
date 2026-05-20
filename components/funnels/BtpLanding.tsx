@@ -1,4 +1,8 @@
 import { BtpDemoSection } from "@/components/demo/BtpDemoSection";
+import { BtpFaqMotion } from "@/components/motion/BtpFaqMotion";
+import { HeroMotionBackdrop } from "@/components/motion/HeroMotionBackdrop";
+import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
+import { RoiCounter } from "@/components/motion/RoiCounter";
 import Link from "next/link";
 import { BtpPricing } from "@/components/sections/BtpPricing";
 import { BtpSocialProof } from "@/components/sections/BtpSocialProof";
@@ -11,7 +15,6 @@ import {
   BTP_CONTACT,
   BTP_DAY_PAIN,
   BTP_DEPART_HINT,
-  BTP_FAQ,
   BTP_HERO,
 } from "@/lib/btp-copy";
 import { NAP } from "@/lib/constants";
@@ -19,8 +22,9 @@ import { NAP } from "@/lib/constants";
 export function BtpLanding() {
   return (
     <>
-      <section id="hero" className="border-b border-border bg-night px-gutter pb-12 pt-[88px] md:pt-[100px]">
-        <div className="mx-auto max-w-content">
+      <section id="hero" className="relative border-b border-border bg-night px-gutter pb-12 pt-[88px] md:pt-[100px]">
+        <HeroMotionBackdrop motionId="hero-background-btp" />
+        <div className="relative mx-auto max-w-content">
           <h1 className="font-heading text-[clamp(1.75rem,5vw,3rem)] font-bold leading-[1.1] text-text">
             {BTP_HERO.h1}
           </h1>
@@ -60,7 +64,7 @@ export function BtpLanding() {
       <section className="bg-bg-card px-gutter py-12 md:py-16">
         <div className="mx-auto max-w-content">
           <h2 className="font-heading text-3xl text-text">{BTP_DAY_PAIN.h2}</h2>
-          <ol className="mt-8 space-y-4 border-l-2 border-primary/30 pl-6">
+          <ol className="demo-liquid-reveal mt-8 space-y-4 border-l-2 border-primary/30 pl-6">
             {BTP_DAY_PAIN.steps.map((s) => (
               <li key={s.time}>
                 <time className="font-mono text-sm font-semibold text-primary">{s.time}</time>
@@ -115,8 +119,11 @@ export function BtpLanding() {
               Tout sur l&apos;accompagnement →
             </Link>
           </p>
+          <NolanLiveDemo />
         </div>
       </section>
+
+      <RoiCounter variant="btp" />
 
       <BtpPricing />
 
@@ -124,22 +131,7 @@ export function BtpLanding() {
         {BTP_DEPART_HINT}
       </p>
 
-      <section id="faq" className="bg-bg-card px-gutter py-12 md:py-16">
-        <div className="mx-auto max-w-content">
-          <h2 className="font-heading text-3xl text-text">{BTP_FAQ.h2}</h2>
-          <div className="mt-8 space-y-4">
-            {BTP_FAQ.items.map((item) => (
-              <details
-                key={item.q}
-                className="group rounded-xl border border-border bg-night px-5 py-4"
-              >
-                <summary className="cursor-pointer font-semibold text-text">{item.q}</summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BtpFaqMotion />
 
       <BtpSocialProof />
 

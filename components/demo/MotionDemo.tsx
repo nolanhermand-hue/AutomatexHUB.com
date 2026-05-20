@@ -55,7 +55,7 @@ export function MotionDemo({
           if (entry.isIntersecting) setActive(true);
         });
       },
-      { threshold: 0.3, rootMargin: "0px 0px -50px 0px" },
+      { threshold: 0.2, rootMargin: "0px 0px -80px 0px" },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -72,6 +72,7 @@ export function MotionDemo({
     <figure
       ref={rootRef}
       data-demo={demoId}
+      data-motion={demoId}
       role="img"
       aria-label={ariaLabel}
       className={cn(

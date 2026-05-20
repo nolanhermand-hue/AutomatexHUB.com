@@ -15,6 +15,7 @@ import { ResiliationSection } from "@/components/sections/ResiliationSection";
 import { Solution } from "@/components/sections/Solution";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
+import { RoiCounter } from "@/components/motion/RoiCounter";
 import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
 
@@ -34,6 +35,7 @@ export function ImmobilierHome() {
         variant="highlight"
         showFounder
       />
+      <RoiCounter variant="immobilier" />
       <Pricing />
       <GuaranteeXL />
       <DataTrustSection />

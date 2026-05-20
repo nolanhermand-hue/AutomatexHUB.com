@@ -1,4 +1,5 @@
 import { HubBeforeAfterDemo } from "@/components/demo/HubBeforeAfterDemo";
+import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { IconBtp, IconImmobilier } from "@/components/icons/HubPathIcons";
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
@@ -103,6 +104,11 @@ export function HubEntry() {
         variant="highlight"
         showFounder
       />
+      <div className="border-t border-border bg-accent-light px-gutter pb-12">
+        <div className="mx-auto max-w-content">
+          <NolanLiveDemo />
+        </div>
+      </div>
     </>
   );
 }

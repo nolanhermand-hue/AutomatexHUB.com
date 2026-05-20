@@ -1,5 +1,6 @@
 "use client";
 
+import { MotionBootstrap } from "@/components/motion/MotionBootstrap";
 import { AmbientMouseGradient } from "@/components/layout/AmbientMouseGradient";
 import { CustomCursor } from "@/components/layout/CustomCursor";
 import { Footer } from "@/components/layout/Footer";
@@ -15,6 +16,7 @@ import type { ReactNode } from "react";
 export function LayoutChrome({ children }: { children: ReactNode }) {
   return (
     <AppProviders>
+      <MotionBootstrap />
       <AmbientMouseGradient />
       <CustomCursor />
       <ReadingProgress />

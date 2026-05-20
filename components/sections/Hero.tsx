@@ -1,5 +1,6 @@
 "use client";
 
+import { HeroMotionBackdrop } from "@/components/motion/HeroMotionBackdrop";
 import { trackCtaClicked } from "@/lib/analytics";
 import { HeroScene } from "@/components/three/SceneWrapper";
 import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
@@ -45,6 +46,7 @@ function ReassuranceIcon({ kind }: { kind: "fr" | "lock" | "hand" }) {
 export function Hero() {
   return (
     <section id="hero" className="relative [scroll-margin-top:60px] lg:[scroll-margin-top:72px]">
+      <HeroMotionBackdrop motionId="hero-background-immobilier" />
       <HeroScene>
         <div className="mx-auto max-w-content px-gutter pb-8 pt-[76px] lg:pb-12 lg:pt-[96px]">
           <div className="lg:grid lg:grid-cols-[1fr_minmax(260px,320px)] lg:items-start lg:gap-12">

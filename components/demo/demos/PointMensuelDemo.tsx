@@ -1,26 +1,46 @@
-import type { DemoAnimationProps } from "@/components/demo/MotionDemo";
+"use client";
 
-export function PointMensuelDemo({ active }: DemoAnimationProps) {
+import { LottiePlayer } from "@/components/motion/LottiePlayer";
+import type { DemoAnimationProps } from "@/components/demo/MotionDemo";
+import { sequentialDemoBeats, useGsapDemoLoop } from "@/lib/motion/useGsapDemoLoop";
+import { useCallback, useRef } from "react";
+
+function PointMensuelGsap({ active }: DemoAnimationProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const build = useCallback(
+    (gsap: typeof import("gsap").default, root: HTMLElement) =>
+      sequentialDemoBeats(gsap, root, { hold: 1.2, repeatDelay: 0.5 }),
+    [],
+  );
+  useGsapDemoLoop(rootRef, active, build);
+
   if (!active) return null;
+
   return (
-    <div className="demo-root demo-loop-10">
-      <div className="relative min-h-[280px]">
-        <div className="demo-step demo-step-1">
-          <p className="text-sm text-[#f5f4f1]">📅 J+30 — Point mensuel Nolan</p>
-        </div>
-        <div className="demo-step demo-step-2">
-          <p className="text-sm text-[#ff8200]">📊 Rapport Telegram</p>
-          <p className="text-xs text-[#f5f4f1]/90">8 appels traités · 12 devis · 14 h récupérées</p>
-        </div>
-        <div className="demo-step demo-step-3">
-          <p className="max-w-xs text-xs text-[#f5f4f1]/90">
-            Nolan : on améliore le template devis cette semaine.
-          </p>
-        </div>
-        <div className="demo-step demo-step-4">
-          <p className="text-sm text-[#38a169]">✅ Système mis à jour — sans que vous ayez demandé</p>
-        </div>
+    <div ref={rootRef} className="demo-gsap-stack">
+      <div className="demo-beat text-center text-sm text-[#f5f4f1]">📅 J+30 — Point mensuel Nolan</div>
+      <div className="demo-beat text-center">
+        <p className="text-sm text-[#ff8200]">📊 Rapport Telegram</p>
+        <p className="text-xs text-[#f5f4f1]/90">8 appels traités · 12 devis · 14 h récupérées</p>
+      </div>
+      <div className="demo-beat text-center">
+        <p className="max-w-xs text-xs text-[#f5f4f1]/90">
+          Nolan : on améliore le template devis cette semaine.
+        </p>
+      </div>
+      <div className="demo-beat text-center text-sm text-[#38a169]">
+        ✅ Système mis à jour — sans que vous ayez demandé
       </div>
     </div>
+  );
+}
+
+export function PointMensuelDemo({ active }: DemoAnimationProps) {
+  return (
+    <LottiePlayer
+      src="/assets/demos/lottie/demo-5-point-mensuel.json"
+      active={active}
+      fallback={<PointMensuelGsap active={active} />}
+    />
   );
 }

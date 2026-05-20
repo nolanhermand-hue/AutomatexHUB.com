@@ -27,6 +27,13 @@
   --max-w-readable: 680px;
 
   --spacing-gutter: 1.5rem;
+
+  /* Motion language (panel studio) */
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-stagger: 100ms;
+  --motion-beat: 650ms;
 }
 
 html[data-theme="confiance"] {
@@ -434,8 +441,85 @@ body::after {
 }
 
 .demo-pulse-red {
-  animation: demoPulseRed 1.2s ease-in-out infinite;
+  animation: demoPulseRed 1.2s var(--ease-expo-out) infinite;
   will-change: transform;
+}
+
+.demo-gsap-stack {
+  position: relative;
+  min-height: 280px;
+}
+
+.demo-gsap-stack .demo-beat {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
+
+.demo-glow-roi {
+  animation: demoGlowRoi 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes demoGlowRoi {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgb(255 130 0 / 0));
+  }
+  50% {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 12px rgb(255 130 0 / 0.45));
+  }
+}
+
+.demo-liquid-reveal li {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: demoLiquidIn 0.75s var(--ease-expo-out) forwards;
+}
+
+.demo-liquid-reveal li:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.demo-liquid-reveal li:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.demo-liquid-reveal li:nth-child(3) {
+  animation-delay: 0.25s;
+}
+.demo-liquid-reveal li:nth-child(4) {
+  animation-delay: 0.35s;
+}
+.demo-liquid-reveal li:nth-child(5) {
+  animation-delay: 0.45s;
+}
+.demo-liquid-reveal li:nth-child(6) {
+  animation-delay: 0.55s;
+}
+
+@keyframes demoLiquidIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-glow-roi,
+  .demo-liquid-reveal li {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
 @keyframes demoPulseRed {
   0%,
