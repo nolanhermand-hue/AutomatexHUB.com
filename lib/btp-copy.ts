@@ -5,13 +5,16 @@ export const BTP_HERO = {
   h1: "Vos devis partent tout seuls. Vos clients ont une réponse en 90 secondes. Vous, vous finissez votre chantier.",
   sub:
     "Un système automatique installé sur vos outils actuels. Vous n'apprenez rien de nouveau. On s'occupe de tout — et on reste là.",
-  ctaDemo: "Nolan me rappelle sous 24 h →",
+  ctaDemo: "Nolan m'appelle demain — démo 20 min gratuite",
   ctaHow: "Voir comment ça marche — 2 minutes",
+  priceFrom: "Dès 99 €/mois · setup 199 € · sans engagement",
+  localBandeau:
+    "Plombier, maçon, électricien dans l'Orne ? Même système — Nolan installe à distance en 48 h.",
   badges: [
     "Hébergé en France",
     "RGPD — vos données restent chez vous",
     "Basé à Flers, Orne",
-    "Nolan répond sous 24 h",
+    "Démo sous 24 h · Full sous 4 h (sem.)",
   ],
 } as const;
 
@@ -105,6 +108,8 @@ export const BTP_SOCIAL_PROOF = {
   founderQuote:
     "J'ai construit ce système en pensant à mon père, électricien pendant 20 ans. Il a perdu des centaines d'heures sur des tâches qui auraient pu se faire toutes seules. C'est pour lui, et pour tous les artisans de l'Orne, que j'ai créé Automatex.",
   stackLabels: ["N8N", "Mistral AI", "Google Workspace", "OVHcloud France"] as const,
+  /** Affichage public — sans jargon technique. */
+  publicHostingLabels: ["OVHcloud France", "Google Workspace"] as const,
 } as const;
 
 export const BTP_OFFERS: BtpOffer[] = [
@@ -137,7 +142,7 @@ export const BTP_OFFERS: BtpOffer[] = [
   {
     id: "essentiel-btp",
     name: "Essentiel",
-    badge: "Le plus populaire",
+    badge: "Recommandé · Solo chargé",
     featured: true,
     setup: 499,
     monthly: 249,
@@ -200,6 +205,10 @@ export const BTP_FAQ = {
       a: "Tout est hébergé en France, conforme RGPD. Vos devis et contacts : vous et Nolan uniquement.",
     },
     {
+      q: "Je travaille seul, sans secrétaire — c'est pour moi ?",
+      a: "Oui. C'est le cas le plus fréquent dans l'Orne : vous faites chantier, devis et relances. Le système répond quand vous ne pouvez pas décrocher ; Nolan installe et ajuste avec vous chaque mois.",
+    },
+    {
       q: "Et si j'ai un problème un vendredi soir ?",
       a: "Formule Full : réponse sous 4 h en semaine. Autres formules : réponse le jour ouvré suivant. Dans tous les cas : vous n'êtes jamais seul.",
     },
@@ -208,14 +217,17 @@ export const BTP_FAQ = {
 
 export const BTP_BETA = {
   title: "Lancement dans l'Orne — tarif fondateur",
-  body: "Les 5 premiers artisans bénéficient d'un tarif fondateur bloqué à vie. Places limitées — honnêteté sur la phase de lancement.",
-  slots: "2 places restantes",
+  body: "Les 5 premiers artisans bénéficient d'un tarif fondateur bloqué à vie, mentionné au contrat. Pas de faux avis : Nolan préfère 5 clients bien accompagnés qu'une vitrine pleine de logos.",
+  slots: "Places limitées — demandez si le tarif fondateur est encore ouvert.",
 } as const;
+
+export const BTP_DEPART_HINT =
+  "La plupart des artisans solo commencent par Départ (99 €/mois + 199 € setup)." as const;
 
 export const BTP_CONTACT = {
   h2: "Prêt à récupérer 2 h par jour ?",
   sub: "Nolan vous appelle sous 24 h. 20 minutes. Il vous montre sur vos propres chantiers ce que le système ferait.",
-  cta: "Nolan me rappelle sous 24 h →",
+  cta: "Réserver mon appel avec Nolan",
   foot: "Démo gratuite · Sans engagement · Basé à Flers, Orne",
 } as const;
 
@@ -243,8 +255,8 @@ export const ACCOMPANIMENT_PAGE = {
     { month: "Mois 12", text: "ROI calculé ensemble · renouveler — votre choix" },
   ],
   roi: {
-    h2: "Ce que nos clients voient évoluer",
-    body: "Un artisan qui ne perd plus ses appels manqués récupère en moyenne 2 à 3 chantiers par an qu'il aurait perdus. Sur l'Orne, avec une marge moyenne de 25 % sur 15 000 € de CA par chantier, cela représente environ 7 500 € récupérés. Pour 249 €/mois, la formule Essentiel est rentable en moins de 2 semaines.",
+    h2: "Objectif sur 12 mois (ordre de grandeur)",
+    body: "Un artisan qui ne perd plus ses appels manqués peut récupérer 2 à 3 chantiers par an qu'il aurait perdus. Sur l'Orne, avec une marge moyenne de 25 % sur 15 000 € de CA par chantier, cela représente environ 7 500 € récupérés. À 249 €/mois, la formule Essentiel se rentabilise en moins de 2 semaines si un devis part à temps.",
   },
   sections: [
     {

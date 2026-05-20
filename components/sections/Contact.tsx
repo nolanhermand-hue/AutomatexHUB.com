@@ -62,10 +62,6 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
       e.preventDefault();
       return;
     }
-    if (!isBtp && !fields.email) {
-      e.preventDefault();
-      return;
-    }
 
     setPending(true);
     trackFormSubmitted();
@@ -241,20 +237,14 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               id="email"
               name="email"
               type="email"
-              required={!isBtp}
               inputMode="email"
               autoComplete="email"
               placeholder="vous@exemple.com"
               value={fields.email}
               onChange={(e) => setFields((f) => ({ ...f, email: e.target.value }))}
-              className={fieldClass(touched, fields.email, !isBtp)}
+              className={fieldClass(false, fields.email, false)}
             />
-            {touched && !isBtp && !fields.email && (
-              <p className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                <span aria-hidden>⚠</span> Ce champ est requis.
-              </p>
-            )}
-            {!isBtp ? <p className="mt-1 text-xs text-faint">{CONTACT_COPY.emailHint}</p> : null}
+            <p className="mt-1 text-xs text-faint">{CONTACT_COPY.emailHint}</p>
           </div>
 
           {isBtp ? (

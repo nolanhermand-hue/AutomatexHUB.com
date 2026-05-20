@@ -1,7 +1,8 @@
 import { HubBeforeAfterDemo } from "@/components/demo/HubBeforeAfterDemo";
+import { IconBtp, IconImmobilier } from "@/components/icons/HubPathIcons";
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
+import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import Link from "next/link";
-import { NAP } from "@/lib/constants";
 import { HUB_ACCOMPANIMENT, HUB_ENTRY_COPY } from "@/lib/hub-copy";
 
 export function HubEntry() {
@@ -24,15 +25,17 @@ export function HubEntry() {
             ))}
           </ul>
 
+          <div className="mx-auto mt-8 max-w-lg">
+            <FounderTrustBlock compact />
+          </div>
+
           <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
             <Link
               href="/immobilier"
               className="group flex flex-col rounded-xl border border-border bg-bg-card p-8 text-left shadow-sm transition hover:border-primary/40 hover:shadow-md"
               data-analytics-cta="hub_immobilier"
             >
-              <span className="text-3xl" aria-hidden>
-                🏠
-              </span>
+              <IconImmobilier />
               <h2 className="mt-4 font-heading text-xl font-semibold text-text md:text-2xl">
                 {HUB_ENTRY_COPY.blockImmobilier.title}
               </h2>
@@ -52,16 +55,15 @@ export function HubEntry() {
               className="group flex flex-col rounded-xl border border-border bg-bg-card p-8 text-left shadow-sm transition hover:border-primary/40 hover:shadow-md"
               data-analytics-cta="hub_btp"
             >
-              <span className="text-3xl" aria-hidden>
-                ⛑️
-              </span>
+              <IconBtp />
               <h2 className="mt-4 font-heading text-xl font-semibold text-text md:text-2xl">
                 {HUB_ENTRY_COPY.blockBtp.title}
               </h2>
               <p className="mt-3 flex-1 text-sm italic leading-relaxed text-muted md:text-base">
                 &ldquo;{HUB_ENTRY_COPY.blockBtp.quote}&rdquo;
               </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+              <p className="mt-2 text-xs font-medium text-muted">{HUB_ENTRY_COPY.priceHintBtp}</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                 {HUB_ENTRY_COPY.blockBtp.cta}
                 <span aria-hidden className="transition group-hover:translate-x-0.5">
                   →
@@ -73,16 +75,22 @@ export function HubEntry() {
           <p className="mx-auto mt-12 max-w-readable text-sm text-muted md:text-base">
             {HUB_ENTRY_COPY.footerNote}
           </p>
-          <Link
-            href="/immobilier#contact"
-            className="mt-6 inline-flex min-h-[52px] items-center justify-center rounded-md bg-cta px-8 py-3.5 text-[15px] font-semibold text-cta-fg shadow-sm transition hover:brightness-110"
-            data-analytics-cta="hub_demo"
-          >
-            {HUB_ENTRY_COPY.ctaDemo}
-          </Link>
-          <p className="mt-4 text-xs text-muted">
-            {NAP.founder} · {NAP.phoneDisplay} · {NAP.city} ({NAP.department})
-          </p>
+          <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/immobilier#contact"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-md bg-cta px-8 py-3.5 text-[15px] font-semibold text-cta-fg shadow-sm transition hover:brightness-110"
+              data-analytics-cta="hub_demo_immo"
+            >
+              {HUB_ENTRY_COPY.ctaImmobilier}
+            </Link>
+            <Link
+              href="/btp#contact"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-md border border-border bg-bg-card px-8 py-3.5 text-[15px] font-semibold text-text shadow-sm transition hover:border-primary/40"
+              data-analytics-cta="hub_demo_btp"
+            >
+              {HUB_ENTRY_COPY.ctaBtp}
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -92,7 +100,8 @@ export function HubEntry() {
         h2={HUB_ACCOMPANIMENT.h2}
         pillars={HUB_ACCOMPANIMENT.pillars}
         linkLabel={HUB_ACCOMPANIMENT.linkLabel}
-        className="border-t border-border bg-night"
+        variant="highlight"
+        showFounder
       />
     </>
   );

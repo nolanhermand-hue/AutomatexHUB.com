@@ -1,6 +1,8 @@
 import { AccompagnementPointMensuelDemo } from "@/components/demo/AccompagnementPointMensuelDemo";
+import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
 import { BOOKING_CTA_LABEL, NAP } from "@/lib/constants";
+import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -19,6 +21,10 @@ export default function AccompagnementPage() {
           {ACCOMPANIMENT_PAGE.h1}
         </h1>
         <p className="mt-4 max-w-readable text-lg text-muted">{ACCOMPANIMENT_PAGE.sub}</p>
+
+        <div className="mt-8 rounded-xl border border-primary/20 bg-accent-light p-6">
+          <FounderTrustBlock />
+        </div>
 
         <div className="mt-14 space-y-16">
           <section>
@@ -58,6 +64,16 @@ export default function AccompagnementPage() {
               </a>{" "}
               — {NAP.founder}, {NAP.city}
             </p>
+          </section>
+
+          <section>
+            <h2 className="font-heading text-2xl text-text">{ACCOMPANIMENT_CONTINUITY.h2}</h2>
+            <p className="mt-4 max-w-readable text-muted">{ACCOMPANIMENT_CONTINUITY.intro}</p>
+            <ul className="mt-6 list-disc space-y-3 pl-5 text-sm text-muted md:text-base">
+              {ACCOMPANIMENT_CONTINUITY.bullets.map((b) => (
+                <li key={b}>{b}</li>
+              ))}
+            </ul>
           </section>
 
           <section>

@@ -8,15 +8,13 @@ type Band1Item =
   | { name: string; file: string }
   | { name: string; mistral: true };
 
-/** Stack cible mandataires — DOM réduit vs liste Framer complète. */
+/** Stack cible mandataires — outils métiers visibles (sans moteur technique en hero). */
 const BAND1_ITEMS: Band1Item[] = [
-  { name: "n8n", file: "n8n" },
   { name: "Gmail", file: "gmail" },
   { name: "Telegram", file: "telegram" },
   { name: "Google Drive", file: "google-drive" },
   { name: "Google Calendar", file: "google-calendar" },
   { name: "Google Sheets", file: "google-sheets" },
-  { name: "Mistral", mistral: true },
 ];
 
 type Band2Item =
@@ -200,7 +198,7 @@ export function IntegrationMarquees() {
     >
       <div className="bg-[#FFFFFF]">
         <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
-          Intégrations &amp; automatisation
+          Compatible avec vos outils actuels
         </p>
         <div className="automatex-marquee-strip border-b border-[#E0DDD6]">
           <div className="automatex-marquee-inner automatex-marquee-inner--40">

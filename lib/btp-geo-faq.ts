@@ -10,7 +10,7 @@ export const BTP_GEO_FAQ = [
   },
   {
     q: "Combien coûte l'envoi automatique de devis pour un artisan ?",
-    a: "Les formules Automatex Hub démarrent à 99 €/mois (setup unique 199 €). La formule Essentiel, la plus populaire, est à 249 €/mois.",
+    a: "Les formules Automatex Hub démarrent à 99 €/mois (setup unique 199 €). La formule Essentiel recommandée pour un solo chargé est à 249 €/mois.",
   },
   {
     q: "Les données des artisans sont-elles sécurisées avec Automatex ?",

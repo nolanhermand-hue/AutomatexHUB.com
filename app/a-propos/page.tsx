@@ -1,5 +1,6 @@
 import { ABOUT_PAGE } from "@/lib/about-page";
 import { buildAboutPageJsonLd } from "@/lib/json-ld";
+import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -27,6 +28,10 @@ export default function AProposPage() {
         <span className="text-text">À propos</span>
       </nav>
       <h1 className="mt-6 font-heading text-4xl text-text">{ABOUT_PAGE.h1}</h1>
+
+      <div className="mt-8 max-w-readable">
+        <FounderTrustBlock />
+      </div>
 
       <dl className="mt-10 grid gap-4 border-y border-border py-8 md:grid-cols-2">
         {ABOUT_PAGE.facts.map((fact) => (
@@ -65,7 +70,7 @@ export default function AProposPage() {
       </p>
 
       <p className="mt-6 text-muted">
-        <Link href="/#contact" className="text-primary underline">
+        <Link href="/btp#contact" className="text-primary underline">
           Prendre contact
         </Link>
         {" · "}

@@ -14,32 +14,41 @@ import { Problem } from "@/components/sections/Problem";
 import { ResiliationSection } from "@/components/sections/ResiliationSection";
 import { Solution } from "@/components/sections/Solution";
 import { TrustBar } from "@/components/sections/TrustBar";
+import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
+import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
 
-/** Parcours mandataires (ex-accueil). */
+/** Parcours mandataires — pricing et accompagnement remontés avant intégrations. */
 export function ImmobilierHome() {
   return (
     <>
       <Hero />
       <TrustBar />
-      <LocalGeoLinks />
       <Problem />
-      <IntegrationMarquees />
       <Agitation />
       <Solution />
       <ImmobilierLeadDemoSection />
       <AccompanimentPillars
         h2={IMMOBILIER_ACCOMPANIMENT.h2}
         pillars={IMMOBILIER_ACCOMPANIMENT.pillars}
-        className="bg-section"
+        variant="highlight"
+        showFounder
       />
-      <Automations />
       <Pricing />
-      <DataTrustSection />
       <GuaranteeXL />
+      <DataTrustSection />
       <FAQ />
+      <LocalGeoLinks />
+      <IntegrationMarquees />
+      <Automations />
       <ResiliationSection />
       <Contact variant="immobilier" />
+      <div className="h-20 md:hidden" aria-hidden />
+      <StickyMobileCta
+        ctaHref="#contact"
+        ctaLabel={BOOKING_CTA_LABEL}
+        analyticsId="sticky_demo_immo"
+      />
     </>
   );
 }

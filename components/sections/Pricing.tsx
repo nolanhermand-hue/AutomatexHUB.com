@@ -22,7 +22,7 @@ type BillingCycle = "monthly" | "annual";
  *           D12 (stack vertical mobile), D15 (accès direct)
  */
 export function Pricing() {
-  const [cycle, setCycle] = useState<BillingCycle>("annual");
+  const [cycle, setCycle] = useState<BillingCycle>("monthly");
 
   useEffect(() => {
     const seen = new Set<string>();

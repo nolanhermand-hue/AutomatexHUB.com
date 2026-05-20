@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 
 type Pillar = { title: string; body: string };
 
@@ -8,6 +9,8 @@ type AccompanimentPillarsProps = {
   linkHref?: string;
   linkLabel?: string;
   className?: string;
+  variant?: "default" | "highlight";
+  showFounder?: boolean;
 };
 
 /** 3 colonnes accompagnement Nolan — hub, immobilier, BTP. */
@@ -16,11 +19,23 @@ export function AccompanimentPillars({
   pillars,
   linkHref = "/accompagnement",
   linkLabel = "Tout sur l'accompagnement",
-  className = "bg-bg-card",
+  className = "",
+  variant = "default",
+  showFounder = false,
 }: AccompanimentPillarsProps) {
+  const surface =
+    variant === "highlight"
+      ? "border-t-4 border-primary bg-accent-light"
+      : "bg-bg-card";
+
   return (
-    <section className={`px-gutter py-12 md:py-16 ${className}`}>
+    <section className={`px-gutter py-12 md:py-16 ${surface} ${className}`}>
       <div className="mx-auto max-w-content">
+        {showFounder ? (
+          <div className="mb-10 rounded-xl border border-primary/20 bg-bg-card p-6">
+            <FounderTrustBlock />
+          </div>
+        ) : null}
         <h2 className="font-heading text-3xl text-text md:text-4xl">{h2}</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {pillars.map((p) => (

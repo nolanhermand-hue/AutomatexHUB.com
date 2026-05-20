@@ -14,7 +14,7 @@ export const CALCULATOR_SALES_MAX = 30;
 export const VALUE_PER_LEAD_EUROS = 3500;
 
 /** Libellé CTA unique — audit / prise de rendez-vous 20 min */
-export const BOOKING_CTA_LABEL = "Réserver ma démo — 20 min" as const;
+export const BOOKING_CTA_LABEL = "Réserver mon appel avec Nolan" as const;
 
 /** Offre sur mesure — entretien de cadrage (distinct de la démo 20 min). */
 export const SUR_MESURE_BOOKING_CTA =
@@ -513,7 +513,7 @@ export const OFFERS: PricingOffer[] = [
   {
     id: "pro",
     name: "Pro",
-    badge: "Recommandé · Le plus populaire",
+    badge: "Recommandé · Meilleur équilibre",
     featured: true,
     setup: 499,
     monthly: 199,
@@ -699,16 +699,16 @@ export const CONTACT_COPY = {
     "On vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Un interlocuteur dédié, pas un ticket anonyme.",
   formTitle: "Vos coordonnées",
   firstNameLabel: "Prénom",
-  emailLabel: "Email professionnel",
+  emailLabel: "Email professionnel (optionnel)",
   phoneLabel: "Téléphone",
   networkLabel: "Réseau mandataire",
   networkPlaceholder: "Choisissez votre réseau",
-  submitLabel: "Réserver mon créneau de 20 min",
-  urgencyLine: "2 créneaux disponibles cette semaine — choisissez le vôtre maintenant.",
+  submitLabel: "Réserver mon appel avec Nolan",
+  urgencyLine: "Créneaux démo cette semaine (Orne) — un seul appel, pas de relance auto.",
   emailHint: "Votre email ne sera jamais partagé ni revendu.",
   phoneHint: "Utilisé uniquement pour planifier votre démo. Un seul appel, pas de relance.",
   formFooter:
-    "Réponse personnelle sous 24 h. Pas de commercial, pas de relance automatique.",
+    "Un seul appel. Pas de relance automatique. Nolan, Flers (61).",
   resiliationSubmitLabel: "Envoyer ma demande de résiliation",
   badges: [
     "Hébergé France",

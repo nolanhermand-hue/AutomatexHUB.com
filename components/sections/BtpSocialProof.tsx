@@ -1,4 +1,5 @@
 import { BTP_BETA, BTP_SOCIAL_PROOF } from "@/lib/btp-copy";
+import { LAUNCH_HONESTY } from "@/lib/trust-copy";
 import { NAP } from "@/lib/constants";
 
 export function BtpSocialProof() {
@@ -10,6 +11,10 @@ export function BtpSocialProof() {
           <p className="mt-2 text-sm text-muted">{BTP_BETA.body}</p>
           <p className="mt-2 text-sm font-semibold text-primary">{BTP_BETA.slots}</p>
         </div>
+
+        <p className="rounded-lg border border-border bg-bg-card px-4 py-3 text-sm text-muted">
+          {LAUNCH_HONESTY}
+        </p>
 
         <ul className="space-y-3 text-sm text-muted md:text-base">
           {BTP_SOCIAL_PROOF.stats.map((s) => (
@@ -28,10 +33,10 @@ export function BtpSocialProof() {
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-            Partenaires techniques
+            Hébergement &amp; outils
           </p>
           <ul className="mt-3 flex flex-wrap gap-3">
-            {BTP_SOCIAL_PROOF.stackLabels.map((label) => (
+            {BTP_SOCIAL_PROOF.publicHostingLabels.map((label) => (
               <li
                 key={label}
                 className="rounded-md border border-border bg-bg-card px-3 py-1.5 text-sm font-medium text-text"

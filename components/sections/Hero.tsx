@@ -3,6 +3,7 @@
 import { trackCtaClicked } from "@/lib/analytics";
 import { HeroScene } from "@/components/three/SceneWrapper";
 import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
+import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { GEO_DEFINITION, HERO_COPY, HERO_STATS, HERO_STATS_SOURCE, CTA_REASSURANCE_LINE } from "@/lib/constants";
 
 function ReassuranceIcon({ kind }: { kind: "fr" | "lock" | "hand" }) {
@@ -112,6 +113,10 @@ export function Hero() {
                   {HERO_COPY.badgeNoCommit}
                 </li>
               </ul>
+
+              <div className="mt-6 max-w-readable">
+                <FounderTrustBlock compact />
+              </div>
 
               <p className="mt-4 text-xs font-medium text-muted">{CTA_REASSURANCE_LINE}</p>
             </div>
