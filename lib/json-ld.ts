@@ -262,3 +262,96 @@ export function buildJsonLdGraph() {
     ],
   };
 }
+
+/** JSON-LD landing BTP — ProfessionalService + Service/offers sur /btp. */
+export function buildBtpServiceJsonLd(path: string) {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  const pageUrl = `${SITE_URL}${normalized}`.replace(/\/$/, "") || `${SITE_URL}/btp`;
+  const isBtpLanding = normalized === "/btp" || normalized === "/btp/";
+
+  const professional = {
+    "@type": "ProfessionalService",
+    name: "Automatex Hub",
+    description:
+      "Système pour mandataires immobiliers et artisans BTP dans l'Orne et Normandie. Devis, appels manqués, accompagnement mensuel. Hébergé en France, RGPD.",
+    url: isBtpLanding ? `${SITE_URL}/btp` : pageUrl,
+    telephone: NAP.phoneE164,
+    email: NAP.email,
+    founder: {
+      "@type": "Person",
+      name: NAP.founder,
+      jobTitle: "Fondateur et dirigeant",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: NAP.city,
+      addressRegion: NAP.department,
+      postalCode: NAP.postalCode,
+      addressCountry: "FR",
+      streetAddress: NAP.streetAddress,
+    },
+    areaServed: [
+      { "@type": "City", name: "Flers" },
+      { "@type": "City", name: "Alençon" },
+      { "@type": "City", name: "Argentan" },
+      { "@type": "AdministrativeArea", name: "Orne" },
+      { "@type": "AdministrativeArea", name: "Normandie" },
+    ],
+    serviceType: [
+      "Système TPE immobilier",
+      "Système TPE BTP",
+      "Gestion devis artisan",
+      "Réponse appels manqués",
+      "Accompagnement numérique PME",
+    ],
+    priceRange: "99€–449€/mois",
+  };
+
+  if (!isBtpLanding) {
+    return { "@context": "https://schema.org", ...professional };
+  }
+
+  const btpService = {
+    "@type": "Service",
+    name: "Système artisans BTP — Orne",
+    provider: { "@type": "Organization", name: "Automatex Hub" },
+    areaServed: { "@type": "AdministrativeArea", name: "Orne" },
+    audience: { "@type": "Audience", audienceType: "Artisans BTP TPE" },
+    offers: [
+      { "@type": "Offer", name: "Formule Départ BTP", price: "99", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Formule Essentiel BTP", price: "249", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Formule Full BTP", price: "449", priceCurrency: "EUR" },
+    ],
+  };
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [professional, btpService],
+  };
+}
+
+export function buildLocalBtpJsonLd(opts: {
+  path: string;
+  pageName: string;
+  city: string;
+  description: string;
+}) {
+  const businessId = `${SITE_URL}#business`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: opts.pageName, path: opts.path },
+      ]),
+      {
+        "@type": "Service",
+        name: `Automatex — artisans BTP ${opts.city}`,
+        provider: { "@id": businessId },
+        description: opts.description,
+        areaServed: [opts.city, "Orne", "Normandie"],
+        serviceType: "Devis et appels manqués pour artisans",
+      },
+    ],
+  };
+}

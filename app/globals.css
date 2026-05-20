@@ -212,6 +212,241 @@ body::after {
   }
 }
 
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.02);
+  }
+}
+
+@utility animate-pulse-soft {
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:animate-pulse-soft {
+    animation: none;
+  }
+  .demo-root .demo-step {
+    animation: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+  .demo-root .demo-step:not(:first-child) {
+    display: none;
+  }
+}
+
+/* Motion demos — transform/opacity only */
+.demo-root {
+  position: relative;
+}
+
+.demo-root .demo-step {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.demo-loop-8 .demo-step-1 {
+  animation: demoStep1of4 8s ease-in-out infinite;
+}
+.demo-loop-8 .demo-step-2 {
+  animation: demoStep2of4 8s ease-in-out infinite;
+}
+.demo-loop-8 .demo-step-3 {
+  animation: demoStep3of4 8s ease-in-out infinite;
+}
+.demo-loop-8 .demo-step-4 {
+  animation: demoStep4of4 8s ease-in-out infinite;
+}
+
+.demo-loop-10 .demo-step-1 {
+  animation: demoStep1of5 10s ease-in-out infinite;
+}
+.demo-loop-10 .demo-step-2 {
+  animation: demoStep2of5 10s ease-in-out infinite;
+}
+.demo-loop-10 .demo-step-3 {
+  animation: demoStep3of5 10s ease-in-out infinite;
+}
+.demo-loop-10 .demo-step-4 {
+  animation: demoStep4of5 10s ease-in-out infinite;
+}
+.demo-loop-10 .demo-step-5 {
+  animation: demoStep5of5 10s ease-in-out infinite;
+}
+
+@keyframes demoStep1of4 {
+  0%,
+  2% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  6%,
+  22% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  26%,
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+@keyframes demoStep2of4 {
+  0%,
+  22% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  26%,
+  42% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  46%,
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+@keyframes demoStep3of4 {
+  0%,
+  42% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  46%,
+  62% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  66%,
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+@keyframes demoStep4of4 {
+  0%,
+  62% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  66%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  92%,
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes demoStep1of5 {
+  0%,
+  2% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  5%,
+  16% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes demoStep2of5 {
+  0%,
+  16% {
+    opacity: 0;
+  }
+  20%,
+  32% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  36%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes demoStep3of5 {
+  0%,
+  32% {
+    opacity: 0;
+  }
+  36%,
+  52% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes demoStep4of5 {
+  0%,
+  52% {
+    opacity: 0;
+  }
+  56%,
+  72% {
+    opacity: 1;
+  }
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes demoStep5of5 {
+  0%,
+  72% {
+    opacity: 0;
+  }
+  76%,
+  92% {
+    opacity: 1;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.demo-pulse-red {
+  animation: demoPulseRed 1.2s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes demoPulseRed {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
 .automatex-marquee-strip {
   overflow: hidden;
   height: 64px;

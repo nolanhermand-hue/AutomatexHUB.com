@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     : {}),
   title: {
     default: META.title,
-    template: "%s | Automatex",
+    template: "%s · Automatex Hub",
   },
   description: META.description,
   keywords: [...META_KEYWORDS],

@@ -1,9 +1,16 @@
 "use client";
 
 import { trackFormSubmitted } from "@/lib/analytics";
+import { BTP_CONTACT, BTP_METIERS } from "@/lib/btp-copy";
 import { CONTACT_COPY, FORM_NAME, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
 import { readUtm } from "@/lib/utm";
 import { useEffect, useState } from "react";
+
+export type ContactVariant = "immobilier" | "btp" | "hub";
+
+type ContactProps = {
+  variant?: ContactVariant;
+};
 
 function fieldClass(touched: boolean, value: string, required: boolean) {
   const hasError = touched && required && value.trim() === "";
@@ -16,13 +23,16 @@ function fieldClass(touched: boolean, value: string, required: boolean) {
   ].join(" ");
 }
 
-export function Contact() {
+export function Contact({ variant = "immobilier" }: ContactProps) {
+  const isBtp = variant === "btp";
   const [pending, setPending] = useState(false);
   const [touched, setTouched] = useState(false);
   const [fields, setFields] = useState({
     prenom: "",
     email: "",
     telephone: "",
+    metier: "",
+    message: "",
   });
   /** D7 — Pré-remplissage offre depuis le hash `#contact?offre=pro` */
   const [offerHint, setOfferHint] = useState<string>("");
@@ -48,7 +58,11 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     setTouched(true);
 
-    if (!fields.prenom || !fields.email || !fields.telephone) {
+    if (!fields.prenom || !fields.telephone) {
+      e.preventDefault();
+      return;
+    }
+    if (!isBtp && !fields.email) {
       e.preventDefault();
       return;
     }
@@ -76,12 +90,18 @@ export function Contact() {
     >
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text md:text-4xl">
-          {isResiliation ? "Demande de résiliation" : CONTACT_COPY.h2}
+          {isResiliation
+            ? "Demande de résiliation"
+            : isBtp
+              ? BTP_CONTACT.h2
+              : CONTACT_COPY.h2}
         </h2>
         <p className="mt-3 max-w-readable text-sm text-muted md:text-lg">
           {isResiliation
             ? "Indiquez vos coordonnées. Nous confirmons la prise en compte sous 48 h ouvrées. Effet en fin de mois en cours."
-            : CONTACT_COPY.subtitle}
+            : isBtp
+              ? BTP_CONTACT.sub
+              : CONTACT_COPY.subtitle}
         </p>
 
         <form
@@ -94,6 +114,7 @@ export function Contact() {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value={FORM_NAME} />
+          <input type="hidden" name="segment" value={variant} />
           <input type="hidden" name="offre" value={offerHint} />
           <input type="hidden" name="sujet" value={sujetHint} />
           <input type="hidden" name="reseau" value="" />
@@ -133,42 +154,17 @@ export function Contact() {
               name="prenom"
               required
               autoComplete="given-name"
+              aria-required="true"
+              aria-describedby="prenom-error"
               value={fields.prenom}
               onChange={(e) => setFields((f) => ({ ...f, prenom: e.target.value }))}
               className={fieldClass(touched, fields.prenom, true)}
             />
             {touched && !fields.prenom && (
-              <p className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
+              <p id="prenom-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
                 <span aria-hidden>⚠</span> Ce champ est requis.
               </p>
             )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="text-xs font-semibold uppercase tracking-wide text-muted"
-            >
-              {CONTACT_COPY.emailLabel}
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              inputMode="email"
-              autoComplete="email"
-              placeholder="vous@exemple.com"
-              value={fields.email}
-              onChange={(e) => setFields((f) => ({ ...f, email: e.target.value }))}
-              className={fieldClass(touched, fields.email, true)}
-            />
-            {touched && !fields.email && (
-              <p className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                <span aria-hidden>⚠</span> Ce champ est requis.
-              </p>
-            )}
-            <p className="mt-1 text-xs text-faint">{CONTACT_COPY.emailHint}</p>
           </div>
 
           <div>
@@ -185,17 +181,102 @@ export function Contact() {
               required
               inputMode="tel"
               autoComplete="tel"
+              pattern={isBtp ? "0[67][0-9]{8}" : undefined}
+              title={isBtp ? "Numéro mobile français (06 ou 07)" : undefined}
+              aria-required="true"
+              aria-describedby={isBtp ? "telephone-hint telephone-error" : "telephone-error"}
               value={fields.telephone}
               onChange={(e) => setFields((f) => ({ ...f, telephone: e.target.value }))}
               className={fieldClass(touched, fields.telephone, true)}
             />
             {touched && !fields.telephone && (
+              <p
+                id="telephone-error"
+                role="alert"
+                className="mt-1 flex items-center gap-1 text-xs font-semibold text-text"
+              >
+                <span aria-hidden>⚠</span> Ce champ est requis.
+              </p>
+            )}
+            <p id="telephone-hint" className="mt-1 text-xs text-faint">
+              {isBtp ? "Format : 06 ou 07 suivi de 8 chiffres" : CONTACT_COPY.phoneHint}
+            </p>
+          </div>
+
+          {isBtp ? (
+            <div>
+              <label
+                htmlFor="metier"
+                className="text-xs font-semibold uppercase tracking-wide text-muted"
+              >
+                Votre métier
+              </label>
+              <select
+                id="metier"
+                name="metier"
+                required
+                value={fields.metier}
+                onChange={(e) => setFields((f) => ({ ...f, metier: e.target.value }))}
+                className={fieldClass(touched, fields.metier, true)}
+              >
+                <option value="">Choisir…</option>
+                {BTP_METIERS.map((m) => (
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : null}
+
+          <div>
+            <label
+              htmlFor="email"
+              className="text-xs font-semibold uppercase tracking-wide text-muted"
+            >
+              {CONTACT_COPY.emailLabel}
+              {isBtp ? " (optionnel)" : null}
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required={!isBtp}
+              inputMode="email"
+              autoComplete="email"
+              placeholder="vous@exemple.com"
+              value={fields.email}
+              onChange={(e) => setFields((f) => ({ ...f, email: e.target.value }))}
+              className={fieldClass(touched, fields.email, !isBtp)}
+            />
+            {touched && !isBtp && !fields.email && (
               <p className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
                 <span aria-hidden>⚠</span> Ce champ est requis.
               </p>
             )}
-            <p className="mt-1 text-xs text-faint">{CONTACT_COPY.phoneHint}</p>
+            {!isBtp ? <p className="mt-1 text-xs text-faint">{CONTACT_COPY.emailHint}</p> : null}
           </div>
+
+          {isBtp ? (
+            <div>
+              <label
+                htmlFor="message"
+                className="text-xs font-semibold uppercase tracking-wide text-muted"
+              >
+                Votre plus grande perte de temps (optionnel)
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={3}
+                value={fields.message}
+                onChange={(e) => setFields((f) => ({ ...f, message: e.target.value }))}
+                className={fieldClass(false, fields.message, false)}
+              />
+            </div>
+          ) : null}
+
+          {/* removed duplicate phone block */}
 
           {!isResiliation ? (
             <p className="flex items-center gap-2 text-xs font-semibold text-accent">
@@ -232,6 +313,8 @@ export function Contact() {
               </>
             ) : isResiliation ? (
               CONTACT_COPY.resiliationSubmitLabel
+            ) : isBtp ? (
+              BTP_CONTACT.cta
             ) : offerHint === "sur-mesure" ? (
               SUR_MESURE_BOOKING_CTA
             ) : (
@@ -239,7 +322,9 @@ export function Contact() {
             )}
           </button>
 
-          <p className="text-center text-xs text-muted">{CONTACT_COPY.formFooter}</p>
+          <p className="text-center text-xs text-muted">
+            {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formFooter}
+          </p>
 
           <ul className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-5 text-sm text-muted">
             {CONTACT_COPY.badges.map((b) => (

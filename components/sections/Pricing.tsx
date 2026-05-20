@@ -1,5 +1,6 @@
 "use client";
 
+import { BillingSwitch } from "@/components/ui/BillingSwitch";
 import { trackCtaClicked, trackOfferViewed } from "@/lib/analytics";
 import { Card } from "@/components/ui/Card";
 import { FeaturedBadge } from "@/components/ui/Badge";
@@ -63,44 +64,14 @@ export function Pricing() {
           {PRICING_HEADING.h2SurMesureHint}
         </p>
 
-        {/* D11 — Toggle visible AU-DESSUS des cards */}
-        <div
-          className="mt-8 inline-flex rounded-md border border-border bg-night p-1 text-sm font-semibold"
-          role="group"
-          aria-label="Mode de facturation mensuel ou annuel"
-        >
-          <button
-            type="button"
-            onClick={() => setCycle("monthly")}
-            aria-pressed={cycle === "monthly"}
-            data-analytics-cta="pricing_toggle_monthly"
-            className={cn(
-              "min-h-[48px] rounded-[4px] px-5 transition-all duration-200",
-              cycle === "monthly"
-                ? "bg-cta text-cta-fg shadow-sm"
-                : "text-muted hover:text-text",
-            )}
-          >
-            {PRICING_HEADING.toggleMonthly}
-          </button>
-          <button
-            type="button"
-            onClick={() => setCycle("annual")}
-            aria-pressed={cycle === "annual"}
-            data-analytics-cta="pricing_toggle_annual"
-            className={cn(
-              "min-h-[48px] rounded-[4px] px-5 transition-all duration-200",
-              cycle === "annual"
-                ? "bg-cta text-cta-fg shadow-sm"
-                : "text-muted hover:text-text",
-            )}
-          >
-            {PRICING_HEADING.toggleAnnual}
-            <span className="ml-2 inline-flex items-center rounded-full bg-accent-light px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-dark">
-              {PRICING_HEADING.annualDiscountLabel}
-            </span>
-          </button>
-        </div>
+        <BillingSwitch
+          isAnnual={cycle === "annual"}
+          onChange={(annual) => setCycle(annual ? "annual" : "monthly")}
+          monthlyLabel={PRICING_HEADING.toggleMonthly}
+          annualLabel={PRICING_HEADING.toggleAnnual}
+          discountLabel={PRICING_HEADING.annualDiscountLabel}
+          className="mt-8"
+        />
 
         {/* D12 — Stack vertical strict sur mobile, grid sur md+ */}
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">

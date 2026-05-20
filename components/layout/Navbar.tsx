@@ -4,17 +4,25 @@ import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { trackCtaClicked } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS, NAP } from "@/lib/constants";
+import { SITE_NAV, contactHref } from "@/lib/hub-nav";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const SECTION_IDS = ["solution", "pricing", "faq", "contact"] as const;
 
 export function Navbar() {
+  const pathname = usePathname() ?? "/";
+  const isFunnel =
+    pathname.startsWith("/immobilier") ||
+    pathname.startsWith("/btp") ||
+    pathname.startsWith("/mandataires");
+  const contactLink = contactHref(pathname);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>(
-    SECTION_IDS[0] ?? "problem",
-  );
+  const [activeSection, setActiveSection] = useState<string>(SECTION_IDS[0] ?? "solution");
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -24,6 +32,7 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (!isFunnel) return;
     const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(
       Boolean,
     ) as HTMLElement[];
@@ -43,7 +52,7 @@ export function Navbar() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [isFunnel, pathname]);
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
@@ -64,24 +73,23 @@ export function Navbar() {
           variant="lockup"
           theme="light"
           height={38}
+          href="/"
           className="max-w-[min(100%,12.5rem)] lg:max-h-11"
-          onClick={() => handleNavClick("#hero")}
+          onClick={() => handleNavClick("/")}
         />
 
-        {/* Desktop nav — lg+ only (≥ 1024px) */}
         <nav
-          className="hidden flex-1 items-center justify-center gap-6 lg:flex xl:gap-8"
+          className="hidden flex-1 items-center justify-center gap-5 lg:flex xl:gap-7"
           aria-label="Navigation principale"
         >
-          {NAV_LINKS.map((link) => {
-            const id = link.href.replace("#", "");
-            const active = activeSection === id;
+          {SITE_NAV.map((link) => {
+            const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 data-cursor="nav"
-                onClick={() => trackCtaClicked(`nav_${id}`)}
+                onClick={() => trackCtaClicked(`nav_${link.href}`)}
                 className={cn(
                   "group/nav relative whitespace-nowrap overflow-hidden rounded px-1.5 py-1 text-sm font-semibold transition-colors duration-200",
                   active ? "text-text" : "text-muted hover:text-text",
@@ -92,29 +100,45 @@ export function Navbar() {
                   aria-hidden
                 />
                 <span className="relative z-[1]">{link.label}</span>
-                <span
-                  className={cn(
-                    "absolute inset-x-1 -bottom-0.5 z-[2] h-0.5 origin-left rounded-full bg-cta transition-transform duration-200",
-                    active ? "scale-x-100" : "scale-x-0",
-                  )}
-                />
-              </a>
+                {active ? (
+                  <span className="absolute inset-x-1 -bottom-0.5 z-[2] h-0.5 scale-x-100 rounded-full bg-cta" />
+                ) : null}
+              </Link>
             );
           })}
+          {isFunnel
+            ? NAV_LINKS.map((link) => {
+                const id = link.href.replace("#", "");
+                const sectionActive = activeSection === id;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    data-cursor="nav"
+                    onClick={() => trackCtaClicked(`nav_${id}`)}
+                    className={cn(
+                      "hidden text-sm font-semibold xl:inline",
+                      sectionActive ? "text-primary" : "text-muted hover:text-text",
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })
+            : null}
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
-          <a
-            href="#contact"
+          <Link
+            href={contactLink}
             data-cursor="cta"
             onClick={() => trackCtaClicked("navbar_contact")}
             className="inline-flex min-h-[48px] items-center justify-center whitespace-nowrap rounded-md bg-cta px-6 py-3 text-[15px] font-semibold text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all duration-200 hover:brightness-110 active:brightness-95"
           >
             Réserver 20 min
-          </a>
+          </Link>
         </div>
 
-        {/* Hamburger — affiché jusqu'à lg (< 1024px = mobile + tablette) */}
         <button
           type="button"
           className="inline-flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center rounded-xl border border-border bg-section text-text backdrop-blur-sm transition-colors hover:bg-accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:hidden"
@@ -146,7 +170,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile/tablet menu drawer */}
       <AnimatePresence>
         {isMenuOpen ? (
           <motion.div
@@ -158,7 +181,6 @@ export function Navbar() {
             className="overflow-hidden border-b border-border bg-night/95 backdrop-blur-2xl lg:hidden"
           >
             <div className="flex flex-col gap-1 px-gutter py-4">
-              {/* F8 — Téléphone fondateur cliquable en première position du menu mobile */}
               <a
                 href={`tel:${NAP.phoneE164}`}
                 data-analytics-cta="mobile_menu_phone"
@@ -170,23 +192,35 @@ export function Navbar() {
                 </span>
                 <span className="text-accent">{NAP.phoneDisplay}</span>
               </a>
-              {NAV_LINKS.map((link) => (
-                <a
+              {SITE_NAV.map((link) => (
+                <Link
                   key={link.href}
                   href={link.href}
                   className="rounded-xl px-3 py-3.5 text-base font-semibold text-text active:bg-section"
                   onClick={() => handleNavClick(link.href)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
-                onClick={() => handleNavClick("#contact")}
+              {isFunnel
+                ? NAV_LINKS.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="rounded-xl px-3 py-3.5 text-base font-medium text-muted active:bg-section"
+                      onClick={() => handleNavClick(link.href)}
+                    >
+                      {link.label}
+                    </a>
+                  ))
+                : null}
+              <Link
+                href={contactLink}
+                onClick={() => handleNavClick(contactLink)}
                 className="mt-3 inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-cta px-4 py-3 text-base font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] active:scale-[0.98]"
               >
                 Réserver 20 min
-              </a>
+              </Link>
               <p className="text-center text-sm text-muted">
                 {NAP.founder} · {NAP.city} · {NAP.phoneDisplay}
               </p>

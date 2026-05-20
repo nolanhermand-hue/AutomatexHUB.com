@@ -12,6 +12,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/immobilier`, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/btp`, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/accompagnement`, lastModified, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/automatisation-btp-orne`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/automatisation-artisan-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${SITE_URL}/automatisation-artisan-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${SITE_URL}/automatisation-artisan-argentan`, lastModified, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${SITE_URL}/devis-automatique-artisan`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/mandataires-normandie`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/mandataires-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/mandataires-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },
