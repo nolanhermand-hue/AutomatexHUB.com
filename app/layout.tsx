@@ -2,18 +2,13 @@ import { LayoutChrome } from "@/components/layout/LayoutChrome";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { Plausible } from "@/components/seo/Plausible";
 import { StructuredData } from "@/components/seo/StructuredData";
+import { BRAND, brandAbsolute } from "@/lib/brand";
 import { META, SITE_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import type { ReactNode } from "react";
 
-/**
- * G9 — Subset latin + latin-ext uniquement (drop cyrillic/greek etc.)
- * G1 — display: optional pour ne pas bloquer le LCP avec un FOUT visible
- *      Plus Jakarta Sans est utilisée pour le corps → display: swap suffit
- *      Cormorant Garamond (headings) reste swap pour éviter flash long
- */
 const heading = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
   weight: ["500", "700"],
@@ -28,14 +23,11 @@ const body = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-/**
- * H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début
- * H8 — canonical absolu
- * H12 — OG complet og:image 1200x630
- * H13 — Twitter Card summary_large_image
- */
+const ogImageUrl = brandAbsolute(BRAND.ogImage, SITE_URL);
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: "Automatex",
   title: {
     default: META.title,
     template: "%s | Automatex",
@@ -60,10 +52,11 @@ export const metadata: Metadata = {
     description: META.ogDescription,
     images: [
       {
-        url: "/assets/brand/og-image.png",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "Automatex — mandataires immobiliers en Normandie",
+        type: "image/png",
       },
     ],
   },
@@ -71,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: META.ogTitle,
     description: META.ogDescription,
-    images: ["/assets/brand/og-image.png"],
+    images: [ogImageUrl],
   },
   robots: {
     index: true,
@@ -84,65 +77,55 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  manifest: "/site.webmanifest",
+  manifest: BRAND.manifest,
   icons: {
     icon: [
-      {
-        url: "/assets/brand/favicons/favicon-32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "/assets/brand/favicons/favicon-16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        url: "/assets/brand/favicons/favicon-48.png",
-        sizes: "48x48",
-        type: "image/png",
-      },
+      { url: BRAND.faviconSvg, type: "image/svg+xml" },
+      { url: BRAND.favicons[16], sizes: "16x16", type: "image/png" },
+      { url: BRAND.favicons[32], sizes: "32x32", type: "image/png" },
+      { url: BRAND.favicons[48], sizes: "48x48", type: "image/png" },
+      { url: BRAND.favicons[96], sizes: "96x96", type: "image/png" },
+      { url: BRAND.favicons.android192, sizes: "192x192", type: "image/png" },
+      { url: BRAND.favicons.android512, sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/favicon.png",
-    apple: {
-      url: "/apple-touch-icon.png",
-      sizes: "180x180",
-      type: "image/png",
-    },
+    shortcut: BRAND.rootFaviconIco,
+    apple: [
+      { url: BRAND.rootAppleTouch, sizes: "180x180", type: "image/png" },
+      { url: BRAND.favicons.apple, sizes: "180x180", type: "image/png" },
+    ],
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Automatex",
+    statusBarStyle: "black-translucent",
+  },
+  other: {
+    "msapplication-TileColor": BRAND.themeColor,
+    "msapplication-TileImage": BRAND.favicons.android192,
   },
 };
 
-/** G3 — Empêche le CLS via theme-color + viewport meta */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#04342C",
+  themeColor: BRAND.themeColor,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" className={`${heading.variable} ${body.variable}`}>
       <head>
-        {/* G7 — preconnect + dns-prefetch pour assets externes */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://plausible.io" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/assets/brand/favicons/favicon-32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/assets/brand/favicons/favicon-16.png"
-        />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        {/* Theme restoration sans flash */}
+        <link rel="icon" type="image/svg+xml" href={BRAND.faviconSvg} />
+        <link rel="icon" href={BRAND.rootFaviconIco} sizes="32x32" />
+        <link rel="icon" type="image/png" sizes="32x32" href={BRAND.favicons[32]} />
+        <link rel="icon" type="image/png" sizes="16x16" href={BRAND.favicons[16]} />
+        <link rel="apple-touch-icon" sizes="180x180" href={BRAND.rootAppleTouch} />
+        <link rel="manifest" href={BRAND.manifest} />
+        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#0F6E56" />
+        <meta name="theme-color" content={BRAND.themeColor} />
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var v=['confiance'];var t=localStorage.getItem('ax-theme');if(t&&v.includes(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}`,

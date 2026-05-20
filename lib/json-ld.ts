@@ -7,6 +7,7 @@ import {
   SOLUTION_HEADING,
   SOLUTION_STEPS,
 } from "@/lib/constants";
+import { BRAND, brandAbsolute } from "@/lib/brand";
 
 export function buildBreadcrumbList(
   items: ReadonlyArray<{ name: string; path: string }>,
@@ -126,6 +127,8 @@ export function buildJsonLdGraph() {
     },
   }));
 
+  const logoUrl = brandAbsolute(BRAND.favicons.android512, SITE_URL);
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -138,6 +141,13 @@ export function buildJsonLdGraph() {
         url: SITE_URL,
         telephone: NAP.phoneE164,
         email: NAP.email,
+        image: logoUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: logoUrl,
+          width: 512,
+          height: 512,
+        },
         priceRange: "€€",
         openingHours: "Mo-Fr 09:00-18:00",
         address: {
@@ -222,6 +232,7 @@ export function buildJsonLdGraph() {
         name: "Automatex — réponse aux leads mandataires",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
+        image: logoUrl,
         description:
           "Service de réponse immédiate aux leads et continuité de pipeline pour mandataires immobiliers en Normandie.",
         provider: { "@id": businessId },

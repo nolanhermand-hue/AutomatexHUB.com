@@ -40,10 +40,18 @@ async function generate() {
   }
 
   await sharp(lockupLight).resize(420, 100).png().toFile(path.join(dir, "logo-orbit-lockup-light.png"));
-  console.log("✓ logo-orbit-lockup-light.png");
+  await sharp(lockupLight)
+    .resize(840, 200)
+    .png()
+    .toFile(path.join(dir, "logo-orbit-lockup-light@2x.png"));
+  console.log("✓ logo-orbit-lockup-light.png + @2x");
 
   await sharp(lockupDark).resize(420, 100).png().toFile(path.join(dir, "logo-orbit-lockup-dark.png"));
-  console.log("✓ logo-orbit-lockup-dark.png");
+  await sharp(lockupDark)
+    .resize(840, 200)
+    .png()
+    .toFile(path.join(dir, "logo-orbit-lockup-dark@2x.png"));
+  console.log("✓ logo-orbit-lockup-dark.png + @2x");
 
   await sharp(symbolOnBg).resize(128, 128).png().toFile(path.join(dir, "logo-orbit-symbol-128.png"));
   console.log("✓ logo-orbit-symbol-128.png");
@@ -57,6 +65,7 @@ async function generate() {
   const appleTouch = path.join(faviconsDir, "apple-touch-icon.png");
 
   fs.copyFileSync(favicon32, path.join(publicRoot, "favicon.png"));
+  fs.copyFileSync(favicon32, path.join(publicRoot, "favicon.ico"));
   fs.copyFileSync(appleTouch, path.join(publicRoot, "apple-touch-icon.png"));
   fs.copyFileSync(favicon32, path.join(appDir, "icon.png"));
   fs.copyFileSync(appleTouch, path.join(appDir, "apple-icon.png"));

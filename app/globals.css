@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../public/assets/brand/logo-tokens.css";
 
 @theme {
   /* Notion × cabinet — crème dominant, noir structure, vert signal */
