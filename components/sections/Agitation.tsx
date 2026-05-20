@@ -23,7 +23,7 @@ export function Agitation() {
           <p className="mt-5 max-w-readable text-base leading-[1.6] text-muted md:text-lg">
             {AGITATION_COPY.body}
           </p>
-          <p className="mt-6 text-xs text-faint">{AGITATION_COPY.microNote}</p>
+          <p className="mt-6 text-xs text-stat-caption">{AGITATION_COPY.microNote}</p>
           <div className="mt-8">
             <SectionCta analyticsId="agitation_cta" />
           </div>

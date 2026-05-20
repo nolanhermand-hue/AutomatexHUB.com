@@ -11,6 +11,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: false,
+  experimental: {
+    optimizePackageImports: ["framer-motion"],
+  },
 };
 
 export default nextConfig;

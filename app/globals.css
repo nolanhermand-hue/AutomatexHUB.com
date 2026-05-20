@@ -125,6 +125,44 @@ body::after {
   );
 }
 
+.hero-atmosphere {
+  background-color: var(--color-night);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgb(15 110 86 / 0.1), transparent 55%),
+    radial-gradient(circle at 75% 15%, rgb(26 26 24 / 0.04), transparent 45%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-atmosphere::before {
+    content: "";
+    position: absolute;
+    inset: -15%;
+    opacity: 0.35;
+    background: radial-gradient(
+      circle at var(--ambient-x, 50%) var(--ambient-y, 50%),
+      rgb(15 110 86 / 0.08),
+      transparent 55%
+    );
+    animation: hero-ambient-pulse 9s ease-in-out infinite;
+    will-change: opacity;
+  }
+}
+
+@keyframes hero-ambient-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/** Labels chiffrés hero — contraste WCAG AA sur fond carte blanche */
+.text-stat-caption {
+  color: #6b6a66;
+}
+
 @layer components {
   .marquee {
     --marquee-duration: 30s;
@@ -281,6 +319,9 @@ body.cursor-custom * {
   }
   .marquee,
   .automatex-marquee-inner {
+    animation: none !important;
+  }
+  .hero-atmosphere::before {
     animation: none !important;
   }
 }

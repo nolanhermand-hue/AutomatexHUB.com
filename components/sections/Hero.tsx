@@ -126,11 +126,11 @@ export function Hero() {
                     <p className="font-heading text-2xl font-semibold text-primary md:text-[1.75rem]">
                       {stat.value}
                     </p>
-                    <p className="mt-1 text-sm leading-snug text-faint">{stat.label}</p>
+                    <p className="mt-1 text-sm leading-snug text-stat-caption">{stat.label}</p>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 border-t border-border pt-4 text-xs leading-relaxed text-faint">
+              <p className="mt-6 border-t border-border pt-4 text-xs leading-relaxed text-stat-caption">
                 {HERO_STATS_SOURCE}
               </p>
             </aside>

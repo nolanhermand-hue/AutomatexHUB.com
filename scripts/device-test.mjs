@@ -7,7 +7,7 @@ import { chromium, devices } from "playwright";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 
-const BASE_URL = "http://localhost:3002";
+const BASE_URL = process.env.AUDIT_BASE_URL ?? process.env.BASE_URL ?? "http://localhost:3000";
 const OUT_DIR = "/tmp/automatex-device-tests";
 mkdirSync(OUT_DIR, { recursive: true });
 

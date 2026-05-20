@@ -1,0 +1,15 @@
+# Console & network failures — https://automatex-hub.com/
+Date: 2026-05-20T17:17:46.470Z
+
+## mobile-375
+[404] https://automatex-hub.com/assets/images/hero-atmosphere.webp
+[console.error] Failed to load resource: the server responded with a status of 404 ()
+[404] https://automatex-hub.com/assets/images/hero-atmosphere.webp
+[console.error] Failed to load resource: the server responded with a status of 404 ()
+
+## desktop-1440
+[404] https://automatex-hub.com/assets/images/hero-atmosphere.webp
+[console.error] Failed to load resource: the server responded with a status of 404 ()
+[404] https://automatex-hub.com/assets/images/hero-atmosphere.webp
+[console.error] Failed to load resource: the server responded with a status of 404 ()
+

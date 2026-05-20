@@ -64,7 +64,11 @@ export function Pricing() {
         </p>
 
         {/* D11 — Toggle visible AU-DESSUS des cards */}
-        <div className="mt-8 inline-flex rounded-md border border-border bg-night p-1 text-sm font-semibold">
+        <div
+          className="mt-8 inline-flex rounded-md border border-border bg-night p-1 text-sm font-semibold"
+          role="group"
+          aria-label="Mode de facturation mensuel ou annuel"
+        >
           <button
             type="button"
             onClick={() => setCycle("monthly")}

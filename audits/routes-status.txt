@@ -1,0 +1,14 @@
+# Routes — https://automatex-hub.com
+Date: 2026-05-20T17:17:40.236Z
+
+200 /
+200 /mandataires-normandie
+200 /mandataires-flers
+200 /mandataires-alencon
+200 /mandataires-argentan
+200 /a-propos
+200 /mentions-legales
+200 /politique-confidentialite
+200 /cgv
+200 /securite
+200 /merci

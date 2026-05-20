@@ -11,17 +11,36 @@
 [build.processing]
   skip_processing = false
 
+# Apex canonique — www → non-www
+[[redirects]]
+  from = "https://www.automatex-hub.com/*"
+  to = "https://automatex-hub.com/:splat"
+  status = 301
+  force = true
+
 # Assets immuables avec hash (JS/CSS/images Next.js) : cache 1 an
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Assets statiques /public/assets : cache 30 jours, must-revalidate
+# Assets statiques /public/assets : cache long (noms stables)
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=2592000, must-revalidate"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Fonts Next.js (self-hosted via next/font)
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# SVG hors /assets (favicon, etc.)
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
 
 # Pages HTML : pas de cache long (contenu peut changer)
 [[headers]]
@@ -55,11 +74,13 @@
     Cache-Control = "public, max-age=604800, must-revalidate"
     Content-Type = "image/png"
 
-# J7 / G15 — Headers de sécurité globaux (RGAA + Lighthouse Security)
+# J7 / G15 — Headers de sécurité globaux (RGAA + Lighthouse Best Practices)
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://plausible.io https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms; frame-ancestors 'none'; form-action 'self'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"

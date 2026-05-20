@@ -120,8 +120,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" className={`${heading.variable} ${body.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://plausible.io" />
         <link rel="icon" type="image/svg+xml" href={BRAND.faviconSvg} />
         <link rel="icon" href={BRAND.rootFaviconIco} sizes="32x32" />
