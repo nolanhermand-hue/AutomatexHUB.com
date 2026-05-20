@@ -152,10 +152,10 @@ export function buildJsonLdGraph() {
         openingHours: "Mo-Fr 09:00-18:00",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "61100 Flers, Normandie",
+          streetAddress: NAP.streetAddress,
           addressLocality: NAP.city,
           postalCode: NAP.postalCode,
-          addressRegion: NAP.region,
+          addressRegion: `${NAP.department}, ${NAP.region}`,
           addressCountry: NAP.country,
         },
         geo: {
@@ -164,6 +164,18 @@ export function buildJsonLdGraph() {
           longitude: -0.5711,
         },
         areaServed,
+        knowsAbout: [
+          "Automatisation mandataire immobilier",
+          "Leads immobilier perdus",
+          "IAD France",
+          "SAFTI",
+          "Capifrance",
+          "Optimhome",
+          "EffiCity",
+          "Gmail automatisation",
+          "Telegram immobilier",
+          "RGPD automatisation",
+        ],
         founder: { "@id": personId },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -229,18 +241,23 @@ export function buildJsonLdGraph() {
       buildBreadcrumbList([{ name: "Accueil", path: "/" }]),
       {
         "@type": "SoftwareApplication",
-        name: "Automatex — réponse aux leads mandataires",
+        name: "Automatex",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         image: logoUrl,
         description:
-          "Service de réponse immédiate aux leads et continuité de pipeline pour mandataires immobiliers en Normandie.",
+          "Réponse aux leads en moins de 2 minutes, tri des emails et classement Google Drive pour mandataires IAD, SAFTI et Capifrance en Normandie.",
         provider: { "@id": businessId },
-        offers: {
-          "@type": "Offer",
-          price: String(OFFERS[0]?.monthly ?? 99),
-          priceCurrency: "EUR",
-        },
+        featureList: [
+          "Réponse aux leads en moins de 2 minutes",
+          "Notification téléphone sur chaque message urgent",
+          "Tri des emails et brouillons de réponse",
+          "Résumé du soir et planning du matin sur Telegram",
+          "Classement automatique des documents dans Google Drive",
+          "Hébergé en France sur OVHcloud Roubaix",
+          "Conforme RGPD",
+        ],
+        offers: offerCatalog,
       },
     ],
   };

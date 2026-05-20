@@ -26,6 +26,7 @@ export function Contact() {
   });
   /** D7 — Pré-remplissage offre depuis le hash `#contact?offre=pro` */
   const [offerHint, setOfferHint] = useState<string>("");
+  const [sujetHint, setSujetHint] = useState<string>("");
   /** I14 — UTM persistés en session, ré-injectés dans le formulaire */
   const [utm, setUtm] = useState<Record<string, string>>({});
 
@@ -33,8 +34,10 @@ export function Contact() {
     if (typeof window === "undefined") return;
     const parseHash = () => {
       const hash = window.location.hash;
-      const match = hash.match(/offre=([\w-]+)/);
-      if (match) setOfferHint(match[1]);
+      const offreMatch = hash.match(/offre=([\w-]+)/);
+      if (offreMatch) setOfferHint(offreMatch[1]);
+      const sujetMatch = hash.match(/sujet=([\w-]+)/);
+      if (sujetMatch) setSujetHint(sujetMatch[1]);
     };
     parseHash();
     window.addEventListener("hashchange", parseHash);
@@ -64,15 +67,21 @@ export function Contact() {
     setTimeout(() => setPending(false), 10000);
   };
 
+  const isResiliation = sujetHint === "resiliation";
+
   return (
     <section
       id="contact"
       className="border-t border-border bg-night px-gutter py-12 md:py-16"
     >
       <div className="mx-auto max-w-content">
-        <h2 className="font-heading text-3xl text-text md:text-4xl">{CONTACT_COPY.h2}</h2>
+        <h2 className="font-heading text-3xl text-text md:text-4xl">
+          {isResiliation ? "Demande de résiliation" : CONTACT_COPY.h2}
+        </h2>
         <p className="mt-3 max-w-readable text-sm text-muted md:text-lg">
-          {CONTACT_COPY.subtitle}
+          {isResiliation
+            ? "Indiquez vos coordonnées. Nous confirmons la prise en compte sous 48 h ouvrées. Effet en fin de mois en cours."
+            : CONTACT_COPY.subtitle}
         </p>
 
         <form
@@ -81,18 +90,18 @@ export function Contact() {
           action="/merci"
           data-netlify="true"
           data-netlify-honeypot="hp-field"
-          className="mx-auto mt-10 max-w-xl space-y-6 rounded-xl border border-border bg-bg-card p-6 md:p-8"
+          className="relative mx-auto mt-10 max-w-xl space-y-6 rounded-xl border border-border bg-bg-card p-6 md:p-8"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value={FORM_NAME} />
           <input type="hidden" name="offre" value={offerHint} />
+          <input type="hidden" name="sujet" value={sujetHint} />
           <input type="hidden" name="reseau" value="" />
           {Object.entries(utm).map(([k, v]) => (
             <input key={k} type="hidden" name={k} value={v} />
           ))}
-          <p className="hidden">
+          <p className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
             <label>
-              Ne pas remplir si vous êtes humain :{" "}
               <input name="hp-field" tabIndex={-1} autoComplete="off" />
             </label>
           </p>
@@ -100,11 +109,16 @@ export function Contact() {
             <p className="text-sm font-semibold uppercase tracking-wide text-accent">
               {CONTACT_COPY.formTitle}
             </p>
-            {offerHint ? (
-              <p className="inline-flex items-center gap-1.5 rounded-full bg-cta/15 px-3 py-1 text-xs font-semibold text-cta">
-                <span aria-hidden>✓</span> Offre : {offerHint}
-              </p>
-            ) : null}
+              {offerHint ? (
+                <p className="inline-flex items-center gap-1.5 rounded-full bg-cta/15 px-3 py-1 text-xs font-semibold text-cta">
+                  <span aria-hidden>✓</span> Offre : {offerHint}
+                </p>
+              ) : null}
+              {sujetHint && !offerHint ? (
+                <p className="inline-flex items-center gap-1.5 rounded-full bg-cta/15 px-3 py-1 text-xs font-semibold text-cta">
+                  <span aria-hidden>✓</span> Sujet : {sujetHint}
+                </p>
+              ) : null}
           </div>
 
           <div>
@@ -154,6 +168,7 @@ export function Contact() {
                 <span aria-hidden>⚠</span> Ce champ est requis.
               </p>
             )}
+            <p className="mt-1 text-xs text-faint">{CONTACT_COPY.emailHint}</p>
           </div>
 
           <div>
@@ -179,12 +194,15 @@ export function Contact() {
                 <span aria-hidden>⚠</span> Ce champ est requis.
               </p>
             )}
+            <p className="mt-1 text-xs text-faint">{CONTACT_COPY.phoneHint}</p>
           </div>
 
-          <p className="flex items-center gap-2 text-xs font-semibold text-accent">
-            <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent" aria-hidden />
-            {CONTACT_COPY.urgencyLine}
-          </p>
+          {!isResiliation ? (
+            <p className="flex items-center gap-2 text-xs font-semibold text-accent">
+              <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent" aria-hidden />
+              {CONTACT_COPY.urgencyLine}
+            </p>
+          ) : null}
 
           <button
             type="submit"
@@ -212,10 +230,16 @@ export function Contact() {
                 </svg>
                 Envoi en cours…
               </>
+            ) : isResiliation ? (
+              CONTACT_COPY.resiliationSubmitLabel
+            ) : offerHint === "sur-mesure" ? (
+              SUR_MESURE_BOOKING_CTA
             ) : (
-              offerHint === "sur-mesure" ? SUR_MESURE_BOOKING_CTA : CONTACT_COPY.submitLabel
+              CONTACT_COPY.submitLabel
             )}
           </button>
+
+          <p className="text-center text-xs text-muted">{CONTACT_COPY.formFooter}</p>
 
           <ul className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-5 text-sm text-muted">
             {CONTACT_COPY.badges.map((b) => (

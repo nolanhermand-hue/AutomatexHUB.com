@@ -1,5 +1,6 @@
+import { FooterTrustBadges } from "@/components/layout/FooterTrustBadges";
 import { LogoOrbit } from "@/components/brand/LogoOrbit";
-import { FOOTER_COPY, NAP } from "@/lib/constants";
+import { FOOTER_COPY, FOOTER_LOCAL_LINKS, NAP } from "@/lib/constants";
 import Link from "next/link";
 
 export function Footer() {
@@ -12,6 +13,8 @@ export function Footer() {
             L&apos;automatisation française pour mandataires immobiliers indépendants — hébergée en France.
           </p>
         </div>
+
+        <FooterTrustBadges />
 
         <address
           className="not-italic leading-[1.7] text-[rgb(250_249_246/0.3)]"
@@ -26,10 +29,12 @@ export function Footer() {
           {", "}
           <span itemProp="addressLocality">{NAP.city}</span>
           {", "}
-          <span itemProp="addressRegion">{NAP.region}</span>
+          <span itemProp="addressRegion">{NAP.department}</span>
           {" ("}
           <span itemProp="postalCode">{NAP.postalCode}</span>
           {")"}
+          <br />
+          <span itemProp="streetAddress">{NAP.streetAddress}</span>
           <br />
           <a
             href={`mailto:${NAP.email}`}
@@ -52,6 +57,24 @@ export function Footer() {
           </a>
         </address>
 
+        <nav aria-label="Pages locales mandataires">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[rgb(250_249_246/0.35)]">
+            {FOOTER_COPY.localHeading}
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+            {FOOTER_LOCAL_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="font-semibold text-[rgb(250_249_246/0.3)] transition hover:text-[rgb(250_249_246/0.6)]"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <div className="flex flex-wrap gap-x-6 gap-y-3">
           <Link
             href="/mentions-legales"
@@ -66,6 +89,20 @@ export function Footer() {
             className="font-semibold text-[rgb(250_249_246/0.3)] transition hover:text-[rgb(250_249_246/0.6)]"
           >
             {FOOTER_COPY.privacy}
+          </Link>
+          <Link
+            href="/cgv"
+            data-cursor="link"
+            className="font-semibold text-[rgb(250_249_246/0.3)] transition hover:text-[rgb(250_249_246/0.6)]"
+          >
+            {FOOTER_COPY.cgv}
+          </Link>
+          <Link
+            href="/securite"
+            data-cursor="link"
+            className="font-semibold text-[rgb(250_249_246/0.3)] transition hover:text-[rgb(250_249_246/0.6)]"
+          >
+            {FOOTER_COPY.security}
           </Link>
         </div>
 

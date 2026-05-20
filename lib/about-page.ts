@@ -1,27 +1,33 @@
 import { NAP } from "@/lib/constants";
 
-/** Faits bruts citables (GEO, extraits structurés) — page À propos. */
+/** Page À propos — version transparente (légal / confiance). */
 export const ABOUT_PAGE = {
-  metaTitle: "À propos d'Automatex — fondateur, méthode, RGPD",
+  metaTitle: "À propos — Automatex · Flers, Normandie",
   metaDescription:
-    "Automatex : fondé en 2025 à Flers (61100). Nolan Hermand, mandataires Normandie. Orchestration privée, hébergement OVHcloud France, RGPD.",
-  h1: "À propos d'Automatex",
+    "Automatex : service d'automatisation pour mandataires IAD, SAFTI, Capifrance en Normandie. Conçu à Flers, données OVHcloud France, RGPD.",
+  h1: "Construit à Flers, pour les mandataires normands",
   facts: [
-    { label: "Raison sociale / marque", value: NAP.brand },
-    { label: "Fondateur", value: `${NAP.founder}, ${NAP.role}` },
-    { label: "Date de fondation", value: "2025" },
-    { label: "Siège opérationnel", value: `${NAP.city}, ${NAP.postalCode}, ${NAP.region}, France` },
-    { label: "Effectif", value: "1 personne (fondateur + prestataires ponctuels)" },
-    { label: "Activité", value: "Configuration d'automatisation administrative pour mandataires immobiliers indépendants" },
-    { label: "Méthode technique", value: "Orchestration privée (n8n) sur infrastructure dédiée, sans catalogue générique partagé entre clients" },
-    { label: "Hébergement des données", value: NAP.hostingProvider },
-    { label: "Distribution du site", value: "Netlify (CDN) + export statique Next.js" },
-    { label: "Conservation des données", value: "Durée limitée au mandat de traitement ; suppression sur demande sous 30 jours" },
+    { label: "Marque", value: NAP.brand },
+    { label: "Éditeur", value: `${NAP.founder} — ${NAP.role}` },
+    { label: "Création", value: "2026" },
+    { label: "Siège", value: `${NAP.streetAddress}, ${NAP.postalCode} ${NAP.city}` },
+    { label: "SIRET", value: NAP.siret },
+    { label: "Code APE", value: `${NAP.ape} — ${NAP.apeLabel}` },
+    { label: "Activité", value: "Automatisation pour mandataires immobiliers indépendants" },
+    { label: "Hébergement données", value: NAP.hostingProvider },
+    { label: "Site", value: "Export statique Next.js · CDN Netlify" },
     { label: "Contact", value: `${NAP.email} · ${NAP.phoneDisplay}` },
   ],
   narrative: [
-    "Automatex est né d'observations terrain auprès de mandataires en Orne : leads non rappelés à temps, boîtes mail saturées, pièces éparpillées avant compromis.",
-    "Le fondateur, Nolan Hermand, configure chaque installation manuellement depuis Flers. Les scénarios couvrent la réponse aux portails (SeLoger, Leboncoin), le tri des demandes et, sur les formules avancées, le classement documentaire.",
-    "Engagement commercial : 30 jours satisfait ou remboursé sur les offres publiées ; onboardings limités à quatre par mois pour maintenir la qualité de suivi.",
+    "Nolan Hermand a passé des mois à échanger avec des mandataires indépendants dans l'Orne — IAD, SAFTI, Capifrance, Optimhome — pour comprendre où leur activité perd du temps et de l'argent.",
+    "Le constat revient souvent : les leads qui arrivent pendant une visite, les mails qui s'accumulent, les documents introuvables au moment où le vendeur rappelle.",
+    "Automatex est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée jusqu'à ce qu'elle tienne dans votre quotidien.",
+    "Si ça ne fonctionne pas pour vous dans les 30 premiers jours, vous êtes remboursé — frais d'installation et premier mois — sans discussion.",
   ],
+  stats: [
+    { value: "< 2 min", label: "Délai de réponse cible" },
+    { value: "48 h", label: "Mise en place garantie" },
+    { value: "30 j", label: "Satisfait ou remboursé" },
+  ],
+  directContact: "Une question avant de vous lancer ? Appelez :",
 } as const;

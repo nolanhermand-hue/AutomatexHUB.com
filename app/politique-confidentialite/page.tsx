@@ -1,148 +1,203 @@
+import {
+  LegalPageShell,
+  LegalP,
+  LegalSection,
+  LegalUl,
+} from "@/components/legal/LegalPageShell";
+import { LEGAL, legalContactBlock } from "@/lib/legal";
 import { NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité",
+  title: "Politique de confidentialité — Automatex | RGPD · OVHcloud France",
   description:
-    "Politique de confidentialité d'Automatex : données collectées, finalités, durée de conservation, droits RGPD, mesure d'audience Plausible.",
+    "Politique RGPD Automatex : données collectées, sous-traitants, durées, droits, sécurité, Plausible sans cookie, contact CNIL.",
   alternates: { canonical: `${SITE_URL}/politique-confidentialite` },
 };
 
-/**
- * J12 — Politique de confidentialité RGPD complète :
- * - Finalités, base légale (art. 6 RGPD)
- * - Données collectées par catégorie
- * - Destinataires
- * - Durée de conservation
- * - Droits utilisateurs (accès, rectification, effacement, portabilité, opposition)
- * - Procédure de réclamation CNIL
- */
+const SUBPROCESSORS: ReadonlyArray<{
+  name: string;
+  role: string;
+  location: string;
+  guarantees: string;
+}> = [
+  { name: "OVHcloud", role: "Hébergement infrastructure", location: "Roubaix, France", guarantees: "RGPD, ISO 27001" },
+  { name: "n8n (auto-hébergé)", role: "Moteur d'automatisation", location: "OVHcloud France", guarantees: "Instance dédiée" },
+  { name: "Mistral AI", role: "Traitement linguistique", location: "France / UE", guarantees: "RGPD, données UE" },
+  { name: "Google Workspace", role: "Email, Drive, Calendar", location: "Compte client", guarantees: "CGU Google du client" },
+  { name: "Telegram", role: "Notifications", location: "Compte client", guarantees: "CGU Telegram du client" },
+  { name: "Plausible Analytics", role: "Statistiques site", location: "Union européenne", guarantees: "Exempté CNIL, sans cookie" },
+  { name: "Netlify", role: "Hébergement site statique", location: "États-Unis (CDN)", guarantees: "Fichiers statiques uniquement" },
+];
+
 export default function PolitiqueConfidentialitePage() {
+  const c = legalContactBlock();
+
   return (
-    <article className="mx-auto max-w-content px-gutter py-16">
-      <h1 className="font-heading text-4xl text-text">Politique de confidentialité</h1>
-      <div className="mt-8 space-y-8 text-[16px] leading-[1.7] text-muted">
-        <section>
-          <h2 className="font-heading text-2xl text-text">1. Responsable du traitement</h2>
-          <p className="mt-3">
-            <strong className="text-text">{NAP.brand}</strong>, représentée par {NAP.founder},
-            domiciliée à {NAP.city} ({NAP.postalCode}), {NAP.region}, France.
-            <br />
-            Contact :{" "}
-            <a className="text-primary underline" href={`mailto:${NAP.email}`}>
-              {NAP.email}
-            </a>
-            .
-          </p>
-        </section>
+    <LegalPageShell title="Politique de confidentialité">
+      <LegalP>
+        Responsable du traitement : {c.founder} — {c.brand}. Contact :{" "}
+        <a className="text-primary underline" href={`mailto:${c.email}`}>
+          {c.email}
+        </a>
+        .
+      </LegalP>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">2. Données collectées et finalités</h2>
-          <p className="mt-3">
-            Le formulaire de contact collecte les données suivantes :
-          </p>
-          <ul className="mt-3 list-disc space-y-1 pl-6">
-            <li>Prénom (identification)</li>
-            <li>Adresse email professionnelle (prise de contact)</li>
-            <li>Numéro de téléphone (rappel pour la démo)</li>
-            <li>Réseau mandataire (qualification de la demande)</li>
-            <li>Offre choisie (préparation de l&apos;échange)</li>
-          </ul>
-          <p className="mt-3">
-            <strong className="text-text">Finalité :</strong> planifier un entretien de
-            démonstration de 15 à 20 minutes et préparer la mise en place du service Automatex
-            adapté à votre activité.
-          </p>
-          <p className="mt-2">
-            <strong className="text-text">Base légale :</strong> consentement de la personne
-            concernée (article 6.1.a RGPD) ou mesures précontractuelles (article 6.1.b RGPD).
-          </p>
-        </section>
+      <LegalSection title="1. Qui sommes-nous ?">
+        <LegalP>
+          {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers
+          indépendants, édité par {c.founder} ({LEGAL.status}), basé à {NAP.city}, Orne (
+          {NAP.postalCode}).
+        </LegalP>
+        <LegalP>
+          Site : {LEGAL.siteUrl} · Email : {c.email} · Téléphone : {c.phone}
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">3. Destinataires</h2>
-          <p className="mt-3">
-            Les données sont accessibles uniquement à {NAP.founder} (fondateur) et ne font
-            l&apos;objet d&apos;aucune revente ni cession à des tiers commerciaux.
-          </p>
-          <p className="mt-3">
-            <strong className="text-text">Sous-traitants techniques :</strong>
-          </p>
-          <ul className="mt-3 list-disc space-y-1 pl-6">
-            <li>
-              <strong className="text-text">Netlify, Inc.</strong> (hébergement du formulaire et
-              du site statique) — clauses contractuelles types RGPD.
-            </li>
-            <li>
-              <strong className="text-text">{NAP.hostingProvider}</strong> (hébergement des données
-              opérationnelles côté Automatex).
-            </li>
-          </ul>
-        </section>
+      <LegalSection title="2. Quelles données collectons-nous ?">
+        <LegalP>
+          <strong className="text-text">2.1 Formulaire de contact / demande de démo</strong>
+        </LegalP>
+        <LegalUl
+          items={[
+            "Prénom",
+            "Adresse email professionnelle",
+            "Numéro de téléphone",
+            "Offre ou sujet de demande (ex. démo, résiliation)",
+            "Paramètres UTM le cas échéant (source de visite)",
+          ]}
+        />
+        <LegalP>
+          Base légale : mesures précontractuelles (art. 6.1.b RGPD). Durée : 3 ans à compter du
+          dernier contact.
+        </LegalP>
+        <LegalP>
+          <strong className="text-text">2.2 Utilisation du service (clients)</strong>
+        </LegalP>
+        <LegalP>
+          Dans le cadre de la prestation, Automatex accède aux outils que vous autorisez : emails
+          entrants (lecture), calendrier Google (lecture), Google Drive (lecture et création de
+          dossiers), notifications Telegram (envoi). Ces données servent uniquement à exécuter la
+          prestation. Elles ne sont ni vendues ni cédées. Hébergement des traitements Automatex :
+          OVHcloud, Roubaix, France.
+        </LegalP>
+        <LegalP>
+          Base légale : exécution du contrat (art. 6.1.b RGPD). Durée : durée du contrat + 30
+          jours après résiliation (effacement sous 7 jours sur demande — voir{" "}
+          <Link href="/cgv" className="text-primary underline">
+            CGV
+          </Link>
+          ).
+        </LegalP>
+        <LegalP>
+          <strong className="text-text">2.3 Statistiques du site</strong>
+        </LegalP>
+        <LegalP>
+          Plausible Analytics : aucun cookie, pas de données personnelles identifiables, statistiques
+          agrégées (pages vues, pays). Exempté de consentement CNIL (délibération n°2020-091).
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">4. Durée de conservation</h2>
-          <p className="mt-3">
-            Les données du formulaire sont conservées <strong className="text-text">3 ans</strong>{" "}
-            à compter du dernier contact (recommandation CNIL pour la prospection commerciale BtoB),
-            sauf obligation légale contraire.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="font-heading text-2xl text-text">5. Mesure d&apos;audience</h2>
-          <p className="mt-3">
-            Le site utilise <strong className="text-text">Plausible Analytics</strong>, solution
-            européenne d&apos;analyse d&apos;audience sans cookie et anonymisée. Aucun identifiant
-            unique n&apos;est créé, aucune donnée n&apos;est partagée avec des tiers, et la solution
-            est exemptée de consentement par la CNIL (délibération du 17 septembre 2020).
-          </p>
-          <p className="mt-3">
-            Google Analytics 4 peut également être utilisé en mode anonymisé (anonymize_ip),
-            sous réserve d&apos;une mise en conformité par bandeau de consentement le cas échéant.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="font-heading text-2xl text-text">6. Vos droits</h2>
-          <p className="mt-3">Vous disposez à tout moment des droits suivants :</p>
-          <ul className="mt-3 list-disc space-y-1 pl-6">
-            <li>Droit d&apos;accès, de rectification, d&apos;effacement, d&apos;opposition</li>
-            <li>Droit à la limitation du traitement</li>
-            <li>Droit à la portabilité des données</li>
-            <li>Droit de retirer votre consentement à tout moment</li>
-          </ul>
-          <p className="mt-3">
-            Pour exercer ces droits, écrivez à{" "}
-            <a className="text-primary underline" href={`mailto:${NAP.email}`}>
-              {NAP.email}
-            </a>{" "}
-            ou par courrier à {NAP.brand}, {NAP.city} {NAP.postalCode}. Une réponse vous sera
-            apportée sous 30 jours maximum.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="font-heading text-2xl text-text">7. Réclamation CNIL</h2>
-          <p className="mt-3">
-            Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une
-            réclamation auprès de la{" "}
-            <a
-              className="text-primary underline"
-              href="https://www.cnil.fr/fr/plaintes"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              CNIL (Commission nationale de l&apos;informatique et des libertés)
-            </a>
-            .
-          </p>
-        </section>
-
-        <p className="text-xs text-muted/70">
-          Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}.
+      <LegalSection title="3. Sous-traitants">
+        <div className="mt-4 overflow-x-auto rounded-lg border border-border">
+          <table className="w-full min-w-[560px] border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border bg-bg-card text-left text-xs uppercase tracking-wide text-muted">
+                <th className="px-3 py-2">Sous-traitant</th>
+                <th className="px-3 py-2">Rôle</th>
+                <th className="px-3 py-2">Localisation</th>
+                <th className="px-3 py-2">Garanties</th>
+              </tr>
+            </thead>
+            <tbody>
+              {SUBPROCESSORS.map((row) => (
+                <tr key={row.name} className="border-b border-border last:border-0">
+                  <td className="px-3 py-2 font-medium text-text">{row.name}</td>
+                  <td className="px-3 py-2">{row.role}</td>
+                  <td className="px-3 py-2">{row.location}</td>
+                  <td className="px-3 py-2">{row.guarantees}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4">
+          Aucune donnée n&apos;est transmise à des pays tiers sans garanties appropriées, hors
+          comptes Google/Telegram que vous maîtrisez.
         </p>
-      </div>
-    </article>
+      </LegalSection>
+
+      <LegalSection title="4. Vos droits">
+        <LegalUl
+          items={[
+            "Droit d'accès, rectification, effacement, opposition",
+            "Droit à la portabilité et à la limitation du traitement",
+            "Droit de retirer votre consentement lorsque le traitement repose sur celui-ci",
+          ]}
+        />
+        <LegalP>
+          Exercice :{" "}
+          <a className="text-primary underline" href={`mailto:${c.email}`}>
+            {c.email}
+          </a>{" "}
+          — réponse sous 30 jours maximum.
+        </LegalP>
+        <LegalP>
+          Réclamation CNIL :{" "}
+          <a
+            className="text-primary underline"
+            href="https://www.cnil.fr/fr/plaintes"
+            rel="noopener noreferrer"
+          >
+            www.cnil.fr/fr/plaintes
+          </a>
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection title="5. Sécurité">
+        <LegalUl
+          items={[
+            "Chiffrement en transit (HTTPS / TLS)",
+            "Données chiffrées au repos sur OVHcloud",
+            "Accès restreint aux configurations de production",
+            "Authentification renforcée (MFA) sur les comptes de production",
+            "Sauvegardes sur infrastructure France",
+            "Notification en cas de violation sous 72 h (art. 33 RGPD)",
+          ]}
+        />
+      </LegalSection>
+
+      <LegalSection title="6. Cookies">
+        <LegalP>
+          Pas de cookies publicitaires ni de traceurs tiers. Plausible exempté. Le formulaire ne
+          dépose pas de cookie de session persistant.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection title="7. Modifications">
+        <LegalP>
+          Cette politique peut évoluer. La date en tête de page est mise à jour. En cas de
+          modification substantielle, les clients actifs sont informés par email.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection title="8. Contact">
+        <LegalP>
+          {c.founder} — {c.brand}
+          <br />
+          {c.email} · {c.phone}
+          <br />
+          {c.address}
+        </LegalP>
+        <LegalP>
+          Voir aussi :{" "}
+          <Link href="/securite" className="text-primary underline">
+            comment Automatex protège vos données
+          </Link>
+          .
+        </LegalP>
+      </LegalSection>
+    </LegalPageShell>
   );
 }

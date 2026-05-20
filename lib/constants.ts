@@ -42,10 +42,19 @@ export const NAP = {
   legalName: "Automatex",
   founder: "Nolan Hermand",
   role: "Fondateur",
-  city: "Flers",
+  /** Adresse établissement principal (formalité URSSAF / INSEE) */
+  streetAddress: "50 rue de l'Equerre",
+  city: "Saint-Georges-des-Groseillers",
   postalCode: "61100",
+  department: "Orne",
   region: "Normandie",
   country: "FR",
+  siret: "10320805400017",
+  nic: "00017",
+  ape: "6202A",
+  apeLabel: "Conseil en systèmes et logiciels informatiques",
+  /** Ancrage commercial (agglo Flers — même bassin 61100) */
+  localityLabel: "Flers · Saint-Georges-des-Groseillers (Orne, 61)",
   phoneDisplay: "06 45 38 42 33",
   phoneE164: "+33645384233",
   email: "nolan.hermand@automatex-hub.com",
@@ -56,12 +65,66 @@ export const NAP = {
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
 export const META = {
   title:
-    "Mandataires Normandie : ne perdez plus un lead à 3 500 € | Automatex",
+    "Automatex — Mandataires IAD SAFTI Normandie : ne perdez plus un lead à 3 500 €",
   description:
     "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. 30 jours satisfait ou remboursé. Hébergé en France.",
-  ogTitle: "Ne perdez plus jamais un lead à 3 500 €",
+  ogTitle: "Ne perdez plus jamais un lead à 3 500 € | Automatex Normandie",
   ogDescription:
-    "Automatisations pour mandataires indépendants en Normandie. Installé en 48 h. Sans engagement. 30 jours satisfait ou remboursé. Hébergé en France.",
+    "Automatex répond à vos leads en 2 min pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. Hébergé France · RGPD · 30 j satisfait ou remboursé.",
+} as const;
+
+/** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
+export const GEO_DEFINITION =
+  "Automatex est un service d'automatisation français pour les mandataires immobiliers indépendants des réseaux IAD, SAFTI, Capifrance, Optimhome et EffiCity en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, SeLoger et Leboncoin pour répondre aux leads en moins de 2 minutes pendant les visites, trier les emails importants et classer les documents dès réception. Données hébergées sur OVHcloud à Roubaix, conformes RGPD." as const;
+
+export const META_KEYWORDS = [
+  "mandataire immobilier Normandie",
+  "automatisation mandataire IAD",
+  "réponse leads SeLoger automatique",
+  "Flers Orne 61",
+  "RGPD France automatisation",
+  "mandataire SAFTI Normandie",
+  "mandataire Capifrance Orne",
+  "leads immobilier perdus solution",
+  "assistant mandataire Telegram",
+  "Google Drive classement documents mandataire",
+  "mandataire indépendant Caen Rouen Alençon",
+  "automatisation boîte mail agent immobilier",
+  "mandataire IAD Orne automatisation",
+  "OVHcloud données France immobilier",
+] as const;
+
+/** Tableau comparatif (accessibilité + citations LLM). */
+export const COMPARISON_TABLE = {
+  caption: "Comparatif mandataire avec et sans Automatex",
+  headers: ["Situation", "Sans Automatex", "Avec Automatex"] as const,
+  rows: [
+    [
+      "Lead SeLoger reçu à 22h pendant une visite",
+      "Perdu à 9h le lundi matin",
+      "Réponse en moins de 2 minutes",
+    ],
+    [
+      "Boîte mail le soir",
+      "Dizaines de mails non triés, relances oubliées",
+      "Priorités identifiées, brouillons prêts",
+    ],
+    [
+      "Document reçu (diagnostic, offre)",
+      "Longue recherche dans le fil",
+      "Classé dans Drive dès réception",
+    ],
+    [
+      "Matin avant les visites",
+      "Agenda consulté manuellement",
+      "Résumé sur Telegram à 7h45",
+    ],
+    [
+      "Note après une visite",
+      "Post-it ou mémoire",
+      "Note vocale → compte-rendu structuré (formule Cabinet)",
+    ],
+  ] as const,
 } as const;
 
 /** C10 — Navigation : 4 ancres maximum, plus CTA séparé */
@@ -163,7 +226,7 @@ export const CALCULATOR_COPY = {
 
 /** B2 — Headline Problème : douleur palpable */
 export const PROBLEM_HEADING = {
-  h2: "Si vous êtes mandataire indépendant, vous le vivez chaque semaine.",
+  h2: "Pourquoi les mandataires IAD et SAFTI perdent des leads chaque semaine",
 } as const;
 
 export type ProblemIconId = "lead" | "mail" | "document";
@@ -206,7 +269,7 @@ export const AGITATION_COPY = {
 
 /** B5 — Solution : verbes actifs (On installe / Vous approuvez / Ça tourne) */
 export const SOLUTION_HEADING = {
-  h2: "On automatise pour vous, en 3 étapes.",
+  h2: "Comment Automatex s'installe en 48 h — 3 étapes pour mandataires normands",
 } as const;
 
 export const SOLUTION_STEPS: ReadonlyArray<{
@@ -297,13 +360,14 @@ export const ACCOMPANIMENT_COPY = {
 export const GUARANTEE_COPY = {
   eyebrow: "Risque inversé",
   h2: "30 jours satisfait ou remboursé. Sans condition.",
-  body:
-    "Si Automatex ne change pas votre quotidien dans les 30 premiers jours, vous êtes remboursé intégralement. Sans appel commercial, sans formulaire, sans discussion. Un seul mail, et c'est fait.",
   bullets: [
     "Remboursement sous 7 jours ouvrés",
     "Aucun frais de désinstallation",
     "Vos données vous sont restituées et effacées",
+    "Aucune question n'est exigée",
   ],
+  body:
+    "Si Automatex ne change pas votre quotidien dans les 30 premiers jours, vous êtes remboursé intégralement — frais d'installation et premier mois. Sans appel commercial, sans formulaire, sans discussion. Un seul mail, et c'est réglé sous 7 jours ouvrés.",
   cta: BOOKING_CTA_LABEL,
   microNote:
     "Garantie applicable à toutes les offres, sans engagement de durée.",
@@ -391,7 +455,7 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
 /** D1 — 3 packages alignés sur le guide stratégique (Essentiel/Pro/Cabinet) */
 export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
-  h2: "Trois formules + sur mesure. Un lead = rentabilisée.",
+  h2: "Tarifs Automatex — 3 formules + sur mesure pour mandataires en Normandie",
   h2SurMesureHint:
     "Tarifs affichés en annuel par défaut. Sur toutes les formules : suivi humain 12 mois et bilan trimestriel.",
   chooseCta: BOOKING_CTA_LABEL,
@@ -538,7 +602,7 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
 ];
 
 export const FAQ_HEADING = {
-  h2: "Ce que les mandataires nous demandent avant de démarrer.",
+  h2: "Questions des mandataires IAD, SAFTI et Capifrance avant de démarrer",
 } as const;
 
 /** Index FAQ ouverte par défaut (objection abandon après paiement) */
@@ -588,6 +652,47 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   },
 ];
 
+export const DATA_TRUST_COPY = {
+  h2: "Vos données restent les vôtres. Toujours.",
+  intro:
+    "Automatex accède à votre Gmail et votre Drive pour exécuter la prestation. Voici ce qui ne se passe jamais — et ce qui se passe toujours.",
+  never: [
+    "Vos données ne sont jamais vendues",
+    "Vos données ne sont jamais partagées avec des tiers commerciaux",
+    "Aucun accès au-delà du nécessaire au service",
+    "Aucune donnée métier stockée aux États-Unis (traitements sur OVHcloud France)",
+  ],
+  always: [
+    "Traitements Automatex hébergés sur OVHcloud à Roubaix (France)",
+    "Chiffrement en transit (HTTPS)",
+    "Effacement complet sous 7 jours après votre départ",
+    "Confirmation écrite d'effacement sur demande",
+  ],
+  linkLabel: "En savoir plus sur la sécurité des données →",
+} as const;
+
+export const RESILIATION_COPY = {
+  h2: "Arrêter ? Un seul mail.",
+  body:
+    "Pas de formulaire de rétention. Pas de période minimale. Envoyez un email ou utilisez le bouton ci-dessous. Effet en fin de mois en cours. Données effacées sous 7 jours.",
+  emailLine: "nolan.hermand@automatex-hub.com",
+  mailHint: "Objet : Résiliation Automatex — indiquez votre prénom et « je souhaite résilier ».",
+  cta: "Résilier en ligne →",
+  legalNote: "Conformément à la loi n°2022-1158 — voir",
+} as const;
+
+export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: string }> = [
+  { title: "🇫🇷 Hébergé en France", subtitle: "OVHcloud · Roubaix" },
+  { title: "🔒 Conforme RGPD", subtitle: "Données souveraines · Jamais revendues" },
+  { title: "✋ Sans engagement", subtitle: "Résiliable en 1 mail · Immédiatement" },
+  { title: "🛡 30 j satisfait ou remboursé", subtitle: "Sans condition · Un seul mail suffit" },
+  { title: "⚡ Opérationnel en 48 h", subtitle: "Aucun logiciel à installer" },
+  { title: "🔑 Vous restez propriétaire", subtitle: "Vos données · Vos outils · Vos décisions" },
+] as const;
+
+export const CTA_REASSURANCE_LINE =
+  "Aucun engagement · Résiliable en 1 mail · Données en France" as const;
+
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
@@ -599,7 +704,12 @@ export const CONTACT_COPY = {
   networkLabel: "Réseau mandataire",
   networkPlaceholder: "Choisissez votre réseau",
   submitLabel: "Réserver mon créneau de 20 min",
-  urgencyLine: "2 créneaux disponibles cette semaine",
+  urgencyLine: "2 créneaux disponibles cette semaine — choisissez le vôtre maintenant.",
+  emailHint: "Votre email ne sera jamais partagé ni revendu.",
+  phoneHint: "Utilisé uniquement pour planifier votre démo. Un seul appel, pas de relance.",
+  formFooter:
+    "Réponse personnelle sous 24 h. Pas de commercial, pas de relance automatique.",
+  resiliationSubmitLabel: "Envoyer ma demande de résiliation",
   badges: [
     "Hébergé France",
     "RGPD",
@@ -622,8 +732,20 @@ export const FORM_NAME = "contact";
 export const FOOTER_COPY = {
   legalMentions: "Mentions légales",
   privacy: "Politique de confidentialité",
+  cgv: "CGV",
+  security: "Sécurité des données",
+  localHeading: "Mandataires en Normandie",
   tagline: "© 2026 Automatex · Hébergé en France (OVHcloud, Roubaix) · Conforme RGPD",
 } as const;
+
+/** Maillage interne SEO — pages locales indexables (GSC). */
+export const FOOTER_LOCAL_LINKS: ReadonlyArray<{ href: string; label: string }> = [
+  { href: "/mandataires-normandie", label: "Normandie" },
+  { href: "/mandataires-flers", label: "Flers & agglo" },
+  { href: "/mandataires-alencon", label: "Alençon" },
+  { href: "/mandataires-argentan", label: "Argentan" },
+  { href: "/a-propos", label: "À propos" },
+] as const;
 
 export const STICKY_CTA_COPY = {
   label: "Réserver ma démo — 20 min",

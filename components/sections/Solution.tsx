@@ -2,6 +2,7 @@
 
 import {
   BENEFITS_ITEMS,
+  COMPARISON_TABLE,
   SOLUTION_BADGES,
   SOLUTION_HEADING,
   SOLUTION_STEPS,
@@ -109,10 +110,41 @@ export function Solution() {
               className="rounded-[10px] border border-border bg-bg-card p-5"
             >
               <p className="font-heading text-xl font-bold text-primary">{b.stat}</p>
-              <h4 className="mt-1 text-sm font-semibold text-text">{b.title}</h4>
+              <h3 className="mt-1 text-sm font-semibold text-text">{b.title}</h3>
               <p className="mt-2 text-xs leading-[1.6] text-muted">{b.body}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 overflow-x-auto rounded-[10px] border border-border bg-bg-card">
+          <table className="w-full min-w-[520px] border-collapse text-left text-sm">
+            <caption className="border-b border-border px-5 py-3 text-left font-semibold text-text">
+              {COMPARISON_TABLE.caption}
+            </caption>
+            <thead>
+              <tr className="border-b border-border bg-night text-xs uppercase tracking-wide text-muted">
+                {COMPARISON_TABLE.headers.map((h) => (
+                  <th key={h} scope="col" className="px-4 py-3 font-semibold">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARISON_TABLE.rows.map((row) => (
+                <tr key={row[0]} className="border-b border-border last:border-0">
+                  {row.map((cell, ci) => (
+                    <td
+                      key={`${row[0]}-${ci}`}
+                      className="px-4 py-3 align-top text-muted [&:first-child]:font-medium [&:first-child]:text-text"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="mt-10 rounded-[10px] border border-border bg-night px-5 py-4">

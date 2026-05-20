@@ -3,7 +3,7 @@ import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { Plausible } from "@/components/seo/Plausible";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { BRAND, brandAbsolute } from "@/lib/brand";
-import { META, SITE_URL } from "@/lib/constants";
+import { META, META_KEYWORDS, NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -25,21 +25,20 @@ const body = Plus_Jakarta_Sans({
 
 const ogImageUrl = brandAbsolute(BRAND.ogImage, SITE_URL);
 
+const gscVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Automatex",
+  ...(gscVerification
+    ? { verification: { google: gscVerification } }
+    : {}),
   title: {
     default: META.title,
     template: "%s | Automatex",
   },
   description: META.description,
-  keywords: [
-    "mandataire immobilier Normandie",
-    "automatisation mandataire IAD",
-    "réponse leads SeLoger",
-    "Flers Orne 61",
-    "RGPD France",
-  ],
+  keywords: [...META_KEYWORDS],
   alternates: {
     canonical: SITE_URL,
   },
@@ -102,6 +101,12 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": BRAND.themeColor,
     "msapplication-TileImage": BRAND.favicons.android192,
+    "geo.region": "FR-61",
+    "geo.placename": `${NAP.city}, ${NAP.department}, ${NAP.region}, France`,
+    "geo.position": "48.7483;-0.5711",
+    ICBM: "48.7483, -0.5711",
+    language: "fr-FR",
+    author: `${NAP.brand} — ${NAP.city}, ${NAP.region}`,
   },
 };
 

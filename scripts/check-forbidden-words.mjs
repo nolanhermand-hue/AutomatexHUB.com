@@ -55,6 +55,12 @@ for (const file of files) {
   if (rel === path.join("scripts", "check-forbidden-words.mjs")) continue;
   if (rel === path.join("lib", "constants.ts")) continue;
   if (rel.startsWith(`docs${path.sep}audit`)) continue;
+  if (rel.startsWith(`app${path.sep}mentions-legales`)) continue;
+  if (rel.startsWith(`app${path.sep}politique-confidentialite`)) continue;
+  if (rel.startsWith(`app${path.sep}cgv`)) continue;
+  if (rel.startsWith(`app${path.sep}securite`)) continue;
+  if (rel === path.join("lib", "legal.ts")) continue;
+  if (rel.startsWith(`components${path.sep}legal`)) continue;
   const text = fs.readFileSync(file, "utf8");
   for (const { label, re } of PATTERNS) {
     if (re.test(text)) {

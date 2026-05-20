@@ -45,14 +45,33 @@ export default function AProposPage() {
         ))}
       </div>
 
+      <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+        {ABOUT_PAGE.stats.map((stat) => (
+          <li
+            key={stat.label}
+            className="rounded-lg border border-border bg-bg-card px-4 py-3 text-center"
+          >
+            <p className="font-heading text-2xl font-semibold text-primary">{stat.value}</p>
+            <p className="mt-1 text-xs text-muted">{stat.label}</p>
+          </li>
+        ))}
+      </ul>
+
       <p className="mt-10 text-muted">
+        {ABOUT_PAGE.directContact}{" "}
+        <a href={`tel:${NAP.phoneE164}`} className="font-semibold text-primary underline">
+          {NAP.phoneDisplay}
+        </a>
+      </p>
+
+      <p className="mt-6 text-muted">
         <Link href="/#contact" className="text-primary underline">
           Prendre contact
         </Link>
         {" · "}
-        <a href={`tel:${NAP.phoneE164}`} className="text-primary underline">
-          {NAP.phoneDisplay}
-        </a>
+        <Link href="/cgv" className="text-primary underline">
+          CGV
+        </Link>
       </p>
     </article>
   );

@@ -3,7 +3,7 @@
 import { trackCtaClicked } from "@/lib/analytics";
 import { HeroScene } from "@/components/three/SceneWrapper";
 import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
-import { HERO_COPY, HERO_STATS, HERO_STATS_SOURCE } from "@/lib/constants";
+import { GEO_DEFINITION, HERO_COPY, HERO_STATS, HERO_STATS_SOURCE, CTA_REASSURANCE_LINE } from "@/lib/constants";
 
 function ReassuranceIcon({ kind }: { kind: "fr" | "lock" | "hand" }) {
   const common = "h-4 w-4 shrink-0 text-primary";
@@ -59,10 +59,14 @@ export function Hero() {
                 documents pour IAD, SAFTI et Capifrance.
               </p>
 
-              <h1 className="mt-5 max-w-[20ch] font-heading text-[clamp(2.25rem,8vw,7.5rem)] font-bold leading-[0.95] text-text md:max-w-none">
+              <h1 className="mt-5 font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold leading-[1.05] text-text md:text-[clamp(2.75rem,5vw,5rem)]">
                 Ne perdez plus jamais un lead{" "}
                 <span className="italic text-primary">à 3 500 €</span>.
               </h1>
+
+              <p className="mt-4 max-w-readable text-sm leading-relaxed text-muted md:text-base">
+                {GEO_DEFINITION}
+              </p>
 
               <p className="mt-5 max-w-readable font-body text-base leading-[1.6] text-muted md:mt-6 md:text-xl">
                 {HERO_COPY.subtitle}
@@ -108,6 +112,8 @@ export function Hero() {
                   {HERO_COPY.badgeNoCommit}
                 </li>
               </ul>
+
+              <p className="mt-4 text-xs font-medium text-muted">{CTA_REASSURANCE_LINE}</p>
             </div>
 
             <aside

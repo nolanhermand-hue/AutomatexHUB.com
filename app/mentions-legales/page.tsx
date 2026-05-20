@@ -1,118 +1,179 @@
+import {
+  LegalPageShell,
+  LegalP,
+  LegalSection,
+  LegalUl,
+} from "@/components/legal/LegalPageShell";
+import { LEGAL, legalContactBlock } from "@/lib/legal";
 import { NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mentions légales",
+  title: "Mentions légales — Automatex | Saint-Georges-des-Groseillers (61100), Orne",
   description:
-    "Mentions légales d'Automatex : éditeur, hébergeur, responsabilité, propriété intellectuelle, données personnelles.",
+    "Mentions légales LCEN : éditeur Nolan Hermand (EI), hébergeurs Netlify et OVHcloud, propriété intellectuelle, RGPD, Plausible Analytics.",
   alternates: { canonical: `${SITE_URL}/mentions-legales` },
 };
 
-/**
- * J11 — Mentions légales conformes LCEN article 6-III-1
- * (loi pour la confiance dans l'économie numérique).
- */
 export default function MentionsLegalesPage() {
+  const c = legalContactBlock();
+
   return (
-    <article className="mx-auto max-w-content px-gutter py-16">
-      <h1 className="font-heading text-4xl text-text">Mentions légales</h1>
-      <div className="mt-8 space-y-8 text-[16px] leading-[1.7] text-muted">
-        <section>
-          <h2 className="font-heading text-2xl text-text">1. Éditeur du site</h2>
-          <p className="mt-3">
-            <strong className="text-text">{NAP.brand}</strong> — Activité d&apos;auto-entrepreneur
-            tenue par {NAP.founder}.
-            <br />
-            Adresse : {NAP.city} ({NAP.postalCode}), {NAP.region}, France.
-            <br />
-            Téléphone :{" "}
-            <a className="text-primary underline" href={`tel:${NAP.phoneE164}`}>
-              {NAP.phoneDisplay}
-            </a>
-            .
-            <br />
-            Courriel :{" "}
-            <a className="text-primary underline" href={`mailto:${NAP.email}`}>
-              {NAP.email}
-            </a>
-            .
-            <br />
-            Directeur de la publication : {NAP.founder}.
-          </p>
-        </section>
+    <LegalPageShell title="Mentions légales">
+      <LegalSection title="Article 1 — Éditeur du site">
+        <LegalP>
+          Le site automatex-hub.com est édité par :
+        </LegalP>
+        <LegalP>
+          <strong className="text-text">{c.founder}</strong>
+          <br />
+          {LEGAL.status}
+          <br />
+          {c.street}
+          <br />
+          {NAP.postalCode} {NAP.city}, {NAP.region}, France
+          <br />
+          Email :{" "}
+          <a className="text-primary underline" href={`mailto:${c.email}`}>
+            {c.email}
+          </a>
+          <br />
+          Téléphone :{" "}
+          <a className="text-primary underline" href={`tel:${c.phoneE164}`}>
+            {c.phone}
+          </a>
+          <br />
+          SIRET : {LEGAL.siret}
+          <br />
+          Code APE : {LEGAL.ape} — {LEGAL.apeLabel}
+          <br />
+          NIC : {LEGAL.nic}
+        </LegalP>
+        <LegalP>
+          Directeur de la publication : {c.founder}
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">2. Hébergement du site</h2>
-          <p className="mt-3">
-            Site statique distribué via <strong className="text-text">Netlify, Inc.</strong> — 44 Montgomery
-            Street, Suite 300, San Francisco, CA 94104, États-Unis (avec mise en cache européenne
-            et conformité RGPD selon les engagements Netlify).
-          </p>
-          <p className="mt-3">
-            Les traitements métier (réponses immédiates, classement des mails et des documents)
-            sont configurés sur des services localisés en France, hébergés par{" "}
-            <strong className="text-text">{NAP.hostingProvider}</strong>, pour les données traitées
-            après accord formel du client.
-          </p>
-        </section>
+      <LegalSection title="Article 2 — Hébergement">
+        <LegalP>
+          Le site automatex-hub.com est hébergé par :
+        </LegalP>
+        <LegalP>
+          <strong className="text-text">{LEGAL.netlify.name}</strong>
+          <br />
+          {LEGAL.netlify.street}
+          <br />
+          {LEGAL.netlify.city} — {LEGAL.netlify.country}
+          <br />
+          <a className="text-primary underline" href={LEGAL.netlify.url} rel="noopener noreferrer">
+            {LEGAL.netlify.url}
+          </a>
+        </LegalP>
+        <LegalP>
+          Netlify héberge uniquement les fichiers statiques du site (HTML, CSS, images). Aucune
+          donnée personnelle de visiteur ou de client n&apos;est stockée sur les serveurs Netlify
+          dans le cadre de la prestation Automatex.
+        </LegalP>
+        <LegalP>
+          Les données personnelles collectées via les formulaires et les automatisations sont
+          exclusivement hébergées par :
+        </LegalP>
+        <LegalP>
+          <strong className="text-text">{LEGAL.ovh.name}</strong>
+          <br />
+          {LEGAL.ovh.street}
+          <br />
+          {LEGAL.ovh.city}
+          <br />
+          {LEGAL.ovh.rcs}
+          <br />
+          <a className="text-primary underline" href={LEGAL.ovh.url} rel="noopener noreferrer">
+            {LEGAL.ovh.url}
+          </a>
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">3. Propriété intellectuelle</h2>
-          <p className="mt-3">
-            L&apos;ensemble des contenus du site (textes, images, illustrations, charte graphique,
-            code source) est protégé par le droit d&apos;auteur. Toute reproduction, représentation
-            ou diffusion, intégrale ou partielle, sans autorisation expresse préalable, est
-            interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants
-            du Code de la propriété intellectuelle.
-          </p>
-        </section>
+      <LegalSection title="Article 3 — Activité">
+        <LegalP>
+          {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers
+          indépendants. Il connecte les outils du quotidien (Gmail, Telegram, Google Drive,
+          SeLoger, Leboncoin) pour répondre aux leads entrants, trier les emails et classer les
+          documents.
+        </LegalP>
+        <LegalP>
+          Le service est proposé sous forme de formules mensuelles sans engagement de durée, avec
+          installation personnalisée depuis {NAP.localityLabel}. Voir les{" "}
+          <Link href="/cgv" className="text-primary underline">
+            conditions générales de vente
+          </Link>
+          .
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">4. Responsabilité</h2>
-          <p className="mt-3">
-            {NAP.brand} s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des
-            informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout
-            moment et sans préavis, le contenu. {NAP.brand} ne peut être tenue responsable des
-            erreurs d&apos;utilisation, ni des dommages directs ou indirects qui pourraient résulter
-            de l&apos;accès ou de l&apos;utilisation du site.
-          </p>
-        </section>
+      <LegalSection title="Article 4 — Propriété intellectuelle">
+        <LegalP>
+          L&apos;ensemble du contenu de ce site (textes, visuels, logo, structure) est la
+          propriété exclusive de {c.founder} / {c.brand}, sauf mention contraire.
+        </LegalP>
+        <LegalP>
+          Toute reproduction, représentation, modification, publication ou transmission du contenu
+          de ce site, par quelque moyen que ce soit, est interdite sans autorisation préalable
+          écrite de {c.founder}.
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">5. Données personnelles</h2>
-          <p className="mt-3">
-            Le traitement des données personnelles est régi par notre{" "}
-            <a className="text-primary underline" href="/politique-confidentialite">
-              politique de confidentialité
-            </a>
-            , conforme au Règlement général sur la protection des données (RGPD — UE 2016/679) et
-            à la loi Informatique et Libertés (n° 78-17 du 6 janvier 1978 modifiée).
-          </p>
-        </section>
+      <LegalSection title="Article 5 — Données personnelles">
+        <LegalP>
+          Le traitement des données personnelles collectées sur ce site est décrit dans la{" "}
+          <Link href="/politique-confidentialite" className="text-primary underline">
+            politique de confidentialité
+          </Link>
+          .
+        </LegalP>
+        <LegalP>
+          Conformément au RGPD (Règlement UE 2016/679), vous disposez d&apos;un droit d&apos;accès,
+          de rectification, d&apos;effacement et d&apos;opposition. Contact :{" "}
+          <a className="text-primary underline" href={`mailto:${c.email}`}>
+            {c.email}
+          </a>
+        </LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">6. Cookies et mesure d&apos;audience</h2>
-          <p className="mt-3">
-            Le site utilise <strong className="text-text">Plausible Analytics</strong>, solution
-            d&apos;analyse d&apos;audience exempte de cookies et respectueuse de la vie privée. Aucun
-            identifiant personnel n&apos;est collecté. Cette solution est exemptée de consentement
-            préalable par la CNIL (délibération du 17 septembre 2020 sur les solutions de mesure
-            d&apos;audience).
-          </p>
-        </section>
+      <LegalSection title="Article 6 — Cookies et analytics">
+        <LegalP>
+          Ce site utilise Plausible Analytics, solution respectueuse de la vie privée. Plausible ne
+          dépose aucun cookie et ne collecte aucune donnée personnelle identifiable. Il est exempté
+          de consentement conformément aux recommandations de la CNIL (délibération n°2020-091 du
+          17 septembre 2020).
+        </LegalP>
+        <LegalP>Aucun autre cookie de traçage publicitaire n&apos;est utilisé sur ce site.</LegalP>
+      </LegalSection>
 
-        <section>
-          <h2 className="font-heading text-2xl text-text">7. Droit applicable</h2>
-          <p className="mt-3">
-            Les présentes mentions légales sont régies par le droit français. En cas de litige,
-            les tribunaux français seront seuls compétents.
-          </p>
-        </section>
+      <LegalSection title="Article 7 — Liens hypertextes">
+        <LegalP>
+          Ce site peut contenir des liens vers des sites tiers (SeLoger, Leboncoin, OVHcloud,
+          etc.). {NAP.brand} n&apos;est pas responsable du contenu ou des pratiques de ces sites.
+        </LegalP>
+      </LegalSection>
 
-        <p className="text-xs text-muted/70">
-          Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}.
-        </p>
-      </div>
-    </article>
+      <LegalSection title="Article 8 — Loi applicable">
+        <LegalP>
+          Les présentes mentions légales sont soumises au droit français. Tout litige relatif à
+          l&apos;utilisation du site sera soumis aux tribunaux compétents du ressort de Flers
+          (Orne), sous réserve d&apos;une compétence spécifique imposée par la loi.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection title="Article 9 — Contact">
+        <LegalUl
+          items={[
+            `Email : ${c.email}`,
+            `Téléphone : ${c.phone}`,
+            `Adresse : ${c.address}`,
+          ]}
+        />
+      </LegalSection>
+    </LegalPageShell>
   );
 }
