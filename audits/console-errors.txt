@@ -1,5 +1,5 @@
 # Console & network failures — https://automatex-hub.com/
-Date: 2026-05-20T17:20:45.686Z
+Date: 2026-05-20T17:24:49.251Z
 
 ## mobile-375
 (aucune erreur console / 4xx capturée)
