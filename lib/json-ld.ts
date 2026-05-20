@@ -1,3 +1,4 @@
+import { BTP_FAQ } from "@/lib/btp-copy";
 import {
   FAQ_ITEMS,
   GUARANTEE_COPY,
@@ -324,9 +325,18 @@ export function buildBtpServiceJsonLd(path: string) {
     ],
   };
 
+  const btpFaq = {
+    "@type": "FAQPage",
+    mainEntity: BTP_FAQ.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return {
     "@context": "https://schema.org",
-    "@graph": [professional, btpService],
+    "@graph": [professional, btpService, btpFaq],
   };
 }
 

@@ -76,21 +76,18 @@ export function HubEntry() {
           <p className="mx-auto mt-12 max-w-readable text-sm text-muted md:text-base">
             {HUB_ENTRY_COPY.footerNote}
           </p>
-          <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <p className="text-sm text-muted">Vous avez choisi votre profil ci-dessus ?</p>
             <Link
               href="/immobilier#contact"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-md bg-cta px-8 py-3.5 text-[15px] font-semibold text-cta-fg shadow-sm transition hover:brightness-110"
-              data-analytics-cta="hub_demo_immo"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-xl bg-cta px-8 py-4 text-base font-bold text-cta-fg shadow-lg transition hover:brightness-110"
+              data-analytics-cta="hub_demo_unified"
             >
-              {HUB_ENTRY_COPY.ctaImmobilier}
+              Nolan me rappelle sous 24 h →
             </Link>
-            <Link
-              href="/btp#contact"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-md border border-border bg-bg-card px-8 py-3.5 text-[15px] font-semibold text-text shadow-sm transition hover:border-primary/40"
-              data-analytics-cta="hub_demo_btp"
-            >
-              {HUB_ENTRY_COPY.ctaBtp}
-            </Link>
+            <p className="text-xs text-faint">
+              Démo gratuite · 20 min · Sans engagement · Flers, Orne
+            </p>
           </div>
         </div>
       </div>

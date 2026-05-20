@@ -1,7 +1,9 @@
 import { ImmobilierLeadDemoSection } from "@/components/demo/ImmobilierLeadDemoSection";
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
 import { Agitation } from "@/components/sections/Agitation";
-import { Automations } from "@/components/sections/Automations";
+import { AutomationsFeatureGrid } from "@/components/sections/AutomationsFeatureGrid";
+import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
+import { ImmobilierLiveDemoSection } from "@/components/demo/ImmobilierLiveDemoSection";
 import { Contact } from "@/components/sections/Contact";
 import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
@@ -28,7 +30,9 @@ export function ImmobilierHome() {
       <Problem />
       <Agitation />
       <Solution />
+      <ImmobilierLiveDemoSection />
       <ImmobilierLeadDemoSection />
+      <FeaturedAutomationsSection variant="immo" />
       <AccompanimentPillars
         h2={IMMOBILIER_ACCOMPANIMENT.h2}
         pillars={IMMOBILIER_ACCOMPANIMENT.pillars}
@@ -42,7 +46,7 @@ export function ImmobilierHome() {
       <FAQ />
       <LocalGeoLinks />
       <IntegrationMarquees />
-      <Automations />
+      <AutomationsFeatureGrid />
       <ResiliationSection />
       <Contact variant="immobilier" />
       <div className="h-20 md:hidden" aria-hidden />

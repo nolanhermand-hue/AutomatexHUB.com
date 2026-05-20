@@ -2,15 +2,22 @@ import { AccompagnementPointMensuelDemo } from "@/components/demo/Accompagnement
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
-import { BOOKING_CTA_LABEL, NAP } from "@/lib/constants";
+import { AccompagnementContactForm } from "@/components/sections/AccompagnementContactForm";
+import { NAP } from "@/lib/constants";
 import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Accompagnement humain · Flers",
+  title: "Accompagnement humain inclus · Flers · Automatex Hub",
   description:
-    "Point mensuel, ajustements en continu, ligne directe Nolan. L'accompagnement Automatex Hub est inclus dans chaque formule — mandataires et artisans BTP en Orne.",
+    "Point mensuel, ajustements continus, ligne directe Nolan à Flers. L'accompagnement Automatex est inclus dans chaque formule — pas en option. Mandataires et artisans Orne.",
+  openGraph: {
+    title: "Vous n'êtes jamais seul avec votre système — Automatex Hub",
+    description:
+      "Nolan vous appelle chaque mois. Il ajuste. Il répond. Basé à Flers, Orne. L'accompagnement est inclus — pas en option.",
+    url: "https://automatex-hub.com/accompagnement",
+  },
   alternates: { canonical: "https://automatex-hub.com/accompagnement" },
 };
 
@@ -103,13 +110,9 @@ export default function AccompagnementPage() {
           >
             Voir les formules BTP
           </Link>
-          <Link
-            href="/btp#contact"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-md bg-cta px-8 font-semibold text-cta-fg"
-          >
-            {BOOKING_CTA_LABEL}
-          </Link>
         </div>
+
+        <AccompagnementContactForm />
       </div>
     </div>
   );

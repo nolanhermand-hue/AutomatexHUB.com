@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/`, lastModified, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/immobilier`, lastModified, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/btp`, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/automatisations`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/accompagnement`, lastModified, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE_URL}/automatisation-btp-orne`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/automatisation-artisan-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },

@@ -196,6 +196,11 @@ export function IntegrationMarquees() {
       aria-label="Intégrations et outils métiers"
       data-analytics-section="integration-marquees"
     >
+      <p className="sr-only">
+        Compatible avec Gmail, Telegram, Google Drive, Google Calendar, SeLoger, Leboncoin,
+        Logic-Immo, PAP, IAD France, SAFTI, Capifrance, Optimhome, EffiCity. Hébergé en France.
+        Conforme RGPD.
+      </p>
       <div className="bg-[#FFFFFF]">
         <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
           Compatible avec vos outils actuels

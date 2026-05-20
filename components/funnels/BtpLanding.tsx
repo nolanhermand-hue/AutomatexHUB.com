@@ -1,12 +1,14 @@
 import { BtpDemoSection } from "@/components/demo/BtpDemoSection";
-import { BtpFaqMotion } from "@/components/motion/BtpFaqMotion";
+import { LiveDemoBlock } from "@/components/demo/LiveDemoBlock";
 import { HeroMotionBackdrop } from "@/components/motion/HeroMotionBackdrop";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
-import { RoiCounter } from "@/components/motion/RoiCounter";
 import Link from "next/link";
+import { BtpFaq } from "@/components/sections/BtpFaq";
 import { BtpPricing } from "@/components/sections/BtpPricing";
+import { BtpRoiStats } from "@/components/sections/BtpRoiStats";
 import { BtpSocialProof } from "@/components/sections/BtpSocialProof";
 import { Contact } from "@/components/sections/Contact";
+import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import {
@@ -90,8 +92,14 @@ export function BtpLanding() {
               </article>
             ))}
           </div>
+          <div className="mt-10 space-y-8">
+            <LiveDemoBlock variant="btp-appel" ctaHref="#contact" />
+            <LiveDemoBlock variant="btp-devis" ctaHref="#contact" />
+          </div>
         </div>
       </section>
+
+      <FeaturedAutomationsSection variant="btp" />
 
       <section className="border-y border-primary/30 bg-accent-light px-gutter py-12 md:py-16">
         <div className="mx-auto max-w-content">
@@ -123,7 +131,7 @@ export function BtpLanding() {
         </div>
       </section>
 
-      <RoiCounter variant="btp" />
+      <BtpRoiStats />
 
       <BtpPricing />
 
@@ -131,7 +139,7 @@ export function BtpLanding() {
         {BTP_DEPART_HINT}
       </p>
 
-      <BtpFaqMotion />
+      <BtpFaq />
 
       <BtpSocialProof />
 

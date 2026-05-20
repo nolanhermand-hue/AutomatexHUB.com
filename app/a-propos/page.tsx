@@ -44,6 +44,44 @@ export default function AProposPage() {
         ))}
       </dl>
 
+      <section className="mt-12 border-t border-border py-12">
+        <h2 className="font-heading text-xl font-bold text-text">{ABOUT_PAGE.storyHeading}</h2>
+        <div className="mt-6 max-w-readable space-y-4 text-sm leading-relaxed text-muted">
+          {ABOUT_PAGE.storyParagraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
+          <p className="text-xs italic text-faint">{ABOUT_PAGE.storyFootnote}</p>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-12">
+        <h2 className="font-heading text-xl font-bold text-text">{ABOUT_PAGE.concreteHeading}</h2>
+        <div className="mt-6 grid max-w-2xl gap-4 sm:grid-cols-2">
+          {ABOUT_PAGE.concreteSteps.map((item) => (
+            <div key={item.step} className="rounded-xl border border-border bg-bg-card p-5">
+              <span className="mb-2 block font-mono text-xs text-primary">{item.step}</span>
+              <p className="text-sm font-semibold text-text">{item.title}</p>
+              <p className="mt-2 text-xs leading-relaxed text-muted">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border py-10">
+        <div className="max-w-2xl rounded-xl border border-primary/20 bg-accent-light p-5">
+          <h3 className="text-sm font-bold text-primary">{ABOUT_PAGE.launchTransparency.title}</h3>
+          <p className="mt-2 text-xs leading-relaxed text-muted">
+            {ABOUT_PAGE.launchTransparency.body}
+          </p>
+          <Link
+            href={ABOUT_PAGE.launchTransparency.href}
+            className="mt-4 inline-block rounded-lg bg-cta px-5 py-2.5 text-sm font-semibold text-cta-fg transition hover:brightness-110"
+          >
+            {ABOUT_PAGE.launchTransparency.cta}
+          </Link>
+        </div>
+      </section>
+
       <div className="max-w-readable space-y-4 text-base leading-relaxed text-muted">
         {ABOUT_PAGE.narrative.map((paragraph) => (
           <p key={paragraph.slice(0, 40)}>{paragraph}</p>

@@ -2,11 +2,15 @@
 export const SITE_NAV = [
   { href: "/immobilier", label: "Immobilier" },
   { href: "/btp", label: "Artisans BTP" },
+  { href: "/automatisations", label: "Automatisations" },
   { href: "/accompagnement", label: "Accompagnement" },
   { href: "/a-propos", label: "À propos" },
 ] as const;
 
 export function contactHref(pathname: string): string {
+  if (pathname.startsWith("/automatisations")) {
+    return "/immobilier#contact";
+  }
   if (
     pathname.startsWith("/btp") ||
     pathname.startsWith("/automatisation") ||

@@ -1,3 +1,4 @@
+import { FounderAvatar } from "@/components/ui/FounderAvatar";
 import { NAP } from "@/lib/constants";
 import { RESPONSE_DELAYS } from "@/lib/trust-copy";
 type FounderTrustBlockProps = {
@@ -12,14 +13,7 @@ export function FounderTrustBlock({ compact = false, className = "" }: FounderTr
     <div
       className={`flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left ${className}`}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element -- avatar SVG local */}
-      <img
-        src="/assets/brand/founder-avatar.svg"
-        alt=""
-        width={size}
-        height={size}
-        className="shrink-0 rounded-full"
-      />
+      <FounderAvatar size={size} />
       <div className="min-w-0">
         <p className="font-semibold text-text">
           {NAP.founder} · {NAP.localityLabel}
