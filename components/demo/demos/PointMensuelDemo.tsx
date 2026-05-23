@@ -18,13 +18,13 @@ function PointMensuelGsap({ active }: DemoAnimationProps) {
 
   return (
     <div ref={rootRef} className="demo-gsap-stack">
-      <div className="demo-beat text-center text-sm text-[#f5f4f1]">📅 J+30 — Point mensuel Nolan</div>
+      <div className="demo-beat text-center text-sm text-[var(--color-text)]">📅 J+30 — Point mensuel Nolan</div>
       <div className="demo-beat text-center">
         <p className="text-sm text-[#ff8200]">📊 Rapport Telegram</p>
-        <p className="text-xs text-[#f5f4f1]/90">8 appels traités · 12 devis · 14 h récupérées</p>
+        <p className="text-xs text-[var(--color-text)]/90">8 appels traités · 12 devis · 14 h récupérées</p>
       </div>
       <div className="demo-beat text-center">
-        <p className="max-w-xs text-xs text-[#f5f4f1]/90">
+        <p className="max-w-xs text-xs text-[var(--color-text)]/90">
           Nolan : on améliore le template devis cette semaine.
         </p>
       </div>

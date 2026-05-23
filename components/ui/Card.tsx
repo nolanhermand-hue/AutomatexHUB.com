@@ -1,16 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import gsap from "gsap";
 import type { ReactNode } from "react";
-import { useRef } from "react";
 
 export function Card({
   children,
   className,
   featured,
   dimmed,
-  tilt = true,
+  tilt: _tilt = false,
 }: {
   children: ReactNode;
   className?: string;
@@ -18,65 +16,17 @@ export function Card({
   dimmed?: boolean;
   tilt?: boolean;
 }) {
-  const root = useRef<HTMLDivElement>(null);
-
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = root.current;
-    if (!tilt || !el) return;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const rotateX = ((y - cy) / cy) * -5;
-    const rotateY = ((x - cx) / cx) * 5;
-    el.style.setProperty("--tilt-x", `${(x / rect.width) * 100}%`);
-    el.style.setProperty("--tilt-y", `${(y / rect.height) * 100}%`);
-    gsap.to(el, {
-      rotateX,
-      rotateY,
-      transformPerspective: 900,
-      duration: 0.35,
-      ease: "power2.out",
-    });
-  };
-
-  const onLeave = () => {
-    const el = root.current;
-    if (!tilt || !el) return;
-    gsap.to(el, {
-      rotateX: 0,
-      rotateY: 0,
-      duration: 0.6,
-      ease: "elastic.out(1, 0.55)",
-    });
-  };
-
   return (
     <div
-      ref={root}
       data-cursor="card"
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
       className={cn(
-        "group/card relative overflow-hidden rounded-2xl border border-border bg-bg-card p-8 shadow-[0_0_0_0.5px_var(--color-border),0_8px_32px_rgb(26_26_24/0.06)] transition-shadow duration-300 hover:shadow-[0_0_0_0.5px_rgb(15_110_86/0.25),0_12px_40px_rgb(26_26_24/0.08)]",
-        featured && "border-2 border-primary shadow-[0_0_0_0px,0_8px_32px_rgb(26_26_24/0.06)]",
+        "card relative flex flex-col overflow-hidden p-6 md:p-8",
+        featured && "border-primary/50 shadow-lg shadow-primary/10",
         dimmed && "opacity-50",
         className,
       )}
-      style={{ transformStyle: "preserve-3d" }}
     >
-      {tilt ? (
-        <div
-          className="pointer-events-none absolute inset-0 z-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover/card:opacity-100"
-          style={{
-            background:
-              "radial-gradient(200px circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(15, 110, 86, 0.06), transparent 70%)",
-          }}
-          aria-hidden
-        />
-      ) : null}
-      <div className="relative z-[1]">{children}</div>
+      {children}
     </div>
   );
 }

@@ -6,31 +6,38 @@ function defaultOpen(index: number): boolean {
   return index === 1 || index === (crmIndex >= 0 ? crmIndex : 5);
 }
 
-/** FAQ en `<details>` natif : toutes les réponses présentes dans le HTML initial. */
+/** FAQ en `<details>` natif — style ORIS. */
 export function FAQ() {
   return (
-    <section id="faq" className="border-t border-border bg-night px-gutter py-12 md:py-16">
+    <section id="faq" className="border-t border-border px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
-        <h2 className="font-heading text-3xl text-text md:text-4xl">{FAQ_HEADING.h2}</h2>
-        <div className="mt-8 overflow-hidden rounded-xl border border-border">
+        <p className="mb-4 font-mono text-[11px] uppercase tracking-widest text-muted">
+          QUESTIONS FRÉQUENTES
+        </p>
+        <h2 className="mb-10 text-2xl font-bold tracking-tight text-text md:text-3xl">
+          {FAQ_HEADING.h2}
+        </h2>
+        <div className="divide-y divide-border overflow-hidden rounded-xl border border-border">
           {FAQ_ITEMS.map((item, index) => (
             <details
               key={item.question}
               open={defaultOpen(index)}
-              className="group border-b border-border bg-bg-card px-5 last:border-0 md:px-7"
+              className="group bg-surface transition-colors hover:bg-surface-2"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-medium text-text marker:content-none md:text-lg [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 text-sm font-medium text-text marker:content-none md:text-base [&::-webkit-details-marker]:hidden">
                 {item.question}
-                <span
-                  className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-lg font-light leading-none text-primary transition-transform duration-200 group-open:rotate-45"
-                  aria-hidden
+                <svg
+                  className="ml-4 h-3 w-3 shrink-0 text-faint transition-transform group-open:rotate-180"
+                  viewBox="0 0 10 6"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  +
-                </span>
+                  <path d="M0 0l5 6 5-6z" />
+                </svg>
               </summary>
-              <p className="pb-5 text-sm leading-relaxed text-muted md:text-[16px]">
-                {item.answer}
-              </p>
+              <div className="border-t border-border px-6 pb-4 pt-1">
+                <p className="text-[13px] leading-relaxed text-muted md:text-[15px]">{item.answer}</p>
+              </div>
             </details>
           ))}
         </div>

@@ -1,12 +1,10 @@
 "use client";
 
-import { MotionBootstrap } from "@/components/motion/MotionBootstrap";
-import { AmbientMouseGradient } from "@/components/layout/AmbientMouseGradient";
 import { CustomCursor } from "@/components/layout/CustomCursor";
+import { MotionBootstrap } from "@/components/motion/MotionBootstrap";
 import { Footer } from "@/components/layout/Footer";
 import { MegaNav } from "@/components/layout/MegaNav";
 import { ReadingProgress } from "@/components/layout/ReadingProgress";
-import { SectionRail } from "@/components/layout/SectionRail";
 import { StickyCtaMobile } from "@/components/layout/StickyCtaMobile";
 import { ScrollDepthTracker } from "@/components/seo/ScrollDepthTracker";
 import { UtmCapture } from "@/components/seo/UtmCapture";
@@ -17,10 +15,8 @@ export function LayoutChrome({ children }: { children: ReactNode }) {
   return (
     <AppProviders>
       <MotionBootstrap />
-      <AmbientMouseGradient />
       <CustomCursor />
       <ReadingProgress />
-      <SectionRail />
       <ScrollDepthTracker />
       <UtmCapture />
       <MegaNav />

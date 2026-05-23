@@ -27,7 +27,7 @@ export function StickyMobileCta({ ctaHref, ctaLabel, analyticsId }: StickyMobile
         </a>
         <a
           href={ctaHref}
-          className="inline-flex min-h-[48px] flex-[1.4] items-center justify-center rounded-md bg-cta px-3 text-sm font-semibold text-cta-fg"
+          className="btn-bracket btn-bracket-primary"
           data-analytics-cta={analyticsId}
           onClick={() => trackCtaClicked(analyticsId)}
         >

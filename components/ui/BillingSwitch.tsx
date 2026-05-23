@@ -45,20 +45,20 @@ export function BillingSwitch({
       <span
         className={cn(
           "relative h-7 w-12 shrink-0 rounded-full border border-border bg-bg-card transition-colors",
-          isAnnual && "bg-accent-light",
+          isAnnual && "bg-primary/20",
         )}
         aria-hidden
       >
         <span
           className={cn(
-            "absolute top-0.5 left-0.5 h-6 w-6 rounded-full bg-cta transition-transform duration-200",
+            "absolute top-0.5 left-0.5 h-6 w-6 rounded-full bg-primary transition-transform duration-200",
             isAnnual && "translate-x-5",
           )}
         />
       </span>
       <span className={cn(isAnnual ? "text-text" : "text-muted")}>
         {annualLabel}
-        <span className="ml-2 inline-flex items-center rounded-full bg-accent-light px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-dark">
+        <span className="ml-2 badge badge-orange">
           {discountLabel}
         </span>
       </span>

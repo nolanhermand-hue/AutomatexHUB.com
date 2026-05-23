@@ -1,24 +1,21 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { detectMotionQuality } from "@/lib/motion/quality";
-import { initDemo4ColumnPulse, initDemo4Timeline } from "@/lib/motion/demo4Timeline";
-import { useEffect, useRef } from "react";
 
 type Mode = "avant" | "apres";
 
 const AVANT_LINES = [
-  { time: "07 h", text: "Appel manqué sur le chantier", problem: true },
-  { time: "12 h", text: "Devis pas encore fait", problem: true },
-  { time: "18 h", text: "Relance oubliée", problem: true },
-  { time: "21 h", text: "Le client a signé ailleurs", problem: true },
+  { time: "07h", text: "Appel manqué sur le chantier" },
+  { time: "12h", text: "Devis pas encore fait" },
+  { time: "18h", text: "Relance oubliée" },
+  { time: "21h", text: "Le client a signé ailleurs" },
 ] as const;
 
 const APRES_LINES = [
-  { time: "07 h", text: "Réponse auto en 90 s", ok: true },
-  { time: "12 h", text: "Devis PDF envoyé", ok: true },
-  { time: "18 h", text: "Relance automatique", ok: true },
-  { time: "21 h", text: "Résumé Telegram", ok: true },
+  { time: "07h", text: "Réponse automatique — 90 s" },
+  { time: "12h", text: "Devis PDF envoyé" },
+  { time: "18h", text: "Relance automatique" },
+  { time: "21h", text: "Résumé Telegram reçu" },
 ] as const;
 
 type Demo4AvantApresProps = {
@@ -26,155 +23,79 @@ type Demo4AvantApresProps = {
   className?: string;
 };
 
-/**
- * Démo 4 — split avant/après · GSAP ScrollTrigger (desktop) · pulse colonne (mobile)
- */
 export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
-  const rootRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<Awaited<ReturnType<typeof initDemo4Timeline>> | null>(null);
-  const mobileCleanupRef = useRef<(() => void) | null>(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
-
-    const quality = detectMotionQuality();
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-
-    if (quality === "low" || !isDesktop) return;
-
-    let cancelled = false;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((e) => e.isIntersecting) || cancelled) return;
-        void initDemo4Timeline(root, { scrub: false }).then((handle) => {
-          if (cancelled) {
-            handle.destroy();
-            return;
-          }
-          timelineRef.current = handle;
-        });
-        obs.disconnect();
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -80px 0px" },
-    );
-    obs.observe(root);
-
-    const onVis = () => {
-      if (document.hidden) timelineRef.current?.pause();
-      else timelineRef.current?.resume();
-    };
-    document.addEventListener("visibilitychange", onVis);
-
-    return () => {
-      cancelled = true;
-      obs.disconnect();
-      document.removeEventListener("visibilitychange", onVis);
-      timelineRef.current?.destroy();
-      timelineRef.current = null;
-    };
-  }, []);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-    if (reduced || isDesktop) return;
-
-    mobileCleanupRef.current?.();
-    const col = root.querySelector<HTMLElement>(mode === "avant" ? ".avant-col" : ".apres-col");
-    if (!col) return;
-
-    void initDemo4ColumnPulse(col).then((cleanup) => {
-      mobileCleanupRef.current = cleanup;
-    });
-
-    return () => {
-      mobileCleanupRef.current?.();
-      mobileCleanupRef.current = null;
-    };
-  }, [mode]);
-
   return (
     <div
-      ref={rootRef}
       data-motion="demo-avant-apres"
-      data-quality-min="medium"
-      className={cn("demo4-root relative grid gap-4 md:grid-cols-[1fr_auto_1fr]", className)}
+      className={cn("grid max-w-4xl grid-cols-1 gap-4 sm:mx-auto sm:grid-cols-2", className)}
     >
       <div
         className={cn(
-          "avant-col rounded-xl border border-[#e53e3e]/45 bg-[#0d0d0d] p-5 md:p-6",
-          mode === "apres" && "hidden md:block",
+          "overflow-hidden rounded-xl border border-border bg-surface",
+          mode === "apres" && "hidden sm:block",
           mode === "avant" && "block",
         )}
       >
-        <p className="mb-4 text-center text-sm font-semibold text-[#e53e3e]">Avant</p>
-        <ul className="space-y-3">
-          {AVANT_LINES.map((line) => (
-            <li
-              key={line.time}
-              className="timeline-item flex items-start gap-2 text-xs text-[#f5f4f1]/90 md:text-sm"
-            >
-              <span
-                className="icon-problem mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e53e3e]/25 text-[10px] font-bold text-[#e53e3e]"
-                aria-hidden
-              >
-                !
-              </span>
-              <span>
-                <time className="font-mono font-semibold text-[#f5f4f1]/70">{line.time}</time>
-                {" — "}
-                {line.text}
-              </span>
+        <div className="flex items-center justify-between border-b border-border px-5 py-3">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-danger/90">
+            Sans Automatex
+          </span>
+          <span className="h-2 w-2 rounded-full bg-danger/60" aria-hidden="true" />
+        </div>
+        <ul className="space-y-2 px-5 py-4">
+          {AVANT_LINES.map((item) => (
+            <li key={item.time} className="flex items-center gap-3">
+              <span className="w-8 shrink-0 font-mono text-[11px] tabular-nums text-faint">{item.time}</span>
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-danger/50" aria-hidden="true" />
+              <span className="text-[13px] text-muted">{item.text}</span>
             </li>
           ))}
         </ul>
-        <p className="result-negative demo-pulse-red mt-6 text-center font-heading text-xl font-bold text-[#e53e3e] md:text-2xl">
-          −3 500 €
-        </p>
+        <div className="border-t border-border bg-bg px-5 py-4">
+          <p className="font-mono text-2xl font-bold tabular-nums text-danger">− 3 500 €</p>
+          <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-faint">
+            Commission perdue
+          </p>
+        </div>
       </div>
 
       <div
-        className="demo4-divider hidden w-px self-stretch bg-[#2a2a2a] opacity-30 md:block"
-        aria-hidden
-      />
-
-      <div
         className={cn(
-          "apres-col rounded-xl border border-[#38a169]/45 bg-[#0d0d0d] p-5 md:p-6",
-          mode === "avant" && "hidden md:block",
+          "overflow-hidden rounded-xl border border-primary/30 bg-surface",
+          mode === "avant" && "hidden sm:block",
           mode === "apres" && "block",
         )}
       >
-        <p className="mb-4 text-center text-sm font-semibold text-[#38a169]">Après</p>
-        <ul className="space-y-3">
-          {APRES_LINES.map((line) => (
-            <li
-              key={line.time}
-              className="timeline-item flex items-start gap-2 text-xs text-[#f5f4f1]/90 md:text-sm"
-            >
-              <span
-                className="icon-success mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#38a169]/25 text-[10px] text-[#38a169]"
-                aria-hidden
+        <div className="flex items-center justify-between border-b border-primary/20 px-5 py-3">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-primary">
+            Avec Automatex
+          </span>
+          <span className="h-2 w-2 animate-pulse rounded-full bg-success" aria-hidden="true" />
+        </div>
+        <ul className="space-y-2 px-5 py-4">
+          {APRES_LINES.map((item) => (
+            <li key={item.time} className="flex items-center gap-3">
+              <span className="w-8 shrink-0 font-mono text-[11px] tabular-nums text-faint">{item.time}</span>
+              <svg
+                className="h-3 w-3 shrink-0 text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                aria-hidden="true"
               >
-                ✓
-              </span>
-              <span>
-                <time className="font-mono font-semibold text-[#f5f4f1]/70">{line.time}</time>
-                {" — "}
-                {line.text}
-              </span>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-[13px] text-muted">{item.text}</span>
             </li>
           ))}
         </ul>
-        <p className="result-positive mt-6 text-center font-heading text-xl font-bold text-[#38a169] md:text-2xl">
-          +3 500 €
-        </p>
+        <div className="border-t border-primary/20 bg-bg px-5 py-4">
+          <p className="font-mono text-2xl font-bold tabular-nums text-success">+ 3 500 €</p>
+          <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-faint">
+            Commission préservée
+          </p>
+        </div>
       </div>
     </div>
   );

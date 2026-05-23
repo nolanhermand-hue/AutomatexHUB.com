@@ -33,8 +33,8 @@ export function UseCases() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="relative">
-                <p className="inline-flex items-center gap-2 rounded-full bg-cta/10 px-3 py-1 text-xs font-semibold text-cta">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-cta" aria-hidden />
+                <p className="btn-bracket btn-bracket-primary w-full justify-center">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
                   {u.time}
                 </p>
                 <p className="mt-4 text-sm font-semibold text-text leading-[1.6]">

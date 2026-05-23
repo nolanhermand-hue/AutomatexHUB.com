@@ -74,7 +74,7 @@ export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
         </p>
         <Link
           href="/btp#contact"
-          className="mt-6 inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-cta-fg"
+          className="mt-6 btn-bracket btn-bracket-primary w-full justify-center"
         >
           Nolan me rappelle sous 24 h
         </Link>

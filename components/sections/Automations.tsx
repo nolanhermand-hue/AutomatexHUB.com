@@ -98,7 +98,7 @@ export function Automations() {
           href="#contact"
           data-analytics-cta="automations_cta"
           onClick={() => trackCtaClicked("automations_cta")}
-          className="mt-6 inline-flex min-h-[48px] items-center justify-center gap-2 rounded-md bg-cta px-8 py-3 text-[15px] font-semibold text-cta-fg"
+          className="mt-6 btn-bracket btn-bracket-primary"
         >
           {BOOKING_CTA_LABEL}
           <span aria-hidden>→</span>

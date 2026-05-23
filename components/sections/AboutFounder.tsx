@@ -39,7 +39,7 @@ export function AboutFounder() {
           <p className="mt-4 max-w-readable text-base leading-relaxed text-muted md:text-lg">
             {BETA_PHASE_COPY.body}
           </p>
-          <p className="mt-6 inline-flex rounded-full bg-accent-light px-4 py-2 text-sm font-semibold text-primary">
+          <p className="mt-6 badge badge-orange">
             {BETA_PHASE_COPY.badge}
           </p>
         </div>

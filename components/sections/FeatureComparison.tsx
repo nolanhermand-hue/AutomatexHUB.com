@@ -37,7 +37,7 @@ export function FeatureComparison() {
                   >
                     {o.name}
                     {o.featured ? (
-                      <span className="ml-2 inline-flex rounded-full bg-accent-light px-2 py-0.5 text-[10px] uppercase tracking-wider text-primary">
+                      <span className="ml-2 badge badge-orange">
                         Recommandé
                       </span>
                     ) : null}
@@ -74,7 +74,7 @@ export function FeatureComparison() {
                 <span>
                   {offer.name}
                   {offer.featured ? (
-                    <span className="ml-2 inline-flex rounded-full bg-accent-light px-2 py-0.5 text-[10px] uppercase tracking-wider text-primary">
+                    <span className="ml-2 badge badge-orange">
                       Recommandé
                     </span>
                   ) : null}

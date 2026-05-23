@@ -1,6 +1,5 @@
 "use client";
 
-import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { trackCtaClicked } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS, NAP } from "@/lib/constants";
@@ -142,29 +141,30 @@ export function MegaNav() {
 
   const navBtn = (active: boolean) =>
     cn(
-      "inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
-      active ? "text-primary bg-accent-light" : "text-muted hover:bg-section hover:text-text",
+      "inline-flex items-center gap-1.5 rounded-md px-3 py-2 font-mono text-[11px] font-medium uppercase tracking-widest transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+      active ? "bg-surface-2 text-primary" : "text-muted hover:bg-surface-2 hover:text-text",
     );
 
   return (
     <header
       ref={navRef}
-      className={cn(
-        "sticky top-0 z-[900] h-[60px] transition-all duration-500 lg:h-[72px]",
-        isScrolled
-          ? "border-b border-border bg-[rgb(250_249_246/0.92)] shadow-[0_0.5px_0_var(--color-border)] backdrop-blur-[12px]"
-          : "border-b border-transparent bg-transparent",
-      )}
+      className="sticky top-0 z-[900] min-h-[60px] border-b border-border bg-bg/95 py-2 backdrop-blur-md lg:min-h-[72px] lg:py-2.5"
     >
-      <div className="mx-auto flex h-full max-w-content items-center justify-between gap-3 px-gutter">
-        <LogoOrbit
-          variant="lockup"
-          theme="light"
-          height={38}
+      <div className="mx-auto flex min-h-[44px] max-w-content items-center justify-between gap-3 px-gutter lg:min-h-[48px]">
+        <Link
           href="/"
-          className="max-w-[min(100%,12.5rem)] shrink-0 lg:max-h-11"
+          className="inline-flex shrink-0 items-center gap-2"
           onClick={() => handleNavClick("/")}
-        />
+          aria-label="Automatex — accueil"
+        >
+          <span className="font-mono text-sm font-bold uppercase tracking-widest text-text">
+            AUTOMATEX
+          </span>
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+          <span className="hidden font-mono text-[10px] uppercase tracking-widest text-faint sm:inline">
+            Automation · France
+          </span>
+        </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-0.5 lg:flex" aria-label="Navigation principale">
           <div
@@ -186,7 +186,7 @@ export function MegaNav() {
             </button>
             {activeDropdown === "solutions" ? (
               <div
-                className="absolute left-1/2 top-full z-[950] mt-1 w-[min(780px,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-border bg-night shadow-xl"
+                className="absolute left-1/2 top-full z-[950] mt-1 w-[min(780px,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-xl border border-border bg-surface shadow-xl shadow-black/40"
                 role="menu"
               >
                 <div className="grid grid-cols-3 divide-x divide-border">
@@ -232,7 +232,7 @@ export function MegaNav() {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-section/60 p-5">
+                  <div className="bg-surface-2/80 p-5">
                     <p className="label-micro mb-4 text-faint">À la une</p>
                     <ul className="space-y-4">
                       {SOLUTIONS_MENU.alaUne.map((item) => (
@@ -287,7 +287,7 @@ export function MegaNav() {
             </button>
             {activeDropdown === "automatisations" ? (
               <div
-                className="absolute left-1/2 top-full z-[950] mt-1 w-[480px] -translate-x-1/2 overflow-hidden rounded-2xl border border-border bg-night shadow-xl"
+                className="absolute left-1/2 top-full z-[950] mt-1 w-[480px] -translate-x-1/2 overflow-hidden rounded-xl border border-border bg-surface shadow-xl shadow-black/40"
                 role="menu"
               >
                 <div className="grid grid-cols-2 divide-x divide-border p-2">
@@ -393,7 +393,7 @@ export function MegaNav() {
             href={contactLink}
             data-cursor="cta"
             onClick={() => trackCtaClicked("navbar_contact")}
-            className="inline-flex min-h-[48px] items-center justify-center whitespace-nowrap rounded-md bg-cta px-5 py-3 text-[15px] font-semibold text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all hover:brightness-110"
+            className="btn-bracket hidden text-[11px] lg:inline-flex"
           >
             Réserver 20 min
           </Link>
@@ -402,7 +402,7 @@ export function MegaNav() {
         <button
           ref={burgerRef}
           type="button"
-          className="inline-flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center rounded-xl border border-border bg-section text-text lg:hidden"
+          className="inline-flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center rounded-md border border-border bg-surface text-text lg:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -422,7 +422,7 @@ export function MegaNav() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-b border-border bg-night/95 backdrop-blur-2xl lg:hidden"
+            className="overflow-hidden border-b border-border bg-surface/98 backdrop-blur-xl lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Menu navigation mobile"
@@ -471,7 +471,7 @@ export function MegaNav() {
                 : null}
               <Link
                 href={contactLink}
-                className="mt-3 inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-cta px-4 py-3 font-semibold text-cta-fg"
+                className="mt-3 inline-flex min-h-[52px] w-full items-center justify-center btn-bracket btn-bracket-primary"
                 onClick={() => handleNavClick(contactLink)}
               >
                 Nolan me rappelle sous 24 h

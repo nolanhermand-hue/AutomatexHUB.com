@@ -46,7 +46,7 @@ export function StickyCtaMobile() {
             href="#contact"
             data-analytics-cta="sticky_mobile"
             onClick={() => trackCtaClicked("sticky_mobile")}
-            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-cta px-4 py-[18px] text-[15px] font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_24px_rgb(0_0_0/0.4)] transition-all hover:brightness-110 active:brightness-95"
+            className="btn-bracket btn-bracket-primary"
           >
             {STICKY_CTA_COPY.label}
           </a>

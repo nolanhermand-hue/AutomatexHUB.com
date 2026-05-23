@@ -6,22 +6,22 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 import { META, META_KEYWORDS, NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import type { ReactNode } from "react";
 
-const heading = Cormorant_Garamond({
+const inter = Inter({
   subsets: ["latin", "latin-ext"],
-  weight: ["500", "700"],
-  variable: "--font-heading",
+  variable: "--font-inter",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const body = Plus_Jakarta_Sans({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono-jetbrains",
   display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 const ogImageUrl = brandAbsolute(BRAND.ogImage, SITE_URL);
@@ -119,7 +119,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" className={`${heading.variable} ${body.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="dns-prefetch" href="https://plausible.io" />
         <link rel="icon" type="image/svg+xml" href={BRAND.faviconSvg} />
@@ -128,15 +128,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" sizes="16x16" href={BRAND.favicons[16]} />
         <link rel="apple-touch-icon" sizes="180x180" href={BRAND.rootAppleTouch} />
         <link rel="manifest" href={BRAND.manifest} />
-        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#0F6E56" />
-        <meta name="theme-color" content={BRAND.themeColor} />
+        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#FF6B2B" />
+        <meta name="theme-color" content="#080D1A" />
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var v=['confiance'];var t=localStorage.getItem('ax-theme');if(t&&v.includes(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
           }}
         />
       </head>
-      <body className="min-h-screen">
+      <body className="min-h-screen font-body antialiased">
         <StructuredData />
         <GoogleAnalytics />
         <Plausible />

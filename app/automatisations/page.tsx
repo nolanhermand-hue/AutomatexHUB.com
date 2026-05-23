@@ -1,11 +1,9 @@
-import { AutomationCard } from "@/components/catalog/AutomationCard";
+import { AutomatisationsCatalogSections } from "@/components/automatisations/AutomatisationsCatalogSections";
 import {
   AUTOMATIONS_CATALOG,
   CATEGORIES,
   FEATURED_BTP,
   FEATURED_IMMO,
-  categoryToAnchor,
-  getByCategory,
 } from "@/lib/automations-catalog";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -63,7 +61,7 @@ export default function AutomatisationsPage() {
           </Link>
           <Link
             href="/btp#contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-6 py-3 text-sm font-bold text-cta-fg transition hover:brightness-110"
+            className="btn-bracket btn-bracket-primary"
           >
             Je suis artisan BTP →
           </Link>
@@ -73,29 +71,7 @@ export default function AutomatisationsPage() {
         </p>
       </section>
 
-      {CATEGORIES.map((category) => {
-        const items = getByCategory(category);
-        return (
-          <section
-            key={category}
-            id={categoryToAnchor(category)}
-            className="mx-auto max-w-content scroll-mt-28 pb-16"
-          >
-            <div className="mb-6 flex items-center gap-4">
-              <h2 className="font-heading text-lg font-bold text-text">{category}</h2>
-              <div className="h-px flex-1 bg-border" />
-              <span className="font-mono text-xs text-faint">
-                {items.length} automatisation{items.length > 1 ? "s" : ""}
-              </span>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {items.map((automation) => (
-                <AutomationCard key={automation.id} {...automation} />
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      <AutomatisationsCatalogSections />
 
       <section className="mx-auto max-w-content border-t border-border py-16 text-center">
         <h2 className="font-heading text-2xl font-bold text-text">
@@ -108,7 +84,7 @@ export default function AutomatisationsPage() {
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <Link
             href="/immobilier#contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-7 py-3.5 text-sm font-bold text-cta-fg shadow-lg transition hover:brightness-110"
+            className="btn-bracket btn-bracket-primary"
           >
             Je suis mandataire immobilier →
           </Link>

@@ -18,15 +18,15 @@ function DevisAutoGsap({ active }: DemoAnimationProps) {
 
   return (
     <div ref={rootRef} className="demo-gsap-stack">
-      <div className="demo-beat text-center text-sm text-[#f5f4f1]">🎙️ Dictée en sortie de chantier</div>
-      <div className="demo-beat text-center text-xs text-[#f5f4f1]/90">
+      <div className="demo-beat text-center text-sm text-[var(--color-text)]">🎙️ Dictée en sortie de chantier</div>
+      <div className="demo-beat text-center text-xs text-[var(--color-text)]/90">
         Pose carrelage 40 m², salle de bain, 2 jours…
       </div>
       <div className="demo-beat text-center">
         <p className="text-sm text-[#ff8200]">→ Devis PDF n°2024-47</p>
-        <p className="text-xs text-[#f5f4f1]">Total TTC : 3 840 €</p>
+        <p className="text-xs text-[var(--color-text)]">Total TTC : 3 840 €</p>
       </div>
-      <div className="demo-beat text-center text-sm text-[#f5f4f1]">
+      <div className="demo-beat text-center text-sm text-[var(--color-text)]">
         📧 Envoyé à m.dupont@gmail.com · 17 h 23
       </div>
       <div className="demo-beat text-center text-sm text-[#38a169]">✅ Devis accepté</div>

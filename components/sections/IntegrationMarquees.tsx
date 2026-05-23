@@ -57,10 +57,10 @@ function FallbackIconBox({
   const ini = initialsFallback(label);
   return (
     <div
-      className={`flex size-6 shrink-0 items-center justify-center rounded-[5px] bg-[#F3F1EC] md:size-7 ${className}`}
+      className={`flex size-6 shrink-0 items-center justify-center rounded-[5px] bg-surface-2 md:size-7 ${className}`}
       aria-hidden
     >
-      <span className="text-[8px] font-semibold leading-none text-[#9B9992] md:text-[9px]">
+      <span className="text-[8px] font-semibold leading-none text-faint md:text-[9px]">
         {ini}
       </span>
     </div>
@@ -71,10 +71,10 @@ function Band1Logo({ item }: { item: Band1Item }) {
   if ("mistral" in item) {
     return (
       <div
-        className="flex size-6 shrink-0 flex-col items-center justify-center rounded-[5px] bg-[#FFF3E8] px-0.5 md:size-7"
+        className="flex size-6 shrink-0 flex-col items-center justify-center rounded-[5px] bg-primary/15 px-0.5 md:size-7"
         aria-hidden
       >
-        <span className="text-[8px] font-semibold leading-none text-[#FF7000] md:text-[10px] md:font-semibold">
+        <span className="text-[8px] font-semibold leading-none text-primary md:text-[10px] md:font-semibold">
           Mistral
         </span>
       </div>
@@ -148,7 +148,7 @@ function renderBand1Row(keyPrefix: string) {
     <Fragment key={`${keyPrefix}-${item.name}-${index}`}>
       {index > 0 ? (
         <span
-          className="mx-[18px] shrink-0 select-none text-[#E0DDD6]"
+          className="mx-[18px] shrink-0 select-none text-border"
           aria-hidden
         >
           ·
@@ -169,7 +169,7 @@ function renderBand2Row(keyPrefix: string) {
     <Fragment key={`${keyPrefix}-${item.name}-${index}`}>
       {index > 0 ? (
         <span
-          className="mx-[18px] shrink-0 select-none text-[#E0DDD6]"
+          className="mx-[18px] shrink-0 select-none text-border"
           aria-hidden
         >
           ·
@@ -192,7 +192,7 @@ function renderBand2Row(keyPrefix: string) {
 export function IntegrationMarquees() {
   return (
     <section
-      className="border-b border-[#E0DDD6]/80"
+      className="border-b border-border/80"
       aria-label="Intégrations et outils métiers"
       data-analytics-section="integration-marquees"
     >
@@ -201,11 +201,11 @@ export function IntegrationMarquees() {
         Logic-Immo, PAP, IAD France, SAFTI, Capifrance, Optimhome, EffiCity. Hébergé en France.
         Conforme RGPD.
       </p>
-      <div className="bg-[#FFFFFF]">
+      <div className="bg-surface">
         <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
           Compatible avec vos outils actuels
         </p>
-        <div className="automatex-marquee-strip border-b border-[#E0DDD6]">
+        <div className="automatex-marquee-strip border-b border-border">
           <div className="automatex-marquee-inner automatex-marquee-inner--40">
             <MarqueeSegment>{renderBand1Row("a")}</MarqueeSegment>
             <MarqueeSegment ariaHidden>{renderBand1Row("b")}</MarqueeSegment>
@@ -213,7 +213,7 @@ export function IntegrationMarquees() {
         </div>
       </div>
 
-      <div className="bg-[#FAF9F6]">
+      <div className="bg-bg">
         <p className="px-gutter py-2 font-body text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
           Outils métier immobilier
         </p>

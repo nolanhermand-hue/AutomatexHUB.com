@@ -20,7 +20,7 @@ export function NolanLiveDemo() {
       role="img"
       aria-label="Simulation : Nolan intervient le soir via Telegram sans que l'artisan ait à demander"
     >
-      <div className="demo-beat space-y-2 text-sm text-[#f5f4f1]/90">
+      <div className="demo-beat space-y-2 text-sm text-[var(--color-text)]/90">
         <p className="text-xs text-muted">Téléphone · Jeudi · 20 h 47</p>
         <p className="rounded-lg border border-[#2a2a2a] bg-[#1a1a1a] p-3 text-[#ff8200]">
           Nolan · Telegram
@@ -32,7 +32,7 @@ export function NolanLiveDemo() {
       <div className="demo-beat mt-4 text-xs text-muted">
         Reçu 11 min après la détection · sans appel de votre part
       </div>
-      <div className="demo-beat mt-4 text-sm italic text-[#f5f4f1]/80">
+      <div className="demo-beat mt-4 text-sm italic text-[var(--color-text)]/80">
         « Merci Nolan, je savais même pas que ça s&apos;était passé. »
       </div>
       <div className="demo-beat mt-4 text-xs font-semibold text-primary">

@@ -16,7 +16,7 @@ export function SocialProof() {
               </blockquote>
               <figcaption className="mt-4 flex items-center gap-2">
                 <span
-                  className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cta/20 text-xs font-bold text-cta"
+                  className="btn-bracket btn-bracket-primary w-full justify-center"
                   aria-hidden
                 >
                   {item.author.charAt(0)}

@@ -36,7 +36,7 @@ export function FeaturedAutomationsSection({ variant }: FeaturedAutomationsSecti
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
           {featured.map((a) => (
             <AutomationCard key={a.id} {...a} />
           ))}

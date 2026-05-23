@@ -7,7 +7,7 @@ export async function initMicroInteractions() {
 
   const gsap = (await import("gsap")).default;
   const buttons = document.querySelectorAll<HTMLElement>(
-    'a.bg-cta, button.bg-cta, [data-cursor="cta"]',
+    'a.btn-bracket-primary, button.btn-bracket-primary, [data-cursor="cta"]',
   );
 
   const cleanups: Array<() => void> = [];

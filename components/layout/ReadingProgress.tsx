@@ -55,7 +55,7 @@ export function ReadingProgress() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 right-0 top-0 z-[1000] h-0.5 origin-left bg-gradient-to-r from-accent to-cta"
+      className="pointer-events-none fixed left-0 right-0 top-0 z-[1000] h-0.5 origin-left bg-gradient-to-r from-primary to-primary/70"
       style={{ scaleX, scaleY }}
       aria-hidden
     />

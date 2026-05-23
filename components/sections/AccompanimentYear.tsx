@@ -70,7 +70,7 @@ export function AccompanimentYear() {
             href="#contact"
             data-analytics-cta="accompagnement_cta"
             onClick={() => trackCtaClicked("accompagnement_cta")}
-            className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-cta px-8 py-3 text-[15px] font-semibold text-[var(--color-cta-fg)] shadow-[0_2px_12px_rgb(0_0_0/0.12)] transition hover:brightness-110 active:brightness-95"
+            className="btn-bracket btn-bracket-primary"
           >
             {ACCOMPANIMENT_COPY.cta}
             <span className="ml-1" aria-hidden>

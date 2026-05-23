@@ -70,18 +70,13 @@ export function BtpPricing() {
                     <p className="text-primary">{offer.roiLine}</p>
                   </div>
                   {isFull ? (
-                    <p className="mt-4 rounded-lg border border-primary/30 bg-accent-light/50 p-3 text-xs leading-relaxed text-primary">
+                    <p className="mt-4 rounded-lg border border-primary/30 bg-primary/10 p-3 text-xs leading-relaxed text-primary">
                       {BTP_FULL_HIGHLIGHT}
                     </p>
                   ) : null}
                   <a
                     href={`#contact?offre=${offer.id}`}
-                    className={cn(
-                      "mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-md px-3 py-2 text-sm font-semibold",
-                      offer.featured
-                        ? "bg-cta text-cta-fg"
-                        : "border border-border bg-night text-text",
-                    )}
+                    className={cn("mt-5 btn-bracket w-full justify-center", offer.featured ? "btn-bracket-primary" : "btn-bracket-outline")}
                   >
                     {offer.cta}
                   </a>

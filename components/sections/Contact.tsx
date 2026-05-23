@@ -15,11 +15,9 @@ type ContactProps = {
 function fieldClass(touched: boolean, value: string, required: boolean) {
   const hasError = touched && required && value.trim() === "";
   return [
-    "mt-2 w-full rounded-lg border bg-night px-4 py-3 text-base text-text outline-none ring-0 transition",
-    "placeholder:text-faint/60 focus:border-primary focus:ring-1 focus:ring-primary/20",
-    hasError
-      ? "border-text/50 ring-1 ring-text/20 focus:border-text/70"
-      : "border-border focus:border-primary/50",
+    "mt-2 w-full rounded-md border bg-surface px-4 py-3 font-mono text-sm text-text outline-none transition",
+    "placeholder:text-faint focus:border-primary focus:outline-none",
+    hasError ? "border-danger ring-1 ring-danger/30" : "border-border",
   ].join(" ");
 }
 
@@ -127,12 +125,12 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               {CONTACT_COPY.formTitle}
             </p>
               {offerHint ? (
-                <p className="inline-flex items-center gap-1.5 rounded-full bg-cta/15 px-3 py-1 text-xs font-semibold text-cta">
+                <p className="btn-bracket btn-bracket-primary w-full justify-center">
                   <span aria-hidden>✓</span> Offre : {offerHint}
                 </p>
               ) : null}
               {sujetHint && !offerHint ? (
-                <p className="inline-flex items-center gap-1.5 rounded-full bg-cta/15 px-3 py-1 text-xs font-semibold text-cta">
+                <p className="btn-bracket btn-bracket-primary w-full justify-center">
                   <span aria-hidden>✓</span> Sujet : {sujetHint}
                 </p>
               ) : null}
@@ -279,7 +277,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
             type="submit"
             disabled={pending}
             data-analytics-cta="contact_submit"
-            className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-md bg-cta px-4 py-[18px] text-[15px] font-semibold text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all duration-200 hover:brightness-110 active:brightness-95 active:scale-[0.98] disabled:opacity-70"
+            className="btn-bracket btn-bracket-primary"
             data-cursor="cta"
           >
             {pending ? (

@@ -22,7 +22,7 @@ export function FounderAvatar({ size = 48, className = "" }: FounderAvatarProps)
         style={{
           width: size,
           height: size,
-          background: "linear-gradient(135deg, #0f6e56 0%, #0a5542 100%)",
+          background: "linear-gradient(135deg, #ff6b2b 0%, #c44a12 100%)",
           fontSize: size * 0.32,
         }}
         role="img"

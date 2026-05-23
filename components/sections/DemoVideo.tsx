@@ -79,7 +79,7 @@ export function DemoVideo() {
                   href="#contact"
                   data-analytics-cta="demo_video_fallback"
                   onClick={() => trackCtaClicked("demo_video_fallback")}
-                  className="mt-5 inline-flex min-h-[44px] items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] transition-all hover:opacity-90"
+                  className="mt-5 btn-bracket btn-bracket-primary w-full justify-center"
                 >
                   {BOOKING_CTA_LABEL}
                 </a>

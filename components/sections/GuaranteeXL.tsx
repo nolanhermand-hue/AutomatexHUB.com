@@ -16,7 +16,7 @@ export function GuaranteeXL() {
       data-analytics-section="guarantee"
     >
       <div className="mx-auto max-w-content">
-        <div className="relative grid gap-8 overflow-hidden rounded-xl border border-accent-mid bg-accent-light p-8 md:grid-cols-[auto_1fr] md:items-center md:gap-12 md:p-12">
+        <div className="card relative grid gap-8 overflow-hidden border-primary/30 p-8 md:grid-cols-[auto_1fr] md:items-center md:gap-12 md:p-12">
           {/* Icône bouclier */}
           <div className="flex items-center justify-center">
             <div className="relative">
@@ -42,14 +42,14 @@ export function GuaranteeXL() {
           </div>
 
           <div>
-            <p className="label-micro text-accent-dark">{GUARANTEE_COPY.eyebrow}</p>
-            <h2 className="mt-2 font-heading text-3xl leading-tight text-accent-dark md:text-4xl">
+            <p className="label-micro text-muted">{GUARANTEE_COPY.eyebrow}</p>
+            <h2 className="mt-2 font-heading text-3xl leading-tight text-text md:text-4xl">
               {GUARANTEE_COPY.h2}
             </h2>
-            <p className="mt-4 max-w-readable text-base leading-[1.6] text-primary md:text-lg">
+            <p className="mt-4 max-w-readable text-base leading-[1.6] text-muted md:text-lg">
               {GUARANTEE_COPY.body}
             </p>
-            <ul className="mt-5 space-y-2 text-sm text-primary md:text-base">
+            <ul className="mt-5 space-y-2 text-sm text-muted md:text-base">
               {GUARANTEE_COPY.bullets.map((bullet) => (
                 <li key={bullet} className="flex gap-2">
                   <span className="mt-1 shrink-0 text-primary" aria-hidden>
@@ -64,13 +64,13 @@ export function GuaranteeXL() {
               href="#contact"
               data-analytics-cta="guarantee_xl"
               onClick={() => trackCtaClicked("guarantee_xl")}
-              className="mt-7 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md bg-cta px-8 py-3.5 text-[15px] font-semibold tracking-[-0.01em] text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all duration-200 ease-out hover:brightness-110 active:brightness-95"
+              className="mt-7 btn-bracket btn-bracket-primary"
             >
               {GUARANTEE_COPY.cta}
               <span aria-hidden>→</span>
             </a>
 
-            <p className="mt-3 text-xs text-accent-dark/80">{GUARANTEE_COPY.microNote}</p>
+            <p className="mt-3 text-xs text-faint">{GUARANTEE_COPY.microNote}</p>
           </div>
         </div>
       </div>

@@ -1,23 +1,36 @@
 import type { CatalogAutomation } from "@/lib/automations-catalog";
 
-const formulaLabel: Record<CatalogAutomation["formula"], string> = {
-  depart: "Départ",
-  essentiel: "Essentiel ⭐",
-  pro: "Pro",
-  full: "Full",
+const formulaBadge: Record<
+  CatalogAutomation["formula"],
+  { label: string; cls: string }
+> = {
+  depart: { label: "Départ", cls: "badge-default" },
+  essentiel: { label: "Essentiel ⭐", cls: "badge-orange" },
+  pro: { label: "Pro", cls: "badge-default" },
+  full: { label: "Full", cls: "badge-orange" },
 };
 
 const targetLabel: Record<CatalogAutomation["target"], string> = {
   immo: "Immobilier",
   btp: "BTP",
-  both: "Immobilier & BTP",
+  both: "Immo & BTP",
 };
 
-const typeStyle: Record<CatalogAutomation["steps"][0]["type"], string> = {
-  in: "border-l-2 border-[#ff8200]",
-  out: "border-l-2 border-[#38a169]",
-  system: "border-l-2 border-[#2a2a2a]",
-  result: "border-l-2 border-[rgba(245,244,241,0.2)]",
+const stepBorderColor: Record<CatalogAutomation["steps"][0]["type"], string> = {
+  in: "border-l-primary",
+  out: "border-l-success",
+  system: "border-l-border",
+  result: "border-l-border-light",
+};
+
+const stepIconGlyph: Record<string, string> = {
+  bolt: "⚡",
+  spark: "✦",
+  mail: "✉",
+  check: "✓",
+  bell: "🔔",
+  mic: "🎤",
+  phone: "📞",
 };
 
 function formatDelay(delay?: number): string | undefined {
@@ -37,48 +50,44 @@ export function AutomationCard({
   steps,
   impact,
 }: CatalogAutomation) {
+  const f = formulaBadge[formula];
+
   return (
-    <article className="overflow-hidden rounded-xl border border-[#1e1e1e] bg-[#0f0f0f] transition-colors hover:border-[#2a2a2a]">
-      <div className="border-b border-[#1a1a1a] px-5 pb-4 pt-5">
+    <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors duration-200 hover:border-border-light">
+      <div className="border-b border-border px-5 pb-4 pt-5">
         <div className="mb-3 flex items-start justify-between gap-3">
-          <div>
-            <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-widest text-[rgba(245,244,241,0.35)]">
-              {category}
-            </span>
-            <h3 className="text-base font-bold leading-tight text-[#f5f4f1]">{title}</h3>
+          <div className="min-w-0 flex-1">
+            <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-faint">{category}</p>
+            <h3 className="text-[15px] font-semibold leading-snug text-text">{title}</h3>
           </div>
           <div className="flex shrink-0 flex-col items-end gap-1.5">
-            <span className="whitespace-nowrap rounded-full bg-[#ff8200]/15 px-2 py-0.5 font-mono text-[10px] text-[#ff8200]">
-              {formulaLabel[formula]}
-            </span>
-            <span className="whitespace-nowrap rounded-full bg-[#1a1a1a] px-2 py-0.5 font-mono text-[10px] text-[rgba(245,244,241,0.45)]">
-              {targetLabel[target]}
-            </span>
+            <span className={`badge ${f.cls}`}>{f.label}</span>
+            <span className="badge badge-default">{targetLabel[target]}</span>
           </div>
         </div>
-        <p className="text-sm leading-relaxed text-[rgba(245,244,241,0.62)]">{tagline}</p>
+        <p className="text-[13px] leading-relaxed text-muted">{tagline}</p>
       </div>
 
-      <div className="divide-y divide-[#151515]">
+      <div className="flex-1 divide-y divide-border">
         {steps.map((step, i) => (
-          <div key={`${step.from}-${i}`} className={`px-5 py-3.5 ${typeStyle[step.type]}`}>
-            <div className="mb-2 flex items-center justify-between">
-              <span className="font-mono text-[11px] text-[rgba(245,244,241,0.45)]">
-                {step.from}
-                {step.to ? (
-                  <>
-                    {" "}
-                    <span className="text-[rgba(245,244,241,0.2)]">→</span> {step.to}
-                  </>
-                ) : null}
-              </span>
+          <div key={`${step.from}-${i}`} className={`border-l-2 px-5 py-3 ${stepBorderColor[step.type]}`}>
+            <div className="mb-1.5 flex items-center justify-between gap-2">
+              <div className="flex min-w-0 items-center gap-2">
+                <span className="text-sm leading-none" aria-hidden="true">
+                  {stepIconGlyph[step.icon] ?? "•"}
+                </span>
+                <span className="font-mono text-[11px] text-muted">
+                  {step.from}
+                  {step.to ? ` → ${step.to}` : ""}
+                </span>
+              </div>
               {formatDelay(step.delay) ? (
-                <span className="rounded-full bg-[#151515] px-2 py-0.5 font-mono text-[10px] text-[rgba(245,244,241,0.3)]">
+                <span className="shrink-0 rounded border border-border bg-surface-2 px-2 py-0.5 font-mono text-[10px] text-faint">
                   {formatDelay(step.delay)}
                 </span>
               ) : null}
             </div>
-            <pre className="whitespace-pre-wrap rounded-lg border border-[#1a1a1a] bg-[#0a0a0a] px-3.5 py-2.5 font-mono text-[11px] leading-relaxed text-[rgba(245,244,241,0.72)]">
+            <pre className="whitespace-pre-wrap rounded-md border border-border bg-bg px-3 py-2.5 font-mono text-[11px] leading-relaxed text-muted">
               {step.message}
             </pre>
           </div>
@@ -86,8 +95,8 @@ export function AutomationCard({
       </div>
 
       {impact ? (
-        <div className="border-t border-[#151515] bg-[#0a0a0a] px-5 py-3">
-          <p className="font-mono text-[11px] text-[#ff8200]">💡 {impact}</p>
+        <div className="border-t border-border bg-bg px-5 py-3">
+          <p className="font-mono text-[11px] text-primary">→ {impact}</p>
         </div>
       ) : null}
     </article>

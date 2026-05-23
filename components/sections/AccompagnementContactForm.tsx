@@ -82,7 +82,7 @@ export function AccompagnementContactForm() {
 
         <button
           type="submit"
-          className="mt-2 w-full rounded-xl bg-cta px-6 py-4 text-base font-bold text-cta-fg transition hover:brightness-110"
+          className="btn-bracket btn-bracket-primary mt-2 w-full justify-center"
         >
           Nolan me rappelle sous 24 h →
         </button>

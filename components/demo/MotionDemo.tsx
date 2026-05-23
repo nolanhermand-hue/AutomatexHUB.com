@@ -66,7 +66,10 @@ export function MotionDemo({
     void loadAnimation().then((mod) => setAnim(() => mod.default));
   }, [active, reduced, loadAnimation, Anim]);
 
-  const showAnimation = active && !reduced && (Anim || children);
+  const animReady = Boolean(Anim || children);
+  const showAnimLayer = active && !reduced && animReady;
+  const showStatic = !showAnimLayer;
+  const loadingAnim = active && !reduced && loadAnimation && !animReady;
 
   return (
     <figure
@@ -76,7 +79,7 @@ export function MotionDemo({
       role="img"
       aria-label={ariaLabel}
       className={cn(
-        "relative overflow-hidden rounded-xl border border-border bg-[#0d0d0d] p-4 md:p-6",
+        "relative overflow-hidden rounded-xl border border-border bg-surface p-4 md:p-6",
         className,
       )}
     >
@@ -85,19 +88,27 @@ export function MotionDemo({
         alt={staticAlt}
         className={cn(
           "mx-auto h-auto w-full max-w-[640px] rounded-lg object-contain",
-          showAnimation ? "hidden" : "block",
+          showStatic ? "block" : "hidden",
         )}
         loading="lazy"
         decoding="async"
         width={640}
         height={420}
       />
+      {loadingAnim ? (
+        <div className="space-y-3 rounded-xl border border-border bg-section/80 p-6" aria-hidden="true">
+          <div className="h-3 w-32 animate-pulse rounded bg-border" />
+          <div className="h-12 animate-pulse rounded-xl bg-border/80" />
+          <div className="h-12 animate-pulse rounded-xl bg-border/60" />
+          <div className="h-12 animate-pulse rounded-xl bg-border/40" />
+        </div>
+      ) : null}
       <div
         className={cn(
-          "demo-animated min-h-[280px] md:min-h-[320px]",
-          showAnimation ? "block" : "hidden",
+          "demo-animated min-h-[240px] md:min-h-[280px]",
+          showAnimLayer ? "block" : "hidden",
         )}
-        aria-hidden={!showAnimation}
+        aria-hidden={!showAnimLayer}
       >
         {Anim ? <Anim active={active} /> : children}
       </div>

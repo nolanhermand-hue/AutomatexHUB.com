@@ -45,7 +45,7 @@ export function AutomationsFeatureGrid() {
           <Link
             href="#contact"
             data-analytics-cta="automations_cta"
-            className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-md bg-cta px-8 py-3 text-[15px] font-semibold text-cta-fg"
+            className="btn-bracket btn-bracket-primary"
           >
             {BOOKING_CTA_LABEL}
             <span aria-hidden>→</span>

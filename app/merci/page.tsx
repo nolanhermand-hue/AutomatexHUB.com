@@ -17,7 +17,7 @@ export default function MerciPage() {
 
         <ol className="mt-8 space-y-5">
           <li className="flex items-start gap-4">
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cta/20 text-sm font-bold text-cta">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
               1
             </span>
             <div>
@@ -28,7 +28,7 @@ export default function MerciPage() {
             </div>
           </li>
           <li className="flex items-start gap-4">
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cta/20 text-sm font-bold text-cta">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
               2
             </span>
             <div>
@@ -39,7 +39,7 @@ export default function MerciPage() {
             </div>
           </li>
           <li className="flex items-start gap-4">
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cta/20 text-sm font-bold text-cta">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
               3
             </span>
             <div>
@@ -54,7 +54,7 @@ export default function MerciPage() {
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-cta px-8 py-3 text-[15px] font-semibold text-white shadow-[0_4px_24px_rgb(29_158_117/0.4)] transition-all duration-200 hover:opacity-90"
+            className="btn-bracket btn-bracket-primary w-full justify-center"
           >
             Retour au site
           </Link>

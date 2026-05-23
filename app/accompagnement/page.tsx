@@ -42,7 +42,7 @@ export default function AccompagnementPage() {
           </span>
         </div>
 
-        <div className="mt-8 rounded-xl border border-primary/20 bg-accent-light p-6">
+        <div className="mt-8 card border-primary/30 p-6">
           <FounderTrustBlock />
         </div>
 

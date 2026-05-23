@@ -45,8 +45,12 @@ export function LogoOrbit({
       alt="Automatex"
       width={width}
       height={height}
-      className={cn("h-auto max-w-full shrink-0 object-contain object-left", className)}
-      style={{ height, width: "auto", maxHeight: height }}
+      className={cn("block shrink-0 object-contain object-left", className)}
+      style={
+        isLockup
+          ? { height, width, maxHeight: height, maxWidth: width }
+          : { height, width: height, maxHeight: height, maxWidth: height }
+      }
       decoding="async"
       fetchPriority={isLockup ? "high" : "auto"}
     />
@@ -57,7 +61,7 @@ export function LogoOrbit({
   return (
     <Link
       href={href}
-      className="inline-flex shrink-0 items-center"
+      className="inline-flex shrink-0 items-center overflow-visible"
       data-cursor="link"
       aria-label="Automatex — accueil"
       onClick={onClick}

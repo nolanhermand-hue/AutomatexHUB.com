@@ -39,7 +39,7 @@ export function Benefits() {
   return (
     <section
       id="benefices"
-      className="bg-section px-gutter py-12 md:py-16"
+      className="border-t border-border px-gutter py-12 md:py-16"
       data-analytics-section="benefits"
     >
       <div className="mx-auto max-w-content">
@@ -51,10 +51,10 @@ export function Benefits() {
           {BENEFITS_ITEMS.map((b) => (
             <article
               key={b.title}
-              className="group/benefit relative overflow-hidden rounded-2xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_rgb(255_255_255/0.04),0_6px_24px_rgb(0_0_0/0.25)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_8px_36px_rgb(0_0_0/0.4)]"
+              className="card group/benefit relative overflow-hidden p-6 transition-colors duration-300 hover:border-border-light"
             >
-              <div className="text-cta">{ICONS[b.icon]}</div>
-              <p className="mt-4 font-heading text-2xl font-bold text-cta">{b.stat}</p>
+              <div className="text-primary">{ICONS[b.icon]}</div>
+              <p className="mt-4 font-heading text-2xl font-bold text-primary">{b.stat}</p>
               <h3 className="mt-1 text-base font-semibold text-text">{b.title}</h3>
               <p className="mt-2 text-sm leading-[1.6] text-muted">{b.body}</p>
             </article>
@@ -65,7 +65,7 @@ export function Benefits() {
         <a
           href="#contact"
           data-analytics-cta="benefits_micro"
-          className="mt-10 inline-flex items-center gap-1 text-sm font-semibold text-accent underline underline-offset-4 transition-colors hover:text-cta"
+          className="mt-10 inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent-dark"
         >
           Récupérer ces heures dès cette semaine <span aria-hidden>→</span>
         </a>

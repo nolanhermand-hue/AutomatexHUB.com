@@ -3,7 +3,6 @@
 import { BillingSwitch } from "@/components/ui/BillingSwitch";
 import { trackCtaClicked, trackOfferViewed } from "@/lib/analytics";
 import { Card } from "@/components/ui/Card";
-import { FeaturedBadge } from "@/components/ui/Badge";
 import { OFFERS, PRICING_HEADING } from "@/lib/constants";
 import { calculateBreakevenLeads } from "@/lib/calculator";
 import { cn } from "@/lib/cn";
@@ -75,7 +74,7 @@ export function Pricing() {
 
         {/* D12 — Stack vertical strict sur mobile, grid sur md+ */}
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {OFFERS.map((offer) => {
+          {OFFERS.map((offer, offerIndex) => {
             const isCustom = offer.customOffer === true;
             const breakeven = isCustom
               ? 0
@@ -106,16 +105,21 @@ export function Pricing() {
                   featured={offer.featured}
                   className={cn(
                     "h-full",
-                    offer.featured && "ring-2 ring-primary/30 shadow-[0_8px_40px_rgb(26_26_24/0.1)]",
+                    offer.featured && "border-primary/50 shadow-lg shadow-primary/10",
                   )}
                 >
+                  <p className="step-number mb-2">
+                    NIVEAU — {String(offerIndex + 1).padStart(2, "0")}
+                  </p>
+                  {offer.featured && offer.badge ? (
+                    <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-primary">
+                      [ {offer.badge.replace(/·.*/, "").trim()} ]
+                    </p>
+                  ) : null}
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-heading text-2xl text-text">
+                    <h3 className="font-mono text-lg font-bold uppercase tracking-wide text-text">
                       {offer.name}
                     </h3>
-                    {offer.badge ? (
-                      <FeaturedBadge>{offer.badge}</FeaturedBadge>
-                    ) : null}
                   </div>
 
                   {/* Prix : D4 transparent, mis à jour selon cycle */}
@@ -179,12 +183,7 @@ export function Pricing() {
                     href={`#contact?offre=${offer.id}`}
                     onClick={() => trackCtaClicked(`pricing_${offer.id}`)}
                     data-analytics-cta={`pricing_${offer.id}`}
-                    className={cn(
-                      "mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-md px-4 py-3 text-[15px] font-semibold transition-all duration-200 active:scale-[0.97]",
-                      offer.featured
-                        ? "bg-cta text-[var(--color-cta-fg,#fff)] shadow-[0_4px_20px_rgb(0_0_0/0.3)] hover:opacity-90"
-                        : "border border-border bg-section text-text backdrop-blur-sm hover:border-primary/40 hover:bg-accent-light hover:text-accent-dark",
-                    )}
+                    className={cn("mt-6 btn-bracket w-full justify-center", offer.featured ? "btn-bracket-primary" : "btn-bracket-outline")}
                   >
                     {offer.cta}
                   </a>

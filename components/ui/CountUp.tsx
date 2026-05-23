@@ -2,48 +2,61 @@
 
 import { useEffect, useRef, useState } from "react";
 
-function easeOutQuad(t: number) {
-  return 1 - (1 - t) * (1 - t);
-}
+type CountUpProps = {
+  target: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+  className?: string;
+};
 
 export function CountUp({
-  value,
-  decimals = 0,
-}: {
-  value: number;
-  decimals?: number;
-}) {
-  const [display, setDisplay] = useState(value);
-  const fromRef = useRef(value);
+  target,
+  duration = 1500,
+  prefix = "",
+  suffix = "",
+  className,
+}: CountUpProps) {
+  const [value, setValue] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const started = useRef(false);
 
   useEffect(() => {
-    const from = fromRef.current;
-    const to = value;
-    const start = performance.now();
-    const duration = 800;
-    let raf = 0;
-
-    function frame(now: number) {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = easeOutQuad(t);
-      const cur = from + (to - from) * eased;
-      if (decimals === 0) {
-        setDisplay(Math.round(cur));
-      } else {
-        setDisplay(Math.round(cur * 10) / 10);
-      }
-      if (t < 1) {
-        raf = requestAnimationFrame(frame);
-      }
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      setValue(target);
+      return;
     }
 
-    raf = requestAnimationFrame(frame);
-    fromRef.current = value;
-    return () => cancelAnimationFrame(raf);
-  }, [value, decimals]);
+    const el = ref.current;
+    if (!el) return;
 
-  if (decimals === 0) {
-    return <>{display.toLocaleString("fr-FR")}</>;
-  }
-  return <>{display.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</>;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting || started.current) return;
+        started.current = true;
+        const start = performance.now();
+        const animate = (now: number) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - (1 - progress) ** 3;
+          setValue(Math.round(eased * target));
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+      },
+      { threshold: 0.45 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration]);
+
+  return (
+    <span ref={ref} className={className}>
+      {prefix}
+      {value.toLocaleString("fr-FR")}
+      {suffix}
+    </span>
+  );
 }

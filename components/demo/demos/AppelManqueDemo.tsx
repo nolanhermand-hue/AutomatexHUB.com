@@ -22,20 +22,20 @@ function AppelManqueGsap({ active }: DemoAnimationProps) {
         <span className="text-2xl" aria-hidden>
           📞
         </span>
-        <p className="text-sm text-[#f5f4f1]">Appel entrant — Client Dupont</p>
+        <p className="text-sm text-[var(--color-text)]">Appel entrant — Client Dupont</p>
       </div>
       <div className="demo-beat">
         <p className="demo-pulse-red text-center text-sm">Appel manqué — vous êtes sur le chantier</p>
       </div>
       <div className="demo-beat flex flex-col items-center gap-2 text-center">
         <p className="text-sm text-[#ff8200]">SMS en 90 s</p>
-        <p className="max-w-xs text-xs text-[#f5f4f1]/90">
+        <p className="max-w-xs text-xs text-[var(--color-text)]/90">
           Bonjour M. Dupont, j&apos;ai bien reçu votre appel. Je vous rappelle avant 18 h.
         </p>
       </div>
       <div className="demo-beat text-center">
         <p className="text-sm text-[#38a169]">✅ Client rassuré · Rappel planifié</p>
-        <p className="text-xs text-[#f5f4f1]/80">Résumé Telegram 18 h</p>
+        <p className="text-xs text-[var(--color-text)]/80">Résumé Telegram 18 h</p>
       </div>
     </div>
   );

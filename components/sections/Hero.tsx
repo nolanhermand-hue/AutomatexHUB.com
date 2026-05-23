@@ -48,13 +48,13 @@ export function Hero() {
     <section id="hero" className="relative [scroll-margin-top:60px] lg:[scroll-margin-top:72px]">
       <LazyHeroMotionBackdrop
         motionId="hero-background-immobilier"
-        fallbackGradient="radial-gradient(ellipse 80% 50% at 50% -20%, rgba(29,158,117,0.08), transparent)"
+        fallbackGradient="radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255,107,43,0.12), transparent)"
       />
       <HeroScene>
         <div className="mx-auto max-w-content px-gutter pb-8 pt-[76px] lg:pb-12 lg:pt-[96px]">
           <div className="lg:grid lg:grid-cols-[1fr_minmax(260px,320px)] lg:items-start lg:gap-12">
             <div>
-              <p className="label-micro inline-flex w-fit items-center gap-2 rounded-full bg-accent-light px-3 py-1.5 text-primary">
+              <p className="badge badge-default inline-flex w-fit items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
                 {HERO_COPY.preHeading}
               </p>
@@ -88,7 +88,7 @@ export function Hero() {
                   data-cursor="cta"
                   data-analytics-cta="hero_primary"
                   onClick={() => trackCtaClicked("hero_primary")}
-                  className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md bg-cta px-8 py-3.5 text-[15px] font-semibold tracking-[-0.01em] text-cta-fg shadow-[0_2px_12px_rgb(26_26_24/0.12)] transition-all duration-200 ease-out hover:brightness-110 active:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  className="btn-bracket btn-bracket-primary"
                 >
                   {HERO_COPY.ctaPrimary}
                   <span aria-hidden>→</span>

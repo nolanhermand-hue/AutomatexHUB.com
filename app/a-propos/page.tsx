@@ -68,14 +68,14 @@ export default function AProposPage() {
       </section>
 
       <section className="border-t border-border py-10">
-        <div className="max-w-2xl rounded-xl border border-primary/20 bg-accent-light p-5">
+        <div className="max-w-2xl card border-primary/30 p-5">
           <h3 className="text-sm font-bold text-primary">{ABOUT_PAGE.launchTransparency.title}</h3>
           <p className="mt-2 text-xs leading-relaxed text-muted">
             {ABOUT_PAGE.launchTransparency.body}
           </p>
           <Link
             href={ABOUT_PAGE.launchTransparency.href}
-            className="mt-4 inline-block rounded-lg bg-cta px-5 py-2.5 text-sm font-semibold text-cta-fg transition hover:brightness-110"
+            className="mt-4 btn-bracket btn-bracket-primary"
           >
             {ABOUT_PAGE.launchTransparency.cta}
           </Link>

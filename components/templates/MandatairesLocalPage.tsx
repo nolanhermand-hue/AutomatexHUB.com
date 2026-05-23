@@ -55,7 +55,7 @@ export function MandatairesLocalPage({ page }: { page: LocalMandatairesPageData 
         </p>
         <Link
           href="/immobilier#contact"
-          className="mt-6 inline-flex rounded-full bg-cta px-6 py-3 text-sm font-semibold text-cta-fg"
+          className="mt-6 btn-bracket btn-bracket-primary w-full justify-center"
         >
           Contacter Automatex
         </Link>

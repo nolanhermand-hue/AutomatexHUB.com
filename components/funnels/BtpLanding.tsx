@@ -36,7 +36,7 @@ export function BtpLanding() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#contact"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-md bg-cta px-8 font-semibold text-cta-fg"
+              className="btn-bracket btn-bracket-primary"
             >
               {BTP_HERO.ctaDemo}
             </a>
@@ -102,7 +102,7 @@ export function BtpLanding() {
 
       <FeaturedAutomationsSection variant="btp" />
 
-      <section className="border-y border-primary/30 bg-accent-light px-gutter py-12 md:py-16">
+      <section className="border-y border-border bg-surface px-gutter py-12 md:py-16">
         <div className="mx-auto max-w-content">
           <h2 className="font-heading text-3xl text-text">{BTP_ACCOMPANIMENT.h2}</h2>
           <p className="mt-4 max-w-readable text-muted">{BTP_ACCOMPANIMENT.body}</p>

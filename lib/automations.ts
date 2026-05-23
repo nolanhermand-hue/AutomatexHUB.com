@@ -15,12 +15,12 @@ export type AutomationCategory = {
 };
 
 export const AUTOMATION_CATEGORIES: AutomationCategory[] = [
-  { id: "leads", label: "Leads & réactivité", badgeClass: "bg-cta/25 text-accent border-cta/40" },
+  { id: "leads", label: "Leads & réactivité", badgeClass: "bg-primary/20 text-primary border-primary/40" },
   { id: "daily", label: "Organisation quotidienne", badgeClass: "bg-primary/30 text-text border-primary/50" },
   { id: "docs", label: "Documents & fichiers", badgeClass: "bg-accent/15 text-muted border-accent/40" },
-  { id: "clients", label: "Suivi clients & prospects", badgeClass: "bg-section text-muted border-primary/40" },
-  { id: "reporting", label: "Reporting & pilotage", badgeClass: "bg-primary/20 text-text border-cta/30" },
-  { id: "terrain", label: "Gain de temps terrain", badgeClass: "bg-cta/15 text-accent border-accent/50" },
+  { id: "clients", label: "Suivi clients & prospects", badgeClass: "bg-surface-2 text-muted border-primary/40" },
+  { id: "reporting", label: "Reporting & pilotage", badgeClass: "bg-primary/20 text-text border-primary/30" },
+  { id: "terrain", label: "Gain de temps terrain", badgeClass: "bg-primary/15 text-primary border-accent/50" },
   { id: "custom", label: "Sur mesure", badgeClass: "bg-muted/10 text-muted border-muted/40" },
 ];
 
