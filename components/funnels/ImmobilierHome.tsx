@@ -1,15 +1,10 @@
-import { ImmobilierLeadDemoSection } from "@/components/demo/ImmobilierLeadDemoSection";
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
 import { Agitation } from "@/components/sections/Agitation";
-import { AutomationsFeatureGrid } from "@/components/sections/AutomationsFeatureGrid";
-import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
-import { ImmobilierLiveDemoSection } from "@/components/demo/ImmobilierLiveDemoSection";
 import { Contact } from "@/components/sections/Contact";
 import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { GuaranteeXL } from "@/components/sections/GuaranteeXL";
 import { Hero } from "@/components/sections/Hero";
-import { IntegrationMarquees } from "@/components/sections/IntegrationMarquees";
 import { LocalGeoLinks } from "@/components/sections/LocalGeoLinks";
 import { Pricing } from "@/components/sections/Pricing";
 import { Problem } from "@/components/sections/Problem";
@@ -17,9 +12,54 @@ import { ResiliationSection } from "@/components/sections/ResiliationSection";
 import { Solution } from "@/components/sections/Solution";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
-import { RoiCounter } from "@/components/motion/RoiCounter";
 import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
+import dynamic from "next/dynamic";
+
+const ImmobilierLiveDemoSection = dynamic(
+  () =>
+    import("@/components/demo/ImmobilierLiveDemoSection").then((m) => ({
+      default: m.ImmobilierLiveDemoSection,
+    })),
+  { loading: () => <div className="min-h-48 animate-pulse bg-bg-card" aria-hidden /> },
+);
+
+const ImmobilierLeadDemoSection = dynamic(
+  () =>
+    import("@/components/demo/ImmobilierLeadDemoSection").then((m) => ({
+      default: m.ImmobilierLeadDemoSection,
+    })),
+  { loading: () => <div className="min-h-64 animate-pulse bg-night" aria-hidden /> },
+);
+
+const FeaturedAutomationsSection = dynamic(
+  () =>
+    import("@/components/sections/FeaturedAutomationsSection").then((m) => ({
+      default: m.FeaturedAutomationsSection,
+    })),
+  { loading: () => <div className="min-h-40 animate-pulse bg-night" aria-hidden /> },
+);
+
+const RoiCounter = dynamic(
+  () => import("@/components/motion/RoiCounter").then((m) => ({ default: m.RoiCounter })),
+  { loading: () => <div className="min-h-32 animate-pulse bg-section" aria-hidden /> },
+);
+
+const IntegrationMarquees = dynamic(
+  () =>
+    import("@/components/sections/IntegrationMarquees").then((m) => ({
+      default: m.IntegrationMarquees,
+    })),
+  { loading: () => <div className="min-h-24 animate-pulse bg-night" aria-hidden /> },
+);
+
+const AutomationsFeatureGrid = dynamic(
+  () =>
+    import("@/components/sections/AutomationsFeatureGrid").then((m) => ({
+      default: m.AutomationsFeatureGrid,
+    })),
+  { loading: () => <div className="min-h-48 animate-pulse bg-night" aria-hidden /> },
+);
 
 /** Parcours mandataires — pricing et accompagnement remontés avant intégrations. */
 export function ImmobilierHome() {

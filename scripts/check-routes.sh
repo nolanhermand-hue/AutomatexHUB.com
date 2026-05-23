@@ -7,6 +7,7 @@ ROUTES=(
   "/immobilier/"
   "/btp/"
   "/accompagnement/"
+  "/automatisations/"
   "/a-propos/"
   "/merci/"
   "/mentions-legales/"
@@ -22,6 +23,7 @@ ROUTES=(
   "/automatisation-artisan-alencon/"
   "/automatisation-artisan-argentan/"
   "/devis-automatique-artisan/"
+  "/devis-automatique-artisan-orne/"
   "/sitemap.xml"
   "/robots.txt"
 )

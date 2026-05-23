@@ -33,6 +33,7 @@ export const FOOTER_BTP_LOCAL_LINKS = [
   { href: "/automatisation-artisan-flers", label: "Artisans Flers" },
   { href: "/automatisation-artisan-alencon", label: "Artisans Alençon" },
   { href: "/automatisation-artisan-argentan", label: "Artisans Argentan" },
+  { href: "/devis-automatique-artisan-orne", label: "Devis auto Orne" },
   { href: "/devis-automatique-artisan", label: "Devis artisan" },
   { href: "/btp", label: "Landing BTP" },
 ] as const;

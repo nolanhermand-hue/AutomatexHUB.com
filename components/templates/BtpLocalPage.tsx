@@ -1,3 +1,4 @@
+import { BtpOrneSeoExtension } from "@/components/seo/BtpOrneSeoExtension";
 import { BTP_GEO_FAQ } from "@/lib/btp-geo-faq";
 import { buildBtpLocalSections } from "@/lib/btp-local-sections";
 import type { BtpLocalPageDef } from "@/lib/btp-copy";
@@ -47,6 +48,8 @@ export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
           </section>
         ))}
       </div>
+
+      {page.path === "/automatisation-btp-orne" ? <BtpOrneSeoExtension /> : null}
 
       <section className="mt-14">
         <h2 className="font-heading text-xl text-text">Questions fréquentes</h2>

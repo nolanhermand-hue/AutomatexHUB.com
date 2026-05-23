@@ -4,9 +4,10 @@ import {
   CATEGORIES,
   FEATURED_BTP,
   FEATURED_IMMO,
+  categoryToAnchor,
   getByCategory,
 } from "@/lib/automations-catalog";
-import { BOOKING_CTA_LABEL, SITE_URL } from "@/lib/constants";
+import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -52,12 +53,34 @@ export default function AutomatisationsPage() {
             <p className="mt-0.5 text-xs text-muted">pour activer</p>
           </div>
         </div>
+
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link
+            href="/immobilier#contact"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-6 py-3 text-sm font-bold text-primary transition hover:bg-primary/10"
+          >
+            Je suis mandataire →
+          </Link>
+          <Link
+            href="/btp#contact"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-6 py-3 text-sm font-bold text-cta-fg transition hover:brightness-110"
+          >
+            Je suis artisan BTP →
+          </Link>
+        </div>
+        <p className="mt-3 text-center text-xs text-faint">
+          Démo 20 min · Gratuite · Nolan rappelle sous 24 h
+        </p>
       </section>
 
       {CATEGORIES.map((category) => {
         const items = getByCategory(category);
         return (
-          <section key={category} className="mx-auto max-w-content pb-16">
+          <section
+            key={category}
+            id={categoryToAnchor(category)}
+            className="mx-auto max-w-content scroll-mt-28 pb-16"
+          >
             <div className="mb-6 flex items-center gap-4">
               <h2 className="font-heading text-lg font-bold text-text">{category}</h2>
               <div className="h-px flex-1 bg-border" />
@@ -76,19 +99,29 @@ export default function AutomatisationsPage() {
 
       <section className="mx-auto max-w-content border-t border-border py-16 text-center">
         <h2 className="font-heading text-2xl font-bold text-text">
-          Toutes ces automatisations peuvent être actives chez vous en 48h
+          Toutes ces automatisations actives chez vous en 48h
         </h2>
-        <p className="mx-auto mt-4 max-w-readable text-sm text-muted">
-          Vous n&apos;avez pas à tout prendre. On configure ce qui est utile pour vous. Nolan cadré
-          ça en 20 minutes.
+        <p className="mx-auto mt-4 max-w-readable text-sm leading-relaxed text-muted">
+          On configure ce qui est utile pour vous, dans votre façon de travailler. Nolan vous appelle
+          pour cadrer ça en 20 minutes.
         </p>
-        <Link
-          href="/btp#contact"
-          className="mt-8 inline-flex rounded-xl bg-cta px-8 py-4 text-base font-bold text-cta-fg shadow-lg transition hover:brightness-110"
-        >
-          {BOOKING_CTA_LABEL} →
-        </Link>
-        <p className="mt-4 text-xs text-faint">Démo gratuite · 20 min · Sans engagement · Flers, Orne</p>
+        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <Link
+            href="/immobilier#contact"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-7 py-3.5 text-sm font-bold text-cta-fg shadow-lg transition hover:brightness-110"
+          >
+            Je suis mandataire immobilier →
+          </Link>
+          <Link
+            href="/btp#contact"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-7 py-3.5 text-sm font-bold text-primary transition hover:bg-primary/10"
+          >
+            Je suis artisan BTP →
+          </Link>
+        </div>
+        <p className="mt-6 text-xs text-faint">
+          Démo gratuite · 20 min · Sans engagement · Basé à Flers, Orne
+        </p>
         <p className="sr-only">
           Featured immobilier: {FEATURED_IMMO.join(", ")}. Featured BTP: {FEATURED_BTP.join(", ")}.
         </p>

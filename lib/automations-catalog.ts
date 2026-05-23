@@ -27,9 +27,9 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     target: "immo",
     formula: "pro",
     steps: [
-      { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouveau lead détecté (SeLoger).", type: "in" },
-      { from: "Automatex", to: "IA", icon: "spark", message: "Prénom, bien et source extraits pour le template.", type: "system", delay: 5 },
-      { from: "IA", to: "Outlook", icon: "mail", message: "Envoi : créneaux dispo + lien Calendly.", type: "out" },
+      { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouveau lead SeLoger — M. Martin, 3P Flers · 185 000 €.", type: "in" },
+      { from: "Automatex", to: "Moteur", icon: "spark", message: "Prénom, bien et source extraits pour le template.", type: "system", delay: 5 },
+      { from: "Moteur", to: "Outlook", icon: "mail", message: "Envoi à M. Martin : créneaux dispo + lien Calendly (Argentan demain 14h).", type: "out" },
       { from: "Automatex", to: "CRM", icon: "check", message: "Lead étiqueté « contacté < 2 min ».", type: "result" },
     ],
     impact: "Moins de leads froids, plus de rendez-vous terrain.",
@@ -43,8 +43,8 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     formula: "essentiel",
     steps: [
       { from: "Mail envoyé", to: "Automatex", icon: "mail", message: "Aucune ouverture ni clic sous 24 h.", type: "in", delay: 86400 },
-      { from: "Automatex", to: "IA", icon: "bell", message: "Brouillon court : rappel bien + question fermée.", type: "system" },
-      { from: "IA", to: "Boîte", icon: "mail", message: "Relance programmée à 9 h avec sujet différent.", type: "out" },
+      { from: "Automatex", to: "Moteur", icon: "bell", message: "Brouillon court : rappel bien + question fermée.", type: "system" },
+      { from: "Moteur", to: "Boîte", icon: "mail", message: "Relance programmée à 9 h avec sujet différent.", type: "out" },
       { from: "Automatex", to: "CRM", icon: "flag", message: "Statut « relance J+1 » enregistré.", type: "result" },
     ],
   },
@@ -85,10 +85,38 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     formula: "pro",
     steps: [
       { from: "Action", to: "Automatex", icon: "mail", message: "Modèle « demande d’estimation » déclenché.", type: "in" },
-      { from: "Automatex", to: "IA", icon: "spark", message: "Champs dossier injectés (adresse, ref, contact).", type: "system" },
-      { from: "IA", to: "Brouillons", icon: "edit", message: "Brouillon prêt : vous ne corrigez qu’un détail.", type: "out" },
+      { from: "Automatex", to: "Moteur", icon: "spark", message: "Champs dossier injectés (adresse, ref, contact).", type: "system" },
+      { from: "Moteur", to: "Brouillons", icon: "edit", message: "Brouillon prêt : vous ne corrigez qu’un détail.", type: "out" },
       { from: "Automatex", to: "Vous", icon: "check", message: "Notification : 1 brouillon à envoyer.", type: "result" },
     ],
+  },
+  {
+    id: "alerte-mail-urgent-2h",
+    category: "Mails & tri",
+    title: "Alerte mail urgent non lu depuis +2h",
+    tagline: "Une offre d'achat est arrivée. Si vous ne l'avez pas ouverte sous 2h, Telegram vous prévient.",
+    target: "immo",
+    formula: "essentiel",
+    steps: [
+      {
+        from: "Automatex",
+        to: "",
+        icon: "clock",
+        type: "system",
+        delay: 8280,
+        message:
+          "Surveillance : mail de M. Garcia (offre d'achat, 3P Flers · 185 000 €) arrivé à 8h42\nNon ouvert depuis 2h18\n→ Alerte déclenchée",
+      },
+      {
+        from: "Telegram",
+        to: "Vous",
+        icon: "alert",
+        type: "result",
+        message:
+          "Mail urgent non lu — 2h18\n\nM. Garcia · Offre d'achat\nReçu : 8h42 · Non ouvert\n\n→ Ouvrir Gmail maintenant",
+      },
+    ],
+    impact: "Plus jamais une offre d'achat lue trop tard",
   },
   {
     id: "classement-drive-auto",
@@ -100,10 +128,37 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     steps: [
       { from: "Mail avec PJ", to: "Automatex", icon: "paperclip", message: "PDF diagnostics reçu sur Gmail.", type: "in" },
       { from: "Automatex", to: "Drive", icon: "folder", message: "Dossier `2026-Affaire_Paris-15` ciblé par ref annonce.", type: "system", delay: 5 },
-      { from: "Automatex", to: "Drive", icon: "file", message: "Fichier renommé `dpe_2026-05_martin.pdf` et archivé.", type: "out" },
+      { from: "Automatex", to: "Drive", icon: "file", message: "Fichier renommé `dpe_2026-05_renard-flers.pdf` et archivé.", type: "out" },
       { from: "Automatex", to: "Notion/Sheet", icon: "check", message: "Ligne « pièce reçue » cochée.", type: "result" },
     ],
     impact: "Zéro pièce perdue dans la messagerie.",
+  },
+  {
+    id: "recap-dossier-telegram",
+    category: "Documents & Drive",
+    title: "Récap dossier complet en un message",
+    tagline: 'Avant un rendez-vous notaire, vous tapez "recap Garcia". Tout est résumé sur Telegram en 30 secondes.',
+    target: "immo",
+    formula: "pro",
+    steps: [
+      {
+        from: "Vous",
+        to: "Telegram",
+        icon: "message",
+        type: "in",
+        message: "recap Garcia",
+      },
+      {
+        from: "Automatex",
+        to: "Telegram",
+        icon: "file",
+        type: "out",
+        delay: 30,
+        message:
+          "Dossier Garcia — Récap\n\nBien : 3P Flers · 185 000 € · Signé 18/03\nAcquéreur : M. Garcia · Jean · 06XX\nVendeur : Mme Renard · Christine\n\nDocuments :\n✅ Compromis signé\n✅ DPE (D · 195 kWh)\n✅ Diagnostics amiante\n⚠️ Manque : acte de propriété\n\nProchain RDV : notaire 28/05 · 14h",
+      },
+    ],
+    impact: "Préparer un dossier complet en 30 secondes au lieu de 20 minutes",
   },
   {
     id: "programme-matin",
@@ -128,7 +183,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     formula: "essentiel",
     steps: [
       { from: "CRM + Mail", to: "Automatex", icon: "inbox", message: "Agrégation activité 8 h–19 h.", type: "in" },
-      { from: "Automatex", to: "IA", icon: "chart", message: "Priorisation : 3 sujets max + retard CRM.", type: "system", delay: 15 },
+      { from: "Automatex", to: "Moteur", icon: "chart", message: "Priorisation : 3 sujets max + retard CRM.", type: "system", delay: 15 },
       { from: "Automatex", to: "Mobile", icon: "phone", message: "Push + mail court « bilan noir sur blanc ».", type: "out" },
       { from: "Automatex", to: "Vous", icon: "moon", message: "Coup d’œil avant de couper la journée.", type: "result" },
     ],
@@ -163,6 +218,26 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     ],
   },
   {
+    id: "anniversaire-signature",
+    category: "Relances & suivi",
+    title: "Rappel anniversaire de signature",
+    tagline:
+      "Un an après une vente, vous recevez un rappel. L'occasion de reprendre contact et générer un nouveau mandat.",
+    target: "immo",
+    formula: "pro",
+    steps: [
+      {
+        from: "Automatex",
+        to: "Telegram · Vous",
+        icon: "calendar",
+        type: "out",
+        message:
+          "Anniversaire de signature — 1 an\n\nM. & Mme Dupont · Maison Condé-sur-Noireau\nSignature : 22/05/2025 · 235 000 €\n\nReprendre contact · Demander si revente prévue\nou recommandation à des proches\n\nBrouillon généré dans Gmail →",
+      },
+    ],
+    impact: "Transformer des clients passés en source de nouveaux mandats",
+  },
+  {
     id: "relance-devis-btp",
     category: "Relances & suivi",
     title: "Relance devis non répondu",
@@ -171,8 +246,8 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     formula: "pro",
     steps: [
       { from: "Devis envoyé", to: "Automatex", icon: "file", message: "Statut « envoyé » sans retour 48 h.", type: "in", delay: 172800 },
-      { from: "Automatex", to: "IA", icon: "mail", message: "Mail court : montant + planning équipe maintenu 7 jours.", type: "system" },
-      { from: "IA", to: "Client", icon: "send", message: "Relance envoyée avec accusé lecture.", type: "out" },
+      { from: "Automatex", to: "Moteur", icon: "mail", message: "Mail court : montant + planning équipe maintenu 7 jours.", type: "system" },
+      { from: "Moteur", to: "Client", icon: "send", message: "Relance envoyée avec accusé lecture.", type: "out" },
       { from: "Automatex", to: "Pipeline", icon: "flag", message: "Étape « relance 1 » CRM BTP.", type: "result" },
     ],
   },
@@ -263,6 +338,21 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     impact: "Réactivité collective sans réunion de service.",
   },
 ];
+
+const CATEGORY_ANCHORS: Record<string, string> = {
+  "Leads & réponses": "leads-reponses",
+  "Mails & tri": "mails-tri",
+  "Documents & Drive": "documents-drive",
+  "Résumés & planning": "resumes-planning",
+  "Relances & suivi": "relances-suivi",
+  "Dictée & terrain": "dictee-terrain",
+  "Appels & terrain BTP": "appels-terrain-btp",
+  "Pipeline & pilotage": "pipeline-pilotage",
+};
+
+export function categoryToAnchor(category: string): string {
+  return CATEGORY_ANCHORS[category] ?? category.toLowerCase().replace(/\s+/g, "-");
+}
 
 /** Catégories uniques, ordre d’affichage fixe. */
 export const CATEGORIES: string[] = [

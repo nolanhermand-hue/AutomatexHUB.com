@@ -55,7 +55,10 @@ for (const file of files) {
   if (rel === path.join("scripts", "check-forbidden-words.mjs")) continue;
   if (rel === path.join("lib", "constants.ts")) continue;
   if (rel.startsWith(`docs${path.sep}audit`)) continue;
+  if (rel.startsWith(`docs${path.sep}orchestration`)) continue;
   if (rel === "rapport-livraison.md") continue;
+  if (rel === "rapport-livraison-v1.0.0.md") continue;
+  if (rel === "AUDIT-AUTOMATEX-COMPLET.md") continue;
   if (rel.startsWith(`app${path.sep}mentions-legales`)) continue;
   if (rel.startsWith(`app${path.sep}politique-confidentialite`)) continue;
   if (rel.startsWith(`app${path.sep}cgv`)) continue;

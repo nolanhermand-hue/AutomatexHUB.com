@@ -646,6 +646,16 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous disposez de 30 jours satisfait ou remboursé pour vérifier le résultat sur votre propre activité.",
   },
   {
+    question: "J'ai mes habitudes — je travaille comme ça depuis 20 ans.",
+    answer:
+      "Automatex ne change pas vos habitudes. Il travaille dans votre boîte mail, votre Telegram, votre Google Calendar — des outils que vous utilisez déjà. Votre seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
+  },
+  {
+    question: "Il a 19 ans — c'est suffisamment sérieux ?",
+    answer:
+      "Nolan a 19 ans. Il a aussi un SIRET (103 208 054 00017), une adresse à Flers, et une garantie 30 jours satisfait ou remboursé. Le système est testé sur des scénarios réels avant que vous ne signiez.",
+  },
+  {
     question: "En combien de temps un lead non rappelé part-il à la concurrence ?",
     answer:
       "Cinq minutes. Un acquéreur ou un vendeur qui ne reçoit pas de réponse dans les cinq minutes contacte en moyenne deux à trois autres mandataires dans la foulée. Le premier qui répond en personnalisant son message a entre cinq et huit fois plus de chances de décrocher le mandat. Automatex envoie la réponse dans les 2 minutes.",

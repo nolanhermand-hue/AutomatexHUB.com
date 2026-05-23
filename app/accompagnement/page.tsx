@@ -30,6 +30,18 @@ export default function AccompagnementPage() {
         </h1>
         <p className="mt-4 max-w-readable text-lg text-muted">{ACCOMPANIMENT_PAGE.sub}</p>
 
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            À partir de 99€/mois
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-4 py-2 text-sm text-muted">
+            Setup unique · Sans engagement
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-4 py-2 text-sm text-muted">
+            30j satisfait ou remboursé
+          </span>
+        </div>
+
         <div className="mt-8 rounded-xl border border-primary/20 bg-accent-light p-6">
           <FounderTrustBlock />
         </div>
@@ -111,6 +123,48 @@ export default function AccompagnementPage() {
             Voir les formules BTP
           </Link>
         </div>
+
+        <section className="mt-16 border-t border-border pt-16">
+          <h2 className="font-heading text-xl font-bold text-text">
+            L&apos;accompagnement est inclus dans chaque formule
+          </h2>
+          <p className="mt-2 text-sm text-muted">Pas en option. Pas en supplément. Inclus.</p>
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="py-3 pr-4 text-left font-medium text-text">Formule</th>
+                  <th className="px-4 py-3 text-right font-medium text-text">Mensuel</th>
+                  <th className="py-3 pl-4 text-left font-medium text-muted">Point mensuel</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {[
+                  { name: "Départ", price: "99€", note: "Sur demande", highlight: false },
+                  { name: "Essentiel ⭐", price: "249€", note: "Inclus", highlight: true },
+                  { name: "Pro", price: "349€", note: "Inclus", highlight: false },
+                  { name: "Full", price: "449€", note: "Inclus + réponse 4h", highlight: false },
+                ].map((row) => (
+                  <tr key={row.name} className={row.highlight ? "bg-primary/5" : undefined}>
+                    <td
+                      className={`py-3 pr-4 font-medium ${row.highlight ? "text-primary" : "text-text"}`}
+                    >
+                      {row.name}
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums text-text">{row.price}</td>
+                    <td className="py-3 pl-4 text-muted">{row.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs text-muted">
+            + Setup unique au démarrage (199€–999€ selon formule).
+            <Link href="/immobilier#pricing" className="ml-1 text-primary hover:underline">
+              Voir le détail →
+            </Link>
+          </p>
+        </section>
 
         <AccompagnementContactForm />
       </div>

@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/automatisation-artisan-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/automatisation-artisan-argentan`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/devis-automatique-artisan`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/devis-automatique-artisan-orne`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/mandataires-normandie`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/mandataires-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/mandataires-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },

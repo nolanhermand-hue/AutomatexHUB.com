@@ -315,6 +315,11 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
           <p className="text-center text-xs text-muted">
             {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formFooter}
           </p>
+          {!isResiliation ? (
+            <p className="text-center text-xs text-muted/80">
+              30 jours satisfait ou remboursé — un seul mail suffit
+            </p>
+          ) : null}
 
           <ul className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-5 text-sm text-muted">
             {CONTACT_COPY.badges.map((b) => (

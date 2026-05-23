@@ -1,12 +1,13 @@
 import { BtpDemoSection } from "@/components/demo/BtpDemoSection";
 import { LiveDemoBlock } from "@/components/demo/LiveDemoBlock";
-import { HeroMotionBackdrop } from "@/components/motion/HeroMotionBackdrop";
+import { LazyHeroMotionBackdrop } from "@/components/motion/LazyHeroMotionBackdrop";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import Link from "next/link";
 import { BtpFaq } from "@/components/sections/BtpFaq";
 import { BtpPricing } from "@/components/sections/BtpPricing";
 import { BtpRoiStats } from "@/components/sections/BtpRoiStats";
 import { BtpSocialProof } from "@/components/sections/BtpSocialProof";
+import { BtpGeoInternalNav } from "@/components/sections/BtpGeoInternalNav";
 import { Contact } from "@/components/sections/Contact";
 import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
@@ -25,7 +26,7 @@ export function BtpLanding() {
   return (
     <>
       <section id="hero" className="relative border-b border-border bg-night px-gutter pb-12 pt-[88px] md:pt-[100px]">
-        <HeroMotionBackdrop motionId="hero-background-btp" />
+        <LazyHeroMotionBackdrop motionId="hero-background-btp" />
         <div className="relative mx-auto max-w-content">
           <h1 className="font-heading text-[clamp(1.75rem,5vw,3rem)] font-bold leading-[1.1] text-text">
             {BTP_HERO.h1}
@@ -142,6 +143,8 @@ export function BtpLanding() {
       <BtpFaq />
 
       <BtpSocialProof />
+
+      <BtpGeoInternalNav />
 
       <Contact variant="btp" />
       <div className="h-20 md:hidden" aria-hidden />

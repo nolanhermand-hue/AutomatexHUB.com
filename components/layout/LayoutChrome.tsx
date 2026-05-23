@@ -4,7 +4,7 @@ import { MotionBootstrap } from "@/components/motion/MotionBootstrap";
 import { AmbientMouseGradient } from "@/components/layout/AmbientMouseGradient";
 import { CustomCursor } from "@/components/layout/CustomCursor";
 import { Footer } from "@/components/layout/Footer";
-import { Navbar } from "@/components/layout/Navbar";
+import { MegaNav } from "@/components/layout/MegaNav";
 import { ReadingProgress } from "@/components/layout/ReadingProgress";
 import { SectionRail } from "@/components/layout/SectionRail";
 import { StickyCtaMobile } from "@/components/layout/StickyCtaMobile";
@@ -23,7 +23,7 @@ export function LayoutChrome({ children }: { children: ReactNode }) {
       <SectionRail />
       <ScrollDepthTracker />
       <UtmCapture />
-      <Navbar />
+      <MegaNav />
       <main className="relative z-[10]">{children}</main>
       <Footer />
       <StickyCtaMobile />

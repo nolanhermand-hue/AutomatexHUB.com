@@ -90,6 +90,9 @@ export function AccompagnementContactForm() {
         <p className="text-center text-xs text-faint">
           Démo gratuite · Sans engagement · Basé à Flers, Orne
         </p>
+        <p className="mt-1.5 text-center text-xs text-faint/80">
+          30 jours satisfait ou remboursé — un seul mail suffit
+        </p>
       </form>
     </section>
   );

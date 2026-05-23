@@ -1,4 +1,5 @@
 import { LayoutChrome } from "@/components/layout/LayoutChrome";
+import { NetlifyFormsDetection } from "@/components/seo/NetlifyFormsDetection";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { Plausible } from "@/components/seo/Plausible";
 import { StructuredData } from "@/components/seo/StructuredData";
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <GoogleAnalytics />
         <Plausible />
         <LayoutChrome>{children}</LayoutChrome>
+        <NetlifyFormsDetection />
       </body>
     </html>
   );

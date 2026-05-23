@@ -3,7 +3,7 @@ import { BtpStructuredData } from "@/components/seo/BtpStructuredData";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
-const ogImage = `${SITE_URL}/assets/brand/og-image.png`;
+const ogImage = `${SITE_URL}/assets/brand/og-image-btp.png`;
 
 export const metadata: Metadata = {
   title: "Artisans BTP · devis & appels automatiques · Orne · Automatex Hub",

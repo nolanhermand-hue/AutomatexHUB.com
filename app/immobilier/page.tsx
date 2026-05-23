@@ -1,14 +1,15 @@
 import { ImmobilierHome } from "@/components/funnels/ImmobilierHome";
-import { META } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mandataires immobiliers en Normandie",
-  description: META.description,
+  title: "Mandataires IAD · SAFTI · Orne — réponse leads en 90s · Automatex",
+  description:
+    "Automatex répond à vos leads SeLoger et LBC en moins de 90 secondes pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. 30j satisfait ou remboursé.",
   alternates: { canonical: "https://automatex-hub.com/immobilier" },
   openGraph: {
-    title: META.ogTitle,
-    description: META.ogDescription,
+    title: "Mandataires IAD · SAFTI · Orne — réponse leads en 90s · Automatex",
+    description:
+      "Automatex répond à vos leads SeLoger et LBC en moins de 90 secondes pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. 30j satisfait ou remboursé.",
     url: "https://automatex-hub.com/immobilier",
   },
 };

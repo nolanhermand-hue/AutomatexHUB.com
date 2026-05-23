@@ -1,7 +1,15 @@
 "use client";
 
-import { MotionDemo } from "@/components/demo/MotionDemo";
+import dynamic from "next/dynamic";
 import { DEMO_STATIC, loadLeadImmobilier } from "@/lib/demo-loaders";
+
+const MotionDemo = dynamic(
+  () => import("@/components/demo/MotionDemo").then((m) => ({ default: m.MotionDemo })),
+  {
+    ssr: false,
+    loading: () => <div className="h-64 animate-pulse rounded-2xl bg-section" aria-hidden />,
+  },
+);
 
 export function ImmobilierLeadDemoSection() {
   return (

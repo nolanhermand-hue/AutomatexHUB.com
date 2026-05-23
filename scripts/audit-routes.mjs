@@ -8,6 +8,7 @@ const paths = [
   "/",
   "/immobilier",
   "/btp",
+  "/automatisations",
   "/accompagnement",
   "/a-propos",
   "/merci",
@@ -24,6 +25,7 @@ const paths = [
   "/automatisation-artisan-alencon",
   "/automatisation-artisan-argentan",
   "/devis-automatique-artisan",
+  "/devis-automatique-artisan-orne",
   "/sitemap.xml",
   "/robots.txt",
 ];

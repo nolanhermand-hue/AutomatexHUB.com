@@ -185,6 +185,10 @@ export const BTP_FAQ = {
   h2: "Ce que vous vous demandez sûrement",
   items: [
     {
+      q: "J'ai mes habitudes — je travaille comme ça depuis 20 ans.",
+      a: "Automatex ne change pas vos habitudes. Il travaille dans votre boîte mail, votre Telegram, votre Google Calendar — des outils que vous utilisez déjà ou qui s'y ajoutent sans effort. Votre seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
+    },
+    {
       q: "Je ne suis pas doué avec la technologie.",
       a: "C'est exactement pour ça qu'on est là. Vous n'installez rien. Nolan s'occupe de tout. Votre seul outil nouveau : recevoir un message Telegram le soir.",
     },
@@ -205,8 +209,12 @@ export const BTP_FAQ = {
       a: "Tout est hébergé en France, conforme RGPD. Vos devis et contacts : vous et Nolan uniquement.",
     },
     {
-      q: "Je travaille seul, sans secrétaire — c'est pour moi ?",
-      a: "Oui. C'est le cas le plus fréquent dans l'Orne : vous faites chantier, devis et relances. Le système répond quand vous ne pouvez pas décrocher ; Nolan installe et ajuste avec vous chaque mois.",
+      q: "Je travaille seul, sans secrétaire — c'est vraiment pour moi ?",
+      a: "C'est exactement pour ça que c'est conçu. Automatex remplace ce que ferait une secrétaire — répondre aux appels, envoyer les devis, relancer les clients. Sans embauche, sans formation, sans charges. Et Nolan est là si quelque chose coince.",
+    },
+    {
+      q: "Il a 19 ans — c'est suffisamment sérieux ?",
+      a: "Juste : Nolan a 19 ans. Ce qu'il a aussi, c'est un SIRET (103 208 054 00017), une adresse à Flers, un système testé sur des scénarios réels. Et une garantie : si ça ne fonctionne pas dans les 30 premiers jours, vous êtes remboursé sans question.",
     },
     {
       q: "Et si j'ai un problème un vendredi soir ?",
@@ -294,10 +302,10 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
   {
     path: "/automatisation-btp-orne",
     city: "Orne",
-    h1: "Système pour artisans dans l'Orne — récupérez 2 h par jour",
-    metaTitle: "Artisans Orne · devis & appels · Automatex Hub",
+    h1: "Automatisation BTP dans l'Orne — Flers, Argentan, Alençon",
+    metaTitle: "Automatisation BTP Orne — devis, appels, relances · Automatex Hub",
     metaDescription:
-      "Automatex Hub installe pour les artisans de l'Orne un système qui envoie vos devis et répond aux appels manqués. Basé à Flers.",
+      "Automatex Hub automatise les devis, les réponses aux appels manqués et les relances clients pour les artisans BTP dans l'Orne (61). Basé à Flers. Dès 99€/mois.",
     localHook:
       "De Flers à Alençon, Argentan et les zones artisanales de l'Orne : un interlocuteur local, pas une hotline parisienne.",
     localDetail:
@@ -307,10 +315,10 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
   {
     path: "/automatisation-artisan-flers",
     city: "Flers",
-    h1: "Automatisation pour artisans Flers — Récupérez 2 h par jour",
-    metaTitle: "Artisans Flers · Automatex Hub",
+    h1: "Automatisation pour artisans à Flers — Orne",
+    metaTitle: "Automatisation artisan Flers (61) — devis & appels · Automatex",
     metaDescription:
-      "Basé à Flers (61100), Automatex Hub accompagne les artisans du bâtiment : devis automatiques, SMS appels manqués, Telegram.",
+      "Automatisation pour artisans à Flers : devis depuis note vocale, SMS appels manqués, relances clients. Nolan à Flers (61100). Dès 99€/mois.",
     localHook: "Siège à Saint-Georges-des-Groseillers — Nolan intervient sur Flers et l'agglo en 20 minutes.",
     localDetail:
       "Les artisans de la zone industrielle des Provinces, du centre-ville de Flers et de l'agglo : devis le soir, appels manqués en journée — le système répond pendant que vous êtes sur le chantier.",
@@ -319,10 +327,10 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
   {
     path: "/automatisation-artisan-alencon",
     city: "Alençon",
-    h1: "Automatisation pour artisans Alençon — Récupérez 2 h par jour",
-    metaTitle: "Artisans Alençon · Automatex Hub",
+    h1: "Automatisation pour artisans à Alençon",
+    metaTitle: "Automatisation artisan Alençon (61) — devis automatiques · Automatex",
     metaDescription:
-      "Système pour artisans d'Alençon : réponse aux appels manqués, devis envoyés le soir, accompagnement Nolan.",
+      "Automatisation pour artisans à Alençon : appels manqués, devis vocaux, relances. Nolan à Flers, 35 min. Dès 99€/mois.",
     localHook: "Artisans du quartier Saint-Léonard et de la zone d'activités : même numéro, même suivi.",
     localDetail:
       "Les artisans du quartier Saint-Léonard, de la zone des Fourches et des chantiers périphériques d'Alençon : un prestataire à Flers, à 35 minutes, pas une hotline parisienne.",
@@ -331,14 +339,27 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
   {
     path: "/automatisation-artisan-argentan",
     city: "Argentan",
-    h1: "Automatisation pour artisans Argentan — Récupérez 2 h par jour",
-    metaTitle: "Artisans Argentan · Automatex Hub",
+    h1: "Automatisation pour artisans à Argentan",
+    metaTitle: "Automatisation artisan Argentan (61) — appels & devis · Automatex",
     metaDescription:
-      "Automatex Hub pour les artisans d'Argentan et Ar'Nor : devis, relances clients, résumé Telegram quotidien.",
+      "Automatisation pour artisans à Argentan et zone Ar'Nor : devis, relances, SMS appels manqués. Basé à Flers. Dès 99€/mois.",
     localHook: "Zone Ar'Nor et centre-ville d'Argentan : prestataire basé à Flers, à 35 minutes.",
     localDetail:
       "Les artisans de la zone Ar'Nor et du centre-ville d'Argentan : Nolan Hermand installe et suit le système depuis Flers, avec le même numéro direct.",
     distanceFromFlers: "Flers est à environ 35 minutes d'Argentan",
+  },
+  {
+    path: "/devis-automatique-artisan-orne",
+    city: "Orne",
+    h1: "Devis automatique pour artisans dans l'Orne",
+    metaTitle: "Devis automatique artisan Orne — depuis note vocale · Automatex",
+    metaDescription:
+      "Devis automatique pour artisans dans l'Orne : dictée vocale, PDF, envoi mail le jour même. Flers, Alençon, Argentan. Logiciel devis artisan sans soirée admin.",
+    localHook:
+      "Page ressource pour artisans qui perdent des chantiers faute de devis le jour même — générer un devis artisan automatiquement depuis le chantier.",
+    localDetail:
+      "Que vous soyez plombier à Flers, électricien à Alençon ou maçon à Argentan : la note vocale devient un devis chiffré et envoyé avant le retour à la maison.",
+    distanceFromFlers: "Configuration par Nolan · siège Flers (61100)",
   },
   {
     path: "/devis-automatique-artisan",

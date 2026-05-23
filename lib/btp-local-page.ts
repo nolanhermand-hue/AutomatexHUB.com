@@ -7,9 +7,17 @@ export function getBtpLocalPage(path: string): BtpLocalPageDef | undefined {
 }
 
 export function btpLocalMetadata(page: BtpLocalPageDef): Metadata {
+  const url = `https://automatex-hub.com${page.path}`;
   return {
     title: page.metaTitle,
     description: page.metaDescription,
-    alternates: { canonical: `https://automatex-hub.com${page.path}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      url,
+      type: "website",
+      locale: "fr_FR",
+    },
   };
 }
