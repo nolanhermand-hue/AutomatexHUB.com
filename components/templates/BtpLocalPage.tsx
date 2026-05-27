@@ -63,7 +63,7 @@ export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
         </dl>
       </section>
 
-      <div className="mt-14 rounded-2xl border border-primary/30 bg-section/80 p-8">
+      <div className="mt-14 rounded-lg border border-primary/30 bg-surface p-8">
         <h2 className="font-heading text-xl text-text">Réserver une démo</h2>
         <p className="mt-3 text-muted">
           Artisans {page.city} : 20 minutes sur vos vrais chantiers.{" "}

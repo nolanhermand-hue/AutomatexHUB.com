@@ -111,7 +111,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="fr" className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="dns-prefetch" href="https://plausible.io" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
@@ -119,11 +119,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="manifest" href={BRAND.manifest} />
         <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#FF6B2B" />
         <meta name="theme-color" content="#080D1A" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var v=['confiance'];var t=localStorage.getItem('ax-theme');if(t&&v.includes(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
-          }}
-        />
       </head>
       <body className="min-h-screen font-body antialiased">
         <StructuredData />

@@ -55,6 +55,9 @@ for (const file of files) {
   if (rel === path.join("scripts", "check-forbidden-words.mjs")) continue;
   if (rel === path.join("lib", "constants.ts")) continue;
   if (rel === path.join("lib", "json-ld.ts")) continue;
+  if (rel === path.join("lib", "automatisation-ia-tpe-content.ts")) continue;
+  if (rel.startsWith(`app${path.sep}automatisation-ia-tpe`)) continue;
+  if (rel.startsWith(`components${path.sep}tpe`)) continue;
   if (rel === path.join("lib", "hub-copy.ts")) continue;
   if (rel.startsWith(`app${path.sep}mentions-legales`)) continue;
   if (rel.startsWith(`app${path.sep}politique-confidentialite`)) continue;

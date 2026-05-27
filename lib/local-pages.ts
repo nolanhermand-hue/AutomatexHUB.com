@@ -1,4 +1,6 @@
 /** Contenu long-tail SEO — pages mandataires par zone. */
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+
 export type LocalMandatairesPageData = {
   slug: string;
   path: string;
@@ -17,7 +19,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-flers",
     metaTitle: "Mandataires immobiliers à Flers (61100) | Automatex",
     metaDescription:
-      "Réponse aux leads en 2 min pour mandataires IAD, SAFTI et Capifrance à Flers et dans le bocage ornais. Installé en 48 h, hébergé en France.",
+      `Réponse aux leads en 2 min pour mandataires IAD, SAFTI et Capifrance à Flers et dans le bocage ornais. Installé en 48 h. ${SOVEREIGNTY_TRUST_LINE}.`,
     h1: "Automatisation pour mandataires immobiliers à Flers et dans l'Orne",
     city: "Flers",
     areaServedLabel: "Flers, bocage ornais, Suisse normande (61)",
@@ -41,7 +43,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Mise en place depuis Flers",
         paragraphs: [
-          "La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai annoncé : 48 heures entre la démo et la première réponse live. Données hébergées chez OVHcloud à Roubaix ; aucun compte partagé avec d'autres mandataires.",
+          `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai annoncé : 48 heures entre la démo et la première réponse live. ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé avec d'autres mandataires.`,
           "Garantie 30 jours satisfait ou remboursé sur les formules Essentiel, Pro et Premium. Onboardings limités à quatre par mois pour garder un suivi humain.",
         ],
       },
@@ -101,7 +103,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-argentan",
     metaTitle: "Mandataires à Argentan et Suisse normande | Automatex",
     metaDescription:
-      "Leads immobiliers à Argentan : réponse en 2 min, tri des mails, documents classés. Pour mandataires Normandie. Hébergement France, 30 jours garantis.",
+      `Leads immobiliers à Argentan : réponse en 2 min, tri des mails, documents classés. Pour mandataires Normandie. ${SOVEREIGNTY_TRUST_LINE}. 30 jours garantis.`,
     h1: "Mandataires immobiliers à Argentan et en Suisse normande",
     city: "Argentan",
     areaServedLabel: "Argentan, Suisse normande, Orne et Calvados limitrophe",

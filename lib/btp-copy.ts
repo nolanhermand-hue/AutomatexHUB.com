@@ -222,7 +222,7 @@ export const BTP_FAQ = {
     },
     {
       q: "Mes données sont en sécurité ?",
-      a: "Tout est hébergé en France, conforme RGPD. Vos devis et contacts : vous et Nolan uniquement.",
+      a: `${SOVEREIGNTY_TRUST_LINE}. Mistral (Paris) et automatisations en UE. Vos devis et contacts : vous et Nolan uniquement.`,
     },
     {
       q: "Je travaille seul, sans secrétaire — c'est vraiment pour moi ?",

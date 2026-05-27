@@ -8,6 +8,7 @@ ROUTES=(
   "/btp/"
   "/accompagnement/"
   "/automatisations/"
+  "/automatisation-ia-tpe/"
   "/a-propos/"
   "/vos-donnees/"
   "/merci/"

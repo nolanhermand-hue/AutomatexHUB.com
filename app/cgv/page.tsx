@@ -3,7 +3,9 @@ import {
   LegalP,
   LegalSection,
   LegalUl,
+  LegalInfraCallout,
 } from "@/components/legal/LegalPageShell";
+import { LEGAL_BUSINESS_DATA_ROUTING } from "@/lib/legal-infrastructure-copy";
 import { LEGAL, legalContactBlock } from "@/lib/legal";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -21,6 +23,7 @@ export default function CgvPage() {
 
   return (
     <LegalPageShell title="Conditions générales de vente">
+      <LegalInfraCallout />
       <LegalP>
         Prestataire : {c.founder} — {c.brand} · SIRET : {LEGAL.siret} · {LEGAL.tvaNotice}
       </LegalP>
@@ -92,7 +95,7 @@ export default function CgvPage() {
             "Fournir le service de l'offre souscrite",
             "Configurer et tester avant activation",
             "Assistance selon les délais de l'offre",
-            "Héberger les traitements Automatex en France (OVHcloud Roubaix)",
+            "Exécuter les automatisations sur N8N Cloud (Francfort, UE) et Mistral AI (Paris, UE)",
             "Préavis 30 jours en cas de modification substantielle",
           ]}
         />
@@ -137,7 +140,7 @@ export default function CgvPage() {
         <LegalP>
           Automatex accède aux outils du Client pour exécuter le contrat. Le Client reste
           responsable de traitement vis-à-vis de ses propres clients. Automatex s&apos;engage à
-          traiter uniquement sur instruction, sans revente, hébergement France, restitution /
+          traiter uniquement sur instruction, sans revente. {LEGAL_BUSINESS_DATA_ROUTING} Restitution /
           effacement sous 7 jours après fin de contrat, notification de violation sous 72 h. Voir{" "}
           <Link href="/politique-confidentialite" className="text-primary underline">
             politique de confidentialité

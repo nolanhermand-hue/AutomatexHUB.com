@@ -8,6 +8,11 @@ import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const ACCOMP_PILL =
+  "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-[#1A2540] bg-[#0D1526] px-3 py-1.5 text-muted";
+const ACCOMP_PILL_ACTIVE =
+  "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-[#FF6B2B] bg-[#0D1526] px-3 py-1.5 text-[#FF6B2B]";
+
 export const metadata: Metadata = {
   title: "Accompagnement humain inclus · Flers · Automatex Hub",
   description:
@@ -31,15 +36,9 @@ export default function AccompagnementPage() {
         <p className="mt-4 max-w-readable text-lg text-muted">{ACCOMPANIMENT_PAGE.sub}</p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-            Formules dès 99 €/mois
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-4 py-2 text-sm text-muted">
-            Sur mesure · prix sur devis
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-4 py-2 text-sm text-muted">
-            30j satisfait ou remboursé
-          </span>
+          <span className={ACCOMP_PILL_ACTIVE}>Formules dès 99 €/mois</span>
+          <span className={ACCOMP_PILL}>Sur mesure · prix sur devis</span>
+          <span className={ACCOMP_PILL}>30j satisfait ou remboursé</span>
         </div>
 
         <div className="mt-8 card border-primary/30 p-6">
@@ -109,17 +108,11 @@ export default function AccompagnementPage() {
           </section>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 sm:flex-row">
-          <Link
-            href="/immobilier#pricing"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-border px-6 font-semibold text-text"
-          >
+        <div className="mt-16 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href="/immobilier#pricing" className="btn-bracket btn-bracket-outline flex-1 justify-center">
             Voir les formules immobilier
           </Link>
-          <Link
-            href="/btp#pricing"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-border px-6 font-semibold text-text"
-          >
+          <Link href="/btp#pricing" className="btn-bracket btn-bracket-outline flex-1 justify-center">
             Voir les formules BTP
           </Link>
         </div>
@@ -150,24 +143,27 @@ export default function AccompagnementPage() {
               </Link>
               <Link
                 href="/btp#contact?offre=sur-mesure"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-border px-5 text-sm font-semibold text-text"
+                className="btn-bracket btn-bracket-outline justify-center"
               >
                 Sur mesure artisan BTP
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/automatisation-ia-tpe#tarifs"
+              className="btn-bracket btn-bracket-primary flex-1 justify-center"
+            >
+              Offre complète TPE & PME
+            </Link>
             <Link
               href="/immobilier#pricing"
-              className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-md border border-border px-6 font-semibold text-text hover:border-primary/40"
+              className="btn-bracket btn-bracket-outline flex-1 justify-center"
             >
               Tarifs mandataires
             </Link>
-            <Link
-              href="/btp#pricing"
-              className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-md border border-border px-6 font-semibold text-text hover:border-primary/40"
-            >
+            <Link href="/btp#pricing" className="btn-bracket btn-bracket-outline flex-1 justify-center">
               Tarifs artisans BTP
             </Link>
           </div>

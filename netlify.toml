@@ -18,11 +18,17 @@
   status = 301
   force = true
 
-# Assets immuables avec hash (JS/CSS/images Next.js) : cache 1 an
+# Assets immuables avec hash (JS/CSS/polices Next.js) : cache 1 an
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Pages HTML / routes app — revalidation immédiate (priorité moindre que assets hashés)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Assets statiques /public/assets : cache long (noms stables)
 [[headers]]

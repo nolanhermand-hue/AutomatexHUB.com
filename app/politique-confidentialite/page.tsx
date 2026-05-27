@@ -3,7 +3,9 @@ import {
   LegalP,
   LegalSection,
   LegalUl,
+  LegalInfraCallout,
 } from "@/components/legal/LegalPageShell";
+import { LEGAL_BUSINESS_DATA_ROUTING } from "@/lib/legal-infrastructure-copy";
 import { LEGAL, legalContactBlock } from "@/lib/legal";
 import { NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -22,13 +24,12 @@ const SUBPROCESSORS: ReadonlyArray<{
   location: string;
   guarantees: string;
 }> = [
-  { name: "OVHcloud", role: "Hébergement infrastructure", location: "Roubaix, France", guarantees: "RGPD, ISO 27001" },
-  { name: "n8n (auto-hébergé)", role: "Moteur d'automatisation", location: "OVHcloud France", guarantees: "Instance dédiée" },
-  { name: "Mistral AI", role: "Traitement linguistique", location: "France / UE", guarantees: "RGPD, données UE" },
+  { name: "N8N Cloud", role: "Moteur d'automatisation (workflows)", location: "Francfort, Allemagne (UE)", guarantees: "RGPD, DPA" },
+  { name: "Mistral AI", role: "Traitement linguistique", location: "Paris, France (UE)", guarantees: "RGPD, données UE" },
   { name: "Google Workspace", role: "Email, Drive, Calendar", location: "Compte client", guarantees: "CGU Google du client" },
   { name: "Telegram", role: "Notifications", location: "Compte client", guarantees: "CGU Telegram du client" },
   { name: "Plausible Analytics", role: "Statistiques site", location: "Union européenne", guarantees: "Exempté CNIL, sans cookie" },
-  { name: "Netlify", role: "Hébergement site statique", location: "États-Unis (CDN)", guarantees: "Fichiers statiques uniquement" },
+  { name: "Netlify", role: "CDN site statique", location: "États-Unis / Edge global", guarantees: "Fichiers publics uniquement, sans données client" },
 ];
 
 export default function PolitiqueConfidentialitePage() {
@@ -36,6 +37,7 @@ export default function PolitiqueConfidentialitePage() {
 
   return (
     <LegalPageShell title="Politique de confidentialité">
+      <LegalInfraCallout />
       <LegalP>
         Responsable du traitement : {c.founder} — {c.brand}. Contact :{" "}
         <a className="text-primary underline" href={`mailto:${c.email}`}>
@@ -79,8 +81,11 @@ export default function PolitiqueConfidentialitePage() {
           Dans le cadre de la prestation, Automatex accède aux outils que vous autorisez : emails
           entrants (lecture), calendrier Google (lecture), Google Drive (lecture et création de
           dossiers), notifications Telegram (envoi). Ces données servent uniquement à exécuter la
-          prestation. Elles ne sont ni vendues ni cédées. Hébergement des traitements Automatex :
-          OVHcloud, Roubaix, France.
+          prestation. Elles ne sont ni vendues ni cédées. {LEGAL_BUSINESS_DATA_ROUTING}{" "}
+          <Link href="/vos-donnees" className="text-primary underline">
+            Vos données
+          </Link>
+          .
         </LegalP>
         <LegalP>
           Base légale : exécution du contrat (art. 6.1.b RGPD). Durée : durée du contrat + 30

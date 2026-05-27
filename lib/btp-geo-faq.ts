@@ -1,3 +1,5 @@
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+
 /** Blocs Q/R pour moteurs IA — pages BTP. */
 export const BTP_GEO_FAQ = [
   {
@@ -14,6 +16,6 @@ export const BTP_GEO_FAQ = [
   },
   {
     q: "Les données des artisans sont-elles sécurisées avec Automatex ?",
-    a: "Oui. Tous les systèmes Automatex Hub sont hébergés en France sur des serveurs OVHcloud, conformes au RGPD. Aucune donnée ne transite hors de France.",
+    a: `Oui. ${SOVEREIGNTY_TRUST_LINE}. Mistral (Paris) et automatisations en UE. Détail sur /vos-donnees.`,
   },
 ] as const;

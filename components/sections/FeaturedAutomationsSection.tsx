@@ -43,11 +43,8 @@ export function FeaturedAutomationsSection({ variant }: FeaturedAutomationsSecti
         </div>
 
         <div className="mt-8 text-center">
-          <Link
-            href="/automatisations"
-            className="inline-flex rounded-xl border border-border px-6 py-3 text-sm text-muted transition hover:border-primary hover:text-primary"
-          >
-            Voir le catalogue complet des automatisations →
+          <Link href="/automatisations" className="btn-bracket btn-bracket-outline text-sm">
+            Voir le catalogue complet →
           </Link>
         </div>
       </div>

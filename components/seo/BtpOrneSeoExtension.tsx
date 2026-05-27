@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 const METIERS = [
   "Maçon Orne",
@@ -35,7 +36,7 @@ export const BTP_ORNE_SEO_FAQ = [
   },
   {
     q: "L'automatisation BTP est-elle conforme au RGPD ?",
-    a: "Oui. Tous les systèmes Automatex Hub sont hébergés en France sur OVHcloud à Roubaix. Aucune donnée ne transite hors de France. Registre RGPD à jour.",
+    a: `Oui. ${SOVEREIGNTY_TRUST_LINE}. Transparence complète sur /vos-donnees.`,
   },
   {
     q: "Automatex Hub intervient-il dans toute l'Orne ?",

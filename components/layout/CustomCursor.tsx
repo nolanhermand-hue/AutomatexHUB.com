@@ -6,10 +6,35 @@ import { useEffect, useRef, useState } from "react";
 const HALO_LERP = 0.1;
 const RING_LERP = 0.18;
 
+function usePointerAndMotionGate(): boolean | null {
+  const [ok, setOk] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const isFinePointer = window.matchMedia("(pointer: fine)");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const hoverCapable = window.matchMedia("(hover: hover)");
+
+    const apply = () => {
+      setOk(isFinePointer.matches && hoverCapable.matches && !prefersReducedMotion.matches);
+    };
+    apply();
+    isFinePointer.addEventListener("change", apply);
+    prefersReducedMotion.addEventListener("change", apply);
+    hoverCapable.addEventListener("change", apply);
+    return () => {
+      isFinePointer.removeEventListener("change", apply);
+      prefersReducedMotion.removeEventListener("change", apply);
+      hoverCapable.removeEventListener("change", apply);
+    };
+  }, []);
+
+  return ok;
+}
+
 /** Halo bleu qui suit la souris (desktop, pointeur fin). */
 export function CustomCursor() {
   const reduced = useReducedMotionPreference();
-  const [enabled, setEnabled] = useState(false);
+  const pointerGate = usePointerAndMotionGate();
   const [haloEnabled, setHaloEnabled] = useState(false);
   const pos = useRef({ x: 0, y: 0 });
   const halo = useRef({ x: 0, y: 0 });
@@ -18,29 +43,30 @@ export function CustomCursor() {
   const ringRef = useRef<HTMLDivElement | null>(null);
   const dotRef = useRef<HTMLDivElement | null>(null);
 
+  const enabled = pointerGate === true && !reduced;
+
   useEffect(() => {
-    if (typeof window === "undefined" || reduced) return;
-    const finePointer = window.matchMedia("(pointer: fine)");
-    const hoverCapable = window.matchMedia("(hover: hover)");
-    const apply = () => {
-      const ok = finePointer.matches && hoverCapable.matches;
-      setEnabled(ok);
-      const cores = navigator.hardwareConcurrency ?? 4;
-      const saveData =
-        typeof navigator !== "undefined" &&
-        "connection" in navigator &&
-        (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData ===
-          true;
-      setHaloEnabled(ok && !reduced && cores >= 4 && !saveData);
+    if (!enabled) return;
+    const isFinePointer = window.matchMedia("(pointer: fine)");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const cores = navigator.hardwareConcurrency ?? 4;
+    const saveData =
+      "connection" in navigator &&
+      (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData ===
+        true;
+    const applyHalo = () => {
+      setHaloEnabled(
+        isFinePointer.matches && !prefersReducedMotion.matches && cores >= 4 && !saveData,
+      );
     };
-    apply();
-    finePointer.addEventListener("change", apply);
-    hoverCapable.addEventListener("change", apply);
+    applyHalo();
+    isFinePointer.addEventListener("change", applyHalo);
+    prefersReducedMotion.addEventListener("change", applyHalo);
     return () => {
-      finePointer.removeEventListener("change", apply);
-      hoverCapable.removeEventListener("change", apply);
+      isFinePointer.removeEventListener("change", applyHalo);
+      prefersReducedMotion.removeEventListener("change", applyHalo);
     };
-  }, [reduced]);
+  }, [enabled]);
 
   useEffect(() => {
     if (!enabled) return;
@@ -88,7 +114,8 @@ export function CustomCursor() {
     };
   }, [enabled, haloEnabled]);
 
-  if (!enabled || reduced) return null;
+  if (pointerGate === null) return null;
+  if (!enabled) return null;
 
   return (
     <>

@@ -23,7 +23,7 @@ export function AccompanimentYear() {
           {ACCOMPANIMENT_COPY.timeline.map((item, index) => (
             <li
               key={item.step}
-              className="relative rounded-2xl border-[0.5px] border-border bg-white p-5 shadow-sm"
+              className="relative rounded-lg border border-border bg-bg-card p-5"
             >
               {index < ACCOMPANIMENT_COPY.timeline.length - 1 ? (
                 <span
@@ -44,7 +44,7 @@ export function AccompanimentYear() {
           {ACCOMPANIMENT_COPY.pillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="rounded-2xl border-[0.5px] border-border bg-white p-5 shadow-sm"
+              className="rounded-lg border border-border bg-bg-card p-5"
             >
               <h3 className="font-heading text-xl text-text">{pillar.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.body}</p>
@@ -64,7 +64,7 @@ export function AccompanimentYear() {
             href={`tel:${NAP.phoneE164}`}
             data-analytics-cta="accompagnement_phone"
             onClick={() => trackCtaClicked("accompagnement_phone")}
-            className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border-[0.5px] border-border bg-white px-6 py-3 text-sm font-semibold text-text shadow-sm transition hover:border-primary hover:text-primary"
+            className="btn-bracket btn-bracket-outline min-h-[48px] text-sm"
           >
             <span aria-hidden>📞</span>
             {ACCOMPANIMENT_COPY.phoneCta} · {NAP.phoneDisplay}

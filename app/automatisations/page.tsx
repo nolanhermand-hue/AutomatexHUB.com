@@ -52,17 +52,14 @@ export default function AutomatisationsPage() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link
-            href="/immobilier#contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-6 py-3 text-sm font-bold text-primary transition hover:bg-primary/10"
-          >
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+          <Link href="/automatisation-ia-tpe#contact" className="btn-bracket btn-bracket-primary">
+            TPE & PME — voir l&apos;offre →
+          </Link>
+          <Link href="/immobilier#contact" className="btn-bracket btn-bracket-outline">
             Je suis mandataire →
           </Link>
-          <Link
-            href="/btp#contact"
-            className="btn-bracket btn-bracket-primary"
-          >
+          <Link href="/btp#contact" className="btn-bracket btn-bracket-outline">
             Je suis artisan BTP →
           </Link>
         </div>
@@ -81,17 +78,14 @@ export default function AutomatisationsPage() {
           On configure ce qui est utile pour vous, dans votre façon de travailler. Nolan vous appelle
           pour cadrer ça en 20 minutes.
         </p>
-        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Link
-            href="/immobilier#contact"
-            className="btn-bracket btn-bracket-primary"
-          >
+        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
+          <Link href="/automatisation-ia-tpe#contact" className="btn-bracket btn-bracket-primary">
+            TPE & PME — voir l&apos;offre →
+          </Link>
+          <Link href="/immobilier#contact" className="btn-bracket btn-bracket-outline">
             Je suis mandataire immobilier →
           </Link>
-          <Link
-            href="/btp#contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-7 py-3.5 text-sm font-bold text-primary transition hover:bg-primary/10"
-          >
+          <Link href="/btp#contact" className="btn-bracket btn-bracket-outline">
             Je suis artisan BTP →
           </Link>
         </div>

@@ -1,9 +1,11 @@
 import {
+  LegalInfraCallout,
   LegalPageShell,
   LegalP,
   LegalSection,
   LegalUl,
 } from "@/components/legal/LegalPageShell";
+import { LEGAL_BUSINESS_DATA_ROUTING, LEGAL_SITE_CDN_TRANSPARENCY } from "@/lib/legal-infrastructure-copy";
 import { legalContactBlock } from "@/lib/legal";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -21,20 +23,18 @@ export default function SecuritePage() {
 
   return (
     <LegalPageShell title="Comment Automatex protège vos données clients">
+      <LegalInfraCallout />
       <LegalP>
-        En tant que mandataire, vous traitez des données de vendeurs et d&apos;acquéreurs. Voici
-        comment {c.brand} protège votre périmètre.
+        En tant que mandataire ou artisan, vous traitez des données de clients. Voici comment{" "}
+        {c.brand} protège votre périmètre.
       </LegalP>
 
-      <LegalSection title="Où sont vos données ?">
-        <LegalP>
-          OVHcloud, Roubaix, France — datacenter européen. Les traitements Automatex ne reposent
-          pas sur un stockage de fichiers clients aux États-Unis. Le site public est servi en
-          statique via Netlify (sans données métier clients).
-        </LegalP>
+      <LegalSection title="Où sont vos données ?" code="01 // PÉRIMÈTRE">
+        <LegalP>{LEGAL_SITE_CDN_TRANSPARENCY}</LegalP>
+        <LegalP>{LEGAL_BUSINESS_DATA_ROUTING}</LegalP>
       </LegalSection>
 
-      <LegalSection title="Qui peut y accéder ?">
+      <LegalSection title="Qui peut y accéder ?" code="02 // ACCÈS">
         <LegalP>
           Accès limité à {c.founder} pour exécuter la prestation, avec authentification renforcée
           (MFA) sur les environnements de production. Pas de revente ni de partage commercial des
@@ -42,7 +42,7 @@ export default function SecuritePage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Si vous partez">
+      <LegalSection title="Si vous partez" code="03 // RÉSILIATION">
         <LegalUl
           items={[
             "Effacement sous 7 jours ouvrés",
@@ -52,14 +52,14 @@ export default function SecuritePage() {
         />
         <LegalP>
           Procédure :{" "}
-          <Link href="/#contact?sujet=resiliation" className="text-primary underline">
+          <Link href="/immobilier#contact?sujet=resiliation" className="text-primary underline">
             demande de résiliation
           </Link>{" "}
           ou email {c.email}.
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Si Automatex cesse son activité">
+      <LegalSection title="Si Automatex cesse son activité" code="04 // CONTINUITÉ">
         <LegalP>
           Vos comptes Gmail, Drive et Telegram restent les vôtres. Vous conservez emails et
           documents ; seules les automatisations configurées par Automatex cesseraient de tourner.
@@ -73,6 +73,10 @@ export default function SecuritePage() {
         {" · "}
         <Link href="/cgv" className="text-primary underline">
           CGV
+        </Link>
+        {" · "}
+        <Link href="/vos-donnees" className="text-primary underline">
+          Vos données
         </Link>
       </LegalP>
     </LegalPageShell>

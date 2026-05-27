@@ -1,3 +1,5 @@
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+
 /** Grille lisible — remplace le ticker d'abréviations (C05). */
 export const IMMOBILIER_DAILY_FEATURES = [
   {
@@ -57,7 +59,7 @@ export const IMMOBILIER_DAILY_FEATURES = [
   },
   {
     icon: "🔒",
-    title: "Données en France",
-    desc: "OVHcloud Roubaix. Jamais revendu. Registre RGPD à jour.",
+    title: SOVEREIGNTY_TRUST_LINE,
+    desc: "Mistral (Paris) · automatisations UE · jamais revendu. Registre RGPD sur demande.",
   },
 ] as const;

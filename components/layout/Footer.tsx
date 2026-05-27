@@ -111,9 +111,9 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[11px] text-faint">
-            Hébergement : {NAP.hostingProvider} · {FOOTER_COPY.tagline}
+            {SOVEREIGNTY_TRUST_LINE} · Infra client : {NAP.hostingProvider}
           </p>
-          <p className="font-mono text-[11px] text-faint">© 2026 AUTOMATEX · Automatisation · France</p>
+          <p className="font-mono text-[11px] text-faint">{FOOTER_COPY.tagline}</p>
         </div>
       </div>
     </footer>

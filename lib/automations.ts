@@ -63,7 +63,7 @@ export const AUTOMATIONS: AutomationItem[] = [
   { id: "a17", categoryId: "clients", iconId: "calendar", title: "Anniversaires de signature", description: "Rappel pour contacter les vendeurs à date annuelle." },
   { id: "a18", categoryId: "clients", iconId: "bell", title: "Avis de valeur sans retour", description: "Relance automatique le troisième jour si aucune réponse." },
   { id: "a19", categoryId: "clients", iconId: "users", title: "Silence acheteur", description: "Alerte lorsqu’un contact ne répond plus depuis X jours." },
-  { id: "a20", categoryId: "clients", iconId: "chart", title: "Synthèse pipeline hebdo", description: "Prospects actifs, visites prévues et relances en retard." },
+  { id: "a20", categoryId: "clients", iconId: "chart", title: "Synthèse hebdo des dossiers", description: "Prospects actifs, visites prévues et relances en retard." },
   { id: "a21", categoryId: "reporting", iconId: "chart", title: "Rapport mensuel", description: "Ventes signées, leads entrants, délai moyen de réponse." },
   { id: "a22", categoryId: "reporting", iconId: "bell", title: "Tableau Telegram temps réel", description: "Indicateurs mis à jour lors des événements marquants." },
   { id: "a23", categoryId: "reporting", iconId: "bolt", title: "Alerte sous-objectif", description: "Notification si le cumul du mois passe sous le seuil défini." },

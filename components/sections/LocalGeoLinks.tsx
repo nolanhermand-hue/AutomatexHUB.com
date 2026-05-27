@@ -38,6 +38,13 @@ export function LocalGeoLinks() {
         >
           FAQ
         </Link>
+        {" · "}
+        <Link
+          href="/automatisation-ia-tpe"
+          className="underline underline-offset-2 transition-colors hover:text-primary"
+        >
+          Solution pour toute TPE
+        </Link>
       </p>
     </section>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
-import { Agitation } from "@/components/sections/Agitation";
 import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { GuaranteeXL } from "@/components/sections/GuaranteeXL";
@@ -16,6 +15,11 @@ import dynamic from "next/dynamic";
 
 const sectionPulse = (className: string) => (
   <div className={`h-[400px] animate-pulse ${className}`} aria-hidden />
+);
+
+const Agitation = dynamic(
+  () => import("@/components/sections/Agitation").then((m) => ({ default: m.Agitation })),
+  { ssr: false, loading: () => sectionPulse("bg-[#080D1A]") },
 );
 
 const Problem = dynamic(

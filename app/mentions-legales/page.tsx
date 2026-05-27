@@ -3,7 +3,9 @@ import {
   LegalP,
   LegalSection,
   LegalUl,
+  LegalInfraCallout,
 } from "@/components/legal/LegalPageShell";
+import { LEGAL_BUSINESS_DATA_ROUTING, LEGAL_SITE_CDN_TRANSPARENCY } from "@/lib/legal-infrastructure-copy";
 import { LEGAL, legalContactBlock } from "@/lib/legal";
 import { NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -21,7 +23,9 @@ export default function MentionsLegalesPage() {
 
   return (
     <LegalPageShell title="Mentions légales">
-      <LegalSection title="Article 1 — Éditeur du site">
+      <LegalInfraCallout />
+
+      <LegalSection title="Éditeur du site" code="01 // ÉDITEUR">
         <LegalP>
           Le site automatex-hub.com est édité par :
         </LegalP>
@@ -55,7 +59,7 @@ export default function MentionsLegalesPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 2 — Hébergement">
+      <LegalSection title="Hébergement" code="02 // TRACABILITÉ">
         <LegalP>
           Le site automatex-hub.com est hébergé par :
         </LegalP>
@@ -70,31 +74,25 @@ export default function MentionsLegalesPage() {
             {LEGAL.netlify.url}
           </a>
         </LegalP>
+        <LegalP>{LEGAL_SITE_CDN_TRANSPARENCY}</LegalP>
         <LegalP>
-          Netlify héberge uniquement les fichiers statiques du site (HTML, CSS, images). Aucune
-          donnée personnelle de visiteur ou de client n&apos;est stockée sur les serveurs Netlify
-          dans le cadre de la prestation Automatex.
+          Les données personnelles collectées via les formulaires et les automatisations ne sont
+          pas stockées sur Netlify. {LEGAL_BUSINESS_DATA_ROUTING}{" "}
+          <Link href="/vos-donnees" className="text-primary underline">
+            Vos données
+          </Link>
+          .
         </LegalP>
         <LegalP>
-          Les données personnelles collectées via les formulaires et les automatisations sont
-          exclusivement hébergées par :
-        </LegalP>
-        <LegalP>
-          <strong className="text-text">{LEGAL.ovh.name}</strong>
-          <br />
-          {LEGAL.ovh.street}
-          <br />
-          {LEGAL.ovh.city}
-          <br />
-          {LEGAL.ovh.rcs}
-          <br />
+          Infrastructure complémentaire historique (site et registres) :{" "}
+          <strong className="text-text">{LEGAL.ovh.name}</strong>, {LEGAL.ovh.city} —{" "}
           <a className="text-primary underline" href={LEGAL.ovh.url} rel="noopener noreferrer">
             {LEGAL.ovh.url}
           </a>
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 3 — Activité">
+      <LegalSection title="Activité" code="03 // SERVICE">
         <LegalP>
           {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers
           indépendants. Il connecte les outils du quotidien (Gmail, Telegram, Google Drive,
@@ -111,7 +109,7 @@ export default function MentionsLegalesPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 4 — Propriété intellectuelle">
+      <LegalSection title="Propriété intellectuelle" code="04 // PI">
         <LegalP>
           L&apos;ensemble du contenu de ce site (textes, visuels, logo, structure) est la
           propriété exclusive de {c.founder} / {c.brand}, sauf mention contraire.
@@ -123,7 +121,7 @@ export default function MentionsLegalesPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 5 — Données personnelles">
+      <LegalSection title="Données personnelles" code="05 // RGPD">
         <LegalP>
           Le traitement des données personnelles collectées sur ce site est décrit dans la{" "}
           <Link href="/politique-confidentialite" className="text-primary underline">
@@ -140,7 +138,7 @@ export default function MentionsLegalesPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 6 — Cookies et analytics">
+      <LegalSection title="Cookies et analytics" code="06 // MESURE">
         <LegalP>
           Ce site utilise Plausible Analytics, solution respectueuse de la vie privée. Plausible ne
           dépose aucun cookie et ne collecte aucune donnée personnelle identifiable. Il est exempté
@@ -150,14 +148,14 @@ export default function MentionsLegalesPage() {
         <LegalP>Aucun autre cookie de traçage publicitaire n&apos;est utilisé sur ce site.</LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 7 — Liens hypertextes">
+      <LegalSection title="Liens hypertextes" code="07 // LIENS">
         <LegalP>
           Ce site peut contenir des liens vers des sites tiers (SeLoger, Leboncoin, OVHcloud,
           etc.). {NAP.brand} n&apos;est pas responsable du contenu ou des pratiques de ces sites.
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 8 — Loi applicable">
+      <LegalSection title="Loi applicable" code="08 // DROIT">
         <LegalP>
           Les présentes mentions légales sont soumises au droit français. Tout litige relatif à
           l&apos;utilisation du site sera soumis aux tribunaux compétents du ressort de Flers
@@ -165,7 +163,7 @@ export default function MentionsLegalesPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 9 — Contact">
+      <LegalSection title="Contact" code="09 // CONTACT">
         <LegalUl
           items={[
             `Email : ${c.email}`,

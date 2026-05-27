@@ -1,8 +1,10 @@
 const VERT = `
+attribute vec2 aPos;
+attribute vec2 aUv;
 varying vec2 vUv;
 void main() {
-  vUv = uv;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  vUv = aUv;
+  gl_Position = vec4(aPos, 0.0, 1.0);
 }
 `;
 
@@ -41,46 +43,103 @@ export type DataFlowHandle = {
   setScrollIntensity: (v: number) => void;
 };
 
-/** WebGL data-flow — quality high uniquement. */
+function hexToRgbNorm(hex: number): [number, number, number] {
+  const r = ((hex >> 16) & 255) / 255;
+  const g = ((hex >> 8) & 255) / 255;
+  const b = (hex & 255) / 255;
+  return [r, g, b];
+}
+
+function compileShader(gl: WebGLRenderingContext, type: number, source: string): WebGLShader {
+  const shader = gl.createShader(type);
+  if (!shader) throw new Error("WebGL: createShader failed");
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    const log = gl.getShaderInfoLog(shader) ?? "shader compile failed";
+    gl.deleteShader(shader);
+    throw new Error(log);
+  }
+  return shader;
+}
+
+function createProgram(gl: WebGLRenderingContext, vsSource: string, fsSource: string): WebGLProgram {
+  const vs = compileShader(gl, gl.VERTEX_SHADER, vsSource);
+  const fs = compileShader(gl, gl.FRAGMENT_SHADER, fsSource);
+  const program = gl.createProgram();
+  if (!program) throw new Error("WebGL: createProgram failed");
+  gl.attachShader(program, vs);
+  gl.attachShader(program, fs);
+  gl.linkProgram(program);
+  gl.deleteShader(vs);
+  gl.deleteShader(fs);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    const log = gl.getProgramInfoLog(program) ?? "program link failed";
+    gl.deleteProgram(program);
+    throw new Error(log);
+  }
+  return program;
+}
+
+/** WebGL data-flow — quality high uniquement (sans dépendance three). */
 export async function createDataFlowBackground(canvas: HTMLCanvasElement): Promise<DataFlowHandle> {
-  const THREE = await import("three");
-  const renderer = new THREE.WebGLRenderer({
-    canvas,
+  const gl = canvas.getContext("webgl", {
     alpha: true,
     antialias: false,
     powerPreference: "high-performance",
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  if (!gl) throw new Error("WebGL not available");
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
-  camera.position.z = 1;
+  const dpr = Math.min(window.devicePixelRatio, 1.5);
 
-  const material = new THREE.ShaderMaterial({
-    vertexShader: VERT,
-    fragmentShader: FRAG,
-    uniforms: {
-      uTime: { value: 0 },
-      uIntensity: { value: 0.6 },
-      uColorPrimary: { value: new THREE.Color(0xff8200) },
-      uColorBg: { value: new THREE.Color(0x0d0d0d) },
-    },
-    transparent: true,
-    depthWrite: false,
-  });
+  const program = createProgram(gl, VERT, FRAG);
+  gl.useProgram(program);
 
-  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
-  scene.add(mesh);
+  const aPos = gl.getAttribLocation(program, "aPos");
+  const aUv = gl.getAttribLocation(program, "aUv");
+  const uTime = gl.getUniformLocation(program, "uTime");
+  const uIntensity = gl.getUniformLocation(program, "uIntensity");
+  const uColorPrimary = gl.getUniformLocation(program, "uColorPrimary");
+  const uColorBg = gl.getUniformLocation(program, "uColorBg");
 
-  const clock = new THREE.Clock();
+  const positions = new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]);
+  const uvs = new Float32Array([0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1]);
+
+  const posBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(aPos);
+  gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+  const uvBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, uvBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, uvs, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(aUv);
+  gl.vertexAttribPointer(aUv, 2, gl.FLOAT, false, 0, 0);
+
+  const [pr, pg, pb] = hexToRgbNorm(0xff8200);
+  const [br, bg, bb] = hexToRgbNorm(0x0d0d0d);
+  gl.uniform3f(uColorPrimary, pr, pg, pb);
+  gl.uniform3f(uColorBg, br, bg, bb);
+  gl.uniform1f(uIntensity, 0.6);
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+  let startTime = performance.now();
   let raf: number | null = null;
   let running = false;
   let targetIntensity = 0.6;
+  let currentIntensity = 0.6;
 
   const resize = () => {
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
-    if (w && h) renderer.setSize(w, h, false);
+    if (w && h) {
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
   };
   resize();
   window.addEventListener("resize", resize);
@@ -88,10 +147,11 @@ export async function createDataFlowBackground(canvas: HTMLCanvasElement): Promi
   const render = () => {
     if (!running) return;
     raf = requestAnimationFrame(render);
-    material.uniforms.uTime.value = clock.getElapsedTime();
-    const cur = material.uniforms.uIntensity.value as number;
-    material.uniforms.uIntensity.value = cur + (targetIntensity - cur) * 0.06;
-    renderer.render(scene, camera);
+    const t = (performance.now() - startTime) / 1000;
+    currentIntensity += (targetIntensity - currentIntensity) * 0.06;
+    gl.uniform1f(uTime, t);
+    gl.uniform1f(uIntensity, currentIntensity);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
   };
 
   return {
@@ -102,6 +162,7 @@ export async function createDataFlowBackground(canvas: HTMLCanvasElement): Promi
     },
     resume: () => {
       if (running) return;
+      startTime = performance.now();
       running = true;
       render();
     },
@@ -109,9 +170,9 @@ export async function createDataFlowBackground(canvas: HTMLCanvasElement): Promi
       running = false;
       if (raf != null) cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
-      mesh.geometry.dispose();
-      material.dispose();
-      renderer.dispose();
+      gl.deleteBuffer(posBuf);
+      gl.deleteBuffer(uvBuf);
+      gl.deleteProgram(program);
     },
     setScrollIntensity: (v: number) => {
       targetIntensity = Math.max(0, Math.min(1, v));

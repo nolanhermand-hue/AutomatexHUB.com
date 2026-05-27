@@ -16,7 +16,7 @@ export function NolanLiveDemo() {
       ref={rootRef}
       data-motion="nolan-live"
       data-quality-min="medium"
-      className="mt-10 rounded-xl border border-primary/25 bg-[#0d0d0d] p-5 md:p-6"
+      className="mt-10 rounded-xl border border-primary/25 bg-surface p-5 md:p-6"
       role="img"
       aria-label="Simulation : Nolan intervient le soir via Telegram sans que l'artisan ait à demander"
     >

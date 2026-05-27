@@ -1,4 +1,5 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
+import { TPE_FAQ, TPE_PAGE_PATH } from "@/lib/automatisation-ia-tpe-content";
 import { FAQ_ITEMS, GUARANTEE_COPY, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS, } from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 
@@ -331,6 +332,59 @@ export function buildBtpServiceJsonLd(path: string) {
   return {
     "@context": "https://schema.org",
     "@graph": [professional, btpService, btpFaq],
+  };
+}
+
+/** JSON-LD page pilier TPE — Service + FAQPage. */
+export function buildTpeAutomatisationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Automatisation IA TPE", path: TPE_PAGE_PATH },
+      ]),
+      {
+        "@type": "Service",
+        name: "Automatisation IA pour TPE et PME — Automatex Hub",
+        url: `${SITE_URL}${TPE_PAGE_PATH}`,
+        description:
+          "Système d'automatisation pour TPE et PME : réponses automatiques, devis, classement documents, relances. Accompagnement humain mensuel inclus.",
+        provider: {
+          "@type": "LocalBusiness",
+          name: NAP.brand,
+          founder: { "@type": "Person", name: NAP.founder },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: NAP.city,
+            addressRegion: NAP.department,
+            postalCode: NAP.postalCode,
+            addressCountry: NAP.country,
+            streetAddress: NAP.streetAddress,
+          },
+          telephone: NAP.phoneE164,
+          priceRange: "99€–449€/mois",
+        },
+        areaServed: { "@type": "Country", name: "France" },
+        audience: {
+          "@type": "BusinessAudience",
+          audienceType: "TPE PME indépendants artisans professions libérales",
+        },
+        offers: [
+          { "@type": "Offer", name: "Formule Départ", price: "99", priceCurrency: "EUR" },
+          { "@type": "Offer", name: "Formule Essentiel", price: "249", priceCurrency: "EUR" },
+          { "@type": "Offer", name: "Formule Full", price: "449", priceCurrency: "EUR" },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: TPE_FAQ.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
+    ],
   };
 }
 

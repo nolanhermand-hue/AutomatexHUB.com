@@ -190,7 +190,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
   },
   {
     id: "rapport-mensuel",
-    category: "Pipeline & pilotage",
+    category: "Suivi & Rapports Métier",
     title: "Rapport mensuel direction",
     tagline: "Ventes signées, leads, délai moyen de réponse.",
     target: "both",
@@ -248,7 +248,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
       { from: "Devis envoyé", to: "Automatex", icon: "file", message: "Statut « envoyé » sans retour 48 h.", type: "in", delay: 172800 },
       { from: "Automatex", to: "Moteur", icon: "mail", message: "Mail court : montant + planning équipe maintenu 7 jours.", type: "system" },
       { from: "Moteur", to: "Client", icon: "send", message: "Relance envoyée avec accusé lecture.", type: "out" },
-      { from: "Automatex", to: "Pipeline", icon: "flag", message: "Étape « relance 1 » CRM BTP.", type: "result" },
+      { from: "Automatex", to: "Dossiers", icon: "flag", message: "Étape « relance 1 » CRM BTP.", type: "result" },
     ],
   },
   {
@@ -310,8 +310,8 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
   },
   {
     id: "pipeline-hebdo",
-    category: "Pipeline & pilotage",
-    title: "Synthèse pipeline hebdomadaire",
+    category: "Suivi & Rapports Métier",
+    title: "Synthèse hebdomadaire des dossiers",
     tagline: "Prospects actifs, visites et relances en retard.",
     target: "both",
     formula: "pro",
@@ -324,7 +324,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
   },
   {
     id: "tableau-kpi-telegram",
-    category: "Pipeline & pilotage",
+    category: "Suivi & Rapports Métier",
     title: "Indicateurs temps réel sur Telegram",
     tagline: "Nouvelle vente ou objectif sous le seuil : vous voyez tout.",
     target: "both",
@@ -347,12 +347,15 @@ const CATEGORY_ANCHORS: Record<string, string> = {
   "Relances & suivi": "relances-suivi",
   "Dictée & terrain": "dictee-terrain",
   "Appels & terrain BTP": "appels-terrain-btp",
-  "Pipeline & pilotage": "pipeline-pilotage",
+  "Suivi & Rapports Métier": "suivi-rapports",
 };
 
 export function categoryToAnchor(category: string): string {
   return CATEGORY_ANCHORS[category] ?? category.toLowerCase().replace(/\s+/g, "-");
 }
+
+/** Catégorie catalogue — libellé métier (ancre #suivi-rapports). */
+export const CATEGORY_SUIVI_RAPPORTS = "Suivi & Rapports Métier" as const;
 
 /** Catégories uniques, ordre d’affichage fixe. */
 export const CATEGORIES: string[] = [
@@ -363,7 +366,7 @@ export const CATEGORIES: string[] = [
   "Relances & suivi",
   "Dictée & terrain",
   "Appels & terrain BTP",
-  "Pipeline & pilotage",
+  "Suivi & Rapports Métier",
 ];
 
 export function getByCategory(category: string): CatalogAutomation[] {

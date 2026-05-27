@@ -9,6 +9,7 @@ const paths = [
   "/immobilier",
   "/btp",
   "/automatisations",
+  "/automatisation-ia-tpe",
   "/accompagnement",
   "/a-propos",
   "/vos-donnees",

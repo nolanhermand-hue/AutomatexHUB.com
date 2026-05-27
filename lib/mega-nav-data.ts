@@ -1,4 +1,4 @@
-import { categoryToAnchor } from "@/lib/automations-catalog";
+import { CATEGORY_SUIVI_RAPPORTS, categoryToAnchor } from "@/lib/automations-catalog";
 
 export { categoryToAnchor };
 
@@ -15,10 +15,9 @@ export const SOLUTIONS_MENU = {
       desc: "Maçon · Plombier · Électricien · Orne",
     },
     {
-      label: "Autres TPE",
-      href: "/automatisations",
-      desc: "Bientôt disponible",
-      disabled: true as const,
+      label: "TPE & PME (tous secteurs)",
+      href: "/automatisation-ia-tpe",
+      desc: "Dès 99 €/mois · accompagnement inclus",
     },
   ],
   parBesoin: [
@@ -27,7 +26,10 @@ export const SOLUTIONS_MENU = {
     { label: "Relances clients", href: `/automatisations#${categoryToAnchor("Relances & suivi")}` },
     { label: "Documents & Drive", href: `/automatisations#${categoryToAnchor("Documents & Drive")}` },
     { label: "Programme & résumé", href: `/automatisations#${categoryToAnchor("Résumés & planning")}` },
-    { label: "Pipeline & pilotage", href: `/automatisations#${categoryToAnchor("Pipeline & pilotage")}` },
+    {
+      label: "Suivi & Rapports Métier",
+      href: `/automatisations#${categoryToAnchor(CATEGORY_SUIVI_RAPPORTS)}`,
+    },
   ],
   alaUne: [
     {
@@ -52,14 +54,20 @@ export const AUTOMATIONS_MENU = {
     { label: "Documents & Drive", href: `/automatisations#${categoryToAnchor("Documents & Drive")}` },
     { label: "Résumés & planning", href: `/automatisations#${categoryToAnchor("Résumés & planning")}` },
     { label: "Relances & suivi", href: `/automatisations#${categoryToAnchor("Relances & suivi")}` },
-    { label: "Pipeline & pilotage", href: `/automatisations#${categoryToAnchor("Pipeline & pilotage")}` },
+    {
+      label: "Suivi & Rapports Métier",
+      href: `/automatisations#${categoryToAnchor(CATEGORY_SUIVI_RAPPORTS)}`,
+    },
   ],
   btp: [
     { label: "Appels manqués", href: `/automatisations#${categoryToAnchor("Appels & terrain BTP")}` },
     { label: "Devis automatiques", href: `/automatisations#${categoryToAnchor("Dictée & terrain")}` },
     { label: "Relances devis", href: `/automatisations#${categoryToAnchor("Relances & suivi")}` },
     { label: "Résumés & planning", href: `/automatisations#${categoryToAnchor("Résumés & planning")}` },
-    { label: "Pipeline & pilotage", href: `/automatisations#${categoryToAnchor("Pipeline & pilotage")}` },
+    {
+      label: "Suivi & Rapports Métier",
+      href: `/automatisations#${categoryToAnchor(CATEGORY_SUIVI_RAPPORTS)}`,
+    },
   ],
 } as const;
 

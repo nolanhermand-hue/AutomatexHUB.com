@@ -21,6 +21,12 @@ export function BtpGeoInternalNav() {
             </Link>
           ))}
         </div>
+        <p className="mt-6 text-sm text-muted">
+          TPE d&apos;un autre secteur ?{" "}
+          <Link href="/automatisation-ia-tpe" className="font-semibold text-primary underline">
+            Voir l&apos;offre TPE & PME →
+          </Link>
+        </p>
       </div>
     </nav>
   );

@@ -1,5 +1,6 @@
 /** Navigation globale site vitrine (hub + landings). */
 export const SITE_NAV = [
+  { href: "/automatisation-ia-tpe", label: "TPE & PME" },
   { href: "/immobilier", label: "Immobilier" },
   { href: "/btp", label: "Artisans BTP" },
   { href: "/automatisations", label: "Automatisations" },
@@ -9,14 +10,17 @@ export const SITE_NAV = [
 ] as const;
 
 export function contactHref(pathname: string): string {
-  if (pathname.startsWith("/automatisations")) {
-    return "/immobilier#contact";
+  if (pathname.startsWith("/automatisations") || pathname.startsWith("/automatisation-ia-tpe")) {
+    return "/automatisation-ia-tpe#contact";
+  }
+  if (pathname.startsWith("/accompagnement")) {
+    return "/accompagnement#contact";
   }
   if (
     pathname.startsWith("/btp") ||
-    pathname.startsWith("/automatisation") ||
-    pathname.startsWith("/devis-automatique") ||
-    pathname.startsWith("/accompagnement")
+    pathname.startsWith("/automatisation-artisan") ||
+    pathname.startsWith("/automatisation-btp") ||
+    pathname.startsWith("/devis-automatique")
   ) {
     return "/btp#contact";
   }

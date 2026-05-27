@@ -40,10 +40,7 @@ export function BtpLanding() {
             >
               {BTP_HERO.ctaDemo}
             </a>
-            <a
-              href="#demo"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-border bg-bg-card px-6 font-semibold text-text"
-            >
+            <a href="#demo" className="btn-bracket btn-bracket-outline">
               {BTP_HERO.ctaHow}
             </a>
           </div>
