@@ -18,6 +18,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
   preload: true,
   adjustFontFallback: true,
+  fallback: ["system-ui", "Segoe UI", "Arial", "sans-serif"],
 });
 
 const jetbrainsMono = JetBrains_Mono({

@@ -1,13 +1,11 @@
 /**
- * Export statique : CSS async + preload font Inter (woff2).
+ * Export statique : preload font Inter (woff2).
+ * Ne pas différer le CSS global — provoque ~0,33 CLS sur le hero hub.
  */
 import fs from "node:fs";
 import path from "node:path";
 
 const OUT_DIR = path.join(process.cwd(), "out");
-
-const STYLESHEET_RE =
-  /<link rel="stylesheet" href="(\/_next\/static\/css\/[^"]+\.css)" data-precedence="next"\/>/g;
 
 function walkHtmlFiles(dir, acc = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -30,16 +28,6 @@ function findInterPreloadHref() {
   return `/_next/static/media/${pick}`;
 }
 
-function deferStylesheet(html) {
-  return html.replace(STYLESHEET_RE, (_match, href) => {
-    return [
-      `<link rel="preload" href="${href}" as="style" />`,
-      `<link rel="stylesheet" href="${href}" media="print" onload="this.media='all'" />`,
-      `<noscript><link rel="stylesheet" href="${href}" /></noscript>`,
-    ].join("");
-  });
-}
-
 function injectFontPreload(html, fontHref) {
   if (!fontHref || html.includes(fontHref)) return html;
   const tag = `<link rel="preload" href="${fontHref}" as="font" type="font/woff2" crossorigin="anonymous" />`;
@@ -56,7 +44,6 @@ let changed = 0;
 for (const file of walkHtmlFiles(OUT_DIR)) {
   let html = fs.readFileSync(file, "utf8");
   const before = html;
-  html = deferStylesheet(html);
   html = injectFontPreload(html, fontHref);
   if (html !== before) {
     fs.writeFileSync(file, html);

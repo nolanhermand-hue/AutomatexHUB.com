@@ -8,7 +8,7 @@ import { HUB_ACCOMPANIMENT, HUB_ENTRY_COPY } from "@/lib/hub-copy";
 export function HubEntry() {
   return (
     <>
-      <section className="relative flex min-h-[85svh] flex-col justify-center px-gutter pb-16 pt-24 md:pt-28">
+      <section className="hub-entry-hero relative flex min-h-[85svh] flex-col justify-center px-gutter pb-16 pt-24 md:pt-28">
         <div className="mx-auto w-full max-w-content">
           <div className="mb-8 flex items-center gap-3">
             <span className="font-mono text-[11px] uppercase tracking-widest text-primary">
