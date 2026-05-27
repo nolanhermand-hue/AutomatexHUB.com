@@ -1,5 +1,5 @@
 /**
- * Génère favicons (PNG + ICO) depuis favicon.svg — sharp + to-ico.
+ * Génère favicons (PNG + ICO) depuis scripts/brand-sources/favicon-master.png — sharp + to-ico.
  * Usage : npm run brand:favicons
  *
  * App Router (prioritaire) :
@@ -15,6 +15,7 @@ const faviconsDir = path.join(dir, "favicons");
 const imagesDir = path.join(dir, "..", "images");
 const publicRoot = path.join(dir, "..", "..");
 const appDir = path.join(publicRoot, "..", "app");
+const masterPng = path.join(publicRoot, "..", "scripts", "brand-sources", "favicon-master.png");
 
 const iconSizes = [
   { name: "favicon-16.png", size: 16 },
@@ -31,11 +32,8 @@ async function generate() {
   fs.mkdirSync(imagesDir, { recursive: true });
   fs.mkdirSync(appDir, { recursive: true });
 
-  const masterPng = path.join(dir, "favicon-master.png");
-  const faviconSvgPath = path.join(dir, "favicon.svg");
-  const rasterSource = fs.existsSync(masterPng) ? masterPng : faviconSvgPath;
-  if (!fs.existsSync(rasterSource)) {
-    throw new Error("Missing favicon-master.png or favicon.svg in public/assets/brand/");
+  if (!fs.existsSync(masterPng)) {
+    throw new Error(`Missing ${masterPng} — source favicon (hors public/, non déployée).`);
   }
 
   const symbolOnBg = fs.readFileSync(path.join(dir, "logo-orbit-symbol-on-bg.svg"));
@@ -43,8 +41,7 @@ async function generate() {
   const lockupDark = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-dark.svg"));
   const ogSvg = fs.readFileSync(path.join(dir, "og-image.svg"));
 
-  const rasterSharp = () =>
-    fs.existsSync(masterPng) ? sharp(masterPng) : sharp(fs.readFileSync(faviconSvgPath));
+  const rasterSharp = () => sharp(masterPng);
 
   for (const { name, size } of iconSizes) {
     await rasterSharp().resize(size, size).png().toFile(path.join(faviconsDir, name));
@@ -91,6 +88,14 @@ async function generate() {
 
   fs.copyFileSync(favicon32Path, path.join(publicRoot, "favicon.png"));
   fs.copyFileSync(appleTouchPath, path.join(publicRoot, "apple-touch-icon.png"));
+
+  const faviconSvgPath = path.join(dir, "favicon.svg");
+  const b64 = png32.toString("base64");
+  fs.writeFileSync(
+    faviconSvgPath,
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Automatex Hub"><title>Automatex Hub</title><image href="data:image/png;base64,${b64}" width="32" height="32"/></svg>\n`,
+  );
+  console.log("✓ favicon.svg (PNG embarqué, sans requête externe)");
 
   console.log("✓ app/favicon.ico (ICO 16+32)");
   console.log("✓ app/icon.png, app/apple-icon.png");

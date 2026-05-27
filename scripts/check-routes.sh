@@ -27,6 +27,9 @@ ROUTES=(
   "/devis-automatique-artisan-orne/"
   "/sitemap.xml"
   "/robots.txt"
+  "/favicon.ico"
+  "/icon.png"
+  "/apple-icon.png"
 )
 
 FAIL=0

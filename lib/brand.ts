@@ -1,6 +1,5 @@
 /** Chemins publics des assets Orbit — source unique pour head, JSON-LD, UI. */
 export const BRAND = {
-  faviconSvg: "/assets/brand/favicon.svg",
   symbolSvg: "/assets/brand/logo-orbit-symbol-on-bg.svg",
   symbolTransparentSvg: "/assets/brand/logo-orbit-symbol.svg",
   lockupLight: "/assets/brand/logo-orbit-lockup-light.png",

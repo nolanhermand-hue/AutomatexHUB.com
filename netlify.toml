@@ -67,18 +67,30 @@
     Cache-Control = "public, max-age=86400"
     Content-Type = "application/manifest+json"
 
-# favicon.ico legacy (PNG 32px servi avec extension .ico — largement supporté)
+# favicon.ico — vrai ICO (build brand:favicons)
 [[headers]]
   for = "/favicon.ico"
   [headers.values]
-    Cache-Control = "public, max-age=604800, must-revalidate"
+    Cache-Control = "public, max-age=86400, must-revalidate"
     Content-Type = "image/x-icon"
+
+[[headers]]
+  for = "/icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Type = "image/png"
+
+[[headers]]
+  for = "/apple-icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Type = "image/png"
 
 # J7 / G15 — Headers de sécurité globaux (RGAA + Lighthouse Best Practices)
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://plausible.io https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms; frame-ancestors 'none'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://plausible.io https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms https://ingesteer.services-prod.nsvcs.net; frame-ancestors 'none'; form-action 'self'"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"

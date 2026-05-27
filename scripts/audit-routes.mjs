@@ -29,6 +29,9 @@ const paths = [
   "/devis-automatique-artisan-orne",
   "/sitemap.xml",
   "/robots.txt",
+  "/favicon.ico",
+  "/icon.png",
+  "/apple-icon.png",
 ];
 
 const lines = [`# Routes — ${base}`, `Date: ${new Date().toISOString()}`, ""];
