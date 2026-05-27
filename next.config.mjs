@@ -7,12 +7,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   outputFileTracingRoot: __dirname,
   output: "export",
+  compress: true,
   images: {
     unoptimized: true,
   },
   trailingSlash: false,
   experimental: {
-    optimizePackageImports: ["framer-motion"],
+    optimizePackageImports: ["framer-motion", "lottie-react"],
   },
 };
 

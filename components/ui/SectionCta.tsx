@@ -1,6 +1,4 @@
-"use client";
-
-import { trackCtaClicked } from "@/lib/analytics";
+import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
@@ -17,16 +15,15 @@ export function SectionCta({
 }: SectionCtaProps) {
   const isPrimary = variant === "primary";
   return (
-    <a
+    <AnalyticsCta
       href="#contact"
-      data-analytics-cta={analyticsId}
-      onClick={() => trackCtaClicked(analyticsId)}
+      analyticsId={analyticsId}
       className={cn(
         isPrimary ? "btn-bracket btn-bracket-primary" : "font-mono text-sm text-muted hover:text-text",
         className,
       )}
     >
       {BOOKING_CTA_LABEL}
-    </a>
+    </AnalyticsCta>
   );
 }

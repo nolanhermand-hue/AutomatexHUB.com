@@ -12,7 +12,6 @@ import { cn } from "@/lib/cn";
 import { annualPrepayTotal } from "@/lib/pricing";
 import { PRICING_HEADING } from "@/lib/constants";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 type BillingCycle = "monthly" | "annual";
@@ -36,7 +35,7 @@ function PricingOfferCard({
   const priceSuffix = isCustom ? null : cycle === "monthly" ? "/mois" : "/an";
   const isFull = offer.id === "full-btp";
   return (
-    <motion.div layout className={cn("h-full", offer.featured && "lg:-translate-y-1")}>
+    <div className={cn("h-full", offer.featured && "lg:-translate-y-1")}>
       <Card featured={offer.featured} className="flex h-full flex-col">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-heading text-xl text-text">{offer.name}</h3>
@@ -84,7 +83,7 @@ function PricingOfferCard({
           {offer.cta}
         </a>
       </Card>
-    </motion.div>
+    </div>
   );
 }
 

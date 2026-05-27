@@ -1,7 +1,7 @@
 "use client";
 
 import { BillingSwitch } from "@/components/ui/BillingSwitch";
-import { trackCtaClicked, trackOfferViewed } from "@/lib/analytics";
+import { trackOfferViewed } from "@/lib/analytics";
 import { Card } from "@/components/ui/Card";
 import { OFFERS, PRICING_HEADING } from "@/lib/constants";
 import { calculateBreakevenLeads } from "@/lib/calculator";
@@ -9,7 +9,7 @@ import { cn } from "@/lib/cn";
 import { annualPrepayTotal } from "@/lib/pricing";
 import { SectionCta } from "@/components/ui/SectionCta";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
-import { motion } from "framer-motion";
+import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { useEffect, useState } from "react";
 
 type BillingCycle = "monthly" | "annual";
@@ -93,11 +93,10 @@ export function Pricing() {
                 ? PRICING_HEADING.monthlySuffix
                 : PRICING_HEADING.annualSuffix;
             return (
-              <motion.div
+              <div
                 key={offer.id}
                 id={`pricing-${offer.id}`}
                 data-offer-id={offer.id}
-                layout
                 className={cn(
                   "h-full transition duration-200 scroll-mt-24",
                   offer.featured ? "md:-translate-y-2 md:scale-[1.02]" : "",
@@ -181,16 +180,15 @@ export function Pricing() {
                   ) : null}
 
                   {/* D7 — Lien avec query string pour pré-remplissage formulaire */}
-                  <a
+                  <AnalyticsCta
                     href={`#contact?offre=${offer.id}`}
-                    onClick={() => trackCtaClicked(`pricing_${offer.id}`)}
-                    data-analytics-cta={`pricing_${offer.id}`}
+                    analyticsId={`pricing_${offer.id}`}
                     className={cn("mt-6 btn-bracket w-full justify-center", offer.featured ? "btn-bracket-primary" : "btn-bracket-outline")}
                   >
                     {offer.cta}
-                  </a>
+                  </AnalyticsCta>
                 </Card>
-              </motion.div>
+              </div>
             );
           })}
         </div>

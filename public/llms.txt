@@ -12,12 +12,12 @@
 ## Zone géographique
 
 - [Normandie](https://automatex-hub.com/mandataires-normandie): Orne (priorité), Calvados, Manche. Basé à Flers (61100).
-- [Mandataires Flers](https://automatex-hub.com/mandataires-flers): Service pour mandataires IAD, SAFTI, Capifrance du bassin de Flers.
-- [Mandataires Alençon](https://automatex-hub.com/mandataires-alencon): Service pour mandataires du secteur d'Alençon (61000).
-- [Mandataires Argentan](https://automatex-hub.com/mandataires-argentan): Service pour mandataires du secteur d'Argentan (61200).
+- [Mandataires Flers](https://automatex-hub.com/mandataires-flers): Mandataires IAD, SAFTI, Capifrance du bassin de Flers.
+- [Mandataires Alençon](https://automatex-hub.com/mandataires-alencon): Mandataires du secteur d'Alençon (61000).
+- [Mandataires Argentan](https://automatex-hub.com/mandataires-argentan): Mandataires du secteur d'Argentan (61200).
 
 ## Optional
 
 - [À propos](https://automatex-hub.com/a-propos): Contexte fondateur, SIRET 10320805400017, hébergement OVHcloud France.
-- [Vos données](https://automatex-hub.com/vos-donnees): Politique RGPD, droits utilisateurs, hébergement France.
+- [Vos données](https://automatex-hub.com/vos-donnees): Politique RGPD, droits utilisateurs.
 - [Mentions légales](https://automatex-hub.com/mentions-legales): Informations légales.

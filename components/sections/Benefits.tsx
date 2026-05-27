@@ -1,6 +1,5 @@
-"use client";
-
 import { BENEFITS_HEADING, BENEFITS_ITEMS } from "@/lib/constants";
+import type { ReactNode } from "react";
 
 /**
  * BENEFITS — C2
@@ -8,7 +7,7 @@ import { BENEFITS_HEADING, BENEFITS_ITEMS } from "@/lib/constants";
  * conditionnels honnêtes (cf. lib/constants — BENEFITS_ITEMS).
  */
 
-const ICONS: Record<typeof BENEFITS_ITEMS[number]["icon"], React.ReactNode> = {
+const ICONS: Record<(typeof BENEFITS_ITEMS)[number]["icon"], ReactNode> = {
   clock: (
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
       <circle cx="12" cy="12" r="9" />

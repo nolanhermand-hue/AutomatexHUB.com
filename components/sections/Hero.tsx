@@ -1,10 +1,8 @@
-"use client";
-
 import { LazyHeroMotionBackdrop } from "@/components/motion/LazyHeroMotionBackdrop";
-import { trackCtaClicked } from "@/lib/analytics";
 import { HeroScene } from "@/components/three/SceneWrapper";
-import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
+import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
+import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
 import { GEO_DEFINITION, HERO_COPY, HERO_STATS, HERO_STATS_SOURCE, CTA_REASSURANCE_LINE } from "@/lib/constants";
 
 function ReassuranceIcon({ kind }: { kind: "fr" | "lock" | "hand" }) {
@@ -82,16 +80,15 @@ export function Hero() {
                 {HERO_COPY.statAnchor}
               </p>
 
-              <a
+              <AnalyticsCta
                 href="#contact"
                 data-cursor="cta"
-                data-analytics-cta="hero_primary"
-                onClick={() => trackCtaClicked("hero_primary")}
+                analyticsId="hero_primary"
                 className="hero-cta-primary btn-bracket btn-bracket-primary mt-6 w-full justify-center md:mt-8 lg:mt-6 lg:w-auto"
               >
                 {HERO_COPY.ctaPrimary}
                 <span aria-hidden>→</span>
-              </a>
+              </AnalyticsCta>
 
               <ul className="hero-trust mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
                 <li className="inline-flex items-center gap-1.5">
@@ -112,15 +109,14 @@ export function Hero() {
                 <FounderTrustBlock compact />
               </div>
 
-              <a
+              <AnalyticsCta
                 href="#solution"
                 data-cursor="link"
-                data-analytics-cta="hero_secondary"
-                onClick={() => trackCtaClicked("hero_secondary")}
+                analyticsId="hero_secondary"
                 className="hero-cta-secondary mt-4 inline-flex min-h-[48px] w-full items-center justify-center text-sm font-semibold text-muted underline underline-offset-4 transition-colors duration-200 hover:text-text sm:w-auto sm:justify-start"
               >
                 {HERO_COPY.ctaSecondary}
-              </a>
+              </AnalyticsCta>
 
               <p className="mt-4 text-xs font-medium text-muted">{CTA_REASSURANCE_LINE}</p>
             </div>

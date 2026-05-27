@@ -1,148 +1,86 @@
-import { BtpDemoSection } from "@/components/demo/BtpDemoSection";
-import { LiveDemoBlock } from "@/components/demo/LiveDemoBlock";
-import { LazyHeroMotionBackdrop } from "@/components/motion/LazyHeroMotionBackdrop";
-import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
-import Link from "next/link";
-import { BtpFaq } from "@/components/sections/BtpFaq";
-import { BtpPricing } from "@/components/sections/BtpPricing";
-import { BtpRoiStats } from "@/components/sections/BtpRoiStats";
-import { BtpSocialProof } from "@/components/sections/BtpSocialProof";
 import { BtpGeoInternalNav } from "@/components/sections/BtpGeoInternalNav";
-import { Contact } from "@/components/sections/Contact";
-import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
-import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
+import { BtpHeroSection } from "@/components/funnels/BtpHeroSection";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
-import {
-  BTP_ACCOMPANIMENT,
-  BTP_AUTOMATIONS,
-  BTP_CONTACT,
-  BTP_DAY_PAIN,
-  BTP_DEPART_HINT,
-  BTP_HERO,
-} from "@/lib/btp-copy";
-import { NAP } from "@/lib/constants";
+import { BTP_CONTACT, BTP_DEPART_HINT } from "@/lib/btp-copy";
+import dynamic from "next/dynamic";
+
+const sectionPulse = (minH: string, bg: string) => (
+  <div className={`${minH} animate-pulse ${bg}`} aria-hidden />
+);
+
+const BtpDayPainSection = dynamic(
+  () => import("@/components/funnels/BtpDayPainSection").then((m) => ({ default: m.BtpDayPainSection })),
+  { ssr: true, loading: () => sectionPulse("min-h-[320px]", "bg-bg-card") },
+);
+
+const BtpDemoSection = dynamic(
+  () => import("@/components/demo/BtpDemoSection").then((m) => ({ default: m.BtpDemoSection })),
+  { ssr: true, loading: () => sectionPulse("min-h-64", "bg-night") },
+);
+
+const BtpSolutionSection = dynamic(
+  () => import("@/components/funnels/BtpSolutionSection").then((m) => ({ default: m.BtpSolutionSection })),
+  { ssr: true, loading: () => sectionPulse("min-h-[400px]", "bg-bg-card") },
+);
+
+const FeaturedAutomationsSection = dynamic(
+  () =>
+    import("@/components/sections/FeaturedAutomationsSection").then((m) => ({
+      default: m.FeaturedAutomationsSection,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-40", "bg-night") },
+);
+
+const BtpAccompanimentSection = dynamic(
+  () =>
+    import("@/components/funnels/BtpAccompanimentSection").then((m) => ({
+      default: m.BtpAccompanimentSection,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-[360px]", "bg-surface") },
+);
+
+const BtpRoiStats = dynamic(
+  () => import("@/components/sections/BtpRoiStats").then((m) => ({ default: m.BtpRoiStats })),
+  { ssr: true, loading: () => sectionPulse("min-h-32", "bg-bg-card") },
+);
+
+const BtpPricing = dynamic(
+  () => import("@/components/sections/BtpPricing").then((m) => ({ default: m.BtpPricing })),
+  { ssr: true, loading: () => sectionPulse("min-h-[480px]", "bg-bg-card") },
+);
+
+const BtpFaq = dynamic(
+  () => import("@/components/sections/BtpFaq").then((m) => ({ default: m.BtpFaq })),
+  { ssr: true, loading: () => sectionPulse("min-h-[300px]", "bg-night") },
+);
+
+const BtpSocialProof = dynamic(
+  () => import("@/components/sections/BtpSocialProof").then((m) => ({ default: m.BtpSocialProof })),
+  { ssr: true, loading: () => sectionPulse("min-h-48", "bg-night") },
+);
+
+const Contact = dynamic(
+  () => import("@/components/sections/Contact").then((m) => ({ default: m.Contact })),
+  { ssr: true, loading: () => sectionPulse("min-h-[400px]", "bg-night") },
+);
 
 export function BtpLanding() {
   return (
     <>
-      <section id="hero" className="relative border-b border-border bg-night px-gutter pb-12 pt-[88px] md:pt-[100px]">
-        <LazyHeroMotionBackdrop motionId="hero-background-btp" />
-        <div className="relative mx-auto max-w-content">
-          <h1 className="font-heading text-[clamp(1.75rem,5vw,3rem)] font-bold leading-[1.1] text-text">
-            {BTP_HERO.h1}
-          </h1>
-          <p className="mt-5 max-w-readable text-base text-muted md:text-lg">{BTP_HERO.sub}</p>
-          <p className="mt-3 text-sm font-semibold text-text">{BTP_HERO.priceFrom}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#contact"
-              className="btn-bracket btn-bracket-primary"
-            >
-              {BTP_HERO.ctaDemo}
-            </a>
-            <a href="#demo" className="btn-bracket btn-bracket-outline">
-              {BTP_HERO.ctaHow}
-            </a>
-          </div>
-          <div className="mt-8 max-w-readable">
-            <FounderTrustBlock compact />
-          </div>
-          <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
-            {BTP_HERO.badges.map((b) => (
-              <li key={b}>{b}</li>
-            ))}
-          </ul>
-          <p className="mt-6 text-sm text-muted">
-            {BTP_HERO.localBandeau}{" "}
-            <Link href="/automatisation-artisan-argentan" className="font-semibold text-primary underline">
-              Voir l&apos;Orne →
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-bg-card px-gutter py-12 md:py-16">
-        <div className="mx-auto max-w-content">
-          <h2 className="font-heading text-3xl text-text">{BTP_DAY_PAIN.h2}</h2>
-          <ol className="demo-liquid-reveal mt-8 space-y-4 border-l-2 border-primary/30 pl-6">
-            {BTP_DAY_PAIN.steps.map((s) => (
-              <li key={s.time}>
-                <time className="font-mono text-sm font-semibold text-primary">{s.time}</time>
-                <p className="mt-1 text-muted">{s.text}</p>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-10 font-heading text-2xl font-semibold text-text">{BTP_DAY_PAIN.stat}</p>
-          <p className="mt-2 text-xs text-muted">{BTP_DAY_PAIN.source}</p>
-        </div>
-      </section>
-
+      <BtpHeroSection />
+      <BtpDayPainSection />
       <BtpDemoSection />
-
-      <section id="solution" className="bg-bg-card px-gutter py-12 md:py-16">
-        <div className="mx-auto max-w-content">
-          <h2 className="font-heading text-3xl text-text">{BTP_AUTOMATIONS.h2}</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {BTP_AUTOMATIONS.items.map((item) => (
-              <article key={item.id} className="rounded-xl border border-border p-6">
-                <h3 className="font-heading text-xl text-text">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-10 space-y-8">
-            <LiveDemoBlock variant="btp-appel" ctaHref="#contact" />
-            <LiveDemoBlock variant="btp-devis" ctaHref="#contact" />
-          </div>
-        </div>
-      </section>
-
+      <BtpSolutionSection />
       <FeaturedAutomationsSection variant="btp" />
-
-      <section className="border-y border-border bg-surface px-gutter py-12 md:py-16">
-        <div className="mx-auto max-w-content">
-          <h2 className="font-heading text-3xl text-text">{BTP_ACCOMPANIMENT.h2}</h2>
-          <p className="mt-4 max-w-readable text-muted">{BTP_ACCOMPANIMENT.body}</p>
-          <div className="mt-8 rounded-xl border border-primary/20 bg-bg-card p-6">
-            <FounderTrustBlock compact />
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {BTP_ACCOMPANIMENT.pillars.map((p) => (
-              <div key={p.title} className="rounded-xl border border-border bg-night p-6">
-                <h3 className="font-semibold text-text">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted">{p.body}</p>
-              </div>
-            ))}
-          </div>
-          <blockquote className="mt-10 border-l-4 border-primary pl-4 text-muted">
-            <p className="italic">&ldquo;{BTP_ACCOMPANIMENT.quote}&rdquo;</p>
-            <footer className="mt-2 text-sm font-semibold text-text">
-              — {NAP.founder}, fondateur Automatex Hub
-            </footer>
-          </blockquote>
-          <p className="mt-6">
-            <Link href="/accompagnement" className="font-semibold text-primary underline">
-              Tout sur l&apos;accompagnement →
-            </Link>
-          </p>
-          <NolanLiveDemo />
-        </div>
-      </section>
-
+      <BtpAccompanimentSection />
       <BtpRoiStats />
-
       <BtpPricing />
-
       <p className="bg-bg-card px-gutter pb-8 text-center text-sm font-medium text-muted">
         {BTP_DEPART_HINT}
       </p>
-
       <BtpFaq />
-
       <BtpSocialProof />
-
       <BtpGeoInternalNav />
-
       <Contact variant="btp" />
       <div className="h-20 md:hidden" aria-hidden />
       <StickyMobileCta

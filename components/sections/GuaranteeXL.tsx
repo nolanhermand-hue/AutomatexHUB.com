@@ -1,6 +1,4 @@
-"use client";
-
-import { trackCtaClicked } from "@/lib/analytics";
+import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { GUARANTEE_COPY } from "@/lib/constants";
 
 /**
@@ -17,7 +15,6 @@ export function GuaranteeXL() {
     >
       <div className="mx-auto max-w-content">
         <div className="card relative grid gap-8 overflow-hidden border-primary/30 p-8 md:grid-cols-[auto_1fr] md:items-center md:gap-12 md:p-12">
-          {/* Icône bouclier */}
           <div className="flex items-center justify-center">
             <div className="relative">
               <div className="absolute inset-0 animate-pulse rounded-full bg-accent/15 blur-2xl" aria-hidden />
@@ -60,15 +57,14 @@ export function GuaranteeXL() {
               ))}
             </ul>
 
-            <a
+            <AnalyticsCta
               href="#contact"
-              data-analytics-cta="guarantee_xl"
-              onClick={() => trackCtaClicked("guarantee_xl")}
+              analyticsId="guarantee_xl"
               className="mt-7 btn-bracket btn-bracket-primary"
             >
               {GUARANTEE_COPY.cta}
               <span aria-hidden>→</span>
-            </a>
+            </AnalyticsCta>
 
             <p className="mt-3 text-xs text-faint">{GUARANTEE_COPY.microNote}</p>
           </div>

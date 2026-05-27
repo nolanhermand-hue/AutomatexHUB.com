@@ -1,5 +1,3 @@
-"use client";
-
 import { AGITATION_COPY } from "@/lib/constants";
 import { SectionCta } from "@/components/ui/SectionCta";
 
