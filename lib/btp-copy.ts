@@ -1,5 +1,5 @@
 import type { PricingOffer } from "@/lib/constants";
-import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { SOVEREIGNTY_TRUST_LINE, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
 
 /** Landing BTP — ton terrain, sans jargon « logiciel / formation ». */
 export const BTP_HERO = {
@@ -87,7 +87,7 @@ export const BTP_ACCOMPANIMENT = {
 
 export const BTP_PRICING_HEADING = {
   h2: "Choisissez votre niveau de tranquillité",
-  sub: "Pas d'engagement annuel. Vous arrêtez quand vous voulez. Le setup est à fonds perdus — on l'assume.",
+  sub: "Grille transparente. Besoin de moins ou de plus que les packs ? Formule sur mesure — prix sur devis après 30 min. Pas d'engagement annuel.",
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
   annualDiscountLabel: "Économisez 15% · Paiement annuel",
@@ -180,6 +180,21 @@ export const BTP_OFFERS: BtpOffer[] = [
     roiLine: "10+ chantiers / an : Nolan suit votre activité chaque mois.",
     cta: "Ne plus être seul",
   },
+  {
+    id: "sur-mesure",
+    name: "Sur mesure",
+    badge: "30 min · sans engagement",
+    featured: false,
+    customOffer: true,
+    setup: 0,
+    monthly: 0,
+    annual: 0,
+    systemLine: "Périmètre plus léger ou plus complet que Départ → Full.",
+    nolanLine: "Entretien de cadrage, puis devis transparent avant tout engagement.",
+    benefits: [],
+    roiLine: "Idéal si votre activité ne rentre pas dans une case standard.",
+    cta: SUR_MESURE_BOOKING_CTA,
+  },
 ];
 
 export const BTP_FAQ = {
@@ -253,7 +268,8 @@ export const BTP_METIERS = [
 
 export const ACCOMPANIMENT_PAGE = {
   h1: "Vous n'êtes jamais seul avec votre système.",
-  sub: "L'accompagnement est inclus dans chaque formule. Pas en option.",
+  sub:
+    "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles mandataires et artisans sont transparentes ; si vous voulez moins ou plus que les packs affichés, on part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
   monthlyIntro:
     "20 minutes. On regarde les chiffres ensemble : combien de leads ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis on ajuste — immédiatement, sans rendez-vous supplémentaire.",
   timelineHorizontal: [

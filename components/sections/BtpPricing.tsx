@@ -10,6 +10,7 @@ import {
 } from "@/lib/btp-copy";
 import { cn } from "@/lib/cn";
 import { annualPrepayTotal } from "@/lib/pricing";
+import { PRICING_HEADING } from "@/lib/constants";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -34,13 +35,19 @@ export function BtpPricing() {
           className="mt-8"
         />
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {BTP_OFFERS.map((offer) => {
-            const displayPrice =
-              cycle === "monthly"
+            const isCustom = offer.customOffer === true;
+            const displayPrice = isCustom
+              ? null
+              : cycle === "monthly"
                 ? offer.monthly.toLocaleString("fr-FR")
                 : annualPrepayTotal(offer.monthly).toLocaleString("fr-FR");
-            const priceSuffix = cycle === "monthly" ? "/mois" : "/an";
+            const priceSuffix = isCustom
+              ? null
+              : cycle === "monthly"
+                ? "/mois"
+                : "/an";
             const isFull = offer.id === "full-btp";
             return (
               <motion.div
@@ -53,13 +60,24 @@ export function BtpPricing() {
                     <h3 className="font-heading text-xl text-text">{offer.name}</h3>
                     {offer.badge ? <FeaturedBadge>{offer.badge}</FeaturedBadge> : null}
                   </div>
-                  <p className="mt-3 text-sm text-muted">
-                    {offer.setup.toLocaleString("fr-FR")} € d&apos;installation
-                  </p>
-                  <p className="mt-1 text-2xl font-bold text-text">
-                    {displayPrice} €
-                    <span className="text-sm font-medium text-muted">{priceSuffix}</span>
-                  </p>
+                  {isCustom ? (
+                    <>
+                      <p className="mt-4 text-sm text-muted">{PRICING_HEADING.surMesureIntro}</p>
+                      <p className="mt-2 text-2xl font-bold text-text">
+                        {PRICING_HEADING.surMesurePriceLabel}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="mt-3 text-sm text-muted">
+                        {offer.setup.toLocaleString("fr-FR")} € d&apos;installation
+                      </p>
+                      <p className="mt-1 text-2xl font-bold text-text">
+                        {displayPrice} €
+                        <span className="text-sm font-medium text-muted">{priceSuffix}</span>
+                      </p>
+                    </>
+                  )}
                   <div className="mt-4 flex-1 space-y-3 text-sm text-muted">
                     <p>
                       <span className="font-semibold text-text">Le système : </span>
@@ -78,7 +96,7 @@ export function BtpPricing() {
                   ) : null}
                   <a
                     href={`#contact?offre=${offer.id}`}
-                    className={cn("mt-5 btn-bracket w-full justify-center", offer.featured ? "btn-bracket-primary" : "btn-bracket-outline")}
+                    className={cn("mt-5 btn-bracket w-full justify-center", offer.featured || isCustom ? "btn-bracket-primary" : "btn-bracket-outline")}
                   >
                     {offer.cta}
                   </a>

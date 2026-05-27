@@ -355,6 +355,12 @@ export const ACCOMPANIMENT_COPY = {
   ] as const,
   tierNote:
     "Essentiel, Pro et Cabinet : même socle — suivi 12 mois et bilan trimestriel. Cabinet garde la priorité de réponse la plus rapide.",
+  surMesure: {
+    h2: "Sur mesure · prix sur devis",
+    body:
+      "Besoin d’un périmètre plus léger (budget serré) ou plus complet que les formules affichées ? C’est possible. Nolan cale un entretien de 30 minutes, puis un devis transparent — sans engagement tant que vous n’avez pas validé.",
+    cta: SUR_MESURE_BOOKING_CTA,
+  },
   phoneCta: "Appeler Nolan",
   cta: BOOKING_CTA_LABEL,
 } as const;

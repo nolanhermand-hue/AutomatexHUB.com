@@ -55,6 +55,9 @@ export function AccompanimentYear() {
         <p className="mt-8 text-sm text-muted md:text-[15px]">
           {ACCOMPANIMENT_COPY.tierNote}
         </p>
+        <p className="mt-4 max-w-readable text-sm text-muted md:text-[15px]">
+          {ACCOMPANIMENT_COPY.surMesure.body}
+        </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <a

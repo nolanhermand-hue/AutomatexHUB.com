@@ -3,7 +3,7 @@ import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
 import { AccompagnementContactForm } from "@/components/sections/AccompagnementContactForm";
-import { NAP } from "@/lib/constants";
+import { ACCOMPANIMENT_COPY, NAP, PRICING_HEADING } from "@/lib/constants";
 import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -11,7 +11,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Accompagnement humain inclus · Flers · Automatex Hub",
   description:
-    "Point mensuel, ajustements continus, ligne directe Nolan à Flers. L'accompagnement Automatex est inclus dans chaque formule — pas en option. Mandataires et artisans Orne.",
+    "Point mensuel, ajustements continus, ligne directe Nolan à Flers. Inclus dans chaque formule — ou sur mesure (plus léger ou plus complet, prix sur devis). Mandataires et artisans Orne.",
   openGraph: {
     title: "Vous n'êtes jamais seul avec votre système — Automatex Hub",
     description:
@@ -32,10 +32,10 @@ export default function AccompagnementPage() {
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-            À partir de 99€/mois
+            Formules dès 99 €/mois
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-4 py-2 text-sm text-muted">
-            Setup unique · Sans engagement
+            Sur mesure · prix sur devis
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-4 py-2 text-sm text-muted">
             30j satisfait ou remboursé
@@ -128,42 +128,49 @@ export default function AccompagnementPage() {
           <h2 className="font-heading text-xl font-bold text-text">
             L&apos;accompagnement est inclus dans chaque formule
           </h2>
-          <p className="mt-2 text-sm text-muted">Pas en option. Pas en supplément. Inclus.</p>
-          <div className="mt-8 overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="py-3 pr-4 text-left font-medium text-text">Formule</th>
-                  <th className="px-4 py-3 text-right font-medium text-text">Mensuel</th>
-                  <th className="py-3 pl-4 text-left font-medium text-muted">Point mensuel</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {[
-                  { name: "Départ", price: "99€", note: "Sur demande", highlight: false },
-                  { name: "Essentiel ⭐", price: "249€", note: "Inclus", highlight: true },
-                  { name: "Pro", price: "349€", note: "Inclus", highlight: false },
-                  { name: "Full", price: "449€", note: "Inclus + réponse 4h", highlight: false },
-                ].map((row) => (
-                  <tr key={row.name} className={row.highlight ? "bg-primary/5" : undefined}>
-                    <td
-                      className={`py-3 pr-4 font-medium ${row.highlight ? "text-primary" : "text-text"}`}
-                    >
-                      {row.name}
-                    </td>
-                    <td className="px-4 py-3 text-right tabular-nums text-text">{row.price}</td>
-                    <td className="py-3 pl-4 text-muted">{row.note}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-xs text-muted">
-            + Setup unique au démarrage (199€–999€ selon formule).
-            <Link href="/immobilier#pricing" className="ml-1 text-primary hover:underline">
-              Voir le détail →
-            </Link>
+          <p className="mt-2 max-w-readable text-sm text-muted">
+            Pas en option. Pas en supplément. Même socle humain sur Essentiel, Pro et Cabinet — voir
+            les grilles sur les pages tarifs.
           </p>
+
+          <div className="mt-8 card border-primary/40 bg-surface p-6 md:p-8">
+            <p className="label-micro text-primary">Périmètre flexible</p>
+            <h3 className="mt-2 font-heading text-2xl text-text">{ACCOMPANIMENT_COPY.surMesure.h2}</h3>
+            <p className="mt-3 max-w-readable text-sm leading-relaxed text-muted md:text-base">
+              {ACCOMPANIMENT_COPY.surMesure.body}
+            </p>
+            <p className="mt-3 text-sm text-muted">{PRICING_HEADING.customFitFootnote}</p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/immobilier#contact?offre=sur-mesure"
+                className="btn-bracket btn-bracket-primary justify-center"
+              >
+                {ACCOMPANIMENT_COPY.surMesure.cta}
+                <span aria-hidden>→</span>
+              </Link>
+              <Link
+                href="/btp#contact?offre=sur-mesure"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-border px-5 text-sm font-semibold text-text"
+              >
+                Sur mesure artisan BTP
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/immobilier#pricing"
+              className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-md border border-border px-6 font-semibold text-text hover:border-primary/40"
+            >
+              Tarifs mandataires
+            </Link>
+            <Link
+              href="/btp#pricing"
+              className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-md border border-border px-6 font-semibold text-text hover:border-primary/40"
+            >
+              Tarifs artisans BTP
+            </Link>
+          </div>
         </section>
 
         <AccompagnementContactForm />
