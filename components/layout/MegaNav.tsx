@@ -434,9 +434,9 @@ export function MegaNav() {
           "nav-mobile-menu border-b border-border bg-surface/98 backdrop-blur-xl lg:hidden",
           isMenuOpen && "open",
         )}
-        role="dialog"
-        aria-modal={isMenuOpen}
-        aria-hidden={!isMenuOpen}
+        role={isMenuOpen ? "dialog" : undefined}
+        aria-modal={isMenuOpen ? true : undefined}
+        inert={!isMenuOpen ? true : undefined}
         aria-label="Menu navigation mobile"
       >
         <div className="nav-mobile-menu-inner">

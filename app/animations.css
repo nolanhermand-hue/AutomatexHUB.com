@@ -313,6 +313,10 @@
   overflow: hidden;
 }
 
+.nav-mobile-menu:not(.open) {
+  pointer-events: none;
+}
+
 .nav-mobile-menu.open {
   grid-template-rows: 1fr;
 }

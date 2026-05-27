@@ -251,7 +251,7 @@ body::before {
 
 .btn-bracket-primary {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-cta-fg);
   border-color: transparent;
   position: relative;
   overflow: hidden;
