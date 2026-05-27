@@ -1,0 +1,76 @@
+name: CI — Automatex Hub
+
+on:
+  pull_request:
+    branches: [develop, staging, main]
+  push:
+    branches: [develop, staging, main]
+
+jobs:
+  build:
+    name: Build & Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm run check:words
+      - run: npm run demos:static
+      - run: npm run build
+      - run: bash scripts/check-animation-weight.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-out
+          path: out/
+
+  routes:
+    name: Routes 200 OK
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-out
+          path: out/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npx --yes serve out -l 3000 &
+      - run: sleep 5 && bash scripts/check-routes.sh http://127.0.0.1:3000
+      - run: AUDIT_BASE_URL=http://127.0.0.1:3000 node scripts/audit-routes.mjs
+
+  lighthouse:
+    name: Lighthouse CI
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-out
+          path: out/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm install -g @lhci/cli serve
+      - run: serve out -l 3000 &
+      - run: sleep 5 && lhci autorun
+
+  security-headers:
+    name: Security headers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          grep -q "Content-Security-Policy" netlify.toml || (echo "CSP manquante" && exit 1)
+          grep -q "Strict-Transport-Security" netlify.toml || (echo "HSTS manquant" && exit 1)
+          grep -q "X-Frame-Options" netlify.toml || (echo "X-Frame manquant" && exit 1)
+          echo "Headers OK"

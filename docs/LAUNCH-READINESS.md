@@ -11,7 +11,7 @@
 | Poids animations | `npm run check:animations` | Vert (CI) |
 | Routes 200 + assets clés | `scripts/check-routes.sh` | Vert (URLs sans `/` final) |
 | Audit routes vs inventaire | `scripts/audit-routes.mjs` | Vert (CI) |
-| Lighthouse mobile (6 URLs) | `.github/workflows/ci.yml` → LHCI | Seuils : SEO/a11y/BP stricts ; perf **warn** ≥ 0,9 |
+| Lighthouse mobile (6 URLs) | `lighthouserc.js` + `docs/ci-github-workflow.example.yml` | Seuils : SEO/a11y/BP stricts ; perf **warn** ≥ 0,9 — **copier le workflow dans `.github/workflows/`** (push GitHub nécessite scope `workflow` sur le token) |
 | Headers sécurité | `netlify.toml` | Vert |
 
 ## SEO & indexation
