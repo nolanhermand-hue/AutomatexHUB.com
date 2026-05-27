@@ -1,44 +1,30 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll } from "framer-motion";
+import { useReducedMotionPreference } from "@/providers/AppProviders";
 import { useEffect, useState } from "react";
 
 export function HeroScrollHint() {
-  const reduce = useReducedMotion();
-  const { scrollY } = useScroll();
+  const reduce = useReducedMotionPreference();
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    const unsub = scrollY.on("change", (y) => setHide(y > 100));
-    return () => unsub();
-  }, [scrollY]);
+    const onScroll = () => setHide(window.scrollY > 100);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   if (reduce || hide) return null;
 
   return (
     <div
-      className="pointer-events-none mt-10 flex flex-col items-center gap-1 pb-2 text-muted/60"
+      className="hero-scroll-hint pointer-events-none mt-10 flex flex-col items-center gap-1 pb-2 text-faint"
       aria-hidden
     >
-      <motion.span
-        className="text-lg leading-none"
-        animate={{ y: [0, 6, 0], opacity: [0.35, 0.9, 0.35] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-      >
+      <span className="hero-scroll-hint-chevron text-lg leading-none">⌄</span>
+      <span className="hero-scroll-hint-chevron hero-scroll-hint-chevron--delay text-lg leading-none -mt-2">
         ⌄
-      </motion.span>
-      <motion.span
-        className="text-lg leading-none -mt-2"
-        animate={{ y: [0, 6, 0], opacity: [0.35, 0.9, 0.35] }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 0.2,
-        }}
-      >
-        ⌄
-      </motion.span>
+      </span>
     </div>
   );
 }

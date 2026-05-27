@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run brand:favicons && npm run demos:static && next build",
+    "build": "npm run brand:favicons && npm run demos:static && next build && node scripts/optimize-static-html-css.mjs",
     "start": "next start",
     "lint": "next lint",
     "check:words": "node scripts/check-forbidden-words.mjs",
@@ -16,9 +16,22 @@
     "audit:lighthouse": "node scripts/lighthouse-audit.mjs",
     "audit:console": "node scripts/audit-console-screenshots.mjs"
   },
+  "browserslist": {
+    "production": [
+      "chrome >= 111",
+      "edge >= 111",
+      "firefox >= 111",
+      "safari >= 17",
+      "not dead"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "framer-motion": "^12.38.0",
     "gsap": "^3.15.0",
     "lottie-web": "^5.13.0",
     "next": "^15.5.18",
@@ -32,6 +45,7 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.5.0",
     "chrome-launcher": "^1.2.1",
+    "critters": "^0.0.23",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.18",
     "lighthouse": "^13.3.0",

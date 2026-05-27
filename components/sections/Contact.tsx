@@ -401,7 +401,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
             {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formFooter}
           </p>
           {!isResiliation ? (
-            <p className="text-center text-xs text-muted/80">
+            <p className="text-center text-xs text-muted">
               30 jours satisfait ou remboursé — un seul mail suffit
             </p>
           ) : null}

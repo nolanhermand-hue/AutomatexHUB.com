@@ -10,7 +10,6 @@ import {
   SOLUTIONS_MENU,
 } from "@/lib/mega-nav-data";
 import { AUTOMATIONS_CATALOG } from "@/lib/automations-catalog";
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -428,19 +427,18 @@ export function MegaNav() {
         </button>
       </div>
 
-      <AnimatePresence>
-        {isMenuOpen ? (
-          <motion.div
-            ref={menuRef}
-            id="mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-b border-border bg-surface/98 backdrop-blur-xl lg:hidden"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu navigation mobile"
-          >
+      <div
+        ref={menuRef}
+        id="mobile-menu"
+        className={cn(
+          "mobile-menu-panel overflow-hidden border-b border-border bg-surface/98 backdrop-blur-xl lg:hidden",
+          isMenuOpen && "mobile-menu-panel--open",
+        )}
+        role="dialog"
+        aria-modal={isMenuOpen}
+        aria-hidden={!isMenuOpen}
+        aria-label="Menu navigation mobile"
+      >
             <div className="flex flex-col gap-1 px-gutter py-4">
               <p className="label-micro px-3 pt-2 text-faint">Par métier</p>
               {SOLUTIONS_MENU.parMetier
@@ -495,9 +493,7 @@ export function MegaNav() {
                 {NAP.founder} · {NAP.city} · {NAP.phoneDisplay}
               </p>
             </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      </div>
     </header>
   );
 }

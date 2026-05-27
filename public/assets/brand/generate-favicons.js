@@ -40,6 +40,7 @@ async function generate() {
   const lockupLight = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-light.svg"));
   const lockupDark = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-dark.svg"));
   const ogSvg = fs.readFileSync(path.join(dir, "og-image.svg"));
+  const ogBtpSvg = fs.readFileSync(path.join(dir, "og-image-btp.svg"));
 
   const rasterSharp = () => sharp(masterPng);
 
@@ -69,6 +70,9 @@ async function generate() {
   await sharp(ogSvg).resize(1200, 630).png().toFile(ogOutBrand);
   await sharp(ogSvg).resize(1200, 630).png().toFile(path.join(imagesDir, "og-image.png"));
   console.log("✓ og-image.png (brand + assets/images)");
+
+  await sharp(ogBtpSvg).resize(1200, 630).png().toFile(path.join(dir, "og-image-btp.png"));
+  console.log("✓ og-image-btp.png");
 
   const favicon16Path = path.join(faviconsDir, "favicon-16.png");
   const favicon32Path = path.join(faviconsDir, "favicon-32.png");

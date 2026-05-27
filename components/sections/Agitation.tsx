@@ -14,7 +14,7 @@ export function Agitation() {
     >
       <div className="mx-auto max-w-content">
         <div className="relative overflow-hidden rounded-xl border border-border bg-bg-card p-8 md:p-12">
-          <p className="label-micro text-faint uppercase">{AGITATION_COPY.eyebrow}</p>
+          <p className="label-micro text-muted uppercase">{AGITATION_COPY.eyebrow}</p>
           <h2 className="mt-2 max-w-readable font-heading text-3xl leading-tight text-text md:text-5xl">
             {AGITATION_COPY.h2}
           </h2>

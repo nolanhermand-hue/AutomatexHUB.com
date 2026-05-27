@@ -1,3 +1,4 @@
+import { CriticalAboveFoldStyles } from "@/components/seo/CriticalAboveFoldStyles";
 import { LayoutChrome } from "@/components/layout/LayoutChrome";
 import { NetlifyFormsDetection } from "@/components/seo/NetlifyFormsDetection";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
@@ -15,13 +16,17 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   weight: ["400", "500", "600", "700"],
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono-jetbrains",
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "600"],
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const ogImageUrl = brandAbsolute(BRAND.ogImage, SITE_URL);
@@ -113,6 +118,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <CriticalAboveFoldStyles />
         <link rel="dns-prefetch" href="https://plausible.io" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon.ico" sizes="any" />

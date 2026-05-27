@@ -2,44 +2,56 @@
 
 import { useState } from "react";
 
+/** Fichier versionné ; ajouter `nolan-photo.webp` ici pour une photo réelle (optionnel). */
+const FOUNDER_AVATAR_SRC = "/assets/brand/founder-avatar.svg";
+
 type FounderAvatarProps = {
   size?: number;
   className?: string;
-  /** Hero LCP — charge la photo en priorité */
+  /** Hero LCP — charge l’avatar en priorité */
   priority?: boolean;
 };
 
+function FounderAvatarPlaceholder({
+  size,
+  className,
+}: {
+  size: number;
+  className: string;
+}) {
+  return (
+    <div
+      className={`flex shrink-0 items-center justify-center rounded-full font-bold text-white ring-2 ring-primary/30 ring-offset-2 ring-offset-night ${className}`}
+      style={{
+        width: size,
+        height: size,
+        background: "linear-gradient(135deg, #ff6b2b 0%, #c44a12 100%)",
+        fontSize: size * 0.32,
+      }}
+      role="img"
+      aria-label="Nolan Hermand, fondateur Automatex Hub, Flers Orne"
+    >
+      <span className="select-none" aria-hidden>
+        NH
+      </span>
+    </div>
+  );
+}
+
 /**
- * Photo Nolan si disponible, sinon placeholder NH (C02 / C10).
- * `<img>` natif + dimensions fixes (export statique, images unoptimized).
+ * Avatar fondateur (SVG par défaut). Photo WebP optionnelle si déposée sous le même dossier brand.
  */
 export function FounderAvatar({ size = 48, className = "", priority = false }: FounderAvatarProps) {
-  const [photoOk, setPhotoOk] = useState(true);
+  const [failed, setFailed] = useState(false);
 
-  if (!photoOk) {
-    return (
-      <div
-        className={`flex shrink-0 items-center justify-center rounded-full font-bold text-white ring-2 ring-primary/30 ring-offset-2 ring-offset-night ${className}`}
-        style={{
-          width: size,
-          height: size,
-          background: "linear-gradient(135deg, #ff6b2b 0%, #c44a12 100%)",
-          fontSize: size * 0.32,
-        }}
-        role="img"
-        aria-label="Nolan Hermand, fondateur Automatex Hub, Flers Orne"
-      >
-        <span className="select-none" aria-hidden>
-          NH
-        </span>
-      </div>
-    );
+  if (failed) {
+    return <FounderAvatarPlaceholder size={size} className={className} />;
   }
 
   return (
     // eslint-disable-next-line @next/next/no-img-element -- export statique : LCP + dimensions explicites
     <img
-      src="/assets/brand/nolan-photo.webp"
+      src={FOUNDER_AVATAR_SRC}
       alt="Nolan Hermand, fondateur Automatex Hub — Flers, Orne"
       width={size}
       height={size}
@@ -48,7 +60,7 @@ export function FounderAvatar({ size = 48, className = "", priority = false }: F
       fetchPriority={priority ? "high" : "auto"}
       className={`shrink-0 rounded-full object-cover ${className}`}
       style={{ width: size, height: size }}
-      onError={() => setPhotoOk(false)}
+      onError={() => setFailed(true)}
     />
   );
 }

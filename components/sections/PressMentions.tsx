@@ -17,7 +17,7 @@ export function PressMentions() {
       data-analytics-section="press"
     >
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-muted/60 text-center md:text-left">Vu sur</p>
+        <p className="label-micro text-muted text-center md:text-left">Vu sur</p>
         <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 md:justify-start">
           {PRESS_MENTIONS.map((m) => (
             <li key={m.url}>
@@ -25,7 +25,7 @@ export function PressMentions() {
                 href={m.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-muted/80 transition hover:text-text"
+                className="text-sm font-semibold text-muted transition hover:text-text"
               >
                 {m.outlet}
               </a>

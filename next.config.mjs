@@ -3,6 +3,8 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const polyfillNoop = path.join(__dirname, "lib/modern-browser-noop.js");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingRoot: __dirname,
@@ -13,7 +15,19 @@ const nextConfig = {
   },
   trailingSlash: false,
   experimental: {
-    optimizePackageImports: ["framer-motion", "lottie-react"],
+    optimizeCss: true,
+    optimizePackageImports: ["lottie-react"],
+  },
+  webpack: (config, { webpack, isServer, dev }) => {
+    if (!isServer && !dev) {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /[\\/]build[\\/]polyfills[\\/]polyfill-module(\.js)?$/,
+          polyfillNoop,
+        ),
+      );
+    }
+    return config;
   },
 };
 

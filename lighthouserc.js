@@ -6,11 +6,11 @@ module.exports = {
       startServerReadyTimeout: 60000,
       url: [
         "http://127.0.0.1:3000/",
-        "http://127.0.0.1:3000/immobilier/",
-        "http://127.0.0.1:3000/btp/",
-        "http://127.0.0.1:3000/accompagnement/",
-        "http://127.0.0.1:3000/automatisations/",
-        "http://127.0.0.1:3000/a-propos/",
+        "http://127.0.0.1:3000/immobilier",
+        "http://127.0.0.1:3000/btp",
+        "http://127.0.0.1:3000/accompagnement",
+        "http://127.0.0.1:3000/automatisations",
+        "http://127.0.0.1:3000/a-propos",
       ],
       numberOfRuns: 2,
       settings: {

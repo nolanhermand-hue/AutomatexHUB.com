@@ -2,7 +2,7 @@
 
 import { trackCtaClicked } from "@/lib/analytics";
 import { STICKY_CTA_COPY } from "@/lib/constants";
-import { AnimatePresence, motion } from "framer-motion";
+import { cn } from "@/lib/cn";
 import { useEffect, useState } from "react";
 
 export function StickyCtaMobile() {
@@ -33,25 +33,22 @@ export function StickyCtaMobile() {
   }, []);
 
   return (
-    <AnimatePresence>
-      {visible ? (
-        <motion.div
-          className="fixed inset-x-0 bottom-0 z-[950] border-t border-border bg-night/95 px-gutter pb-[max(env(safe-area-inset-bottom),1rem)] pt-3 backdrop-blur-2xl lg:hidden"
-          initial={{ y: 90, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 90, opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <a
-            href="#contact"
-            data-analytics-cta="sticky_mobile"
-            onClick={() => trackCtaClicked("sticky_mobile")}
-            className="btn-bracket btn-bracket-primary"
-          >
-            {STICKY_CTA_COPY.label}
-          </a>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+    <div
+      className={cn(
+        "sticky-cta-bar fixed inset-x-0 bottom-0 z-[950] border-t border-border bg-night/95 px-gutter pb-[max(env(safe-area-inset-bottom),1rem)] pt-3 backdrop-blur-2xl lg:hidden",
+        visible && "sticky-cta-bar--visible",
+      )}
+      aria-hidden={!visible}
+    >
+      <a
+        href="#contact"
+        data-analytics-cta="sticky_mobile"
+        onClick={() => trackCtaClicked("sticky_mobile")}
+        className="btn-bracket btn-bracket-primary"
+        tabIndex={visible ? 0 : -1}
+      >
+        {STICKY_CTA_COPY.label}
+      </a>
+    </div>
   );
 }

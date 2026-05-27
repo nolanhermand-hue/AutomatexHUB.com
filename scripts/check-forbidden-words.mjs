@@ -13,7 +13,15 @@ const exts = new Set([
   ".md",
 ]);
 
-const IGNORE_DIRS = new Set(["node_modules", ".git", ".next", "out", "audits"]);
+const IGNORE_DIRS = new Set([
+  "node_modules",
+  ".git",
+  ".next",
+  "out",
+  "audits",
+  "docs",
+  ".cursor",
+]);
 
 const PATTERNS = [
   { label: "IA", re: /\bIA\b/ },

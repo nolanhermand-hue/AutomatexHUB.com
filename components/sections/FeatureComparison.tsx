@@ -94,7 +94,7 @@ export function FeatureComparison() {
                       >
                         {v ? "✓" : "—"}
                       </span>
-                      <span className={v ? "text-text" : "text-muted/50"}>
+                      <span className={v ? "text-text" : "text-faint"}>
                         {row.feature}
                       </span>
                     </li>

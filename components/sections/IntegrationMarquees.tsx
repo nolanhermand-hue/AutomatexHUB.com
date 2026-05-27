@@ -61,7 +61,7 @@ function FallbackIconBox({
       className={`flex size-6 shrink-0 items-center justify-center rounded-[5px] bg-surface-2 md:size-7 ${className}`}
       aria-hidden
     >
-      <span className="text-[8px] font-semibold leading-none text-faint md:text-[9px]">
+      <span className="text-[10px] font-semibold leading-none text-muted md:text-[11px]">
         {ini}
       </span>
     </div>

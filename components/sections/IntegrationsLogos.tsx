@@ -15,7 +15,7 @@ export function IntegrationsLogos() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-muted" aria-hidden />
           {HERO_COPY.liveCounter}
         </p>
-        <p className="mt-2 text-xs text-muted/70">{HERO_COPY.hostingMention}</p>
+        <p className="mt-2 text-xs text-muted">{HERO_COPY.hostingMention}</p>
       </div>
     </section>
   );

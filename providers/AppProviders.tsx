@@ -8,12 +8,6 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const ReducedMotionContext = createContext(false);
 
@@ -33,13 +27,41 @@ export function AppProviders({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (reduced) {
-      ScrollTrigger.getAll().forEach((instance) => instance.kill());
-      return;
+    if (reduced) return;
+
+    let cleanup: (() => void) | undefined;
+    let cancelled = false;
+
+    const run = () => {
+      void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
+        ([{ default: gsap }, { ScrollTrigger }]) => {
+          if (cancelled) return;
+          gsap.registerPlugin(ScrollTrigger);
+          const onScroll = () => ScrollTrigger.update();
+          window.addEventListener("scroll", onScroll, { passive: true });
+          cleanup = () => {
+            window.removeEventListener("scroll", onScroll);
+            ScrollTrigger.getAll().forEach((instance) => instance.kill());
+          };
+        },
+      );
+    };
+
+    if (typeof requestIdleCallback === "function") {
+      const id = requestIdleCallback(run, { timeout: 4000 });
+      return () => {
+        cancelled = true;
+        cancelIdleCallback(id);
+        cleanup?.();
+      };
     }
-    const onScroll = () => ScrollTrigger.update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const t = window.setTimeout(run, 1500);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(t);
+      cleanup?.();
+    };
   }, [reduced]);
 
   const value = useMemo(() => reduced, [reduced]);
