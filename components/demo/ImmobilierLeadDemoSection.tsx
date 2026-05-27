@@ -9,15 +9,14 @@ const MotionDemo = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="w-full overflow-hidden rounded-2xl border border-border bg-section/80 p-8"
+        className="relative w-full overflow-hidden rounded-xl border border-border bg-surface p-4 md:p-6"
+        style={{ minHeight: "min(100%, 520px)" }}
         aria-hidden="true"
       >
-        <div className="mb-6 h-4 w-32 animate-pulse rounded bg-border" />
-        <div className="space-y-3">
-          <div className="h-12 animate-pulse rounded-xl bg-border/80" />
-          <div className="h-12 animate-pulse rounded-xl bg-border/60 opacity-90" />
-          <div className="h-12 animate-pulse rounded-xl bg-border/40 opacity-75" />
-        </div>
+        <div
+          className="mx-auto w-full max-w-[640px] animate-pulse rounded-lg bg-border/50"
+          style={{ aspectRatio: "640 / 420" }}
+        />
       </div>
     ),
   },

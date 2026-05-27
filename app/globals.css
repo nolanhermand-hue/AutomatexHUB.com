@@ -30,8 +30,8 @@
   --color-cta-fg: #080d1a;
   --color-text: #e8edf5;
   /* WCAG 1.4.3 AA — ≥ 4.5:1 sur night (#080d1a) et bg-card (#0d1526) */
-  --color-muted: #8494b0;
-  --color-faint: #7d8dad;
+  --color-muted: #94a3b8;
+  --color-faint: #8892a4;
   --color-black: #e8edf5;
   --color-footer: #080d1a;
   --color-forest: #080d1a;
@@ -543,11 +543,16 @@ body::before {
   padding: 12px 16px;
   padding-bottom: calc(12px + env(safe-area-inset-bottom));
   background: var(--color-night, #080d1a);
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease-out;
 }
 
 .sticky-cta-mobile.visible {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .sticky-cta-mobile a,
@@ -628,14 +633,15 @@ body::before {
 }
 
 .sticky-cta-bar {
-  transform: translateY(100%);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+  transition: opacity 0.28s ease-out;
 }
 
 .sticky-cta-bar--visible {
-  transform: translateY(0);
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 

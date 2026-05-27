@@ -1,6 +1,7 @@
 "use client";
 
 import { useReducedMotionPreference } from "@/providers/AppProviders";
+import { scheduleIdleTask } from "@/lib/schedule-idle";
 import { useEffect, useState } from "react";
 
 const WATCH_IDS = [
@@ -19,22 +20,31 @@ export function ReadingProgress() {
   const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+    let removeScroll: (() => void) | undefined;
+    const cancelIdle = scheduleIdleTask(() => {
+      const onScroll = () => {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - window.innerHeight;
+        setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      removeScroll = () => window.removeEventListener("scroll", onScroll);
+    }, { timeout: 2000 });
+    return () => {
+      cancelIdle();
+      removeScroll?.();
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    const els = WATCH_IDS.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
-    if (els.length === 0) return;
+    let obs: IntersectionObserver | undefined;
+    const cancelIdle = scheduleIdleTask(() => {
+      const els = WATCH_IDS.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+      if (els.length === 0) return;
 
-    let lastId = "";
-    const obs = new IntersectionObserver(
+      let lastId = "";
+      obs = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (!e.isIntersecting || e.intersectionRatio < 0.35) continue;
@@ -51,8 +61,12 @@ export function ReadingProgress() {
       { threshold: [0.35, 0.5], rootMargin: "-15% 0px -15% 0px" },
     );
 
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+      els.forEach((el) => obs?.observe(el));
+    }, { timeout: 2500 });
+    return () => {
+      cancelIdle();
+      obs?.disconnect();
+    };
   }, [reduceMotion]);
 
   return (

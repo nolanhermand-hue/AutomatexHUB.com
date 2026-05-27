@@ -29,7 +29,9 @@ for (const demo of demos) {
   const buf = Buffer.from(svgFor(demo.title));
   const out = path.join(outDir, demo.file);
   await sharp(buf).png({ compressionLevel: 9 }).toFile(out);
-  console.log("✓", demo.file);
+  const webpName = demo.file.replace(/\.png$/, ".webp");
+  await sharp(buf).webp({ quality: 85 }).toFile(path.join(outDir, webpName));
+  console.log("✓", demo.file, "+", webpName);
 }
 
 // Minimal SVG assets (< 80 KiB) for optional use

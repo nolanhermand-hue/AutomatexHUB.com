@@ -148,7 +148,7 @@ export function MegaNav() {
     <header
       ref={navRef}
       className={cn(
-        "sticky top-0 z-[900] min-h-[60px] border-b border-border bg-bg/95 py-2 backdrop-blur-md transition-shadow duration-200 lg:min-h-[72px] lg:py-2.5",
+        "sticky top-0 z-[900] h-[60px] border-b border-border bg-bg/95 py-2 backdrop-blur-md transition-shadow duration-200 lg:h-[72px] lg:py-2.5",
         isScrolled && "shadow-[0_8px_32px_rgb(8_13_26/0.55)]",
       )}
     >

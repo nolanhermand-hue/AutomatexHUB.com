@@ -19,11 +19,13 @@ type MotionDemoProps = {
   staticSrc: string;
   ariaLabel: string;
   staticAlt: string;
-  /** Legacy inline fallback before dynamic import resolves */
   children?: ReactNode;
   loadAnimation?: () => Promise<{ default: ComponentType<DemoAnimationProps> }>;
   className?: string;
 };
+
+const DEMO_W = 640;
+const DEMO_H = 420;
 
 export function MotionDemo({
   demoId,
@@ -64,7 +66,15 @@ export function MotionDemo({
 
   useEffect(() => {
     if (!active || reduced || !loadAnimation || Anim) return;
-    void loadAnimation().then((mod) => setAnim(() => mod.default));
+    const run = () => {
+      void loadAnimation().then((mod) => setAnim(() => mod.default));
+    };
+    if (typeof requestIdleCallback === "function") {
+      const id = requestIdleCallback(run, { timeout: 2500 });
+      return () => cancelIdleCallback(id);
+    }
+    const t = window.setTimeout(run, 400);
+    return () => window.clearTimeout(t);
   }, [active, reduced, loadAnimation, Anim]);
 
   const animReady = Boolean(Anim || children);
@@ -84,32 +94,42 @@ export function MotionDemo({
         className,
       )}
     >
-      <Image
-        src={staticSrc}
-        alt={staticAlt}
-        width={640}
-        height={420}
-        className={cn(
-          "mx-auto h-auto w-full max-w-[640px] rounded-lg object-contain",
-          showStatic ? "block" : "hidden",
-        )}
-      />
-      {loadingAnim ? (
-        <div className="space-y-3 rounded-xl border border-border bg-section/80 p-6" aria-hidden="true">
-          <div className="h-3 w-32 animate-pulse rounded bg-border" />
-          <div className="h-12 animate-pulse rounded-xl bg-border/80" />
-          <div className="h-12 animate-pulse rounded-xl bg-border/60" />
-          <div className="h-12 animate-pulse rounded-xl bg-border/40" />
-        </div>
-      ) : null}
       <div
-        className={cn(
-          "demo-animated min-h-[240px] md:min-h-[280px]",
-          showAnimLayer ? "block" : "hidden",
-        )}
-        aria-hidden={!showAnimLayer}
+        className="relative mx-auto w-full max-w-[640px] overflow-hidden rounded-lg"
+        style={{ aspectRatio: `${DEMO_W} / ${DEMO_H}` }}
       >
-        {Anim ? <Anim active={active} /> : children}
+        <Image
+          src={staticSrc}
+          alt={staticAlt}
+          width={DEMO_W}
+          height={DEMO_H}
+          sizes="(max-width: 768px) 100vw, 640px"
+          loading="lazy"
+          fetchPriority="low"
+          className={cn(
+            "h-full w-full object-contain",
+            showStatic ? "block" : "hidden",
+          )}
+        />
+        {loadingAnim ? (
+          <div
+            className="absolute inset-0 flex flex-col justify-center gap-3 bg-section/80 p-6"
+            aria-hidden="true"
+          >
+            <div className="h-3 w-32 rounded bg-border opacity-60" />
+            <div className="h-12 rounded-xl bg-border/80 opacity-60" />
+            <div className="h-12 rounded-xl bg-border/60 opacity-60" />
+          </div>
+        ) : null}
+        <div
+          className={cn(
+            "demo-animated absolute inset-0 flex items-center justify-center p-4",
+            showAnimLayer ? "block" : "hidden",
+          )}
+          aria-hidden={!showAnimLayer}
+        >
+          {Anim ? <Anim active={active} /> : children}
+        </div>
       </div>
       <figcaption className="sr-only">{staticAlt}</figcaption>
     </figure>

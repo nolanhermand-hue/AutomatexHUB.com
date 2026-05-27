@@ -14,23 +14,23 @@ export const loadPointMensuel = () =>
 
 export const DEMO_STATIC = {
   appelManque: {
-    src: "/assets/demos/appel-manque-static.png",
+    src: "/assets/demos/appel-manque-static.webp",
     alt: "Appel manqué traité par une réponse en 90 secondes",
   },
   devisAuto: {
-    src: "/assets/demos/devis-auto-static.png",
+    src: "/assets/demos/devis-auto-static.webp",
     alt: "Dictée vocale transformée en devis PDF envoyé au client",
   },
   leadImmobilier: {
-    src: "/assets/demos/lead-immobilier-static.png",
+    src: "/assets/demos/lead-immobilier-static.webp",
     alt: "Lead immobilier traité pendant une visite",
   },
   avantApres: {
-    src: "/assets/demos/avant-apres-static.png",
+    src: "/assets/demos/avant-apres-static.webp",
     alt: "Journée avant et après Automatex",
   },
   pointMensuel: {
-    src: "/assets/demos/point-mensuel-static.png",
+    src: "/assets/demos/point-mensuel-static.webp",
     alt: "Point mensuel avec Nolan et rapport Telegram",
   },
 } as const;

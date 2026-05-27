@@ -154,45 +154,32 @@
   animation: fade-in var(--duration-slow) var(--ease-out) 200ms both;
 }
 
+/* Entrées au scroll — opacity uniquement (évite CLS transform) */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out);
+  transform: none;
+  transition: opacity var(--duration-slow) var(--ease-out);
 }
 
 .animate-on-scroll.is-visible,
 .animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.animate-on-scroll.from-left {
-  transform: translateX(-20px);
+.animate-on-scroll.from-left,
+.animate-on-scroll.from-right,
+.animate-on-scroll.scale {
+  transform: none;
 }
 
 .animate-on-scroll.from-left.is-visible,
-.animate-on-scroll.from-left.visible {
-  transform: translateX(0);
-}
-
-.animate-on-scroll.from-right {
-  transform: translateX(20px);
-}
-
+.animate-on-scroll.from-left.visible,
 .animate-on-scroll.from-right.is-visible,
-.animate-on-scroll.from-right.visible {
-  transform: translateX(0);
-}
-
-.animate-on-scroll.scale {
-  transform: scale(0.96);
-}
-
+.animate-on-scroll.from-right.visible,
 .animate-on-scroll.scale.is-visible,
 .animate-on-scroll.scale.visible {
-  transform: scale(1);
+  opacity: 1;
+  transform: none;
 }
 
 .animate-on-scroll:nth-child(1) {
@@ -276,23 +263,19 @@
   inset: -1px;
   border-radius: inherit;
   background: linear-gradient(135deg, #ff6b35, #ff8c5a, #ff6b35);
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease 3;
   z-index: -1;
   opacity: 0.6;
   pointer-events: none;
 }
 
 .badge-recommended {
-  animation: badge-pulse 2s ease-in-out 3;
+  /* pulsation retirée — évite CLS transform */
 }
 
 .mock-section .mock-message {
   opacity: 0;
-  transform: translateY(8px);
-  transition:
-    opacity var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out);
+  transform: none;
+  transition: opacity var(--duration-base) var(--ease-out);
 }
 
 .mock-section.is-visible .mock-message:nth-child(1),
@@ -340,10 +323,8 @@
 
 .nav-mobile-menu .nav-mobile-item {
   opacity: 0;
-  transform: translateX(-10px);
-  transition:
-    opacity var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out);
+  transform: none;
+  transition: opacity var(--duration-base) var(--ease-out);
 }
 
 .nav-mobile-menu.open .nav-mobile-item {
@@ -416,24 +397,16 @@
 
 .fade-in-up {
   opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity 0.5s var(--ease-out),
-    transform 0.5s var(--ease-out);
+  transform: none;
+  transition: opacity 0.5s var(--ease-out);
 }
 
 .fade-in-up--visible,
 .fade-in-up.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .sticky-cta-bar--visible {
-  animation: sticky-appear 300ms var(--ease-decel) both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sticky-cta-bar--visible {
-    animation: none;
-  }
+  /* transition dans globals.css — pas d’animation translate (CLS) */
 }

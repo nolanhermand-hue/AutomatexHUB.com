@@ -125,7 +125,7 @@ export function CustomCursor() {
           className="pointer-events-none fixed left-0 top-0 z-[9997] h-[280px] w-[280px] rounded-full opacity-100 will-change-transform"
           style={{
             background:
-              "radial-gradient(circle, rgb(147 197 253 / 0.55) 0%, rgb(96 165 250 / 0.28) 40%, rgb(59 130 246 / 0.1) 55%, transparent 72%)",
+              "radial-gradient(circle, rgb(59 130 246 / 0.62) 0%, rgb(37 99 235 / 0.4) 38%, rgb(29 78 216 / 0.18) 54%, transparent 72%)",
             filter: "blur(14px)",
           }}
           aria-hidden
@@ -133,12 +133,12 @@ export function CustomCursor() {
       ) : null}
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[9998] h-9 w-9 rounded-full border border-[rgb(147_197_253/0.75)] bg-[rgb(147_197_253/0.15)] shadow-[0_0_32px_rgb(96_165_250/0.55),0_0_64px_rgb(59_130_246/0.25)] will-change-transform"
+        className="pointer-events-none fixed left-0 top-0 z-[9998] h-9 w-9 rounded-full border border-[rgb(96_165_250/0.9)] bg-[rgb(59_130_246/0.22)] shadow-[0_0_32px_rgb(59_130_246/0.65),0_0_64px_rgb(37_99_235/0.4)] will-change-transform"
         aria-hidden
       />
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 rounded-full bg-[rgb(219_234_254/0.98)] shadow-[0_0_14px_rgb(147_197_253/0.95),0_0_28px_rgb(96_165_250/0.5)] will-change-transform"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 rounded-full bg-[rgb(191_219_254/0.98)] shadow-[0_0_14px_rgb(96_165_250/0.95),0_0_28px_rgb(59_130_246/0.65)] will-change-transform"
         aria-hidden
       />
     </>

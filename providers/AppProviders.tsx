@@ -15,13 +15,17 @@ export function useReducedMotionPreference(): boolean {
   return useContext(ReducedMotionContext);
 }
 
+function readReducedMotion(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 export function AppProviders({ children }: { children: ReactNode }) {
-  const [reduced, setReduced] = useState(false);
+  const [reduced, setReduced] = useState(readReducedMotion);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const apply = () => setReduced(mq.matches);
-    apply();
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);
   }, []);
