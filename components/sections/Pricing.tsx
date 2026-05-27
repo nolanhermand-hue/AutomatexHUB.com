@@ -98,9 +98,10 @@ export function Pricing() {
                 id={`pricing-${offer.id}`}
                 data-offer-id={offer.id}
                 className={cn(
-                  "h-full transition duration-200 scroll-mt-24",
+                  "h-full animate-on-scroll scale scroll-mt-24",
                   offer.featured ? "md:-translate-y-2 md:scale-[1.02]" : "",
                 )}
+                style={{ transitionDelay: `${offerIndex * 100}ms` }}
               >
                 <Card
                   featured={offer.featured}

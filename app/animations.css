@@ -1,0 +1,439 @@
+/* app/animations.css — Hyper-prompt animations v1 · CSS-first · zéro lib */
+
+:root {
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-enter: 500ms;
+
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-decel: cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sticky-appear {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-page {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes slide-in-page {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.hero-badge-enter {
+  animation: fade-in var(--duration-slow) var(--ease-out) 200ms both;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.animate-on-scroll.is-visible,
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.from-left {
+  transform: translateX(-20px);
+}
+
+.animate-on-scroll.from-left.is-visible,
+.animate-on-scroll.from-left.visible {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.from-right {
+  transform: translateX(20px);
+}
+
+.animate-on-scroll.from-right.is-visible,
+.animate-on-scroll.from-right.visible {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.scale {
+  transform: scale(0.96);
+}
+
+.animate-on-scroll.scale.is-visible,
+.animate-on-scroll.scale.visible {
+  transform: scale(1);
+}
+
+.animate-on-scroll:nth-child(1) {
+  transition-delay: 0ms;
+}
+.animate-on-scroll:nth-child(2) {
+  transition-delay: 80ms;
+}
+.animate-on-scroll:nth-child(3) {
+  transition-delay: 160ms;
+}
+.animate-on-scroll:nth-child(4) {
+  transition-delay: 240ms;
+}
+.animate-on-scroll:nth-child(5) {
+  transition-delay: 320ms;
+}
+
+.hover-lift {
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.15);
+  }
+}
+
+.cta-pulse {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(255 255 255 / 0.1);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+  pointer-events: none;
+}
+
+.cta-pulse:hover::after {
+  opacity: 1;
+}
+
+.cta-pulse:active::after {
+  opacity: 0.2;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 0.03) 0%,
+    rgb(255 255 255 / 0.08) 50%,
+    rgb(255 255 255 / 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s var(--ease-in-out) infinite;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+    background: rgb(255 255 255 / 0.05);
+  }
+}
+
+.card-recommended {
+  position: relative;
+}
+
+.card-recommended::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #ff6b35, #ff8c5a, #ff6b35);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease 3;
+  z-index: -1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.badge-recommended {
+  animation: badge-pulse 2s ease-in-out 3;
+}
+
+.mock-section .mock-message {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.mock-section.is-visible .mock-message:nth-child(1),
+.mock-section.visible .mock-message:nth-child(1) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0ms;
+}
+
+.mock-section.is-visible .mock-message:nth-child(2),
+.mock-section.visible .mock-message:nth-child(2) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 300ms;
+}
+
+.mock-section.is-visible .mock-message:nth-child(3),
+.mock-section.visible .mock-message:nth-child(3) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 700ms;
+}
+
+.mock-section.is-visible .mock-message:nth-child(4),
+.mock-section.visible .mock-message:nth-child(4) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 1100ms;
+}
+
+.nav-mobile-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-slow) var(--ease-decel);
+  overflow: hidden;
+}
+
+.nav-mobile-menu.open {
+  grid-template-rows: 1fr;
+}
+
+.nav-mobile-menu > .nav-mobile-menu-inner {
+  min-height: 0;
+}
+
+.nav-mobile-menu .nav-mobile-item {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.nav-mobile-menu.open .nav-mobile-item {
+  opacity: 1;
+  transform: none;
+}
+
+.nav-mobile-menu.open .nav-mobile-item:nth-child(1) {
+  transition-delay: 80ms;
+}
+.nav-mobile-menu.open .nav-mobile-item:nth-child(2) {
+  transition-delay: 120ms;
+}
+.nav-mobile-menu.open .nav-mobile-item:nth-child(3) {
+  transition-delay: 160ms;
+}
+.nav-mobile-menu.open .nav-mobile-item:nth-child(4) {
+  transition-delay: 200ms;
+}
+
+.btn-bracket:active,
+.card:active {
+  transform: scale(0.98);
+  transition: transform 80ms var(--ease-out);
+}
+
+:focus-visible {
+  outline: 2px solid #ff6b35;
+  outline-offset: 3px;
+  border-radius: 4px;
+  transition: outline-offset var(--duration-fast) var(--ease-out);
+}
+
+.phone-link {
+  position: relative;
+  display: inline-block;
+}
+
+.phone-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .phone-link:hover::after {
+    width: 100%;
+  }
+}
+
+::view-transition-old(root) {
+  animation: 200ms var(--ease-in-out) both fade-out-page;
+}
+
+::view-transition-new(root) {
+  animation: 300ms var(--ease-decel) both slide-in-page;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out);
+}
+
+.fade-in-up--visible,
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sticky-cta-bar--visible {
+  animation: sticky-appear 300ms var(--ease-decel) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-cta-bar--visible {
+    animation: none;
+  }
+}

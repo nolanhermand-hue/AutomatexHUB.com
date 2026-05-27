@@ -36,7 +36,7 @@ export function FadeIn({
       ref={ref}
       className={cn(
         "fade-in-up",
-        visible && "fade-in-up--visible",
+        visible && "fade-in-up--visible is-visible",
         className,
       )}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}

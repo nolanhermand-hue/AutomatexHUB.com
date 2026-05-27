@@ -1,14 +1,9 @@
-"use client";
-
 import { AutomationCard } from "@/components/catalog/AutomationCard";
 import { CATEGORIES, categoryToAnchor, getByCategory } from "@/lib/automations-catalog";
-import { useScrollAnimation } from "@/lib/use-scroll-animation";
 
 export function AutomatisationsCatalogSections() {
-  const scrollRef = useScrollAnimation();
-
   return (
-    <div ref={scrollRef}>
+    <div>
       {CATEGORIES.map((category) => {
         const items = getByCategory(category);
         return (

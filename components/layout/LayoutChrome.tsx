@@ -7,6 +7,7 @@ import { StickyCtaMobile } from "@/components/layout/StickyCtaMobile";
 import { ScrollDepthTracker } from "@/components/seo/ScrollDepthTracker";
 import { UtmCapture } from "@/components/seo/UtmCapture";
 import { AppProviders } from "@/providers/AppProviders";
+import { ScrollAnimationProvider } from "@/components/ui/ScrollAnimationProvider";
 import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
 
@@ -35,7 +36,9 @@ export function LayoutChrome({ children }: { children: ReactNode }) {
       <ScrollDepthTracker />
       <UtmCapture />
       <MegaNav />
-      <main className="relative z-[10]">{children}</main>
+      <ScrollAnimationProvider>
+        <main className="relative z-[10]">{children}</main>
+      </ScrollAnimationProvider>
       <Footer />
       <StickyCtaMobile />
     </AppProviders>

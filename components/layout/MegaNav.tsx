@@ -431,23 +431,24 @@ export function MegaNav() {
         ref={menuRef}
         id="mobile-menu"
         className={cn(
-          "mobile-menu-panel overflow-hidden border-b border-border bg-surface/98 backdrop-blur-xl lg:hidden",
-          isMenuOpen && "mobile-menu-panel--open",
+          "nav-mobile-menu border-b border-border bg-surface/98 backdrop-blur-xl lg:hidden",
+          isMenuOpen && "open",
         )}
         role="dialog"
         aria-modal={isMenuOpen}
         aria-hidden={!isMenuOpen}
         aria-label="Menu navigation mobile"
       >
-            <div className="flex flex-col gap-1 px-gutter py-4">
-              <p className="label-micro px-3 pt-2 text-faint">Par métier</p>
+        <div className="nav-mobile-menu-inner">
+          <div className="flex flex-col gap-1 px-gutter py-4">
+              <p className="label-micro nav-mobile-item px-3 pt-2 text-faint">Par métier</p>
               {SOLUTIONS_MENU.parMetier
                 .filter((i) => !("disabled" in i && i.disabled))
                 .map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex flex-col rounded-xl px-3 py-3 active:bg-section"
+                    className="nav-mobile-item flex flex-col rounded-xl px-3 py-3 active:bg-section"
                     onClick={() => handleNavClick(item.href)}
                   >
                     <span className="font-semibold text-text">{item.label}</span>
@@ -464,7 +465,7 @@ export function MegaNav() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-xl px-3 py-3.5 font-semibold text-text active:bg-section"
+                  className="nav-mobile-item rounded-xl px-3 py-3.5 font-semibold text-text active:bg-section"
                   onClick={() => handleNavClick(item.href)}
                 >
                   {item.label}
@@ -475,7 +476,7 @@ export function MegaNav() {
                     <a
                       key={link.href}
                       href={link.href}
-                      className="rounded-xl px-3 py-3.5 text-base font-medium text-muted"
+                      className="nav-mobile-item rounded-xl px-3 py-3.5 text-base font-medium text-muted"
                       onClick={() => handleNavClick(link.href)}
                     >
                       {link.label}
@@ -484,15 +485,16 @@ export function MegaNav() {
                 : null}
               <Link
                 href={contactLink}
-                className="mt-3 inline-flex min-h-[52px] w-full items-center justify-center btn-bracket btn-bracket-primary"
+                className="nav-mobile-item mt-3 inline-flex min-h-[52px] w-full items-center justify-center btn-bracket btn-bracket-primary"
                 onClick={() => handleNavClick(contactLink)}
               >
                 Nolan me rappelle sous 24 h
               </Link>
-              <p className="text-center text-sm text-muted">
+              <p className="nav-mobile-item text-center text-sm text-muted">
                 {NAP.founder} · {NAP.city} · {NAP.phoneDisplay}
               </p>
             </div>
+        </div>
       </div>
     </header>
   );

@@ -59,7 +59,12 @@
 2. Netlify : vérifier que les formulaires `contact` et `contact-accompagnement` apparaissent dans l’onglet Forms après deploy.
 3. Test manuel : envoi formulaire accompagnement → `/merci`.
 
-## Références
+## Animations performantes (hyper-prompt v1)
+
+- **CSS** : `app/animations.css` (importé dans `globals.css`)
+- **Scroll** : `ScrollAnimationProvider` + `lib/use-scroll-animation.ts` (IO natif + MutationObserver pour sections lazy)
+- **Hero** : badge `.hero-badge-enter` uniquement ; pas d’anim LCP sur H1/CTA
+- **Démos GSAP/Lottie** : inchangées (hors chemin layout) — ne pas y ajouter de libs d’animation
 
 - Routes : [`SITE-ROUTES-MEMORY.md`](./SITE-ROUTES-MEMORY.md)
 - GATE-1 historique : [`orchestration/phase-1/GATE-1-summary.md`](./orchestration/phase-1/GATE-1-summary.md)

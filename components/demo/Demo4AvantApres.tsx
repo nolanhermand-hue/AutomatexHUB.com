@@ -31,7 +31,7 @@ export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
     >
       <div
         className={cn(
-          "overflow-hidden rounded-xl border border-border bg-surface",
+          "overflow-hidden rounded-xl border border-border bg-surface animate-on-scroll from-left",
           mode === "apres" && "hidden sm:block",
           mode === "avant" && "block",
         )}
@@ -61,7 +61,7 @@ export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
 
       <div
         className={cn(
-          "overflow-hidden rounded-xl border border-primary/30 bg-surface",
+          "overflow-hidden rounded-xl border border-primary/30 bg-surface animate-on-scroll from-right",
           mode === "avant" && "hidden sm:block",
           mode === "apres" && "block",
         )}

@@ -46,7 +46,7 @@ export function AccompanimentPillars({
         <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-text">{h2}</h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {pillars.map((p, i) => (
-            <div key={p.title} className="card">
+            <div key={p.title} className="card animate-on-scroll hover-lift">
               <div className="mb-4 flex items-center justify-between">
                 <span className="step-number">MODULE {String(i + 1).padStart(2, "0")}</span>
                 <span className="text-lg" aria-hidden="true">

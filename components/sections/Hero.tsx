@@ -52,7 +52,7 @@ export function Hero() {
         <div className="mx-auto max-w-content px-gutter pb-8 pt-[76px] lg:pb-12 lg:pt-[96px]">
           <div className="hero-layout lg:grid lg:grid-cols-[1fr_minmax(260px,320px)] lg:items-start lg:gap-12">
             <div className="hero-content flex flex-col">
-              <p className="badge badge-default hero-badge inline-flex w-fit items-center gap-2">
+              <p className="badge badge-default hero-badge hero-badge-enter inline-flex w-fit items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
                 {HERO_COPY.preHeading}
               </p>

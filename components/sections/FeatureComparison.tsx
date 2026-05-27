@@ -37,7 +37,7 @@ export function FeatureComparison() {
                   >
                     {o.name}
                     {o.featured ? (
-                      <span className="ml-2 badge badge-orange">
+                      <span className="ml-2 badge badge-orange badge-recommended">
                         Recommandé
                       </span>
                     ) : null}
@@ -74,7 +74,7 @@ export function FeatureComparison() {
                 <span>
                   {offer.name}
                   {offer.featured ? (
-                    <span className="ml-2 badge badge-orange">
+                    <span className="ml-2 badge badge-orange badge-recommended">
                       Recommandé
                     </span>
                   ) : null}
