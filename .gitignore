@@ -34,6 +34,10 @@ yarn-error.log*
 # netlify local CLI cache (deploy via CI or `netlify deploy`)
 .netlify
 
+# Lighthouse, captures, rapports locaux (regénérables — voir audits/README.md)
+/audits/*
+!/audits/README.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

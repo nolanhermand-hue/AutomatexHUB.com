@@ -1,9 +1,0 @@
-# Console & network failures — https://automatex-hub.com/
-Date: 2026-05-20T17:24:49.251Z
-
-## mobile-375
-(aucune erreur console / 4xx capturée)
-
-## desktop-1440
-(aucune erreur console / 4xx capturée)
-
