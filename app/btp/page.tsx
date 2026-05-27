@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   description:
     "Vos devis partent tout seuls, vos clients ont une réponse en 90 secondes. Système automatique pour artisans BTP dans l'Orne — accompagnement mensuel Nolan à Flers.",
   openGraph: {
-    title: "Artisans BTP · Plus jamais un chantier perdu à cause d'un devis tardif · Automatex",
+    title: "Artisans BTP Orne · SMS automatique + devis vocal | Automatex Hub",
     description:
-      "Appels manqués traités en 90 secondes. Devis envoyés depuis une note vocale. Résumé Telegram chaque soir. Dès 99€/mois · Setup 199€ · Sans engagement.",
+      "Un client appelle pendant votre chantier ? Il reçoit un SMS en 90 secondes. Nolan Hermand, Flers (61). Hébergé France · RGPD · 30j satisfait ou remboursé.",
     url: `${SITE_URL}/btp`,
     type: "website",
     locale: "fr_FR",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Plus jamais un chantier perdu à cause d'un devis tardif · Automatex Orne",
+    title: "Artisans BTP Orne · SMS automatique + devis vocal | Automatex Hub",
     description:
-      "Appels manqués traités en 90s · devis depuis note vocale · résumé Telegram · dès 99€/mois.",
+      "Un client appelle pendant votre chantier ? Il reçoit un SMS en 90 secondes. Nolan Hermand, Flers (61). Hébergé France · RGPD · 30j satisfait ou remboursé.",
     images: [ogImage],
   },
   alternates: { canonical: `${SITE_URL}/btp` },

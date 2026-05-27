@@ -51,6 +51,7 @@ export function LogoOrbit({
           ? { height, width, maxHeight: height, maxWidth: width }
           : { height, width: height, maxHeight: height, maxWidth: height }
       }
+      loading={isLockup ? "eager" : "lazy"}
       decoding="async"
       fetchPriority={isLockup ? "high" : "auto"}
     />

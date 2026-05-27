@@ -9,7 +9,6 @@ import { LocalGeoLinks } from "@/components/sections/LocalGeoLinks";
 import { ResiliationSection } from "@/components/sections/ResiliationSection";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
-import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
 import dynamic from "next/dynamic";
 
@@ -118,8 +117,10 @@ export function ImmobilierHome() {
       <div className="h-20 md:hidden" aria-hidden />
       <StickyMobileCta
         ctaHref="#contact"
-        ctaLabel={BOOKING_CTA_LABEL}
+        ctaLabel="Nolan me rappelle demain"
         analyticsId="sticky_demo_immo"
+        observeHeroPrimary
+        singleCtaBar
       />
     </>
   );

@@ -43,6 +43,7 @@ export function FounderAvatar({ size = 48, className = "", priority = false }: F
       alt="Nolan Hermand, fondateur Automatex Hub — Flers, Orne"
       width={size}
       height={size}
+      loading={priority ? "eager" : "lazy"}
       decoding={priority ? "sync" : "async"}
       fetchPriority={priority ? "high" : "auto"}
       className={`shrink-0 rounded-full object-cover ${className}`}

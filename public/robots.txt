@@ -21,4 +21,10 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 Sitemap: https://automatex-hub.com/sitemap.xml

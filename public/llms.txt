@@ -1,0 +1,23 @@
+# Automatex Hub
+
+> Automatex Hub est un service de réponse automatique aux leads et de tri de boîte mail pour mandataires immobiliers et artisans BTP indépendants en Normandie. Fondé par Nolan Hermand à Flers (Orne, 61), hébergé en France sur OVHcloud.
+
+## Services
+
+- [Mandataires immobiliers](https://automatex-hub.com/immobilier): Réponse automatique aux leads SeLoger et LeBonCoin en moins de 2 minutes, tri de boîte mail, classement Drive. Formules de 99 à 449 €/mois.
+- [Artisans BTP](https://automatex-hub.com/btp): SMS automatique en 90 secondes sur appel manqué, devis par dictée vocale, résumé Telegram à 18h. Formules de 99 à 449 €/mois.
+- [Accompagnement](https://automatex-hub.com/accompagnement): Point mensuel avec Nolan, ajustements continus sans surcoût, ligne directe 06 45 38 42 33.
+- [Tarifs](https://automatex-hub.com/immobilier#pricing): Formules sans engagement, 30 jours satisfait ou remboursé, résiliables en un mail.
+
+## Zone géographique
+
+- [Normandie](https://automatex-hub.com/mandataires-normandie): Orne (priorité), Calvados, Manche. Basé à Flers (61100).
+- [Mandataires Flers](https://automatex-hub.com/mandataires-flers): Service pour mandataires IAD, SAFTI, Capifrance du bassin de Flers.
+- [Mandataires Alençon](https://automatex-hub.com/mandataires-alencon): Service pour mandataires du secteur d'Alençon (61000).
+- [Mandataires Argentan](https://automatex-hub.com/mandataires-argentan): Service pour mandataires du secteur d'Argentan (61200).
+
+## Optional
+
+- [À propos](https://automatex-hub.com/a-propos): Contexte fondateur, SIRET 10320805400017, hébergement OVHcloud France.
+- [Vos données](https://automatex-hub.com/vos-donnees): Politique RGPD, droits utilisateurs, hébergement France.
+- [Mentions légales](https://automatex-hub.com/mentions-legales): Informations légales.

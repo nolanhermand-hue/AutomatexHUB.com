@@ -21,7 +21,7 @@ type ContactProps = {
 function fieldClass(touched: boolean, value: string, required: boolean) {
   const hasError = touched && required && value.trim() === "";
   return [
-    "mt-2 w-full rounded-md border bg-surface px-4 py-3 font-mono text-sm text-text outline-none transition",
+    "mt-2 min-h-12 w-full rounded-md border bg-surface px-4 py-3 font-mono text-base text-text outline-none transition",
     "placeholder:text-faint focus:border-primary focus:outline-none",
     hasError ? "border-danger ring-1 ring-danger/30" : "border-border",
   ].join(" ");
@@ -116,7 +116,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
           action="/merci"
           data-netlify="true"
           data-netlify-honeypot="hp-field"
-          className="relative mx-auto mt-10 max-w-xl space-y-6 rounded-xl border border-border bg-bg-card p-6 md:p-8"
+          className="contact-form relative mx-auto mt-10 max-w-xl space-y-6 rounded-xl border border-border bg-bg-card p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:p-8"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value={FORM_NAME} />
@@ -360,7 +360,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
             type="submit"
             disabled={pending}
             data-analytics-cta="contact_submit"
-            className="btn-bracket btn-bracket-primary"
+            className="btn-bracket btn-bracket-primary w-full min-h-[52px] text-[17px] font-semibold"
             data-cursor="cta"
           >
             {pending ? (
@@ -392,6 +392,10 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               CONTACT_COPY.submitLabel
             )}
           </button>
+
+          <p className="form-trust text-center text-sm text-muted">
+            Un seul appel. Pas de relance. Nolan, Flers (61).
+          </p>
 
           <p className="text-center text-xs text-muted">
             {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formFooter}

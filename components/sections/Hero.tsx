@@ -52,9 +52,9 @@ export function Hero() {
       />
       <HeroScene>
         <div className="mx-auto max-w-content px-gutter pb-8 pt-[76px] lg:pb-12 lg:pt-[96px]">
-          <div className="lg:grid lg:grid-cols-[1fr_minmax(260px,320px)] lg:items-start lg:gap-12">
-            <div>
-              <p className="badge badge-default inline-flex w-fit items-center gap-2">
+          <div className="hero-layout lg:grid lg:grid-cols-[1fr_minmax(260px,320px)] lg:items-start lg:gap-12">
+            <div className="hero-content flex flex-col">
+              <p className="badge badge-default hero-badge inline-flex w-fit items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
                 {HERO_COPY.preHeading}
               </p>
@@ -65,46 +65,35 @@ export function Hero() {
                 documents pour IAD, SAFTI et Capifrance.
               </p>
 
-              <h1 className="mt-5 font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold leading-[1.05] text-text md:text-[clamp(2.75rem,5vw,5rem)]">
+              <h1 className="hero-h1 mt-5 font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold leading-[1.05] text-text md:text-[clamp(2.75rem,5vw,5rem)]">
                 Ne perdez plus jamais un lead{" "}
                 <span className="italic text-primary">à 3 500 €</span>.
               </h1>
 
-              <p className="mt-4 max-w-readable text-sm leading-relaxed text-muted md:text-base">
+              <p className="sr-only" aria-hidden="true">
                 {GEO_DEFINITION}
               </p>
 
-              <p className="mt-5 max-w-readable font-body text-base leading-[1.6] text-muted md:mt-6 md:text-xl">
+              <p className="hero-subtitle mt-5 max-w-readable font-body text-base leading-[1.6] text-muted md:mt-6 md:text-xl">
                 {HERO_COPY.subtitle}
               </p>
 
-              <p className="mt-4 max-w-readable text-sm font-medium text-text md:text-base">
+              <p className="hero-subtitle mt-4 max-w-readable text-sm font-medium text-text md:text-base">
                 {HERO_COPY.statAnchor}
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-8">
-                <a
-                  href="#contact"
-                  data-cursor="cta"
-                  data-analytics-cta="hero_primary"
-                  onClick={() => trackCtaClicked("hero_primary")}
-                  className="btn-bracket btn-bracket-primary"
-                >
-                  {HERO_COPY.ctaPrimary}
-                  <span aria-hidden>→</span>
-                </a>
-                <a
-                  href="#solution"
-                  data-cursor="link"
-                  data-analytics-cta="hero_secondary"
-                  onClick={() => trackCtaClicked("hero_secondary")}
-                  className="inline-flex min-h-[48px] items-center justify-center text-sm font-semibold text-muted underline underline-offset-4 transition-colors duration-200 hover:text-text"
-                >
-                  {HERO_COPY.ctaSecondary}
-                </a>
-              </div>
+              <a
+                href="#contact"
+                data-cursor="cta"
+                data-analytics-cta="hero_primary"
+                onClick={() => trackCtaClicked("hero_primary")}
+                className="hero-cta-primary btn-bracket btn-bracket-primary mt-6 w-full justify-center md:mt-8 lg:mt-6 lg:w-auto"
+              >
+                {HERO_COPY.ctaPrimary}
+                <span aria-hidden>→</span>
+              </a>
 
-              <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+              <ul className="hero-trust mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
                 <li className="inline-flex items-center gap-1.5">
                   <ReassuranceIcon kind="fr" />
                   {HERO_COPY.badgeHosted}
@@ -119,15 +108,25 @@ export function Hero() {
                 </li>
               </ul>
 
-              <div className="mt-6 max-w-readable">
+              <div className="hero-avatar mt-6 max-w-readable">
                 <FounderTrustBlock compact />
               </div>
+
+              <a
+                href="#solution"
+                data-cursor="link"
+                data-analytics-cta="hero_secondary"
+                onClick={() => trackCtaClicked("hero_secondary")}
+                className="hero-cta-secondary mt-4 inline-flex min-h-[48px] w-full items-center justify-center text-sm font-semibold text-muted underline underline-offset-4 transition-colors duration-200 hover:text-text sm:w-auto sm:justify-start"
+              >
+                {HERO_COPY.ctaSecondary}
+              </a>
 
               <p className="mt-4 text-xs font-medium text-muted">{CTA_REASSURANCE_LINE}</p>
             </div>
 
             <aside
-              className="mt-10 rounded-xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_var(--color-border)] lg:mt-5 lg:p-7"
+              className="hero-aside mt-10 rounded-xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_var(--color-border)] lg:mt-5 lg:p-7"
               aria-label="Chiffres clés mandataires"
             >
               <ul className="space-y-6">
