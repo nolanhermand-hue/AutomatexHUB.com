@@ -4,6 +4,7 @@ export const SITE_NAV = [
   { href: "/btp", label: "Artisans BTP" },
   { href: "/automatisations", label: "Automatisations" },
   { href: "/accompagnement", label: "Accompagnement" },
+  { href: "/vos-donnees", label: "Vos données" },
   { href: "/a-propos", label: "À propos" },
 ] as const;
 

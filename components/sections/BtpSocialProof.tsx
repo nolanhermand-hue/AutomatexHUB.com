@@ -1,4 +1,5 @@
 import { BTP_BETA, BTP_SOCIAL_PROOF } from "@/lib/btp-copy";
+import { formatFoundersAvailability } from "@/lib/pricing";
 import { LAUNCH_HONESTY } from "@/lib/trust-copy";
 import { NAP } from "@/lib/constants";
 
@@ -9,7 +10,7 @@ export function BtpSocialProof() {
         <div className="rounded-xl border border-primary/30 bg-bg-card p-6 md:p-8">
           <h2 className="font-heading text-xl text-text">{BTP_BETA.title}</h2>
           <p className="mt-2 text-sm text-muted">{BTP_BETA.body}</p>
-          <p className="mt-2 text-sm font-semibold text-primary">{BTP_BETA.slots}</p>
+          <p className="mt-2 text-sm font-semibold text-primary">{formatFoundersAvailability()}</p>
         </div>
 
         <p className="rounded-lg border border-border bg-bg-card px-4 py-3 text-sm text-muted">

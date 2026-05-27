@@ -80,19 +80,13 @@ export const metadata: Metadata = {
   manifest: BRAND.manifest,
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: BRAND.faviconSvg, type: "image/svg+xml" },
       { url: BRAND.favicons[16], sizes: "16x16", type: "image/png" },
       { url: BRAND.favicons[32], sizes: "32x32", type: "image/png" },
-      { url: BRAND.favicons[48], sizes: "48x48", type: "image/png" },
-      { url: BRAND.favicons[96], sizes: "96x96", type: "image/png" },
-      { url: BRAND.favicons.android192, sizes: "192x192", type: "image/png" },
-      { url: BRAND.favicons.android512, sizes: "512x512", type: "image/png" },
     ],
-    shortcut: BRAND.rootFaviconIco,
-    apple: [
-      { url: BRAND.rootAppleTouch, sizes: "180x180", type: "image/png" },
-      { url: BRAND.favicons.apple, sizes: "180x180", type: "image/png" },
-    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   appleWebApp: {
     capable: true,
@@ -122,11 +116,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="fr" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="dns-prefetch" href="https://plausible.io" />
-        <link rel="icon" type="image/svg+xml" href={BRAND.faviconSvg} />
-        <link rel="icon" href={BRAND.rootFaviconIco} sizes="32x32" />
-        <link rel="icon" type="image/png" sizes="32x32" href={BRAND.favicons[32]} />
-        <link rel="icon" type="image/png" sizes="16x16" href={BRAND.favicons[16]} />
-        <link rel="apple-touch-icon" sizes="180x180" href={BRAND.rootAppleTouch} />
         <link rel="manifest" href={BRAND.manifest} />
         <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#FF6B2B" />
         <meta name="theme-color" content="#080D1A" />

@@ -9,6 +9,7 @@ ROUTES=(
   "/accompagnement/"
   "/automatisations/"
   "/a-propos/"
+  "/vos-donnees/"
   "/merci/"
   "/mentions-legales/"
   "/politique-confidentialite/"

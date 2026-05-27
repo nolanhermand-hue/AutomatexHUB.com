@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
+import { cn } from "@/lib/cn";
 
 type Pillar = { title: string; body: string };
 
@@ -22,11 +23,17 @@ export function AccompanimentPillars({
   linkHref = "/accompagnement",
   linkLabel = "Tout sur l'accompagnement",
   className = "",
-  variant: _variant = "default",
+  variant = "default",
   showFounder = false,
 }: AccompanimentPillarsProps) {
   return (
-    <section className={`border-t border-border px-gutter py-16 md:py-20 ${className}`}>
+    <section
+      className={cn(
+        "border-t border-border px-gutter py-16 md:py-20",
+        variant === "highlight" && "bg-surface",
+        className,
+      )}
+    >
       <div className="mx-auto max-w-content">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-widest text-muted">
           ACCOMPAGNEMENT INCLUS

@@ -1,5 +1,6 @@
 "use client";
 
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 import { Fragment, useCallback, useState, type ReactNode } from "react";
 
 const ICON_BASE = "/assets/integrations";
@@ -198,7 +199,7 @@ export function IntegrationMarquees() {
     >
       <p className="sr-only">
         Compatible avec Gmail, Telegram, Google Drive, Google Calendar, SeLoger, Leboncoin,
-        Logic-Immo, PAP, IAD France, SAFTI, Capifrance, Optimhome, EffiCity. Hébergé en France.
+        Logic-Immo, PAP, IAD France, SAFTI, Capifrance, Optimhome, EffiCity. {SOVEREIGNTY_TRUST_LINE}.
         Conforme RGPD.
       </p>
       <div className="bg-surface">

@@ -6,14 +6,16 @@ import { Card } from "@/components/ui/Card";
 import { OFFERS, PRICING_HEADING } from "@/lib/constants";
 import { calculateBreakevenLeads } from "@/lib/calculator";
 import { cn } from "@/lib/cn";
+import { annualPrepayTotal } from "@/lib/pricing";
 import { SectionCta } from "@/components/ui/SectionCta";
+import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type BillingCycle = "monthly" | "annual";
 
 /**
- * PRICING — D1 (3 offres), D2 (toggle annuel/mensuel ~17 %),
+ * PRICING — D1 (3 offres), D2 (toggle annuel/mensuel −15 %),
  *           D3 (badge Recommandé), D4 (prix transparents),
  *           D5 (garantie/carte), D7 (pré-remplissage offre),
  *           D8 (ROI/carte), D9 (onboarding offert),
@@ -84,7 +86,7 @@ export function Pricing() {
               ? null
               : cycle === "monthly"
                 ? offer.monthly.toLocaleString("fr-FR")
-                : offer.annual.toLocaleString("fr-FR");
+                : annualPrepayTotal(offer.monthly).toLocaleString("fr-FR");
             const priceSuffix = isCustom
               ? null
               : cycle === "monthly"
@@ -192,6 +194,8 @@ export function Pricing() {
             );
           })}
         </div>
+
+        <PricingProgramNotes foundersSegment="mandataires" />
 
         <p className="mx-auto mt-10 max-w-[52ch] text-center text-sm leading-relaxed text-muted md:text-[15px]">
           {PRICING_HEADING.customFitFootnote}

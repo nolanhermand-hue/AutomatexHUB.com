@@ -148,7 +148,10 @@ export function MegaNav() {
   return (
     <header
       ref={navRef}
-      className="sticky top-0 z-[900] min-h-[60px] border-b border-border bg-bg/95 py-2 backdrop-blur-md lg:min-h-[72px] lg:py-2.5"
+      className={cn(
+        "sticky top-0 z-[900] min-h-[60px] border-b border-border bg-bg/95 py-2 backdrop-blur-md transition-shadow duration-200 lg:min-h-[72px] lg:py-2.5",
+        isScrolled && "shadow-[0_8px_32px_rgb(8_13_26/0.55)]",
+      )}
     >
       <div className="mx-auto flex min-h-[44px] max-w-content items-center justify-between gap-3 px-gutter lg:min-h-[48px]">
         <Link
@@ -354,6 +357,17 @@ export function MegaNav() {
             Accompagnement
           </Link>
           <Link
+            href="/vos-donnees"
+            className={cn(navBtn(pathname === "/vos-donnees"), "inline-flex items-center gap-1.5 px-4")}
+            onClick={() => trackCtaClicked("nav_/vos-donnees")}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary" aria-hidden>
+              <rect x="5" y="11" width="14" height="10" rx="2" />
+              <path d="M8 11V8a4 4 0 118 0v3" strokeLinecap="round" />
+            </svg>
+            Vos données
+          </Link>
+          <Link
             href="/a-propos"
             className={cn(navBtn(pathname === "/a-propos"), "px-4")}
             onClick={() => trackCtaClicked("nav_/a-propos")}
@@ -446,6 +460,7 @@ export function MegaNav() {
               {[
                 { label: "Catalogue automatisations", href: "/automatisations" },
                 { label: "Accompagnement", href: "/accompagnement" },
+                { label: "Vos données", href: "/vos-donnees" },
                 { label: "À propos — Nolan", href: "/a-propos" },
               ].map((item) => (
                 <Link

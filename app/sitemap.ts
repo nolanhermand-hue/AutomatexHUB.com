@@ -8,7 +8,7 @@ export const dynamic = "force-static";
  * Ne pas dupliquer avec public/sitemap.xml.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-05-20T00:00:00.000Z");
+  const lastModified = new Date();
 
   const entries: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified, changeFrequency: "weekly", priority: 1 },
@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/mandataires-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/mandataires-argentan`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/a-propos`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/vos-donnees`, lastModified, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/securite`, lastModified, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/cgv`, lastModified, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/mentions-legales`, lastModified, changeFrequency: "yearly", priority: 0.2 },

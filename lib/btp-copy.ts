@@ -1,4 +1,5 @@
 import type { PricingOffer } from "@/lib/constants";
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 /** Landing BTP — ton terrain, sans jargon « logiciel / formation ». */
 export const BTP_HERO = {
@@ -11,7 +12,7 @@ export const BTP_HERO = {
   localBandeau:
     "Plombier, maçon, électricien dans l'Orne ? Même système — Nolan installe à distance en 48 h.",
   badges: [
-    "Hébergé en France",
+    SOVEREIGNTY_TRUST_LINE,
     "RGPD — vos données restent chez vous",
     "Basé à Flers, Orne",
     "Démo sous 24 h · Full sous 4 h (sem.)",
@@ -89,7 +90,7 @@ export const BTP_PRICING_HEADING = {
   sub: "Pas d'engagement annuel. Vous arrêtez quand vous voulez. Le setup est à fonds perdus — on l'assume.",
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
-  annualDiscountLabel: "−17 %",
+  annualDiscountLabel: "Économisez 15% · Paiement annuel",
 } as const;
 
 export type BtpOffer = PricingOffer & {
@@ -119,7 +120,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     featured: false,
     setup: 199,
     monthly: 99,
-    annual: 990,
+    annual: 1010,
     systemLine: "SMS en ~90 s quand vous ne pouvez pas décrocher sur le chantier.",
     nolanLine: "Nolan installe et règle le message à votre prénom.",
     benefits: [],
@@ -132,7 +133,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     featured: false,
     setup: 249,
     monthly: 149,
-    annual: 1490,
+    annual: 1519,
     systemLine: "Programme du matin + résumé Telegram à 18 h.",
     nolanLine: "Nolan configure vos rappels selon votre semaine type.",
     benefits: [],
@@ -146,7 +147,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     featured: true,
     setup: 499,
     monthly: 249,
-    annual: 2490,
+    annual: 2539,
     systemLine: "Appels manqués + tri mails + devis PDF après visite.",
     nolanLine: "Nolan personnalise vos modèles et reste joignable pour ajuster.",
     benefits: [],
@@ -159,7 +160,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     featured: false,
     setup: 749,
     monthly: 349,
-    annual: 3490,
+    annual: 3559,
     systemLine: "Note vocale → devis structuré + factures classées dans Drive.",
     nolanLine: "Nolan affine vos modèles de devis avec vous au fil des chantiers.",
     benefits: [],
@@ -172,7 +173,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     featured: false,
     setup: 999,
     monthly: 449,
-    annual: 4490,
+    annual: 4580,
     systemLine: "Tout Pro + rapport mensuel Telegram.",
     nolanLine: "Point mensuel Nolan, 1 ajustement / mois, réponse sous 4 h en semaine.",
     benefits: [],

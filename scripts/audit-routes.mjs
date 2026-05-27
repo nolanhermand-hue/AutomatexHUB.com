@@ -11,6 +11,7 @@ const paths = [
   "/automatisations",
   "/accompagnement",
   "/a-propos",
+  "/vos-donnees",
   "/merci",
   "/mentions-legales",
   "/politique-confidentialite",

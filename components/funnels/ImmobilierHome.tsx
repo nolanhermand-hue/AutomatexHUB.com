@@ -1,20 +1,42 @@
+"use client";
+
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
 import { Agitation } from "@/components/sections/Agitation";
-import { Contact } from "@/components/sections/Contact";
 import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { GuaranteeXL } from "@/components/sections/GuaranteeXL";
 import { Hero } from "@/components/sections/Hero";
 import { LocalGeoLinks } from "@/components/sections/LocalGeoLinks";
-import { Pricing } from "@/components/sections/Pricing";
-import { Problem } from "@/components/sections/Problem";
 import { ResiliationSection } from "@/components/sections/ResiliationSection";
-import { Solution } from "@/components/sections/Solution";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import { BOOKING_CTA_LABEL } from "@/lib/constants";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
 import dynamic from "next/dynamic";
+
+const sectionPulse = (className: string) => (
+  <div className={`h-[400px] animate-pulse ${className}`} aria-hidden />
+);
+
+const Problem = dynamic(
+  () => import("@/components/sections/Problem").then((m) => ({ default: m.Problem })),
+  { ssr: false, loading: () => sectionPulse("bg-[#080D1A]") },
+);
+
+const Solution = dynamic(
+  () => import("@/components/sections/Solution").then((m) => ({ default: m.Solution })),
+  { ssr: false, loading: () => sectionPulse("bg-[#080D1A]") },
+);
+
+const Pricing = dynamic(
+  () => import("@/components/sections/Pricing").then((m) => ({ default: m.Pricing })),
+  { ssr: false, loading: () => sectionPulse("bg-[#080D1A]") },
+);
+
+const Contact = dynamic(
+  () => import("@/components/sections/Contact").then((m) => ({ default: m.Contact })),
+  { ssr: false, loading: () => sectionPulse("bg-night") },
+);
 
 const ImmobilierLiveDemoSection = dynamic(
   () =>
@@ -42,7 +64,7 @@ const FeaturedAutomationsSection = dynamic(
 
 const RoiCounter = dynamic(
   () => import("@/components/motion/RoiCounter").then((m) => ({ default: m.RoiCounter })),
-  { loading: () => <div className="min-h-32 animate-pulse bg-section" aria-hidden /> },
+  { loading: () => <div className="min-h-32 animate-pulse bg-surface" aria-hidden /> },
 );
 
 const IntegrationMarquees = dynamic(

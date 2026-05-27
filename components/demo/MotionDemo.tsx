@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import Image from "next/image";
 import {
   useEffect,
   useRef,
@@ -83,17 +84,15 @@ export function MotionDemo({
         className,
       )}
     >
-      <img
+      <Image
         src={staticSrc}
         alt={staticAlt}
+        width={640}
+        height={420}
         className={cn(
           "mx-auto h-auto w-full max-w-[640px] rounded-lg object-contain",
           showStatic ? "block" : "hidden",
         )}
-        loading="lazy"
-        decoding="async"
-        width={640}
-        height={420}
       />
       {loadingAnim ? (
         <div className="space-y-3 rounded-xl border border-border bg-section/80 p-6" aria-hidden="true">

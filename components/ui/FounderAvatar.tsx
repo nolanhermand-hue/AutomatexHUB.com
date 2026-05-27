@@ -1,10 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type FounderAvatarProps = {
   size?: number;
   className?: string;
+  /** Hero LCP — charge la photo en priorité */
+  priority?: boolean;
 };
 
 /**
@@ -12,7 +15,7 @@ type FounderAvatarProps = {
  * Remplacer par public/assets/brand/nolan-photo.webp (400×400, WebP) quand disponible :
  * npx sharp-cli resize 400 400 -i nolan-photo.jpg -o public/assets/brand/nolan-photo.webp
  */
-export function FounderAvatar({ size = 48, className = "" }: FounderAvatarProps) {
+export function FounderAvatar({ size = 48, className = "", priority = false }: FounderAvatarProps) {
   const [photoOk, setPhotoOk] = useState(true);
 
   if (!photoOk) {
@@ -36,15 +39,14 @@ export function FounderAvatar({ size = 48, className = "" }: FounderAvatarProps)
   }
 
   return (
-    <img
+    <Image
       src="/assets/brand/nolan-photo.webp"
       alt="Nolan Hermand, fondateur Automatex Hub — Flers, Orne"
       width={size}
       height={size}
+      priority={priority}
       className={`shrink-0 rounded-full object-cover ${className}`}
       style={{ width: size, height: size }}
-      loading="lazy"
-      decoding="async"
       onError={() => setPhotoOk(false)}
     />
   );

@@ -9,6 +9,8 @@ import {
   BTP_PRICING_HEADING,
 } from "@/lib/btp-copy";
 import { cn } from "@/lib/cn";
+import { annualPrepayTotal } from "@/lib/pricing";
+import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -37,7 +39,7 @@ export function BtpPricing() {
             const displayPrice =
               cycle === "monthly"
                 ? offer.monthly.toLocaleString("fr-FR")
-                : offer.annual.toLocaleString("fr-FR");
+                : annualPrepayTotal(offer.monthly).toLocaleString("fr-FR");
             const priceSuffix = cycle === "monthly" ? "/mois" : "/an";
             const isFull = offer.id === "full-btp";
             return (
@@ -85,6 +87,8 @@ export function BtpPricing() {
             );
           })}
         </div>
+
+        <PricingProgramNotes foundersSegment="artisans" />
       </div>
     </section>
   );

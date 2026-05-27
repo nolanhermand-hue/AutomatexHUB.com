@@ -8,13 +8,11 @@ export function Card({
   className,
   featured,
   dimmed,
-  tilt: _tilt = false,
 }: {
   children: ReactNode;
   className?: string;
   featured?: boolean;
   dimmed?: boolean;
-  tilt?: boolean;
 }) {
   return (
     <div

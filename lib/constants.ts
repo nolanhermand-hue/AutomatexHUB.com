@@ -1,5 +1,8 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://automatex-hub.com";
 
+/** Formulation officielle souveraineté (alignée /vos-donnees). */
+export const SOVEREIGNTY_TRUST_LINE = "IA française · Automations UE · RGPD" as const;
+
 /** Heures administratives non productives estimées par vente sur l'année (ordre de grandeur terrain). */
 export const HOURS_LOST_PER_SALE_PER_YEAR = 8;
 
@@ -59,7 +62,7 @@ export const NAP = {
   phoneE164: "+33645384233",
   email: "nolan.hermand@automatex-hub.com",
   /** Hébergeur explicite (signal de souveraineté française) */
-  hostingProvider: "OVHcloud · Roubaix, France",
+  hostingProvider: "Mistral Paris · N8N Francfort (UE)",
 } as const;
 
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
@@ -67,15 +70,15 @@ export const META = {
   title:
     "Automatex — Mandataires IAD SAFTI Normandie : ne perdez plus un lead à 3 500 €",
   description:
-    "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. 30 jours satisfait ou remboursé. Hébergé en France.",
+    "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. 30 jours satisfait ou remboursé. IA française · Automations UE · RGPD.",
   ogTitle: "Ne perdez plus jamais un lead à 3 500 € | Automatex Normandie",
   ogDescription:
-    "Automatex répond à vos leads en 2 min pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. Hébergé France · RGPD · 30 j satisfait ou remboursé.",
+    "Automatex répond à vos leads en 2 min pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. IA française · Automations UE · RGPD · 30 j satisfait ou remboursé.",
 } as const;
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
 export const GEO_DEFINITION =
-  "Automatex est un service d'automatisation français pour les mandataires immobiliers indépendants des réseaux IAD, SAFTI, Capifrance, Optimhome et EffiCity en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, SeLoger et Leboncoin pour répondre aux leads en moins de 2 minutes pendant les visites, trier les emails importants et classer les documents dès réception. Données hébergées sur OVHcloud à Roubaix, conformes RGPD." as const;
+  "Automatex est un service d'automatisation français pour les mandataires immobiliers indépendants des réseaux IAD, SAFTI, Capifrance, Optimhome et EffiCity en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, SeLoger et Leboncoin pour répondre aux leads en moins de 2 minutes pendant les visites, trier les emails importants et classer les documents dès réception. Automatisations N8N Cloud (Francfort, UE), modèle Mistral (Paris/UE), conformes RGPD." as const;
 
 export const META_KEYWORDS = [
   "mandataire immobilier Normandie",
@@ -142,7 +145,7 @@ export const TRUST_BAR_ITEMS = [
   "Capifrance",
   "Optimhome",
   "EffiCity",
-  "Hébergé en France",
+  SOVEREIGNTY_TRUST_LINE,
   "RGPD",
   "Opérationnel en 48h",
   "Flers, Orne (61)",
@@ -166,7 +169,7 @@ export const AUTOMATIONS_SECTION = {
 export const HERO_COPY = {
   /** A5 — Pre-heading badge geo */
   preHeading: "Pour les mandataires indépendants en Normandie",
-  badgeHosted: "Hébergé en France",
+  badgeHosted: SOVEREIGNTY_TRUST_LINE,
   badgeRgpd: "Conforme RGPD",
   badgeNoCommit: "Sans engagement",
   h1: "Ne perdez plus jamais un lead à 3 500 €.",
@@ -181,7 +184,7 @@ export const HERO_COPY = {
   /** A10 — Compteur social proof crédible */
   liveCounter: "Onboardings limités à 4 par mois — créneau disponible cette semaine",
   /** A15 — Mention hébergeur nommé */
-  hostingMention: "Données hébergées sur OVHcloud, Roubaix",
+  hostingMention: "Automatisations UE (N8N Francfort) · Mistral Paris",
   /** A7 — Téléphone cliquable */
   socialProof:
     "Conçu pour les mandataires IAD, SAFTI et Capifrance en Orne et Normandie.",
@@ -298,7 +301,7 @@ export const SOLUTION_STEPS: ReadonlyArray<{
 ];
 
 export const SOLUTION_BADGES = [
-  "Hébergé en France",
+  SOVEREIGNTY_TRUST_LINE,
   "Données non partagées",
   "Conforme RGPD",
   "Installé en 48h",
@@ -411,10 +414,10 @@ export const BENEFITS_ITEMS: ReadonlyArray<{
   },
   {
     icon: "flag",
-    stat: "100 % France",
+    stat: SOVEREIGNTY_TRUST_LINE,
     title: "Données souveraines",
     body:
-      "Vos données vendeurs et acquéreurs restent en France, sur OVHcloud à Roubaix. Conformité RGPD prouvée, pas déclarative.",
+      "Vos flux métier restent en Union européenne (N8N Francfort, Mistral Paris/UE). Conformité RGPD prouvée, pas déclarative.",
   },
 ];
 
@@ -461,9 +464,9 @@ export const PRICING_HEADING = {
   chooseCta: BOOKING_CTA_LABEL,
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
-  /** D2 — remise annuelle ~17 % = 2 mois offerts */
-  annualDiscountLabel: "−17 % sur l'année",
-  annualDiscountPercent: 17,
+  /** Paiement 12 mois d'avance : −15 % sur le mensuel */
+  annualDiscountLabel: "Économisez 15% · Paiement annuel",
+  annualDiscountPercent: 15,
   monthlySuffix: "/mois",
   annualSuffix: "/an",
   guaranteeLine: "30 jours satisfait ou remboursé · Onboarding offert",
@@ -484,7 +487,7 @@ export type PricingOffer = {
   setup: number;
   /** Tarif mensuel (€/mois) */
   monthly: number;
-  /** Tarif annuel (€/an) — 10 mois facturés au lieu de 12 (≈17 % de remise) */
+  /** Tarif annuel (€/an) — 12 mois × mensuel × (1 − 15 %) */
   annual: number;
   benefits: string[];
   roiLine: string;
@@ -499,7 +502,7 @@ export const OFFERS: PricingOffer[] = [
     featured: false,
     setup: 199,
     monthly: 99,
-    annual: 990,
+    annual: 1010,
     benefits: [
       "Réponse aux leads entrants en moins de 2 minutes",
       "Notification téléphone immédiate sur chaque message urgent",
@@ -517,7 +520,7 @@ export const OFFERS: PricingOffer[] = [
     featured: true,
     setup: 499,
     monthly: 199,
-    annual: 1990,
+    annual: 2032,
     benefits: [
       "Tout l'Essentiel",
       "Tri des mails et brouillons de réponses prêts à envoyer",
@@ -535,7 +538,7 @@ export const OFFERS: PricingOffer[] = [
     featured: false,
     setup: 999,
     monthly: 449,
-    annual: 4490,
+    annual: 4580,
     benefits: [
       "Tout le Pro",
       "Réponse prioritaire sous 4 h en semaine",
@@ -560,7 +563,7 @@ export const OFFERS: PricingOffer[] = [
       "Périmètre plus léger ou plus complet que les formules standards",
       "Devis transparent après l’entretien de cadrage",
       "Même garantie 30 jours une fois la formule validée",
-      "Hébergement France · RGPD · vos comptes restent les vôtres",
+      SOVEREIGNTY_TRUST_LINE + " · vos comptes restent les vôtres",
     ],
     roiLine: "Idéal si vous hésitez entre deux formules ou si votre activité a des besoins spécifiques.",
     cta: SUR_MESURE_BOOKING_CTA,
@@ -621,9 +624,9 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Non. Vous recevez des messages clairs sur Telegram ou par mail, comme aujourd'hui. Vous validez les réponses quand vous le souhaitez. Aucune application à apprendre, aucun logiciel à installer. La configuration se fait à distance pendant que vous êtes sur le terrain.",
   },
   {
-    question: "Mes données sont-elles vraiment en France ?",
+    question: "Mes données sont-elles bien protégées en Europe ?",
     answer:
-      "Oui. Automatex est hébergée sur OVHcloud à Roubaix. Vos données vendeurs et acquéreurs ne sortent pas de l'Union européenne et ne sont jamais revendues. Chaque mandataire dispose de son propre espace cloisonné : rien n'est mélangé entre collègues IAD, SAFTI ou Capifrance. Politique RGPD lisible et téléchargeable, registre des traitements à jour.",
+      "Oui. Les automatisations tournent sur N8N Cloud à Francfort (UE). Le modèle de langue est Mistral AI (Paris/UE). Vos emails restent dans votre Gmail ; Automatex ne revend rien. Chaque client a un espace cloisonné. Politique RGPD et registre des traitements disponibles sur /vos-donnees.",
   },
   {
     question: "Combien de temps pour la mise en place ?",
@@ -670,10 +673,10 @@ export const DATA_TRUST_COPY = {
     "Vos données ne sont jamais vendues",
     "Vos données ne sont jamais partagées avec des tiers commerciaux",
     "Aucun accès au-delà du nécessaire au service",
-    "Aucune donnée métier stockée aux États-Unis (traitements sur OVHcloud France)",
+    "Aucune donnée métier stockée aux États-Unis via nos prestations (N8N UE, Mistral UE)",
   ],
   always: [
-    "Traitements Automatex hébergés sur OVHcloud à Roubaix (France)",
+    "Automatisations sur N8N Cloud Francfort (UE)",
     "Chiffrement en transit (HTTPS)",
     "Effacement complet sous 7 jours après votre départ",
     "Confirmation écrite d'effacement sur demande",
@@ -692,7 +695,7 @@ export const RESILIATION_COPY = {
 } as const;
 
 export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: string }> = [
-  { title: "🇫🇷 Hébergé en France", subtitle: "OVHcloud · Roubaix" },
+  { title: `🇪🇺 ${SOVEREIGNTY_TRUST_LINE}`, subtitle: "N8N Francfort · Mistral Paris" },
   { title: "🔒 Conforme RGPD", subtitle: "Données souveraines · Jamais revendues" },
   { title: "✋ Sans engagement", subtitle: "Résiliable en 1 mail · Immédiatement" },
   { title: "🛡 30 j satisfait ou remboursé", subtitle: "Sans condition · Un seul mail suffit" },
@@ -701,7 +704,7 @@ export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: strin
 ] as const;
 
 export const CTA_REASSURANCE_LINE =
-  "Aucun engagement · Résiliable en 1 mail · Données en France" as const;
+  "Aucun engagement · Résiliable en 1 mail · Données UE · RGPD" as const;
 
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
@@ -720,12 +723,7 @@ export const CONTACT_COPY = {
   formFooter:
     "Un seul appel. Pas de relance automatique. Nolan, Flers (61).",
   resiliationSubmitLabel: "Envoyer ma demande de résiliation",
-  badges: [
-    "Hébergé France",
-    "RGPD",
-    "30 j satisfait ou remboursé",
-    "Sans engagement",
-  ],
+  badges: [SOVEREIGNTY_TRUST_LINE, "RGPD", "30 j satisfait ou remboursé", "Sans engagement"],
 } as const;
 
 export const NETWORK_OPTIONS = [
@@ -745,7 +743,7 @@ export const FOOTER_COPY = {
   cgv: "CGV",
   security: "Sécurité des données",
   localHeading: "Mandataires en Normandie",
-  tagline: "© 2026 Automatex · Hébergé en France (OVHcloud, Roubaix) · Conforme RGPD",
+  tagline: `© 2026 Automatex · ${SOVEREIGNTY_TRUST_LINE}`,
 } as const;
 
 /** Maillage interne SEO — pages locales indexables (GSC). */

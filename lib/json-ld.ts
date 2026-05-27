@@ -1,13 +1,5 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
-import {
-  FAQ_ITEMS,
-  GUARANTEE_COPY,
-  NAP,
-  OFFERS,
-  SITE_URL,
-  SOLUTION_HEADING,
-  SOLUTION_STEPS,
-} from "@/lib/constants";
+import { FAQ_ITEMS, GUARANTEE_COPY, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS, } from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 
 export function buildBreadcrumbList(
@@ -176,6 +168,8 @@ export function buildJsonLdGraph() {
           "Gmail automatisation",
           "Telegram immobilier",
           "RGPD automatisation",
+          SOVEREIGNTY_TRUST_LINE,
+          NAP.hostingProvider,
         ],
         founder: { "@id": personId },
         hasOfferCatalog: {
@@ -255,7 +249,7 @@ export function buildJsonLdGraph() {
           "Tri des emails et brouillons de réponse",
           "Résumé du soir et planning du matin sur Telegram",
           "Classement automatique des documents dans Google Drive",
-          "Hébergé en France sur OVHcloud Roubaix",
+          SOVEREIGNTY_TRUST_LINE,
           "Conforme RGPD",
         ],
         offers: offerCatalog,
@@ -274,7 +268,7 @@ export function buildBtpServiceJsonLd(path: string) {
     "@type": "ProfessionalService",
     name: "Automatex Hub",
     description:
-      "Système pour mandataires immobiliers et artisans BTP dans l'Orne et Normandie. Devis, appels manqués, accompagnement mensuel. Hébergé en France, RGPD.",
+      `Système pour mandataires immobiliers et artisans BTP dans l'Orne et Normandie. Devis, appels manqués, accompagnement mensuel. ${SOVEREIGNTY_TRUST_LINE}.`,
     url: isBtpLanding ? `${SITE_URL}/btp` : pageUrl,
     telephone: NAP.phoneE164,
     email: NAP.email,

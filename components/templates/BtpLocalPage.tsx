@@ -3,7 +3,7 @@ import { BTP_GEO_FAQ } from "@/lib/btp-geo-faq";
 import { buildBtpLocalSections } from "@/lib/btp-local-sections";
 import type { BtpLocalPageDef } from "@/lib/btp-copy";
 import { buildLocalBtpJsonLd } from "@/lib/json-ld";
-import { NAP } from "@/lib/constants";
+import { NAP, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 import Link from "next/link";
 
 export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
@@ -29,7 +29,7 @@ export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
         <span aria-hidden> / </span>
         <span className="text-text">{page.city}</span>
       </nav>
-      <p className="label-micro mt-6 text-accent">Orne · Normandie · Hébergé en France</p>
+      <p className="label-micro mt-6 text-accent">Orne · Normandie · {SOVEREIGNTY_TRUST_LINE}</p>
       <h1 className="mt-3 font-heading text-3xl text-text md:text-4xl">{page.h1}</h1>
       <p className="mt-6 max-w-readable text-lg leading-relaxed text-muted">{page.localHook}</p>
 

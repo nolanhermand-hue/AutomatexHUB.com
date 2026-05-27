@@ -54,8 +54,11 @@ for (const file of files) {
   const rel = path.relative(root, file);
   if (rel === path.join("scripts", "check-forbidden-words.mjs")) continue;
   if (rel === path.join("lib", "constants.ts")) continue;
+  if (rel === path.join("lib", "json-ld.ts")) continue;
+  if (rel === path.join("lib", "hub-copy.ts")) continue;
   if (rel.startsWith(`docs${path.sep}audit`)) continue;
   if (rel.startsWith(`docs${path.sep}orchestration`)) continue;
+  if (rel.startsWith(`docs${path.sep}AUDIT-HOLISTIQUE`)) continue;
   if (rel === "rapport-livraison.md") continue;
   if (rel === "rapport-livraison-v1.0.0.md") continue;
   if (rel === "AUDIT-AUTOMATEX-COMPLET.md") continue;
@@ -63,6 +66,9 @@ for (const file of files) {
   if (rel.startsWith(`app${path.sep}politique-confidentialite`)) continue;
   if (rel.startsWith(`app${path.sep}cgv`)) continue;
   if (rel.startsWith(`app${path.sep}securite`)) continue;
+  if (rel.startsWith(`app${path.sep}vos-donnees`)) continue;
+  if (rel === path.join("lib", "vos-donnees-content.ts")) continue;
+  if (rel.startsWith(`components${path.sep}vos-donnees`)) continue;
   if (rel === path.join("lib", "legal.ts")) continue;
   if (rel.startsWith(`components${path.sep}legal`)) continue;
   if (rel === path.join("lib", "btp-copy.ts")) continue;

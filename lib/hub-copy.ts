@@ -1,4 +1,6 @@
 /** Copy hub d’entrée — vocabulaire mandataire-safe (pas « automatisation »). */
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+
 export const HUB_ENTRY_COPY = {
   eyebrow: "Automatex Hub · Flers, Orne",
   headlineLine1: "Vous perdez du temps sur des tâches",
@@ -6,7 +8,7 @@ export const HUB_ENTRY_COPY = {
   subline:
     "On les prend en charge. Vous vous concentrez sur votre vrai travail. Et on reste là — chaque mois — pour que ça tourne.",
   badges: [
-    "Hébergé en France",
+    SOVEREIGNTY_TRUST_LINE,
     "RGPD",
     "Basé à Flers, Orne",
     "Démo sous 24 h · Full sous 4 h (sem.)",
@@ -52,5 +54,5 @@ export const HUB_ACCOMPANIMENT = {
 export const HUB_META = {
   title: "Automatex Hub — Immobilier & artisans BTP en Orne",
   description:
-    "Système automatique et accompagnement humain à Flers pour mandataires immobiliers et artisans du BTP en Orne et Normandie. Hébergé en France.",
+    `Système automatique et accompagnement humain à Flers pour mandataires immobiliers et artisans du BTP en Orne et Normandie. ${SOVEREIGNTY_TRUST_LINE}.`,
 } as const;

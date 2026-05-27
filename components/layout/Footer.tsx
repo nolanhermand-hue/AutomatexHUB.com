@@ -1,5 +1,5 @@
 import { FooterTrustBadges } from "@/components/layout/FooterTrustBadges";
-import { FOOTER_COPY, FOOTER_LOCAL_LINKS, NAP } from "@/lib/constants";
+import { FOOTER_COPY, FOOTER_LOCAL_LINKS, NAP, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 import { FOOTER_BTP_LOCAL_LINKS, SITE_NAV } from "@/lib/hub-nav";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ export function Footer() {
             </div>
             <p className="mb-6 max-w-sm text-[13px] leading-relaxed text-muted">
               Système automatique et accompagnement humain à Flers — mandataires immobiliers et
-              artisans BTP en Orne et Normandie. Hébergé en France.
+              artisans BTP en Orne et Normandie. {SOVEREIGNTY_TRUST_LINE}.
             </p>
             <FooterTrustBadges />
           </div>

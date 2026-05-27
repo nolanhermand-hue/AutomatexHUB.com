@@ -13,7 +13,7 @@ export function FounderTrustBlock({ compact = false, className = "" }: FounderTr
     <div
       className={`flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left ${className}`}
     >
-      <FounderAvatar size={size} />
+      <FounderAvatar size={size} priority={compact} />
       <div className="min-w-0">
         <p className="font-semibold text-text">
           {NAP.founder} · {NAP.localityLabel}

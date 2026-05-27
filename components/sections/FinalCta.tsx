@@ -1,7 +1,5 @@
-"use client";
-
 import { trackCtaClicked } from "@/lib/analytics";
-import { BOOKING_CTA_LABEL } from "@/lib/constants";
+import { BOOKING_CTA_LABEL, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 /**
  * FINAL CTA — bandeau ORIS (navy + accent orange).
@@ -35,7 +33,7 @@ export function FinalCta() {
         </a>
 
         <p className="mt-8 text-xs text-faint">
-          🇫🇷 Hébergé en France · 🔒 RGPD · ✋ Sans engagement · 🛡 30 j satisfait ou remboursé
+          {SOVEREIGNTY_TRUST_LINE} · 🔒 RGPD · ✋ Sans engagement · 🛡 30 j satisfait ou remboursé
         </p>
       </div>
     </section>
