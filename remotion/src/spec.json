@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationInFrames": 750,
+    "title": "mandataire_lead_perdu_3500"
+  },
+  "brand": {
+    "fontFamily": "JetBrains Mono",
+    "palette": {
+      "bg": "#0A0E1A",
+      "surface": "#121829",
+      "textPrimary": "#E6EAF2",
+      "textMuted": "#6B7488",
+      "accentAlert": "#FF6A1A",
+      "accentResult": "#2EE6A6"
+    },
+    "cursor": { "color": "#FF6A1A", "blinkPerSecond": 1 },
+    "rules": [
+      "orange = alerte/argent perdu",
+      "menthe = solution/CTA",
+      "monospace partout",
+      "pas de glow excessif"
+    ]
+  },
+  "assets": {
+    "logoUrl": "",
+    "voiceoverUrl": ""
+  },
+  "audio": {
+    "voiceover": "assets.voiceoverUrl",
+    "backgroundMusic": "à ajouter dans TikTok (son tendance, volume bas) — pas dans le rendu",
+    "subtitles": [
+      {
+        "fromFrame": 0,
+        "toFrame": 120,
+        "text": "Si t'es mandataire, t'as peut-être perdu 3 500 € ce matin. Sans le savoir."
+      },
+      {
+        "fromFrame": 120,
+        "toFrame": 360,
+        "text": "Un lead tombe pendant ta visite de 10h. Tu le vois à 12h30. Trop tard."
+      },
+      {
+        "fromFrame": 360,
+        "toFrame": 600,
+        "text": "7 fois sur 10 il a déjà répondu à celui qui a rappelé en 5 minutes. Ta commission : 3 500 €. Partie."
+      },
+      {
+        "fromFrame": 600,
+        "toFrame": 750,
+        "text": "Le problème c'est pas ta mémoire. Prochaine vidéo : le lead rappelé en 90s sans toucher ton téléphone."
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "startFrame": 0,
+      "durationInFrames": 120,
+      "background": "bg",
+      "elements": [
+        {
+          "type": "terminalLine",
+          "prompt": "> ",
+          "content": "Mandataire : t'as perdu ",
+          "highlight": { "text": "3 500 €", "color": "accentAlert" },
+          "suffix": " ce matin.",
+          "style": {
+            "fontSize": 64,
+            "weight": 700,
+            "color": "textPrimary",
+            "x": "center",
+            "y": 820,
+            "lineWidth": 900
+          },
+          "animation": { "in": { "type": "Typewriter", "startFrame": 6, "charsPerFrame": 1.1 } },
+          "cursor": true
+        }
+      ]
+    },
+    {
+      "id": "lost_lead",
+      "startFrame": 120,
+      "durationInFrames": 240,
+      "background": "bg",
+      "elements": [
+        {
+          "type": "mailCard",
+          "header": "Nouveau contact — bien à Flers",
+          "meta": "Demande d'info · acheteur",
+          "timestamp": "10:02",
+          "style": { "surface": "surface", "x": "center", "y": 760, "w": 880, "radius": 20 },
+          "animation": {
+            "in": { "type": "SlideFadeIn", "startFrame": 130, "durationInFrames": 18, "fromY": 60 },
+            "state": { "type": "GreyOut", "startFrame": 250, "durationInFrames": 50 }
+          }
+        },
+        {
+          "type": "timestamp",
+          "content": "10:02",
+          "tickTo": "12:30",
+          "style": { "fontSize": 40, "color": "textMuted", "x": "center", "y": 1080 },
+          "animation": { "in": { "type": "TimestampTick", "startFrame": 250, "durationInFrames": 60 } }
+        },
+        {
+          "type": "text",
+          "content": "Vu à 12h30. Trop tard.",
+          "style": {
+            "fontSize": 52,
+            "weight": 600,
+            "color": "accentAlert",
+            "x": "center",
+            "y": 1200
+          },
+          "animation": {
+            "in": { "type": "SlideFadeIn", "startFrame": 312, "durationInFrames": 16, "fromY": 30 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_number",
+      "startFrame": 360,
+      "durationInFrames": 240,
+      "background": "bg",
+      "elements": [
+        {
+          "type": "text",
+          "content": "7 leads / 10 partent en < 5 min",
+          "style": {
+            "fontSize": 56,
+            "weight": 600,
+            "color": "textPrimary",
+            "x": "center",
+            "y": 760
+          },
+          "animation": {
+            "in": { "type": "SlideFadeIn", "startFrame": 372, "durationInFrames": 16, "fromY": 30 }
+          }
+        },
+        {
+          "type": "heroNumber",
+          "from": 0,
+          "to": 3500,
+          "suffix": " €",
+          "label": "ta commission. Partie.",
+          "style": {
+            "fontSize": 200,
+            "weight": 800,
+            "color": "accentAlert",
+            "x": "center",
+            "y": 980,
+            "labelColor": "textMuted",
+            "labelSize": 48
+          },
+          "animation": {
+            "in": { "type": "CountUp", "startFrame": 430, "durationInFrames": 50 },
+            "pop": { "type": "ScalePop", "startFrame": 478, "spring": { "damping": 12, "stiffness": 160 } }
+          }
+        }
+      ]
+    },
+    {
+      "id": "turn_cta",
+      "startFrame": 600,
+      "durationInFrames": 150,
+      "background": "bg",
+      "elements": [
+        {
+          "type": "text",
+          "content": "Le problème, c'est pas ta mémoire.",
+          "style": {
+            "fontSize": 56,
+            "weight": 600,
+            "color": "textPrimary",
+            "x": "center",
+            "y": 740,
+            "lineWidth": 900
+          },
+          "animation": { "in": { "type": "Typewriter", "startFrame": 606, "charsPerFrame": 1.4 } }
+        },
+        {
+          "type": "ctaCard",
+          "content": "Diagnostic gratuit · Flers · lien en bio",
+          "style": {
+            "surface": "surface",
+            "border": "accentResult",
+            "color": "accentResult",
+            "fontSize": 52,
+            "weight": 700,
+            "x": "center",
+            "y": 1020,
+            "w": 900,
+            "radius": 18
+          },
+          "animation": {
+            "in": { "type": "ScalePop", "startFrame": 672, "spring": { "damping": 14, "stiffness": 140 } }
+          },
+          "cursor": true
+        }
+      ]
+    }
+  ]
+}

@@ -76,7 +76,7 @@ Formulaires : `Contact` `#contact` (immo/btp/hub) · `AccompagnementContactForm`
 | `/accompagnement` | `#contact` |
 | `/automatisations` | voir ci-dessous |
 
-Query contact : `#contact?offre=depart|essentiel-btp|sur-mesure|…` (selon page).
+Query contact : `#contact?offre=declic|systeme|pilote|sur-mesure` (grille unifiée).
 
 ---
 

@@ -11,7 +11,7 @@ export const HUB_ENTRY_COPY = {
     SOVEREIGNTY_TRUST_LINE,
     "RGPD",
     "Basé à Flers, Orne",
-    "Démo sous 24 h · Full sous 4 h (sem.)",
+    "Démo sous 24 h · Pilote : réponse 4 h (sem.)",
   ] as const,
   blockImmobilier: {
     title: "Je suis mandataire immobilier",
@@ -29,7 +29,7 @@ export const HUB_ENTRY_COPY = {
     "Dans les deux cas : démo gratuite 20 min sur votre cas réel. Nolan rappelle sous 24 h.",
   ctaImmobilier: "Démo mandataire — Nolan m'appelle",
   ctaBtp: "Démo artisan — Nolan m'appelle",
-  priceHintBtp: "Artisans : dès 99 €/mois · setup 199 €",
+  priceHintBtp: "Artisans : Déclic 390€ puis 99€/mois",
 } as const;
 
 export const HUB_ACCOMPANIMENT = {
@@ -45,7 +45,7 @@ export const HUB_ACCOMPANIMENT = {
     },
     {
       title: "Un interlocuteur local",
-      body: "Nolan est à Flers. 06 45 38 42 33. Pas une hotline. Démo sous 24 h · réponse sous 4 h en semaine (formule Full).",
+      body: "Nolan est à Flers. 06 45 38 42 33. Pas une hotline. Démo sous 24 h · réponse sous 4 h en semaine (pack Pilote).",
     },
   ],
   linkLabel: "Tout sur l'accompagnement",

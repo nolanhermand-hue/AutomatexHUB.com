@@ -1,0 +1,22 @@
+{
+  "name": "automatex-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render MandataireLead out/mandataire-lead.mp4",
+    "render:still": "remotion still MandataireLead out/preview.png --frame=480"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.286",
+    "@remotion/google-fonts": "4.0.286",
+    "@remotion/media-utils": "4.0.286",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.286"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.9.3"
+  }
+}

@@ -125,7 +125,7 @@ export const COMPARISON_TABLE = {
     [
       "Note après une visite",
       "Post-it ou mémoire",
-      "Note vocale → compte-rendu structuré (formule Cabinet)",
+      "Note vocale → compte-rendu structuré (pack Pilote)",
     ],
   ] as const,
 } as const;
@@ -354,7 +354,7 @@ export const ACCOMPANIMENT_COPY = {
     },
   ] as const,
   tierNote:
-    "Essentiel, Pro et Cabinet : même socle — suivi 12 mois et bilan trimestriel. Cabinet garde la priorité de réponse la plus rapide.",
+    "Déclic, Système et Pilote : même socle — suivi 12 mois et bilan trimestriel. Pilote garde la priorité de réponse la plus rapide.",
   surMesure: {
     h2: "Sur mesure · prix sur devis",
     body:
@@ -461,10 +461,10 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
   },
 ];
 
-/** D1 — 3 packages alignés sur le guide stratégique (Essentiel/Pro/Cabinet) */
+/** D1 — 3 packs unifiés (Déclic / Système / Pilote) */
 export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
-  h2: "Tarifs Automatex — 3 formules + sur mesure pour mandataires en Normandie",
+  h2: "Tarifs Automatex — 3 packs + sur mesure pour mandataires en Normandie",
   h2SurMesureHint:
     "Tarifs affichés en annuel par défaut. Sur toutes les formules : suivi humain 12 mois et bilan trimestriel.",
   chooseCta: BOOKING_CTA_LABEL,
@@ -475,11 +475,28 @@ export const PRICING_HEADING = {
   annualDiscountPercent: 15,
   monthlySuffix: "/mois",
   annualSuffix: "/an",
+  bannerLine:
+    "Sans engagement · Résiliable en 1 mail · 30 j satisfait ou remboursé",
   guaranteeLine: "30 jours satisfait ou remboursé · Onboarding offert",
-  customFitFootnote:
-    "Besoin d’un périmètre différent ? Réservez un rendez-vous sur mesure de 30 minutes — devis après cadrage.",
+  customFitFootnote: "Besoin hors-cadre ? Devis sur-mesure.",
   surMesurePriceLabel: "Prix sur devis",
   surMesureIntro: "Entretien de 30 min pour cadrer périmètre, budget et priorités.",
+} as const;
+
+/** Accompagnement inclus par pack (noms internes Essentiel / Suivi / Copilote). */
+export const PACK_ACCOMP_BULLETS = {
+  declic: [
+    "Accompagnement Essentiel : hébergement RGPD, maintenance",
+    "1 point mensuel court, ajustements mineurs",
+  ],
+  systeme: [
+    "Accompagnement Suivi : tout Essentiel",
+    "Point mensuel 20 min, ajustements continus, évolutions dans le périmètre",
+  ],
+  pilote: [
+    "Accompagnement Copilote : tout Suivi",
+    "Réponse prioritaire 4 h, optimisation proactive, priorité nouvelles automatisations",
+  ],
 } as const;
 
 export type PricingOffer = {
@@ -500,57 +517,60 @@ export type PricingOffer = {
   cta: string;
 };
 
-/** D1 — Exactement 3 packages : 99 € / 199 € / 449 € (guide stratégique) */
+/** D1 — 3 packs unifiés (Déclic / Système / Pilote) + sur mesure */
 export const OFFERS: PricingOffer[] = [
   {
-    id: "essentiel",
-    name: "Essentiel",
+    id: "declic",
+    name: "Déclic",
     featured: false,
-    setup: 199,
+    setup: 390,
     monthly: 99,
     annual: 1010,
     benefits: [
+      "1 automatisation sur-mesure (cadrée sur votre activité)",
       "Réponse aux leads entrants en moins de 2 minutes",
       "Notification téléphone immédiate sur chaque message urgent",
       "Mise en place en 48 h après l'appel découverte",
-      "Onboarding offert + accompagnement 30 premiers jours",
+      ...PACK_ACCOMP_BULLETS.declic,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
     roiLine: "Rentable dès 1 lead récupéré (≈ 3 500 € de commission moyenne).",
     cta: "Récupérer mes leads",
   },
   {
-    id: "pro",
-    name: "Pro",
-    badge: "Recommandé · Meilleur équilibre",
+    id: "systeme",
+    name: "Système",
+    badge: "Recommandé",
     featured: true,
-    setup: 499,
-    monthly: 199,
-    annual: 2032,
+    setup: 990,
+    monthly: 249,
+    annual: 2540,
     benefits: [
-      "Tout l'Essentiel",
+      "3 à 4 automatisations sur-mesure",
+      "Tout le périmètre Déclic",
       "Tri des mails et brouillons de réponses prêts à envoyer",
       "Résumé du soir + planning du matin sur le téléphone",
       "Documents classés dans Google Drive dès réception",
-      "Onboarding offert + accompagnement 30 premiers jours",
+      ...PACK_ACCOMP_BULLETS.systeme,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
     roiLine: "1 lead récupéré + 1 h gagnée par jour : rentable en 2 semaines.",
     cta: "Démarrer en 48 h",
   },
   {
-    id: "cabinet",
-    name: "Cabinet",
+    id: "pilote",
+    name: "Pilote",
     featured: false,
-    setup: 999,
+    setup: 1690,
     monthly: 449,
     annual: 4580,
     benefits: [
-      "Tout le Pro",
+      "Stack complet + brique métier sur-mesure",
+      "Tout le périmètre Système",
       "Réponse prioritaire sous 4 h en semaine",
-      "Note vocale après visite transformée en compte-rendu structuré",
-      "1 réglage par mois + rapport mensuel d'activité",
-      "Onboarding offert + accompagnement 30 premiers jours",
+      "Note vocale après visite → compte-rendu structuré",
+      "Rapport mensuel d'activité + réglages proactifs",
+      ...PACK_ACCOMP_BULLETS.pilote,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
     roiLine: "Pour les mandataires qui visent 10 ventes ou plus par an.",
@@ -577,38 +597,42 @@ export const OFFERS: PricingOffer[] = [
 ];
 
 /** D6 / C12 — Tableau comparatif features 3 colonnes */
+export type PackId = "declic" | "systeme" | "pilote";
+
 export type FeatureRow = {
   feature: string;
-  essentiel: boolean | string;
-  pro: boolean | string;
-  cabinet: boolean | string;
+  declic: boolean | string;
+  systeme: boolean | string;
+  pilote: boolean | string;
 };
 
 export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
-  { feature: "Réponse aux leads < 2 min", essentiel: true, pro: true, cabinet: true },
-  { feature: "Notification téléphone immédiate", essentiel: true, pro: true, cabinet: true },
-  { feature: "Mise en place en 48 h", essentiel: true, pro: true, cabinet: true },
-  { feature: "30 jours satisfait ou remboursé", essentiel: true, pro: true, cabinet: true },
-  { feature: "Onboarding offert", essentiel: true, pro: true, cabinet: true },
+  { feature: "Réponse aux leads < 2 min", declic: true, systeme: true, pilote: true },
+  { feature: "Notification téléphone immédiate", declic: true, systeme: true, pilote: true },
+  { feature: "Mise en place en 48 h", declic: true, systeme: true, pilote: true },
+  { feature: "30 jours satisfait ou remboursé", declic: true, systeme: true, pilote: true },
+  { feature: "Onboarding offert", declic: true, systeme: true, pilote: true },
   {
     feature: "Suivi humain 12 mois (bilan trimestriel)",
-    essentiel: true,
-    pro: true,
-    cabinet: true,
+    declic: true,
+    systeme: true,
+    pilote: true,
   },
   {
     feature: "Réponse Nolan en semaine (heures ouvrées)",
-    essentiel: "48 h",
-    pro: "24 h",
-    cabinet: "< 4 h",
+    declic: "48 h",
+    systeme: "24 h",
+    pilote: "< 4 h",
   },
-  { feature: "Tri des mails matin/soir", essentiel: false, pro: true, cabinet: true },
-  { feature: "Brouillons de réponses prêts", essentiel: false, pro: true, cabinet: true },
-  { feature: "Classement Google Drive automatique", essentiel: false, pro: true, cabinet: true },
-  { feature: "Accès direct fondateur < 4 h", essentiel: false, pro: false, cabinet: true },
-  { feature: "Compte-rendu vocal post-visite", essentiel: false, pro: false, cabinet: true },
-  { feature: "Réglage mensuel + rapport activité", essentiel: false, pro: false, cabinet: true },
+  { feature: "Tri des mails matin/soir", declic: false, systeme: true, pilote: true },
+  { feature: "Brouillons de réponses prêts", declic: false, systeme: true, pilote: true },
+  { feature: "Classement Google Drive automatique", declic: false, systeme: true, pilote: true },
+  { feature: "Accès direct fondateur < 4 h", declic: false, systeme: false, pilote: true },
+  { feature: "Compte-rendu vocal post-visite", declic: false, systeme: false, pilote: true },
+  { feature: "Réglage mensuel + rapport activité", declic: false, systeme: false, pilote: true },
 ];
+
+export const PAID_OFFERS = OFFERS.filter((o) => !o.customOffer);
 
 export const FAQ_HEADING = {
   h2: "Questions des mandataires IAD, SAFTI et Capifrance avant de démarrer",

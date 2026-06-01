@@ -1,6 +1,6 @@
 "use client";
 
-import { FEATURE_COMPARISON, OFFERS } from "@/lib/constants";
+import { FEATURE_COMPARISON, PAID_OFFERS, type PackId } from "@/lib/constants";
 
 /**
  * FEATURE COMPARISON — D6 / C12
@@ -30,7 +30,7 @@ export function FeatureComparison() {
             <thead className="border-b border-border bg-night text-sm">
               <tr>
                 <th className="px-5 py-4 font-semibold text-text">Fonctionnalité</th>
-                {OFFERS.map((o) => (
+                {PAID_OFFERS.map((o) => (
                   <th
                     key={o.id}
                     className={`px-5 py-4 text-center font-semibold text-text`}
@@ -52,9 +52,9 @@ export function FeatureComparison() {
                   className={i % 2 === 0 ? "bg-bg-card" : "bg-night"}
                 >
                   <td className="px-5 py-3 text-muted">{row.feature}</td>
-                  <Cell value={row.essentiel} />
-                  <Cell value={row.pro} featured />
-                  <Cell value={row.cabinet} />
+                  <Cell value={row.declic} />
+                  <Cell value={row.systeme} featured />
+                  <Cell value={row.pilote} />
                 </tr>
               ))}
             </tbody>
@@ -63,7 +63,7 @@ export function FeatureComparison() {
 
         {/* Mobile : 3 blocs verticaux par offre */}
         <div className="mt-8 grid gap-4 md:hidden">
-          {OFFERS.map((offer) => (
+          {PAID_OFFERS.map((offer) => (
             <details
               key={offer.id}
               className="overflow-hidden rounded-2xl border border-border bg-bg-card backdrop-blur-sm"
@@ -85,7 +85,7 @@ export function FeatureComparison() {
               </summary>
               <ul className="border-t border-border p-5 text-sm">
                 {FEATURE_COMPARISON.map((row) => {
-                  const v = row[offer.id as "essentiel" | "pro" | "cabinet"];
+                  const v = row[offer.id as PackId];
                   return (
                     <li key={row.feature} className="flex items-start gap-2 py-1.5">
                       <span

@@ -1,7 +1,7 @@
 import { BtpGeoInternalNav } from "@/components/sections/BtpGeoInternalNav";
 import { BtpHeroSection } from "@/components/funnels/BtpHeroSection";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
-import { BTP_CONTACT, BTP_DEPART_HINT } from "@/lib/btp-copy";
+import { BTP_CONTACT, BTP_DECLIC_HINT } from "@/lib/btp-copy";
 import dynamic from "next/dynamic";
 
 const sectionPulse = (minH: string, bg: string) => (
@@ -76,7 +76,7 @@ export function BtpLanding() {
       <BtpRoiStats />
       <BtpPricing />
       <p className="bg-bg-card px-gutter pb-8 text-center text-sm font-medium text-muted">
-        {BTP_DEPART_HINT}
+        {BTP_DECLIC_HINT}
       </p>
       <BtpFaq />
       <BtpSocialProof />

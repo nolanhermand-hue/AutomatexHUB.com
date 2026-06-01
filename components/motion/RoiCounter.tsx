@@ -17,8 +17,8 @@ export function RoiCounter({ variant, className }: RoiCounterProps) {
 
   const foot =
     variant === "immobilier"
-      ? "1 lead ≈ 3 500 € · Formule Essentiel rentable dès le premier lead récupéré."
-      : "1 chantier récupéré peut représenter plusieurs mois de formule Essentiel.";
+      ? "1 lead ≈ 3 500 € · Pack Système rentable dès le premier lead récupéré."
+      : "1 chantier récupéré peut représenter plusieurs mois de pack Système.";
 
   return (
     <section

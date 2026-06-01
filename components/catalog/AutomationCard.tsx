@@ -4,10 +4,9 @@ const formulaBadge: Record<
   CatalogAutomation["formula"],
   { label: string; cls: string }
 > = {
-  depart: { label: "Départ", cls: "badge-default" },
-  essentiel: { label: "Essentiel ⭐", cls: "badge-orange" },
-  pro: { label: "Pro", cls: "badge-default" },
-  full: { label: "Full", cls: "badge-orange" },
+  declic: { label: "Déclic", cls: "badge-default" },
+  systeme: { label: "Système ⭐", cls: "badge-orange" },
+  pilote: { label: "Pilote", cls: "badge-orange" },
 };
 
 const targetLabel: Record<CatalogAutomation["target"], string> = {

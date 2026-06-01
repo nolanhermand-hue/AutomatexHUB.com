@@ -5,10 +5,10 @@ export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 export const TPE_META = {
   title: "Automatisation IA pour TPE & PME — Accompagnement humain · Automatex",
   description:
-    "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Accompagnement mensuel Nolan — dès 99€/mois. Conformité UE · RGPD.",
+    "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Packs Déclic, Système, Pilote — accompagnement mensuel Nolan. Conformité UE · RGPD.",
   ogTitle: "Automatisation IA pour TPE — Sans compétences techniques · Automatex Hub",
   ogDescription:
-    "Un système qui travaille à votre place. Leads, devis, Drive, relances. Accompagnement mensuel inclus. Dès 99€/mois.",
+    "Un système qui travaille à votre place. Leads, devis, Drive, relances. Mise en place 390€ (1er mois inclus), puis 99€/mois sur Déclic.",
 } as const;
 
 export const TPE_HERO = {
@@ -176,37 +176,29 @@ export type TpeDisplayOffer = {
 
 export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
   {
-    id: "depart",
-    name: "Départ",
-    setup: 199,
+    id: "declic",
+    name: "Déclic",
+    setup: 390,
     monthly: 99,
-    blurb: "Indépendant · 1 flux principal · test sans risque",
+    blurb: "1 automatisation sur-mesure · accompagnement Essentiel inclus",
     cta: "Tester sans risque",
   },
   {
-    id: "essentiel-btp",
-    name: "Essentiel",
+    id: "systeme",
+    name: "Système",
     badge: "Recommandé",
     featured: true,
-    setup: 499,
+    setup: 990,
     monthly: 249,
-    blurb: "TPE 1–5 personnes · 3–4 automatisations · tri mails",
+    blurb: "3–4 automatisations · accompagnement Suivi (point 20 min / mois)",
     cta: "Démarrer en 48 h",
   },
   {
-    id: "pro-btp",
-    name: "Pro",
-    setup: 749,
-    monthly: 349,
-    blurb: "TPE/PME 5–20 personnes · volume élevé · notes vocales",
-    cta: "Passer en Pro",
-  },
-  {
-    id: "full-btp",
-    name: "Full",
-    setup: 999,
+    id: "pilote",
+    name: "Pilote",
+    setup: 1690,
     monthly: 449,
-    blurb: "PME 10–50 personnes · support 4 h · rapport mensuel",
+    blurb: "Stack complet + brique métier · Copilote · réponse 4 h",
     cta: "Ne plus être seul",
   },
   {
@@ -237,7 +229,7 @@ export const TPE_GEO_BLOCKS = [
   },
   {
     q: "Quel est le prix de l'automatisation pour une TPE chez Automatex ?",
-    a: "Les formules démarrent à 99 €/mois avec un setup unique de 199 €. La formule Essentiel, la plus utilisée, est à 249 €/mois. Un accompagnement mensuel est inclus dans chaque formule.",
+    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Pack Pilote : 1690€ puis 449€/mois. Accompagnement mensuel inclus sur chaque pack.",
   },
   {
     q: "Automatex utilise-t-il des modèles conformes RGPD ?",
@@ -256,7 +248,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Combien coûte l'automatisation IA pour une TPE en 2026 ?",
-    a: "Formules dès 99 €/mois (+ setup 199 €). Essentiel à 249 €/mois. Accompagnement mensuel inclus. Sur mesure possible si vous voulez moins ou plus que les packs affichés.",
+    a: "Trois packs transparents (Déclic, Système, Pilote) avec mise en place incluant le 1er mois, puis mensuel fixe. Accompagnement Essentiel, Suivi ou Copilote selon le pack. Sur mesure si hors-cadre.",
   },
   {
     q: "Faut-il être technique ?",

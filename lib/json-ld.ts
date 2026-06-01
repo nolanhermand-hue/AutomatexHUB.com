@@ -63,16 +63,24 @@ export function buildLocalMandatairesJsonLd(opts: {
   };
 }
 
+export type BuildJsonLdGraphOptions = {
+  /** Routes with their own FAQPage JSON-LD (TPE, BTP). */
+  omitFaqPage?: boolean;
+};
+
 /**
  * JSON-LD — H3 (ProfessionalService validé), H4 (FAQPage),
  *           H5 (HowTo), guarantee Offer.
  */
-export function buildJsonLdGraph() {
+export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
+  const omitFaqPage = options?.omitFaqPage ?? false;
   const businessId = `${SITE_URL}#business`;
   const personId = `${SITE_URL}#person-nolan`;
 
   // H4 — FAQPage
-  const faqEntities = FAQ_ITEMS.map((item) => ({
+  const faqEntities = omitFaqPage
+    ? []
+    : FAQ_ITEMS.map((item) => ({
     "@type": "Question",
     name: item.question,
     acceptedAnswer: {
@@ -209,11 +217,14 @@ export function buildJsonLdGraph() {
           "https://www.linkedin.com/in/nolan-hermand",
         ],
       },
-      // H4 — FAQPage : rich results éligibles
-      {
-        "@type": "FAQPage",
-        mainEntity: faqEntities,
-      },
+      ...(omitFaqPage
+        ? []
+        : [
+            {
+              "@type": "FAQPage",
+              mainEntity: faqEntities,
+            },
+          ]),
       // H5 — HowTo : rich results pour Solution en 3 étapes
       {
         "@type": "HowTo",
@@ -314,9 +325,9 @@ export function buildBtpServiceJsonLd(path: string) {
     areaServed: { "@type": "AdministrativeArea", name: "Orne" },
     audience: { "@type": "Audience", audienceType: "Artisans BTP TPE" },
     offers: [
-      { "@type": "Offer", name: "Formule Départ BTP", price: "99", priceCurrency: "EUR" },
-      { "@type": "Offer", name: "Formule Essentiel BTP", price: "249", priceCurrency: "EUR" },
-      { "@type": "Offer", name: "Formule Full BTP", price: "449", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Pack Déclic BTP", price: "99", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Pack Système BTP", price: "249", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Pack Pilote BTP", price: "449", priceCurrency: "EUR" },
     ],
   };
 
@@ -371,9 +382,9 @@ export function buildTpeAutomatisationJsonLd() {
           audienceType: "TPE PME indépendants artisans professions libérales",
         },
         offers: [
-          { "@type": "Offer", name: "Formule Départ", price: "99", priceCurrency: "EUR" },
-          { "@type": "Offer", name: "Formule Essentiel", price: "249", priceCurrency: "EUR" },
-          { "@type": "Offer", name: "Formule Full", price: "449", priceCurrency: "EUR" },
+          { "@type": "Offer", name: "Pack Déclic", price: "99", priceCurrency: "EUR" },
+          { "@type": "Offer", name: "Pack Système", price: "249", priceCurrency: "EUR" },
+          { "@type": "Offer", name: "Pack Pilote", price: "449", priceCurrency: "EUR" },
         ],
       },
       {

@@ -28,18 +28,13 @@
 
 ### Tarifs **code actuel** (`lib/constants.ts` · `lib/btp-copy.ts`)
 
-| Segment | Formule | Setup | /mois | ⭐ |
-|---------|---------|-------|-------|-----|
-| IMMO | Essentiel | 199 | 99 | |
-| IMMO | Pro | 499 | 199 | best |
-| IMMO | Cabinet | 999 | 449 | |
-| IMMO | Sur mesure | devis | devis | |
-| BTP | Départ | 199 | 99 | |
-| BTP | Clarté | 249 | 149 | |
-| BTP | Essentiel | 499 | 249 | best |
-| BTP | Pro | 749 | 349 | |
-| BTP | Full | 999 | 449 | |
-| TPE | voir `/automatisation-ia-tpe` · `lib/automatisation-ia-tpe-content.ts` | 99–449 | |
+| Segment | Pack | Setup (1er mois inclus) | /mois | ⭐ |
+|---------|------|-------------------------|-------|-----|
+| **Tous** | Déclic | 390 | 99 | |
+| **Tous** | Système | 990 | 249 | Recommandé |
+| **Tous** | Pilote | 1690 | 449 | |
+| **Tous** | Sur mesure | devis | devis | |
+| Sources | `OFFERS` · `BTP_OFFERS` · `TPE_DISPLAY_OFFERS` | | | |
 
 Garantie : **30 j · satisfait ou remboursé** · résiliation **1 mail**. Fidélité : `lib/pricing.ts` (−15 % annuel · M13 −5 % · M37 −15 %).
 

@@ -17,7 +17,7 @@ export const SOLUTIONS_MENU = {
     {
       label: "TPE & PME (tous secteurs)",
       href: "/automatisation-ia-tpe",
-      desc: "Dès 99 €/mois · accompagnement inclus",
+      desc: "Packs Déclic · Système · Pilote",
     },
   ],
   parBesoin: [

@@ -44,14 +44,14 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
         title: "Mise en place depuis Flers",
         paragraphs: [
           `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai annoncé : 48 heures entre la démo et la première réponse live. ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé avec d'autres mandataires.`,
-          "Garantie 30 jours satisfait ou remboursé sur les formules Essentiel, Pro et Premium. Onboardings limités à quatre par mois pour garder un suivi humain.",
+          "Garantie 30 jours satisfait ou remboursé sur les packs Déclic, Système et Pilote. Onboardings limités à quatre par mois pour garder un suivi humain.",
         ],
       },
       {
         title: "Réseaux et outils déjà utilisés",
         paragraphs: [
           "Les mandataires flériens s'appuient sur SeLoger, Leboncoin, les portails réseau (IAD, SAFTI) et souvent Google Agenda + Gmail ou Outlook. Automatex se branche sur votre boîte mail existante : pas de changement d'outil visible pour le client.",
-          "Le tri des pièces (mandats, diagnostics, offres) peut être activé sur la formule Pro pour éviter les dossiers incomplets avant compromis.",
+          "Le tri des pièces (mandats, diagnostics, offres) peut être activé sur le pack Système ou Pilote pour éviter les dossiers incomplets avant compromis.",
         ],
       },
     ],

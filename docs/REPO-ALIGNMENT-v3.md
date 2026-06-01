@@ -8,8 +8,8 @@
 | Hébergement marketing | « OVH Roubaix · 100 % France » | **`SOVEREIGNTY_TRUST_LINE`** + détail **Netlify CDN** (site) · **N8N Francfort** · **Mistral Paris** (`/vos-donnees`, légal) |
 | Mot « automatisation » | Interdit partout | Interdit en CI : **liste plus courte** — le mot **« automatisations »** et URLs `/automatisation-*` sont **OK** |
 | Pilier TPE | Non détaillé dans hyper | **`/automatisation-ia-tpe`** + pricing TPE + loyalty affichée via `PricingProgramNotes` |
-| IMMO tarifs | Essentiel/Pro/Cabinet | **Aligné** `OFFERS` dans `lib/constants.ts` |
-| BTP tarifs | Départ/Clarté/Essentiel/Pro/Full | **Aligné** `BTP_OFFERS` dans `lib/btp-copy.ts` |
+| IMMO tarifs | Déclic/Système/Pilote | **Aligné** `OFFERS` dans `lib/constants.ts` |
+| BTP tarifs | Déclic/Système/Pilote (3 packs) | **Aligné** `BTP_OFFERS` dans `lib/btp-copy.ts` |
 | Nav CTA contact | Immo vs BTP générique | **`contactHref()`** dans `lib/hub-nav.ts` — voir routes doc |
 | Catalogue ancre | `#pipeline-pilotage` (ancien) | **`#suivi-rapports`** · catégorie **Suivi & Rapports Métier** |
 | Theme crème | — | **Supprimé** · ORIS sombre fixe · `html.dark` |

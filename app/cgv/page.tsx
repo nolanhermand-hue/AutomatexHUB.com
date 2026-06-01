@@ -14,7 +14,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Conditions générales de vente — Automatex",
   description:
-    "CGV Automatex : offres Essentiel, Pro, Cabinet, paiement, garantie 30 jours, résiliation en ligne, sous-traitance RGPD, droit français.",
+    "CGV Automatex : packs Déclic, Système, Pilote, paiement, garantie 30 jours, résiliation en ligne, sous-traitance RGPD, droit français.",
   alternates: { canonical: `${SITE_URL}/cgv` },
 };
 
@@ -38,18 +38,19 @@ export default function CgvPage() {
 
       <LegalSection title="Article 2 — Description des services">
         <LegalP>
-          <strong className="text-text">Essentiel</strong> — Installation 199 € HT · Formule 99 €
-          HT / mois : réponse aux leads &lt; 2 min, notification téléphone, mise en place 48 h,
-          onboarding et accompagnement 30 premiers jours.
+          <strong className="text-text">Déclic</strong> — Mise en place 390 € HT (1er mois inclus) ·
+          puis 99 € HT / mois : 1 automatisation sur-mesure, accompagnement Essentiel (hébergement
+          RGPD, maintenance, point mensuel court).
         </LegalP>
         <LegalP>
-          <strong className="text-text">Pro</strong> — Installation 499 € HT · Formule 199 € HT /
-          mois : tout Essentiel + tri emails, brouillons, résumé Telegram, classement Drive.
+          <strong className="text-text">Système</strong> — Mise en place 990 € HT (1er mois inclus)
+          · puis 249 € HT / mois : 3 à 4 automatisations, accompagnement Suivi (point 20 min,
+          ajustements continus).
         </LegalP>
         <LegalP>
-          <strong className="text-text">Cabinet</strong> — Installation 999 € HT · Formule 449 € HT
-          / mois : tout Pro + réponse prioritaire, note vocale post-visite, réglage mensuel et
-          rapport d&apos;activité.
+          <strong className="text-text">Pilote</strong> — Mise en place 1 690 € HT (1er mois inclus)
+          · puis 449 € HT / mois : stack complet + brique métier, accompagnement Copilote (réponse 4
+          h, optimisation proactive).
         </LegalP>
         <LegalP>
           Une offre <strong className="text-text">sur mesure</strong> peut être définie après

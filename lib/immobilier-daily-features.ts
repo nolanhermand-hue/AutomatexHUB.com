@@ -50,7 +50,7 @@ export const IMMOBILIER_DAILY_FEATURES = [
   {
     icon: "🎙️",
     title: "Note vocale → compte-rendu",
-    desc: "(Formule Cabinet) Compte-rendu structuré dans Telegram en sortant de visite.",
+    desc: "(Pack Pilote) Compte-rendu structuré dans Telegram en sortant de visite.",
   },
   {
     icon: "📊",

@@ -36,7 +36,7 @@ export default function AccompagnementPage() {
         <p className="mt-4 max-w-readable text-lg text-muted">{ACCOMPANIMENT_PAGE.sub}</p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <span className={ACCOMP_PILL_ACTIVE}>Formules dès 99 €/mois</span>
+          <span className={ACCOMP_PILL_ACTIVE}>Packs Déclic · Système · Pilote</span>
           <span className={ACCOMP_PILL}>Sur mesure · prix sur devis</span>
           <span className={ACCOMP_PILL}>30j satisfait ou remboursé</span>
         </div>
@@ -122,8 +122,8 @@ export default function AccompagnementPage() {
             L&apos;accompagnement est inclus dans chaque formule
           </h2>
           <p className="mt-2 max-w-readable text-sm text-muted">
-            Pas en option. Pas en supplément. Même socle humain sur Essentiel, Pro et Cabinet — voir
-            les grilles sur les pages tarifs.
+            Pas en option. Pas en supplément. Accompagnement Essentiel, Suivi ou Copilote selon le
+            pack — voir les grilles sur les pages tarifs.
           </p>
 
           <div className="mt-8 card border-primary/40 bg-surface p-6 md:p-8">

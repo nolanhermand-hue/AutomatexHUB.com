@@ -80,6 +80,11 @@ export function formatFoundersAvailability(): string {
   return `${segmentSlotsLabel("artisans")} · ${segmentSlotsLabel("mandataires")}`;
 }
 
+/** Copy client : mise en place (1er mois inclus) + mensuel. */
+export function formatMiseEnPlacePuisMensuel(setup: number, monthly: number): string {
+  return `Mise en place ${setup.toLocaleString("fr-FR")}€ (1er mois inclus), puis ${monthly.toLocaleString("fr-FR")}€/mois.`;
+}
+
 export function formatFoundersSegment(
   segment: keyof typeof PRICING_CONFIG.founders,
 ): string {

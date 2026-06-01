@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { OFFERS, PRICING_HEADING } from "@/lib/constants";
 import { calculateBreakevenLeads } from "@/lib/calculator";
 import { cn } from "@/lib/cn";
-import { annualPrepayTotal } from "@/lib/pricing";
+import { annualPrepayTotal, formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
 import { SectionCta } from "@/components/ui/SectionCta";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
@@ -135,16 +135,16 @@ export function Pricing() {
                     </>
                   ) : (
                     <>
-                      <p className="mt-4 text-sm text-muted">
-                        {offer.setup.toLocaleString("fr-FR")} € d&apos;installation
+                      <p className="mt-4 text-sm leading-relaxed text-muted">
+                        {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}
                       </p>
-                      <p className="mt-1 flex items-baseline gap-1 text-3xl font-bold text-text">
-                        {displayPrice} €
-                        <span className="text-base font-medium text-muted">{priceSuffix}</span>
-                      </p>
-                      <p className="mt-1 text-xs text-muted">
-                        Sans engagement · Résiliable en 1 mail
-                      </p>
+                      {cycle === "annual" ? (
+                        <p className="mt-2 flex items-baseline gap-1 text-2xl font-bold text-text">
+                          {displayPrice} €
+                          <span className="text-base font-medium text-muted">{priceSuffix}</span>
+                        </p>
+                      ) : null}
+                      <p className="mt-2 text-xs text-muted">{PRICING_HEADING.bannerLine}</p>
                     </>
                   )}
 
@@ -201,8 +201,8 @@ export function Pricing() {
         </p>
 
         {/* Garantie globale sous le tableau pricing */}
-        <p className="mt-6 text-center text-sm text-muted">
-          {PRICING_HEADING.guaranteeLine}
+        <p className="mt-6 text-center text-sm font-medium text-muted">
+          {PRICING_HEADING.bannerLine}
         </p>
 
         <div className="mt-8 flex justify-center">

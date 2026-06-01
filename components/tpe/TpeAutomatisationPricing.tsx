@@ -7,7 +7,11 @@ import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { TPE_DISPLAY_OFFERS, TPE_FOUNDERS_NOTE } from "@/lib/automatisation-ia-tpe-content";
 import { cn } from "@/lib/cn";
 import { PRICING_HEADING } from "@/lib/constants";
-import { annualPrepayTotal, formatFoundersAvailability } from "@/lib/pricing";
+import {
+  annualPrepayTotal,
+  formatFoundersAvailability,
+  formatMiseEnPlacePuisMensuel,
+} from "@/lib/pricing";
 import { useState } from "react";
 
 type BillingCycle = "monthly" | "annual";
@@ -36,7 +40,7 @@ export function TpeAutomatisationPricing() {
           className="mt-8"
         />
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {TPE_DISPLAY_OFFERS.map((offer) => {
             const isCustom = offer.customOffer === true;
             const displayPrice = isCustom
@@ -60,13 +64,16 @@ export function TpeAutomatisationPricing() {
                   </>
                 ) : (
                   <>
-                    <p className="mt-2 font-mono text-sm text-muted">
-                      Setup {offer.setup.toLocaleString("fr-FR")} €
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}
                     </p>
-                    <p className="mt-1 font-mono text-2xl font-bold text-text">
-                      {displayPrice} €
-                      <span className="text-sm font-medium text-muted">{suffix}</span>
-                    </p>
+                    {cycle === "annual" ? (
+                      <p className="mt-1 font-mono text-2xl font-bold text-text">
+                        {displayPrice} €
+                        <span className="text-sm font-medium text-muted">{suffix}</span>
+                      </p>
+                    ) : null}
+                    <p className="mt-2 text-xs text-muted">{PRICING_HEADING.bannerLine}</p>
                   </>
                 )}
                 <p className="mt-3 flex-1 text-sm text-muted">{offer.blurb}</p>
@@ -88,6 +95,10 @@ export function TpeAutomatisationPricing() {
           <span className="font-semibold text-text">Places fondateur : </span>
           {TPE_FOUNDERS_NOTE}{" "}
           <span className="font-mono text-text">({formatFoundersAvailability()})</span>
+        </p>
+
+        <p className="mx-auto mt-8 max-w-[52ch] text-center text-sm text-muted">
+          {PRICING_HEADING.customFitFootnote}
         </p>
 
         <PricingProgramNotes />

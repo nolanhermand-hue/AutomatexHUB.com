@@ -13,7 +13,7 @@ export type CatalogAutomation = {
   title: string;
   tagline: string;
   target: "immo" | "btp" | "both";
-  formula: "essentiel" | "pro" | "full" | "depart";
+  formula: "declic" | "systeme" | "pilote";
   steps: AutomationStep[];
   impact?: string;
 };
@@ -25,7 +25,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Réponse lead en moins de 90 secondes",
     tagline: "Premier mail personnalisé avant la visite suivante.",
     target: "immo",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouveau lead SeLoger — M. Martin, 3P Flers · 185 000 €.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "spark", message: "Prénom, bien et source extraits pour le template.", type: "system", delay: 5 },
@@ -40,7 +40,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Relance J+1 sans réponse",
     tagline: "Si aucun signe de lecture avant demain matin.",
     target: "both",
-    formula: "essentiel",
+    formula: "systeme",
     steps: [
       { from: "Mail envoyé", to: "Automatex", icon: "mail", message: "Aucune ouverture ni clic sous 24 h.", type: "in", delay: 86400 },
       { from: "Automatex", to: "Moteur", icon: "bell", message: "Brouillon court : rappel bien + question fermée.", type: "system" },
@@ -54,7 +54,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Détection lead chaud",
     tagline: "Remontée prioritaire quand l’intérêt se confirme.",
     target: "immo",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "Web", to: "Automatex", icon: "users", message: "3e mail du même mail sur une même annonce.", type: "in" },
       { from: "Automatex", to: "Score", icon: "chart", message: "Score +30 : pré-qualifié à chaud.", type: "system", delay: 2 },
@@ -69,7 +69,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Tri « 7 familles »",
     tagline: "Boîte rangée selon vos étiquettes maison.",
     target: "both",
-    formula: "essentiel",
+    formula: "systeme",
     steps: [
       { from: "Gmail", to: "Automatex", icon: "inbox", message: "Entrant non classé analysé par expéditeur et mots-clés.", type: "in" },
       { from: "Automatex", to: "Labels", icon: "folder", message: "Classement : mandats / demandes / fournisseurs / urgent…", type: "system", delay: 3 },
@@ -82,7 +82,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Brouillons pour mails récurrents",
     tagline: "Mandat, estimation, demande de pièces : prêt à valider.",
     target: "both",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "Action", to: "Automatex", icon: "mail", message: "Modèle « demande d’estimation » déclenché.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "spark", message: "Champs dossier injectés (adresse, ref, contact).", type: "system" },
@@ -96,7 +96,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Alerte mail urgent non lu depuis +2h",
     tagline: "Une offre d'achat est arrivée. Si vous ne l'avez pas ouverte sous 2h, Telegram vous prévient.",
     target: "immo",
-    formula: "essentiel",
+    formula: "systeme",
     steps: [
       {
         from: "Automatex",
@@ -124,7 +124,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Classement Drive automatique",
     tagline: "Pièces renommées et rangées par affaire.",
     target: "both",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "Mail avec PJ", to: "Automatex", icon: "paperclip", message: "PDF diagnostics reçu sur Gmail.", type: "in" },
       { from: "Automatex", to: "Drive", icon: "folder", message: "Dossier `2026-Affaire_Paris-15` ciblé par ref annonce.", type: "system", delay: 5 },
@@ -139,7 +139,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Récap dossier complet en un message",
     tagline: 'Avant un rendez-vous notaire, vous tapez "recap Garcia". Tout est résumé sur Telegram en 30 secondes.',
     target: "immo",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       {
         from: "Vous",
@@ -166,7 +166,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Programme du matin 7 h 30",
     tagline: "Visites, rappels et leads prioritaires avant 10 h.",
     target: "both",
-    formula: "essentiel",
+    formula: "systeme",
     steps: [
       { from: "Agenda", to: "Automatex", icon: "calendar", message: "Lecture Google Calendar + CRM du jour.", type: "in" },
       { from: "Automatex", to: "Synthèse", icon: "spark", message: "Tri : rendez-vous, relances téléphoniques, urgences.", type: "system", delay: 10 },
@@ -180,7 +180,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Résumé du soir 19 h",
     tagline: "Offres, relances et anomalies du jour.",
     target: "both",
-    formula: "essentiel",
+    formula: "systeme",
     steps: [
       { from: "CRM + Mail", to: "Automatex", icon: "inbox", message: "Agrégation activité 8 h–19 h.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "chart", message: "Priorisation : 3 sujets max + retard CRM.", type: "system", delay: 15 },
@@ -194,7 +194,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Rapport mensuel direction",
     tagline: "Ventes signées, leads, délai moyen de réponse.",
     target: "both",
-    formula: "full",
+    formula: "pilote",
     steps: [
       { from: "CRM", to: "Automatex", icon: "database", message: "Export clos / en cours / perdus du mois.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "chart", message: "Calcul KPI + comparaison M-1.", type: "system", delay: 60 },
@@ -209,7 +209,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Silence acheteur",
     tagline: "Alerte quand un contact se coupe depuis X jours.",
     target: "immo",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "CRM", to: "Automatex", icon: "users", message: "Dernière interaction acheteur > J+10.", type: "in" },
       { from: "Automatex", to: "Règle", icon: "bell", message: "Seuil « silence » = 14 jours paramétrable.", type: "system" },
@@ -224,7 +224,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     tagline:
       "Un an après une vente, vous recevez un rappel. L'occasion de reprendre contact et générer un nouveau mandat.",
     target: "immo",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       {
         from: "Automatex",
@@ -243,7 +243,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Relance devis non répondu",
     tagline: "Chantier en attente : séquence J+2 / J+7.",
     target: "btp",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "Devis envoyé", to: "Automatex", icon: "file", message: "Statut « envoyé » sans retour 48 h.", type: "in", delay: 172800 },
       { from: "Automatex", to: "Moteur", icon: "mail", message: "Mail court : montant + planning équipe maintenu 7 jours.", type: "system" },
@@ -257,7 +257,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Note vocale → compte-rendu",
     tagline: "Après visite, le vendeur reçoit un résumé propre.",
     target: "immo",
-    formula: "full",
+    formula: "pilote",
     steps: [
       { from: "Votre micro", to: "Automatex", icon: "mic", message: "Vocal 90 s : points forts, objections.", type: "in" },
       { from: "Automatex", to: "Transcript", icon: "spark", message: "Texte structuré : contexte, synthèse, next step.", type: "system", delay: 30 },
@@ -272,7 +272,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Vocal chantier → ligne de devis",
     tagline: "Quantités et contraintes dictées → brouillon chiffrable.",
     target: "btp",
-    formula: "full",
+    formula: "pilote",
     steps: [
       { from: "Terrain", to: "Automatex", icon: "mic", message: "M2, accès camion, délais fournisseur énoncés.", type: "in" },
       { from: "Automatex", to: "Parseur", icon: "wrench", message: "Extraction unités + liste risques chantier.", type: "system", delay: 20 },
@@ -286,7 +286,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Appel manqué = SMS pro",
     tagline: "Le chef de chantier sait que vous rappelerez.",
     target: "btp",
-    formula: "essentiel",
+    formula: "systeme",
     steps: [
       { from: "Standard", to: "Automatex", icon: "phone", message: "Appel client non décroché (durée 0 s).", type: "in" },
       { from: "Automatex", to: "Règle", icon: "clock", message: "Attente 2 min pour éviter double envoi.", type: "system", delay: 120 },
@@ -300,7 +300,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Dictée vers agenda",
     tagline: "Créneaux et rappels sans toucher le clavier.",
     target: "both",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "Vocal", to: "Automatex", icon: "mic", message: "« Mardi 14 h réunion fourniture + rappel J-1 ».", type: "in" },
       { from: "Automatex", to: "NLP", icon: "spark", message: "Date/heure normalisées + fuseau Europe/Paris.", type: "system", delay: 8 },
@@ -314,7 +314,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Synthèse hebdomadaire des dossiers",
     tagline: "Prospects actifs, visites et relances en retard.",
     target: "both",
-    formula: "pro",
+    formula: "pilote",
     steps: [
       { from: "CRM", to: "Automatex", icon: "database", message: "Vue pipe vendredi 17 h.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "chart", message: "Retards, taux conversion étape → étape.", type: "system", delay: 45 },
@@ -328,7 +328,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     title: "Indicateurs temps réel sur Telegram",
     tagline: "Nouvelle vente ou objectif sous le seuil : vous voyez tout.",
     target: "both",
-    formula: "full",
+    formula: "pilote",
     steps: [
       { from: "CRM / Caisse", to: "Automatex", icon: "bolt", message: "Événement : compromis signé ou CA jour.", type: "in" },
       { from: "Automatex", to: "Calcul", icon: "chart", message: "Recalcul % objectif mensuel.", type: "system", delay: 1 },
