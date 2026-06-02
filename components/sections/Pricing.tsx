@@ -173,10 +173,10 @@ export function Pricing() {
                     {offer.roiLine}
                   </p>
 
-                  {/* D5 — Garantie inline dans chaque carte */}
+                  {/* D5 — Réassurance inline dans chaque carte */}
                   {!isCustom ? (
                     <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
-                      <span aria-hidden>🛡</span> 30 jours satisfait ou remboursé
+                      <span aria-hidden>📩</span> Sans engagement · résiliable en 1 mail
                     </p>
                   ) : null}
 

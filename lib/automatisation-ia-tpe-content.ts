@@ -155,7 +155,7 @@ export const TPE_INCLUDED_ALL_PLANS = [
   "Point téléphonique mensuel avec Nolan (20 min minimum)",
   "Ajustements en continu — sans surcoût",
   `${SOVEREIGNTY_TRUST_LINE} · ${NAP.hostingProvider}`,
-  "30 jours satisfait ou remboursé — un seul mail",
+  "Sans engagement — résiliable en un mail",
   "Rapport d'activité mensuel ou trimestriel (selon formule)",
   "Tarif bloqué à partir du 13ᵉ mois (−5 % · programme fidélité)",
   "Résiliable à tout moment — aucun engagement",
@@ -268,7 +268,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Peut-on arrêter à tout moment ?",
-    a: "Oui. Un mail suffit. 30 premiers jours : satisfait ou remboursé.",
+    a: "Oui. Un mail suffit. Sans engagement, résiliable à tout moment.",
   },
   {
     q: "Automatex intervient-il hors de l'Orne ?",

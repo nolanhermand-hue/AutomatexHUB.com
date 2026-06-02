@@ -53,7 +53,7 @@
 | CSS | Tailwind v4 (`@import "tailwindcss"` dans `app/globals.css`) + `app/animations.css` |
 | Animations lourdes | GSAP (idle), Lottie (lazy), pas de Three.js |
 | Images | `images.unoptimized: true` (export statique) · démos **WebP** + PNG généré build |
-| Forms | **Netlify Forms** (pas d’API Next `/api/*`) |
+| Forms | Soumission unifiée via **WebHook Formulaire prospects** (`lib/prospect-webhook.ts`) |
 | Analytics | Plausible + Google Analytics (composants `components/seo/`) |
 
 **Build :**
@@ -204,7 +204,7 @@ Mega-menu : `lib/mega-nav-data.ts`
 
 - `BOOKING_CTA_LABEL` = « Réserver mon appel avec Nolan »
 - Hub unifié : « Nolan me rappelle sous 24 h » (`HubEntry`)
-- Garantie : **30 j satisfait ou remboursé** · résiliation **1 mail**
+- Cadre commercial : **Sans engagement** · résiliation **1 mail**
 
 ---
 
@@ -320,6 +320,7 @@ npm run demos:static
 |----------|--------|
 | `NEXT_PUBLIC_SITE_URL` | Canonique (défaut `https://automatex-hub.com`) |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Meta GSC |
+| `NEXT_PUBLIC_WEBHOOK_FORMULAIRE_PROSPECTS_URL` | URL du **WebHook Formulaire prospects** (POST JSON) |
 
 ---
 

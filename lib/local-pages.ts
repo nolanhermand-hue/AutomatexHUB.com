@@ -44,7 +44,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
         title: "Mise en place depuis Flers",
         paragraphs: [
           `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai annoncé : 48 heures entre la démo et la première réponse live. ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé avec d'autres mandataires.`,
-          "Garantie 30 jours satisfait ou remboursé sur les packs Déclic, Système et Pilote. Onboardings limités à quatre par mois pour garder un suivi humain.",
+          "Sans engagement, résiliable en 1 mail sur les packs Déclic, Système et Pilote. Onboardings limités à quatre par mois pour garder un suivi humain.",
         ],
       },
       {
@@ -61,7 +61,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-alencon",
     metaTitle: "Mandataires immobiliers à Alençon | Automatex Normandie",
     metaDescription:
-      "Ne perdez plus de leads à Alençon et dans l'Orne. Réponse immédiate pour mandataires indépendants. Audit 20 min, satisfait ou remboursé 30 jours.",
+      "Ne perdez plus de leads à Alençon et dans l'Orne. Réponse immédiate pour mandataires indépendants. Audit 20 min, sans engagement.",
     h1: "Mandataires immobiliers à Alençon : réponse aux leads pendant vos visites",
     city: "Alençon",
     areaServedLabel: "Alençon, agglomération, Orne (61)",
@@ -103,7 +103,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-argentan",
     metaTitle: "Mandataires à Argentan et Suisse normande | Automatex",
     metaDescription:
-      `Leads immobiliers à Argentan : réponse en 2 min, tri des mails, documents classés. Pour mandataires Normandie. ${SOVEREIGNTY_TRUST_LINE}. 30 jours garantis.`,
+      `Leads immobiliers à Argentan : réponse en 2 min, tri des mails, documents classés. Pour mandataires Normandie. ${SOVEREIGNTY_TRUST_LINE}. Sans engagement.`,
     h1: "Mandataires immobiliers à Argentan et en Suisse normande",
     city: "Argentan",
     areaServedLabel: "Argentan, Suisse normande, Orne et Calvados limitrophe",
@@ -135,7 +135,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
         title: "Passer à l'action",
         paragraphs: [
           "Audit gratuit de 20 minutes, sans engagement. Installation cible en 48 h après validation du périmètre (boîtes mail, modèles de réponse, règles de qualification).",
-          "Retour à l'accueil pour comparer les formules et la garantie étendue affichée sur le site.",
+          "Retour à l'accueil pour comparer les formules et le cadre d'accompagnement affiché sur le site.",
         ],
       },
     ],

@@ -17,10 +17,10 @@ export function FeatureComparison() {
       <div className="mx-auto max-w-content">
         <p className="label-micro text-faint">Comparatif</p>
         <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">
-          Trois offres, une seule garantie.
+          Trois offres, un même cadre clair.
         </h2>
         <p className="mt-3 max-w-readable text-sm text-muted md:text-base">
-          Toutes les formules incluent la même garantie de 30 jours et l&apos;onboarding offert.
+          Toutes les formules incluent le même socle sans engagement, résiliable en 1 mail, avec onboarding offert.
           Voici exactement ce que chaque offre fait pour vous.
         </p>
 

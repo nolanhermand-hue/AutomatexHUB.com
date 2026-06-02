@@ -25,12 +25,12 @@ export const ABOUT_PAGE = {
     "Nolan Hermand a passé des mois à échanger avec des mandataires indépendants et des artisans du BTP dans l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
     "Le constat revient souvent : les leads ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
     "Automatex Hub est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec vous.",
-    "Si ça ne fonctionne pas pour vous dans les 30 premiers jours, vous êtes remboursé — frais d'installation et premier mois — sans discussion.",
+    "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
   ],
   stats: [
     { value: "< 2 min", label: "Délai de réponse cible (leads)" },
     { value: "48 h", label: "Mise en place garantie" },
-    { value: "30 j", label: "Satisfait ou remboursé" },
+    { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
   directContact: "Une question avant de vous lancer ? Appelez :",
   storyHeading: "Pourquoi Automatex existe",
@@ -40,7 +40,7 @@ export const ABOUT_PAGE = {
     "J'ai 19 ans. Je n'ai pas 10 ans d'expérience dans l'immobilier ou le BTP. Ce que j'ai, c'est la capacité à construire des systèmes qui fonctionnent, à rester joignable, et à m'adapter à la réalité terrain — pas à un PowerPoint.",
   ],
   storyFootnote:
-    "Si ça ne fonctionne pas dans les 30 premiers jours, vous êtes remboursé. C'est la seule garantie honnête que je puisse vous donner au lancement.",
+    "Sans engagement et résiliable en un mail : vous gardez la main à tout moment.",
   concreteHeading: "Concrètement, ce que je fais",
   concreteSteps: [
     {

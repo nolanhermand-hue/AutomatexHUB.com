@@ -36,7 +36,6 @@ async function generate() {
     throw new Error(`Missing ${masterPng} — source favicon (hors public/, non déployée).`);
   }
 
-  const symbolOnBg = fs.readFileSync(path.join(dir, "logo-orbit-symbol-on-bg.svg"));
   const lockupLight = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-light.svg"));
   const lockupDark = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-dark.svg"));
   const ogSvg = fs.readFileSync(path.join(dir, "og-image.svg"));
@@ -63,7 +62,7 @@ async function generate() {
     .toFile(path.join(dir, "logo-orbit-lockup-dark@2x.png"));
   console.log("✓ logo-orbit-lockup-dark.png + @2x");
 
-  await sharp(symbolOnBg).resize(128, 128).png().toFile(path.join(dir, "logo-orbit-symbol-128.png"));
+  await sharp(masterPng).resize(128, 128).png().toFile(path.join(dir, "logo-orbit-symbol-128.png"));
   console.log("✓ logo-orbit-symbol-128.png");
 
   const ogOutBrand = path.join(dir, "og-image.png");

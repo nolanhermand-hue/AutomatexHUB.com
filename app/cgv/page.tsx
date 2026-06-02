@@ -14,7 +14,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Conditions générales de vente — Automatex",
   description:
-    "CGV Automatex : packs Déclic, Système, Pilote, paiement, garantie 30 jours, résiliation en ligne, sous-traitance RGPD, droit français.",
+    "CGV Automatex : packs Déclic, Système, Pilote, paiement, résiliation en ligne, sous-traitance RGPD, droit français.",
   alternates: { canonical: `${SITE_URL}/cgv` },
 };
 
@@ -85,8 +85,8 @@ export default function CgvPage() {
       <LegalSection title="Article 5 — Délai">
         <LegalP>
           Service opérationnel sous 48 h ouvrées après l&apos;appel, si accès Gmail, Telegram et
-          Drive fournis. Retard imputable au Prestataire &gt; 5 jours ouvrés : remboursement des
-          frais d&apos;installation possible.
+          Drive fournis. Retard imputable au Prestataire &gt; 5 jours ouvrés : avoir sur les frais
+          d&apos;installation possible.
         </LegalP>
       </LegalSection>
 
@@ -113,12 +113,11 @@ export default function CgvPage() {
         />
       </LegalSection>
 
-      <LegalSection title="Article 8 — Garantie 30 jours">
+      <LegalSection title="Article 8 — Sans engagement">
         <LegalP>
-          À compter de l&apos;activation, remboursement intégral des frais d&apos;installation et
-          du premier mois si le service ne convient pas. Demande par email à {c.email} sans motif,
-          sans formulaire. Remboursement sous 7 jours ouvrés. Données restituées ou effacées sous 7
-          jours ouvrés.
+          Les formules sont sans engagement. Le Client peut arrêter à tout moment, avec effet en fin
+          de mois en cours, sur simple demande par email à {c.email}. Données restituées ou effacées
+          sous 7 jours ouvrés.
         </LegalP>
       </LegalSection>
 

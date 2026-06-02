@@ -5,7 +5,6 @@ import { Agitation } from "@/components/sections/Agitation";
 import { Solution } from "@/components/sections/Solution";
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
 import { Pricing } from "@/components/sections/Pricing";
-import { GuaranteeXL } from "@/components/sections/GuaranteeXL";
 import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { LocalGeoLinks } from "@/components/sections/LocalGeoLinks";
@@ -40,7 +39,6 @@ export function ImmobilierHome() {
       />
       <RoiCounter variant="immobilier" />
       <Pricing />
-      <GuaranteeXL />
       <DataTrustSection />
       <FAQ />
       <LocalGeoLinks />

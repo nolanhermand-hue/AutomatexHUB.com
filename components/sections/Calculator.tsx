@@ -160,7 +160,7 @@ export function Calculator() {
           className="font-semibold text-text underline-offset-4 hover:underline"
           data-cursor="link"
         >
-          Nolan les récupère ou vous rembourse →
+          Nolan les récupère avec vous →
         </button>
       </p>
     </section>

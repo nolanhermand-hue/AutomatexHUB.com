@@ -16,6 +16,6 @@ export const ACCOMPANIMENT_CONTINUITY = {
     "Arrêt : un mail suffit, effet fin de mois. Données restituées et effacées sous 7 jours (voir CGV).",
     "Vos accès : vous gardez la propriété de vos mails, Drive et numéros — on configure, on n'enferme pas.",
     "Continuité : Nolan documente chaque installation (SIRET 103 208 054 00017). En cas d'imprévu, vous gardez vos scénarios exportables.",
-    "Garantie 30 jours satisfait ou remboursé — installation et premier mois, sans discussion.",
+    "Sans engagement : arrêt possible en un mail.",
   ],
 } as const;

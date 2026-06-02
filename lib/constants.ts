@@ -70,10 +70,10 @@ export const META = {
   title:
     "Automatex — Mandataires IAD SAFTI Normandie : ne perdez plus un lead à 3 500 €",
   description:
-    "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. 30 jours satisfait ou remboursé. IA française · Automations UE · RGPD.",
+    "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. Sans engagement, résiliable en 1 mail. IA française · Automations UE · RGPD.",
   ogTitle: "Ne perdez plus jamais un lead à 3 500 € | Automatex Normandie",
   ogDescription:
-    "Automatex répond à vos leads en 2 min pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. IA française · Automations UE · RGPD · 30 j satisfait ou remboursé.",
+    "Automatex répond à vos leads en 2 min pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. IA française · Automations UE · RGPD · Sans engagement.",
 } as const;
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
@@ -174,7 +174,7 @@ export const HERO_COPY = {
   badgeNoCommit: "Sans engagement",
   h1: "Ne perdez plus jamais un lead à 3 500 €.",
   subtitle:
-    "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux leads en 2 min pendant vos visites. 30 jours satisfait ou remboursé.",
+    "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux leads en 2 min pendant vos visites. Sans engagement, résiliable en 1 mail.",
   /** A3 + B13 — CTA unique primaire, ≤ 5 mots, verbe d'action */
   ctaPrimary: BOOKING_CTA_LABEL,
   /** Lien secondaire dégradé en texte simple — pas un bouton */
@@ -330,8 +330,8 @@ export const ACCOMPANIMENT_COPY = {
     },
     {
       step: "Mois 1",
-      title: "30 jours serrés",
-      body: "Ajustements du ton, des relances et des notifications. Garantie satisfait ou remboursé.",
+      title: "Premier mois serré",
+      body: "Ajustements du ton, des relances et des notifications. Suivi humain rapproché.",
     },
     {
       step: "Trimestres 2 à 4",
@@ -363,23 +363,6 @@ export const ACCOMPANIMENT_COPY = {
   },
   phoneCta: "Appeler Nolan",
   cta: BOOKING_CTA_LABEL,
-} as const;
-
-/** B6 / C3 / E1 — Garantie 14-30 jours, formulée en toutes lettres, visible 3x */
-export const GUARANTEE_COPY = {
-  eyebrow: "Risque inversé",
-  h2: "30 jours satisfait ou remboursé. Sans condition.",
-  bullets: [
-    "Remboursement sous 7 jours ouvrés",
-    "Aucun frais de désinstallation",
-    "Vos données vous sont restituées et effacées",
-    "Aucune question n'est exigée",
-  ],
-  body:
-    "Si Automatex ne change pas votre quotidien dans les 30 premiers jours, vous êtes remboursé intégralement — frais d'installation et premier mois. Sans appel commercial, sans formulaire, sans discussion. Un seul mail, et c'est réglé sous 7 jours ouvrés.",
-  cta: BOOKING_CTA_LABEL,
-  microNote:
-    "Garantie applicable à toutes les offres, sans engagement de durée.",
 } as const;
 
 export const FINAL_CTA_HUMAN_LINE =
@@ -476,8 +459,8 @@ export const PRICING_HEADING = {
   monthlySuffix: "/mois",
   annualSuffix: "/an",
   bannerLine:
-    "Sans engagement · Résiliable en 1 mail · 30 j satisfait ou remboursé",
-  guaranteeLine: "30 jours satisfait ou remboursé · Onboarding offert",
+    "Sans engagement · Résiliable en 1 mail · Onboarding offert",
+  guaranteeLine: "Sans engagement · Résiliable en 1 mail",
   customFitFootnote: "Besoin hors-cadre ? Devis sur-mesure.",
   surMesurePriceLabel: "Prix sur devis",
   surMesureIntro: "Entretien de 30 min pour cadrer périmètre, budget et priorités.",
@@ -588,7 +571,7 @@ export const OFFERS: PricingOffer[] = [
     benefits: [
       "Périmètre plus léger ou plus complet que les formules standards",
       "Devis transparent après l’entretien de cadrage",
-      "Même garantie 30 jours une fois la formule validée",
+      "Même flexibilité : sans engagement, résiliable en 1 mail",
       SOVEREIGNTY_TRUST_LINE + " · vos comptes restent les vôtres",
     ],
     roiLine: "Idéal si vous hésitez entre deux formules ou si votre activité a des besoins spécifiques.",
@@ -610,7 +593,7 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
   { feature: "Réponse aux leads < 2 min", declic: true, systeme: true, pilote: true },
   { feature: "Notification téléphone immédiate", declic: true, systeme: true, pilote: true },
   { feature: "Mise en place en 48 h", declic: true, systeme: true, pilote: true },
-  { feature: "30 jours satisfait ou remboursé", declic: true, systeme: true, pilote: true },
+  { feature: "Sans engagement · Résiliable en 1 mail", declic: true, systeme: true, pilote: true },
   { feature: "Onboarding offert", declic: true, systeme: true, pilote: true },
   {
     feature: "Suivi humain 12 mois (bilan trimestriel)",
@@ -666,7 +649,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Et si je veux arrêter ?",
     answer:
-      "Vous êtes libre. Aucun engagement de durée, résiliable en un mail. Si vous arrêtez dans les 30 premiers jours, vous êtes remboursé intégralement — sans appel commercial, sans formulaire, sans question. Vos données vous sont restituées et effacées sous 7 jours.",
+      "Vous êtes libre. Aucun engagement de durée, résiliable en un mail. Vos données vous sont restituées et effacées sous 7 jours.",
   },
   {
     question: "Mon CRM réseau (Playiad, Omega) est fermé. Ça marche quand même ?",
@@ -676,7 +659,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "J'ai déjà essayé des outils qui n'ont pas marché. Pourquoi ce serait différent ?",
     answer:
-      "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous disposez de 30 jours satisfait ou remboursé pour vérifier le résultat sur votre propre activité.",
+      "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous restez sans engagement, résiliable en un mail.",
   },
   {
     question: "J'ai mes habitudes — je travaille comme ça depuis 20 ans.",
@@ -686,7 +669,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Il a 19 ans — c'est suffisamment sérieux ?",
     answer:
-      "Nolan a 19 ans. Il a aussi un SIRET (103 208 054 00017), une adresse à Flers, et une garantie 30 jours satisfait ou remboursé. Le système est testé sur des scénarios réels avant que vous ne signiez.",
+      "Nolan a 19 ans. Il a aussi un SIRET (103 208 054 00017), une adresse à Flers, et un système testé sur des scénarios réels avant que vous ne signiez.",
   },
   {
     question: "En combien de temps un lead non rappelé part-il à la concurrence ?",
@@ -728,7 +711,7 @@ export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: strin
   { title: `🇪🇺 ${SOVEREIGNTY_TRUST_LINE}`, subtitle: "N8N Francfort · Mistral Paris" },
   { title: "🔒 Conforme RGPD", subtitle: "Données souveraines · Jamais revendues" },
   { title: "✋ Sans engagement", subtitle: "Résiliable en 1 mail · Immédiatement" },
-  { title: "🛡 30 j satisfait ou remboursé", subtitle: "Sans condition · Un seul mail suffit" },
+  { title: "📩 Résiliable en 1 mail", subtitle: "Sans engagement · Aucun verrou" },
   { title: "⚡ Opérationnel en 48 h", subtitle: "Aucun logiciel à installer" },
   { title: "🔑 Vous restez propriétaire", subtitle: "Vos données · Vos outils · Vos décisions" },
 ] as const;
@@ -753,7 +736,7 @@ export const CONTACT_COPY = {
   formFooter:
     "Un seul appel. Pas de relance automatique. Nolan, Flers (61).",
   resiliationSubmitLabel: "Envoyer ma demande de résiliation",
-  badges: [SOVEREIGNTY_TRUST_LINE, "RGPD", "30 j satisfait ou remboursé", "Sans engagement"],
+  badges: [SOVEREIGNTY_TRUST_LINE, "RGPD", "Résiliable en 1 mail", "Sans engagement"],
 } as const;
 
 export const NETWORK_OPTIONS = [
@@ -834,7 +817,7 @@ export const ABOUT_FOUNDER = {
   stats: [
     { value: "< 2 min", label: "Délai de réponse moyen" },
     { value: "48 h", label: "Mise en place garantie" },
-    { value: "30 j", label: "Satisfait ou remboursé" },
+    { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
   /** E10 — téléphone cliquable contact direct fondateur */
   directContact: "Une question avant de vous lancer ? Appelez Nolan : 06 45 38 42 33",

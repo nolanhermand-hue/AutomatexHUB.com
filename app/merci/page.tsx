@@ -45,7 +45,7 @@ export default function MerciPage() {
             <div>
               <p className="font-semibold text-text">Mise en route en 48 h si vous validez</p>
               <p className="mt-1 text-sm text-muted">
-                Sans engagement. Garantie 30 jours satisfait ou remboursé sur les formules.
+                Sans engagement. Résiliable en 1 mail sur les formules.
               </p>
             </div>
           </li>

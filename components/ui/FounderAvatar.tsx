@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-/** Fichier versionné ; ajouter `nolan-photo.webp` ici pour une photo réelle (optionnel). */
-const FOUNDER_AVATAR_SRC = "/assets/brand/founder-avatar.svg";
+/** Source de vérité avatar fondateur (photo réelle) */
+const FOUNDER_AVATAR_SRC = "/assets/brand/founder-avatar.webp";
 
 type FounderAvatarProps = {
   size?: number;
@@ -39,7 +39,7 @@ function FounderAvatarPlaceholder({
 }
 
 /**
- * Avatar fondateur (SVG par défaut). Photo WebP optionnelle si déposée sous le même dossier brand.
+ * Avatar fondateur (photo WebP) avec fallback placeholder si échec de chargement.
  */
 export function FounderAvatar({ size = 48, className = "", priority = false }: FounderAvatarProps) {
   const [failed, setFailed] = useState(false);

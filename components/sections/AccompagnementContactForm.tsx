@@ -1,9 +1,40 @@
 "use client";
 
 import { trackFormSubmitted } from "@/lib/analytics";
+import { submitProspectFromFormData } from "@/lib/prospect-webhook";
+import { ProspectHoneypotField } from "@/components/ui/ProspectHoneypotField";
+import { useState } from "react";
 
 /** C07 — formulaire direct sur /accompagnement. */
 export function AccompagnementContactForm() {
+  const [pending, setPending] = useState(false);
+  const [submitFeedback, setSubmitFeedback] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (pending) return;
+    setPending(true);
+    setSubmitFeedback("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const result = await submitProspectFromFormData({
+      formData,
+      formName: "contact-accompagnement",
+      variant: "accompagnement",
+    });
+
+    if (!result.ok) {
+      setSubmitFeedback(result.error);
+      setPending(false);
+      return;
+    }
+
+    if (!result.honeypot) trackFormSubmitted();
+    setSubmitFeedback("Merci, vos informations sont bien envoyées.");
+    window.location.assign("/merci");
+  };
+
   return (
     <section id="contact" className="mt-16 border-t border-border pt-16">
       <h2 className="font-heading text-2xl text-text">
@@ -18,15 +49,13 @@ export function AccompagnementContactForm() {
         name="contact-accompagnement"
         method="POST"
         data-netlify="true"
-        data-netlify-honeypot="hp-field"
+        data-netlify-honeypot="company_website"
         className="relative mx-auto mt-8 max-w-xl space-y-4"
         action="/merci"
-        onSubmit={() => trackFormSubmitted()}
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact-accompagnement" />
-        <div aria-hidden="true" className="hidden">
-          <input name="hp-field" tabIndex={-1} autoComplete="off" />
-        </div>
+        <ProspectHoneypotField />
 
         <div>
           <label htmlFor="acc-prenom" className="block text-sm font-medium text-text">
@@ -82,17 +111,21 @@ export function AccompagnementContactForm() {
 
         <button
           type="submit"
+          disabled={pending}
           className="btn-bracket btn-bracket-primary mt-2 w-full justify-center"
         >
-          Nolan me rappelle sous 24 h →
+          {pending ? "Envoi en cours…" : "Nolan me rappelle sous 24 h →"}
         </button>
+        {submitFeedback ? (
+          <p role="status" className="text-center text-xs text-muted">
+            {submitFeedback}
+          </p>
+        ) : null}
 
         <p className="text-center text-xs text-faint">
           Démo gratuite · Sans engagement · Basé à Flers, Orne
         </p>
-        <p className="mt-1.5 text-center text-xs text-muted">
-          30 jours satisfait ou remboursé — un seul mail suffit
-        </p>
+        <p className="mt-1.5 text-center text-xs text-muted">Résiliable en un mail, sans engagement</p>
       </form>
     </section>
   );

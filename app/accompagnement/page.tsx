@@ -38,7 +38,7 @@ export default function AccompagnementPage() {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <span className={ACCOMP_PILL_ACTIVE}>Packs Déclic · Système · Pilote</span>
           <span className={ACCOMP_PILL}>Sur mesure · prix sur devis</span>
-          <span className={ACCOMP_PILL}>30j satisfait ou remboursé</span>
+          <span className={ACCOMP_PILL}>Sans engagement · résiliable en 1 mail</span>
         </div>
 
         <div className="mt-8 card border-primary/30 p-6">

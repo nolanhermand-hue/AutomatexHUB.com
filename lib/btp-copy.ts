@@ -204,7 +204,7 @@ export const BTP_FAQ = {
     },
     {
       q: "Il a 19 ans — c'est suffisamment sérieux ?",
-      a: "Juste : Nolan a 19 ans. Ce qu'il a aussi, c'est un SIRET (103 208 054 00017), une adresse à Flers, un système testé sur des scénarios réels. Et une garantie : si ça ne fonctionne pas dans les 30 premiers jours, vous êtes remboursé sans question.",
+      a: "Juste : Nolan a 19 ans. Ce qu'il a aussi, c'est un SIRET (103 208 054 00017), une adresse à Flers, un système testé sur des scénarios réels.",
     },
     {
       q: "Et si j'ai un problème un vendredi soir ?",

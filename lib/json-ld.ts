@@ -1,6 +1,6 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
 import { TPE_FAQ, TPE_PAGE_PATH } from "@/lib/automatisation-ia-tpe-content";
-import { FAQ_ITEMS, GUARANTEE_COPY, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS, } from "@/lib/constants";
+import { FAQ_ITEMS, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS } from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 
 export function buildBreadcrumbList(
@@ -185,17 +185,6 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           "@type": "OfferCatalog",
           name: "Formules Automatex pour mandataires immobiliers",
           itemListElement: offerCatalog,
-        },
-        // Garantie comme offre additionnelle structurée
-        makesOffer: {
-          "@type": "Offer",
-          name: GUARANTEE_COPY.h2,
-          description: GUARANTEE_COPY.body,
-          eligibleDuration: {
-            "@type": "QuantitativeValue",
-            value: 30,
-            unitCode: "DAY",
-          },
         },
       },
       // Person — fondateur

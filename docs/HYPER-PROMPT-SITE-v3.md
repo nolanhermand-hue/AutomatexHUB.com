@@ -36,7 +36,7 @@
 | **Tous** | Sur mesure | devis | devis | |
 | Sources | `OFFERS` · `BTP_OFFERS` · `TPE_DISPLAY_OFFERS` | | | |
 
-Garantie : **30 j · satisfait ou remboursé** · résiliation **1 mail**. Fidélité : `lib/pricing.ts` (−15 % annuel · M13 −5 % · M37 −15 %).
+Cadre : **sans engagement** · résiliation **1 mail**. Fidélité : `lib/pricing.ts` (−15 % annuel · M13 −5 % · M37 −15 %).
 
 ### Mots interdits **CI** (`scripts/check-forbidden-words.mjs`)
 

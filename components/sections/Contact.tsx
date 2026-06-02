@@ -3,6 +3,8 @@
 import { trackFormSubmitted } from "@/lib/analytics";
 import { BTP_CONTACT, BTP_METIERS } from "@/lib/btp-copy";
 import { CONTACT_COPY, FORM_NAME, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
+import { submitProspectFromFormData } from "@/lib/prospect-webhook";
+import { ProspectHoneypotField } from "@/components/ui/ProspectHoneypotField";
 import { readUtm } from "@/lib/utm";
 import { useEffect, useState } from "react";
 
@@ -30,6 +32,7 @@ function fieldClass(touched: boolean, value: string, required: boolean) {
 export function Contact({ variant = "immobilier" }: ContactProps) {
   const isBtp = variant === "btp";
   const [pending, setPending] = useState(false);
+  const [submitFeedback, setSubmitFeedback] = useState<string>("");
   const [touched, setTouched] = useState(false);
   const [fields, setFields] = useState({
     prenom: "",
@@ -60,8 +63,11 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     return () => window.removeEventListener("hashchange", parseHash);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (pending) return;
     setTouched(true);
+    setSubmitFeedback("");
 
     if (!fields.prenom || !fields.telephone) {
       e.preventDefault();
@@ -69,22 +75,24 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     }
 
     if (!isBtp && !isResiliation && !fields.metier) {
-      e.preventDefault();
       return;
     }
 
     setPending(true);
-    trackFormSubmitted();
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
-    void fetch("/.netlify/functions/notify", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }).catch(() => {});
+    const formData = new FormData(form);
+    const result = await submitProspectFromFormData({ formData, formName: FORM_NAME, variant });
 
-    setTimeout(() => setPending(false), 10000);
+    if (!result.ok) {
+      setSubmitFeedback(result.error);
+      setPending(false);
+      return;
+    }
+
+    if (!result.honeypot) trackFormSubmitted();
+    setSubmitFeedback("Merci, vos informations sont bien envoyées.");
+    window.location.assign("/merci");
   };
 
   const isResiliation = sujetHint === "resiliation";
@@ -115,7 +123,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
           method="POST"
           action="/merci"
           data-netlify="true"
-          data-netlify-honeypot="hp-field"
+          data-netlify-honeypot="company_website"
           className="contact-form relative mx-auto mt-10 max-w-xl space-y-6 rounded-xl border border-border bg-bg-card p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:p-8"
           onSubmit={handleSubmit}
         >
@@ -127,11 +135,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
           {Object.entries(utm).map(([k, v]) => (
             <input key={k} type="hidden" name={k} value={v} />
           ))}
-          <p className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
-            <label>
-              <input name="hp-field" tabIndex={-1} autoComplete="off" />
-            </label>
-          </p>
+          <ProspectHoneypotField />
           <div className="flex items-center justify-between gap-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-accent">
               {CONTACT_COPY.formTitle}
@@ -392,6 +396,11 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               CONTACT_COPY.submitLabel
             )}
           </button>
+          {submitFeedback ? (
+            <p role="status" className="text-center text-xs text-muted">
+              {submitFeedback}
+            </p>
+          ) : null}
 
           <p className="form-trust text-center text-sm text-muted">
             Un seul appel. Pas de relance. Nolan, Flers (61).
@@ -402,7 +411,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
           </p>
           {!isResiliation ? (
             <p className="text-center text-xs text-muted">
-              30 jours satisfait ou remboursé — un seul mail suffit
+              Sans engagement — résiliable en un mail
             </p>
           ) : null}
 

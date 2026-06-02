@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Artisans BTP Orne · SMS automatique + devis vocal | Automatex Hub",
     description:
-      "Un client appelle pendant votre chantier ? Il reçoit un SMS en 90 secondes. Nolan Hermand, Flers (61). Hébergé France · RGPD · 30j satisfait ou remboursé.",
+      "Un client appelle pendant votre chantier ? Il reçoit un SMS en 90 secondes. Nolan Hermand, Flers (61). Hébergé France · RGPD · Sans engagement.",
     url: `${SITE_URL}/btp`,
     type: "website",
     locale: "fr_FR",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Artisans BTP Orne · SMS automatique + devis vocal | Automatex Hub",
     description:
-      "Un client appelle pendant votre chantier ? Il reçoit un SMS en 90 secondes. Nolan Hermand, Flers (61). Hébergé France · RGPD · 30j satisfait ou remboursé.",
+      "Un client appelle pendant votre chantier ? Il reçoit un SMS en 90 secondes. Nolan Hermand, Flers (61). Hébergé France · RGPD · Sans engagement.",
     images: [ogImage],
   },
   alternates: { canonical: `${SITE_URL}/btp` },
