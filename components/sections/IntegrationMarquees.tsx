@@ -136,7 +136,7 @@ function MarqueeSegment({
 }) {
   return (
     <div
-      className="flex shrink-0 items-center"
+      className="flex shrink-0 items-center pr-6 md:pr-8"
       aria-hidden={ariaHidden ? true : undefined}
     >
       {children}
@@ -149,13 +149,13 @@ function renderBand1Row(keyPrefix: string) {
     <Fragment key={`${keyPrefix}-${item.name}-${index}`}>
       {index > 0 ? (
         <span
-          className="mx-[18px] shrink-0 select-none text-border"
+          className="mx-3 shrink-0 select-none text-border md:mx-4"
           aria-hidden
         >
           ·
         </span>
       ) : null}
-      <div className="flex shrink-0 flex-col items-center justify-center px-3 md:px-0">
+      <div className="flex shrink-0 flex-col items-center justify-center px-2 md:px-3">
         <Band1Logo item={item} />
         <span className="mt-0.5 max-w-[5.5rem] truncate text-center text-[9px] font-medium leading-none text-muted md:max-w-[6.5rem] md:text-[10px]">
           {item.name}
@@ -170,13 +170,13 @@ function renderBand2Row(keyPrefix: string) {
     <Fragment key={`${keyPrefix}-${item.name}-${index}`}>
       {index > 0 ? (
         <span
-          className="mx-[18px] shrink-0 select-none text-border"
+          className="mx-3 shrink-0 select-none text-border md:mx-4"
           aria-hidden
         >
           ·
         </span>
       ) : null}
-      <div className="flex shrink-0 flex-col items-center justify-center px-3 md:px-0">
+      <div className="flex shrink-0 flex-col items-center justify-center px-2 md:px-3">
         <Band2Logo item={item} />
         <span className="mt-0.5 max-w-[5.5rem] truncate text-center text-[9px] font-medium leading-none text-muted md:max-w-[6.5rem] md:text-[10px]">
           {item.name}

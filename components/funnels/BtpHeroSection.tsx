@@ -1,4 +1,3 @@
-import { LazyHeroMotionBackdrop } from "@/components/motion/LazyHeroMotionBackdrop";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { BTP_HERO } from "@/lib/btp-copy";
 import Link from "next/link";
@@ -6,7 +5,6 @@ import Link from "next/link";
 export function BtpHeroSection() {
   return (
     <section id="hero" className="relative border-b border-border bg-night px-gutter pb-12 pt-[88px] md:pt-[100px]">
-      <LazyHeroMotionBackdrop motionId="hero-background-btp" />
       <div className="relative mx-auto max-w-content">
         <h1 className="font-heading text-[clamp(1.75rem,5vw,3rem)] font-bold leading-[1.1] text-text">
           {BTP_HERO.h1}
