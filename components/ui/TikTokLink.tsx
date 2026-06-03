@@ -18,7 +18,7 @@ export function TikTokLink({ className, size = 24 }: TikTokLinkProps) {
       aria-label={TIKTOK_PROFILE_ARIA}
       title="TikTok — Automatex"
       className={cn(
-        "relative z-10 inline-flex shrink-0 cursor-pointer items-center justify-center text-text",
+        "relative z-10 inline-flex shrink-0 cursor-pointer items-center justify-center",
         "transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
         className,
       )}

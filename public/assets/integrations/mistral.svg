@@ -1,4 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mistral">
-  <rect width="64" height="64" rx="12" fill="#1a1a2e"/>
   <path fill="#f97316" d="M16 44V20h8l8 14 8-14h8v24h-7V33l-7 11h-6l-7-11v11z"/>
 </svg>

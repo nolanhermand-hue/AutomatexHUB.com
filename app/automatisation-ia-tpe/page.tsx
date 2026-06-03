@@ -1,4 +1,3 @@
-import { Contact } from "@/components/sections/Contact";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { TpeAutomatisationPricing } from "@/components/tpe/TpeAutomatisationPricing";
 import {
@@ -222,8 +221,6 @@ export default function AutomatisationIaTpePage() {
       <section className="mx-auto max-w-content px-gutter pt-8">
         <FounderTrustBlock />
       </section>
-
-      <Contact variant="hub" />
     </div>
   );
 }

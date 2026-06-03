@@ -27,7 +27,7 @@ export const ABOUT_PAGE = {
     },
   ],
   narrative: [
-    "Nolan Hermand a passé des mois à échanger avec des mandataires indépendants et des artisans du BTP dans l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
+    "Nolan Hermand a passé trois ans dans le BTP (menuisier) à Flers, puis des mois à échanger avec des mandataires indépendants et des artisans de l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
     "Le constat revient souvent : les leads ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
     "Automatex Hub est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec vous.",
     "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
@@ -42,7 +42,7 @@ export const ABOUT_PAGE = {
   storyParagraphs: [
     "Pendant des mois, j'ai discuté avec des mandataires IAD et SAFTI dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
     "À chaque fois, la même chose revenait : les leads qui arrivent pendant les visites, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
-    "J'ai 19 ans. Je n'ai pas 10 ans d'expérience dans l'immobilier ou le BTP. Ce que j'ai, c'est la capacité à construire des systèmes qui fonctionnent, à rester joignable, et à m'adapter à la réalité terrain — pas à un PowerPoint.",
+    "J'ai 19 ans. Trois ans dans le BTP (menuisier) : appels pendant le chantier, devis le soir — je connais cette cadence. En immobilier, j'apprends en échangeant avec les mandataires sur le terrain. Ce que j'apporte, ce sont des systèmes qui tiennent, être joignable, et m'adapter à ta réalité — pas à un PowerPoint.",
   ],
   storyFootnote:
     "Sans engagement et résiliable en un mail : vous gardez la main à tout moment.",

@@ -9,7 +9,6 @@ import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { LocalGeoLinks } from "@/components/sections/LocalGeoLinks";
 import { ResiliationSection } from "@/components/sections/ResiliationSection";
-import { Contact } from "@/components/sections/Contact";
 import { ImmobilierLiveDemoSection } from "@/components/demo/ImmobilierLiveDemoSection";
 import { ImmobilierLeadDemoSection } from "@/components/demo/ImmobilierLeadDemoSection";
 import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
@@ -46,7 +45,6 @@ export function ImmobilierHome() {
       <IntegrationMarquees />
       <AutomationsFeatureGrid />
       <ResiliationSection />
-      <Contact variant="immobilier" />
       <div className="h-20 md:hidden" aria-hidden />
       <StickyMobileCta
         ctaHref={RENDEZ_VOUS_PATH}

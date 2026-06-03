@@ -60,11 +60,6 @@ const BtpSocialProof = dynamic(
   { ssr: true, loading: () => sectionPulse("min-h-48", "bg-night") },
 );
 
-const Contact = dynamic(
-  () => import("@/components/sections/Contact").then((m) => ({ default: m.Contact })),
-  { ssr: true, loading: () => sectionPulse("min-h-[400px]", "bg-night") },
-);
-
 export function BtpLanding() {
   return (
     <div className="funnel-surface">
@@ -82,7 +77,6 @@ export function BtpLanding() {
       <BtpFaq />
       <BtpSocialProof />
       <BtpGeoInternalNav />
-      <Contact variant="btp" />
       <div className="h-20 md:hidden" aria-hidden />
       <StickyMobileCta
         ctaHref={RENDEZ_VOUS_PATH}

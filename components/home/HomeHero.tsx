@@ -1,3 +1,4 @@
+import { HeroToolsSchema } from "@/components/home/HeroToolsSchema";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { PRIMARY_DEMO_CTA } from "@/lib/constants";
 import { HOME_HERO } from "@/lib/home-copy";
@@ -34,17 +35,7 @@ export function HomeHero() {
           </p>
         </div>
         <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/brand/cubes-fallback.svg"
-            alt=""
-            width={360}
-            height={360}
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low"
-            className="hero-cubes-float mx-auto w-full max-w-[320px] opacity-90 lg:max-w-none"
-          />
+          <HeroToolsSchema />
         </div>
       </div>
     </section>

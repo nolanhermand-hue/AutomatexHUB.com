@@ -1,28 +1,18 @@
-import { HOME_TECH_TRUST } from "@/lib/home-copy";
+import { HOME_TECH_LOGOS } from "@/lib/home-tech-logos";
 
-const TOOLS = [
-  { name: "N8N", src: "/assets/integrations/n8n.svg" },
-  { name: "Mistral", src: "/assets/integrations/mistral.svg" },
-  { name: "Google Drive", src: "/assets/integrations/google-drive.svg" },
-  { name: "Google Calendar", src: "/assets/integrations/google-calendar.svg" },
-  { name: "Google Maps", src: "/assets/integrations/google-maps.svg" },
-  { name: "Brevo", src: "/assets/integrations/brevo.svg" },
-  { name: "Twilio", src: "/assets/integrations/twilio.svg" },
-] as const;
+const TECH_TRUST_ARIA =
+  `Intégrations : ${HOME_TECH_LOGOS.map((t) => t.name).join(", ")}.`;
 
 export function TechTrustBar() {
   return (
-    <section className="border-y border-border px-gutter py-8" aria-labelledby="home-tech-trust">
+    <section
+      className="border-y border-border px-gutter py-8"
+      aria-label={TECH_TRUST_ARIA}
+    >
       <div className="mx-auto max-w-content">
-        <div className="animate-on-scroll section-reveal flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <h2 id="home-tech-trust" className="text-sm font-semibold text-text md:text-base">
-            {HOME_TECH_TRUST.label}
-          </h2>
-          <p className="text-xs text-[var(--text-subtle)]">{HOME_TECH_TRUST.disclaimer}</p>
-        </div>
-        <ul className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:justify-start md:gap-8">
-          {TOOLS.map((tool) => (
-            <li key={tool.name} className="animate-on-scroll fade">
+        <ul className="animate-on-scroll section-reveal flex flex-wrap items-center justify-center gap-6 sm:justify-start md:gap-8">
+          {HOME_TECH_LOGOS.map((tool) => (
+            <li key={tool.id} className="animate-on-scroll fade">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={tool.src}

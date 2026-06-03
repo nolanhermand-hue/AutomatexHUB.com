@@ -14,11 +14,6 @@ export const HOME_HERO = {
   reassurance: `Sans engagement · résiliable en 1 mail · 30 jours remboursé · ${SOVEREIGNTY_TRUST_LINE}`,
 } as const;
 
-export const HOME_TECH_TRUST = {
-  label: "Technologies & outils que nous utilisons",
-  disclaimer: "Nos outils, pas des clients.",
-} as const;
-
 export const HOME_PROBLEM = {
   eyebrow: "Le coût du silence",
   h2: "Combien tu perds quand tu ne peux pas décrocher ?",
@@ -109,8 +104,8 @@ export const HOME_PRICING = {
 
 export const HOME_FOUNDER = {
   eyebrow: "Qui installe",
-  h2: "Un ancien couvreur qui connaît le chantier",
-  bio: `${NAP.founder} — 19 ans sur les toits autour de Flers (Orne). Aujourd’hui il installe des systèmes qui répondent à ta place quand tu travailles.`,
+  h2: "Trois ans dans le BTP — il connaît le chantier",
+  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). Trois ans en menuiserie sur chantier avant Automatex. Aujourd’hui il installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
   quote:
     "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que tu utilises déjà — pour que le soir tu closes moins de devis à la va-vite.",
 } as const;
@@ -148,14 +143,5 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
 
 export const HOME_FINAL_CTA = {
   h2: "Démo gratuite 20 min sur ton cas",
-  sub: "Prénom, téléphone, métier — Nolan te rappelle sous 24 h pour caler le créneau.",
-} as const;
-
-export const HOME_LEAD_FORM = {
-  prenom: "Prénom",
-  telephone: "Téléphone mobile",
-  metier: "Ton métier",
-  metierPlaceholder: "Couvreur, menuisier, électricien, diagnostiqueur…",
-  submit: "Envoyer ma demande",
-  phoneHint: "On t’appelle sur ce numéro pour fixer les 20 minutes.",
+  sub: "Choisis ton créneau sur la page rendez-vous — Nolan confirme sous 24 h. Sans engagement.",
 } as const;

@@ -1,8 +1,8 @@
+import { PrimaryDemoCta } from "@/components/shared/PrimaryDemoCta";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { AUTOMATIONS_CATALOG } from "@/lib/automations-catalog";
 import { HOME_CATALOG_IDS } from "@/lib/home-catalog-ids";
 import { HOME_CATALOG } from "@/lib/home-copy";
-import Link from "next/link";
 
 const catalogById = new Map(AUTOMATIONS_CATALOG.map((item) => [item.id, item]));
 
@@ -10,7 +10,7 @@ export function HomeCatalogGrid() {
   const items = HOME_CATALOG_IDS.map((id) => catalogById.get(id)).filter(Boolean);
 
   return (
-    <section className="border-t border-border px-gutter py-16 md:py-20">
+    <section id="catalogue" className="border-t border-border px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
         <div className="animate-on-scroll section-reveal">
           <p className="label-micro text-muted">{HOME_CATALOG.eyebrow}</p>
@@ -34,12 +34,14 @@ export function HomeCatalogGrid() {
             );
           })}
         </ul>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/automatisations" className="btn-bracket btn-bracket-outline">
-            {HOME_CATALOG.cta}
-          </Link>
-          <AnalyticsCta href="/automatisations" analyticsId="home_catalog_automatisations" className="text-sm text-muted underline underline-offset-4 hover:text-text">
-            Détail de chaque scénario →
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <PrimaryDemoCta analyticsId="home_catalog_demo" className="btn-bracket btn-bracket-primary" />
+          <AnalyticsCta
+            href="/automatisations"
+            analyticsId="home_catalog_automatisations"
+            className="text-sm text-muted underline underline-offset-4 hover:text-text"
+          >
+            {HOME_CATALOG.cta} →
           </AnalyticsCta>
         </div>
       </div>
