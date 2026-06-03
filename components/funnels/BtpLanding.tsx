@@ -2,6 +2,7 @@ import { BtpGeoInternalNav } from "@/components/sections/BtpGeoInternalNav";
 import { BtpHeroSection } from "@/components/funnels/BtpHeroSection";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import { BTP_CONTACT, BTP_DECLIC_HINT } from "@/lib/btp-copy";
+import { RENDEZ_VOUS_PATH } from "@/lib/hub-nav";
 import dynamic from "next/dynamic";
 
 const sectionPulse = (minH: string, bg: string) => (
@@ -84,7 +85,7 @@ export function BtpLanding() {
       <Contact variant="btp" />
       <div className="h-20 md:hidden" aria-hidden />
       <StickyMobileCta
-        ctaHref="#contact"
+        ctaHref={RENDEZ_VOUS_PATH}
         ctaLabel={BTP_CONTACT.cta}
         analyticsId="sticky_demo_btp"
       />

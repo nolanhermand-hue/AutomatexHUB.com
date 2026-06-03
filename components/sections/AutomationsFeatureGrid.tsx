@@ -43,7 +43,7 @@ export function AutomationsFeatureGrid() {
 
         <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <Link
-            href="#contact"
+            href="/rendez-vous"
             data-analytics-cta="automations_cta"
             className="btn-bracket btn-bracket-primary"
           >

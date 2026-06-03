@@ -15,8 +15,8 @@ export function BtpSolutionSection() {
           ))}
         </div>
         <div className="mt-10 space-y-8">
-          <LiveDemoBlock variant="btp-appel" ctaHref="#contact" />
-          <LiveDemoBlock variant="btp-devis" ctaHref="#contact" />
+          <LiveDemoBlock variant="btp-appel" ctaHref="/rendez-vous" />
+          <LiveDemoBlock variant="btp-devis" ctaHref="/rendez-vous" />
         </div>
       </div>
     </section>

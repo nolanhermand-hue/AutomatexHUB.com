@@ -73,7 +73,7 @@ export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
           .
         </p>
         <Link
-          href="/btp#contact"
+          href="/rendez-vous"
           className="mt-6 btn-bracket btn-bracket-primary w-full justify-center"
         >
           Nolan me rappelle sous 24 h

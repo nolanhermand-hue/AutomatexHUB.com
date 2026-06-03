@@ -44,12 +44,9 @@ export function Calculator() {
       ? `Ces ${formatEuro(euros)} méritent un appel — Réserver 20 min`
       : `${CALCULATOR_COPY.ctaPrefix} (${formatEuro(euros)}) — ${CALCULATOR_COPY.ctaSuffix}`;
 
-  const scrollToContact = () => {
+  const goToRendezVous = () => {
     trackCtaClicked("calculator_to_contact");
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    window.location.assign("/rendez-vous");
   };
 
   return (
@@ -136,7 +133,7 @@ export function Calculator() {
             variant="primary"
             className="w-full"
             data-cursor="cta"
-            onClick={scrollToContact}
+            onClick={goToRendezVous}
           >
             {dynamicCta}
           </NativeButton>
@@ -156,7 +153,7 @@ export function Calculator() {
         <span className="font-semibold text-text">{formatEuro(euros)}/an</span> en commissions exposées.{" "}
         <button
           type="button"
-          onClick={scrollToContact}
+          onClick={goToRendezVous}
           className="font-semibold text-text underline-offset-4 hover:underline"
           data-cursor="link"
         >

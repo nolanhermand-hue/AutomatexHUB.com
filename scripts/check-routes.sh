@@ -7,6 +7,7 @@ ROUTES=(
   "/immobilier"
   "/btp"
   "/accompagnement"
+  "/rendez-vous"
   "/automatisations"
   "/automatisation-ia-tpe"
   "/a-propos"

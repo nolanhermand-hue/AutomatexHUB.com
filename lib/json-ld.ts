@@ -63,24 +63,34 @@ export function buildLocalMandatairesJsonLd(opts: {
   };
 }
 
-export type BuildJsonLdGraphOptions = {
-  /** Routes with their own FAQPage JSON-LD (TPE, BTP). */
-  omitFaqPage?: boolean;
+/** FAQ JSON-LD variant for the global layout graph (one FAQPage per HTML document). */
+export type JsonLdFaqMode = "mandataires" | "btp" | "tpe";
+
+export const JSON_LD_FAQ_MODE_BY_PATH: Readonly<Record<string, JsonLdFaqMode>> = {
+  "/btp": "btp",
+  [TPE_PAGE_PATH]: "tpe",
 };
 
-/**
- * JSON-LD — H3 (ProfessionalService validé), H4 (FAQPage),
- *           H5 (HowTo), guarantee Offer.
- */
-export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
-  const omitFaqPage = options?.omitFaqPage ?? false;
-  const businessId = `${SITE_URL}#business`;
-  const personId = `${SITE_URL}#person-nolan`;
+export type BuildJsonLdGraphOptions = {
+  faqMode?: JsonLdFaqMode;
+};
 
-  // H4 — FAQPage
-  const faqEntities = omitFaqPage
-    ? []
-    : FAQ_ITEMS.map((item) => ({
+function buildFaqMainEntity(mode: JsonLdFaqMode) {
+  if (mode === "btp") {
+    return BTP_FAQ.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    }));
+  }
+  if (mode === "tpe") {
+    return TPE_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    }));
+  }
+  return FAQ_ITEMS.map((item) => ({
     "@type": "Question",
     name: item.question,
     acceptedAnswer: {
@@ -88,6 +98,19 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
       text: item.answer,
     },
   }));
+}
+
+/**
+ * JSON-LD — H3 (ProfessionalService validé), H4 (FAQPage),
+ *           H5 (HowTo), guarantee Offer.
+ */
+export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
+  const faqMode = options?.faqMode ?? "mandataires";
+  const businessId = `${SITE_URL}#business`;
+  const personId = `${SITE_URL}#person-nolan`;
+
+  // H4 — FAQPage (single block; page-specific scripts must not repeat FAQPage)
+  const faqEntities = buildFaqMainEntity(faqMode);
 
   // H5 — HowTo
   const howToSteps = SOLUTION_STEPS.map((step, index) => ({
@@ -202,18 +225,12 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           addressRegion: NAP.region,
           addressCountry: NAP.country,
         },
-        sameAs: [
-          "https://www.linkedin.com/in/nolan-hermand",
-        ],
+        sameAs: [NAP.linkedinUrl],
       },
-      ...(omitFaqPage
-        ? []
-        : [
-            {
-              "@type": "FAQPage",
-              mainEntity: faqEntities,
-            },
-          ]),
+      {
+        "@type": "FAQPage",
+        mainEntity: faqEntities,
+      },
       // H5 — HowTo : rich results pour Solution en 3 étapes
       {
         "@type": "HowTo",
@@ -320,22 +337,13 @@ export function buildBtpServiceJsonLd(path: string) {
     ],
   };
 
-  const btpFaq = {
-    "@type": "FAQPage",
-    mainEntity: BTP_FAQ.items.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
-
   return {
     "@context": "https://schema.org",
-    "@graph": [professional, btpService, btpFaq],
+    "@graph": [professional, btpService],
   };
 }
 
-/** JSON-LD page pilier TPE — Service + FAQPage. */
+/** JSON-LD page pilier TPE — Service (FAQPage via layout StructuredData). */
 export function buildTpeAutomatisationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -375,14 +383,6 @@ export function buildTpeAutomatisationJsonLd() {
           { "@type": "Offer", name: "Pack Système", price: "249", priceCurrency: "EUR" },
           { "@type": "Offer", name: "Pack Pilote", price: "449", priceCurrency: "EUR" },
         ],
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: TPE_FAQ.map((item) => ({
-          "@type": "Question",
-          name: item.q,
-          acceptedAnswer: { "@type": "Answer", text: item.a },
-        })),
       },
     ],
   };

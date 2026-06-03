@@ -17,6 +17,7 @@ import { buildTpeAutomatisationJsonLd } from "@/lib/json-ld";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { rendezVousHref } from "@/lib/hub-nav";
 
 export const metadata: Metadata = {
   title: TPE_META.title,
@@ -58,7 +59,7 @@ export default function AutomatisationIaTpePage() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="#contact" className="btn-bracket btn-bracket-primary">
+          <a href={rendezVousHref()} className="btn-bracket btn-bracket-primary">
             {TPE_HERO.ctaPrimary}
             <span aria-hidden>→</span>
           </a>

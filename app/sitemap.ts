@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/automatisation-ia-tpe`, lastModified, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/automatisations`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/accompagnement`, lastModified, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/rendez-vous`, lastModified, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/automatisation-btp-orne`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/automatisation-artisan-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/automatisation-artisan-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },

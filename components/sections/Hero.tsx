@@ -1,5 +1,6 @@
 import { HeroScene } from "@/components/three/SceneWrapper";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
+import { rendezVousHref } from "@/lib/hub-nav";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { HeroScrollHint } from "@/components/ui/HeroScrollHint";
 import { GEO_DEFINITION, HERO_COPY, HERO_STATS, HERO_STATS_SOURCE, CTA_REASSURANCE_LINE } from "@/lib/constants";
@@ -76,7 +77,7 @@ export function Hero() {
               </p>
 
               <AnalyticsCta
-                href="#contact"
+                href={rendezVousHref()}
                 data-cursor="cta"
                 analyticsId="hero_primary"
                 className="hero-cta-primary btn-bracket btn-bracket-primary mt-6 w-full justify-center md:mt-8 lg:mt-6 lg:w-auto"

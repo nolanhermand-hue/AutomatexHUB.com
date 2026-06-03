@@ -61,9 +61,15 @@ export const NAP = {
   phoneDisplay: "06 45 38 42 33",
   phoneE164: "+33645384233",
   email: "nolan.hermand@automatex-hub.com",
+  /** Profil professionnel fondateur */
+  linkedinUrl: "https://www.linkedin.com/in/nolan-hermand-369958412",
   /** Hébergeur explicite (signal de souveraineté française) */
   hostingProvider: "Mistral Paris · N8N Francfort (UE)",
 } as const;
+
+/** Libellé accessibilité — lien LinkedIn externe */
+export const LINKEDIN_PROFILE_ARIA =
+  "Profil LinkedIn de Nolan Hermand — s'ouvre dans un nouvel onglet" as const;
 
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
 export const META = {
@@ -135,7 +141,7 @@ export const NAV_LINKS = [
   { href: "#solution", label: "Comment ça marche" },
   { href: "#pricing", label: "Tarifs" },
   { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { href: "/rendez-vous", label: "Contact" },
 ] as const;
 
 /** Items défilants sous le hero (trust bar). */

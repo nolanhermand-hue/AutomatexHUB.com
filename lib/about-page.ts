@@ -20,6 +20,11 @@ export const ABOUT_PAGE = {
     { label: "Hébergement données", value: NAP.hostingProvider },
     { label: "Site", value: "Export statique Next.js · CDN Netlify" },
     { label: "Contact", value: `${NAP.email} · ${NAP.phoneDisplay}` },
+    {
+      label: "LinkedIn",
+      value: "Profil professionnel de Nolan Hermand",
+      href: NAP.linkedinUrl,
+    },
   ],
   narrative: [
     "Nolan Hermand a passé des mois à échanger avec des mandataires indépendants et des artisans du BTP dans l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
@@ -68,6 +73,6 @@ export const ABOUT_PAGE = {
     title: "Transparence sur le lancement",
     body: "Automatex est en phase de lancement dans l'Orne. Il n'y a pas encore de dizaines de clients à vous montrer. Ce que je peux vous montrer, c'est le système en action sur votre propre cas — lors d'un appel de 20 minutes, gratuit, sans engagement. Les 5 premiers clients bénéficient d'un tarif fondateur bloqué à vie.",
     cta: "Voir si le tarif fondateur est encore ouvert →",
-    href: "/btp#contact",
+    href: "/rendez-vous",
   },
 } as const;

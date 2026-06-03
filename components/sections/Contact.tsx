@@ -50,17 +50,20 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const parseHash = () => {
+    const applyParams = () => {
+      const search = new URLSearchParams(window.location.search);
+      const offreSearch = search.get("offre");
+      const sujetSearch = search.get("sujet");
       const hash = window.location.hash;
       const offreMatch = hash.match(/offre=([\w-]+)/);
-      if (offreMatch) setOfferHint(offreMatch[1]);
       const sujetMatch = hash.match(/sujet=([\w-]+)/);
-      if (sujetMatch) setSujetHint(sujetMatch[1]);
+      setOfferHint(offreSearch ?? offreMatch?.[1] ?? "");
+      setSujetHint(sujetSearch ?? sujetMatch?.[1] ?? "");
     };
-    parseHash();
-    window.addEventListener("hashchange", parseHash);
+    applyParams();
+    window.addEventListener("hashchange", applyParams);
     setUtm(readUtm());
-    return () => window.removeEventListener("hashchange", parseHash);
+    return () => window.removeEventListener("hashchange", applyParams);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

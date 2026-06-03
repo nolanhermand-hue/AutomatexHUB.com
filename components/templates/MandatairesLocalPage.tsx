@@ -54,7 +54,7 @@ export function MandatairesLocalPage({ page }: { page: LocalMandatairesPageData 
           .
         </p>
         <Link
-          href="/immobilier#contact"
+          href="/rendez-vous"
           className="mt-6 btn-bracket btn-bracket-primary w-full justify-center"
         >
           Contacter Automatex

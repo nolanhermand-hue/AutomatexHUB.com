@@ -11,6 +11,7 @@ const paths = [
   "/automatisations",
   "/automatisation-ia-tpe",
   "/accompagnement",
+  "/rendez-vous",
   "/a-propos",
   "/vos-donnees",
   "/merci",

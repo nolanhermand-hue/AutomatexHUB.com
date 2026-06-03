@@ -216,10 +216,10 @@ export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
 export const TPE_SECTORS = [
   { icon: "🏠", label: "Mandataires immobiliers", href: "/immobilier", cta: "Voir la solution →" },
   { icon: "🪖", label: "Artisans BTP", href: "/btp", cta: "Voir la solution →" },
-  { icon: "⚖️", label: "Professions libérales", href: "#contact", cta: "En parler →" },
-  { icon: "🛍️", label: "Commerce de proximité", href: "#contact", cta: "En parler →" },
-  { icon: "📸", label: "Artisans tertiaires", href: "#contact", cta: "En parler →" },
-  { icon: "💼", label: "Consultants / formateurs", href: "#contact", cta: "En parler →" },
+  { icon: "⚖️", label: "Professions libérales", href: "/rendez-vous", cta: "En parler →" },
+  { icon: "🛍️", label: "Commerce de proximité", href: "/rendez-vous", cta: "En parler →" },
+  { icon: "📸", label: "Artisans tertiaires", href: "/rendez-vous", cta: "En parler →" },
+  { icon: "💼", label: "Consultants / formateurs", href: "/rendez-vous", cta: "En parler →" },
 ] as const;
 
 export const TPE_GEO_BLOCKS = [

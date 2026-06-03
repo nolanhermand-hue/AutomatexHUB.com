@@ -1,6 +1,6 @@
 # Automatex Hub — mémo routes (agents)
 
-> **Màj** : 2026-05-27 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final) · **GO prod** : [`LAUNCH-READINESS.md`](./LAUNCH-READINESS.md)
+> **Màj** : 2026-06-02 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final) · **GO prod** : [`LAUNCH-READINESS.md`](./LAUNCH-READINESS.md)
 
 ---
 
@@ -10,17 +10,17 @@
 |---------------------|---------------------|
 | `/tpe`, `/tpe/`, `/automatisation-tpe` | `/automatisation-ia-tpe` |
 | `#pipeline-pilotage` | `#suivi-rapports` (catalogue) |
-| `/automatisation-ia-tpe` → contact BTP | `#contact` sur la page TPE (`contactHref`) |
-| `/accompagnement` → `/btp#contact` (nav) | `/accompagnement#contact` |
+| Ancres `#contact` funnel pour CTA nav | **`/rendez-vous`** (`contactHref`, `rendezVousHref`) |
+| `/accompagnement` → formulaire inline | CTA → `/rendez-vous` (contenu page conservé) |
 | Préfixe `/automatisation` = tout BTP | **Faux** : `/automatisation-ia-tpe` = TPE ; BTP = `/automatisation-artisan-*`, `/automatisation-btp-orne` |
 | `/api/*` (App Router) | **Aucune** page API Next ; forms → Netlify |
 | `/merci` indexable | **Non** : `robots.txt` `Disallow: /merci`, absent du sitemap |
 
-**Home `/`** : hub (`HubEntry`), pas une landing immo. CTA nav par défaut → `/immobilier#contact`.
+**Home `/`** : hub (`HubEntry`), pas une landing immo. CTA nav / booking → **`/rendez-vous`**.
 
 ---
 
-## Inventaire pages (23) — `app/**/page.tsx`
+## Inventaire pages (24) — `app/**/page.tsx`
 
 | Route | Rôle | Template / composant clé |
 |-------|------|---------------------------|
@@ -29,7 +29,8 @@
 | `/btp` | Landing artisans BTP (Kévin) | `BtpLanding` |
 | `/automatisation-ia-tpe` | Pilier TPE/PME + tarifs + contact | page + `TpeAutomatisationPricing` |
 | `/automatisations` | Catalogue 20 automatisations | `AutomatisationsCatalogSections` |
-| `/accompagnement` | Offre humaine 12 mois | `AccompagnementContactForm` `#contact` |
+| `/rendez-vous` | **Contact canonique** · formulaire prospect | `Contact` variant `hub` |
+| `/accompagnement` | Offre humaine 12 mois | CTA → `/rendez-vous` |
 | `/a-propos` | Fondateur / histoire | contenu statique |
 | `/vos-donnees` | Transparence infra (Netlify CDN, N8N UE, Mistral) | `VosDonneesView` |
 | `/merci` | Post-formulaire | **noindex implicite via robots** |
@@ -52,17 +53,15 @@
 
 ---
 
-## `contactHref(pathname)` — `lib/hub-nav.ts`
+## `contactHref` / `rendezVousHref` — `lib/hub-nav.ts`
 
-| Préfixe `pathname` | CTA nav |
-|----------------------|---------|
-| `/automatisations`, `/automatisation-ia-tpe` | `/automatisation-ia-tpe#contact` |
-| `/accompagnement` | `/accompagnement#contact` |
-| `/btp`, `/automatisation-artisan*`, `/automatisation-btp*`, `/devis-automatique*` | `/btp#contact` |
-| `/immobilier`, `/mandataires*` | `/immobilier#contact` |
-| `/`, défaut | `/immobilier#contact` |
+| Usage | URL |
+|-------|-----|
+| Nav / MegaNav (`contactHref`) | **`/rendez-vous`** (toutes pages) |
+| Tarifs / offre (`rendezVousHref({ offre })`) | `/rendez-vous?offre=declic\|systeme\|pilote\|sur-mesure` |
+| Résiliation (`rendezVousHref({ sujet: "resiliation" })`) | `/rendez-vous?sujet=resiliation` |
 
-Formulaires : `Contact` `#contact` (immo/btp/hub) · `AccompagnementContactForm` sur `/accompagnement` · TPE utilise `Contact variant="hub"`.
+Formulaire Netlify : nom **`contact`** · webhook inchangé · redirect **`/merci`**. Sections `#contact` optionnelles sur landings (immo/btp/TPE) ; **CTA booking** pointent vers `/rendez-vous`.
 
 ---
 
@@ -76,7 +75,7 @@ Formulaires : `Contact` `#contact` (immo/btp/hub) · `AccompagnementContactForm`
 | `/accompagnement` | `#contact` |
 | `/automatisations` | voir ci-dessous |
 
-Query contact : `#contact?offre=declic|systeme|pilote|sur-mesure` (grille unifiée).
+Query contact : `/rendez-vous?offre=declic|systeme|pilote|sur-mesure` (grille unifiée).
 
 ---
 

@@ -1,16 +1,20 @@
 "use client";
 
-import { buildJsonLdGraph } from "@/lib/json-ld";
+import {
+  JSON_LD_FAQ_MODE_BY_PATH,
+  buildJsonLdGraph,
+  type JsonLdFaqMode,
+} from "@/lib/json-ld";
 import { usePathname } from "next/navigation";
 
-const OMIT_GLOBAL_FAQ_PATHS = ["/automatisation-ia-tpe", "/btp"] as const;
+function faqModeForPath(pathname: string | null): JsonLdFaqMode {
+  const normalized = pathname?.replace(/\/$/, "") ?? "";
+  return JSON_LD_FAQ_MODE_BY_PATH[normalized] ?? "mandataires";
+}
 
 export function StructuredData() {
   const pathname = usePathname();
-  const omitFaqPage =
-    pathname != null &&
-    (OMIT_GLOBAL_FAQ_PATHS as readonly string[]).includes(pathname);
-  const json = buildJsonLdGraph({ omitFaqPage });
+  const json = buildJsonLdGraph({ faqMode: faqModeForPath(pathname) });
   return (
     <script
       type="application/ld+json"

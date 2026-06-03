@@ -7,6 +7,7 @@ import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { TPE_DISPLAY_OFFERS, TPE_FOUNDERS_NOTE } from "@/lib/automatisation-ia-tpe-content";
 import { cn } from "@/lib/cn";
 import { PRICING_HEADING } from "@/lib/constants";
+import { rendezVousHref } from "@/lib/hub-nav";
 import {
   annualPrepayTotal,
   formatFoundersAvailability,
@@ -78,7 +79,7 @@ export function TpeAutomatisationPricing() {
                 )}
                 <p className="mt-3 flex-1 text-sm text-muted">{offer.blurb}</p>
                 <a
-                  href={`#contact?offre=${offer.id}`}
+                  href={rendezVousHref({ offre: offer.id })}
                   className={cn(
                     "mt-4 btn-bracket w-full justify-center text-sm",
                     offer.featured || isCustom ? "btn-bracket-primary" : "btn-bracket-outline",

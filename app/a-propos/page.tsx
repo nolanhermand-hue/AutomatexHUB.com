@@ -1,7 +1,7 @@
 import { ABOUT_PAGE } from "@/lib/about-page";
 import { buildAboutPageJsonLd } from "@/lib/json-ld";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
-import { NAP, SITE_URL } from "@/lib/constants";
+import { LINKEDIN_PROFILE_ARIA, NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -39,7 +39,21 @@ export default function AProposPage() {
             <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
               {fact.label}
             </dt>
-            <dd className="mt-1 text-base text-text">{fact.value}</dd>
+            <dd className="mt-1 text-base text-text">
+              {"href" in fact && fact.href ? (
+                <a
+                  href={fact.href}
+                  className="text-primary underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={LINKEDIN_PROFILE_ARIA}
+                >
+                  {fact.value}
+                </a>
+              ) : (
+                fact.value
+              )}
+            </dd>
           </div>
         ))}
       </dl>
@@ -108,7 +122,7 @@ export default function AProposPage() {
       </p>
 
       <p className="mt-6 text-muted">
-        <Link href="/btp#contact" className="text-primary underline">
+        <Link href="/rendez-vous" className="text-primary underline">
           Prendre contact
         </Link>
         {" · "}

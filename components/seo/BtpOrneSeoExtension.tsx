@@ -125,7 +125,7 @@ export function BtpOrneSeoExtension() {
           Nolan vous appelle sous 24 h. 20 minutes. Il vous montre sur votre propre activité.
         </p>
         <Link
-          href="/btp#contact"
+          href="/rendez-vous"
           className="mt-6 btn-bracket btn-bracket-primary w-full justify-center"
         >
           Réserver une démo gratuite →

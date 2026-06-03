@@ -52,7 +52,7 @@ export default function SecuritePage() {
         />
         <LegalP>
           Procédure :{" "}
-          <Link href="/immobilier#contact?sujet=resiliation" className="text-primary underline">
+          <Link href="/rendez-vous?sujet=resiliation" className="text-primary underline">
             demande de résiliation
           </Link>{" "}
           ou email {c.email}.

@@ -125,7 +125,7 @@ export default function CgvPage() {
         <LegalP>
           Le Client résilie à tout moment, sans frais, par email à {c.email}. Conformément à la loi
           n°2022-1158, une demande de résiliation peut aussi être initiée depuis le{" "}
-          <Link href="/#contact?sujet=resiliation" className="text-primary underline">
+          <Link href="/rendez-vous?sujet=resiliation" className="text-primary underline">
             formulaire de contact
           </Link>{" "}
           (sujet : résiliation). Effet en fin de mois en cours. Données effacées sous 7 jours.

@@ -10,6 +10,7 @@ import { annualPrepayTotal, formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
 import { SectionCta } from "@/components/ui/SectionCta";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
+import { rendezVousHref } from "@/lib/hub-nav";
 import { useEffect, useState } from "react";
 
 type BillingCycle = "monthly" | "annual";
@@ -182,7 +183,7 @@ export function Pricing() {
 
                   {/* D7 — Lien avec query string pour pré-remplissage formulaire */}
                   <AnalyticsCta
-                    href={`#contact?offre=${offer.id}`}
+                    href={rendezVousHref({ offre: offer.id })}
                     analyticsId={`pricing_${offer.id}`}
                     className={cn("mt-6 btn-bracket w-full justify-center", offer.featured ? "btn-bracket-primary" : "btn-bracket-outline")}
                   >

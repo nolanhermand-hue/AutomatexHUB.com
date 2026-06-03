@@ -1,5 +1,6 @@
 import { trackCtaClicked } from "@/lib/analytics";
 import { BOOKING_CTA_LABEL, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { rendezVousHref } from "@/lib/hub-nav";
 
 /**
  * FINAL CTA — bandeau ORIS (navy + accent orange).
@@ -23,7 +24,7 @@ export function FinalCta() {
         </p>
 
         <a
-          href="#contact"
+          href={rendezVousHref()}
           data-analytics-cta="final_primary"
           onClick={() => trackCtaClicked("final_primary")}
           className="mt-8 btn-bracket btn-bracket-primary"

@@ -12,7 +12,7 @@ export function BtpHeroSection() {
         <p className="mt-5 max-w-readable text-base text-muted md:text-lg">{BTP_HERO.sub}</p>
         <p className="mt-3 text-sm font-semibold text-text">{BTP_HERO.priceFrom}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a href="#contact" className="btn-bracket btn-bracket-primary">
+          <a href="/rendez-vous" className="btn-bracket btn-bracket-primary">
             {BTP_HERO.ctaDemo}
           </a>
           <a href="#demo" className="btn-bracket btn-bracket-outline">

@@ -2,8 +2,8 @@ import { AccompagnementPointMensuelDemo } from "@/components/demo/Accompagnement
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
-import { AccompagnementContactForm } from "@/components/sections/AccompagnementContactForm";
 import { ACCOMPANIMENT_COPY, NAP, PRICING_HEADING } from "@/lib/constants";
+import { rendezVousHref } from "@/lib/hub-nav";
 import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -135,14 +135,14 @@ export default function AccompagnementPage() {
             <p className="mt-3 text-sm text-muted">{PRICING_HEADING.customFitFootnote}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/immobilier#contact?offre=sur-mesure"
+                href={rendezVousHref({ offre: "sur-mesure" })}
                 className="btn-bracket btn-bracket-primary justify-center"
               >
                 {ACCOMPANIMENT_COPY.surMesure.cta}
                 <span aria-hidden>→</span>
               </Link>
               <Link
-                href="/btp#contact?offre=sur-mesure"
+                href={rendezVousHref({ offre: "sur-mesure" })}
                 className="btn-bracket btn-bracket-outline justify-center"
               >
                 Sur mesure artisan BTP
@@ -169,7 +169,20 @@ export default function AccompagnementPage() {
           </div>
         </section>
 
-        <AccompagnementContactForm />
+        <section id="contact" className="mt-16 border-t border-border pt-16 text-center">
+          <h2 className="font-heading text-2xl text-text">Prendre rendez-vous avec Nolan</h2>
+          <p className="mx-auto mt-4 max-w-readable text-muted">
+            Démo ou cadrage sur mesure : un seul formulaire, réponse sous 24 h. Sans engagement —
+            résiliable en un mail.
+          </p>
+          <Link
+            href={rendezVousHref()}
+            className="btn-bracket btn-bracket-primary mt-8 justify-center"
+          >
+            Réserver mon créneau
+            <span aria-hidden>→</span>
+          </Link>
+        </section>
       </div>
     </div>
   );

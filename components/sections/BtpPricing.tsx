@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/cn";
 import { annualPrepayTotal, formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
 import { PRICING_HEADING } from "@/lib/constants";
+import { rendezVousHref } from "@/lib/hub-nav";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { useState } from "react";
 
@@ -74,7 +75,7 @@ function PricingOfferCard({
           </p>
         ) : null}
         <a
-          href={`#contact?offre=${offer.id}`}
+          href={rendezVousHref({ offre: offer.id })}
           className={cn(
             "mt-5 btn-bracket w-full justify-center",
             offer.featured || isCustom ? "btn-bracket-primary" : "btn-bracket-outline",

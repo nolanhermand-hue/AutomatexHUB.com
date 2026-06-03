@@ -25,7 +25,7 @@ function stepBadgeClass(step: LiveDemoStep): string {
 
 export function LiveDemoBlock({
   variant,
-  ctaHref = "#contact",
+  ctaHref = "/rendez-vous",
   ctaLabel = "Voir comment ça s'installe sur mon activité",
 }: LiveDemoBlockProps) {
   const demo = LIVE_DEMOS[variant];

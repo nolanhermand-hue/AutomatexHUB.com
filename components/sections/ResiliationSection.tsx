@@ -1,4 +1,5 @@
 import { RESILIATION_COPY } from "@/lib/constants";
+import { rendezVousHref } from "@/lib/hub-nav";
 import Link from "next/link";
 
 export function ResiliationSection() {
@@ -14,7 +15,7 @@ export function ResiliationSection() {
         <p className="mt-3 font-mono text-sm text-text">{RESILIATION_COPY.emailLine}</p>
         <p className="mt-2 text-sm text-muted">{RESILIATION_COPY.mailHint}</p>
         <Link
-          href="/#contact?sujet=resiliation"
+          href={rendezVousHref({ sujet: "resiliation" })}
           className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-md border border-border bg-night px-6 py-3 text-sm font-semibold text-text transition hover:border-primary/40"
           data-analytics-cta="resiliation_online"
         >

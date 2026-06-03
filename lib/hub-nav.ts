@@ -9,28 +9,27 @@ export const SITE_NAV = [
   { href: "/a-propos", label: "À propos" },
 ] as const;
 
+export const RENDEZ_VOUS_PATH = "/rendez-vous" as const;
+
+type RendezVousParams = {
+  offre?: string;
+  sujet?: string;
+};
+
+/** URL canonique prise de rendez-vous / formulaire prospect. */
+export function rendezVousHref(params?: RendezVousParams): string {
+  if (!params?.offre && !params?.sujet) return RENDEZ_VOUS_PATH;
+  const search = new URLSearchParams();
+  if (params.offre) search.set("offre", params.offre);
+  if (params.sujet) search.set("sujet", params.sujet);
+  const q = search.toString();
+  return q ? `${RENDEZ_VOUS_PATH}?${q}` : RENDEZ_VOUS_PATH;
+}
+
+/** CTA nav / header — toujours la page Rendez-vous (plus de hash funnel). */
 export function contactHref(pathname: string): string {
-  if (pathname.startsWith("/automatisations") || pathname.startsWith("/automatisation-ia-tpe")) {
-    return "/automatisation-ia-tpe#contact";
-  }
-  if (pathname.startsWith("/accompagnement")) {
-    return "/accompagnement#contact";
-  }
-  if (
-    pathname.startsWith("/btp") ||
-    pathname.startsWith("/automatisation-artisan") ||
-    pathname.startsWith("/automatisation-btp") ||
-    pathname.startsWith("/devis-automatique")
-  ) {
-    return "/btp#contact";
-  }
-  if (pathname.startsWith("/immobilier") || pathname.startsWith("/mandataires")) {
-    return "/immobilier#contact";
-  }
-  if (pathname === "/") {
-    return "/immobilier#contact";
-  }
-  return "/immobilier#contact";
+  void pathname;
+  return RENDEZ_VOUS_PATH;
 }
 
 export const FOOTER_BTP_LOCAL_LINKS = [

@@ -8,6 +8,7 @@ import {
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { rendezVousHref } from "@/lib/hub-nav";
 
 export const metadata: Metadata = {
   title: "Tout ce qu'Automatex peut faire — Catalogue des automatisations · Orne",
@@ -53,13 +54,13 @@ export default function AutomatisationsPage() {
         </div>
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-          <Link href="/automatisation-ia-tpe#contact" className="btn-bracket btn-bracket-primary">
+          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-primary">
             TPE & PME — voir l&apos;offre →
           </Link>
-          <Link href="/immobilier#contact" className="btn-bracket btn-bracket-outline">
+          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
             Je suis mandataire →
           </Link>
-          <Link href="/btp#contact" className="btn-bracket btn-bracket-outline">
+          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
             Je suis artisan BTP →
           </Link>
         </div>
@@ -79,13 +80,13 @@ export default function AutomatisationsPage() {
           pour cadrer ça en 20 minutes.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
-          <Link href="/automatisation-ia-tpe#contact" className="btn-bracket btn-bracket-primary">
+          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-primary">
             TPE & PME — voir l&apos;offre →
           </Link>
-          <Link href="/immobilier#contact" className="btn-bracket btn-bracket-outline">
+          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
             Je suis mandataire immobilier →
           </Link>
-          <Link href="/btp#contact" className="btn-bracket btn-bracket-outline">
+          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
             Je suis artisan BTP →
           </Link>
         </div>

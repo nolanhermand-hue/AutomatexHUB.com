@@ -12,7 +12,7 @@ export function ImmobilierLiveDemoSection() {
           personnalisés avec votre prénom lors de l&apos;onboarding.
         </p>
         <div className="mt-8">
-          <LiveDemoBlock variant="immobilier" ctaHref="#contact" />
+          <LiveDemoBlock variant="immobilier" ctaHref="/rendez-vous" />
         </div>
       </div>
     </section>

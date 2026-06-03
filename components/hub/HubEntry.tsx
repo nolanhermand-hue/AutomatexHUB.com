@@ -4,6 +4,7 @@ import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import Link from "next/link";
 import { HUB_ACCOMPANIMENT, HUB_ENTRY_COPY } from "@/lib/hub-copy";
+import { rendezVousHref } from "@/lib/hub-nav";
 
 export function HubEntry() {
   return (
@@ -41,11 +42,11 @@ export function HubEntry() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/immobilier#contact" className="btn-bracket" data-analytics-cta="hub_immobilier_cta">
+            <Link href={rendezVousHref()} className="btn-bracket" data-analytics-cta="hub_immobilier_cta">
               Je suis mandataire
             </Link>
             <Link
-              href="/btp#contact"
+              href={rendezVousHref()}
               className="btn-bracket btn-bracket-outline"
               data-analytics-cta="hub_btp_cta"
             >
@@ -101,7 +102,7 @@ export function HubEntry() {
           </p>
           <div className="mt-10 flex flex-col items-start gap-3">
             <Link
-              href="/immobilier#contact"
+              href={rendezVousHref()}
               className="btn-bracket btn-bracket-primary"
               data-analytics-cta="hub_demo_unified"
             >

@@ -1,5 +1,11 @@
 import { FooterTrustBadges } from "@/components/layout/FooterTrustBadges";
-import { FOOTER_COPY, FOOTER_LOCAL_LINKS, NAP, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import {
+  FOOTER_COPY,
+  FOOTER_LOCAL_LINKS,
+  LINKEDIN_PROFILE_ARIA,
+  NAP,
+  SOVEREIGNTY_TRUST_LINE,
+} from "@/lib/constants";
 import { FOOTER_BTP_LOCAL_LINKS, SITE_NAV } from "@/lib/hub-nav";
 import Link from "next/link";
 
@@ -106,6 +112,16 @@ export function Footer() {
           {" · "}
           <a href={`tel:${NAP.phoneE164}`} itemProp="telephone" className="text-text hover:text-primary">
             {NAP.phoneDisplay}
+          </a>
+          {" · "}
+          <a
+            href={NAP.linkedinUrl}
+            className="text-text hover:text-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={LINKEDIN_PROFILE_ARIA}
+          >
+            LinkedIn
           </a>
         </address>
 

@@ -18,6 +18,7 @@ import { IntegrationMarquees } from "@/components/sections/IntegrationMarquees";
 import { AutomationsFeatureGrid } from "@/components/sections/AutomationsFeatureGrid";
 import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
+import { RENDEZ_VOUS_PATH } from "@/lib/hub-nav";
 
 /** Parcours mandataires — HTML complet au build (évite CLS skeleton / dynamic). */
 export function ImmobilierHome() {
@@ -48,7 +49,7 @@ export function ImmobilierHome() {
       <Contact variant="immobilier" />
       <div className="h-20 md:hidden" aria-hidden />
       <StickyMobileCta
-        ctaHref="#contact"
+        ctaHref={RENDEZ_VOUS_PATH}
         ctaLabel="Nolan me rappelle demain"
         analyticsId="sticky_demo_immo"
         observeHeroPrimary
