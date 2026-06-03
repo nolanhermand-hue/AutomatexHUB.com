@@ -4,10 +4,12 @@ export function HomeSolution() {
   return (
     <section className="px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-muted">{HOME_SOLUTION.eyebrow}</p>
-        <h2 className="mt-2 max-w-2xl font-heading text-2xl font-bold text-text md:text-3xl">
-          {HOME_SOLUTION.h2}
-        </h2>
+        <div className="animate-on-scroll section-reveal">
+          <p className="label-micro text-muted">{HOME_SOLUTION.eyebrow}</p>
+          <h2 className="mt-2 max-w-2xl font-heading text-2xl font-bold text-text md:text-3xl">
+            {HOME_SOLUTION.h2}
+          </h2>
+        </div>
         <ul className="mt-10 grid gap-6 sm:grid-cols-2">
           {HOME_SOLUTION.cards.map((card, index) => (
             <li

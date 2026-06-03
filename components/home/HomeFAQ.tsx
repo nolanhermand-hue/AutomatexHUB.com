@@ -7,18 +7,21 @@ export function HomeFAQ() {
   return (
     <section id="faq" className="border-t border-border px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
-        <p className="mb-4 font-mono text-[11px] uppercase tracking-widest text-muted">
-          Questions fréquentes
-        </p>
-        <h2 className="mb-10 text-2xl font-bold tracking-tight text-text md:text-3xl">
-          {HOME_FAQ_HEADING.h2}
-        </h2>
+        <div className="animate-on-scroll section-reveal mb-10">
+          <p className="mb-4 font-mono text-[11px] uppercase tracking-widest text-muted">
+            Questions fréquentes
+          </p>
+          <h2 className="text-2xl font-bold tracking-tight text-text md:text-3xl">
+            {HOME_FAQ_HEADING.h2}
+          </h2>
+        </div>
         <div className="divide-y divide-border overflow-hidden rounded-xl border border-border">
           {HOME_FAQ.map((item, index) => (
             <details
               key={item.q}
               open={index === 0}
-              className="group bg-surface transition-colors hover:bg-surface-2"
+              className="animate-on-scroll fade group bg-surface transition-colors hover:bg-surface-2"
+              style={{ transitionDelay: `${index * 55}ms` }}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 text-sm font-medium text-text marker:content-none md:text-base [&::-webkit-details-marker]:hidden">
                 {item.q}
@@ -37,7 +40,7 @@ export function HomeFAQ() {
             </details>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
+        <div className="animate-on-scroll fade mt-10 flex justify-center">
           <AnalyticsCta
             href={rendezVousHref()}
             analyticsId="home_faq_demo"

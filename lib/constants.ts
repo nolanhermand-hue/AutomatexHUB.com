@@ -67,8 +67,8 @@ export const NAP = {
   email: "nolan.hermand@automatex-hub.com",
   /** Profil professionnel fondateur */
   linkedinUrl: "https://www.linkedin.com/in/nolan-hermand-369958412",
-  /** Compte marque — à confirmer */
-  tiktokUrl: "https://www.tiktok.com/@automatexhub",
+  /** Compte marque */
+  tiktokUrl: "https://www.tiktok.com/@automatex_hub",
   /** Hébergeur explicite (signal de souveraineté française) */
   hostingProvider: "Mistral Paris · N8N Francfort (UE)",
 } as const;

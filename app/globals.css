@@ -134,10 +134,6 @@ body::before {
     touch-action: manipulation;
   }
 
-  body.cursor-custom,
-  body.cursor-custom * {
-    cursor: none !important;
-  }
 }
 
 .font-heading {

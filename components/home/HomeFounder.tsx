@@ -7,11 +7,13 @@ export function HomeFounder() {
   return (
     <section className="px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-muted">{HOME_FOUNDER.eyebrow}</p>
-        <h2 className="mt-2 max-w-2xl font-heading text-2xl font-bold text-text md:text-3xl">
-          {HOME_FOUNDER.h2}
-        </h2>
-        <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-start">
+        <div className="animate-on-scroll section-reveal">
+          <p className="label-micro text-muted">{HOME_FOUNDER.eyebrow}</p>
+          <h2 className="mt-2 max-w-2xl font-heading text-2xl font-bold text-text md:text-3xl">
+            {HOME_FOUNDER.h2}
+          </h2>
+        </div>
+        <div className="animate-on-scroll fade mt-10 flex flex-col gap-8 md:flex-row md:items-start">
           <FounderAvatar size={120} priority={false} />
           <div className="min-w-0 flex-1">
             <p className="text-sm leading-relaxed text-muted md:text-base">{HOME_FOUNDER.bio}</p>

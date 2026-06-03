@@ -37,7 +37,7 @@ export function useScrollAnimation(
                 observer?.unobserve(entry.target);
               });
             },
-            { threshold, rootMargin: "0px 0px -40px 0px" },
+            { threshold, rootMargin: "0px 0px -6% 0px" },
           );
 
       const attach = () => {

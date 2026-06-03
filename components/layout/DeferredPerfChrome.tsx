@@ -1,12 +1,11 @@
 "use client";
 
-import { CustomCursor } from "@/components/layout/CustomCursor";
 import { ScrollDepthTracker } from "@/components/seo/ScrollDepthTracker";
 import { UtmCapture } from "@/components/seo/UtmCapture";
 import { scheduleIdleTask } from "@/lib/schedule-idle";
 import { useEffect, useState } from "react";
 
-/** Curseur + analytics non critiques — après idle (TBT desktop). */
+/** Analytics non critiques — après idle (TBT desktop). */
 export function DeferredPerfChrome() {
   const [ready, setReady] = useState(false);
 
@@ -18,7 +17,6 @@ export function DeferredPerfChrome() {
 
   return (
     <>
-      <CustomCursor />
       <ScrollDepthTracker />
       <UtmCapture />
     </>

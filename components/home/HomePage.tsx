@@ -11,7 +11,7 @@ import { Pricing } from "@/components/sections/Pricing";
 
 export function HomePage() {
   return (
-    <main className="home-surface">
+    <main className="home-page home-surface">
       <HomeHero />
       <TechTrustBar />
       <HomeProblem />

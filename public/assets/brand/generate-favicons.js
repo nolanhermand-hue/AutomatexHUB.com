@@ -43,6 +43,13 @@ async function generate() {
       `Missing ${masterWebp} or ${masterPngFallback} — source favicon (cercle WebP ou PNG master).`,
     );
   }
+
+  if (fs.existsSync(masterWebp)) {
+    fs.mkdirSync(path.dirname(masterPngFallback), { recursive: true });
+    await sharp(masterWebp).resize(512, 512).png().toFile(masterPngFallback);
+    console.log(`✓ scripts/brand-sources/favicon-master.png (512×512 RGBA from circle WebP)`);
+  }
+
   console.log(`Source favicon: ${path.basename(masterPath)}`);
 
   const lockupLight = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-light.svg"));

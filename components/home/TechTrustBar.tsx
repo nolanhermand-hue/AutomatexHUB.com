@@ -14,7 +14,7 @@ export function TechTrustBar() {
   return (
     <section className="border-y border-border px-gutter py-8" aria-labelledby="home-tech-trust">
       <div className="mx-auto max-w-content">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div className="animate-on-scroll section-reveal flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <h2 id="home-tech-trust" className="text-sm font-semibold text-text md:text-base">
             {HOME_TECH_TRUST.label}
           </h2>
@@ -22,7 +22,7 @@ export function TechTrustBar() {
         </div>
         <ul className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:justify-start md:gap-8">
           {TOOLS.map((tool) => (
-            <li key={tool.name}>
+            <li key={tool.name} className="animate-on-scroll fade">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={tool.src}

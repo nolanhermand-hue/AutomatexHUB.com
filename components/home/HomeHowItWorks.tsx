@@ -4,8 +4,10 @@ export function HomeHowItWorks() {
   return (
     <section className="home-surface px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-[var(--forest)]">{HOME_HOW.eyebrow}</p>
-        <h2 className="mt-2 font-heading text-2xl font-bold text-text md:text-3xl">{HOME_HOW.h2}</h2>
+        <div className="animate-on-scroll section-reveal">
+          <p className="label-micro text-[var(--forest)]">{HOME_HOW.eyebrow}</p>
+          <h2 className="mt-2 font-heading text-2xl font-bold text-text md:text-3xl">{HOME_HOW.h2}</h2>
+        </div>
         <ol className="mt-10 grid gap-6 md:grid-cols-3">
           {HOME_HOW.steps.map((step, index) => (
             <li

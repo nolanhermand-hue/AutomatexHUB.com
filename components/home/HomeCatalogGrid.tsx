@@ -12,9 +12,11 @@ export function HomeCatalogGrid() {
   return (
     <section className="border-t border-border px-gutter py-16 md:py-20">
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-muted">{HOME_CATALOG.eyebrow}</p>
-        <h2 className="mt-2 font-heading text-2xl font-bold text-text md:text-3xl">{HOME_CATALOG.h2}</h2>
-        <p className="mt-3 max-w-readable text-sm text-muted md:text-base">{HOME_CATALOG.sub}</p>
+        <div className="animate-on-scroll section-reveal">
+          <p className="label-micro text-muted">{HOME_CATALOG.eyebrow}</p>
+          <h2 className="mt-2 font-heading text-2xl font-bold text-text md:text-3xl">{HOME_CATALOG.h2}</h2>
+          <p className="mt-3 max-w-readable text-sm text-muted md:text-base">{HOME_CATALOG.sub}</p>
+        </div>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => {
             if (!item) return null;

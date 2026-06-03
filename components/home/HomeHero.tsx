@@ -7,7 +7,7 @@ export function HomeHero() {
   return (
     <section id="hero" className="relative px-gutter pb-16 pt-24 md:pb-20 md:pt-28">
       <div className="mx-auto grid max-w-content gap-10 lg:grid-cols-[1fr_minmax(240px,360px)] lg:items-center">
-        <div>
+        <div className="hero-enter">
           <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--terracotta)]">
             Automatex · Orne · Normandie
           </p>
@@ -43,7 +43,7 @@ export function HomeHero() {
             loading="lazy"
             decoding="async"
             fetchPriority="low"
-            className="mx-auto w-full max-w-[320px] opacity-90 lg:max-w-none"
+            className="hero-cubes-float mx-auto w-full max-w-[320px] opacity-90 lg:max-w-none"
           />
         </div>
       </div>
