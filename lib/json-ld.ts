@@ -4,6 +4,39 @@ import { HOME_FAQ } from "@/lib/home-copy";
 import { FAQ_ITEMS, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS } from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 
+const JSONLD_PACKS = [
+  { name: "Pack Déclic", setup: 390, monthly: 99 },
+  { name: "Pack Système", setup: 990, monthly: 249 },
+  { name: "Pack Pilote", setup: 1690, monthly: 449 },
+] as const;
+
+const JSONLD_PRICE_RANGE = "390€–1690€ mise en place · 99€–449€/mois";
+
+function buildJsonLdPackOffers(nameSuffix = "") {
+  return JSONLD_PACKS.map(({ name, setup, monthly }) => ({
+    "@type": "Offer" as const,
+    name: nameSuffix ? `${name} ${nameSuffix}` : name,
+    price: String(setup),
+    priceCurrency: "EUR",
+    description: `Mise en place ${setup}€ (1er mois inclus), puis ${monthly}€/mois`,
+    priceSpecification: [
+      {
+        "@type": "UnitPriceSpecification",
+        name: "Mise en place",
+        price: String(setup),
+        priceCurrency: "EUR",
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        name: "Mensualité",
+        price: String(monthly),
+        priceCurrency: "EUR",
+        referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "MON" },
+      },
+    ],
+  }));
+}
+
 export function buildBreadcrumbList(
   items: ReadonlyArray<{ name: string; path: string }>,
 ) {
@@ -368,7 +401,7 @@ export function buildBtpServiceJsonLd(path: string) {
       "Réponse appels manqués",
       "Accompagnement numérique PME",
     ],
-    priceRange: "99€–449€/mois",
+    priceRange: JSONLD_PRICE_RANGE,
   };
 
   if (!isBtpLanding) {
@@ -381,11 +414,7 @@ export function buildBtpServiceJsonLd(path: string) {
     provider: { "@type": "Organization", name: "Automatex Hub" },
     areaServed: { "@type": "AdministrativeArea", name: "Orne" },
     audience: { "@type": "Audience", audienceType: "Artisans BTP TPE" },
-    offers: [
-      { "@type": "Offer", name: "Pack Déclic BTP", price: "99", priceCurrency: "EUR" },
-      { "@type": "Offer", name: "Pack Système BTP", price: "249", priceCurrency: "EUR" },
-      { "@type": "Offer", name: "Pack Pilote BTP", price: "449", priceCurrency: "EUR" },
-    ],
+    offers: buildJsonLdPackOffers("BTP"),
   };
 
   return {
@@ -422,18 +451,14 @@ export function buildTpeAutomatisationJsonLd() {
             streetAddress: NAP.streetAddress,
           },
           telephone: NAP.phoneE164,
-          priceRange: "99€–449€/mois",
+          priceRange: JSONLD_PRICE_RANGE,
         },
         areaServed: { "@type": "Country", name: "France" },
         audience: {
           "@type": "BusinessAudience",
           audienceType: "TPE PME indépendants artisans professions libérales",
         },
-        offers: [
-          { "@type": "Offer", name: "Pack Déclic", price: "99", priceCurrency: "EUR" },
-          { "@type": "Offer", name: "Pack Système", price: "249", priceCurrency: "EUR" },
-          { "@type": "Offer", name: "Pack Pilote", price: "449", priceCurrency: "EUR" },
-        ],
+        offers: buildJsonLdPackOffers(),
       },
     ],
   };

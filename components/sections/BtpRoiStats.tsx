@@ -16,9 +16,9 @@ export function BtpRoiStats() {
             </p>
           </div>
           <div className="col-span-2 md:col-span-1">
-            <p className="font-heading text-3xl font-bold text-accent">99 €/mois</p>
+            <p className="font-heading text-3xl font-bold text-accent">1 chantier</p>
             <p className="mt-1 text-xs text-muted">
-              Formule Départ — rentable dès le 1er chantier récupéré
+              Pack Déclic — rentable dès le 1er chantier récupéré (grille tarifs)
             </p>
           </div>
         </div>

@@ -139,9 +139,10 @@ Thème **sombre fixe** · `html` avec classe **`dark`** · pas de thème crème.
 | `/` | Hub choix parcours | `HubEntry` · classe `hub-entry-hero` |
 | `/immobilier` | Landing mandataires | `ImmobilierHome` |
 | `/btp` | Landing artisans BTP | `BtpLanding` (sections dynamic SSR) |
-| `/automatisation-ia-tpe` | Pilier TPE/PME | `TpeAutomatisationPricing` · `#tarifs` `#contact` |
+| `/automatisation-ia-tpe` | Pilier TPE/PME | `TpeAutomatisationPricing` · `#tarifs` · CTA → `/rendez-vous` |
 | `/automatisations` | Catalogue | `AutomatisationsCatalogSections` |
-| `/accompagnement` | Offre 12 mois | `#contact` · `AccompagnementContactForm` |
+| `/accompagnement` | Offre 12 mois | CTA → `/rendez-vous` · `AccompagnementContactForm` |
+| `/rendez-vous` | Contact canonique | `Contact` variant hub |
 | `/a-propos` | Fondateur | statique |
 | `/vos-donnees` | Transparence infra | `VosDonneesView` |
 | `/merci` | Post-formulaire | **off-SEO** |
@@ -192,13 +193,9 @@ Mega-menu : `lib/mega-nav-data.ts`
 
 | Préfixe `pathname` | Cible |
 |--------------------|--------|
-| `/automatisations`, `/automatisation-ia-tpe` | `/automatisation-ia-tpe#contact` |
-| `/accompagnement` | `/accompagnement#contact` |
-| `/btp`, `/automatisation-artisan*`, `/automatisation-btp*`, `/devis-automatique*` | `/btp#contact` |
-| `/immobilier`, `/mandataires*` | `/immobilier#contact` |
-| `/`, défaut | `/immobilier#contact` |
+| Toutes routes | **`/rendez-vous`** (`lib/hub-nav.ts` — plus de hash `#contact` pour la nav) |
 
-**Home `/`** : hub, pas landing immo ; CTA nav par défaut → **`/immobilier#contact`**.
+**CTA booking** : `rendezVousHref()` · tarifs → `rendezVousHref({ offre })`. Ancres `#contact` sur landings = sections formulaire optionnelles ; la nav pointe toujours `/rendez-vous`.
 
 ### Libellés CTA récurrents (`lib/constants.ts`)
 

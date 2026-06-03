@@ -796,33 +796,15 @@ export const BETA_PHASE_COPY = {
 } as const;
 
 export const SOCIAL_PROOF_DISCLAIMER =
-  "Mandataires pilotes — programme bêta 2026. Témoignages recueillis après onboarding.";
+  "Programme pilote 2026 — pas de témoignages inventés sur le site.";
 
+/** Réservé aux futures preuves réelles ; ne pas afficher de citations fictives. */
 export const SOCIAL_PROOF_ITEMS: ReadonlyArray<{
   quote: string;
   author: string;
   network: string;
   location: string;
-}> = [
-  {
-    quote: "J'ai récupéré deux leads la première semaine. Je n'avais rien changé à ma façon de travailler.",
-    author: "Sophie L.",
-    network: "IAD",
-    location: "Orne",
-  },
-  {
-    quote: "Mon planning du matin me prend maintenant cinq minutes au lieu d'une heure. Je recommande.",
-    author: "Franck M.",
-    network: "SAFTI",
-    location: "Calvados",
-  },
-  {
-    quote: "Nolan a tout configuré à distance en moins de deux jours. Zéro formation, zéro prise de tête.",
-    author: "Isabelle R.",
-    network: "Capifrance",
-    location: "Manche",
-  },
-];
+}> = [];
 
 /** B11 + E13 — Story fondateur enrichie */
 export const ABOUT_FOUNDER = {

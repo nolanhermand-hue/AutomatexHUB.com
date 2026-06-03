@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run brand:favicons && npm run demos:static && next build && node scripts/optimize-static-html-css.mjs",
+    "build": "npm run brand:favicons && npm run demos:static && next build && node scripts/optimize-static-html-css.mjs && node scripts/check-faqpage-html.mjs",
     "start": "next start",
     "lint": "next lint",
     "check:words": "node scripts/check-forbidden-words.mjs",
+    "check:faqpage": "node scripts/check-faqpage-html.mjs",
     "demos:static": "node scripts/generate-demo-statics.mjs",
     "check:animations": "bash scripts/check-animation-weight.sh",
     "check:routes:local": "bash scripts/check-routes.sh http://127.0.0.1:3000",

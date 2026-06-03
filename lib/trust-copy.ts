@@ -1,6 +1,6 @@
 /** Délais et réassurance — wording unique sur tout le site. */
 export const RESPONSE_DELAYS = {
-  line: "Démo : Nolan rappelle sous 24 h · Clients Full : réponse sous 4 h en semaine",
+  line: "Démo : Nolan rappelle sous 24 h · Pack Pilote : réponse sous 4 h en semaine",
   demo: "Nolan rappelle sous 24 h pour votre démo (20 min, gratuite)",
   full: "Formule Full : réponse sous 4 h en semaine",
 } as const;

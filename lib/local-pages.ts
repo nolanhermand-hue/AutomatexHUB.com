@@ -92,7 +92,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Tarification claire",
         paragraphs: [
-          "Trois formules (99 €, 249 € et 449 €/mois après mise en place) avec remise annuelle affichée en pourcentage. Un lead récupéré à 3 500 € de commission potentielle rentabilise plusieurs mois de service.",
+          "Trois packs : Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois, avec remise annuelle affichée en pourcentage. Un lead récupéré à 3 500 € de commission potentielle rentabilise plusieurs mois de service.",
           "Réservez une audit de 20 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
         ],
       },
@@ -171,14 +171,14 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
         title: "Réseaux accompagnés",
         paragraphs: [
           "Configurations déjà testées pour des profils IAD, SAFTI, Capifrance, Optimhome et EffiCity. Chaque réseau a ses habitudes de notification : le paramétrage est adapté, pas copié-collé.",
-          "Témoignages issus du programme pilote 2026 ; mention affichée sur le site.",
+          "Pas de témoignages inventés sur le site — retours pilotes publiés uniquement avec accord explicite.",
         ],
       },
       {
         title: "Pages locales",
         paragraphs: [
           "Contenu détaillé par ville : Flers, Alençon, Argentan. Chaque page décrit le marché local et les bénéfices concrets pour les mandataires qui y exercent.",
-          "Contact : formulaire sur l'accueil, téléphone 06 45 38 42 33, email nolan.hermand@automatex-hub.com.",
+          "Contact : page Rendez-vous (/rendez-vous), téléphone 06 45 38 42 33, email nolan.hermand@automatex-hub.com.",
         ],
       },
     ],

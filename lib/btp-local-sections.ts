@@ -32,8 +32,8 @@ export function buildBtpLocalSections(page: BtpLocalPageDef): BtpLocalSection[] 
     {
       title: "Tarifs et accompagnement",
       paragraphs: [
-        "Formules de 99 € à 449 € par mois après setup unique. Pas d'engagement annuel. Chaque formule inclut un interlocuteur humain à Flers — pas une hotline.",
-        "La formule Full ajoute un point téléphonique mensuel avec Nolan, un ajustement par mois et une réponse sous 4 h en semaine.",
+        "Trois packs (Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois) après mise en place. Pas d'engagement annuel. Chaque formule inclut un interlocuteur humain à Flers — pas une hotline.",
+        "Le pack Pilote ajoute un point téléphonique mensuel avec Nolan, un ajustement par mois et une réponse sous 4 h en semaine.",
       ],
     },
     {

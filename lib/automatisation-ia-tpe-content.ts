@@ -5,10 +5,10 @@ export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 export const TPE_META = {
   title: "Automatisation IA pour TPE & PME — Accompagnement humain · Automatex",
   description:
-    "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Packs Déclic, Système, Pilote — accompagnement mensuel Nolan. Conformité UE · RGPD.",
+    "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois. RGPD UE.",
   ogTitle: "Automatisation IA pour TPE — Sans compétences techniques · Automatex Hub",
   ogDescription:
-    "Un système qui travaille à votre place. Leads, devis, Drive, relances. Mise en place 390€ (1er mois inclus), puis 99€/mois sur Déclic.",
+    "Un système qui travaille à votre place. Leads, devis, Drive, relances. Packs Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
 } as const;
 
 export const TPE_HERO = {
@@ -19,7 +19,7 @@ export const TPE_HERO = {
   subtitle:
     "Automatex installe un système sur vos outils actuels. Zéro compétence technique de votre côté. Accompagnement mensuel inclus — vous restez sur votre métier.",
   stats: [
-    { value: "99 €", label: "dès / mois" },
+    { value: "< 2 min", label: "pour réserver" },
     { value: "48 h", label: "opérationnel" },
     { value: "0", label: "compétence requise" },
     { value: "UE", label: "RGPD · données UE" },
@@ -248,7 +248,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Combien coûte l'automatisation IA pour une TPE en 2026 ?",
-    a: "Trois packs transparents (Déclic, Système, Pilote) avec mise en place incluant le 1er mois, puis mensuel fixe. Accompagnement Essentiel, Suivi ou Copilote selon le pack. Sur mesure si hors-cadre.",
+    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Pack Pilote : 1690€ puis 449€/mois. Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.",
   },
   {
     q: "Faut-il être technique ?",

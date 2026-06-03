@@ -29,7 +29,7 @@ export const HUB_ENTRY_COPY = {
     "Dans les deux cas : démo gratuite 20 min sur votre cas réel. Nolan rappelle sous 24 h.",
   ctaImmobilier: "Démo mandataire — Nolan m'appelle",
   ctaBtp: "Démo artisan — Nolan m'appelle",
-  priceHintBtp: "Artisans : Déclic 390€ puis 99€/mois",
+  priceHintBtp: "Artisans : démo 20 min · tarifs sur la landing BTP",
 } as const;
 
 export const HUB_ACCOMPANIMENT = {

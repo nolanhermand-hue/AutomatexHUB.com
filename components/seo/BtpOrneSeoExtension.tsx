@@ -17,7 +17,7 @@ const TOP_THREE = [
   },
   {
     title: "2. Devis automatique depuis note vocale",
-    body: "Vous dictez 2 minutes dans Telegram en sortant du chantier. Le devis est mis en page en PDF et envoyé au client avant que vous soyez rentré. Les artisans de l'Orne qui utilisent cette fonction signent leurs devis plus vite.",
+    body: "Vous dictez 2 minutes dans Telegram en sortant du chantier. Le devis est mis en page en PDF et envoyé au client avant que vous soyez rentré. Objectif terrain : signer le devis avant la fin de journée, pas le lendemain.",
   },
   {
     title: "3. Relance automatique devis non répondus (J+4, J+8)",
@@ -28,7 +28,7 @@ const TOP_THREE = [
 export const BTP_ORNE_SEO_FAQ = [
   {
     q: "Quel est le coût d'une automatisation pour un artisan BTP dans l'Orne ?",
-    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Un chantier récupéré grâce à une réponse rapide couvre généralement plusieurs mois de pack.",
+    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Pack Pilote : 1690€ puis 449€/mois. Un chantier récupéré grâce à une réponse rapide couvre généralement plusieurs mois de pack.",
   },
   {
     q: "Faut-il être informaticien pour utiliser l'automatisation BTP ?",

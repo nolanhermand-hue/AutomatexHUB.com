@@ -9,7 +9,7 @@
 - **Global graph** : `StructuredDataServer` + `JsonLdLayout` dans un **`layout.tsx` par route** (pas de `usePathname` client).
 - **Modes FAQ** (`lib/json-ld.ts` → `JsonLdFaqMode`) : `home` (`/`), `tpe` (`/automatisation-ia-tpe`), `btp` (`/btp` + pages locales BTP/devis), `mandataires` (immobilier, mandataires, légal, hub).
 - **Scripts additionnels** (sans 2e FAQPage) : `BtpStructuredData`, `buildTpeAutomatisationJsonLd` (layout TPE), `LocalStructuredData`, `buildAboutPageJsonLd`.
-- **Vérif post-build** : `node scripts/check-faqpage-html.mjs out`
+- **Vérif post-build** : `npm run check:faqpage` (alias `node scripts/check-faqpage-html.mjs out`) — chaîné dans `npm run build`
 
 ---
 
@@ -154,7 +154,7 @@ flowchart TB
     IMMO --> MF["/mandataires-flers"]
     IMMO --> MA["/mandataires-alencon"]
     IMMO --> MAR["/mandataires-argentan"]
-    MF & MA & MAR --> IM_CTA["→ /immobilier#contact"]
+    MF & MA & MAR --> IM_CTA["→ /rendez-vous"]
   end
 
   subgraph btp["BTP · Kévin"]
@@ -165,13 +165,13 @@ flowchart TB
     BTP --> B_AR["/automatisation-artisan-argentan"]
     BTP --> D_ORNE["/devis-automatique-artisan-orne"]
     BTP --> D_GEN["/devis-automatique-artisan"]
-    B_ORNE & B_FL & B_AL & B_AR & D_ORNE & D_GEN --> BT_CTA["→ /btp#contact"]
+    B_ORNE & B_FL & B_AL & B_AR & D_ORNE & D_GEN --> BT_CTA["→ /rendez-vous"]
   end
 
   subgraph transverse["Transverse · conversion & confiance"]
     CAT["/automatisations"]
     CAT --> ANC["#leads-reponses … #suivi-rapports"]
-    ACC["/accompagnement #contact"]
+    ACC["/accompagnement → /rendez-vous"]
     APRO["/a-propos"]
     VD["/vos-donnees"]
   end
@@ -205,12 +205,8 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-  P[pathname] --> Q{préfixe ?}
-  Q -->|automatisations · automatisation-ia-tpe| TPE_C["/automatisation-ia-tpe#contact"]
-  Q -->|accompagnement| ACC_C["/accompagnement#contact"]
-  Q -->|btp · automatisation-artisan* · automatisation-btp* · devis-automatique*| BTP_C["/btp#contact"]
-  Q -->|immobilier · mandataires*| IMMO_C["/immobilier#contact"]
-  Q -->|/ · défaut| IMMO_C
+  P[pathname] --> RV["/rendez-vous"]
+  RV --> Q["?offre= · ?sujet=resiliation"]
 ```
 
 ### Catalogue `/automatisations` (sections)

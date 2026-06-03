@@ -97,7 +97,7 @@ export const HOME_HOW = {
 export const HOME_PRICING = {
   eyebrow: "Tarifs",
   h2: "3 packs + sur mesure pour artisans et TPE en Normandie",
-  sub: "Mise en place + mensualité transparente. Système = le plus choisi sur le terrain.",
+  sub: "Mise en place + mensualité transparente. Système = pack recommandé pour la plupart des TPE.",
   banner:
     "Sans engagement · résiliable en 1 mail · 30 jours remboursé · RGPD France",
 } as const;

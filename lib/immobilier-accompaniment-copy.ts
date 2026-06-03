@@ -14,7 +14,7 @@ export const IMMOBILIER_ACCOMPANIMENT = {
     },
     {
       title: "Un interlocuteur à Flers",
-      body: "06 45 38 42 33 — pas une hotline parisienne. Réponse sous 4 h en semaine (formule Full).",
+      body: "06 45 38 42 33 — pas une hotline parisienne. Réponse sous 4 h en semaine (pack Pilote).",
     },
   ],
 } as const;
