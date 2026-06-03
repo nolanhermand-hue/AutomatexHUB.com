@@ -747,13 +747,11 @@ export const CONTACT_COPY = {
   networkLabel: "Réseau mandataire",
   networkPlaceholder: "Choisissez votre réseau",
   submitLabel: "Réserver mon appel avec Nolan",
-  urgencyLine: "Créneaux démo cette semaine (Orne) — un seul appel, pas de relance auto.",
   emailHint: "Votre email ne sera jamais partagé ni revendu.",
-  phoneHint: "Utilisé uniquement pour planifier votre démo. Un seul appel, pas de relance.",
-  formFooter:
-    "Un seul appel. Pas de relance automatique. Nolan, Flers (61).",
+  phoneHint: "Utilisé pour planifier votre démo.",
+  formFooter: "Nolan, Flers (61).",
+  formReassurance: "Sans engagement",
   resiliationSubmitLabel: "Envoyer ma demande de résiliation",
-  badges: [SOVEREIGNTY_TRUST_LINE, "RGPD", "Résiliable en 1 mail", "Sans engagement"],
 } as const;
 
 export const NETWORK_OPTIONS = [

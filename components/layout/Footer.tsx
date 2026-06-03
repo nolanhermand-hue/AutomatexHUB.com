@@ -97,13 +97,6 @@ export function Footer() {
           </span>
           {" · "}
           <span itemProp="founder">{NAP.founder}</span>
-          {" · "}
-          <span itemProp="streetAddress">{NAP.streetAddress}</span>
-          {", "}
-          <span itemProp="addressLocality">{NAP.city}</span>
-          {" ("}
-          <span itemProp="postalCode">{NAP.postalCode}</span>
-          {")"}
           <br />
           <a href={`mailto:${NAP.email}`} itemProp="email" className="text-text hover:text-primary">
             {NAP.email}

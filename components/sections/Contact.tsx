@@ -11,9 +11,9 @@ import { useEffect, useState } from "react";
 export type ContactVariant = "immobilier" | "btp" | "hub";
 
 const LEAD_SECTORS = [
-  { value: "mandataire", label: "Mandataire" },
-  { value: "artisan-btp", label: "Artisan BTP" },
-  { value: "autre-tpe", label: "Autre TPE" },
+  { value: "artisan", label: "Artisan" },
+  { value: "immobilier", label: "Immobilier" },
+  { value: "tpe", label: "TPE" },
 ] as const;
 
 type ContactProps = {
@@ -356,13 +356,6 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
 
           {/* legacy optional block removed — champs regroupés dans l'accordéon */}
 
-          {!isResiliation ? (
-            <p className="flex items-center gap-2 text-xs font-semibold text-accent">
-              <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent" aria-hidden />
-              {CONTACT_COPY.urgencyLine}
-            </p>
-          ) : null}
-
           <button
             type="submit"
             disabled={pending}
@@ -405,29 +398,15 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
             </p>
           ) : null}
 
-          <p className="form-trust text-center text-sm text-muted">
-            Un seul appel. Pas de relance. Nolan, Flers (61).
-          </p>
-
-          <p className="text-center text-xs text-muted">
-            {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formFooter}
-          </p>
           {!isResiliation ? (
-            <p className="text-center text-xs text-muted">
-              Sans engagement — résiliable en un mail
+            <p className="text-center text-xs text-muted border-t border-border pt-5">
+              {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formReassurance}
             </p>
-          ) : null}
-
-          <ul className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-5 text-sm text-muted">
-            {CONTACT_COPY.badges.map((b) => (
-              <li key={b} className="inline-flex items-center gap-1.5">
-                <span className="text-primary" aria-hidden>
-                  ✓
-                </span>
-                {b}
-              </li>
-            ))}
-          </ul>
+          ) : (
+            <p className="text-center text-xs text-muted">
+              {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formFooter}
+            </p>
+          )}
         </form>
       </div>
     </section>
