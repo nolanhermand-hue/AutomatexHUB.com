@@ -1,6 +1,7 @@
 "use client";
 
 import { trackFormSubmitted } from "@/lib/analytics";
+import { formatFrenchPhoneDisplay } from "@/lib/phone-fr";
 import { submitProspectFromFormData } from "@/lib/prospect-webhook";
 import { ProspectHoneypotField } from "@/components/ui/ProspectHoneypotField";
 import { useState } from "react";
@@ -9,6 +10,7 @@ import { useState } from "react";
 export function AccompagnementContactForm() {
   const [pending, setPending] = useState(false);
   const [submitFeedback, setSubmitFeedback] = useState("");
+  const [telephone, setTelephone] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,7 +61,7 @@ export function AccompagnementContactForm() {
 
         <div>
           <label htmlFor="acc-prenom" className="block text-sm font-medium text-text">
-            Votre prénom *
+            Prénom *
           </label>
           <input
             id="acc-prenom"
@@ -67,46 +69,70 @@ export function AccompagnementContactForm() {
             type="text"
             required
             autoComplete="given-name"
-            placeholder="Votre prénom"
+            className="mt-2 w-full rounded-lg border border-border bg-night px-4 py-3 text-base text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="acc-nom" className="block text-sm font-medium text-text">
+            Nom *
+          </label>
+          <input
+            id="acc-nom"
+            name="nom"
+            type="text"
+            required
+            autoComplete="family-name"
             className="mt-2 w-full rounded-lg border border-border bg-night px-4 py-3 text-base text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20"
           />
         </div>
 
         <div>
           <label htmlFor="acc-telephone" className="block text-sm font-medium text-text">
-            Votre téléphone *
+            Téléphone *
           </label>
           <input
             id="acc-telephone"
             name="telephone"
             type="tel"
             required
+            inputMode="numeric"
             autoComplete="tel"
-            placeholder="06 XX XX XX XX"
-            pattern="^(0[67][0-9]{8})$"
+            placeholder="06 12 34 56 78"
+            value={telephone}
+            onChange={(e) => setTelephone(formatFrenchPhoneDisplay(e.target.value))}
+            onBlur={(e) => setTelephone(formatFrenchPhoneDisplay(e.target.value))}
             className="mt-2 w-full rounded-lg border border-border bg-night px-4 py-3 text-base text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20"
           />
           <p className="mt-1 text-xs text-faint">
-            Utilisé uniquement pour planifier votre démo. Un seul appel, pas de relance.
+            10 chiffres — un seul appel pour planifier la démo, pas de relance.
           </p>
         </div>
 
         <div>
-          <label htmlFor="acc-activite" className="block text-sm font-medium text-text">
-            Votre activité
+          <label htmlFor="acc-email" className="block text-sm font-medium text-text">
+            Email *
           </label>
-          <select
-            id="acc-activite"
-            name="activite"
-            className="mt-2 w-full appearance-none rounded-lg border border-border bg-night px-4 py-3 text-base text-text focus:border-primary focus:outline-none"
-          >
-            <option value="">Choisir…</option>
-            <option value="mandataire-iad">Mandataire IAD</option>
-            <option value="mandataire-safti">Mandataire SAFTI</option>
-            <option value="mandataire-autre">Mandataire (autre réseau)</option>
-            <option value="artisan-btp">Artisan BTP</option>
-            <option value="autre">Autre</option>
-          </select>
+          <input
+            id="acc-email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            className="mt-2 w-full rounded-lg border border-border bg-night px-4 py-3 text-base text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="acc-precisions" className="block text-sm font-medium text-text">
+            Précisions (optionnel)
+          </label>
+          <textarea
+            id="acc-precisions"
+            name="precisions"
+            rows={3}
+            className="mt-2 w-full rounded-lg border border-border bg-night px-4 py-3 text-base text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20"
+          />
         </div>
 
         <button
