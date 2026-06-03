@@ -119,7 +119,11 @@ export async function submitProspectFromFormData(
 
 export async function submitProspectToWebhook(payload: ProspectWebhookPayload): Promise<ProspectWebhookResult> {
   if (!WEBHOOK_FORMULAIRE_PROSPECTS_URL) {
-    return { ok: false, error: "Le webhook prospect n'est pas configuré." };
+    return {
+      ok: false,
+      error:
+        "Envoi indisponible : l’URL du webhook n’est pas configurée. Définissez NEXT_PUBLIC_WEBHOOK_FORMULAIRE_PROSPECTS_URL dans Netlify, puis relancez un déploiement complet.",
+    };
   }
 
   try {
