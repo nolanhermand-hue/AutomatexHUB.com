@@ -36,6 +36,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
   const [touched, setTouched] = useState(false);
   const [fields, setFields] = useState({
     prenom: "",
+    nom: "",
     email: "",
     telephone: "",
     metier: "",
@@ -72,12 +73,13 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     setTouched(true);
     setSubmitFeedback("");
 
-    if (!fields.prenom || !fields.telephone) {
-      e.preventDefault();
-      return;
-    }
+    const prenomOk = fields.prenom.trim() !== "";
+    const nomOk = fields.nom.trim() !== "";
+    const phoneOk = fields.telephone.trim() !== "";
+    const metierOk = isBtp || isResiliation || fields.metier.trim() !== "";
+    const emailOk = !isResiliation || fields.email.trim() !== "";
 
-    if (!isBtp && !isResiliation && !fields.metier) {
+    if (!prenomOk || !nomOk || !phoneOk || !metierOk || !emailOk) {
       return;
     }
 
@@ -173,8 +175,33 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               onChange={(e) => setFields((f) => ({ ...f, prenom: e.target.value }))}
               className={fieldClass(touched, fields.prenom, true)}
             />
-            {touched && !fields.prenom && (
+            {touched && !fields.prenom.trim() && (
               <p id="prenom-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
+                <span aria-hidden>⚠</span> Ce champ est requis.
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="lastName"
+              className="text-xs font-semibold uppercase tracking-wide text-muted"
+            >
+              {CONTACT_COPY.lastNameLabel}
+            </label>
+            <input
+              id="lastName"
+              name="nom"
+              required
+              autoComplete="family-name"
+              aria-required="true"
+              aria-describedby="nom-error"
+              value={fields.nom}
+              onChange={(e) => setFields((f) => ({ ...f, nom: e.target.value }))}
+              className={fieldClass(touched, fields.nom, true)}
+            />
+            {touched && !fields.nom.trim() && (
+              <p id="nom-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
                 <span aria-hidden>⚠</span> Ce champ est requis.
               </p>
             )}
@@ -202,7 +229,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               onChange={(e) => setFields((f) => ({ ...f, telephone: e.target.value }))}
               className={fieldClass(touched, fields.telephone, true)}
             />
-            {touched && !fields.telephone && (
+            {touched && !fields.telephone.trim() && (
               <p
                 id="telephone-error"
                 role="alert"
@@ -244,7 +271,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
                   </label>
                 ))}
               </div>
-              {touched && !fields.metier && (
+              {touched && !fields.metier.trim() && (
                 <p role="alert" className="mt-2 text-xs font-semibold text-text">
                   Choisissez un secteur pour que Nolan prépare la démo.
                 </p>

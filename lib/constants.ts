@@ -742,6 +742,7 @@ export const CONTACT_COPY = {
     "On vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Un interlocuteur dédié, pas un ticket anonyme.",
   formTitle: "Vos coordonnées",
   firstNameLabel: "Prénom",
+  lastNameLabel: "Nom",
   emailLabel: "Email professionnel (optionnel)",
   phoneLabel: "Téléphone",
   networkLabel: "Réseau mandataire",

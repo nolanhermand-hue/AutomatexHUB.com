@@ -77,7 +77,9 @@ export function buildProspectWebhookPayload({
   variant,
 }: SubmitProspectPayloadArgs): ProspectWebhookPayload {
   const prenom = getStringValue(formData, "prenom");
-  const name = prenom || getStringValue(formData, "name");
+  const nom = getStringValue(formData, "nom");
+  const legacyName = getStringValue(formData, "name");
+  const name = [prenom, nom].filter(Boolean).join(" ").trim() || legacyName;
   const email = getStringValue(formData, "email");
   const phone = getStringValue(formData, "telephone");
   const message = getStringValue(formData, "message");
