@@ -1,4 +1,5 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
+import { MARKETING_REASSURANCE_BANNER } from "@/lib/constants";
 
 /** FAQ BTP SSR + accessible (C11) — style ORIS aligné FAQ immo. */
 export function BtpFaq() {
@@ -33,6 +34,7 @@ export function BtpFaq() {
             </details>
           ))}
         </div>
+        <p className="mt-8 text-center text-xs font-medium text-muted">{MARKETING_REASSURANCE_BANNER}</p>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
-import { trackCtaClicked } from "@/lib/analytics";
-import { BOOKING_CTA_LABEL, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
-import { rendezVousHref } from "@/lib/hub-nav";
+import { PrimaryDemoCta } from "@/components/shared/PrimaryDemoCta";
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 /**
  * FINAL CTA — bandeau ORIS (navy + accent orange).
@@ -23,15 +22,10 @@ export function FinalCta() {
           Si ça ne vous convient pas, vous partez sans rien.
         </p>
 
-        <a
-          href={rendezVousHref()}
-          data-analytics-cta="final_primary"
-          onClick={() => trackCtaClicked("final_primary")}
+        <PrimaryDemoCta
+          analyticsId="final_primary"
           className="mt-8 btn-bracket btn-bracket-primary"
-        >
-          {BOOKING_CTA_LABEL}
-          <span aria-hidden>→</span>
-        </a>
+        />
 
         <p className="mt-8 text-xs text-faint">
           {SOVEREIGNTY_TRUST_LINE} · 🔒 RGPD · ✋ Sans engagement · 📩 Résiliable en 1 mail

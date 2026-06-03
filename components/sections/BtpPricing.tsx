@@ -10,7 +10,7 @@ import {
 } from "@/lib/btp-copy";
 import { cn } from "@/lib/cn";
 import { annualPrepayTotal, formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
-import { PRICING_HEADING } from "@/lib/constants";
+import { MARKETING_REASSURANCE_BANNER, PRICING_HEADING } from "@/lib/constants";
 import { rendezVousHref } from "@/lib/hub-nav";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { useState } from "react";
@@ -116,6 +116,7 @@ export function BtpPricing() {
           {PRICING_HEADING.customFitFootnote}
         </p>
         <p className="mt-4 text-center text-sm font-medium text-muted">{PRICING_HEADING.bannerLine}</p>
+        <p className="mt-2 text-center text-xs font-medium text-muted">{MARKETING_REASSURANCE_BANNER}</p>
 
         <PricingProgramNotes foundersSegment="artisans" />
       </div>

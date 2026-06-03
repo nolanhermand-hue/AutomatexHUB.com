@@ -4,6 +4,7 @@ import { BillingSwitch } from "@/components/ui/BillingSwitch";
 import { trackOfferViewed } from "@/lib/analytics";
 import { Card } from "@/components/ui/Card";
 import { OFFERS, PRICING_HEADING } from "@/lib/constants";
+import { HOME_PRICING } from "@/lib/home-copy";
 import { calculateBreakevenLeads } from "@/lib/calculator";
 import { cn } from "@/lib/cn";
 import { annualPrepayTotal, formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
@@ -15,6 +16,10 @@ import { useEffect, useState } from "react";
 
 type BillingCycle = "monthly" | "annual";
 
+type PricingProps = {
+  audience?: "default" | "home";
+};
+
 /**
  * PRICING — D1 (3 offres), D2 (toggle annuel/mensuel −15 %),
  *           D3 (badge Recommandé), D4 (prix transparents),
@@ -23,7 +28,8 @@ type BillingCycle = "monthly" | "annual";
  *           D10 (ancres directes), D11 (toggle au-dessus),
  *           D12 (stack vertical mobile), D15 (accès direct)
  */
-export function Pricing() {
+export function Pricing({ audience = "default" }: PricingProps) {
+  const isHome = audience === "home";
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
 
   useEffect(() => {
@@ -54,16 +60,21 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="bg-bg-card px-gutter py-12 md:py-16"
+      className={cn(
+        "px-gutter py-12 md:py-16",
+        isHome ? "home-surface" : "bg-bg-card",
+      )}
       data-analytics-section="pricing"
     >
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-accent">{PRICING_HEADING.eyebrow}</p>
+        <p className="label-micro text-accent">
+          {isHome ? HOME_PRICING.eyebrow : PRICING_HEADING.eyebrow}
+        </p>
         <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">
-          {PRICING_HEADING.h2}
+          {isHome ? HOME_PRICING.h2 : PRICING_HEADING.h2}
         </h2>
         <p className="mt-3 max-w-[52ch] text-sm font-medium leading-relaxed text-muted md:text-[15px]">
-          {PRICING_HEADING.h2SurMesureHint}
+          {isHome ? HOME_PRICING.sub : PRICING_HEADING.h2SurMesureHint}
         </p>
 
         <BillingSwitch
@@ -108,6 +119,7 @@ export function Pricing() {
                   featured={offer.featured}
                   className={cn(
                     "h-full",
+                    isHome && "glass-panel border-[var(--glass-border)] bg-transparent shadow-none",
                     offer.featured && "border-primary/50 shadow-lg shadow-primary/10",
                   )}
                 >
@@ -195,15 +207,16 @@ export function Pricing() {
           })}
         </div>
 
-        <PricingProgramNotes foundersSegment="mandataires" />
+        <PricingProgramNotes foundersSegment={isHome ? "artisans" : "mandataires"} />
 
-        <p className="mx-auto mt-10 max-w-[52ch] text-center text-sm leading-relaxed text-muted md:text-[15px]">
-          {PRICING_HEADING.customFitFootnote}
-        </p>
+        {!isHome ? (
+          <p className="mx-auto mt-10 max-w-[52ch] text-center text-sm leading-relaxed text-muted md:text-[15px]">
+            {PRICING_HEADING.customFitFootnote}
+          </p>
+        ) : null}
 
-        {/* Garantie globale sous le tableau pricing */}
         <p className="mt-6 text-center text-sm font-medium text-muted">
-          {PRICING_HEADING.bannerLine}
+          {isHome ? HOME_PRICING.banner : PRICING_HEADING.bannerLine}
         </p>
 
         <div className="mt-8 flex justify-center">

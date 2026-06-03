@@ -1,4 +1,4 @@
-import { BOOKING_CTA_LABEL } from "@/lib/constants";
+import { PRIMARY_DEMO_CTA } from "@/lib/constants";
 import { IMMOBILIER_DAILY_FEATURES } from "@/lib/immobilier-daily-features";
 import Link from "next/link";
 
@@ -47,7 +47,7 @@ export function AutomationsFeatureGrid() {
             data-analytics-cta="automations_cta"
             className="btn-bracket btn-bracket-primary"
           >
-            {BOOKING_CTA_LABEL}
+            {PRIMARY_DEMO_CTA}
             <span aria-hidden>→</span>
           </Link>
           <Link

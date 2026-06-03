@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RendezVousPage() {
   return (
-    <div className="bg-night pb-16 pt-[88px] md:pt-[100px]">
+    <div className="funnel-surface pb-16 pt-[88px] md:pt-[100px]">
       <Contact variant="hub" />
     </div>
   );

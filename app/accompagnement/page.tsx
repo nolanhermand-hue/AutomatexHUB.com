@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function AccompagnementPage() {
   return (
-    <div className="bg-night px-gutter pb-16 pt-[88px] md:pt-[100px]">
+    <div className="funnel-surface px-gutter pb-16 pt-[88px] md:pt-[100px]">
       <div className="mx-auto max-w-content">
         <h1 className="font-heading text-[clamp(2rem,5vw,3rem)] font-bold text-text">
           {ACCOMPANIMENT_PAGE.h1}

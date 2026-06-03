@@ -1,3 +1,4 @@
+import { AutomationFlowSchema } from "@/components/catalog/AutomationFlowSchema";
 import type { CatalogAutomation } from "@/lib/automations-catalog";
 
 const formulaBadge: Record<
@@ -14,31 +15,6 @@ const targetLabel: Record<CatalogAutomation["target"], string> = {
   btp: "BTP",
   both: "Immo & BTP",
 };
-
-const stepBorderColor: Record<CatalogAutomation["steps"][0]["type"], string> = {
-  in: "border-l-primary",
-  out: "border-l-success",
-  system: "border-l-border",
-  result: "border-l-border-light",
-};
-
-const stepIconGlyph: Record<string, string> = {
-  bolt: "⚡",
-  spark: "✦",
-  mail: "✉",
-  check: "✓",
-  bell: "🔔",
-  mic: "🎤",
-  phone: "📞",
-};
-
-function formatDelay(delay?: number): string | undefined {
-  if (delay == null) return undefined;
-  if (delay < 120) return `< ${delay}s`;
-  if (delay < 3600) return `< ${Math.round(delay / 60)} min`;
-  if (delay < 86400) return `< ${Math.round(delay / 3600)} h`;
-  return `J+${Math.round(delay / 86400)}`;
-}
 
 export function AutomationCard({
   category,
@@ -67,30 +43,8 @@ export function AutomationCard({
         <p className="text-[13px] leading-relaxed text-muted">{tagline}</p>
       </div>
 
-      <div className="flex-1 divide-y divide-border">
-        {steps.map((step, i) => (
-          <div key={`${step.from}-${i}`} className={`border-l-2 px-5 py-3 ${stepBorderColor[step.type]}`}>
-            <div className="mb-1.5 flex items-center justify-between gap-2">
-              <div className="flex min-w-0 items-center gap-2">
-                <span className="text-sm leading-none" aria-hidden="true">
-                  {stepIconGlyph[step.icon] ?? "•"}
-                </span>
-                <span className="font-mono text-[11px] text-muted">
-                  {step.from}
-                  {step.to ? ` → ${step.to}` : ""}
-                </span>
-              </div>
-              {formatDelay(step.delay) ? (
-                <span className="shrink-0 rounded border border-border bg-surface-2 px-2 py-0.5 font-mono text-[10px] text-faint">
-                  {formatDelay(step.delay)}
-                </span>
-              ) : null}
-            </div>
-            <pre className="whitespace-pre-wrap rounded-md border border-border bg-bg px-3 py-2.5 font-mono text-[11px] leading-relaxed text-muted">
-              {step.message}
-            </pre>
-          </div>
-        ))}
+      <div className="flex-1 border-t border-border bg-bg/40">
+        <AutomationFlowSchema steps={steps} />
       </div>
 
       {impact ? (

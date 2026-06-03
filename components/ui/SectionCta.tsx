@@ -1,6 +1,4 @@
-import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
-import { BOOKING_CTA_LABEL } from "@/lib/constants";
-import { rendezVousHref } from "@/lib/hub-nav";
+import { PrimaryDemoCta } from "@/components/shared/PrimaryDemoCta";
 import { cn } from "@/lib/cn";
 
 type SectionCtaProps = {
@@ -16,15 +14,12 @@ export function SectionCta({
 }: SectionCtaProps) {
   const isPrimary = variant === "primary";
   return (
-    <AnalyticsCta
-      href={rendezVousHref()}
+    <PrimaryDemoCta
       analyticsId={analyticsId}
       className={cn(
         isPrimary ? "btn-bracket btn-bracket-primary" : "font-mono text-sm text-muted hover:text-text",
         className,
       )}
-    >
-      {BOOKING_CTA_LABEL}
-    </AnalyticsCta>
+    />
   );
 }

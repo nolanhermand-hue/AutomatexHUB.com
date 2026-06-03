@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { BRAND } from "@/lib/brand";
@@ -18,42 +19,41 @@ export function LogoOrbit({
   variant = "lockup",
   theme = "light",
   className,
-  href = "/#hero",
+  href = "/",
   height = 40,
   onClick,
 }: LogoOrbitProps) {
   const isLockup = variant === "lockup";
-  const src =
-    isLockup
-      ? theme === "light"
-        ? BRAND.lockupLight
-        : BRAND.lockupDark
-      : BRAND.symbol128;
-  const srcSet = isLockup
-    ? theme === "light"
-      ? `${BRAND.lockupLight} 1x, ${BRAND.lockupLight2x} 2x`
-      : `${BRAND.lockupDark} 1x, ${BRAND.lockupDark2x} 2x`
-    : undefined;
-
   const width = isLockup ? Math.round(height * LOCKUP_RATIO) : height;
 
-  const img = (
-    // eslint-disable-next-line @next/next/no-img-element -- PNG marque raster (Outfit baked-in)
+  const img = isLockup ? (
+    // eslint-disable-next-line @next/next/no-img-element -- lockup PNG raster
     <img
-      src={src}
-      srcSet={srcSet}
+      src={theme === "light" ? BRAND.lockupLight : BRAND.lockupDark}
+      srcSet={
+        theme === "light"
+          ? `${BRAND.lockupLight} 1x, ${BRAND.lockupLight2x} 2x`
+          : `${BRAND.lockupDark} 1x, ${BRAND.lockupDark2x} 2x`
+      }
       alt="Automatex"
       width={width}
       height={height}
       className={cn("block shrink-0 object-contain object-left", className)}
-      style={
-        isLockup
-          ? { height, width, maxHeight: height, maxWidth: width }
-          : { height, width: height, maxHeight: height, maxWidth: height }
-      }
-      loading={isLockup ? "eager" : "lazy"}
+      style={{ height, width, maxHeight: height, maxWidth: width }}
+      loading="eager"
       decoding="async"
-      fetchPriority={isLockup ? "high" : "auto"}
+      fetchPriority="high"
+    />
+  ) : (
+    <Image
+      src={BRAND.symbolCircle}
+      alt="Automatex"
+      width={512}
+      height={512}
+      sizes={`${height}px`}
+      className={cn("block shrink-0 object-contain", className)}
+      style={{ height, width: height, maxHeight: height, maxWidth: height }}
+      priority
     />
   );
 

@@ -92,7 +92,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Tarification claire",
         paragraphs: [
-          "Trois formules (99 €, 199 € et 449 € par mois) avec remise annuelle affichée en pourcentage. Un lead récupéré à 3 500 € de commission potentielle rentabilise plusieurs mois de service.",
+          "Trois formules (99 €, 249 € et 449 €/mois après mise en place) avec remise annuelle affichée en pourcentage. Un lead récupéré à 3 500 € de commission potentielle rentabilise plusieurs mois de service.",
           "Réservez une audit de 20 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
         ],
       },

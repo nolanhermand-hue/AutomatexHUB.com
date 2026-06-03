@@ -5,9 +5,9 @@ export { categoryToAnchor };
 export const SOLUTIONS_MENU = {
   parMetier: [
     {
-      label: "Mandataires immobiliers",
-      href: "/immobilier",
-      desc: "IAD · SAFTI · Capifrance · Orne",
+      label: "TPE & PME (tous secteurs)",
+      href: "/automatisation-ia-tpe",
+      desc: "Packs Déclic · Système · Pilote",
     },
     {
       label: "Artisans BTP",
@@ -15,9 +15,9 @@ export const SOLUTIONS_MENU = {
       desc: "Maçon · Plombier · Électricien · Orne",
     },
     {
-      label: "TPE & PME (tous secteurs)",
-      href: "/automatisation-ia-tpe",
-      desc: "Packs Déclic · Système · Pilote",
+      label: "Mandataires immobiliers",
+      href: "/immobilier",
+      desc: "IAD · SAFTI · Capifrance · Orne",
     },
   ],
   parBesoin: [

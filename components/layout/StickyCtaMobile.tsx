@@ -2,7 +2,7 @@
 
 import { trackCtaClicked } from "@/lib/analytics";
 import { STICKY_CTA_COPY } from "@/lib/constants";
-import { RENDEZ_VOUS_PATH } from "@/lib/hub-nav";
+import { rendezVousHref } from "@/lib/hub-nav";
 import { cn } from "@/lib/cn";
 import { useEffect, useState } from "react";
 
@@ -42,7 +42,7 @@ export function StickyCtaMobile() {
       aria-hidden={!visible}
     >
       <a
-        href={RENDEZ_VOUS_PATH}
+        href={rendezVousHref()}
         data-analytics-cta="sticky_mobile"
         onClick={() => trackCtaClicked("sticky_mobile")}
         className="btn-bracket btn-bracket-primary"

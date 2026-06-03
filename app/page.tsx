@@ -1,18 +1,24 @@
-import { HubEntry } from "@/components/hub/HubEntry";
-import { HUB_META } from "@/lib/hub-copy";
+import { HomePage } from "@/components/home/HomePage";
+import { StructuredDataServer } from "@/components/seo/StructuredDataServer";
+import { HOME_META } from "@/lib/home-copy";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: HUB_META.title,
-  description: HUB_META.description,
+  title: HOME_META.title,
+  description: HOME_META.description,
   alternates: { canonical: "https://automatex-hub.com/" },
   openGraph: {
-    title: HUB_META.title,
-    description: HUB_META.description,
+    title: HOME_META.title,
+    description: HOME_META.description,
     url: "https://automatex-hub.com/",
   },
 };
 
-export default function HomePage() {
-  return <HubEntry />;
+export default function Page() {
+  return (
+    <>
+      <StructuredDataServer faqMode="home" />
+      <HomePage />
+    </>
+  );
 }

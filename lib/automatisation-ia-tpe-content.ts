@@ -1,4 +1,4 @@
-import { BOOKING_CTA_LABEL, NAP, SOVEREIGNTY_TRUST_LINE, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
+import { PRIMARY_DEMO_CTA, NAP, SOVEREIGNTY_TRUST_LINE, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
 
 export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 
@@ -24,7 +24,7 @@ export const TPE_HERO = {
     { value: "0", label: "compétence requise" },
     { value: "UE", label: "RGPD · données UE" },
   ] as const,
-  ctaPrimary: BOOKING_CTA_LABEL,
+  ctaPrimary: PRIMARY_DEMO_CTA,
   ctaSecondary: "Voir ce qu'on automatise",
 } as const;
 

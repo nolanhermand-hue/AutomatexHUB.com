@@ -16,7 +16,7 @@ export function BtpLocalPage({ page }: { page: BtpLocalPageDef }) {
   });
 
   return (
-    <article className="mx-auto max-w-content px-gutter py-16 pt-[88px] md:pt-[100px]">
+    <article className="funnel-surface mx-auto max-w-content px-gutter py-16 pt-[88px] md:pt-[100px]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }} />
       <nav className="text-sm text-muted" aria-label="Fil d'Ariane">
         <Link href="/" className="text-primary underline">

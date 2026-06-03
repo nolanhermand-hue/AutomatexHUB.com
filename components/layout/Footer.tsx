@@ -1,8 +1,10 @@
+import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { FooterTrustBadges } from "@/components/layout/FooterTrustBadges";
+import { LinkedInLink } from "@/components/ui/LinkedInLink";
+import { TikTokLink } from "@/components/ui/TikTokLink";
 import {
   FOOTER_COPY,
   FOOTER_LOCAL_LINKS,
-  LINKEDIN_PROFILE_ARIA,
   NAP,
   SOVEREIGNTY_TRUST_LINE,
 } from "@/lib/constants";
@@ -15,15 +17,12 @@ export function Footer() {
       <div className="mx-auto max-w-content px-gutter py-16">
         <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <div className="mb-4 flex items-center gap-2">
-              <span className="font-mono text-sm font-bold uppercase tracking-widest text-text">
-                AUTOMATEX
-              </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+            <div className="mb-4">
+              <LogoOrbit variant="symbol" href="/" height={40} />
             </div>
             <p className="mb-6 max-w-sm text-[13px] leading-relaxed text-muted">
-              Système automatique et accompagnement humain à Flers — mandataires immobiliers et
-              artisans BTP en Orne et Normandie. {SOVEREIGNTY_TRUST_LINE}.
+              Automatisations pour artisans BTP, TPE et mandataires immobiliers — installé à Flers,
+              déployé en Orne et Normandie. {SOVEREIGNTY_TRUST_LINE}.
             </p>
             <FooterTrustBadges />
           </div>
@@ -114,15 +113,9 @@ export function Footer() {
             {NAP.phoneDisplay}
           </a>
           {" · "}
-          <a
-            href={NAP.linkedinUrl}
-            className="text-text hover:text-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={LINKEDIN_PROFILE_ARIA}
-          >
-            LinkedIn
-          </a>
+          <LinkedInLink className="align-middle" size={22} />
+          {" · "}
+          <TikTokLink className="align-middle" size={22} />
         </address>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">

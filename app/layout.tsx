@@ -3,7 +3,6 @@ import { LayoutChrome } from "@/components/layout/LayoutChrome";
 import { NetlifyFormsDetection } from "@/components/seo/NetlifyFormsDetection";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { Plausible } from "@/components/seo/Plausible";
-import { StructuredData } from "@/components/seo/StructuredData";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 import { META, META_KEYWORDS, NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
@@ -128,7 +127,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="theme-color" content="#080D1A" />
       </head>
       <body className="min-h-screen font-body antialiased">
-        <StructuredData />
         <GoogleAnalytics />
         <Plausible />
         <LayoutChrome>{children}</LayoutChrome>

@@ -1,6 +1,15 @@
 # Automatex Hub — mémo routes (agents)
 
-> **Màj** : 2026-06-02 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final) · **GO prod** : [`LAUNCH-READINESS.md`](./LAUNCH-READINESS.md)
+> **Màj** : 2026-06-03 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final) · **GO prod** : [`LAUNCH-READINESS.md`](./LAUNCH-READINESS.md)
+
+---
+
+## JSON-LD (static export)
+
+- **Global graph** : `StructuredDataServer` + `JsonLdLayout` dans un **`layout.tsx` par route** (pas de `usePathname` client).
+- **Modes FAQ** (`lib/json-ld.ts` → `JsonLdFaqMode`) : `home` (`/`), `tpe` (`/automatisation-ia-tpe`), `btp` (`/btp` + pages locales BTP/devis), `mandataires` (immobilier, mandataires, légal, hub).
+- **Scripts additionnels** (sans 2e FAQPage) : `BtpStructuredData`, `buildTpeAutomatisationJsonLd` (layout TPE), `LocalStructuredData`, `buildAboutPageJsonLd`.
+- **Vérif post-build** : `node scripts/check-faqpage-html.mjs out`
 
 ---
 
@@ -16,7 +25,7 @@
 | `/api/*` (App Router) | **Aucune** page API Next ; forms → Netlify |
 | `/merci` indexable | **Non** : `robots.txt` `Disallow: /merci`, absent du sitemap |
 
-**Home `/`** : hub (`HubEntry`), pas une landing immo. CTA nav / booking → **`/rendez-vous`**.
+**Home `/`** : landing artisans & TPE (`HomePage`), pas le hub choix parcours. CTA hero → **`rendezVousHref()`** ; formulaire `#contact` sur la page (Netlify + webhook).
 
 ---
 
@@ -24,7 +33,7 @@
 
 | Route | Rôle | Template / composant clé |
 |-------|------|---------------------------|
-| `/` | Hub choix parcours | `HubEntry` |
+| `/` | Landing artisans & TPE (Normandie) | `HomePage` |
 | `/immobilier` | Landing mandataires (Pascal) | `ImmobilierHome` |
 | `/btp` | Landing artisans BTP (Kévin) | `BtpLanding` |
 | `/automatisation-ia-tpe` | Pilier TPE/PME + tarifs + contact | page + `TpeAutomatisationPricing` |

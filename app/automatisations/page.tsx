@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function AutomatisationsPage() {
   return (
-    <main className="min-h-screen bg-night px-gutter pb-20 pt-[88px] md:pt-[100px]">
+    <main className="funnel-surface min-h-screen px-gutter pb-20 pt-[88px] md:pt-[100px]">
       <section className="mx-auto max-w-content pb-16 text-center">
         <span className="label-micro text-faint">Catalogue complet</span>
         <h1 className="mt-4 font-heading text-3xl font-bold text-text md:text-4xl">
@@ -36,7 +36,7 @@ export default function AutomatisationsPage() {
           part et l&apos;impact sur votre activité.
         </p>
 
-        <div className="mt-10 inline-flex gap-8 rounded-2xl border border-border bg-bg-card px-8 py-4">
+        <div className="glass-panel mt-10 inline-flex gap-8 px-8 py-4">
           <div className="text-center">
             <p className="font-heading text-2xl font-bold text-primary">{AUTOMATIONS_CATALOG.length}</p>
             <p className="mt-0.5 text-xs text-muted">automatisations</p>

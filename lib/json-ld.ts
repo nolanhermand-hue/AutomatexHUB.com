@@ -1,5 +1,6 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
 import { TPE_FAQ, TPE_PAGE_PATH } from "@/lib/automatisation-ia-tpe-content";
+import { HOME_FAQ } from "@/lib/home-copy";
 import { FAQ_ITEMS, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS } from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 
@@ -64,11 +65,23 @@ export function buildLocalMandatairesJsonLd(opts: {
 }
 
 /** FAQ JSON-LD variant for the global layout graph (one FAQPage per HTML document). */
-export type JsonLdFaqMode = "mandataires" | "btp" | "tpe";
+export type JsonLdFaqMode = "mandataires" | "btp" | "tpe" | "home";
+
+const BTP_JSONLD_PATHS = [
+  "/btp",
+  "/automatisation-btp-orne",
+  "/automatisation-artisan-flers",
+  "/automatisation-artisan-alencon",
+  "/automatisation-artisan-argentan",
+  "/devis-automatique-artisan",
+  "/devis-automatique-artisan-orne",
+] as const;
 
 export const JSON_LD_FAQ_MODE_BY_PATH: Readonly<Record<string, JsonLdFaqMode>> = {
-  "/btp": "btp",
+  "": "home",
+  "/": "home",
   [TPE_PAGE_PATH]: "tpe",
+  ...Object.fromEntries(BTP_JSONLD_PATHS.map((p) => [p, "btp" as const])),
 };
 
 export type BuildJsonLdGraphOptions = {
@@ -76,6 +89,13 @@ export type BuildJsonLdGraphOptions = {
 };
 
 function buildFaqMainEntity(mode: JsonLdFaqMode) {
+  if (mode === "home") {
+    return HOME_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    }));
+  }
   if (mode === "btp") {
     return BTP_FAQ.items.map((item) => ({
       "@type": "Question",
@@ -106,6 +126,7 @@ function buildFaqMainEntity(mode: JsonLdFaqMode) {
  */
 export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const faqMode = options?.faqMode ?? "mandataires";
+  const isHome = faqMode === "home";
   const businessId = `${SITE_URL}#business`;
   const personId = `${SITE_URL}#person-nolan`;
 
@@ -152,7 +173,42 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
     },
   }));
 
-  const logoUrl = brandAbsolute(BRAND.favicons.android512, SITE_URL);
+  const logoUrl = brandAbsolute(BRAND.symbolCircle, SITE_URL);
+
+  const businessDescription = isHome
+    ? "Automatex installe réponse aux leads, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min, mise en place 48 h."
+    : "Automatex installe une réponse immédiate aux leads, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne.";
+
+  const knowsAbout = isHome
+    ? [
+        "Automatisation artisan BTP",
+        "Devis automatique TPE",
+        "Relances clients",
+        "Appels manqués SMS",
+        "Google Drive classement",
+        "Gmail automatisation",
+        "RGPD automatisation",
+        SOVEREIGNTY_TRUST_LINE,
+        NAP.hostingProvider,
+      ]
+    : [
+        "Automatisation mandataire immobilier",
+        "Leads immobilier perdus",
+        "IAD France",
+        "SAFTI",
+        "Capifrance",
+        "Optimhome",
+        "EffiCity",
+        "Gmail automatisation",
+        "Telegram immobilier",
+        "RGPD automatisation",
+        SOVEREIGNTY_TRUST_LINE,
+        NAP.hostingProvider,
+      ];
+
+  const offerCatalogName = isHome
+    ? "Formules Automatex pour artisans et TPE"
+    : "Formules Automatex pour mandataires immobiliers";
 
   return {
     "@context": "https://schema.org",
@@ -161,8 +217,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         "@type": "ProfessionalService",
         "@id": businessId,
         name: NAP.brand,
-        description:
-          "Automatex installe une réponse immédiate aux leads, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne.",
+        description: businessDescription,
         url: SITE_URL,
         telephone: NAP.phoneE164,
         email: NAP.email,
@@ -189,24 +244,11 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           longitude: -0.5711,
         },
         areaServed,
-        knowsAbout: [
-          "Automatisation mandataire immobilier",
-          "Leads immobilier perdus",
-          "IAD France",
-          "SAFTI",
-          "Capifrance",
-          "Optimhome",
-          "EffiCity",
-          "Gmail automatisation",
-          "Telegram immobilier",
-          "RGPD automatisation",
-          SOVEREIGNTY_TRUST_LINE,
-          NAP.hostingProvider,
-        ],
+        knowsAbout,
         founder: { "@id": personId },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Formules Automatex pour mandataires immobiliers",
+          name: offerCatalogName,
           itemListElement: offerCatalog,
         },
       },
@@ -234,21 +276,29 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
       // H5 — HowTo : rich results pour Solution en 3 étapes
       {
         "@type": "HowTo",
-        name: `${SOLUTION_HEADING.h2.replace(/\.$/, "")} en Normandie`,
-        description:
-          "Automatex installe une réponse immédiate et un tri des mails pour mandataires immobiliers à Flers (Orne) et en Normandie. Mise en place en 48 heures, sans engagement.",
+        name: isHome
+          ? `${SOLUTION_HEADING.h2.replace(/\.$/, "")} pour artisans et TPE en Normandie`
+          : `${SOLUTION_HEADING.h2.replace(/\.$/, "")} en Normandie`,
+        description: isHome
+          ? "Automatex installe réponse aux messages, devis et relances pour artisans et TPE à Flers (Orne) et en Normandie. Mise en place en 48 heures, sans engagement."
+          : "Automatex installe une réponse immédiate et un tri des mails pour mandataires immobiliers à Flers (Orne) et en Normandie. Mise en place en 48 heures, sans engagement.",
         totalTime: "PT48H",
         step: howToSteps,
       },
       // Service schema
       {
         "@type": "Service",
-        name: "Réponse automatique aux leads immobiliers pour mandataires",
+        name: isHome
+          ? "Automatisation leads, devis et relances pour artisans et TPE"
+          : "Réponse automatique aux leads immobiliers pour mandataires",
         provider: { "@id": businessId },
-        description:
-          "Service de réponse immédiate aux leads entrants, tri des mails et classement des documents pour mandataires IAD, SAFTI, Capifrance en Normandie et dans l'Orne.",
+        description: isHome
+          ? "Service de réponse aux leads, devis, relances et classement documents pour artisans BTP et TPE en Normandie et dans l'Orne."
+          : "Service de réponse immédiate aux leads entrants, tri des mails et classement des documents pour mandataires IAD, SAFTI, Capifrance en Normandie et dans l'Orne.",
         areaServed,
-        serviceType: "Automatisation administrative pour mandataires immobiliers",
+        serviceType: isHome
+          ? "Automatisation administrative pour artisans et TPE"
+          : "Automatisation administrative pour mandataires immobiliers",
         offers: offerCatalog,
       },
       buildBreadcrumbList([{ name: "Accueil", path: "/" }]),
@@ -258,8 +308,9 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         image: logoUrl,
-        description:
-          "Réponse aux leads en moins de 2 minutes, tri des emails et classement Google Drive pour mandataires IAD, SAFTI et Capifrance en Normandie.",
+        description: isHome
+          ? "Réponse aux leads en moins de 2 minutes, devis, relances et classement Google Drive pour artisans et TPE en Normandie."
+          : "Réponse aux leads en moins de 2 minutes, tri des emails et classement Google Drive pour mandataires IAD, SAFTI et Capifrance en Normandie.",
         provider: { "@id": businessId },
         featureList: [
           "Réponse aux leads en moins de 2 minutes",

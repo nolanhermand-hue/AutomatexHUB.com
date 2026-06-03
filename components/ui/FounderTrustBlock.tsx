@@ -1,5 +1,6 @@
 import { FounderAvatar } from "@/components/ui/FounderAvatar";
-import { LINKEDIN_PROFILE_ARIA, NAP } from "@/lib/constants";
+import { LinkedInLink } from "@/components/ui/LinkedInLink";
+import { NAP } from "@/lib/constants";
 import { RESPONSE_DELAYS } from "@/lib/trust-copy";
 type FounderTrustBlockProps = {
   compact?: boolean;
@@ -25,15 +26,9 @@ export function FounderTrustBlock({ compact = false, className = "" }: FounderTr
         >
           {NAP.phoneDisplay}
         </a>
-        <a
-          href={NAP.linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={LINKEDIN_PROFILE_ARIA}
-          className="mt-1 inline-flex min-h-[44px] items-center justify-center text-sm font-medium text-muted underline underline-offset-4 hover:text-primary"
-        >
-          LinkedIn
-        </a>
+        <div className="mt-2 flex justify-center sm:justify-start">
+          <LinkedInLink size={28} className="min-h-[44px] min-w-[44px]" />
+        </div>
       </div>
     </div>
   );

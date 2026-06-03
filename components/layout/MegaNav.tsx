@@ -10,6 +10,7 @@ import {
   SOLUTIONS_MENU,
 } from "@/lib/mega-nav-data";
 import { AUTOMATIONS_CATALOG } from "@/lib/automations-catalog";
+import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -153,20 +154,12 @@ export function MegaNav() {
       )}
     >
       <div className="mx-auto flex min-h-[44px] max-w-content items-center justify-between gap-3 px-gutter lg:min-h-[48px]">
-        <Link
+        <LogoOrbit
+          variant="symbol"
           href="/"
-          className="inline-flex shrink-0 items-center gap-2"
+          height={36}
           onClick={() => handleNavClick("/")}
-          aria-label="Automatex — accueil"
-        >
-          <span className="font-mono text-sm font-bold uppercase tracking-widest text-text">
-            AUTOMATEX
-          </span>
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
-          <span className="hidden font-mono text-[10px] uppercase tracking-widest text-faint sm:inline">
-            Automation · France
-          </span>
-        </Link>
+        />
 
         <nav className="hidden flex-1 items-center justify-center gap-0.5 lg:flex" aria-label="Navigation principale">
           <div

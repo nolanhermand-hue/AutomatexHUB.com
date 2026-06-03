@@ -31,8 +31,9 @@ export default function CgvPage() {
       <LegalSection title="Article 1 — Objet">
         <LegalP>
           Les présentes CGV régissent les relations entre {c.founder} ({c.brand}, {LEGAL.status},
-          {c.address}) et tout mandataire immobilier indépendant souscrivant une offre Automatex.
-          Elles prévalent sur toute autre condition, sauf accord écrit contraire.
+          {c.address}) et tout client professionnel (mandataire immobilier, artisan BTP, TPE ou PME)
+          souscrivant une offre Automatex. Elles prévalent sur toute autre condition, sauf accord
+          écrit contraire.
         </LegalP>
       </LegalSection>
 

@@ -67,7 +67,7 @@ const Contact = dynamic(
 
 export function BtpLanding() {
   return (
-    <>
+    <div className="funnel-surface">
       <BtpHeroSection />
       <BtpDayPainSection />
       <BtpDemoSection />
@@ -89,6 +89,6 @@ export function BtpLanding() {
         ctaLabel={BTP_CONTACT.cta}
         analyticsId="sticky_demo_btp"
       />
-    </>
+    </div>
   );
 }

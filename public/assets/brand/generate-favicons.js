@@ -15,7 +15,8 @@ const faviconsDir = path.join(dir, "favicons");
 const imagesDir = path.join(dir, "..", "images");
 const publicRoot = path.join(dir, "..", "..");
 const appDir = path.join(publicRoot, "..", "app");
-const masterPng = path.join(publicRoot, "..", "scripts", "brand-sources", "favicon-master.png");
+const masterWebp = path.join(dir, "logo-automatex-circle.webp");
+const masterPngFallback = path.join(publicRoot, "..", "scripts", "brand-sources", "favicon-master.png");
 
 const iconSizes = [
   { name: "favicon-16.png", size: 16 },
@@ -32,16 +33,24 @@ async function generate() {
   fs.mkdirSync(imagesDir, { recursive: true });
   fs.mkdirSync(appDir, { recursive: true });
 
-  if (!fs.existsSync(masterPng)) {
-    throw new Error(`Missing ${masterPng} — source favicon (hors public/, non déployée).`);
+  const masterPath = fs.existsSync(masterWebp)
+    ? masterWebp
+    : fs.existsSync(masterPngFallback)
+      ? masterPngFallback
+      : null;
+  if (!masterPath) {
+    throw new Error(
+      `Missing ${masterWebp} or ${masterPngFallback} — source favicon (cercle WebP ou PNG master).`,
+    );
   }
+  console.log(`Source favicon: ${path.basename(masterPath)}`);
 
   const lockupLight = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-light.svg"));
   const lockupDark = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-dark.svg"));
   const ogSvg = fs.readFileSync(path.join(dir, "og-image.svg"));
   const ogBtpSvg = fs.readFileSync(path.join(dir, "og-image-btp.svg"));
 
-  const rasterSharp = () => sharp(masterPng);
+  const rasterSharp = () => sharp(masterPath);
 
   for (const { name, size } of iconSizes) {
     await rasterSharp().resize(size, size).png().toFile(path.join(faviconsDir, name));
@@ -62,8 +71,8 @@ async function generate() {
     .toFile(path.join(dir, "logo-orbit-lockup-dark@2x.png"));
   console.log("✓ logo-orbit-lockup-dark.png + @2x");
 
-  await sharp(masterPng).resize(128, 128).png().toFile(path.join(dir, "logo-orbit-symbol-128.png"));
-  console.log("✓ logo-orbit-symbol-128.png");
+  await sharp(masterPath).resize(128, 128).png().toFile(path.join(dir, "logo-orbit-symbol-128.png"));
+  console.log("✓ logo-orbit-symbol-128.png (from circle master)");
 
   const ogOutBrand = path.join(dir, "og-image.png");
   await sharp(ogSvg).resize(1200, 630).png().toFile(ogOutBrand);

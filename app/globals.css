@@ -34,7 +34,12 @@
   --color-faint: #8892a4;
   --color-black: #e8edf5;
   --color-footer: #080d1a;
-  --color-forest: #080d1a;
+  --color-forest: #2f5d4b;
+  --color-slate: #2d3a4a;
+  --color-slate-deep: #1e2833;
+  --color-terracotta: #c0694a;
+  --color-cream: #f5f0e6;
+  --color-text-subtle: #a7b0ba;
 
   --max-w-content: 1140px;
   --max-w-readable: 680px;
@@ -647,4 +652,47 @@ body::before {
 
 .hero-scroll-hint-chevron {
   opacity: 0.55;
+}
+
+/* Home landing — slate / terracotta glass (max 2 blur tiers, not on hero) */
+:root {
+  --slate: #2d3a4a;
+  --slate-deep: #1e2833;
+  --terracotta: #c0694a;
+  --forest: #2f5d4b;
+  --cream: #f5f0e6;
+  --text-subtle: #a7b0ba;
+  --glass-bg: rgb(255 255 255 / 0.06);
+  --glass-border: rgb(255 255 255 / 0.12);
+  --radius-glass: 1.75rem;
+}
+
+.home-surface,
+.funnel-surface {
+  background: linear-gradient(180deg, var(--slate-deep) 0%, var(--color-bg) 42%);
+}
+
+.glass-panel {
+  border-radius: var(--radius-glass);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel-strong {
+  border-radius: var(--radius-glass);
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(255 255 255 / 0.09);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel,
+  .glass-panel-strong {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--color-surface-2);
+  }
 }

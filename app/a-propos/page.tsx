@@ -1,7 +1,8 @@
 import { ABOUT_PAGE } from "@/lib/about-page";
 import { buildAboutPageJsonLd } from "@/lib/json-ld";
 import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
-import { LINKEDIN_PROFILE_ARIA, NAP, SITE_URL } from "@/lib/constants";
+import { LinkedInLink } from "@/components/ui/LinkedInLink";
+import { NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -15,7 +16,7 @@ export default function AProposPage() {
   const json = buildAboutPageJsonLd();
 
   return (
-    <article className="mx-auto max-w-content px-gutter py-16">
+    <article className="funnel-surface mx-auto max-w-content px-gutter py-16 pt-[88px] md:pt-[100px]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
@@ -40,19 +41,25 @@ export default function AProposPage() {
               {fact.label}
             </dt>
             <dd className="mt-1 text-base text-text">
-              {"href" in fact && fact.href ? (
-                <a
-                  href={fact.href}
-                  className="text-primary underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={LINKEDIN_PROFILE_ARIA}
-                >
-                  {fact.value}
-                </a>
-              ) : (
-                fact.value
-              )}
+              {(() => {
+                const linkHref = "href" in fact ? fact.href : undefined;
+                if (linkHref && fact.label === "LinkedIn") {
+                  return <LinkedInLink size={28} />;
+                }
+                if (linkHref) {
+                  return (
+                    <a
+                      href={linkHref}
+                      className="text-primary underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {fact.value}
+                    </a>
+                  );
+                }
+                return fact.value;
+              })()}
             </dd>
           </div>
         ))}

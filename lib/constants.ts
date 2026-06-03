@@ -19,6 +19,10 @@ export const VALUE_PER_LEAD_EUROS = 3500;
 /** Libellé CTA unique — audit / prise de rendez-vous 20 min */
 export const BOOKING_CTA_LABEL = "Réserver mon appel avec Nolan" as const;
 
+/** CTA démo 20 min — accueil & landings artisans/TPE */
+export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur ton cas" as const;
+export const PRIMARY_DEMO_CTA_SHORT = "Démo 20 min" as const;
+
 /** Offre sur mesure — entretien de cadrage (distinct de la démo 20 min). */
 export const SUR_MESURE_BOOKING_CTA =
   "Réserver un rendez-vous sur mesure — 30 min" as const;
@@ -63,6 +67,8 @@ export const NAP = {
   email: "nolan.hermand@automatex-hub.com",
   /** Profil professionnel fondateur */
   linkedinUrl: "https://www.linkedin.com/in/nolan-hermand-369958412",
+  /** Compte marque — à confirmer */
+  tiktokUrl: "https://www.tiktok.com/@automatexhub",
   /** Hébergeur explicite (signal de souveraineté française) */
   hostingProvider: "Mistral Paris · N8N Francfort (UE)",
 } as const;
@@ -70,6 +76,9 @@ export const NAP = {
 /** Libellé accessibilité — lien LinkedIn externe */
 export const LINKEDIN_PROFILE_ARIA =
   "Profil LinkedIn de Nolan Hermand — s'ouvre dans un nouvel onglet" as const;
+
+export const TIKTOK_PROFILE_ARIA =
+  "Compte TikTok Automatex — s'ouvre dans un nouvel onglet" as const;
 
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
 export const META = {
@@ -182,7 +191,7 @@ export const HERO_COPY = {
   subtitle:
     "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux leads en 2 min pendant vos visites. Sans engagement, résiliable en 1 mail.",
   /** A3 + B13 — CTA unique primaire, ≤ 5 mots, verbe d'action */
-  ctaPrimary: BOOKING_CTA_LABEL,
+  ctaPrimary: PRIMARY_DEMO_CTA,
   /** Lien secondaire dégradé en texte simple — pas un bouton */
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
@@ -368,7 +377,7 @@ export const ACCOMPANIMENT_COPY = {
     cta: SUR_MESURE_BOOKING_CTA,
   },
   phoneCta: "Appeler Nolan",
-  cta: BOOKING_CTA_LABEL,
+  cta: PRIMARY_DEMO_CTA,
 } as const;
 
 export const FINAL_CTA_HUMAN_LINE =
@@ -456,7 +465,7 @@ export const PRICING_HEADING = {
   h2: "Tarifs Automatex — 3 packs + sur mesure pour mandataires en Normandie",
   h2SurMesureHint:
     "Tarifs affichés en annuel par défaut. Sur toutes les formules : suivi humain 12 mois et bilan trimestriel.",
-  chooseCta: BOOKING_CTA_LABEL,
+  chooseCta: PRIMARY_DEMO_CTA,
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
   /** Paiement 12 mois d'avance : −15 % sur le mensuel */
@@ -706,7 +715,7 @@ export const DATA_TRUST_COPY = {
 export const RESILIATION_COPY = {
   h2: "Arrêter ? Un seul mail.",
   body:
-    "Pas de formulaire de rétention. Pas de période minimale. Envoyez un email ou utilisez le bouton ci-dessous. Effet en fin de mois en cours. Données effacées sous 7 jours.",
+    "Sans engagement : pas de formulaire de rétention, pas de période minimale. Un mail suffit — effet en fin de mois en cours. Données effacées sous 7 jours. Garantie 30 jours remboursée sur la mise en place si le système ne vous convient pas (voir CGV).",
   emailLine: "nolan.hermand@automatex-hub.com",
   mailHint: "Objet : Résiliation Automatex — indiquez votre prénom et « je souhaite résilier ».",
   cta: "Résilier en ligne →",
@@ -723,7 +732,9 @@ export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: strin
 ] as const;
 
 export const CTA_REASSURANCE_LINE =
-  "Aucun engagement · Résiliable en 1 mail · Données UE · RGPD" as const;
+  "Sans engagement · résiliable en 1 mail · 30 jours remboursé · RGPD France" as const;
+
+export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
@@ -775,7 +786,7 @@ export const FOOTER_LOCAL_LINKS: ReadonlyArray<{ href: string; label: string }> 
 ] as const;
 
 export const STICKY_CTA_COPY = {
-  label: "Réserver ma démo — 20 min",
+  label: PRIMARY_DEMO_CTA_SHORT,
 } as const;
 
 /** Remplace les faux témoignages — phase bêta */

@@ -13,7 +13,6 @@ import {
   TPE_SECTORS,
   TPE_YEAR_TIMELINE,
 } from "@/lib/automatisation-ia-tpe-content";
-import { buildTpeAutomatisationJsonLd } from "@/lib/json-ld";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -31,12 +30,8 @@ export const metadata: Metadata = {
 };
 
 export default function AutomatisationIaTpePage() {
-  const jsonLd = buildTpeAutomatisationJsonLd();
-
   return (
-    <div className="bg-night pb-16 pt-[88px] md:pt-[100px]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
+    <div className="funnel-surface bg-night pb-16 pt-[88px] md:pt-[100px]">
       <section className="mx-auto max-w-content px-gutter pb-16">
         <p className="label-micro text-accent">{TPE_HERO.eyebrow}</p>
         <h1 className="mt-4 font-heading text-[clamp(2rem,5vw,3.25rem)] font-bold leading-tight text-text">

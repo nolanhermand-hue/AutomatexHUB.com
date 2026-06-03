@@ -1,12 +1,17 @@
-/** Chemins publics des assets Orbit — source unique pour head, JSON-LD, UI. */
+/** Chemins publics des assets marque — source unique pour head, JSON-LD, UI. */
 export const BRAND = {
+  /** Symbole rond officiel (WebP) */
+  symbolCircle: "/assets/brand/logo-automatex-circle.webp",
+  symbolCircle2x: "/assets/brand/logo-automatex-circle@2x.webp",
   symbolSvg: "/assets/brand/logo-orbit-symbol-on-bg.svg",
   symbolTransparentSvg: "/assets/brand/logo-orbit-symbol.svg",
+  /** Affichage UI / JSON-LD — cercle WebP */
+  symbol128: "/assets/brand/logo-automatex-circle.webp",
+  symbolTransparent: "/assets/brand/logo-automatex-circle.webp",
   lockupLight: "/assets/brand/logo-orbit-lockup-light.png",
   lockupLight2x: "/assets/brand/logo-orbit-lockup-light@2x.png",
   lockupDark: "/assets/brand/logo-orbit-lockup-dark.png",
   lockupDark2x: "/assets/brand/logo-orbit-lockup-dark@2x.png",
-  symbol128: "/assets/brand/logo-orbit-symbol-128.png",
   ogImage: "/assets/brand/og-image.png",
   ogImageSvg: "/assets/brand/og-image.svg",
   manifest: "/site.webmanifest",

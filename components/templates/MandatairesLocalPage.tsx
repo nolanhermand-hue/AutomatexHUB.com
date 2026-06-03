@@ -10,7 +10,7 @@ export function MandatairesLocalPage({ page }: { page: LocalMandatairesPageData 
   ].join(" ").split(/\s+/).length;
 
   return (
-    <article className="mx-auto max-w-content px-gutter py-16">
+    <article className="funnel-surface mx-auto max-w-content px-gutter py-16 pt-[88px] md:pt-[100px]">
       <LocalStructuredData
         path={page.path}
         pageName={page.h1}
