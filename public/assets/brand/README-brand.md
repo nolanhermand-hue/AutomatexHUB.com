@@ -8,7 +8,6 @@
 | logo-orbit-symbol-on-bg.svg | Symbole avec fond vert (favicon, app) |
 | logo-orbit-horizontal-dark.svg | Logotype complet, fond sombre |
 | logo-orbit-horizontal-light.svg | Logotype complet, fond clair |
-| favicon.svg | Favicon SVG moderne |
 | favicons/ | Tous les PNG générés par le script |
 | og-image.svg | Image de partage réseaux sociaux |
 | logo-tokens.css | Variables CSS |

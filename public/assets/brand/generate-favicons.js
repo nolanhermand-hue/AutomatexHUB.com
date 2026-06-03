@@ -108,13 +108,11 @@ async function generate() {
   fs.copyFileSync(favicon32Path, path.join(publicRoot, "favicon.png"));
   fs.copyFileSync(appleTouchPath, path.join(publicRoot, "apple-touch-icon.png"));
 
-  const faviconSvgPath = path.join(dir, "favicon.svg");
-  const b64 = png32.toString("base64");
-  fs.writeFileSync(
-    faviconSvgPath,
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Automatex Hub"><title>Automatex Hub</title><image href="data:image/png;base64,${b64}" width="32" height="32"/></svg>\n`,
-  );
-  console.log("✓ favicon.svg (PNG embarqué, sans requête externe)");
+  const legacyFaviconSvg = path.join(dir, "favicon.svg");
+  if (fs.existsSync(legacyFaviconSvg)) {
+    fs.unlinkSync(legacyFaviconSvg);
+    console.log("✓ removed favicon.svg (ICO/PNG only — évite SVG + PNG embarqué dégradé)");
+  }
 
   console.log("✓ app/favicon.ico (ICO 16+32)");
   console.log("✓ app/icon.png, app/apple-icon.png");
