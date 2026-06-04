@@ -7,6 +7,12 @@ export function NetlifyFormsDetection() {
         <input name="prenom" />
         <input name="telephone" />
         <input name="email" />
+        <select name="secteur">
+          <option value="artisan">artisan</option>
+        </select>
+        <select name="zone_orne">
+          <option value="61">61</option>
+        </select>
         <input name="company_website" />
       </form>
       <form name="contact-accompagnement" data-netlify="true" data-netlify-honeypot="company_website" hidden>

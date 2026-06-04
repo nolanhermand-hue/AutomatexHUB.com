@@ -19,6 +19,8 @@ export type ProspectWebhookPayload = {
   telephone: string;
   email: string;
   precisions?: string;
+  secteur?: string;
+  zone_orne?: string;
 };
 
 export type ProspectWebhookResult =
@@ -53,6 +55,11 @@ export function buildProspectWebhookPayload({
   };
 
   if (precisions) payload.precisions = precisions;
+
+  const secteur = getStringValue(formData, "secteur");
+  const zone_orne = getStringValue(formData, "zone_orne");
+  if (secteur) payload.secteur = secteur;
+  if (zone_orne) payload.zone_orne = zone_orne;
 
   return payload;
 }

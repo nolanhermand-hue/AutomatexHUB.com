@@ -2,10 +2,19 @@
 
 import { trackFormSubmitted } from "@/lib/analytics";
 import { BTP_CONTACT } from "@/lib/btp-copy";
-import { CONTACT_COPY, FORM_NAME, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
+import {
+  CONTACT_COPY,
+  FORM_NAME,
+  HUB_CONTACT_REASSURANCE,
+  NAP,
+  ORNE_ZONE_OPTIONS,
+  PROSPECT_SECTEUR_OPTIONS,
+  SUR_MESURE_BOOKING_CTA,
+} from "@/lib/constants";
 import { formatFrenchPhoneDisplay } from "@/lib/phone-fr";
 import { submitProspectFromFormData } from "@/lib/prospect-webhook";
 import { ProspectHoneypotField } from "@/components/ui/ProspectHoneypotField";
+import { FounderAvatar } from "@/components/ui/FounderAvatar";
 import { readUtm } from "@/lib/utm";
 import { useEffect, useState } from "react";
 
@@ -30,6 +39,7 @@ function isValidEmail(value: string): boolean {
 
 export function Contact({ variant = "immobilier" }: ContactProps) {
   const isBtp = variant === "btp";
+  const isHub = variant === "hub";
   const [pending, setPending] = useState(false);
   const [submitFeedback, setSubmitFeedback] = useState("");
   const [touched, setTouched] = useState(false);
@@ -39,6 +49,8 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     email: "",
     telephone: "",
     precisions: "",
+    secteur: "",
+    zoneOrne: "",
   });
   const [offerHint, setOfferHint] = useState<string>("");
   const [sujetHint, setSujetHint] = useState<string>("");
@@ -72,8 +84,10 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     const nomOk = fields.nom.trim() !== "";
     const phoneOk = fields.telephone.replace(/\D/g, "").length >= 10;
     const emailOk = isValidEmail(fields.email);
+    const secteurOk = !isHub || fields.secteur !== "";
+    const zoneOk = !isHub || fields.zoneOrne !== "";
 
-    if (!prenomOk || !nomOk || !phoneOk || !emailOk) {
+    if (!prenomOk || !nomOk || !phoneOk || !emailOk || !secteurOk || !zoneOk) {
       return;
     }
 
@@ -96,6 +110,30 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
 
   const isResiliation = sujetHint === "resiliation";
 
+  const formClassName = [
+    "contact-form relative space-y-6 rounded-xl border border-border bg-bg-card p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:p-8",
+    isHub ? "w-full max-w-none" : "mx-auto mt-10 max-w-xl",
+  ].join(" ");
+
+  const hubFounderAside = isHub ? (
+    <div className="flex flex-col items-center text-center md:items-start md:text-left">
+      <FounderAvatar size={88} priority className="ring-2 ring-primary/25 ring-offset-2 ring-offset-night" />
+      <p className="mt-4 font-semibold text-text">{NAP.founder}</p>
+      <p className="mt-1 text-sm text-muted">{CONTACT_COPY.hubFounderLine}</p>
+      <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted">{CONTACT_COPY.hubFounderSub}</p>
+      <ul className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start" aria-label="Réassurance">
+        {HUB_CONTACT_REASSURANCE.map((item) => (
+          <li
+            key={item}
+            className="rounded-md border border-border bg-surface px-2.5 py-1 text-[11px] font-medium leading-snug text-muted"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : null;
+
   return (
     <section
       id="contact"
@@ -117,17 +155,106 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
               : CONTACT_COPY.subtitle}
         </p>
 
+        {isHub ? (
+          <div className="mx-auto mt-10 grid max-w-4xl gap-8 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] md:items-start md:gap-10">
+            {hubFounderAside}
+            <div className="min-w-0">
+              <ContactForm
+                segment={variant}
+                isBtp={isBtp}
+                isHub={isHub}
+                isResiliation={isResiliation}
+                formClassName={formClassName}
+                pending={pending}
+                touched={touched}
+                fields={fields}
+                setFields={setFields}
+                offerHint={offerHint}
+                sujetHint={sujetHint}
+                utm={utm}
+                submitFeedback={submitFeedback}
+                handleSubmit={handleSubmit}
+              />
+            </div>
+          </div>
+        ) : (
+          <ContactForm
+            segment={variant}
+            isBtp={isBtp}
+            isHub={isHub}
+            isResiliation={isResiliation}
+            formClassName={formClassName}
+            pending={pending}
+            touched={touched}
+            fields={fields}
+            setFields={setFields}
+            offerHint={offerHint}
+            sujetHint={sujetHint}
+            utm={utm}
+            submitFeedback={submitFeedback}
+            handleSubmit={handleSubmit}
+          />
+        )}
+      </div>
+    </section>
+  );
+}
+
+type ContactFields = {
+  prenom: string;
+  nom: string;
+  email: string;
+  telephone: string;
+  precisions: string;
+  secteur: string;
+  zoneOrne: string;
+};
+
+type ContactFormProps = {
+  segment: ContactVariant;
+  isBtp: boolean;
+  isHub: boolean;
+  isResiliation: boolean;
+  formClassName: string;
+  pending: boolean;
+  touched: boolean;
+  fields: ContactFields;
+  setFields: React.Dispatch<React.SetStateAction<ContactFields>>;
+  offerHint: string;
+  sujetHint: string;
+  utm: Record<string, string>;
+  submitFeedback: string;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+};
+
+function ContactForm({
+  segment,
+  isBtp,
+  isHub,
+  isResiliation,
+  formClassName,
+  pending,
+  touched,
+  fields,
+  setFields,
+  offerHint,
+  sujetHint,
+  utm,
+  submitFeedback,
+  handleSubmit,
+}: ContactFormProps) {
+  return (
         <form
           name={FORM_NAME}
           method="POST"
           action="/merci"
           data-netlify="true"
           data-netlify-honeypot="company_website"
-          className="contact-form relative mx-auto mt-10 max-w-xl space-y-6 rounded-xl border border-border bg-bg-card p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:p-8"
+          className={formClassName}
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value={FORM_NAME} />
-          <input type="hidden" name="segment" value={variant} />
+          <input type="hidden" name="segment" value={segment} />
           <input type="hidden" name="offre" value={offerHint} />
           <input type="hidden" name="sujet" value={sujetHint} />
           {Object.entries(utm).map(([k, v]) => (
@@ -269,6 +396,76 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
             <p className="mt-1 text-xs text-faint">{CONTACT_COPY.emailHint}</p>
           </div>
 
+          {isHub ? (
+            <>
+              <div>
+                <label
+                  htmlFor="secteur"
+                  className="text-xs font-semibold uppercase tracking-wide text-muted"
+                >
+                  {CONTACT_COPY.secteurLabel}
+                </label>
+                <select
+                  id="secteur"
+                  name="secteur"
+                  required
+                  aria-required="true"
+                  aria-describedby="secteur-error"
+                  value={fields.secteur}
+                  onChange={(e) => setFields((f) => ({ ...f, secteur: e.target.value }))}
+                  className={fieldClass(touched, fields.secteur, true)}
+                >
+                  <option value="">{CONTACT_COPY.secteurPlaceholder}</option>
+                  {PROSPECT_SECTEUR_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+                {touched && !fields.secteur && (
+                  <p id="secteur-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
+                    <span aria-hidden>⚠</span> Choisissez un secteur.
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="zone_orne"
+                  className="text-xs font-semibold uppercase tracking-wide text-muted"
+                >
+                  {CONTACT_COPY.zoneOrneLabel}
+                </label>
+                <select
+                  id="zone_orne"
+                  name="zone_orne"
+                  required
+                  aria-required="true"
+                  aria-describedby="zone-orne-error"
+                  value={fields.zoneOrne}
+                  onChange={(e) => setFields((f) => ({ ...f, zoneOrne: e.target.value }))}
+                  className={fieldClass(touched, fields.zoneOrne, true)}
+                >
+                  <option value="">{CONTACT_COPY.zoneOrnePlaceholder}</option>
+                  {ORNE_ZONE_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+                {touched && !fields.zoneOrne && (
+                  <p
+                    id="zone-orne-error"
+                    role="alert"
+                    className="mt-1 flex items-center gap-1 text-xs font-semibold text-text"
+                  >
+                    <span aria-hidden>⚠</span> Indiquez votre zone dans l&apos;Orne.
+                  </p>
+                )}
+              </div>
+            </>
+          ) : null}
+
           <div>
             <label
               htmlFor="precisions"
@@ -331,7 +528,11 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
 
           {!isResiliation ? (
             <p className="text-center text-xs text-muted border-t border-border pt-5">
-              {isBtp ? BTP_CONTACT.foot : CONTACT_COPY.formReassurance}
+              {isHub
+                ? CONTACT_COPY.formFooter
+                : isBtp
+                  ? BTP_CONTACT.foot
+                  : CONTACT_COPY.formReassurance}
             </p>
           ) : (
             <p className="text-center text-xs text-muted">
@@ -339,7 +540,5 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
             </p>
           )}
         </form>
-      </div>
-    </section>
   );
 }

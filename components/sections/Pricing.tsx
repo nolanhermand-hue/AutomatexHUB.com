@@ -46,89 +46,45 @@ function PricingPackCard({
   const priceSuffix =
     cycle === "monthly" ? PRICING_HEADING.monthlySuffix : PRICING_HEADING.annualSuffix;
 
+  const isFeatured = offer.featured;
+  const isHomeAudience = audience === "home";
+
   return (
     <Card
-      featured={offer.featured}
+      featured={isFeatured}
       className={cn(
         "flex h-full flex-col",
-        offer.featured &&
-          "border-[var(--color-terracotta)] bg-[var(--color-terracotta)] text-[#1e2833] shadow-lg shadow-black/20",
-        audience === "home" &&
-          !offer.featured &&
+        isHomeAudience &&
           "glass-panel border-[var(--glass-border)] bg-transparent shadow-none",
+        isHomeAudience &&
+          isFeatured &&
+          "border-[var(--color-terracotta)] bg-[rgb(224_120_86/0.1)] shadow-lg shadow-black/20",
+        !isHomeAudience &&
+          isFeatured &&
+          "border-[var(--color-terracotta)] bg-[color-mix(in_srgb,var(--color-terracotta)_9%,var(--color-surface))] shadow-lg shadow-[var(--color-terracotta)]/12",
       )}
     >
-      <p
-        className={cn(
-          "font-mono text-[10px] uppercase tracking-widest",
-          offer.featured ? "text-[#1e2833]/80" : "text-muted",
-        )}
-      >
+      <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
         NIVEAU — {String(level).padStart(2, "0")}
       </p>
-      {offer.featured && offer.badge ? (
-        <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-widest text-[#1e2833]">
+      {isFeatured && offer.badge ? (
+        <p className="mt-2 inline-flex w-fit rounded-full border border-[var(--color-terracotta)]/45 bg-[var(--color-terracotta)]/15 px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-[var(--color-terracotta)]">
           {offer.badge}
         </p>
       ) : null}
-      <h3
-        className={cn(
-          "mt-2 font-heading text-xl font-bold",
-          offer.featured ? "text-[#1e2833]" : "text-text",
-        )}
-      >
-        {offer.name}
-      </h3>
-      <p
-        className={cn(
-          "mt-3 text-sm font-medium leading-snug",
-          offer.featured ? "text-[#1e2833]" : "text-text",
-        )}
-      >
-        {display.promise}
-      </p>
-      <p
-        className={cn(
-          "mt-4 text-sm leading-relaxed",
-          offer.featured ? "text-[#1e2833]/90" : "text-muted",
-        )}
-      >
+      <h3 className="mt-2 font-heading text-xl font-bold text-text">{offer.name}</h3>
+      <p className="mt-3 text-sm font-medium leading-snug text-text">{display.promise}</p>
+      <p className="mt-4 text-sm leading-relaxed text-muted">
         {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}
       </p>
       {cycle === "annual" ? (
-        <p
-          className={cn(
-            "mt-2 flex items-baseline gap-1 text-2xl font-bold",
-            offer.featured ? "text-[#1e2833]" : "text-text",
-          )}
-        >
+        <p className="mt-2 flex items-baseline gap-1 text-2xl font-bold text-text">
           {displayPrice} €
-          <span
-            className={cn(
-              "text-base font-medium",
-              offer.featured ? "text-[#1e2833]/80" : "text-muted",
-            )}
-          >
-            {priceSuffix}
-          </span>
+          <span className="text-base font-medium text-muted">{priceSuffix}</span>
         </p>
       ) : null}
-      <p
-        className={cn(
-          "mt-3 text-xs leading-relaxed",
-          offer.featured ? "text-[#1e2833]/85" : "text-muted",
-        )}
-      >
-        {PRICING_REASSURANCE_CARD}
-      </p>
-      <div
-        className={cn(
-          "mt-4 border-l-4 pl-4 text-sm font-medium",
-          offer.featured
-            ? "border-[#1e2833]/40 text-[#1e2833]"
-            : "border-[var(--color-terracotta)]/55 text-text",
-        )}
-      >
+      <p className="mt-3 text-xs leading-relaxed text-muted">{PRICING_REASSURANCE_CARD}</p>
+      <div className="mt-4 border-l-4 border-[var(--color-terracotta)]/55 pl-4 text-sm font-medium text-text">
         {display.roiEncart}
       </div>
       <AnalyticsCta
@@ -136,28 +92,16 @@ function PricingPackCard({
         analyticsId={`pricing_${offer.id}`}
         className={cn(
           "mt-5 btn-bracket w-full justify-center",
-          offer.featured
-            ? "border-[#1e2833] bg-[#1e2833] text-cream hover:opacity-95"
-            : "btn-bracket-outline",
+          isFeatured ? "btn-bracket-primary" : "btn-bracket-outline",
         )}
       >
         {PRICING_CARD_CTA}
       </AnalyticsCta>
       <details className="group mt-4 border-t border-border/40 pt-4">
-        <summary
-          className={cn(
-            "cursor-pointer list-none text-sm font-medium marker:content-none [&::-webkit-details-marker]:hidden",
-            offer.featured ? "text-[#1e2833]" : "text-primary",
-          )}
-        >
+        <summary className="cursor-pointer list-none text-sm font-medium text-primary marker:content-none [&::-webkit-details-marker]:hidden">
           Voir le détail ↓
         </summary>
-        <ul
-          className={cn(
-            "mt-3 space-y-2 text-sm leading-relaxed",
-            offer.featured ? "text-[#1e2833]/90" : "text-muted",
-          )}
-        >
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
           {offer.benefits.map((b) => (
             <li key={b}>{b}</li>
           ))}

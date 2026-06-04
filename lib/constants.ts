@@ -31,7 +31,7 @@ export const SUR_MESURE_BOOKING_CTA =
 export const PRICING_CARD_CTA = "Réserver 20 min" as const;
 
 export const PRICING_REASSURANCE_CARD =
-  "Sans engagement · résiliable 1 mail · mise en service offerte" as const;
+  "Sans engagement · résiliable en 1 mail · 30 jours remboursé · RGPD France" as const;
 
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
@@ -675,7 +675,6 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
   { feature: "Notification téléphone immédiate", declic: true, systeme: true, pilote: true },
   { feature: "Mise en place en 48 h", declic: true, systeme: true, pilote: true },
   { feature: "Sans engagement · Résiliable en 1 mail", declic: true, systeme: true, pilote: true },
-  { feature: "Mise en service offerte", declic: true, systeme: true, pilote: true },
   {
     feature: "Suivi humain 12 mois (bilan trimestriel)",
     declic: true,
@@ -819,7 +818,37 @@ export const CONTACT_COPY = {
   formFooter: "Nolan, Flers (61).",
   formReassurance: "Sans engagement",
   resiliationSubmitLabel: "Envoyer ma demande de résiliation",
+  hubFounderLine: "Fondateur · basé à Flers (Orne)",
+  hubFounderSub: "Démo 20 min sur ton cas — Nolan te rappelle sous 24 h.",
+  secteurLabel: "Secteur d'activité",
+  secteurPlaceholder: "Choisissez votre secteur",
+  zoneOrneLabel: "Zone (Orne)",
+  zoneOrnePlaceholder: "Où êtes-vous basé ?",
 } as const;
+
+/** Badges compacts — page /rendez-vous (variant hub). */
+export const HUB_CONTACT_REASSURANCE = [
+  "Sans engagement",
+  "Résiliable en 1 mail",
+  "RGPD France",
+  SOVEREIGNTY_TRUST_LINE,
+] as const;
+
+export const PROSPECT_SECTEUR_OPTIONS = [
+  { value: "artisan", label: "Artisan / BTP" },
+  { value: "immobilier", label: "Immobilier (mandataire, agence…)" },
+  { value: "tpe", label: "TPE / PME (autre secteur)" },
+] as const;
+
+export const ORNE_ZONE_OPTIONS = [
+  { value: "61", label: "Tout l'Orne (61)" },
+  { value: "arrondissement-alencon", label: "Arrondissement d'Alençon" },
+  { value: "arrondissement-argentan", label: "Arrondissement d'Argentan" },
+  {
+    value: "arrondissement-mortagne-au-perche",
+    label: "Arrondissement de Mortagne-au-Perche",
+  },
+] as const;
 
 export const NETWORK_OPTIONS = [
   "IAD",
