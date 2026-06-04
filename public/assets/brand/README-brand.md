@@ -5,7 +5,8 @@
 | Fichier | Usage |
 |---------|-------|
 | logo-orbit-symbol.svg | Symbole seul, fond transparent |
-| logo-orbit-symbol-on-bg.svg | Symbole avec fond vert (favicon, app) |
+| logo-orbit-symbol-on-bg.svg | Symbole avec fond vert (UI legacy) |
+| logo-orbit-symbol-on-bg-slate.svg | Symbole fond ardoise #2D3A4A (repli favicon) |
 | logo-orbit-horizontal-dark.svg | Logotype complet, fond sombre |
 | logo-orbit-horizontal-light.svg | Logotype complet, fond clair |
 | favicons/ | Tous les PNG générés par le script |
