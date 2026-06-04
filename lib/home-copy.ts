@@ -1,9 +1,9 @@
-import { NAP, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export const HOME_META = {
   title: "Automatisation artisans & TPE en Normandie | Automatex",
   description:
-    "Leads, devis et relances tournent pendant que tu es sur chantier. Installé en 48 h, sans engagement. Flers, Orne · démo 20 min gratuite.",
+    `Leads, devis et relances tournent pendant que tu es sur chantier. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
 } as const;
 
 export const HOME_HERO = {
@@ -83,7 +83,7 @@ export const HOME_HOW = {
     },
     {
       title: "Installation",
-      body: "Branchement sur Gmail, Drive, calendrier. Tests avec de vrais messages. Mise en ligne sous 48 h.",
+      body: `Branchement sur Gmail, Drive, calendrier. Tests avec de vrais messages. ${SETUP_48H_NUANCE}.`,
       time: "48 h",
     },
     {
@@ -104,8 +104,24 @@ export const HOME_PRICING = {
 
 export const HOME_FOUNDER = {
   eyebrow: "Qui installe",
-  h2: "Trois ans dans le BTP — il connaît le chantier",
-  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). Trois ans en menuiserie sur chantier avant Automatex. Aujourd’hui il installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
+  h2: "Du chantier à l’automatisation — Nolan connaît ta cadence",
+  storyLead:
+    "Sur les chantiers, j’ai vu le temps perdu en paperasse, devis et appels manqués — alors je me suis formé en parallèle à l’automatisation pour régler ça.",
+  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). Plusieurs années sur les chantiers (menuiserie puis couverture), tout en me formant à l’automatisation. Aujourd’hui j’installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
+  painSteps: [
+    {
+      title: "Sur le terrain",
+      body: "Appels pendant la visite ou sur le toit : impossible de tout traiter à la main.",
+    },
+    {
+      title: "Le soir",
+      body: "Devis et mails qui s’empilent — fatigue, relances oubliées, clients qui passent ailleurs.",
+    },
+    {
+      title: "La solution",
+      body: "Réponse rapide, devis et relances branchés sur Gmail et ton téléphone — sans nouvelle appli.",
+    },
+  ] as const,
   quote:
     "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que tu utilises déjà — pour que le soir tu closes moins de devis à la va-vite.",
 } as const;
@@ -121,7 +137,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Combien de temps pour être en ligne ?",
-    a: "Après l’audit de 20 minutes, la mise en place standard prend 48 h ouvrées. Tu valides chaque message type avant envoi réel.",
+    a: `Après l’audit de 20 minutes, la mise en place standard : ${SETUP_48H_NUANCE}. Tu valides chaque message type avant envoi réel.`,
   },
   {
     q: "C’est quoi le prix au final ?",
@@ -133,7 +149,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Et si ça ne me convient pas ?",
-    a: "30 jours remboursés sur la mise en place si le système ne correspond pas au cadrage de l’audit. Ensuite, résiliation en un mail, effet fin de mois.",
+    a: "30 jours remboursés sur la mise en place si le système ne correspond pas au cadrage de l’audit (voir conditions sur /cgv). Ensuite, résiliation en un mail, effet fin de mois.",
   },
   {
     q: "Tu interviens seulement en Normandie ?",

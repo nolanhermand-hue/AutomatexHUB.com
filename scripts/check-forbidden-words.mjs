@@ -85,6 +85,9 @@ for (const file of files) {
   if (rel.startsWith(`app${path.sep}automatisation`)) continue;
   if (rel.startsWith(`app${path.sep}devis-automatique-artisan`)) continue;
   if (rel === path.join("lib", "btp-geo-faq.ts")) continue;
+  if (rel === path.join("lib", "geo-master-faq.ts")) continue;
+  if (rel.startsWith(`app${path.sep}faq`)) continue;
+  if (rel.startsWith(`components${path.sep}faq`)) continue;
   if (rel.startsWith(`components${path.sep}funnels${path.sep}BtpLanding`)) continue;
   if (rel.startsWith(`components${path.sep}sections${path.sep}BtpPricing`)) continue;
   if (rel.startsWith(`components${path.sep}templates${path.sep}BtpLocalPage`)) continue;

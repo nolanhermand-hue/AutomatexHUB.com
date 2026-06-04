@@ -2,6 +2,7 @@ import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { PRIMARY_DEMO_CTA } from "@/lib/constants";
 import { HOME_FAQ, HOME_FAQ_HEADING } from "@/lib/home-copy";
 import { rendezVousHref } from "@/lib/hub-nav";
+import Link from "next/link";
 
 export function HomeFAQ() {
   return (
@@ -40,6 +41,15 @@ export function HomeFAQ() {
             </details>
           ))}
         </div>
+        <p className="animate-on-scroll fade mt-6 text-center">
+          <Link
+            href="/faq"
+            className="text-sm font-semibold text-text underline-offset-4 hover:underline"
+            data-cursor="link"
+          >
+            Voir les 40 réponses →
+          </Link>
+        </p>
         <div className="animate-on-scroll fade mt-10 flex justify-center">
           <AnalyticsCta
             href={rendezVousHref()}

@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function MerciLayout({ children }: { children: ReactNode }) {
-  return <JsonLdLayout faqMode="mandataires">{children}</JsonLdLayout>;
+  return <JsonLdLayout faqMode="none">{children}</JsonLdLayout>;
 }

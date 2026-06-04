@@ -13,8 +13,15 @@ export const DEFAULT_SALES_PER_YEAR = 12;
 export const CALCULATOR_SALES_MIN = 1;
 export const CALCULATOR_SALES_MAX = 30;
 
-/** Valeur anchor par lead immobilier qualifié — défendable d'après commissions IAD 2024-2025 */
+/**
+ * Hypothèse mandataire : commission potentielle ~3 500 € par dossier qualifié
+ * (ordre de grandeur marché, pas un gain garanti par Automatex).
+ */
 export const VALUE_PER_LEAD_EUROS = 3500;
+
+/** Délai standard de mise en ligne — après validation du périmètre client. */
+export const SETUP_48H_NUANCE =
+  "48 h ouvrées après validation de ton périmètre (accès outils, règles, tests)" as const;
 
 /** Libellé CTA unique — audit / prise de rendez-vous 20 min */
 export const BOOKING_CTA_LABEL = "Réserver mon appel avec Nolan" as const;
@@ -201,7 +208,8 @@ export const HERO_COPY = {
   /** Lien secondaire dégradé en texte simple — pas un bouton */
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
-  statAnchor: "1 lead perdu = 3 500 € de commission qui part chez le concurrent.",
+  statAnchor:
+    "1 lead perdu peut représenter ~3 500 € de commission potentielle (hypothèse marché) — souvent chez le concurrent.",
   /** A10 — Compteur social proof crédible */
   liveCounter: "Onboardings limités à 4 par mois — créneau disponible cette semaine",
   /** A15 — Mention hébergeur nommé */
@@ -213,7 +221,7 @@ export const HERO_COPY = {
 
 /** Carte stats hero (Framer) — chiffres alignés agitation / commission */
 export const HERO_STATS = [
-  { value: "3 500 €", label: "Commission moyenne par lead qualifié" },
+  { value: "~3 500 €", label: "Commission potentielle par lead (hypothèse marché)" },
   { value: "17 500 €", label: "Sur 5 leads ratés en 12 mois" },
   { value: "< 5 min", label: "Fenêtre de réponse avant le concurrent" },
 ] as const;
@@ -238,10 +246,11 @@ export const INTEGRATIONS_LOGOS: ReadonlyArray<{
 export const CALCULATOR_COPY = {
   sectionEyebrow: "Estimation",
   title: "Combien de leads perdez-vous chaque semaine ?",
-  subtitle: "Déplacez le curseur selon votre nombre de ventes annuelles.",
+  subtitle:
+    "Déplacez le curseur selon votre nombre de ventes annuelles. Les montants en euros sont une hypothèse (commission potentielle), pas un gain garanti.",
   salesLabel: "Ventes par an",
   outLeadsLabel: "Leads perdus par semaine (estimation)",
-  outEurosLabel: "Commissions en jeu par an",
+  outEurosLabel: "Commissions en jeu par an (hypothèse)",
   outHoursLabel: "Heures perdues par an sur l'administratif",
   ctaPrefix: "Récupérer ces leads",
   ctaSuffix: "Réserver 20 min",
@@ -286,7 +295,7 @@ export const AGITATION_COPY = {
   eyebrow: "L'addition annuelle",
   h2: "5 leads ratés en 12 mois = 17 500 € de manque à gagner.",
   body:
-    "Sur la base d'un lead qualifié à 3 500 € de commission moyenne, rater 5 opportunités dans l'année équivaut au prix d'une voiture neuve. Sur 3 ans, c'est 52 500 €.",
+    "Sur la base d'une hypothèse de ~3 500 € de commission potentielle par lead qualifié, rater 5 opportunités dans l'année représente un manque à gagner important. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
   microNote:
     "Source : commission moyenne IAD 3,4 % sur transaction à ~250 000 € (Immo Matin, juillet 2025).",
 } as const;
@@ -317,7 +326,7 @@ export const SOLUTION_STEPS: ReadonlyArray<{
     kicker: "03",
     title: "Ça tourne",
     body:
-      "Sous 48h, la configuration est active. Chaque lead reçu hors visite reçoit une réponse en moins de 2 minutes. Chaque mail important remonte. Chaque document est rangé. Sans rien changer à votre quotidien.",
+      "Sous 48 h ouvrées après validation du périmètre, la configuration est active. Chaque lead reçu hors visite reçoit une réponse en moins de 2 minutes. Chaque mail important remonte. Chaque document est rangé. Sans rien changer à votre quotidien.",
   },
 ];
 
@@ -724,7 +733,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: FAQ_DEFAULT_OPEN_QUESTION,
     answer:
-      "Oui. Un interlocuteur dédié installe et configure, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
+      "Oui. Nolan installe et configure, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
   },
   {
     question: "Est-ce que je dois être à l'aise avec la technologie ?",
@@ -739,7 +748,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Combien de temps pour la mise en place ?",
     answer:
-      "48 heures ouvrées après notre appel de validation. L’équipe réalise la configuration, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des mandataires repartent avec leurs premières réponses actives dès le week-end suivant.",
+      "48 heures ouvrées après notre appel de validation du périmètre (accès outils, règles, tests). Nolan configure, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des mandataires repartent avec leurs premières réponses actives dès le week-end suivant.",
   },
   {
     question: "Et si je veux arrêter ?",
@@ -795,7 +804,7 @@ export const DATA_TRUST_COPY = {
 export const RESILIATION_COPY = {
   h2: "Arrêter ? Un seul mail.",
   body:
-    "Sans engagement : pas de formulaire de rétention, pas de période minimale. Un mail suffit — effet en fin de mois en cours. Données effacées sous 7 jours. Garantie 30 jours remboursée sur la mise en place si le système ne vous convient pas (voir CGV).",
+    "Sans engagement : pas de formulaire de rétention, pas de période minimale. Un mail suffit — effet en fin de mois en cours. Données effacées sous 7 jours. Garantie 30 jours remboursée sur la mise en place si le système ne correspond pas au cadrage de l’audit (conditions détaillées sur /cgv).",
   emailLine: "nolan.hermand@automatex-hub.com",
   mailHint: "Objet : Résiliation Automatex — indiquez votre prénom et « je souhaite résilier ».",
   cta: "Résilier en ligne →",
@@ -819,7 +828,7 @@ export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
-    "On vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Un interlocuteur dédié, pas un ticket anonyme.",
+    "On vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Nolan en direct, pas un ticket anonyme.",
   formTitle: "Vos coordonnées",
   firstNameLabel: "Prénom",
   lastNameLabel: "Nom",
@@ -921,10 +930,10 @@ export const ABOUT_FOUNDER = {
   eyebrow: "À propos de Nolan",
   h2: "Construit par un expert du terrain, pas par une startup.",
   body:
-    "Nolan Hermand accompagne des mandataires normands depuis ses premières missions dans l'Orne. Il configure chaque installation à la main à Flers (Google, portails, messagerie). Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.",
+    "Nolan Hermand configure chaque installation à la main à Flers (Google, portails, messagerie). Plusieurs années sur les chantiers (menuiserie puis couverture), formation autodidacte à l'automatisation en parallèle. Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.",
   stats: [
     { value: "< 2 min", label: "Délai de réponse moyen" },
-    { value: "48 h", label: "Mise en place garantie" },
+    { value: "48 h", label: "Mise en place après validation périmètre" },
     { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
   /** E10 — téléphone cliquable contact direct fondateur */

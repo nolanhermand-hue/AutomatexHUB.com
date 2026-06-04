@@ -19,7 +19,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-flers",
     metaTitle: "Mandataires immobiliers à Flers (61100) | Automatex",
     metaDescription:
-      `Réponse aux leads en 2 min pour mandataires IAD, SAFTI et Capifrance à Flers et dans le bocage ornais. Installé en 48 h. ${SOVEREIGNTY_TRUST_LINE}.`,
+      `Réponse aux leads en 2 min pour mandataires IAD, SAFTI et Capifrance à Flers et dans le bocage ornais. Mise en place en 48 h ouvrées après validation du périmètre. ${SOVEREIGNTY_TRUST_LINE}.`,
     h1: "Automatisation pour mandataires immobiliers à Flers et dans l'Orne",
     city: "Flers",
     areaServedLabel: "Flers, bocage ornais, Suisse normande (61)",
@@ -43,7 +43,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Mise en place depuis Flers",
         paragraphs: [
-          `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai annoncé : 48 heures entre la démo et la première réponse live. ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé avec d'autres mandataires.`,
+          `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai cible : 48 h ouvrées après validation du périmètre (accès outils, règles, tests). ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé avec d'autres mandataires.`,
           "Sans engagement, résiliable en 1 mail sur les packs Déclic, Système et Pilote. Onboardings limités à quatre par mois pour garder un suivi humain.",
         ],
       },
@@ -92,7 +92,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Tarification claire",
         paragraphs: [
-          "Trois packs : Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois, avec remise annuelle affichée en pourcentage. Un lead récupéré à 3 500 € de commission potentielle rentabilise plusieurs mois de service.",
+          "Trois packs : Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois, avec remise annuelle affichée en pourcentage. Un lead récupéré peut représenter ~3 500 € de commission potentielle (hypothèse marché) — ordre de grandeur pour comparer au coût du service.",
           "Réservez une audit de 20 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
         ],
       },

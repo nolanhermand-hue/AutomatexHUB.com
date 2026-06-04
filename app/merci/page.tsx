@@ -23,7 +23,7 @@ export default function MerciPage() {
             <div>
               <p className="font-semibold text-text">Confirmation sous 24 heures</p>
               <p className="mt-1 text-sm text-muted">
-                Un interlocuteur confirme le créneau ou la prise en compte de votre demande.
+                Nolan confirme le créneau ou la prise en compte de votre demande.
               </p>
             </div>
           </li>
@@ -43,9 +43,10 @@ export default function MerciPage() {
               3
             </span>
             <div>
-              <p className="font-semibold text-text">Mise en route en 48 h si vous validez</p>
+              <p className="font-semibold text-text">Mise en route après validation du périmètre</p>
               <p className="mt-1 text-sm text-muted">
-                Sans engagement. Résiliable en 1 mail sur les formules.
+                Délai cible : 48 h ouvrées une fois accès outils, règles et tests validés. Sans
+                engagement. Résiliable en 1 mail (voir /cgv).
               </p>
             </div>
           </li>

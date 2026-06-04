@@ -10,7 +10,7 @@ export const BTP_HERO = {
   ctaHow: "Voir comment ça marche — 2 minutes",
   priceFrom: "Sans engagement · voir la grille Déclic · Système · Pilote ci-dessous",
   localBandeau:
-    "Plombier, maçon, électricien dans l'Orne ? Même système — Nolan installe à distance en 48 h.",
+    "Plombier, maçon, électricien dans l'Orne ? Même système — Nolan installe à distance ; mise en ligne en 48 h ouvrées après validation du périmètre.",
   badges: [
     SOVEREIGNTY_TRUST_LINE,
     "RGPD — vos données restent chez vous",

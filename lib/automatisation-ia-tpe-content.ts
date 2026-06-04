@@ -237,7 +237,7 @@ export const TPE_GEO_BLOCKS = [
   },
   {
     q: "En combien de temps une TPE est-elle opérationnelle ?",
-    a: "48 h après l'onboarding (20 min). Nolan configure le système sur vos outils existants (Gmail, Calendar, Telegram). Aucune compétence technique requise.",
+    a: "48 h ouvrées après validation du périmètre (accès outils, règles, tests), suite à l'onboarding de 20 min. Nolan configure le système sur vos outils existants (Gmail, Calendar, Telegram). Aucune compétence technique requise.",
   },
 ] as const;
 
@@ -264,7 +264,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Combien de temps avant d'être opérationnel ?",
-    a: "48 h après l'onboarding de 20 minutes.",
+    a: "48 h ouvrées après validation du périmètre, suite à l'onboarding de 20 minutes.",
   },
   {
     q: "Peut-on arrêter à tout moment ?",

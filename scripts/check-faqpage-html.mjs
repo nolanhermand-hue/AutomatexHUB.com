@@ -21,7 +21,7 @@ function checkFile(filePath) {
   if (filePath.endsWith(`${outDir}/404.html`) || filePath.endsWith("/404.html")) return;
   const html = readFileSync(filePath, "utf8");
   const matches = [...html.matchAll(/"@type"\s*:\s*"FAQPage"/g)];
-  if (matches.length !== 1) {
+  if (matches.length > 1) {
     failures.push({ file: filePath, count: matches.length });
   }
 }
@@ -29,11 +29,11 @@ function checkFile(filePath) {
 walk(outDir);
 
 if (failures.length) {
-  console.error("FAQPage count must be 1 per HTML file:\n");
+  console.error("FAQPage count must be 0 or 1 per HTML file:\n");
   for (const f of failures) {
     console.error(`  ${f.file}: ${f.count}`);
   }
   process.exit(1);
 }
 
-console.log(`OK — FAQPage ×1 in all HTML under ${outDir}/`);
+console.log(`OK — at most one FAQPage per HTML under ${outDir}/`);

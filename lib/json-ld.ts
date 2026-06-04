@@ -1,5 +1,6 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
 import { TPE_FAQ, TPE_PAGE_PATH } from "@/lib/automatisation-ia-tpe-content";
+import { GEO_MASTER_FAQ } from "@/lib/geo-master-faq";
 import { HOME_FAQ } from "@/lib/home-copy";
 import {
   FAQ_ITEMS,
@@ -107,8 +108,8 @@ export function buildLocalMandatairesJsonLd(opts: {
   };
 }
 
-/** FAQ JSON-LD variant for the global layout graph (one FAQPage per HTML document). */
-export type JsonLdFaqMode = "mandataires" | "btp" | "tpe" | "home";
+/** FAQ JSON-LD variant for the global layout graph (0 or 1 FAQPage per HTML document). */
+export type JsonLdFaqMode = "none" | "mandataires" | "btp" | "tpe" | "home" | "master";
 
 const BTP_JSONLD_PATHS = [
   "/btp",
@@ -123,6 +124,7 @@ const BTP_JSONLD_PATHS = [
 export const JSON_LD_FAQ_MODE_BY_PATH: Readonly<Record<string, JsonLdFaqMode>> = {
   "": "home",
   "/": "home",
+  "/faq": "master",
   [TPE_PAGE_PATH]: "tpe",
   ...Object.fromEntries(BTP_JSONLD_PATHS.map((p) => [p, "btp" as const])),
 };
@@ -132,6 +134,16 @@ export type BuildJsonLdGraphOptions = {
 };
 
 function buildFaqMainEntity(mode: JsonLdFaqMode) {
+  if (mode === "none") {
+    return null;
+  }
+  if (mode === "master") {
+    return GEO_MASTER_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    }));
+  }
   if (mode === "home") {
     return HOME_FAQ.map((item) => ({
       "@type": "Question",
@@ -171,9 +183,9 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const faqMode = options?.faqMode ?? "mandataires";
   const isHome = faqMode === "home";
   const businessId = `${SITE_URL}#business`;
+  const localBusinessId = `${SITE_URL}#local-business`;
   const personId = `${SITE_URL}#person-nolan`;
 
-  // H4 — FAQPage (single block; page-specific scripts must not repeat FAQPage)
   const faqEntities = buildFaqMainEntity(faqMode);
 
   // H5 — HowTo
@@ -220,8 +232,8 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const logoUrl = brandAbsolute(BRAND.symbolCircle, SITE_URL);
 
   const businessDescription = isHome
-    ? "Automatex installe réponse aux leads, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min, mise en place 48 h."
-    : "Automatex installe une réponse immédiate aux leads, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne.";
+    ? "Automatex installe réponse aux leads, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
+    : "Automatex installe une réponse immédiate aux leads, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
 
   const knowsAbout = isHome
     ? [
@@ -254,9 +266,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
     ? "Formules Automatex pour artisans et TPE"
     : "Formules Automatex pour mandataires immobiliers";
 
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
+  const graph: Record<string, unknown>[] = [
       {
         "@type": "ProfessionalService",
         "@id": businessId,
@@ -314,8 +324,31 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         sameAs: [NAP.linkedinUrl],
       },
       {
-        "@type": "FAQPage",
-        mainEntity: faqEntities,
+        "@type": "LocalBusiness",
+        "@id": localBusinessId,
+        name: NAP.brand,
+        description: businessDescription,
+        url: SITE_URL,
+        telephone: NAP.phoneE164,
+        email: NAP.email,
+        image: logoUrl,
+        priceRange: "€€",
+        openingHours: "Mo-Fr 09:00-18:00",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: NAP.streetAddress,
+          addressLocality: NAP.city,
+          postalCode: NAP.postalCode,
+          addressRegion: `${NAP.department}, ${NAP.region}`,
+          addressCountry: NAP.country,
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 48.7483,
+          longitude: -0.5711,
+        },
+        areaServed,
+        founder: { "@id": personId },
       },
       // H5 — HowTo : rich results pour Solution en 3 étapes
       {
@@ -324,9 +357,9 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           ? `${SOLUTION_HEADING.h2.replace(/\.$/, "")} pour artisans et TPE en Normandie`
           : `${SOLUTION_HEADING.h2.replace(/\.$/, "")} en Normandie`,
         description: isHome
-          ? "Automatex installe réponse aux messages, devis et relances pour artisans et TPE à Flers (Orne) et en Normandie. Mise en place en 48 heures, sans engagement."
-          : "Automatex installe une réponse immédiate et un tri des mails pour mandataires immobiliers à Flers (Orne) et en Normandie. Mise en place en 48 heures, sans engagement.",
-        totalTime: "PT48H",
+          ? "Automatex installe réponse aux messages, devis et relances pour artisans et TPE à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement."
+          : "Automatex installe une réponse immédiate et un tri des mails pour mandataires immobiliers à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement.",
+        totalTime: "P2D",
         step: howToSteps,
       },
       // Service schema
@@ -367,7 +400,18 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         ],
         offers: offerCatalog,
       },
-    ],
+  ];
+
+  if (faqEntities) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: faqEntities,
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
   };
 }
 

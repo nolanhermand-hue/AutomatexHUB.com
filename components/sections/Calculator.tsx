@@ -150,7 +150,8 @@ export function Calculator() {
 
       {/* Bridge B8 — passerelle narrative vers Contact */}
       <p className="mx-auto mt-8 max-w-[720px] text-center text-sm text-muted">
-        <span className="font-semibold text-text">{formatEuro(euros)}/an</span> en commissions exposées.{" "}
+        <span className="font-semibold text-text">{formatEuro(euros)}/an</span> en commissions exposées
+        (hypothèse).{" "}
         <button
           type="button"
           onClick={goToRendezVous}

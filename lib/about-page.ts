@@ -1,4 +1,4 @@
-import { NAP } from "@/lib/constants";
+import { NAP, SETUP_48H_NUANCE } from "@/lib/constants";
 
 /** Page À propos — version transparente (légal / confiance). */
 export const ABOUT_PAGE = {
@@ -27,14 +27,14 @@ export const ABOUT_PAGE = {
     },
   ],
   narrative: [
-    "Nolan Hermand a passé trois ans dans le BTP (menuisier) à Flers, puis des mois à échanger avec des mandataires indépendants et des artisans de l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
+    "Nolan Hermand a passé plusieurs années sur les chantiers (menuiserie puis couverture) à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des mandataires indépendants et des artisans de l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
     "Le constat revient souvent : les leads ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
     "Automatex Hub est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec vous.",
     "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
   ],
   stats: [
     { value: "< 2 min", label: "Délai de réponse cible (leads)" },
-    { value: "48 h", label: "Mise en place garantie" },
+    { value: "48 h", label: "Mise en place après validation périmètre" },
     { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
   directContact: "Une question avant de vous lancer ? Appelez :",
@@ -42,7 +42,7 @@ export const ABOUT_PAGE = {
   storyParagraphs: [
     "Pendant des mois, j'ai discuté avec des mandataires IAD et SAFTI dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
     "À chaque fois, la même chose revenait : les leads qui arrivent pendant les visites, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
-    "J'ai 19 ans. Trois ans dans le BTP (menuisier) : appels pendant le chantier, devis le soir — je connais cette cadence. En immobilier, j'apprends en échangeant avec les mandataires sur le terrain. Ce que j'apporte, ce sont des systèmes qui tiennent, être joignable, et m'adapter à ta réalité — pas à un PowerPoint.",
+    "Sur les chantiers, j'ai vu le temps perdu en paperasse, devis et appels manqués — alors je me suis formé en parallèle à l'automatisation pour régler ça. J'ai 19 ans, plusieurs années terrain (menuiserie puis couverture). En immobilier, j'apprends en échangeant avec les mandataires. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à ta réalité — pas à un PowerPoint.",
   ],
   storyFootnote:
     "Sans engagement et résiliable en un mail : vous gardez la main à tout moment.",
@@ -55,8 +55,8 @@ export const ABOUT_PAGE = {
     },
     {
       step: "02",
-      title: "Mise en place en 48h",
-      desc: "La configuration est active. On teste ensemble sur 2–3 scénarios réels. Vous voyez le résultat avant de payer quoi que ce soit de récurrent.",
+      title: "Mise en place",
+      desc: `${SETUP_48H_NUANCE}. On teste ensemble sur 2–3 scénarios réels. Vous validez le ton avant envoi réel.`,
     },
     {
       step: "03",
