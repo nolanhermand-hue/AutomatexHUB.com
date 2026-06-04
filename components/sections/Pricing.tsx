@@ -3,13 +3,20 @@
 import { BillingSwitch } from "@/components/ui/BillingSwitch";
 import { trackOfferViewed } from "@/lib/analytics";
 import { Card } from "@/components/ui/Card";
-import { OFFERS, PRICING_HEADING } from "@/lib/constants";
+import {
+  getPricingOfferDisplay,
+  PAID_OFFERS,
+  PRICING_CARD_CTA,
+  PRICING_HEADING,
+  PRICING_REASSURANCE_CARD,
+  SUR_MESURE_PRICING_BANNER,
+  type PackId,
+  type PricingOffer,
+} from "@/lib/constants";
 import { HOME_PRICING } from "@/lib/home-copy";
-import { calculateBreakevenLeads } from "@/lib/calculator";
 import { cn } from "@/lib/cn";
 import { annualPrepayTotal, formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
 import { SectionCta } from "@/components/ui/SectionCta";
-import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
 import { rendezVousHref } from "@/lib/hub-nav";
 import { useEffect, useState } from "react";
@@ -20,21 +27,153 @@ type PricingProps = {
   audience?: "default" | "home";
 };
 
-/**
- * PRICING — D1 (3 offres), D2 (toggle annuel/mensuel −15 %),
- *           D3 (badge Recommandé), D4 (prix transparents),
- *           D5 (garantie/carte), D7 (pré-remplissage offre),
- *           D8 (ROI/carte), D9 (onboarding offert),
- *           D10 (ancres directes), D11 (toggle au-dessus),
- *           D12 (stack vertical mobile), D15 (accès direct)
- */
+function PricingPackCard({
+  offer,
+  level,
+  cycle,
+  audience,
+}: {
+  offer: PricingOffer;
+  level: number;
+  cycle: BillingCycle;
+  audience: "default" | "home";
+}) {
+  const display = getPricingOfferDisplay(offer.id as PackId, audience);
+  const displayPrice =
+    cycle === "monthly"
+      ? offer.monthly.toLocaleString("fr-FR")
+      : annualPrepayTotal(offer.monthly).toLocaleString("fr-FR");
+  const priceSuffix =
+    cycle === "monthly" ? PRICING_HEADING.monthlySuffix : PRICING_HEADING.annualSuffix;
+
+  return (
+    <Card
+      featured={offer.featured}
+      className={cn(
+        "flex h-full flex-col",
+        offer.featured &&
+          "border-[var(--color-terracotta)] bg-[var(--color-terracotta)] text-[#1e2833] shadow-lg shadow-black/20",
+        audience === "home" &&
+          !offer.featured &&
+          "glass-panel border-[var(--glass-border)] bg-transparent shadow-none",
+      )}
+    >
+      <p
+        className={cn(
+          "font-mono text-[10px] uppercase tracking-widest",
+          offer.featured ? "text-[#1e2833]/80" : "text-muted",
+        )}
+      >
+        NIVEAU — {String(level).padStart(2, "0")}
+      </p>
+      {offer.featured && offer.badge ? (
+        <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-widest text-[#1e2833]">
+          {offer.badge}
+        </p>
+      ) : null}
+      <h3
+        className={cn(
+          "mt-2 font-heading text-xl font-bold",
+          offer.featured ? "text-[#1e2833]" : "text-text",
+        )}
+      >
+        {offer.name}
+      </h3>
+      <p
+        className={cn(
+          "mt-3 text-sm font-medium leading-snug",
+          offer.featured ? "text-[#1e2833]" : "text-text",
+        )}
+      >
+        {display.promise}
+      </p>
+      <p
+        className={cn(
+          "mt-4 text-sm leading-relaxed",
+          offer.featured ? "text-[#1e2833]/90" : "text-muted",
+        )}
+      >
+        {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}
+      </p>
+      {cycle === "annual" ? (
+        <p
+          className={cn(
+            "mt-2 flex items-baseline gap-1 text-2xl font-bold",
+            offer.featured ? "text-[#1e2833]" : "text-text",
+          )}
+        >
+          {displayPrice} €
+          <span
+            className={cn(
+              "text-base font-medium",
+              offer.featured ? "text-[#1e2833]/80" : "text-muted",
+            )}
+          >
+            {priceSuffix}
+          </span>
+        </p>
+      ) : null}
+      <p
+        className={cn(
+          "mt-3 text-xs leading-relaxed",
+          offer.featured ? "text-[#1e2833]/85" : "text-muted",
+        )}
+      >
+        {PRICING_REASSURANCE_CARD}
+      </p>
+      <div
+        className={cn(
+          "mt-4 border-l-4 pl-4 text-sm font-medium",
+          offer.featured
+            ? "border-[#1e2833]/40 text-[#1e2833]"
+            : "border-[var(--color-terracotta)]/55 text-text",
+        )}
+      >
+        {display.roiEncart}
+      </div>
+      <AnalyticsCta
+        href={rendezVousHref({ offre: offer.id })}
+        analyticsId={`pricing_${offer.id}`}
+        className={cn(
+          "mt-5 btn-bracket w-full justify-center",
+          offer.featured
+            ? "border-[#1e2833] bg-[#1e2833] text-cream hover:opacity-95"
+            : "btn-bracket-outline",
+        )}
+      >
+        {PRICING_CARD_CTA}
+      </AnalyticsCta>
+      <details className="group mt-4 border-t border-border/40 pt-4">
+        <summary
+          className={cn(
+            "cursor-pointer list-none text-sm font-medium marker:content-none [&::-webkit-details-marker]:hidden",
+            offer.featured ? "text-[#1e2833]" : "text-primary",
+          )}
+        >
+          Voir le détail ↓
+        </summary>
+        <ul
+          className={cn(
+            "mt-3 space-y-2 text-sm leading-relaxed",
+            offer.featured ? "text-[#1e2833]/90" : "text-muted",
+          )}
+        >
+          {offer.benefits.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
+      </details>
+    </Card>
+  );
+}
+
 export function Pricing({ audience = "default" }: PricingProps) {
   const isHome = audience === "home";
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
 
   useEffect(() => {
     const seen = new Set<string>();
-    const elements = OFFERS.map((o) =>
+    const elements = PAID_OFFERS.map((o) =>
       document.querySelector(`[data-offer-id="${o.id}"]`),
     ).filter(Boolean) as Element[];
 
@@ -86,128 +225,56 @@ export function Pricing({ audience = "default" }: PricingProps) {
           className="mt-8"
         />
 
-        {/* D12 — Stack vertical strict sur mobile, grid sur md+ */}
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {OFFERS.map((offer, offerIndex) => {
-            const isCustom = offer.customOffer === true;
-            const breakeven = isCustom
-              ? 0
-              : calculateBreakevenLeads(offer.setup, offer.monthly);
-            const reinvest = (offer.setup + offer.monthly).toLocaleString("fr-FR");
-            const displayPrice = isCustom
-              ? null
-              : cycle === "monthly"
-                ? offer.monthly.toLocaleString("fr-FR")
-                : annualPrepayTotal(offer.monthly).toLocaleString("fr-FR");
-            const priceSuffix = isCustom
-              ? null
-              : cycle === "monthly"
-                ? PRICING_HEADING.monthlySuffix
-                : PRICING_HEADING.annualSuffix;
-            return (
-              <div
-                key={offer.id}
-                id={`pricing-${offer.id}`}
-                data-offer-id={offer.id}
-                className={cn(
-                  "h-full animate-on-scroll scale scroll-mt-24",
-                  offer.featured ? "md:-translate-y-2 md:scale-[1.02]" : "",
-                )}
-                style={{ transitionDelay: `${offerIndex * 100}ms` }}
-              >
-                <Card
-                  featured={offer.featured}
-                  className={cn(
-                    "h-full",
-                    isHome && "glass-panel border-[var(--glass-border)] bg-transparent shadow-none",
-                    offer.featured && "border-primary/50 shadow-lg shadow-primary/10",
-                  )}
-                >
-                  <p className="step-number mb-2">
-                    NIVEAU — {String(offerIndex + 1).padStart(2, "0")}
-                  </p>
-                  {offer.featured && offer.badge ? (
-                    <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-primary">
-                      [ {offer.badge.replace(/·.*/, "").trim()} ]
-                    </p>
-                  ) : null}
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-mono text-lg font-bold uppercase tracking-wide text-text">
-                      {offer.name}
-                    </h3>
-                  </div>
-
-                  {/* Prix : D4 transparent, mis à jour selon cycle */}
-                  {isCustom ? (
-                    <>
-                      <p className="mt-4 text-sm text-muted">{PRICING_HEADING.surMesureIntro}</p>
-                      <p className="mt-2 text-3xl font-bold text-text">
-                        {PRICING_HEADING.surMesurePriceLabel}
-                      </p>
-                      <p className="mt-1 text-xs text-muted">Sans engagement · Devis après l’entretien</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="mt-4 text-sm leading-relaxed text-muted">
-                        {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}
-                      </p>
-                      {cycle === "annual" ? (
-                        <p className="mt-2 flex items-baseline gap-1 text-2xl font-bold text-text">
-                          {displayPrice} €
-                          <span className="text-base font-medium text-muted">{priceSuffix}</span>
-                        </p>
-                      ) : null}
-                      <p className="mt-2 text-xs text-muted">{PRICING_HEADING.bannerLine}</p>
-                    </>
-                  )}
-
-                  {/* Bénéfices */}
-                  <ul className="mt-5 space-y-2 text-sm text-muted md:text-[15px]">
-                    {offer.benefits.map((b) => (
-                      <li key={b} className="flex gap-2">
-                        <span className="mt-1 shrink-0 text-primary" aria-hidden>
-                          ✓
-                        </span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* D8 — ROI line */}
-                  {!isCustom ? (
-                    <>
-                      <p className="mt-5 text-sm font-medium text-primary">
-                        Rentable dès {breakeven} lead{breakeven > 1 ? "s" : ""} récupéré
-                        {breakeven > 1 ? "s" : ""} (≈ {reinvest} € investis au départ).
-                      </p>
-                    </>
-                  ) : null}
-                  <p className={cn("text-sm text-muted", isCustom ? "mt-5" : "mt-1")}>
-                    {offer.roiLine}
-                  </p>
-
-                  {/* D5 — Réassurance inline dans chaque carte */}
-                  {!isCustom ? (
-                    <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
-                      <span aria-hidden>📩</span> Sans engagement · résiliable en 1 mail
-                    </p>
-                  ) : null}
-
-                  {/* D7 — Lien avec query string pour pré-remplissage formulaire */}
-                  <AnalyticsCta
-                    href={rendezVousHref({ offre: offer.id })}
-                    analyticsId={`pricing_${offer.id}`}
-                    className={cn("mt-6 btn-bracket w-full justify-center", offer.featured ? "btn-bracket-primary" : "btn-bracket-outline")}
-                  >
-                    {offer.cta}
-                  </AnalyticsCta>
-                </Card>
-              </div>
-            );
-          })}
+        <div
+          className="mt-8 rounded-xl border p-6 md:p-8"
+          style={{
+            backgroundColor: "#2D3A4A",
+            borderColor: "#E07856",
+          }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="font-heading text-xl font-bold text-cream">
+                {SUR_MESURE_PRICING_BANNER.title}
+              </h3>
+              <p className="mt-1 text-lg font-bold text-[var(--color-terracotta)]">
+                {SUR_MESURE_PRICING_BANNER.priceLabel}
+              </p>
+              <p className="mt-3 max-w-[52ch] text-sm leading-relaxed text-text-subtle">
+                {SUR_MESURE_PRICING_BANNER.phrase}
+              </p>
+            </div>
+            <AnalyticsCta
+              href={rendezVousHref({ offre: "sur-mesure" })}
+              analyticsId="pricing_sur_mesure_banner"
+              className="btn-bracket btn-bracket-primary shrink-0 justify-center md:min-w-[14rem]"
+            >
+              {SUR_MESURE_PRICING_BANNER.cta}
+            </AnalyticsCta>
+          </div>
         </div>
 
-        <PricingProgramNotes foundersSegment={isHome ? "artisans" : "mandataires"} />
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {PAID_OFFERS.map((offer, offerIndex) => (
+            <div
+              key={offer.id}
+              id={`pricing-${offer.id}`}
+              data-offer-id={offer.id}
+              className={cn(
+                "h-full animate-on-scroll scale scroll-mt-24",
+                offer.featured && "md:-translate-y-2",
+              )}
+              style={{ transitionDelay: `${offerIndex * 100}ms` }}
+            >
+              <PricingPackCard
+                offer={offer}
+                level={offerIndex + 1}
+                cycle={cycle}
+                audience={audience}
+              />
+            </div>
+          ))}
+        </div>
 
         {!isHome ? (
           <p className="mx-auto mt-10 max-w-[52ch] text-center text-sm leading-relaxed text-muted md:text-[15px]">
@@ -226,6 +293,3 @@ export function Pricing({ audience = "default" }: PricingProps) {
     </section>
   );
 }
-
-// Suppression du type OfferTag et FilterChoice : 3 offres = filtres inutiles
-export {};

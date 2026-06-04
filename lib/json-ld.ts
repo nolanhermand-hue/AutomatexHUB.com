@@ -1,7 +1,17 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
 import { TPE_FAQ, TPE_PAGE_PATH } from "@/lib/automatisation-ia-tpe-content";
 import { HOME_FAQ } from "@/lib/home-copy";
-import { FAQ_ITEMS, NAP, OFFERS, SITE_URL, SOVEREIGNTY_TRUST_LINE, SOLUTION_HEADING, SOLUTION_STEPS } from "@/lib/constants";
+import {
+  FAQ_ITEMS,
+  getPricingOfferDisplay,
+  NAP,
+  PAID_OFFERS,
+  SITE_URL,
+  SOVEREIGNTY_TRUST_LINE,
+  SOLUTION_HEADING,
+  SOLUTION_STEPS,
+  type PackId,
+} from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 
 const JSONLD_PACKS = [
@@ -192,10 +202,11 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   ];
 
   // Offer catalog mappé sur les 3 offres réelles (D1)
-  const offerCatalog = OFFERS.filter((offer) => !offer.customOffer).map((offer) => ({
+  const jsonLdAudience = isHome ? "home" : "default";
+  const offerCatalog = PAID_OFFERS.map((offer) => ({
     "@type": "Offer",
     name: `${offer.name} — ${offer.annual} €/an`,
-    description: offer.roiLine,
+    description: getPricingOfferDisplay(offer.id as PackId, jsonLdAudience).roiEncart,
     price: String(offer.annual),
     priceCurrency: "EUR",
     priceSpecification: {

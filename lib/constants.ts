@@ -27,6 +27,12 @@ export const PRIMARY_DEMO_CTA_SHORT = "Démo 20 min" as const;
 export const SUR_MESURE_BOOKING_CTA =
   "Réserver un rendez-vous sur mesure — 30 min" as const;
 
+/** CTA carte tarif — prise de RDV 20 min (home + immobilier). */
+export const PRICING_CARD_CTA = "Réserver 20 min" as const;
+
+export const PRICING_REASSURANCE_CARD =
+  "Sans engagement · résiliable 1 mail · mise en service offerte" as const;
+
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
   "IA",
@@ -464,7 +470,7 @@ export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
   h2: "Tarifs Automatex — 3 packs + sur mesure pour mandataires en Normandie",
   h2SurMesureHint:
-    "Tarifs affichés en annuel par défaut. Sur toutes les formules : suivi humain 12 mois et bilan trimestriel.",
+    "Mise en place + mensualité transparente. Basculez mensuel ou annuel (−15 %). Suivi humain 12 mois sur chaque pack.",
   chooseCta: PRIMARY_DEMO_CTA,
   toggleMonthly: "Mensuel",
   toggleAnnual: "Annuel",
@@ -473,8 +479,7 @@ export const PRICING_HEADING = {
   annualDiscountPercent: 15,
   monthlySuffix: "/mois",
   annualSuffix: "/an",
-  bannerLine:
-    "Sans engagement · Résiliable en 1 mail · Onboarding offert",
+  bannerLine: PRICING_REASSURANCE_CARD,
   guaranteeLine: "Sans engagement · Résiliable en 1 mail",
   customFitFootnote: "Besoin hors-cadre ? Devis sur-mesure.",
   surMesurePriceLabel: "Prix sur devis",
@@ -515,6 +520,69 @@ export type PricingOffer = {
   cta: string;
 };
 
+export type PackId = "declic" | "systeme" | "pilote";
+
+export type PricingDisplayAudience = "home" | "immo";
+
+/** Promesses et encarts ROI affichés sur les cartes (home = artisan, immo = mandataire). */
+export const PRICING_OFFER_DISPLAY: Record<
+  PackId,
+  Record<PricingDisplayAudience, { promise: string; roiEncart: string }>
+> = {
+  declic: {
+    home: {
+      promise: "Vous ne ratez plus jamais un client qui vous appelle.",
+      roiEncart: "Un seul chantier récupéré rembourse l'année.",
+    },
+    immo: {
+      promise: "Vous ne ratez plus jamais un lead pendant vos visites.",
+      roiEncart: "1 mandat rentré rembourse l'année.",
+    },
+  },
+  systeme: {
+    home: {
+      promise: "Votre administratif tourne tout seul, sans vous.",
+      roiEncart: "Jusqu'à 8 h par semaine récupérées sur le terrain.",
+    },
+    immo: {
+      promise: "Votre administratif tourne tout seul, sans vous.",
+      roiEncart: "Jusqu'à 8 h par semaine récupérées sur la prospection et les visites.",
+    },
+  },
+  pilote: {
+    home: {
+      promise: "Un copilote qui anticipe et répond à votre place.",
+      roiEncart: "Réponse sous 4 h · optimisation continue.",
+    },
+    immo: {
+      promise: "Un copilote qui anticipe et répond à votre place.",
+      roiEncart: "Réponse sous 4 h · optimisation continue.",
+    },
+  },
+};
+
+export function pricingDisplayAudience(
+  audience: "default" | "home",
+): PricingDisplayAudience {
+  return audience === "home" ? "home" : "immo";
+}
+
+export function getPricingOfferDisplay(
+  id: PackId,
+  audience: "default" | "home",
+): { promise: string; roiEncart: string } {
+  return PRICING_OFFER_DISPLAY[id][pricingDisplayAudience(audience)];
+}
+
+/** Bandeau pleine largeur au-dessus de la grille tarifs (home + immobilier). */
+export const SUR_MESURE_PRICING_BANNER = {
+  title: "Sur mesure",
+  priceLabel: "Prix sur devis",
+  phrase:
+    "Besoin d’un périmètre plus léger ou plus complet que les formules affichées ? Entretien de 30 minutes, puis devis transparent — sans engagement tant que vous n’avez pas validé.",
+  cta: SUR_MESURE_BOOKING_CTA,
+} as const;
+
 /** D1 — 3 packs unifiés (Déclic / Système / Pilote) + sur mesure */
 export const OFFERS: PricingOffer[] = [
   {
@@ -532,8 +600,8 @@ export const OFFERS: PricingOffer[] = [
       ...PACK_ACCOMP_BULLETS.declic,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
-    roiLine: "Rentable dès 1 lead récupéré (≈ 3 500 € de commission moyenne).",
-    cta: "Récupérer mes leads",
+    roiLine: PRICING_OFFER_DISPLAY.declic.immo.roiEncart,
+    cta: PRICING_CARD_CTA,
   },
   {
     id: "systeme",
@@ -552,8 +620,8 @@ export const OFFERS: PricingOffer[] = [
       ...PACK_ACCOMP_BULLETS.systeme,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
-    roiLine: "1 lead récupéré + 1 h gagnée par jour : rentable en 2 semaines.",
-    cta: "Démarrer en 48 h",
+    roiLine: PRICING_OFFER_DISPLAY.systeme.immo.roiEncart,
+    cta: PRICING_CARD_CTA,
   },
   {
     id: "pilote",
@@ -571,8 +639,8 @@ export const OFFERS: PricingOffer[] = [
       ...PACK_ACCOMP_BULLETS.pilote,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
-    roiLine: "Pour les mandataires qui visent 10 ventes ou plus par an.",
-    cta: "Réserver mon onboarding",
+    roiLine: PRICING_OFFER_DISPLAY.pilote.immo.roiEncart,
+    cta: PRICING_CARD_CTA,
   },
   {
     id: "sur-mesure",
@@ -595,8 +663,6 @@ export const OFFERS: PricingOffer[] = [
 ];
 
 /** D6 / C12 — Tableau comparatif features 3 colonnes */
-export type PackId = "declic" | "systeme" | "pilote";
-
 export type FeatureRow = {
   feature: string;
   declic: boolean | string;
@@ -609,7 +675,7 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
   { feature: "Notification téléphone immédiate", declic: true, systeme: true, pilote: true },
   { feature: "Mise en place en 48 h", declic: true, systeme: true, pilote: true },
   { feature: "Sans engagement · Résiliable en 1 mail", declic: true, systeme: true, pilote: true },
-  { feature: "Onboarding offert", declic: true, systeme: true, pilote: true },
+  { feature: "Mise en service offerte", declic: true, systeme: true, pilote: true },
   {
     feature: "Suivi humain 12 mois (bilan trimestriel)",
     declic: true,

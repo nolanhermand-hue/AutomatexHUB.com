@@ -37,7 +37,7 @@
   --color-forest: #2f5d4b;
   --color-slate: #2d3a4a;
   --color-slate-deep: #1e2833;
-  --color-terracotta: #c0694a;
+  --color-terracotta: #e07856;
   --color-cream: #f5f0e6;
   --color-text-subtle: #a7b0ba;
 
@@ -654,7 +654,7 @@ body::before {
 :root {
   --slate: #2d3a4a;
   --slate-deep: #1e2833;
-  --terracotta: #c0694a;
+  --terracotta: #e07856;
   --forest: #2f5d4b;
   --cream: #f5f0e6;
   --text-subtle: #a7b0ba;
