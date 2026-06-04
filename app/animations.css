@@ -358,7 +358,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #ff6b35, #ff8c5a, #ff6b35);
+  background: linear-gradient(135deg, #e07856, #e88a6a, #e07856);
   z-index: -1;
   opacity: 0.6;
   pointer-events: none;
@@ -452,7 +452,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid #ff6b35;
+  outline: 2px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: 4px;
   transition: outline-offset var(--duration-fast) var(--ease-out);

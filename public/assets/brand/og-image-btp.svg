@@ -5,13 +5,13 @@
   <rect width="1200" height="630" fill="url(#btpGlow)" opacity="0.35" />
   <defs>
     <radialGradient id="btpGlow" cx="30%" cy="20%" r="70%">
-      <stop offset="0%" stop-color="#ff6b2b" />
+      <stop offset="0%" stop-color="#e07856" />
       <stop offset="100%" stop-color="#1a120e" stop-opacity="0" />
     </radialGradient>
   </defs>
   <g transform="translate(120, 175)">
     <svg width="280" height="280" viewBox="0 0 100 100">
-      <rect width="100" height="100" rx="19" fill="#2a1810" stroke="#ff6b2b" stroke-width="0.8" />
+      <rect width="100" height="100" rx="19" fill="#2a1810" stroke="#e07856" stroke-width="0.8" />
       <path
         d="M 69.41 71.55 A 29 29 0 1 1 71.56 30.59"
         fill="none"
@@ -21,13 +21,13 @@
       />
       <line x1="50" y1="50" x2="71.56" y2="30.59" stroke="#FAF9F6" stroke-width="3.5" stroke-linecap="round" />
       <circle cx="50" cy="50" r="3" fill="#FAF9F6" />
-      <circle cx="71.56" cy="30.59" r="5.5" fill="#ff6b2b" />
+      <circle cx="71.56" cy="30.59" r="5.5" fill="#e07856" />
     </svg>
   </g>
   <text x="440" y="280" font-family="Outfit, system-ui, sans-serif" font-weight="700" font-size="96" fill="#FAF9F6">
     Automatex
   </text>
-  <text x="440" y="360" font-family="Outfit, system-ui, sans-serif" font-weight="500" font-size="28" fill="#ffb088">
+  <text x="440" y="360" font-family="Outfit, system-ui, sans-serif" font-weight="500" font-size="28" fill="#e8a090">
     Devis et appels manqu&#233;s &#8212; r&#233;ponse en 90 secondes
   </text>
   <text x="440" y="410" font-family="Outfit, system-ui, sans-serif" font-weight="500" font-size="22" fill="#9a8f85">

@@ -16,11 +16,11 @@
   --color-border-light: #2a3a5c;
   --color-border-subtle: #1a2540;
 
-  --color-primary: #ff6b2b;
-  --color-accent: #ff6b2b;
-  --color-accent-dark: #ff7a42;
-  --color-accent-light: rgb(255 107 43 / 0.12);
-  --color-accent-mid: rgb(255 107 43 / 0.25);
+  --color-primary: #e07856;
+  --color-accent: #e07856;
+  --color-accent-dark: #e88a6a;
+  --color-accent-light: rgb(224 120 86 / 0.12);
+  --color-accent-mid: rgb(224 120 86 / 0.25);
 
   --color-success: #10b981;
   --color-danger: #ef4444;
@@ -34,11 +34,11 @@
   --color-faint: #8892a4;
   --color-black: #e8edf5;
   --color-footer: #080d1a;
-  --color-forest: #2f5d4b;
+  --color-forest: #2e5e4e;
   --color-slate: #2d3a4a;
   --color-slate-deep: #1e2833;
   --color-terracotta: #e07856;
-  --color-cream: #f5f0e6;
+  --color-cream: #f4ede4;
   --color-text-subtle: #a7b0ba;
 
   --max-w-content: 1140px;
@@ -234,7 +234,7 @@ body::before {
 .btn-bracket:hover {
   background: white;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgb(255 107 43 / 0.15);
+  box-shadow: 0 4px 20px rgb(224 120 86 / 0.15);
 }
 
 .btn-bracket-outline {
@@ -279,8 +279,8 @@ body::before {
 }
 
 .btn-bracket-primary:hover {
-  background: #ff7a42;
-  box-shadow: 0 4px 20px rgb(255 107 43 / 0.3);
+  background: var(--color-accent-dark);
+  box-shadow: 0 4px 20px rgb(224 120 86 / 0.3);
 }
 
 .card {
@@ -319,9 +319,9 @@ body::before {
 }
 
 .badge-orange {
-  background: rgb(255 107 43 / 0.15);
+  background: rgb(224 120 86 / 0.15);
   color: var(--color-primary);
-  border-color: rgb(255 107 43 / 0.3);
+  border-color: rgb(224 120 86 / 0.3);
 }
 
 .badge-green {

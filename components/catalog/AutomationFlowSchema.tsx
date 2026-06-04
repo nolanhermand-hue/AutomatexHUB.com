@@ -26,7 +26,7 @@ function FlowNode({ label, icon }: { label: string; icon: string }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={visual.src}
-          alt=""
+          alt={visual.alt}
           width={32}
           height={32}
           loading="lazy"

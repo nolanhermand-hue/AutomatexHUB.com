@@ -4,7 +4,7 @@ export type FlowNodeVisual =
   | { kind: "logo"; src: string; alt: string }
   | { kind: "initials"; initials: string; alt: string };
 
-const LOGO = {
+export const INTEGRATION_LOGO_PATHS = {
   n8n: `${BASE}/n8n.svg`,
   mistral: `${BASE}/mistral.svg`,
   gmail: `${BASE}/gmail.svg`,
@@ -42,7 +42,7 @@ function fromLabel(label: string): FlowNodeVisual | null {
   if (!n) return null;
 
   if (n.includes("automatex") || n === "regle" || n.includes("calcul") || n.includes("parseur")) {
-    return logo(LOGO.n8n, "n8n");
+    return logo(INTEGRATION_LOGO_PATHS.n8n, "n8n");
   }
   if (
     n.includes("moteur") ||
@@ -51,40 +51,60 @@ function fromLabel(label: string): FlowNodeVisual | null {
     n.includes("score") ||
     n.includes("transcript")
   ) {
-    return logo(LOGO.mistral, "Mistral AI");
+    return logo(INTEGRATION_LOGO_PATHS.mistral, "Mistral AI");
   }
-  if (n.includes("gmail") || n.includes("mail") || n.includes("outlook") || n.includes("boite") || n.includes("brouillon")) {
-    return logo(LOGO.gmail, "Gmail");
+  if (
+    n.includes("gmail") ||
+    n.includes("mail") ||
+    n.includes("outlook") ||
+    n.includes("boite") ||
+    n.includes("brouillon") ||
+    n.includes("pj")
+  ) {
+    return logo(INTEGRATION_LOGO_PATHS.gmail, "Gmail");
   }
-  if (n.includes("drive") || n.includes("dossier") || n.includes("historique") || n.includes("pilotage")) {
-    return logo(LOGO.drive, "Google Drive");
+  if (
+    n.includes("drive") ||
+    n.includes("dossier") ||
+    n.includes("historique") ||
+    n.includes("pilotage") ||
+    n.includes("devis envoye")
+  ) {
+    return logo(INTEGRATION_LOGO_PATHS.drive, "Google Drive");
   }
   if (n.includes("agenda") || n.includes("google cal") || n.includes("calendrier")) {
-    return logo(LOGO.calendar, "Google Calendar");
+    return logo(INTEGRATION_LOGO_PATHS.calendar, "Google Calendar");
   }
   if (n.includes("crm") || n.includes("sheet") || n.includes("notion") || n.includes("excel") || n.includes("erp")) {
-    return logo(LOGO.sheets, "Google Sheets");
+    return logo(INTEGRATION_LOGO_PATHS.sheets, "Google Sheets");
   }
   if (n.includes("telegram")) {
-    return logo(LOGO.telegram, "Telegram");
+    return logo(INTEGRATION_LOGO_PATHS.telegram, "Telegram");
   }
-  if (n.includes("sms") || n.includes("standard") || n.includes("telephone") || n.includes("mobile") || n.includes("twilio")) {
-    return logo(LOGO.twilio, "Twilio");
+  if (
+    n.includes("sms") ||
+    n.includes("standard") ||
+    n.includes("telephone") ||
+    n.includes("mobile") ||
+    n.includes("twilio") ||
+    n.includes("appel")
+  ) {
+    return logo(INTEGRATION_LOGO_PATHS.twilio, "Twilio");
   }
   if (n.includes("portail") || n.includes("web") || n.includes("seloger") || n.includes("leboncoin")) {
-    return logo(LOGO.leboncoin, "Portail annonces");
+    return logo(INTEGRATION_LOGO_PATHS.leboncoin, "Portail annonces");
   }
   if (n.includes("client") || n.includes("equipe") || n.includes("direction")) {
-    return logo(LOGO.brevo, "Email");
+    return logo(INTEGRATION_LOGO_PATHS.brevo, "Email");
   }
   if (n.includes("terrain") || n.includes("vocal") || n.includes("micro")) {
-    return logo(LOGO.maps, "Terrain");
+    return logo(INTEGRATION_LOGO_PATHS.maps, "Terrain");
   }
   if (n.includes("devis")) {
-    return logo(LOGO.drive, "Devis");
+    return logo(INTEGRATION_LOGO_PATHS.drive, "Devis");
   }
   if (n.includes("labels")) {
-    return logo(LOGO.gmail, "Gmail");
+    return logo(INTEGRATION_LOGO_PATHS.gmail, "Gmail");
   }
 
   return null;
@@ -96,27 +116,27 @@ function fromIcon(icon: string): FlowNodeVisual | null {
     case "inbox":
     case "edit":
     case "paperclip":
-      return logo(LOGO.gmail, "Gmail");
+      return logo(INTEGRATION_LOGO_PATHS.gmail, "Gmail");
     case "spark":
     case "chart":
     case "wrench":
-      return logo(LOGO.mistral, "Mistral AI");
+      return logo(INTEGRATION_LOGO_PATHS.mistral, "Mistral AI");
     case "calendar":
     case "clock":
-      return logo(LOGO.calendar, "Google Calendar");
+      return logo(INTEGRATION_LOGO_PATHS.calendar, "Google Calendar");
     case "folder":
     case "file":
     case "archive":
-      return logo(LOGO.drive, "Google Drive");
+      return logo(INTEGRATION_LOGO_PATHS.drive, "Google Drive");
     case "send":
     case "message":
     case "alert":
     case "bell":
     case "moon":
-      return logo(LOGO.telegram, "Telegram");
+      return logo(INTEGRATION_LOGO_PATHS.telegram, "Telegram");
     case "phone":
     case "mic":
-      return logo(LOGO.twilio, "Twilio");
+      return logo(INTEGRATION_LOGO_PATHS.twilio, "Twilio");
     case "bolt":
     case "database":
     case "task":
@@ -124,9 +144,9 @@ function fromIcon(icon: string): FlowNodeVisual | null {
     case "check":
     case "tag":
     case "users":
-      return logo(LOGO.n8n, "n8n");
+      return logo(INTEGRATION_LOGO_PATHS.n8n, "n8n");
     case "table":
-      return logo(LOGO.sheets, "Google Sheets");
+      return logo(INTEGRATION_LOGO_PATHS.sheets, "Google Sheets");
     default:
       return null;
   }
@@ -143,4 +163,29 @@ export function resolveFlowNode(label: string, icon: string): FlowNodeVisual {
 
   const alt = trimmed || "Étape";
   return { kind: "initials", initials: initialsFrom(alt), alt };
+}
+
+export type IntegrationLogo = { src: string; alt: string };
+
+/** Logos uniques (couleur) dérivés des étapes d’une automatisation. */
+export function collectAutomationLogos(
+  steps: { from: string; to: string; icon: string }[],
+  max = 4,
+): IntegrationLogo[] {
+  const seen = new Set<string>();
+  const out: IntegrationLogo[] = [];
+
+  for (const step of steps) {
+    for (const label of [step.from, step.to]) {
+      const trimmed = label.trim();
+      if (!trimmed) continue;
+      const visual = resolveFlowNode(trimmed, step.icon);
+      if (visual.kind !== "logo" || seen.has(visual.src)) continue;
+      seen.add(visual.src);
+      out.push({ src: visual.src, alt: visual.alt });
+      if (out.length >= max) return out;
+    }
+  }
+
+  return out;
 }

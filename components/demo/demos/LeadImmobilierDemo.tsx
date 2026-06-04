@@ -20,7 +20,7 @@ export function LeadImmobilierDemo({ active }: DemoAnimationProps) {
     <div ref={rootRef} className="demo-gsap-stack">
       <div className="demo-beat flex flex-col items-center gap-2 text-center">
         <p className="text-sm text-[var(--color-text)]">🏠 Visite en cours</p>
-        <p className="text-xs text-[#ff8200]">Lead SeLoger : M. Martin, 3 pièces Flers</p>
+        <p className="text-xs text-primary">Lead SeLoger : M. Martin, 3 pièces Flers</p>
       </div>
       <div className="demo-beat text-center text-sm text-[var(--color-text)]">
         Réponse auto en 90 s pendant la visite
@@ -32,7 +32,7 @@ export function LeadImmobilierDemo({ active }: DemoAnimationProps) {
       </div>
       <div className="demo-beat text-center">
         <p className="text-sm text-[#38a169]">✅ Lead engagé · 0 lead perdu</p>
-        <p className="demo-glow-roi text-lg font-semibold text-[#ff8200]">3 500 € préservés</p>
+        <p className="demo-glow-roi text-lg font-semibold text-primary">3 500 € préservés</p>
       </div>
     </div>
   );

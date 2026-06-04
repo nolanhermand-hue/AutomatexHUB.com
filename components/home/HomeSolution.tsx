@@ -1,4 +1,6 @@
+import { IntegrationLogos } from "@/components/shared/IntegrationLogos";
 import { HOME_SOLUTION } from "@/lib/home-copy";
+import { HOME_PILLAR_LOGOS } from "@/lib/home-card-logos";
 
 export function HomeSolution() {
   return (
@@ -17,6 +19,7 @@ export function HomeSolution() {
               className="glass-panel animate-on-scroll fade p-6 md:p-8"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
+              <IntegrationLogos logos={HOME_PILLAR_LOGOS[card.id]} className="mb-4" />
               <h3 className="font-mono text-sm font-bold uppercase tracking-wide text-[var(--cream)]">
                 {card.title}
               </h3>

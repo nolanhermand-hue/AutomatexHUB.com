@@ -1,24 +1,17 @@
 "use client";
 
 import { BillingSwitch } from "@/components/ui/BillingSwitch";
-import { Card } from "@/components/ui/Card";
-import { FeaturedBadge } from "@/components/ui/Badge";
+import { PricingPackGrid } from "@/components/pricing/PricingPackGrid";
+import { PricingSurMesureBanner } from "@/components/pricing/PricingSurMesureBanner";
 import { PricingProgramNotes } from "@/components/sections/PricingProgramNotes";
-import { TPE_DISPLAY_OFFERS, TPE_FOUNDERS_NOTE } from "@/lib/automatisation-ia-tpe-content";
-import { cn } from "@/lib/cn";
+import { TPE_FOUNDERS_NOTE } from "@/lib/automatisation-ia-tpe-content";
 import { PRICING_HEADING } from "@/lib/constants";
-import { rendezVousHref } from "@/lib/hub-nav";
-import {
-  annualPrepayTotal,
-  formatFoundersAvailability,
-  formatMiseEnPlacePuisMensuel,
-} from "@/lib/pricing";
+import { formatFoundersAvailability } from "@/lib/pricing";
 import { useState } from "react";
-
-type BillingCycle = "monthly" | "annual";
+import type { PricingBillingCycle } from "@/components/pricing/PricingPackCard";
 
 export function TpeAutomatisationPricing() {
-  const [cycle, setCycle] = useState<BillingCycle>("monthly");
+  const [cycle, setCycle] = useState<PricingBillingCycle>("monthly");
 
   return (
     <section id="tarifs" className="border-t border-border px-gutter py-16 md:py-20">
@@ -28,7 +21,7 @@ export function TpeAutomatisationPricing() {
           Choisissez votre niveau d&apos;automatisation
         </h2>
         <p className="mt-3 max-w-readable text-muted">
-          Pas d&apos;engagement. Même accompagnement humain sur toutes les formules. Sur mesure si
+          Mise en place + mensualité transparente. Basculez mensuel ou annuel (−15 %). Sur mesure si
           vous voulez moins ou plus que les packs.
         </p>
 
@@ -41,56 +34,9 @@ export function TpeAutomatisationPricing() {
           className="mt-8"
         />
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {TPE_DISPLAY_OFFERS.map((offer) => {
-            const isCustom = offer.customOffer === true;
-            const displayPrice = isCustom
-              ? null
-              : cycle === "monthly"
-                ? offer.monthly.toLocaleString("fr-FR")
-                : annualPrepayTotal(offer.monthly).toLocaleString("fr-FR");
-            const suffix = isCustom ? null : cycle === "monthly" ? "/mois" : "/an";
-            return (
-              <Card key={offer.id} featured={offer.featured} className="flex h-full flex-col">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-heading text-lg text-text">{offer.name}</h3>
-                  {offer.badge ? <FeaturedBadge>{offer.badge}</FeaturedBadge> : null}
-                </div>
-                {isCustom ? (
-                  <>
-                    <p className="mt-3 text-sm text-muted">{PRICING_HEADING.surMesureIntro}</p>
-                    <p className="mt-2 text-xl font-bold text-primary">
-                      {PRICING_HEADING.surMesurePriceLabel}
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">
-                      {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}
-                    </p>
-                    {cycle === "annual" ? (
-                      <p className="mt-1 font-mono text-2xl font-bold text-text">
-                        {displayPrice} €
-                        <span className="text-sm font-medium text-muted">{suffix}</span>
-                      </p>
-                    ) : null}
-                    <p className="mt-2 text-xs text-muted">{PRICING_HEADING.bannerLine}</p>
-                  </>
-                )}
-                <p className="mt-3 flex-1 text-sm text-muted">{offer.blurb}</p>
-                <a
-                  href={rendezVousHref({ offre: offer.id })}
-                  className={cn(
-                    "mt-4 btn-bracket w-full justify-center text-sm",
-                    offer.featured || isCustom ? "btn-bracket-primary" : "btn-bracket-outline",
-                  )}
-                >
-                  {offer.cta}
-                </a>
-              </Card>
-            );
-          })}
-        </div>
+        <PricingSurMesureBanner />
+
+        <PricingPackGrid cycle={cycle} audience="tpe" />
 
         <p className="mt-8 text-sm text-muted">
           <span className="font-semibold text-text">Places fondateur : </span>
@@ -101,6 +47,7 @@ export function TpeAutomatisationPricing() {
         <p className="mx-auto mt-8 max-w-[52ch] text-center text-sm text-muted">
           {PRICING_HEADING.customFitFootnote}
         </p>
+        <p className="mt-4 text-center text-sm font-medium text-muted">{PRICING_HEADING.bannerLine}</p>
 
         <PricingProgramNotes />
       </div>

@@ -23,7 +23,7 @@ function DevisAutoGsap({ active }: DemoAnimationProps) {
         Pose carrelage 40 m², salle de bain, 2 jours…
       </div>
       <div className="demo-beat text-center">
-        <p className="text-sm text-[#ff8200]">→ Devis PDF n°2024-47</p>
+        <p className="text-sm text-primary">→ Devis PDF n°2024-47</p>
         <p className="text-xs text-[var(--color-text)]">Total TTC : 3 840 €</p>
       </div>
       <div className="demo-beat text-center text-sm text-[var(--color-text)]">

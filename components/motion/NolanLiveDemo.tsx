@@ -22,7 +22,7 @@ export function NolanLiveDemo() {
     >
       <div className="demo-beat space-y-2 text-sm text-[var(--color-text)]/90">
         <p className="text-xs text-muted">Téléphone · Jeudi · 20 h 47</p>
-        <p className="rounded-lg border border-[#2a2a2a] bg-[#1a1a1a] p-3 text-[#ff8200]">
+        <p className="rounded-lg border border-[#2a2a2a] bg-[#1a1a1a] p-3 text-primary">
           Nolan · Telegram
         </p>
         <p className="text-xs leading-relaxed">

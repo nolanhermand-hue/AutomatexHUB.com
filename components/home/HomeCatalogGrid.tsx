@@ -1,8 +1,10 @@
 import { PrimaryDemoCta } from "@/components/shared/PrimaryDemoCta";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
+import { IntegrationLogos } from "@/components/shared/IntegrationLogos";
 import { AUTOMATIONS_CATALOG } from "@/lib/automations-catalog";
 import { HOME_CATALOG_IDS } from "@/lib/home-catalog-ids";
 import { HOME_CATALOG } from "@/lib/home-copy";
+import { logosForHomeCatalogItem } from "@/lib/home-card-logos";
 
 const catalogById = new Map(AUTOMATIONS_CATALOG.map((item) => [item.id, item]));
 
@@ -21,12 +23,14 @@ export function HomeCatalogGrid() {
           {items.map((item, index) => {
             if (!item) return null;
             const roiLine = item.impact ?? item.tagline;
+            const cardLogos = logosForHomeCatalogItem(item);
             return (
               <li
                 key={item.id}
                 className="glass-panel-strong animate-on-scroll fade flex flex-col p-5"
                 style={{ transitionDelay: `${index * 60}ms` }}
               >
+                <IntegrationLogos logos={cardLogos} className="mb-3" />
                 <p className="text-[10px] font-mono uppercase tracking-widest text-faint">{item.category}</p>
                 <h3 className="mt-2 text-base font-semibold text-text">{item.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{roiLine}</p>

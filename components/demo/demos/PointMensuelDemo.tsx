@@ -20,7 +20,7 @@ function PointMensuelGsap({ active }: DemoAnimationProps) {
     <div ref={rootRef} className="demo-gsap-stack">
       <div className="demo-beat text-center text-sm text-[var(--color-text)]">📅 J+30 — Point mensuel Nolan</div>
       <div className="demo-beat text-center">
-        <p className="text-sm text-[#ff8200]">📊 Rapport Telegram</p>
+        <p className="text-sm text-primary">📊 Rapport Telegram</p>
         <p className="text-xs text-[var(--color-text)]/90">8 appels traités · 12 devis · 14 h récupérées</p>
       </div>
       <div className="demo-beat text-center">

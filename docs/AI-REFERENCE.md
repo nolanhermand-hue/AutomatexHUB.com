@@ -79,8 +79,12 @@ Thème **sombre fixe** · `html` avec classe **`dark`** · pas de thème crème.
 | `--color-bg-card` | `#0d1526` | Cartes hero aside |
 | `--color-border` | `#1a2540` | Bordures |
 | `--color-border-light` | `#2a3a5c` | Bordures badges |
-| **`--color-primary`** | **`#ff6b2b`** | CTA orange, accents (**ne pas remplacer** sans demande) |
-| `--color-accent-dark` | `#ff7a42` | Hover primary |
+| **`--color-primary`** | **`#E07856`** | CTA terracotta, accents (tous les boutons primaires) |
+| **`--color-terracotta`** | **`#E07856`** | Alias charte CTA |
+| `--color-accent-dark` | `#e88a6a` | Hover primary |
+| `--color-forest` | `#2E5E4E` | Secondaire marque |
+| `--color-cream` | `#F4EDE4` | Texte sur bandeau ardoise |
+| `--color-ardoise` | `#2D3A4A` | Bandeau Sur mesure tarifs |
 | `--color-success` | `#10b981` | — |
 | `--color-danger` | `#ef4444` | — |
 | `--color-warning` | `#f59e0b` | — |
@@ -210,7 +214,7 @@ Mega-menu : `lib/mega-nav-data.ts`
 | Segment | Fichier | Constante |
 |---------|---------|-----------|
 | Immobilier | `lib/constants.ts` | `OFFERS` — Déclic / Système ⭐ / Pilote / Sur mesure |
-| BTP | `lib/btp-copy.ts` | `BTP_OFFERS` — Déclic / Système ⭐ / Pilote / Sur mesure (grille unifiée) |
+| BTP | `components/sections/BtpPricing.tsx` | Grille `PAID_OFFERS` + `PricingPackGrid` (audience `btp`) · bandeau Sur mesure |
 | TPE | `lib/automatisation-ia-tpe-content.ts` | offres page pilier |
 | Fidélité / annuel | `lib/pricing.ts` | −15 % annuel, M13, M37 |
 

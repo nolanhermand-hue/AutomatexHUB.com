@@ -123,7 +123,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href={BRAND.manifest} />
-        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#FF6B2B" />
+        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#E07856" />
         <meta name="theme-color" content="#080D1A" />
       </head>
       <body className="min-h-screen font-body antialiased">

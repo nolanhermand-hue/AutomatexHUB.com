@@ -522,7 +522,10 @@ export type PricingOffer = {
 
 export type PackId = "declic" | "systeme" | "pilote";
 
-export type PricingDisplayAudience = "home" | "immo";
+export type PricingDisplayAudience = "home" | "immo" | "tpe";
+
+/** Audience passée aux sections tarifs (home / immo / btp / tpe). */
+export type PricingPackAudience = "default" | "home" | "btp" | "tpe";
 
 /** Promesses et encarts ROI affichés sur les cartes (home = artisan, immo = mandataire). */
 export const PRICING_OFFER_DISPLAY: Record<
@@ -538,6 +541,10 @@ export const PRICING_OFFER_DISPLAY: Record<
       promise: "Vous ne ratez plus jamais un lead pendant vos visites.",
       roiEncart: "1 mandat rentré rembourse l'année.",
     },
+    tpe: {
+      promise: "Une automatisation cadrée sur votre activité — accompagnement Essentiel inclus.",
+      roiEncart: "Un flux récupéré rembourse plusieurs mois de formule.",
+    },
   },
   systeme: {
     home: {
@@ -547,6 +554,10 @@ export const PRICING_OFFER_DISPLAY: Record<
     immo: {
       promise: "Votre administratif tourne tout seul, sans vous.",
       roiEncart: "Jusqu'à 8 h par semaine récupérées sur la prospection et les visites.",
+    },
+    tpe: {
+      promise: "3 à 4 automatisations — votre administratif avance sans vous bloquer.",
+      roiEncart: "Point mensuel 20 min · ajustements dans le périmètre du pack.",
     },
   },
   pilote: {
@@ -558,18 +569,22 @@ export const PRICING_OFFER_DISPLAY: Record<
       promise: "Un copilote qui anticipe et répond à votre place.",
       roiEncart: "Réponse sous 4 h · optimisation continue.",
     },
+    tpe: {
+      promise: "Stack complet + brique métier — priorité et copilote mensuel.",
+      roiEncart: "Réponse sous 4 h · évolutions dans le périmètre du pack.",
+    },
   },
 };
 
-export function pricingDisplayAudience(
-  audience: "default" | "home",
-): PricingDisplayAudience {
-  return audience === "home" ? "home" : "immo";
+export function pricingDisplayAudience(audience: PricingPackAudience): PricingDisplayAudience {
+  if (audience === "home" || audience === "btp") return "home";
+  if (audience === "tpe") return "tpe";
+  return "immo";
 }
 
 export function getPricingOfferDisplay(
   id: PackId,
-  audience: "default" | "home",
+  audience: PricingPackAudience,
 ): { promise: string; roiEncart: string } {
   return PRICING_OFFER_DISPLAY[id][pricingDisplayAudience(audience)];
 }

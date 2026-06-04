@@ -16,7 +16,7 @@ export type LiveDemoConfig = {
   note: string;
 };
 
-const badgeOrange = "bg-[#ff8200]/20 text-[#ff8200]";
+const badgeOrange = "bg-primary/20 text-primary";
 const badgeGreen = "bg-[#38a169]/20 text-[#38a169]";
 const badgeRed = "bg-[#e53e3e]/20 text-[#e53e3e]";
 const badgeMuted = "bg-[#2a2a2a] text-[rgba(245,244,241,0.55)]";
@@ -32,7 +32,7 @@ export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
         icon: "📩",
         message:
           "M. Martin, 3 pièces Flers, budget 180 000 €\nTéléphone : 06 XX XX XX XX",
-        color: "border-[#ff8200]",
+        color: "border-primary",
         badge: "Lead entrant",
         badgeClass: badgeOrange,
       },
@@ -131,7 +131,7 @@ J'ai bien reçu votre appel. Je suis sur un chantier — je vous rappelle avant 
         icon: "🎤",
         message:
           '🎙️ Note vocale (1 min 47s)\n\n"Dupont · pose carrelage 40m² · salle de bain · colle incluse · 2 jours de pose · joint époxy"',
-        color: "border-[#ff8200]",
+        color: "border-primary",
         badge: "Note vocale",
         badgeClass: badgeOrange,
       },

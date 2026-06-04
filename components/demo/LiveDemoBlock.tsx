@@ -12,14 +12,20 @@ type LiveDemoBlockProps = {
 
 function stepBorder(step: LiveDemoStep): string {
   if (step.color.includes("38a169")) return "border-l-success";
-  if (step.color.includes("ff8200") || step.color.includes("FF6B2B")) return "border-l-primary";
+  if (
+    step.color.includes("primary") ||
+    step.color.includes("e07856") ||
+    step.color.includes("ff8200")
+  )
+    return "border-l-primary";
   if (step.color.includes("e53e3e")) return "border-l-danger";
   return "border-l-border";
 }
 
 function stepBadgeClass(step: LiveDemoStep): string {
   if (step.color.includes("38a169")) return "border-success/20 bg-success/10 text-success";
-  if (step.color.includes("ff8200")) return "border-primary/20 bg-primary/10 text-primary";
+  if (step.color.includes("primary") || step.color.includes("e07856") || step.color.includes("ff8200"))
+    return "border-primary/20 bg-primary/10 text-primary";
   return "border-border bg-surface-2 text-faint";
 }
 
