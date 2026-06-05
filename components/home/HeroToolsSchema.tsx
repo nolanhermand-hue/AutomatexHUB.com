@@ -27,11 +27,14 @@ function LogoTile({ logo }: { logo: HomeHeroIntegrationLogo }) {
 /** Bande d’intégrations hero : sous-titre + 3 logos statiques (pas de marquee). */
 export function HeroToolsSchema() {
   return (
-    <figure className="mt-8 max-w-xl" aria-label={ARIA_LABEL}>
-      <figcaption className="text-sm leading-relaxed text-muted md:text-base">
+    <figure
+      className="mx-auto w-full max-w-[min(100%,360px)] lg:max-w-none"
+      aria-label={ARIA_LABEL}
+    >
+      <figcaption className="text-center text-sm leading-relaxed text-muted md:text-base lg:text-left">
         {HOME_HERO.integrationsLine}
       </figcaption>
-      <ul className="mt-4 flex flex-wrap items-center justify-start gap-4 sm:gap-5">
+      <ul className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-5 lg:justify-start">
         {HOME_HERO_INTEGRATION_LOGOS.map((tool) => (
           <li key={tool.id}>
             <LogoTile logo={tool} />

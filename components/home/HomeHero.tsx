@@ -7,8 +7,8 @@ import { rendezVousHref } from "@/lib/hub-nav";
 export function HomeHero() {
   return (
     <section id="hero" className="relative px-gutter pb-16 pt-24 md:pb-20 md:pt-28">
-      <div className="mx-auto max-w-content">
-        <div className="hero-enter max-w-3xl">
+      <div className="mx-auto grid max-w-content gap-10 lg:grid-cols-[1fr_minmax(240px,360px)] lg:items-center">
+        <div className="hero-enter">
           <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--terracotta)]">
             Automatex · Orne · Normandie
           </p>
@@ -33,6 +33,8 @@ export function HomeHero() {
           <p className="mt-6 max-w-lg text-xs leading-relaxed text-[var(--text-subtle)] md:text-sm">
             {HOME_HERO.reassurance}
           </p>
+        </div>
+        <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
           <HeroToolsSchema />
         </div>
       </div>
