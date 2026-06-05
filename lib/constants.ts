@@ -930,7 +930,7 @@ export const ABOUT_FOUNDER = {
   eyebrow: "À propos de Nolan",
   h2: "Construit par un expert du terrain, pas par une startup.",
   body:
-    "Nolan Hermand configure chaque installation à la main à Flers (Google, portails, messagerie). Plusieurs années sur les chantiers (menuiserie puis couverture), formation autodidacte à l'automatisation en parallèle. Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.",
+    "Nolan Hermand configure chaque installation à la main à Flers (Google, portails, messagerie). 2 ans sur les chantiers (menuiserie puis couverture), formation autodidacte à l'automatisation en parallèle. Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.",
   stats: [
     { value: "< 2 min", label: "Délai de réponse moyen" },
     { value: "48 h", label: "Mise en place après validation périmètre" },

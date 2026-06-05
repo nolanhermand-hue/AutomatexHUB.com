@@ -106,8 +106,8 @@ export const HOME_FOUNDER = {
   eyebrow: "Qui installe",
   h2: "Du chantier à l’automatisation — Nolan connaît ta cadence",
   storyLead:
-    "Sur les chantiers, j’ai vu le temps perdu en paperasse, devis et appels manqués — alors je me suis formé en parallèle à l’automatisation pour régler ça.",
-  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). Plusieurs années sur les chantiers (menuiserie puis couverture), tout en me formant à l’automatisation. Aujourd’hui j’installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
+    "2 ans sur les chantiers, en menuiserie puis couverture. J’ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l’automatisation pour régler exactement ça.",
+  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en me formant à l’automatisation. Aujourd’hui j’installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
   painSteps: [
     {
       title: "Sur le terrain",

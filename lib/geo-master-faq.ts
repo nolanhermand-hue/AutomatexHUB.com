@@ -81,7 +81,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 7,
     category: "general",
     q: "Pourquoi un ancien artisan pour automatiser mon activité ?",
-    a: "Parce que Nolan a passé plusieurs années sur les chantiers (menuiserie puis couverture) et a vu le temps perdu en paperasse, devis et appels manqués — il s'est formé en parallèle à l'automatisation pour régler ça sur vos outils, pas sur un logiciel générique.",
+    a: "Parce que Nolan a passé 2 ans sur les chantiers (menuiserie puis couverture). Il a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse — et s'est formé à l'automatisation pour régler exactement ça sur vos outils, pas sur un logiciel générique.",
   },
   {
     id: 8,
