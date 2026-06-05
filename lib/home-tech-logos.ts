@@ -1,6 +1,19 @@
 const BASE = "/assets/integrations";
 
-/** 15 outils affichés sur l’accueil (schéma hero + barre de confiance). */
+/** Bande hero sous le CTA : 3 outils du quotidien (pas le catalogue). */
+export const HOME_HERO_INTEGRATION_LOGOS = [
+  { id: "gmail", name: "Gmail", src: `${BASE}/gmail.svg` },
+  { id: "google-calendar", name: "Google Agenda", src: `${BASE}/google-calendar.svg` },
+  {
+    id: "sms-apple",
+    name: "Messages (SMS)",
+    src: `${BASE}/sms-apple.svg`,
+  },
+] as const;
+
+export type HomeHeroIntegrationLogo = (typeof HOME_HERO_INTEGRATION_LOGOS)[number];
+
+/** 15 outils — barre de confiance (hors hero). */
 export const HOME_TECH_LOGOS = [
   { id: "n8n", name: "N8N", src: `${BASE}/n8n.svg`, ring: "hub" as const },
   { id: "mistral", name: "Mistral", src: `${BASE}/mistral.svg`, ring: "inner" as const },

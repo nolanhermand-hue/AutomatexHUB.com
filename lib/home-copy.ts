@@ -12,6 +12,8 @@ export const HOME_HERO = {
   sub:
     "Réponse aux messages, devis et relances branchés sur tes outils actuels. Nolan installe à distance — tu restes sur le terrain.",
   reassurance: `Sans engagement · résiliable en 1 mail · 30 jours remboursé · ${SOVEREIGNTY_TRUST_LINE}`,
+  integrationsLine:
+    "On se branche sur ce que tu utilises déjà. Rien de nouveau à apprendre.",
 } as const;
 
 export const HOME_PROBLEM = {
