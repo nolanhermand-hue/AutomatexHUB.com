@@ -1,4 +1,3 @@
-import { HomeCatalogGrid } from "@/components/home/HomeCatalogGrid";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { HomeFinalCta } from "@/components/home/HomeFinalCta";
 import { HomeFounder } from "@/components/home/HomeFounder";
@@ -14,7 +13,6 @@ export function HomePage() {
       <HomeHero />
       <HomeProblem />
       <HomeSolution />
-      <HomeCatalogGrid />
       <HomeHowItWorks />
       <Pricing audience="home" />
       <HomeFounder />
