@@ -77,6 +77,6 @@ export const BTP_GEO_INTERNAL_LINKS = [
   { label: "Artisans Flers", href: "/automatisation-artisan-flers" },
   { label: "Artisans Alençon", href: "/automatisation-artisan-alencon" },
   { label: "Artisans Argentan", href: "/automatisation-artisan-argentan" },
-  { label: "Devis automatique Orne", href: "/devis-automatique-artisan-orne" },
+  { label: "Relance devis", href: "/automatisation-pour-artisans/relance-devis-automatique" },
   { label: "Automatisation BTP Orne", href: "/automatisation-btp-orne" },
 ] as const;

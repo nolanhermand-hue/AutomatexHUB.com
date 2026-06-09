@@ -339,29 +339,4 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
       "Les artisans de la zone Ar'Nor et du centre-ville d'Argentan : Nolan Hermand installe et suit le système depuis Flers, avec le même numéro direct.",
     distanceFromFlers: "Flers est à environ 35 minutes d'Argentan",
   },
-  {
-    path: "/devis-automatique-artisan-orne",
-    city: "Orne",
-    h1: "Devis automatique pour artisans dans l'Orne",
-    metaTitle: "Devis automatique artisan Orne — depuis note vocale · Automatex",
-    metaDescription:
-      "Devis automatique pour artisans dans l'Orne : dictée vocale, PDF, envoi mail le jour même. Flers, Alençon, Argentan. Logiciel devis artisan sans soirée admin.",
-    localHook:
-      "Page ressource pour artisans qui perdent des chantiers faute de devis le jour même — générer un devis artisan automatiquement depuis le chantier.",
-    localDetail:
-      "Que vous soyez plombier à Flers, électricien à Alençon ou maçon à Argentan : la note vocale devient un devis chiffré et envoyé avant le retour à la maison.",
-    distanceFromFlers: "Configuration par Nolan · siège Flers (61100)",
-  },
-  {
-    path: "/devis-automatique-artisan",
-    city: "Normandie",
-    h1: "Devis envoyés automatiquement après vos visites",
-    metaTitle: "Devis artisan automatique · Orne · Automatex Hub",
-    metaDescription:
-      "Comment envoyer vos devis plus vite : dictée vocale, PDF, envoi mail — sans soirée administratif. Orne et Normandie.",
-    localHook: "Page ressource pour artisans qui perdent des chantiers faute de devis le jour même.",
-    localDetail:
-      "Que vous soyez à Flers, Alençon ou Argentan : la dictée vocale en sortie de chantier devient un PDF envoyé le jour même — Nolan configure le modèle avec vous.",
-    distanceFromFlers: "Basé à Flers, Orne (61100)",
-  },
 ];

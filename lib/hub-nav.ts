@@ -1,5 +1,6 @@
 /** Navigation globale site vitrine (hub + landings). */
 export const SITE_NAV = [
+  { href: "/automatisation-pour-artisans", label: "Automatisations pro" },
   { href: "/normandie", label: "Normandie" },
   { href: "/faq", label: "FAQ" },
   { href: "/automatisation-ia-tpe", label: "TPE & PME" },
@@ -39,7 +40,7 @@ export const FOOTER_BTP_LOCAL_LINKS = [
   { href: "/automatisation-artisan-flers", label: "Artisans Flers" },
   { href: "/automatisation-artisan-alencon", label: "Artisans Alençon" },
   { href: "/automatisation-artisan-argentan", label: "Artisans Argentan" },
-  { href: "/devis-automatique-artisan-orne", label: "Devis auto Orne" },
-  { href: "/devis-automatique-artisan", label: "Devis artisan" },
+  { href: "/automatisation-pour-artisans/relance-devis-automatique", label: "Relance devis" },
+  { href: "/automatisation-pour-artisans/sms-appel-manque", label: "SMS appel manqué" },
   { href: "/btp", label: "Landing BTP" },
 ] as const;

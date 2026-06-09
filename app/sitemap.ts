@@ -1,4 +1,6 @@
 import { SITE_URL } from "@/lib/constants";
+import { COCON_CLUSTER_LAST_MODIFIED } from "@/lib/automatisation-cocon-shared";
+import { COCON_PAIN_PAGES, COCON_PILIER } from "@/lib/automatisation-cocon";
 import {
   NORMANDIE_CLUSTER_LAST_MODIFIED,
   NORMANDIE_PILIER,
@@ -15,6 +17,22 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const normandieLastMod = new Date(NORMANDIE_CLUSTER_LAST_MODIFIED);
+  const coconLastMod = new Date(COCON_CLUSTER_LAST_MODIFIED);
+
+  const coconEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}${COCON_PILIER.path}`,
+      lastModified: coconLastMod,
+      changeFrequency: "monthly",
+      priority: 0.88,
+    },
+    ...COCON_PAIN_PAGES.map((p) => ({
+      url: `${SITE_URL}${p.path}`,
+      lastModified: coconLastMod,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 
   const normandieEntries: MetadataRoute.Sitemap = [
     {
@@ -44,12 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/automatisation-artisan-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/automatisation-artisan-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/automatisation-artisan-argentan`, lastModified, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${SITE_URL}/devis-automatique-artisan`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/devis-automatique-artisan-orne`, lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE_URL}/mandataires-normandie`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/mandataires-flers`, lastModified, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${SITE_URL}/mandataires-alencon`, lastModified, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${SITE_URL}/mandataires-argentan`, lastModified, changeFrequency: "monthly", priority: 0.75 },
+    ...coconEntries,
     { url: `${SITE_URL}/a-propos`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/vos-donnees`, lastModified, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/securite`, lastModified, changeFrequency: "yearly", priority: 0.5 },

@@ -117,8 +117,6 @@ const BTP_JSONLD_PATHS = [
   "/automatisation-artisan-flers",
   "/automatisation-artisan-alencon",
   "/automatisation-artisan-argentan",
-  "/devis-automatique-artisan",
-  "/devis-automatique-artisan-orne",
 ] as const;
 
 export const JSON_LD_FAQ_MODE_BY_PATH: Readonly<Record<string, JsonLdFaqMode>> = {
@@ -626,6 +624,61 @@ export function buildNormandiePilierJsonLd(opts: {
         description: opts.description,
         areaServed: ["Normandie", "Orne", "Calvados", "Manche", "Eure", "Seine-Maritime"],
         serviceType: "Automatisation pour artisans BTP, diagnostiqueurs et TPE",
+      },
+      buildFaqPageFromItems(opts.faq),
+    ],
+  };
+}
+
+/** JSON-LD pilier cocon /automatisation-pour-artisans. */
+export function buildAutomatisationCoconPilierJsonLd(opts: {
+  description: string;
+  faq: ReadonlyArray<{ q: string; a: string }>;
+}) {
+  const businessId = `${SITE_URL}#business`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Automatisations pro", path: "/automatisation-pour-artisans" },
+      ]),
+      {
+        "@type": "Service",
+        name: "Automatex — automatisations pour artisans et indépendants",
+        provider: { "@id": businessId },
+        description: opts.description,
+        areaServed: ["Normandie", "Orne", "France"],
+        serviceType: "Relances, réponses et rappels sans remplacer le logiciel métier",
+      },
+      buildFaqPageFromItems(opts.faq),
+    ],
+  };
+}
+
+/** JSON-LD page douleur cocon. */
+export function buildAutomatisationCoconPainJsonLd(opts: {
+  path: string;
+  serviceName: string;
+  description: string;
+  faq: ReadonlyArray<{ q: string; a: string }>;
+}) {
+  const businessId = `${SITE_URL}#business`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Automatisations pro", path: "/automatisation-pour-artisans" },
+        { name: opts.serviceName, path: opts.path },
+      ]),
+      {
+        "@type": "Service",
+        name: opts.serviceName,
+        provider: { "@id": businessId },
+        description: opts.description,
+        areaServed: ["Normandie", "Orne", "France"],
+        serviceType: "Automatisation administrative pour indépendants",
       },
       buildFaqPageFromItems(opts.faq),
     ],

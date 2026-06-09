@@ -401,7 +401,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Mandataires immobiliers à Alençon ?",
-        a: "Voir aussi /immobilier et /mandataires-alencon pour le parcours leads immo ; cette page cible surtout BTP, diag et TPE.",
+        a: "Voir aussi /immobilier pour le parcours leads immo dédié ; cette page cible surtout BTP, diag et TPE en Normandie.",
       },
     ],
     neighborSlugs: ["flers", "argentan", "saint-lo"],

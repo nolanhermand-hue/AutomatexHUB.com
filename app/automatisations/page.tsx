@@ -33,7 +33,11 @@ export default function AutomatisationsPage() {
         </h1>
         <p className="mx-auto mt-5 max-w-readable text-base leading-relaxed text-muted">
           Chaque automatisation ci-dessous est une configuration réelle, avec le message exact qui
-          part et l&apos;impact sur votre activité.
+          part et l&apos;impact sur votre activité. Pages par douleur métier (relances, SMS, leads) :{" "}
+          <Link href="/automatisation-pour-artisans" className="text-primary underline">
+            hub automatisations pro
+          </Link>
+          .
         </p>
 
         <div className="glass-panel mt-10 inline-flex gap-8 px-8 py-4">

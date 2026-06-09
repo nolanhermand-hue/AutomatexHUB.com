@@ -39,7 +39,7 @@ export function MegaNav() {
   const isFunnel =
     pathname.startsWith("/immobilier") ||
     pathname.startsWith("/btp") ||
-    pathname.startsWith("/mandataires");
+    pathname.startsWith("/automatisation-pour-artisans");
   const contactLink = contactHref(pathname);
 
   const [isScrolled, setIsScrolled] = useState(false);

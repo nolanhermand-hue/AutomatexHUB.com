@@ -16,6 +16,34 @@
   status = 301
   force = true
 
+# Mandataires → cluster Normandie
+[[redirects]]
+  from = "/mandataires-flers"
+  to = "/normandie/flers"
+  status = 301
+[[redirects]]
+  from = "/mandataires-alencon"
+  to = "/normandie/alencon"
+  status = 301
+[[redirects]]
+  from = "/mandataires-argentan"
+  to = "/normandie/argentan"
+  status = 301
+[[redirects]]
+  from = "/mandataires-normandie"
+  to = "/normandie"
+  status = 301
+
+# Devis legacy → pilier cocon
+[[redirects]]
+  from = "/devis-automatique-artisan"
+  to = "/automatisation-pour-artisans"
+  status = 301
+[[redirects]]
+  from = "/devis-automatique-artisan-orne"
+  to = "/automatisation-pour-artisans"
+  status = 301
+
 # Assets immuables avec hash (JS/CSS/polices Next.js) : cache 1 an
 [[headers]]
   for = "/_next/static/*"

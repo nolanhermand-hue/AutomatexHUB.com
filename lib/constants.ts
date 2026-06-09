@@ -902,10 +902,10 @@ export const FOOTER_COPY = {
 
 /** Maillage interne SEO — pages locales indexables (GSC). */
 export const FOOTER_LOCAL_LINKS: ReadonlyArray<{ href: string; label: string }> = [
-  { href: "/mandataires-normandie", label: "Normandie" },
-  { href: "/mandataires-flers", label: "Flers & agglo" },
-  { href: "/mandataires-alencon", label: "Alençon" },
-  { href: "/mandataires-argentan", label: "Argentan" },
+  { href: "/normandie", label: "Normandie" },
+  { href: "/normandie/flers", label: "Flers & agglo" },
+  { href: "/normandie/alencon", label: "Alençon" },
+  { href: "/normandie/argentan", label: "Argentan" },
   { href: "/a-propos", label: "À propos" },
 ] as const;
 
