@@ -16,7 +16,7 @@ export const HUB_ENTRY_COPY = {
   blockImmobilier: {
     title: "Je suis mandataire immobilier",
     quote:
-      "Je perds des leads pendant mes visites. Je ne peux pas rappeler tout le monde.",
+      "Je perds des clients pendant mes visites. Je ne peux pas rappeler tout le monde.",
     cta: "Voir ma solution",
   },
   blockBtp: {

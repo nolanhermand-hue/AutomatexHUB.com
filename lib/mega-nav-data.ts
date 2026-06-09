@@ -21,7 +21,7 @@ export const SOLUTIONS_MENU = {
     },
   ],
   parBesoin: [
-    { label: "Réponse aux leads", href: `/automatisations#${categoryToAnchor("Leads & réponses")}` },
+    { label: "Réponse aux demandes", href: `/automatisations#${categoryToAnchor("Demandes & réponses")}` },
     { label: "Devis automatiques", href: `/automatisations#${categoryToAnchor("Dictée & terrain")}` },
     { label: "Relances clients", href: `/automatisations#${categoryToAnchor("Relances & suivi")}` },
     { label: "Documents & Drive", href: `/automatisations#${categoryToAnchor("Documents & Drive")}` },
@@ -35,7 +35,7 @@ export const SOLUTIONS_MENU = {
     {
       icon: "⚡",
       title: "Réponse en 90 secondes",
-      desc: "Un lead arrive pendant votre visite. Réponse envoyée avant que vous sortiez.",
+      desc: "Une demande arrive pendant votre visite. Réponse envoyée avant que vous sortiez.",
       href: "/immobilier#demo",
     },
     {
@@ -49,7 +49,7 @@ export const SOLUTIONS_MENU = {
 
 export const AUTOMATIONS_MENU = {
   immobilier: [
-    { label: "Leads & réponses", href: `/automatisations#${categoryToAnchor("Leads & réponses")}` },
+    { label: "Demandes & réponses", href: `/automatisations#${categoryToAnchor("Demandes & réponses")}` },
     { label: "Mails & tri intelligent", href: `/automatisations#${categoryToAnchor("Mails & tri")}` },
     { label: "Documents & Drive", href: `/automatisations#${categoryToAnchor("Documents & Drive")}` },
     { label: "Résumés & planning", href: `/automatisations#${categoryToAnchor("Résumés & planning")}` },

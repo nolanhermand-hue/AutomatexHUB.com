@@ -148,7 +148,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     setup: 1690,
     monthly: 449,
     annual: 4580,
-    systemLine: "Stack complet + brique métier (pilotage dossiers, rapports, volume élevé).",
+    systemLine: "Ensemble de vos outils + fonction sur mesure (pilotage dossiers, rapports, volume élevé).",
     nolanLine: "Accompagnement Copilote : réponse 4 h, optimisation proactive, priorité nouveaux flux.",
     benefits: [],
     roiLine: "Volume élevé : Nolan suit votre activité chaque mois et ajuste les flux.",
@@ -245,7 +245,7 @@ export const ACCOMPANIMENT_PAGE = {
   sub:
     "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles mandataires et artisans sont transparentes ; si vous voulez moins ou plus que les packs affichés, on part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
   monthlyIntro:
-    "20 minutes. On regarde les chiffres ensemble : combien de leads ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis on ajuste — immédiatement, sans rendez-vous supplémentaire.",
+    "20 minutes. On regarde les chiffres ensemble : combien de clients ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis on ajuste — immédiatement, sans rendez-vous supplémentaire.",
   timelineHorizontal: [
     { month: "Mois 1", text: "Installation · premier point · premiers ajustements" },
     { month: "Mois 2", text: "Le système tourne · on ajuste avec vos retours terrain" },

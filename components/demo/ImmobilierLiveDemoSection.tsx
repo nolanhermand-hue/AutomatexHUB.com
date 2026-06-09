@@ -8,7 +8,7 @@ export function ImmobilierLiveDemoSection() {
           Concrètement — ce qui se passe à 22h
         </h2>
         <p className="mt-3 max-w-readable text-sm text-muted">
-          Voici le déroulement exact quand un lead arrive pendant votre visite. Les messages sont
+          Voici le déroulement exact quand un client arrive pendant votre visite. Les messages sont
           personnalisés avec votre prénom lors de l&apos;onboarding.
         </p>
         <div className="mt-8">

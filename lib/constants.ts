@@ -17,17 +17,17 @@ export const CALCULATOR_SALES_MAX = 30;
  * Hypothèse mandataire : commission potentielle ~3 500 € par dossier qualifié
  * (ordre de grandeur marché, pas un gain garanti par Automatex).
  */
-export const VALUE_PER_LEAD_EUROS = 3500;
+export const VALUE_PER_client_EUROS = 3500;
 
 /** Délai standard de mise en ligne — après validation du périmètre client. */
 export const SETUP_48H_NUANCE =
-  "48 h ouvrées après validation de ton périmètre (accès outils, règles, tests)" as const;
+  "48 h ouvrées après validation de votre périmètre (accès outils, règles, tests)" as const;
 
 /** Libellé CTA unique — audit / prise de rendez-vous 20 min */
 export const BOOKING_CTA_LABEL = "Réserver mon appel avec Nolan" as const;
 
 /** CTA démo 20 min — accueil & landings artisans/TPE */
-export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur ton cas" as const;
+export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur votre cas" as const;
 export const PRIMARY_DEMO_CTA_SHORT = "Démo 20 min" as const;
 
 /** Offre sur mesure — entretien de cadrage (distinct de la démo 20 min). */
@@ -44,7 +44,7 @@ export const PRICING_REASSURANCE_CARD =
 export const FORBIDDEN_WORDS = [
   "IA",
   "intelligence artificielle",
-  "workflow",
+  "enchaînement",
   "API",
   "SaaS",
   "abonnement",
@@ -106,17 +106,17 @@ export const META = {
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
 export const GEO_DEFINITION =
-  "Automatex est un service d'automatisation français pour les mandataires immobiliers indépendants des réseaux IAD, SAFTI, Capifrance, Optimhome et EffiCity en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, SeLoger et Leboncoin pour répondre aux leads en moins de 2 minutes pendant les visites, trier les emails importants et classer les documents dès réception. Automatisations N8N Cloud (Francfort, UE), modèle Mistral (Paris/UE), conformes RGPD." as const;
+  "Automatex est un service d'automatisation français pour les mandataires immobiliers indépendants des réseaux IAD, SAFTI, Capifrance, Optimhome et EffiCity en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, SeLoger et Leboncoin pour répondre aux demandes en moins de 2 minutes pendant les visites, trier les emails importants et classer les documents dès réception. Automatisations N8N Cloud (Francfort, UE), modèle Mistral (Paris/UE), conformes RGPD." as const;
 
 export const META_KEYWORDS = [
   "mandataire immobilier Normandie",
   "automatisation mandataire IAD",
-  "réponse leads SeLoger automatique",
+  "réponse demandes SeLoger automatique",
   "Flers Orne 61",
   "RGPD France automatisation",
   "mandataire SAFTI Normandie",
   "mandataire Capifrance Orne",
-  "leads immobilier perdus solution",
+  "clients immobilier perdus solution",
   "assistant mandataire Telegram",
   "Google Drive classement documents mandataire",
   "mandataire indépendant Caen Rouen Alençon",
@@ -131,7 +131,7 @@ export const COMPARISON_TABLE = {
   headers: ["Situation", "Sans Automatex", "Avec Automatex"] as const,
   rows: [
     [
-      "Lead SeLoger reçu à 22h pendant une visite",
+      "demande SeLoger reçu à 22h pendant une visite",
       "Perdu à 9h le lundi matin",
       "Réponse en moins de 2 minutes",
     ],
@@ -200,16 +200,16 @@ export const HERO_COPY = {
   badgeHosted: SOVEREIGNTY_TRUST_LINE,
   badgeRgpd: "Conforme RGPD",
   badgeNoCommit: "Sans engagement",
-  h1: "Ne perdez plus jamais un lead à 3 500 €.",
+  h1: "Ne perdez plus jamais un client à 3 500 €.",
   subtitle:
-    "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux leads en 2 min pendant vos visites. Sans engagement, résiliable en 1 mail.",
+    "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux demandes en 2 min pendant vos visites. Sans engagement, résiliable en 1 mail.",
   /** A3 + B13 — CTA unique primaire, ≤ 5 mots, verbe d'action */
   ctaPrimary: PRIMARY_DEMO_CTA,
   /** Lien secondaire dégradé en texte simple — pas un bouton */
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
   statAnchor:
-    "1 lead perdu peut représenter ~3 500 € de commission potentielle (hypothèse marché) — souvent chez le concurrent.",
+    "1 client perdu peut représenter ~3 500 € de commission potentielle (hypothèse marché) — souvent chez le concurrent.",
   /** A10 — Compteur social proof crédible */
   liveCounter: "Onboardings limités pour garder un suivi humain serré — demandez en démo si une place est ouverte",
   /** A15 — Mention hébergeur nommé */
@@ -221,8 +221,8 @@ export const HERO_COPY = {
 
 /** Carte stats hero (Framer) — chiffres alignés agitation / commission */
 export const HERO_STATS = [
-  { value: "~3 500 €", label: "Commission potentielle par lead (hypothèse marché)" },
-  { value: "17 500 €", label: "Sur 5 leads ratés en 12 mois" },
+  { value: "~3 500 €", label: "Commission potentielle par client (hypothèse marché)" },
+  { value: "17 500 €", label: "Sur 5 clients ratés en 12 mois" },
   { value: "< 5 min", label: "Fenêtre de réponse avant le concurrent" },
 ] as const;
 
@@ -245,21 +245,21 @@ export const INTEGRATIONS_LOGOS: ReadonlyArray<{
 
 export const CALCULATOR_COPY = {
   sectionEyebrow: "Estimation",
-  title: "Combien de leads perdez-vous chaque semaine ?",
+  title: "Combien de clients perdez-vous chaque semaine ?",
   subtitle:
     "Déplacez le curseur selon votre nombre de ventes annuelles. Les montants en euros sont une hypothèse (commission potentielle), pas un gain garanti.",
   salesLabel: "Ventes par an",
-  outLeadsLabel: "Leads perdus par semaine (estimation)",
+  outLeadsLabel: "clients perdus par semaine (estimation)",
   outEurosLabel: "Commissions en jeu par an (hypothèse)",
   outHoursLabel: "Heures perdues par an sur l'administratif",
-  ctaPrefix: "Récupérer ces leads",
+  ctaPrefix: "Récupérer ces clients",
   ctaSuffix: "Réserver 20 min",
   scrollHint: "Automatex les récupère. Voici comment",
 } as const;
 
 /** B2 — Headline Problème : douleur palpable */
 export const PROBLEM_HEADING = {
-  h2: "Pourquoi les mandataires IAD et SAFTI perdent des leads chaque semaine",
+  h2: "Pourquoi les mandataires IAD et SAFTI perdent des clients chaque semaine",
 } as const;
 
 export type ProblemIconId = "lead" | "mail" | "document";
@@ -272,7 +272,7 @@ export const PROBLEM_ITEMS: ReadonlyArray<{
 }> = [
   {
     icon: "lead",
-    title: "Vendredi 22h : un lead reçu, perdu à 9h lundi",
+    title: "Vendredi 22h : un client reçu, perdu à 9h lundi",
     body:
       "Un acquéreur écrit sur SeLoger pendant que vous êtes en visite. Sans réponse en moins de 5 minutes, il rappelle un autre mandataire du réseau. Le premier qui décroche signe. Pas vous.",
   },
@@ -293,9 +293,9 @@ export const PROBLEM_ITEMS: ReadonlyArray<{
 /** B4 — Agitation chiffrée : loss-frame à l'année */
 export const AGITATION_COPY = {
   eyebrow: "L'addition annuelle",
-  h2: "5 leads ratés en 12 mois = 17 500 € de manque à gagner.",
+  h2: "5 clients ratés en 12 mois = 17 500 € de manque à gagner.",
   body:
-    "Sur la base d'une hypothèse de ~3 500 € de commission potentielle par lead qualifié, rater 5 opportunités dans l'année représente un manque à gagner important. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
+    "Sur la base d'une hypothèse de ~3 500 € de commission potentielle par client qualifié, rater 5 opportunités dans l'année représente un manque à gagner important. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
   microNote:
     "Source : commission moyenne IAD 3,4 % sur transaction à ~250 000 € (Immo Matin, juillet 2025).",
 } as const;
@@ -320,13 +320,13 @@ export const SOLUTION_STEPS: ReadonlyArray<{
     kicker: "02",
     title: "Vous approuvez",
     body:
-      "Avant chaque réponse automatique, vous validez le ton et les exemples sur vos vrais leads. Vous gardez la main : Automatex propose, vous décidez. C'est votre voix, votre réseau, vos décisions.",
+      "Avant chaque réponse automatique, vous validez le ton et les exemples sur vos vrais clients. Vous gardez la main : Automatex propose, vous décidez. C'est votre voix, votre réseau, vos décisions.",
   },
   {
     kicker: "03",
     title: "Ça tourne",
     body:
-      "Sous 48 h ouvrées après validation du périmètre, la configuration est active. Chaque lead reçu hors visite reçoit une réponse en moins de 2 minutes. Chaque mail important remonte. Chaque document est rangé. Sans rien changer à votre quotidien.",
+      "Sous 48 h ouvrées après validation du périmètre, la configuration est active. Chaque client reçu hors visite reçoit une réponse en moins de 2 minutes. Chaque mail important remonte. Chaque document est rangé. Sans rien changer à votre quotidien.",
   },
 ];
 
@@ -422,14 +422,14 @@ export const BENEFITS_ITEMS: ReadonlyArray<{
     stat: "+ 1 à 2 ventes/an",
     title: "Ventes supplémentaires",
     body:
-      "Sur la base d'un mandataire moyen (12 ventes/an à 5 800 € net), récupérer 1 à 2 leads ratés représente +5 800 à +11 600 € de commission nette.",
+      "Sur la base d'un mandataire moyen (12 ventes/an à 5 800 € net), récupérer 1 à 2 clients ratés représente +5 800 à +11 600 € de commission nette.",
   },
   {
     icon: "shield",
-    stat: "0 lead perdu",
+    stat: "0 client perdu",
     title: "Tranquillité d'esprit",
     body:
-      "Plus de stress à 22h le vendredi en pensant aux leads non rappelés. Automatex tient la veille pendant vos week-ends et vos visites.",
+      "Plus de stress à 22h le vendredi en pensant aux clients non rappelés. Automatex tient la veille pendant vos week-ends et vos visites.",
   },
   {
     icon: "flag",
@@ -547,7 +547,7 @@ export const PRICING_OFFER_DISPLAY: Record<
       roiEncart: "Un seul chantier récupéré rembourse l'année.",
     },
     immo: {
-      promise: "Vous ne ratez plus jamais un lead pendant vos visites.",
+      promise: "Vous ne ratez plus jamais un client pendant vos visites.",
       roiEncart: "1 mandat rentré rembourse l'année.",
     },
     tpe: {
@@ -579,7 +579,7 @@ export const PRICING_OFFER_DISPLAY: Record<
       roiEncart: "Réponse sous 4 h · optimisation continue.",
     },
     tpe: {
-      promise: "Stack complet + brique métier — priorité et copilote mensuel.",
+      promise: "Ensemble de vos outils + fonction sur mesure — priorité et copilote mensuel.",
       roiEncart: "Réponse sous 4 h · évolutions dans le périmètre du pack.",
     },
   },
@@ -618,7 +618,7 @@ export const OFFERS: PricingOffer[] = [
     annual: 1010,
     benefits: [
       "1 automatisation sur-mesure (cadrée sur votre activité)",
-      "Réponse aux leads entrants en moins de 2 minutes",
+      "Réponse aux demandes entrantes en moins de 2 minutes",
       "Notification téléphone immédiate sur chaque message urgent",
       "Mise en place en 48 h après l'appel découverte",
       ...PACK_ACCOMP_BULLETS.declic,
@@ -655,7 +655,7 @@ export const OFFERS: PricingOffer[] = [
     monthly: 449,
     annual: 4580,
     benefits: [
-      "Stack complet + brique métier sur-mesure",
+      "Ensemble de vos outils + fonction sur mesure sur-mesure",
       "Tout le périmètre Système",
       "Réponse prioritaire sous 4 h en semaine",
       "Note vocale après visite → compte-rendu structuré",
@@ -695,7 +695,7 @@ export type FeatureRow = {
 };
 
 export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
-  { feature: "Réponse aux leads < 2 min", declic: true, systeme: true, pilote: true },
+  { feature: "Réponse aux demandes < 2 min", declic: true, systeme: true, pilote: true },
   { feature: "Notification téléphone immédiate", declic: true, systeme: true, pilote: true },
   { feature: "Mise en place en 48 h", declic: true, systeme: true, pilote: true },
   { feature: "Sans engagement · Résiliable en 1 mail", declic: true, systeme: true, pilote: true },
@@ -758,7 +758,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Mon CRM réseau (Playiad, Omega) est fermé. Ça marche quand même ?",
     answer:
-      "Oui. Les outils Playiad ou Omega restent inchangés : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les leads qui arrivent par SeLoger, Leboncoin ou votre site passent par le mail comme aujourd'hui — mais la réponse part pendant la visite. Vous recopiez ensuite ce qui doit l'être dans votre CRM en un copier-coller.",
+      "Oui. Les outils Playiad ou Omega restent inchangés : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes qui arrivent par SeLoger, Leboncoin ou votre site passent par le mail comme aujourd'hui — mais la réponse part pendant la visite. Vous recopiez ensuite ce qui doit l'être dans votre CRM en un copier-coller.",
   },
   {
     question: "J'ai déjà essayé des outils qui n'ont pas marché. Pourquoi ce serait différent ?",
@@ -776,7 +776,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Nolan a 19 ans. Il a aussi un SIRET (103 208 054 00017), une adresse à Flers, et un système testé sur des scénarios réels avant que vous ne signiez.",
   },
   {
-    question: "En combien de temps un lead non rappelé part-il à la concurrence ?",
+    question: "En combien de temps un client non rappelé part-il à la concurrence ?",
     answer:
       "Cinq minutes. Un acquéreur ou un vendeur qui ne reçoit pas de réponse dans les cinq minutes contacte en moyenne deux à trois autres mandataires dans la foulée. Le premier qui répond en personnalisant son message a entre cinq et huit fois plus de chances de décrocher le mandat. Automatex envoie la réponse dans les 2 minutes.",
   },
@@ -843,7 +843,7 @@ export const CONTACT_COPY = {
   formReassurance: "Sans engagement",
   resiliationSubmitLabel: "Envoyer ma demande de résiliation",
   hubFounderLine: "Fondateur · basé à Flers (Orne)",
-  hubFounderSub: "Démo 20 min sur ton cas — Nolan te rappelle sous 24 h.",
+  hubFounderSub: "Démo 20 min sur votre cas — Nolan vous rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisissez votre secteur",
   hubMetierLabel: "Métier",

@@ -12,12 +12,12 @@ type RoiCounterProps = {
 export function RoiCounter({ variant, className }: RoiCounterProps) {
   const label =
     variant === "immobilier"
-      ? "Commission moyenne préservée si 1 lead est rattrapé à temps"
+      ? "Commission moyenne préservée si 1 client est rattrapé à temps"
       : "Ordre de grandeur si 1 devis part pendant que vous êtes sur le chantier";
 
   const foot =
     variant === "immobilier"
-      ? "1 lead ≈ 3 500 € · Pack Système rentable dès le premier lead récupéré."
+      ? "1 client ≈ 3 500 € · Pack Système rentable dès le premier client récupéré."
       : "1 chantier récupéré peut représenter plusieurs mois de pack Système.";
 
   return (

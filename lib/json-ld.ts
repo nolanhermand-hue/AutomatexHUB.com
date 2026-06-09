@@ -102,7 +102,7 @@ export function buildLocalMandatairesJsonLd(opts: {
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: [opts.city, "Orne", "Normandie"],
-        serviceType: "Réponse immédiate aux leads pour mandataires",
+        serviceType: "Réponse immédiate aux demandes pour mandataires",
       },
     ],
   };
@@ -230,8 +230,8 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const logoUrl = brandAbsolute(BRAND.symbolCircle, SITE_URL);
 
   const businessDescription = isHome
-    ? "Automatex installe réponse aux leads, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
-    : "Automatex installe une réponse immédiate aux leads, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
+    ? "Automatex installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
+    : "Automatex installe une réponse immédiate aux demandes, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
 
   const knowsAbout = isHome
     ? [
@@ -247,7 +247,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
       ]
     : [
         "Automatisation mandataire immobilier",
-        "Leads immobilier perdus",
+        "clients immobilier perdus",
         "IAD France",
         "SAFTI",
         "Capifrance",
@@ -364,12 +364,12 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
       {
         "@type": "Service",
         name: isHome
-          ? "Automatisation leads, devis et relances pour artisans et TPE"
-          : "Réponse automatique aux leads immobiliers pour mandataires",
+          ? "Automatisation clients, devis et relances pour artisans et TPE"
+          : "Réponse automatique aux demandes immobilières pour mandataires",
         provider: { "@id": businessId },
         description: isHome
-          ? "Service de réponse aux leads, devis, relances et classement documents pour artisans BTP et TPE en Normandie et dans l'Orne."
-          : "Service de réponse immédiate aux leads entrants, tri des mails et classement des documents pour mandataires IAD, SAFTI, Capifrance en Normandie et dans l'Orne.",
+          ? "Service de Réponse aux demandes, devis, relances et classement documents pour artisans BTP et TPE en Normandie et dans l'Orne."
+          : "Service de réponse immédiate aux demandes entrantes, tri des mails et classement des documents pour mandataires IAD, SAFTI, Capifrance en Normandie et dans l'Orne.",
         areaServed,
         serviceType: isHome
           ? "Automatisation administrative pour artisans et TPE"
@@ -384,11 +384,11 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         operatingSystem: "Web",
         image: logoUrl,
         description: isHome
-          ? "Réponse aux leads en moins de 2 minutes, devis, relances et classement Google Drive pour artisans et TPE en Normandie."
-          : "Réponse aux leads en moins de 2 minutes, tri des emails et classement Google Drive pour mandataires IAD, SAFTI et Capifrance en Normandie.",
+          ? "Réponse aux demandes en moins de 2 minutes, devis, relances et classement Google Drive pour artisans et TPE en Normandie."
+          : "Réponse aux demandes en moins de 2 minutes, tri des emails et classement Google Drive pour mandataires IAD, SAFTI et Capifrance en Normandie.",
         provider: { "@id": businessId },
         featureList: [
-          "Réponse aux leads en moins de 2 minutes",
+          "Réponse aux demandes en moins de 2 minutes",
           "Notification téléphone sur chaque message urgent",
           "Tri des emails et brouillons de réponse",
           "Résumé du soir et planning du matin sur Telegram",

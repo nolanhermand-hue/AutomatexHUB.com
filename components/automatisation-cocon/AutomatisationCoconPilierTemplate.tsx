@@ -29,11 +29,11 @@ export function AutomatisationCoconPilierTemplate() {
           <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-[var(--terracotta)]">
             Artisans & indépendants · {SOVEREIGNTY_TRUST_LINE}
           </p>
-          <h1 className="mt-3 max-w-3xl font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.08] text-text">
+          <h1 className="mt-3 max-w-3xl font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold clienting-[1.08] text-text">
             {pilier.h1}
           </h1>
           {pilier.intro.map((p) => (
-            <p key={p.slice(0, 48)} className="mt-4 max-w-readable text-base leading-relaxed text-muted md:text-lg">
+            <p key={p.slice(0, 48)} className="mt-4 max-w-readable text-base clienting-relaxed text-muted md:text-lg">
               {p}
             </p>
           ))}
@@ -55,7 +55,7 @@ export function AutomatisationCoconPilierTemplate() {
             Automatisations par douleur métier
           </h2>
           <p className="mt-3 max-w-readable text-sm text-muted md:text-base">
-            Chaque page décrit un cas concret — relance, SMS, lead, RDV — sans vendre un logiciel de métier.
+            Chaque page décrit un cas concret — relance, SMS, demande, RDV — sans vendre un logiciel de métier.
           </p>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
             {COCON_PAIN_PAGES.map((pain) => (

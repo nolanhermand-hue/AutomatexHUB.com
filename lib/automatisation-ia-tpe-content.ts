@@ -8,7 +8,7 @@ export const TPE_META = {
     "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois. RGPD UE.",
   ogTitle: "Automatisation IA pour TPE — Sans compétences techniques · Automatex Hub",
   ogDescription:
-    "Un système qui travaille à votre place. Leads, devis, Drive, relances. Packs Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
+    "Un système qui travaille à votre place. clients, devis, Drive, relances. Packs Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
 } as const;
 
 export const TPE_HERO = {
@@ -62,9 +62,9 @@ export const TPE_PAIN = {
 export const TPE_AUTOMATION_DOMAINS = [
   {
     num: "01",
-    title: "Réponses & leads",
+    title: "Réponses & clients",
     desc: "Chaque message entrant reçoit une réponse personnalisée en moins de 90 secondes pendant que vous travaillez.",
-    examples: ["Lead portail pendant visite", "SMS appel manqué artisan", "Qualification entrant"],
+    examples: ["client portail pendant visite", "SMS appel manqué artisan", "Qualification entrant"],
     target: "Immo · BTP · Commerce",
   },
   {
@@ -120,7 +120,7 @@ export const TPE_YEAR_TIMELINE = [
     period: "M4–M6",
     phase: "PREMIER ROI",
     what: [
-      "Premier bilan chiffré : leads, devis, heures économisées",
+      "Premier bilan chiffré : clients, devis, heures économisées",
       "Point mensuel inclus — chiffres ensemble",
       "1 ajustement basé sur les données réelles",
       "Montée en formule proposée si le volume le justifie",
@@ -198,7 +198,7 @@ export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
     name: "Pilote",
     setup: 1690,
     monthly: 449,
-    blurb: "Stack complet + brique métier · Copilote · réponse 4 h",
+    blurb: "Ensemble de vos outils + fonction sur mesure · Copilote · réponse 4 h",
     cta: "Ne plus être seul",
   },
   {

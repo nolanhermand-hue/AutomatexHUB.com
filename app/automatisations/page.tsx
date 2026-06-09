@@ -13,7 +13,7 @@ import { rendezVousHref } from "@/lib/hub-nav";
 export const metadata: Metadata = {
   title: "Tout ce qu'Automatex peut faire — Catalogue des automatisations · Orne",
   description:
-    "Réponse aux leads, tri mails, devis automatiques, classement Drive, résumé Telegram, note vocale, relances clients — catalogue complet pour mandataires et artisans BTP en Orne.",
+    "Réponse aux demandes, tri mails, devis automatiques, classement Drive, résumé Telegram, note vocale, relances clients — catalogue complet pour mandataires et artisans BTP en Orne.",
   openGraph: {
     title: "Ce qu'Automatex fait à votre place — Catalogue complet · Automatex Hub",
     description:
@@ -31,9 +31,9 @@ export default function AutomatisationsPage() {
         <h1 className="mt-4 font-heading text-3xl font-bold text-text md:text-4xl">
           Tout ce qu&apos;Automatex fait à votre place — chaque jour
         </h1>
-        <p className="mx-auto mt-5 max-w-readable text-base leading-relaxed text-muted">
+        <p className="mx-auto mt-5 max-w-readable text-base clienting-relaxed text-muted">
           Chaque automatisation ci-dessous est une configuration réelle, avec le message exact qui
-          part et l&apos;impact sur votre activité. Pages par douleur métier (relances, SMS, leads) :{" "}
+          part et l&apos;impact sur votre activité. Pages par douleur métier (relances, SMS, clients) :{" "}
           <Link href="/automatisation-pour-artisans" className="text-primary underline">
             hub automatisations pro
           </Link>
@@ -79,7 +79,7 @@ export default function AutomatisationsPage() {
         <h2 className="font-heading text-2xl font-bold text-text">
           Toutes ces automatisations actives chez vous en 48h
         </h2>
-        <p className="mx-auto mt-4 max-w-readable text-sm leading-relaxed text-muted">
+        <p className="mx-auto mt-4 max-w-readable text-sm clienting-relaxed text-muted">
           On configure ce qui est utile pour vous, dans votre façon de travailler. Nolan vous appelle
           pour cadrer ça en 20 minutes.
         </p>

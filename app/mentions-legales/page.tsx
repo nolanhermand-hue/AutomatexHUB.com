@@ -96,7 +96,7 @@ export default function MentionsLegalesPage() {
         <LegalP>
           {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers
           indépendants. Il connecte les outils du quotidien (Gmail, Telegram, Google Drive,
-          SeLoger, Leboncoin) pour répondre aux leads entrants, trier les emails et classer les
+          SeLoger, Leboncoin) pour répondre aux demandes entrantes, trier les emails et classer les
           documents.
         </LegalP>
         <LegalP>

@@ -87,7 +87,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 8,
     category: "problem",
     q: "Quels problèmes concrets résolvez-vous ?",
-    a: "Appels et leads non rappelés à temps, devis envoyés trop tard, relances oubliées, mails et pièces non classés — les situations où le client suivant signe ailleurs pendant que vous êtes indisponible.",
+    a: "Appels et clients non rappelés à temps, devis envoyés trop tard, relances oubliées, mails et pièces non classés — les situations où le client suivant signe ailleurs pendant que vous êtes indisponible.",
   },
   {
     id: 9,
@@ -189,7 +189,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 25,
     category: "setup",
     q: "Est-ce vraiment du sur-mesure ou un produit type ?",
-    a: "Des briques éprouvées (réponse lead, devis, relance, tri mail) recalibrées sur votre vocabulaire, vos portails et votre métier — ce n'est pas un template identique pour tout le monde.",
+    a: "Des briques éprouvées (réponse client, devis, relance, tri mail) recalibrées sur votre vocabulaire, vos portails et votre métier — ce n'est pas un template identique pour tout le monde.",
   },
   {
     id: 26,

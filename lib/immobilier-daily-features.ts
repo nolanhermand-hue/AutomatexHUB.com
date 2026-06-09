@@ -5,7 +5,7 @@ export const IMMOBILIER_DAILY_FEATURES = [
   {
     icon: "⚡",
     title: "Réponse en 90 secondes",
-    desc: "Un lead arrive sur SeLoger ou LBC pendant votre visite. La réponse part avant que vous sortiez de la maison.",
+    desc: "un client arrive sur SeLoger ou LBC pendant votre visite. La réponse part avant que vous sortiez de la maison.",
   },
   {
     icon: "📲",
@@ -19,13 +19,13 @@ export const IMMOBILIER_DAILY_FEATURES = [
   },
   {
     icon: "🎯",
-    title: "Détection des leads chauds",
+    title: "Détection des demandes chaudes",
     desc: "Budget précis, date de visite ou urgence — signalés en priorité.",
   },
   {
     icon: "🌅",
     title: "Programme du matin 7h30",
-    desc: "RDV du jour, leads en attente, relances prioritaires — en une notification Telegram.",
+    desc: "RDV du jour, demandes en attente, relances prioritaires — en une notification Telegram.",
   },
   {
     icon: "🌙",
@@ -55,7 +55,7 @@ export const IMMOBILIER_DAILY_FEATURES = [
   {
     icon: "📊",
     title: "Rapport mensuel",
-    desc: "Leads, réponses, documents classés — avec Nolan pour analyser.",
+    desc: "clients, réponses, documents classés — avec Nolan pour analyser.",
   },
   {
     icon: "🔒",

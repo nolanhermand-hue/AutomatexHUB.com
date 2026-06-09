@@ -28,12 +28,12 @@ export const ABOUT_PAGE = {
   ],
   narrative: [
     "Nolan Hermand a passé 2 ans sur les chantiers (menuiserie puis couverture) à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des mandataires indépendants et des artisans de l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
-    "Le constat revient souvent : les leads ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
+    "Le constat revient souvent : les clients ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
     "Automatex Hub est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec vous.",
     "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
   ],
   stats: [
-    { value: "< 2 min", label: "Délai de réponse cible (leads)" },
+    { value: "< 2 min", label: "Délai de réponse cible (clients)" },
     { value: "48 h", label: "Mise en place après validation périmètre" },
     { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
@@ -41,8 +41,8 @@ export const ABOUT_PAGE = {
   storyHeading: "Pourquoi Automatex existe",
   storyParagraphs: [
     "Pendant des mois, j'ai discuté avec des mandataires IAD et SAFTI dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
-    "À chaque fois, la même chose revenait : les leads qui arrivent pendant les visites, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
-    "2 ans sur les chantiers, en menuiserie puis couverture. J'ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l'automatisation pour régler exactement ça. J'ai 19 ans. En immobilier, j'apprends en échangeant avec les mandataires. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à ta réalité — pas à un PowerPoint.",
+    "À chaque fois, la même chose revenait : les demandes qui arrivent pendant les visites, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
+    "2 ans sur les chantiers, en menuiserie puis couverture. J'ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l'automatisation pour régler exactement ça. J'ai 19 ans. En immobilier, j'apprends en échangeant avec les mandataires. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à votre réalité — pas à un PowerPoint.",
   ],
   storyFootnote:
     "Sans engagement et résiliable en un mail : vous gardez la main à tout moment.",

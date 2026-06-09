@@ -55,12 +55,12 @@ export function Hero() {
 
               <p className="sr-only">
                 Automatisation pour mandataires immobiliers indépendants en Normandie et dans
-                l&apos;Orne — Flers (61). Réponse immédiate aux leads, tri de mails, classement de
+                l&apos;Orne — Flers (61). Réponse immédiate aux demandes, tri de mails, classement de
                 documents pour IAD, SAFTI et Capifrance.
               </p>
 
-              <h1 className="hero-h1 mt-5 font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold leading-[1.05] text-text md:text-[clamp(2.75rem,5vw,5rem)]">
-                Ne perdez plus jamais un lead{" "}
+              <h1 className="hero-h1 mt-5 font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold clienting-[1.05] text-text md:text-[clamp(2.75rem,5vw,5rem)]">
+                Ne perdez plus jamais un client{" "}
                 <span className="italic text-primary">à 3 500 €</span>.
               </h1>
 
@@ -68,7 +68,7 @@ export function Hero() {
                 {GEO_DEFINITION}
               </p>
 
-              <p className="hero-subtitle mt-5 max-w-readable font-body text-base leading-[1.6] text-muted md:mt-6 md:text-xl">
+              <p className="hero-subtitle mt-5 max-w-readable font-body text-base clienting-[1.6] text-muted md:mt-6 md:text-xl">
                 {HERO_COPY.subtitle}
               </p>
 
@@ -127,11 +127,11 @@ export function Hero() {
                     <p className="font-heading text-2xl font-semibold text-primary md:text-[1.75rem]">
                       {stat.value}
                     </p>
-                    <p className="mt-1 text-sm leading-snug text-stat-caption">{stat.label}</p>
+                    <p className="mt-1 text-sm clienting-snug text-stat-caption">{stat.label}</p>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 border-t border-border pt-4 text-xs leading-relaxed text-stat-caption">
+              <p className="mt-6 border-t border-border pt-4 text-xs clienting-relaxed text-stat-caption">
                 {HERO_STATS_SOURCE}
               </p>
             </aside>

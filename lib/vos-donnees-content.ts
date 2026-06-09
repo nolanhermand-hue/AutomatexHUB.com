@@ -42,7 +42,7 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     flag: "🇩🇪",
     dataType: "Flux de données professionnelles (emails, devis, contacts clients)",
     rgpd: true,
-    note: "N8N Cloud héberge les workflows en Allemagne (UE). Conforme RGPD. Pas de Cloud Act américain. Données de workflow non exploitées par N8N.",
+    note: "N8N Cloud héberge les enchaînements en Allemagne (UE). Conforme RGPD. Pas de Cloud Act américain. Données de enchaînement non exploitées par N8N.",
     certifications: ["SOC 2 Type II", "ISO 27001"],
     docs: "https://docs.n8n.io/privacy-security/",
   },
@@ -153,11 +153,11 @@ export const VOS_DONNEES_FAQ = [
   },
   {
     q: "Nolan peut-il lire mes emails ?",
-    a: "Techniquement, Nolan a accès aux workflows N8N qui traitent vos emails. Il peut voir les logs d'exécution pendant le débogage. Il s'engage contractuellement à ne pas lire le contenu de vos emails sauf si vous lui demandez explicitement de l'aide pour résoudre un problème.",
+    a: "Techniquement, Nolan a accès aux enchaînements N8N qui traitent vos emails. Il peut voir les logs d'exécution pendant le débogage. Il s'engage contractuellement à ne pas lire le contenu de vos emails sauf si vous lui demandez explicitement de l'aide pour résoudre un problème.",
   },
   {
     q: "Que se passe-t-il à la résiliation ?",
-    a: "Vos workflows N8N sont désactivés et supprimés sous 48h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. Automatex ne conserve rien.",
+    a: "Vos enchaînements N8N sont désactivés et supprimés sous 48h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. Automatex ne conserve rien.",
   },
   {
     q: "Mes données de clients (leurs noms, leurs emails) sont-elles partagées ?",

@@ -50,7 +50,7 @@ export default function CgvPage() {
         </LegalP>
         <LegalP>
           <strong className="text-text">Pilote</strong> — Mise en place 1 690 € HT (1er mois inclus)
-          · puis 449 € HT / mois : stack complet + brique métier, accompagnement Copilote (réponse 4
+          · puis 449 € HT / mois : Ensemble de vos outils + fonction sur mesure, accompagnement Copilote (réponse 4
           h, optimisation proactive).
         </LegalP>
         <LegalP>
@@ -153,7 +153,7 @@ export default function CgvPage() {
       <LegalSection title="Article 11 — Responsabilité">
         <LegalP>
           Responsabilité limitée aux dommages directs, plafonnée aux sommes versées sur les 3
-          derniers mois. Force majeure exclue. Résultats commerciaux (leads, CA) non garantis —
+          derniers mois. Force majeure exclue. Résultats commerciaux (clients, CA) non garantis —
           exemples indicatifs.
         </LegalP>
       </LegalSection>

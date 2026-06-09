@@ -20,23 +20,23 @@ export type CatalogAutomation = {
 
 export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
   {
-    id: "lead-reponse-90s",
-    category: "Leads & réponses",
-    title: "Réponse lead en moins de 90 secondes",
+    id: "client-reponse-90s",
+    category: "Demandes & réponses",
+    title: "Réponse client en moins de 90 secondes",
     tagline: "Premier mail personnalisé avant la visite suivante.",
     target: "immo",
     formula: "pilote",
     steps: [
-      { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouveau lead SeLoger — M. Martin, 3P Flers · 185 000 €.", type: "in" },
+      { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouveau demande SeLoger — M. Martin, 3P Flers · 185 000 €.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "spark", message: "Prénom, bien et source extraits pour le template.", type: "system", delay: 5 },
       { from: "Moteur", to: "Outlook", icon: "mail", message: "Envoi à M. Martin : créneaux dispo + lien Calendly (Argentan demain 14h).", type: "out" },
-      { from: "Automatex", to: "CRM", icon: "check", message: "Lead étiqueté « contacté < 2 min ».", type: "result" },
+      { from: "Automatex", to: "CRM", icon: "check", message: "client étiqueté « contacté < 2 min ».", type: "result" },
     ],
-    impact: "Moins de leads froids, plus de rendez-vous terrain.",
+    impact: "Moins de clients froids, plus de rendez-vous terrain.",
   },
   {
-    id: "lead-relance-j1",
-    category: "Leads & réponses",
+    id: "client-relance-j1",
+    category: "Demandes & réponses",
     title: "Relance J+1 sans réponse",
     tagline: "Si aucun signe de lecture avant demain matin.",
     target: "both",
@@ -49,9 +49,9 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     ],
   },
   {
-    id: "lead-detection-chaud",
-    category: "Leads & réponses",
-    title: "Détection lead chaud",
+    id: "client-detection-chaud",
+    category: "Demandes & réponses",
+    title: "Détection client chaud",
     tagline: "Remontée prioritaire quand l’intérêt se confirme.",
     target: "immo",
     formula: "pilote",
@@ -164,7 +164,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     id: "programme-matin",
     category: "Résumés & planning",
     title: "Programme du matin 7 h 30",
-    tagline: "Visites, rappels et leads prioritaires avant 10 h.",
+    tagline: "Visites, rappels et clients prioritaires avant 10 h.",
     target: "both",
     formula: "systeme",
     steps: [
@@ -192,7 +192,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
     id: "rapport-mensuel",
     category: "Suivi & Rapports Métier",
     title: "Rapport mensuel direction",
-    tagline: "Ventes signées, leads, délai moyen de réponse.",
+    tagline: "Ventes signées, clients, délai moyen de réponse.",
     target: "both",
     formula: "pilote",
     steps: [
@@ -340,7 +340,7 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
 ];
 
 const CATEGORY_ANCHORS: Record<string, string> = {
-  "Leads & réponses": "leads-reponses",
+  "Demandes & réponses": "leads-reponses",
   "Mails & tri": "mails-tri",
   "Documents & Drive": "documents-drive",
   "Résumés & planning": "resumes-planning",
@@ -359,7 +359,7 @@ export const CATEGORY_SUIVI_RAPPORTS = "Suivi & Rapports Métier" as const;
 
 /** Catégories uniques, ordre d’affichage fixe. */
 export const CATEGORIES: string[] = [
-  "Leads & réponses",
+  "Demandes & réponses",
   "Mails & tri",
   "Documents & Drive",
   "Résumés & planning",
@@ -374,7 +374,7 @@ export function getByCategory(category: string): CatalogAutomation[] {
 }
 
 export const FEATURED_IMMO: string[] = [
-  "lead-reponse-90s",
+  "client-reponse-90s",
   "tri-7-familles",
   "programme-matin",
   "note-vocale-compte-rendu",

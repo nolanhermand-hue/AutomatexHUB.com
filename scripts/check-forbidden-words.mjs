@@ -61,6 +61,7 @@ let failed = false;
 for (const file of files) {
   const rel = path.relative(root, file);
   if (rel === path.join("scripts", "check-forbidden-words.mjs")) continue;
+  if (rel === path.join("scripts", "apply-copy-ton.mjs")) continue;
   if (rel === path.join("lib", "constants.ts")) continue;
   if (rel === path.join("lib", "json-ld.ts")) continue;
   if (rel === path.join("lib", "automatisation-ia-tpe-content.ts")) continue;

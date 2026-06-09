@@ -23,7 +23,7 @@ export const DEMO_STATIC = {
   },
   leadImmobilier: {
     src: "/assets/demos/lead-immobilier-static.webp",
-    alt: "Lead immobilier traité pendant une visite",
+    alt: "Demande immobilière traitée pendant une visite",
   },
   avantApres: {
     src: "/assets/demos/avant-apres-static.webp",

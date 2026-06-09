@@ -23,17 +23,17 @@ const badgeMuted = "bg-[#2a2a2a] text-[rgba(245,244,241,0.55)]";
 
 export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
   immobilier: {
-    title: "Ce qui se passe quand un lead arrive à 22h",
+    title: "Ce qui se passe quand un client arrive à 22h",
     note: "Simulation basée sur une configuration type mandataire IAD/SAFTI en Normandie.",
     steps: [
       {
         time: "22h03",
-        label: "Nouveau lead entrant · SeLoger",
+        label: "Nouvelle demande entrant · SeLoger",
         icon: "📩",
         message:
           "M. Martin, 3 pièces Flers, budget 180 000 €\nTéléphone : 06 XX XX XX XX",
         color: "border-primary",
-        badge: "Lead entrant",
+        badge: "Demande entrante",
         badgeClass: badgeOrange,
       },
       {
@@ -67,7 +67,7 @@ Mandataire IAD · Orne`,
         label: "Notification · Telegram",
         icon: "📲",
         message:
-          "✅ Lead traité : M. Martin (3P Flers, 180k)\nRéponse envoyée · Rappel : demain avant 9h\n\nVous pouvez continuer votre visite.",
+          "✅ client traité : M. Martin (3P Flers, 180k)\nRéponse envoyée · Rappel : demain avant 9h\n\nVous pouvez continuer votre visite.",
         color: "border-[#2a2a2a]",
         badge: "Telegram",
         badgeClass: badgeMuted,

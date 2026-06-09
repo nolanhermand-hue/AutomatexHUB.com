@@ -30,12 +30,12 @@ export function VosDonneesView() {
     <main className="min-h-screen">
       <section className="mx-auto max-w-4xl px-gutter pb-16 pt-24">
         <p className="label-micro mb-6 text-primary">SÉCURITÉ · RGPD · TRANSPARENCE</p>
-        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-text">
+        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold clienting-tight tracking-tight text-text">
           Vos données vous appartiennent.
           <br />
           On vous dit exactement ce qu&apos;on en fait.
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+        <p className="mt-5 max-w-2xl text-base clienting-relaxed text-muted">
           Automatex manipule des données professionnelles sensibles — emails, devis, contacts clients.
           Vous avez le droit de savoir où elles vont, qui y accède, et comment les supprimer. Cette page
           répond à ces questions sans langue de bois.
@@ -90,7 +90,7 @@ export function VosDonneesView() {
         <SectionBlock>
           <ModuleHeader n="02" />
           <h2 className="mb-3 text-2xl font-bold text-text">Où vont vos données — exactement</h2>
-          <p className="mb-8 text-sm leading-relaxed text-muted">
+          <p className="mb-8 text-sm clienting-relaxed text-muted">
             Chaque outil utilisé par Automatex, avec la localisation précise des serveurs et le type de
             données traitées.
           </p>
@@ -126,7 +126,7 @@ export function VosDonneesView() {
                     <p className="mb-1 font-mono text-[10px] uppercase tracking-wide text-faint">
                       Ce qu&apos;il faut savoir
                     </p>
-                    <p className="text-[13px] leading-relaxed text-muted">{item.note}</p>
+                    <p className="text-[13px] clienting-relaxed text-muted">{item.note}</p>
                   </div>
                   {item.action ? (
                     <p className="rounded-md border border-warning/20 bg-warning/5 px-3 py-2 font-mono text-[11px] text-warning">
@@ -171,7 +171,7 @@ export function VosDonneesView() {
                   <p className="font-semibold text-text">Paris · France · UE</p>
                 </div>
               </div>
-              <div className="space-y-3 text-[13px] leading-relaxed text-muted">
+              <div className="space-y-3 text-[13px] clienting-relaxed text-muted">
                 <p>
                   Mistral AI est une entreprise française fondée à Paris. C&apos;est le modèle qui
                   comprend vos emails, transcrit vos notes vocales et rédige les réponses automatiques.
@@ -203,17 +203,17 @@ export function VosDonneesView() {
                   <p className="font-semibold text-text">Francfort · Allemagne · UE</p>
                 </div>
               </div>
-              <div className="space-y-3 text-[13px] leading-relaxed text-muted">
+              <div className="space-y-3 text-[13px] clienting-relaxed text-muted">
                 <p>
                   N8N orchestre les automatisations — Gmail, Telegram, Google Drive, Mistral. N8N Cloud
                   est hébergé à Francfort.
                 </p>
                 <p>
                   L&apos;Allemagne est dans l&apos;Union Européenne. Le RGPD s&apos;applique. N8N ne revend
-                  pas vos données de workflow.
+                  pas vos données de enchaînement.
                 </p>
                 <p>
-                  <strong className="text-text">Seul Nolan a accès aux workflows.</strong> Isolés par
+                  <strong className="text-text">Seul Nolan a accès aux enchaînements.</strong> Isolés par
                   client — jamais partagés entre artisans ou mandataires.
                 </p>
               </div>
@@ -241,7 +241,7 @@ export function VosDonneesView() {
                   <p className="text-[14px] font-semibold text-text">{item.right}</p>
                   <span className="badge badge-default shrink-0 text-[9px]">{item.article}</span>
                 </div>
-                <p className="mb-3 text-[12px] leading-relaxed text-muted">{item.what}</p>
+                <p className="mb-3 text-[12px] clienting-relaxed text-muted">{item.what}</p>
                 <p className="flex items-center gap-2 font-mono text-[11px] text-primary">
                   <span aria-hidden>→</span>
                   {item.how}
@@ -251,7 +251,7 @@ export function VosDonneesView() {
           </div>
           <div className="card mt-6 border-primary/20 p-5">
             <p className="label-micro mb-2 text-primary">CONTACT DONNÉES PERSONNELLES</p>
-            <p className="text-[13px] leading-relaxed text-muted">
+            <p className="text-[13px] clienting-relaxed text-muted">
               Pour exercer vos droits ou pour toute question sur le traitement de vos données :
             </p>
             <a
@@ -315,7 +315,7 @@ export function VosDonneesView() {
                   </svg>
                 </summary>
                 <div className="border-t border-border px-6 pb-5 pt-1">
-                  <p className="text-[13px] leading-relaxed text-muted">{item.a}</p>
+                  <p className="text-[13px] clienting-relaxed text-muted">{item.a}</p>
                 </div>
               </details>
             ))}
@@ -329,7 +329,7 @@ export function VosDonneesView() {
               <p className="mb-3 font-mono text-[10px] uppercase tracking-wide text-faint">
                 REGISTRE DES TRAITEMENTS
               </p>
-              <p className="mb-4 text-[13px] leading-relaxed text-muted">
+              <p className="mb-4 text-[13px] clienting-relaxed text-muted">
                 Automatex Hub tient à jour un registre de ses traitements de données personnelles,
                 conformément à l&apos;article 30 du RGPD. Il est disponible sur demande.
               </p>
@@ -391,7 +391,7 @@ export function VosDonneesView() {
               <p className="mb-3 font-mono text-[10px] uppercase tracking-wide text-faint">
                 RÉCLAMATION CNIL
               </p>
-              <p className="mb-4 text-[13px] leading-relaxed text-muted">
+              <p className="mb-4 text-[13px] clienting-relaxed text-muted">
                 Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.
               </p>
               <a

@@ -30,13 +30,13 @@ export function ImmobilierLeadDemoSection() {
           Pendant que vous êtes en visite
         </h2>
         <p className="mt-3 max-w-readable text-muted">
-          Un lead reçoit une réponse en moins de 2 minutes — vous terminez la visite sereinement.
+          Une demande reçoit une réponse en moins de 2 minutes — vous terminez la visite sereinement.
         </p>
         <div className="mt-8">
           <MotionDemo
             demoId="lead-immobilier"
             staticSrc={DEMO_STATIC.leadImmobilier.src}
-            ariaLabel="Lead immobilier traité automatiquement pendant une visite"
+            ariaLabel="Demande immobilière traitée automatiquement pendant une visite"
             staticAlt={DEMO_STATIC.leadImmobilier.alt}
             loadAnimation={loadLeadImmobilier}
           />

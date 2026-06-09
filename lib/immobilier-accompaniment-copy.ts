@@ -6,7 +6,7 @@ export const IMMOBILIER_ACCOMPANIMENT = {
   pillars: [
     {
       title: "Point mensuel inclus",
-      body: "Chaque mois, Nolan vous appelle. On regarde combien de leads ont été traités, ce qui bloque encore. Puis on ajuste.",
+      body: "Chaque mois, Nolan vous appelle. On regarde combien de clients ont été traités, ce qui bloque encore. Puis on ajuste.",
     },
     {
       title: "Ajustements en continu",

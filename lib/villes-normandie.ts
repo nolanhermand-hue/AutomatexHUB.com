@@ -85,7 +85,7 @@ const villes: NormandieVillePage[] = [
       "Couvreurs, charpentiers et diagnostiqueurs à Caen : réponses et relances pendant vos chantiers. Démo 20 min · Nolan, Flers (Orne). Sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Caen",
     heroEyebrow: "Calvados (14) · agglo caennaise",
-    heroAccroche: "Entre deux chantiers ou deux diagnostics, personne ne décroche à ta place.",
+    heroAccroche: "Entre deux chantiers ou deux diagnostics, personne ne décroche à votre place.",
     heroSub:
       "Caen concentre rénovation de pavillons, copropriétés en centre et lotissements en couronne (Hérouville, Mondeville). Les demandes de devis et de créneau diag s’empilent dès que vous êtes en visite. Automatex répond et classe pendant que vous restez sur le terrain.",
     problemH2: "Pourquoi les demandes s’encombrent autour de Caen ?",
@@ -127,7 +127,7 @@ const villes: NormandieVillePage[] = [
       "Diagnostiqueurs, artisans et TPE à Rouen Métropole : messages traités pendant vos visites. Démo gratuite 20 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Rouen",
     heroEyebrow: "Seine-Maritime (76) · Métropole Rouen Normandie",
-    heroAccroche: "Sur la rive droite ou en visite immeuble, les leads ne patientent pas.",
+    heroAccroche: "Sur la rive droite ou en visite immeuble, les clients ne patientent pas.",
     heroSub:
       "Rouen mélange immeubles anciens, reconversion de friches et communes tendues (Bois-Guillaume, Sotteville). Les diagnostiqueurs et artisans indépendants y subissent un volume de messages plus proche de la grande agglo que du rural ornais.",
     problemH2: "La pression des délais à Rouen Métropole",
@@ -169,9 +169,9 @@ const villes: NormandieVillePage[] = [
       "Couvreurs et artisans au Havre : réponse aux appels pendant le chantier. Démo 20 min · installé depuis Flers (Orne). Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans au Havre",
     heroEyebrow: "Seine-Maritime (76) · littoral",
-    heroAccroche: "Vent, sel et pluie : sur le toit, tu ne réponds pas au premier appel.",
+    heroAccroche: "Vent, sel et pluie : sur le toit, vous ne répondez pas au premier appel.",
     heroSub:
-      "Au Havre et sur la côte (Sainte-Adresse, Montivilliers), les couvreurs et façadiers gèrent des urgences fuites et des chantiers longs. Les clients appellent plusieurs entreprises ; un SMS propre en quelques minutes rassure sans t’arracher du chantier.",
+      "Au Havre et sur la côte (Sainte-Adresse, Montivilliers), les couvreurs et façadiers gèrent des urgences fuites et des chantiers longs. Les clients appellent plusieurs entreprises ; un SMS propre en quelques minutes rassure sans vous arracher du chantier.",
     problemH2: "Spécificités littoral havrais",
     problemIntro:
       "Corrosion, toitures plates, remplacements après tempête : les pics d’appels ne tombent pas quand vous êtes au bureau. La paperasse du soir fatigue et les relances devis passent après les urgences.",
@@ -220,7 +220,7 @@ const villes: NormandieVillePage[] = [
     problemPoints: [
       "Clients répartis sur des communes éloignées — retour tardif au garage sans avoir ouvert la messagerie.",
       "Toitures et zinguerie : photos et mesures le jour, rédaction devis la nuit si vous n’avez pas d’aide.",
-      "Moins de prestataires locaux qu’à Rouen : chaque lead raté pèse plus lourd dans le carnet.",
+      "Moins de prestataires locaux qu’à Rouen : chaque client raté pèse plus lourd dans le carnet.",
     ],
     localFaq: [
       {
@@ -253,7 +253,7 @@ const villes: NormandieVillePage[] = [
       "Artisans et TPE à Saint-Lô et agglo : moins de paperasse le soir. Démo 20 min gratuite · depuis Flers (Orne).",
     h1: "Automatisations pour artisans et TPE à Saint-Lô",
     heroEyebrow: "Manche (50) · préfecture du département",
-    heroAccroche: "Préfecture rurale : tu roules toute la journée, pas le temps de trier les mails.",
+    heroAccroche: "Préfecture rurale : vous roulez toute la journée, pas le temps de trier les mails.",
     heroSub:
       "Saint-Lô structure un bassin de communes rurales et de PME. Les artisans en maçonnerie, menuiserie ou couverture font des tournées. Les demandes arrivent par Facebook, SMS et mail — trois canaux à rattraper le soir.",
     problemH2: "Administration en tournée autour de Saint-Lô",
@@ -295,7 +295,7 @@ const villes: NormandieVillePage[] = [
       "Diagnostiqueurs et artisans du Pays d’Auge : réponses pendant vos visites. Démo 20 min · Nolan à Flers. Sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Lisieux",
     heroEyebrow: "Calvados (14) · Pays d’Auge",
-    heroAccroche: "Longères et colombages : en visite, tu ne vois pas les demandes qui tombent.",
+    heroAccroche: "Longères et colombages : en visite, vous ne voyez pas les demandes qui tombent.",
     heroSub:
       "Lisieux et l’Auge attirent résidences secondaires et ventes de corps de ferme. Diagnostics avant acte et travaux de toiture sont fréquents. Les propriétaires parisiens attendent des confirmations rapides, pas un rappel le lendemain.",
     problemH2: "Pays d’Auge : ventes et saisonnalité",
@@ -355,7 +355,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Artisan couvreur entre Évreux et Giverny ?",
-        a: "Oui, si vos leads arrivent sur mobile. Démo sur vos vrais messages.",
+        a: "Oui, si vos clients arrivent sur mobile. Démo sur vos vrais messages.",
       },
       {
         q: "RGPD pour une TPE de l’Eure ?",
@@ -401,7 +401,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Mandataires immobiliers à Alençon ?",
-        a: "Voir aussi /immobilier pour le parcours leads immo dédié ; cette page cible surtout BTP, diag et TPE en Normandie.",
+        a: "Voir aussi /immobilier pour le parcours clients immo dédié ; cette page cible surtout BTP, diag et TPE en Normandie.",
       },
     ],
     neighborSlugs: ["flers", "argentan", "saint-lo"],
