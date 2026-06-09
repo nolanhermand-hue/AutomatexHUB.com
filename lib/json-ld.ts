@@ -544,3 +544,90 @@ export function buildLocalBtpJsonLd(opts: {
     ],
   };
 }
+
+function buildFaqPageFromItems(items: ReadonlyArray<{ q: string; a: string }>) {
+  return {
+    "@type": "FAQPage" as const,
+    mainEntity: items.map((item) => ({
+      "@type": "Question" as const,
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer" as const,
+        text: item.a,
+      },
+    })),
+  };
+}
+
+/** JSON-LD page ville cluster /normandie/{slug}. */
+export function buildNormandieVilleJsonLd(opts: {
+  path: string;
+  cityName: string;
+  department: string;
+  description: string;
+  faq: ReadonlyArray<{ q: string; a: string }>;
+}) {
+  const businessId = `${SITE_URL}#business`;
+  const localBusinessId = `${SITE_URL}#local-business`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Normandie", path: "/normandie" },
+        { name: opts.cityName, path: opts.path },
+      ]),
+      {
+        "@type": "Service",
+        name: `Automatex — artisans et diagnostiqueurs ${opts.cityName}`,
+        provider: { "@id": businessId },
+        description: opts.description,
+        areaServed: [opts.cityName, opts.department, "Normandie", "France"],
+        serviceType: "Automatisation administrative pour artisans et diagnostiqueurs",
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": localBusinessId,
+        name: NAP.brand,
+        description: opts.description,
+        url: `${SITE_URL}${opts.path}`,
+        telephone: NAP.phoneE164,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: NAP.city,
+          postalCode: NAP.postalCode,
+          addressRegion: `${NAP.department}, ${NAP.region}`,
+          addressCountry: NAP.country,
+        },
+        areaServed: [opts.cityName, opts.department],
+      },
+      buildFaqPageFromItems(opts.faq),
+    ],
+  };
+}
+
+/** JSON-LD pilier /normandie. */
+export function buildNormandiePilierJsonLd(opts: {
+  description: string;
+  faq: ReadonlyArray<{ q: string; a: string }>;
+}) {
+  const businessId = `${SITE_URL}#business`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Normandie", path: "/normandie" },
+      ]),
+      {
+        "@type": "Service",
+        name: "Automatex — automatisation artisans et diagnostiqueurs Normandie",
+        provider: { "@id": businessId },
+        description: opts.description,
+        areaServed: ["Normandie", "Orne", "Calvados", "Manche", "Eure", "Seine-Maritime"],
+        serviceType: "Automatisation pour artisans BTP, diagnostiqueurs et TPE",
+      },
+      buildFaqPageFromItems(opts.faq),
+    ],
+  };
+}

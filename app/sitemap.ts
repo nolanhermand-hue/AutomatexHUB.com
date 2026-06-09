@@ -1,4 +1,9 @@
 import { SITE_URL } from "@/lib/constants";
+import {
+  NORMANDIE_CLUSTER_LAST_MODIFIED,
+  NORMANDIE_PILIER,
+  NORMANDIE_VILLES,
+} from "@/lib/villes-normandie";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
@@ -9,6 +14,22 @@ export const dynamic = "force-static";
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+  const normandieLastMod = new Date(NORMANDIE_CLUSTER_LAST_MODIFIED);
+
+  const normandieEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}${NORMANDIE_PILIER.path}`,
+      lastModified: normandieLastMod,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    ...NORMANDIE_VILLES.map((v) => ({
+      url: `${SITE_URL}${v.path}`,
+      lastModified: normandieLastMod,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
+  ];
 
   const entries: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified, changeFrequency: "weekly", priority: 1 },
@@ -35,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/cgv`, lastModified, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/mentions-legales`, lastModified, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/politique-confidentialite`, lastModified, changeFrequency: "yearly", priority: 0.2 },
+    ...normandieEntries,
   ];
 
   return entries;

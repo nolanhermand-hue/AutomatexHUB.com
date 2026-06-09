@@ -1,5 +1,6 @@
 /** Navigation globale site vitrine (hub + landings). */
 export const SITE_NAV = [
+  { href: "/normandie", label: "Normandie" },
   { href: "/faq", label: "FAQ" },
   { href: "/automatisation-ia-tpe", label: "TPE & PME" },
   { href: "/immobilier", label: "Immobilier" },
