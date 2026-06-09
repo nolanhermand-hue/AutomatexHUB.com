@@ -11,11 +11,11 @@ export function HomePage() {
   return (
     <main className="home-page home-surface">
       <HomeHero />
+      <HomeFounder />
       <HomeProblem />
       <HomeSolution />
       <HomeHowItWorks />
       <Pricing audience="home" />
-      <HomeFounder />
       <HomeFAQ />
       <HomeFinalCta />
     </main>

@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: "Automatex — mandataires immobiliers en Normandie",
+        alt: "Automatex — artisans, diagnostiqueurs et TPE en Normandie",
         type: "image/png",
       },
     ],

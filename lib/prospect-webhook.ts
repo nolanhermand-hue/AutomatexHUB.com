@@ -75,8 +75,15 @@ export async function submitProspectFromFormData(
   const nom = getStringValue(args.formData, "nom");
   const email = getStringValue(args.formData, "email");
   const telephoneRaw = getStringValue(args.formData, "telephone");
+  const phoneOk = Boolean(normalizeFrenchPhoneDigits(telephoneRaw));
+  const variant = args.variant;
 
-  if (!prenom || !nom || !email || !normalizeFrenchPhoneDigits(telephoneRaw)) {
+  if (variant === "hub") {
+    const secteur = getStringValue(args.formData, "secteur");
+    if (!nom || !phoneOk || !secteur) {
+      return { ok: false, error: "Merci de remplir nom, téléphone et métier." };
+    }
+  } else if (!prenom || !nom || !email || !phoneOk) {
     return { ok: false, error: "Merci de remplir tous les champs obligatoires." };
   }
 

@@ -93,7 +93,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 9,
     category: "problem",
     q: "Combien de temps puis-je espérer gagner ?",
-    a: "L'ordre de grandeur annoncé sur le terrain est 1 à 2 h par jour en moins sur l'admin dès la deuxième semaine, selon votre volume de messages et le pack choisi — sans promesse chiffrée unique : chaque activité est différente.",
+    a: "L’objectif est de récupérer du temps sur la paperasse et les relances, pas de vous promettre un nombre d’heures : chaque métier et chaque volume de messages est différent. On cale le périmètre en démo de 20 minutes avant toute mise en place.",
   },
   {
     id: 10,

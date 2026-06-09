@@ -89,9 +89,9 @@ export const HOME_HOW = {
       time: "48 h",
     },
     {
-      title: "Temps gagné",
-      body: "En moyenne 1 à 2 h par jour en moins sur l’admin dès la 2e semaine — tu restes joignable sans rester collé au téléphone.",
-      time: "Semaine 2",
+      title: "Moins de paperasse",
+      body: "Les réponses partent pendant que tu es sur le terrain — moins de mails et de devis à rattraper le soir. Chaque activité est différente : on cale le rythme sur ton cas en démo.",
+      time: "Au fil des semaines",
     },
   ],
 } as const;

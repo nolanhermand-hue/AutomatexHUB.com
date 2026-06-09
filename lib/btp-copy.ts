@@ -124,7 +124,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     systemLine: "1 automatisation sur-mesure — ex. SMS ~90 s sur appel manqué au chantier.",
     nolanLine: "Nolan installe, règle le message à votre prénom, accompagnement Essentiel inclus.",
     benefits: [],
-    roiLine: "1 chantier récupéré = plusieurs mois de formule amortis.",
+    roiLine: "Un SMS propre quand vous ne pouvez pas décrocher — le client sait que vous avez vu son message.",
     cta: "Tester sans risque",
   },
   {
@@ -138,7 +138,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     systemLine: "3 à 4 automatisations : appels manqués, devis, relances, résumé du soir.",
     nolanLine: "Accompagnement Suivi : point mensuel 20 min, ajustements continus dans le périmètre.",
     benefits: [],
-    roiLine: "1 devis récupéré à temps = formule rentabilisée en ~2 semaines.",
+    roiLine: "Devis et relances qui avancent sans vous coller au téléphone le soir.",
     cta: "Récupérer mes devis",
   },
   {
@@ -151,7 +151,7 @@ export const BTP_OFFERS: BtpOffer[] = [
     systemLine: "Stack complet + brique métier (pilotage dossiers, rapports, volume élevé).",
     nolanLine: "Accompagnement Copilote : réponse 4 h, optimisation proactive, priorité nouveaux flux.",
     benefits: [],
-    roiLine: "10+ chantiers / an : Nolan suit votre activité chaque mois.",
+    roiLine: "Volume élevé : Nolan suit votre activité chaque mois et ajuste les flux.",
     cta: "Ne plus être seul",
   },
   {
@@ -223,7 +223,7 @@ export const BTP_DECLIC_HINT =
   "Beaucoup d'artisans solo commencent par Déclic — détails et tarifs sur la grille ci-dessous." as const;
 
 export const BTP_CONTACT = {
-  h2: "Prêt à récupérer 2 h par jour ?",
+  h2: "Prêt à voir ce que ça change sur vos chantiers ?",
   sub: "Nolan vous appelle sous 24 h. 20 minutes. Il vous montre sur vos propres chantiers ce que le système ferait.",
   cta: "Réserver mon appel avec Nolan",
   foot: "Démo gratuite · Sans engagement · Basé à Flers, Orne",
@@ -248,14 +248,14 @@ export const ACCOMPANIMENT_PAGE = {
     "20 minutes. On regarde les chiffres ensemble : combien de leads ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis on ajuste — immédiatement, sans rendez-vous supplémentaire.",
   timelineHorizontal: [
     { month: "Mois 1", text: "Installation · premier point · premiers ajustements" },
-    { month: "Mois 2", text: "Le système tourne · premiers résultats mesurés" },
+    { month: "Mois 2", text: "Le système tourne · on ajuste avec vos retours terrain" },
     { month: "Mois 3", text: "Vous n'y pensez plus · rapport automatique" },
     { month: "Mois 6", text: "Bilan semestriel · nouveaux automatismes si besoin" },
-    { month: "Mois 12", text: "ROI calculé ensemble · renouveler — votre choix" },
+    { month: "Mois 12", text: "Bilan ensemble · renouveler ou non — votre choix" },
   ],
   roi: {
-    h2: "Objectif sur 12 mois (ordre de grandeur)",
-    body: "Un artisan qui ne perd plus ses appels manqués peut récupérer 2 à 3 chantiers par an qu'il aurait perdus. Sur l'Orne, avec une marge moyenne de 25 % sur 15 000 € de CA par chantier, cela représente environ 7 500 € récupérés. À 249 €/mois (pack Système), la formule se rentabilise en moins de 2 semaines si un devis part à temps.",
+    h2: "Ce qu’on vise sur 12 mois",
+    body: "Moins de temps perdu sur l’admin le soir, des réponses plus rapides quand vous êtes sur le chantier, des relances qui ne dépendent plus de votre mémoire. Pas de promesse de chiffre : on part de votre démo et on ajuste mois après mois.",
   },
   sections: [
     {

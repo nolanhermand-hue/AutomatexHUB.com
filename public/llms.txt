@@ -1,6 +1,6 @@
 # Automatex Hub
 
-> Automatex Hub est un service de réponse automatique aux leads et de tri de boîte mail pour mandataires immobiliers et artisans BTP indépendants en Normandie. Fondé par Nolan Hermand à Flers (Orne, 61), hébergé en France sur OVHcloud.
+> Automatex Hub est un service de réponse automatique aux leads et de tri de boîte mail pour mandataires immobiliers, diagnostiqueurs et artisans BTP indépendants en Normandie. Fondé par Nolan Hermand à Flers (Orne, 61). Site vitrine sur CDN Netlify ; automatisations N8N Cloud (Francfort, UE) et traitement linguistique Mistral (Paris/UE). Détail : https://automatex-hub.com/vos-donnees
 
 ## Services
 
@@ -18,6 +18,6 @@
 
 ## Optional
 
-- [À propos](https://automatex-hub.com/a-propos): Contexte fondateur, SIRET 10320805400017, hébergement OVHcloud France.
-- [Vos données](https://automatex-hub.com/vos-donnees): Politique RGPD, droits utilisateurs.
+- [À propos](https://automatex-hub.com/a-propos): Contexte fondateur, SIRET 10320805400017, transparence hébergement sur /vos-donnees.
+- [Vos données](https://automatex-hub.com/vos-donnees): Politique RGPD, sous-traitants, droits utilisateurs.
 - [Mentions légales](https://automatex-hub.com/mentions-legales): Informations légales.

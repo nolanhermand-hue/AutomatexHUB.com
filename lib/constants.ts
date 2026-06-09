@@ -96,12 +96,12 @@ export const TIKTOK_PROFILE_ARIA =
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
 export const META = {
   title:
-    "Automatex — Mandataires IAD SAFTI Normandie : ne perdez plus un lead à 3 500 €",
+    "Automatex — Artisans, diagnostiqueurs & TPE · Orne · Normandie",
   description:
-    "Automatex récupère les leads ratés des mandataires IAD, SAFTI, Capifrance en Normandie. Réponse en 2 min. Sans engagement, résiliable en 1 mail. IA française · Automations UE · RGPD.",
-  ogTitle: "Ne perdez plus jamais un lead à 3 500 € | Automatex Normandie",
+    "Réponse aux appels et messages, devis et relances pendant que vous êtes sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 20 min · Sans engagement.",
+  ogTitle: "Automatex — Artisans & TPE en Normandie | Démo 20 min",
   ogDescription:
-    "Automatex répond à vos leads en 2 min pendant vos visites. Mandataires IAD, SAFTI, Capifrance en Normandie. IA française · Automations UE · RGPD · Sans engagement.",
+    "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). IA française · Automations UE · RGPD · Sans engagement.",
 } as const;
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
@@ -211,7 +211,7 @@ export const HERO_COPY = {
   statAnchor:
     "1 lead perdu peut représenter ~3 500 € de commission potentielle (hypothèse marché) — souvent chez le concurrent.",
   /** A10 — Compteur social proof crédible */
-  liveCounter: "Onboardings limités à 4 par mois — créneau disponible cette semaine",
+  liveCounter: "Onboardings limités pour garder un suivi humain serré — demandez en démo si une place est ouverte",
   /** A15 — Mention hébergeur nommé */
   hostingMention: "Automatisations UE (N8N Francfort) · Mistral Paris",
   /** A7 — Téléphone cliquable */
@@ -846,7 +846,12 @@ export const CONTACT_COPY = {
   hubFounderSub: "Démo 20 min sur ton cas — Nolan te rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisissez votre secteur",
-  zoneOrneLabel: "Zone (Orne)",
+  hubMetierLabel: "Métier",
+  hubMetierPlaceholder: "Choisissez votre métier",
+  hubFullNameLabel: "Nom",
+  hubEmailLabel: "Email (optionnel)",
+  hubEmailHint: "Pour la confirmation de créneau — sinon Nolan vous rappelle au numéro indiqué.",
+  zoneOrneLabel: "Zone (Orne, optionnel)",
   zoneOrnePlaceholder: "Où êtes-vous basé ?",
 } as const;
 
@@ -859,7 +864,8 @@ export const HUB_CONTACT_REASSURANCE = [
 ] as const;
 
 export const PROSPECT_SECTEUR_OPTIONS = [
-  { value: "artisan", label: "Artisan / BTP" },
+  { value: "artisan", label: "Artisan / BTP (couvreur, charpentier…)" },
+  { value: "diagnostiqueur", label: "Diagnostiqueur immobilier" },
   { value: "immobilier", label: "Immobilier (mandataire, agence…)" },
   { value: "tpe", label: "TPE / PME (autre secteur)" },
 ] as const;
@@ -911,7 +917,7 @@ export const STICKY_CTA_COPY = {
 export const BETA_PHASE_COPY = {
   title: "Phase bêta — places limitées",
   body: "Automatex onboard au maximum quatre mandataires par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
-  badge: "2 places disponibles en juin",
+  badge: "Places limitées — statut sur demande en démo",
 } as const;
 
 export const SOCIAL_PROOF_DISCLAIMER =

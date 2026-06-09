@@ -1,4 +1,8 @@
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+
+/** Une ligne marketing / meta — site vs données métier (défendable, aligné mentions légales). */
+export const PUBLIC_HOSTING_ONE_LINER =
+  `Site sur CDN Netlify · automatisations et données métier en UE · ${SOVEREIGNTY_TRUST_LINE}` as const;
 
 /** Transparence infra — alignée sur /vos-donnees (pages légales). */
 export const LEGAL_SITE_CDN_TRANSPARENCY =
