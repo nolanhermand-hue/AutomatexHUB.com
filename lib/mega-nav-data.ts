@@ -34,7 +34,7 @@ export const SOLUTIONS_MENU = {
   alaUne: [
     {
       icon: "⚡",
-      title: "Réponse en 90 secondes",
+      title: "Réponse en moins de 2 minutes",
       desc: "Une demande arrive pendant votre visite. Réponse envoyée avant que vous sortiez.",
       href: "/immobilier#demo",
     },

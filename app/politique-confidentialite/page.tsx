@@ -24,7 +24,7 @@ const SUBPROCESSORS: ReadonlyArray<{
   location: string;
   guarantees: string;
 }> = [
-  { name: "N8N Cloud", role: "Moteur d'automatisation (workflows)", location: "Francfort, Allemagne (UE)", guarantees: "RGPD, DPA" },
+  { name: "N8N Cloud", role: "Moteur d'automatisation (enchaînements)", location: "Francfort, Allemagne (UE)", guarantees: "RGPD, DPA" },
   { name: "Mistral AI", role: "Traitement linguistique", location: "Paris, France (UE)", guarantees: "RGPD, données UE" },
   { name: "Google Workspace", role: "Email, Drive, Calendar", location: "Compte client", guarantees: "CGU Google du client" },
   { name: "Telegram", role: "Notifications", location: "Compte client", guarantees: "CGU Telegram du client" },
@@ -48,8 +48,8 @@ export default function PolitiqueConfidentialitePage() {
 
       <LegalSection title="1. Qui sommes-nous ?">
         <LegalP>
-          {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers
-          indépendants, édité par {c.founder} ({LEGAL.status}), basé à {NAP.city}, Orne (
+          {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers,
+          artisans BTP et TPE, édité par {c.founder} ({LEGAL.status}), basé à {NAP.city}, Orne (
           {NAP.postalCode}).
         </LegalP>
         <LegalP>

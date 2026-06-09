@@ -42,7 +42,7 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     flag: "🇩🇪",
     dataType: "Flux de données professionnelles (emails, devis, contacts clients)",
     rgpd: true,
-    note: "N8N Cloud héberge les enchaînements en Allemagne (UE). Conforme RGPD. Pas de Cloud Act américain. Données de enchaînement non exploitées par N8N.",
+    note: "N8N Cloud héberge les enchaînements en Allemagne (UE). Conforme RGPD. Pas de Cloud Act américain. Données d'exécution non exploitées par N8N.",
     certifications: ["SOC 2 Type II", "ISO 27001"],
     docs: "https://docs.n8n.io/privacy-security/",
   },

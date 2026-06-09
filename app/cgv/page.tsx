@@ -122,7 +122,24 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 9 — Résiliation">
+      <LegalSection title="Article 9 — Garantie sur la mise en place (30 jours)">
+        <LegalP>
+          Si le service mis en ligne ne correspond pas au périmètre validé lors de l&apos;audit de
+          cadrage (scénarios, canaux et délais convenus), le Client peut demander le remboursement
+          des <strong className="text-text">frais de mise en place</strong> (installation initiale)
+          dans les 30 jours calendaires suivant la mise en service effective, par email à {c.email},
+          en décrivant l&apos;écart constaté.
+        </LegalP>
+        <LegalP>
+          La garantie suppose la coopération du Client (accès fournis, tests réalisés, retours dans
+          des délais raisonnables). Elle ne couvre pas les mensualités déjà échues, les changements
+          de périmètre demandés après validation, ni l&apos;absence de résultats commerciaux (voir
+          article 12). En cas de remboursement accepté, les automatisations sont désactivées et les
+          données traitées effacées selon l&apos;article 10.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection title="Article 10 — Résiliation">
         <LegalP>
           Le Client résilie à tout moment, sans frais, par email à {c.email}. Conformément à la loi
           n°2022-1158, une demande de résiliation peut aussi être initiée depuis le{" "}
@@ -137,7 +154,7 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 10 — Données (sous-traitance RGPD)">
+      <LegalSection title="Article 11 — Données (sous-traitance RGPD)">
         <LegalP>
           Automatex accède aux outils du Client pour exécuter le contrat. Le Client reste
           responsable de traitement vis-à-vis de ses propres clients. Automatex s&apos;engage à
@@ -150,7 +167,7 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 11 — Responsabilité">
+      <LegalSection title="Article 12 — Responsabilité">
         <LegalP>
           Responsabilité limitée aux dommages directs, plafonnée aux sommes versées sur les 3
           derniers mois. Force majeure exclue. Résultats commerciaux (clients, CA) non garantis —
@@ -158,7 +175,7 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 12 — Propriété intellectuelle">
+      <LegalSection title="Article 13 — Propriété intellectuelle">
         <LegalP>
           Configurations et scripts restent la propriété de {c.founder}. Droit d&apos;usage non
           exclusif pour la durée du contrat. À la résiliation, retrait des scripts possible ; les
@@ -166,7 +183,7 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 13 — Litiges">
+      <LegalSection title="Article 14 — Litiges">
         <LegalP>
           Droit français. Médiation préalable : {LEGAL.mediator.name} —{" "}
           <a className="text-primary underline" href={LEGAL.mediator.url} rel="noopener noreferrer">
@@ -176,7 +193,7 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 14 — Divers">
+      <LegalSection title="Article 15 — Divers">
         <LegalP>
           Nullité partielle sans affecter le reste. Modifications CGV : information par email, 30
           jours de préavis ; maintien de la formule vaut acceptation.

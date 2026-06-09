@@ -28,7 +28,7 @@ export function FinalCta() {
         />
 
         <p className="mt-8 text-xs text-faint">
-          {SOVEREIGNTY_TRUST_LINE} · 🔒 RGPD · ✋ Sans engagement · 📩 Résiliable en 1 mail
+          {SOVEREIGNTY_TRUST_LINE} · RGPD · Sans engagement · Résiliable en 1 mail
         </p>
       </div>
     </section>

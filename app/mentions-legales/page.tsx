@@ -95,9 +95,9 @@ export default function MentionsLegalesPage() {
       <LegalSection title="Activité" code="03 // SERVICE">
         <LegalP>
           {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers
-          indépendants. Il connecte les outils du quotidien (Gmail, Telegram, Google Drive,
-          SeLoger, Leboncoin) pour répondre aux demandes entrantes, trier les emails et classer les
-          documents.
+          indépendants, artisans BTP et TPE. Il connecte les outils du quotidien (Gmail, Telegram,
+          Google Drive, portails et téléphone) pour répondre aux demandes entrantes, trier les
+          emails, produire des devis et classer les documents.
         </LegalP>
         <LegalP>
           Le service est proposé sous forme de formules mensuelles sans engagement de durée, avec

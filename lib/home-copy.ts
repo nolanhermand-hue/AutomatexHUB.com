@@ -3,7 +3,7 @@ import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 export const HOME_META = {
   title: "Automatisation artisans & TPE en Normandie | Automatex",
   description:
-    `clients, devis et relances tournent pendant que vous êtes sur chantier. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
+    `Demandes, devis et relances tournent pendant que vous êtes sur chantier. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
 } as const;
 
 export const HOME_HERO = {
@@ -11,7 +11,7 @@ export const HOME_HERO = {
   accroche: "Vos clients ne vous attendent plus.",
   sub:
     "Réponse aux messages, devis et relances branchés sur vos outils actuels. Nolan installe à distance — vous restez sur le terrain.",
-  reassurance: `Sans engagement · résiliable en 1 mail · 30 jours remboursé · ${SOVEREIGNTY_TRUST_LINE}`,
+  reassurance: `Démo 20 min gratuite · ${SETUP_48H_NUANCE}`,
   integrationsLine:
     "On se branche sur ce que vous utilisez déjà. Rien de nouveau à apprendre.",
 } as const;
@@ -30,12 +30,12 @@ export const HOME_PROBLEM = {
     {
       value: "2 h / jour",
       label: "d’administratif moyen pour une TPE de 1 à 5 personnes.",
-      source: "Ordre de grandeur terrain",
+      source: "Hypothèse terrain (non auditée)",
     },
     {
       value: "5 min",
       label: "sans réponse : le prospect contacte souvent un concurrent.",
-      source: "Pratique commerciale BTP",
+      source: "Observation terrain (non chiffrée universellement)",
     },
   ],
 } as const;
@@ -101,7 +101,7 @@ export const HOME_PRICING = {
   h2: "3 packs + sur mesure pour artisans et TPE en Normandie",
   sub: "Mise en place + mensualité transparente. Système = pack recommandé pour la plupart des TPE.",
   banner:
-    "Sans engagement · résiliable en 1 mail · 30 jours remboursé · RGPD France",
+    "Sans engagement · résiliable en 1 mail · 30 jours remboursés sur la mise en place · RGPD France",
 } as const;
 
 export const HOME_FOUNDER = {
@@ -161,5 +161,5 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
 
 export const HOME_FINAL_CTA = {
   h2: "Démo gratuite 20 min sur votre cas",
-  sub: "Choisis votre créneau sur la page rendez-vous — Nolan confirme sous 24 h. Sans engagement.",
+  sub: "Choisissez votre créneau sur la page rendez-vous — Nolan confirme sous 24 h. Sans engagement.",
 } as const;

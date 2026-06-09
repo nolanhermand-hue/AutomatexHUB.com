@@ -35,7 +35,7 @@ const files = [
 ];
 
 const skipLine = (line) =>
-  /rappel-lead|lead-immobilier|leadFirst|demoId|ProblemIconId|icon:\s*"lead"|id:\s*"leads"|leads-reponses|home-card-logos|leadFirst\?/.test(
+  /rappel-lead|lead-immobilier|leadFirst|demoId|ProblemIconId|icon:\s*"lead"|id:\s*"leads"|leads-reponses|home-card-logos|leadFirst\?|leading-|storyLead|VALUE_PER_LEAD|loadLeadImmobilier|LeadImmobilier/.test(
     line,
   );
 

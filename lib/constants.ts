@@ -17,7 +17,7 @@ export const CALCULATOR_SALES_MAX = 30;
  * Hypothèse mandataire : commission potentielle ~3 500 € par dossier qualifié
  * (ordre de grandeur marché, pas un gain garanti par Automatex).
  */
-export const VALUE_PER_client_EUROS = 3500;
+export const VALUE_PER_LEAD_EUROS = 3500;
 
 /** Délai standard de mise en ligne — après validation du périmètre client. */
 export const SETUP_48H_NUANCE =
@@ -38,7 +38,7 @@ export const SUR_MESURE_BOOKING_CTA =
 export const PRICING_CARD_CTA = "Réserver 20 min" as const;
 
 export const PRICING_REASSURANCE_CARD =
-  "Sans engagement · résiliable en 1 mail · 30 jours remboursé · RGPD France" as const;
+  "Sans engagement · résiliable en 1 mail · 30 jours remboursés sur la mise en place · RGPD France" as const;
 
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
@@ -106,7 +106,7 @@ export const META = {
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
 export const GEO_DEFINITION =
-  "Automatex est un service d'automatisation français pour les mandataires immobiliers indépendants des réseaux IAD, SAFTI, Capifrance, Optimhome et EffiCity en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, SeLoger et Leboncoin pour répondre aux demandes en moins de 2 minutes pendant les visites, trier les emails importants et classer les documents dès réception. Automatisations N8N Cloud (Francfort, UE), modèle Mistral (Paris/UE), conformes RGPD." as const;
+  "Automatex est un service d'automatisation français pour artisans BTP, TPE et mandataires immobiliers indépendants (IAD, SAFTI, Capifrance, Optimhome, EffiCity) en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, portails et téléphone pour répondre aux demandes en moins de 2 minutes, relancer les devis et classer les documents. Automatisations hébergées en UE (Francfort), traitement linguistique en France/UE, conformes RGPD." as const;
 
 export const META_KEYWORDS = [
   "mandataire immobilier Normandie",
@@ -272,7 +272,7 @@ export const PROBLEM_ITEMS: ReadonlyArray<{
 }> = [
   {
     icon: "lead",
-    title: "Vendredi 22h : un client reçu, perdu à 9h lundi",
+    title: "Vendredi 22h : une demande reçue, perdue à 9h lundi",
     body:
       "Un acquéreur écrit sur SeLoger pendant que vous êtes en visite. Sans réponse en moins de 5 minutes, il rappelle un autre mandataire du réseau. Le premier qui décroche signe. Pas vous.",
   },
@@ -326,7 +326,7 @@ export const SOLUTION_STEPS: ReadonlyArray<{
     kicker: "03",
     title: "Ça tourne",
     body:
-      "Sous 48 h ouvrées après validation du périmètre, la configuration est active. Chaque client reçu hors visite reçoit une réponse en moins de 2 minutes. Chaque mail important remonte. Chaque document est rangé. Sans rien changer à votre quotidien.",
+      "Sous 48 h ouvrées après validation du périmètre, la configuration est active. Chaque demande reçue hors visite obtient une réponse en moins de 2 minutes. Chaque mail important remonte. Chaque document est rangé. Sans rien changer à votre quotidien.",
   },
 ];
 
@@ -334,7 +334,7 @@ export const SOLUTION_BADGES = [
   SOVEREIGNTY_TRUST_LINE,
   "Données non partagées",
   "Conforme RGPD",
-  "Installé en 48h",
+  "Installé en 48 h",
 ] as const;
 
 /** Ligne commune aux 3 offres — suivi humain 12 mois */
@@ -655,7 +655,7 @@ export const OFFERS: PricingOffer[] = [
     monthly: 449,
     annual: 4580,
     benefits: [
-      "Ensemble de vos outils + fonction sur mesure sur-mesure",
+      "Ensemble de vos outils + fonction sur mesure",
       "Tout le périmètre Système",
       "Réponse prioritaire sous 4 h en semaine",
       "Note vocale après visite → compte-rendu structuré",
@@ -778,7 +778,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "En combien de temps un client non rappelé part-il à la concurrence ?",
     answer:
-      "Cinq minutes. Un acquéreur ou un vendeur qui ne reçoit pas de réponse dans les cinq minutes contacte en moyenne deux à trois autres mandataires dans la foulée. Le premier qui répond en personnalisant son message a entre cinq et huit fois plus de chances de décrocher le mandat. Automatex envoie la réponse dans les 2 minutes.",
+      "Souvent quelques minutes. Un acquéreur ou un vendeur qui n'a pas de réponse rapide contacte fréquemment d'autres mandataires dans la foulée (ordre de grandeur terrain, pas une loi fixe). Une réponse personnalisée tôt fait la différence. Automatex vise une réponse en moins de 2 minutes sur les demandes entrantes.",
   },
 ];
 
@@ -812,16 +812,16 @@ export const RESILIATION_COPY = {
 } as const;
 
 export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: string }> = [
-  { title: `🇪🇺 ${SOVEREIGNTY_TRUST_LINE}`, subtitle: "N8N Francfort · Mistral Paris" },
-  { title: "🔒 Conforme RGPD", subtitle: "Données souveraines · Jamais revendues" },
-  { title: "✋ Sans engagement", subtitle: "Résiliable en 1 mail · Immédiatement" },
-  { title: "📩 Résiliable en 1 mail", subtitle: "Sans engagement · Aucun verrou" },
-  { title: "⚡ Opérationnel en 48 h", subtitle: "Aucun logiciel à installer" },
-  { title: "🔑 Vous restez propriétaire", subtitle: "Vos données · Vos outils · Vos décisions" },
+  { title: SOVEREIGNTY_TRUST_LINE, subtitle: "N8N Francfort · Mistral Paris" },
+  { title: "Conforme RGPD", subtitle: "Données souveraines · Jamais revendues" },
+  { title: "Sans engagement", subtitle: "Résiliable en 1 mail · Immédiatement" },
+  { title: "Résiliable en 1 mail", subtitle: "Sans période minimale · Aucun verrou" },
+  { title: "Opérationnel en 48 h", subtitle: "Après validation de votre périmètre" },
+  { title: "Vous restez propriétaire", subtitle: "Vos données · Vos outils · Vos décisions" },
 ] as const;
 
 export const CTA_REASSURANCE_LINE =
-  "Sans engagement · résiliable en 1 mail · 30 jours remboursé · RGPD France" as const;
+  "Sans engagement · résiliable en 1 mail · 30 jours remboursés sur la mise en place · RGPD France" as const;
 
 export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 

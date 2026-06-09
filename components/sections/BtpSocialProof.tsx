@@ -25,6 +25,7 @@ export function BtpSocialProof() {
           ))}
         </ul>
 
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted">Mot du fondateur</p>
         <blockquote className="rounded-xl border border-border bg-bg-card p-6">
           <p className="italic leading-relaxed text-muted">&ldquo;{BTP_SOCIAL_PROOF.founderQuote}&rdquo;</p>
           <footer className="mt-3 text-sm font-semibold text-text">

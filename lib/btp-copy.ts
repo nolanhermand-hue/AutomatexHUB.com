@@ -104,7 +104,7 @@ export const BTP_PILOTE_HIGHLIGHT =
 export const BTP_SOCIAL_PROOF = {
   stats: [
     "60 % des devis envoyés après 24 h ne sont pas signés. (FFB 2023)",
-    "Les artisans qui relancent sous 48 h signent 2× plus. (CAPEB 2022)",
+    "Relancer un devis sous 48 h améliore nettement les chances de signature (études sectorielles BTP — ordre de grandeur, pas une promesse Automatex).",
   ],
   founderQuote:
     "J'ai construit ce système en pensant à mon père, électricien pendant 20 ans. Il a perdu des centaines d'heures sur des tâches qui auraient pu se faire toutes seules. C'est pour lui, et pour tous les artisans de l'Orne, que j'ai créé Automatex.",

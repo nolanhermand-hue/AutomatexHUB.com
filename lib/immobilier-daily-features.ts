@@ -4,8 +4,8 @@ import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 export const IMMOBILIER_DAILY_FEATURES = [
   {
     icon: "⚡",
-    title: "Réponse en 90 secondes",
-    desc: "un client arrive sur SeLoger ou LBC pendant votre visite. La réponse part avant que vous sortiez de la maison.",
+    title: "Réponse en moins de 2 minutes",
+    desc: "Une demande arrive sur SeLoger ou LBC pendant votre visite. La réponse part avant que vous sortiez de la maison.",
   },
   {
     icon: "📲",

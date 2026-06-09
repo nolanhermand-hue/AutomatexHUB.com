@@ -44,8 +44,8 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 1,
     category: "general",
-    q: "Qu'est-ce qu'AutomateX-HUB exactement ?",
-    a: "Automatex (AutomateX-HUB) est un service français d'installation et de maintenance de systèmes automatiques pour artisans, mandataires immobiliers et TPE : réponse aux messages, devis, relances et classement de documents sur vos outils actuels (Gmail, Drive, téléphone). Nolan Hermand configure chaque installation à la main depuis Flers (Orne).",
+    q: "Qu'est-ce qu'Automatex Hub exactement ?",
+    a: "Automatex Hub est un service français d'installation et de maintenance de systèmes automatiques pour artisans, mandataires immobiliers et TPE : réponse aux messages, devis, relances et classement de documents sur vos outils actuels (Gmail, Drive, téléphone). Nolan Hermand configure chaque installation à la main depuis Flers (Orne).",
   },
   {
     id: 2,
@@ -189,7 +189,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 25,
     category: "setup",
     q: "Est-ce vraiment du sur-mesure ou un produit type ?",
-    a: "Des briques éprouvées (réponse client, devis, relance, tri mail) recalibrées sur votre vocabulaire, vos portails et votre métier — ce n'est pas un template identique pour tout le monde.",
+    a: "Des modules éprouvés (réponse aux demandes, devis, relance, tri mail) recalibrés sur votre vocabulaire, vos portails et votre métier — ce n'est pas un template identique pour tout le monde.",
   },
   {
     id: 26,

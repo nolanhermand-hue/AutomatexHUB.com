@@ -14,21 +14,21 @@ export const HUB_ENTRY_COPY = {
     "Démo sous 24 h · Pilote : réponse 4 h (sem.)",
   ] as const,
   blockImmobilier: {
-    title: "Je suis mandataire immobilier",
+    title: "Mandataire immobilier",
     quote:
-      "Je perds des clients pendant mes visites. Je ne peux pas rappeler tout le monde.",
-    cta: "Voir ma solution",
+      "Vous perdez des clients pendant vos visites. Impossible de tout rappeler à la main.",
+    cta: "Voir la solution immobilier",
   },
   blockBtp: {
-    title: "Je suis artisan / chef de chantier",
+    title: "Artisan / chef de chantier",
     quote:
-      "Mes devis traînent et je perds des chantiers parce que je rappelle trop tard.",
-    cta: "Voir ma solution",
+      "Vos devis traînent ; vous perdez des chantiers faute de relance rapide.",
+    cta: "Voir la solution BTP",
   },
   footerNote:
     "Dans les deux cas : démo gratuite 20 min sur votre cas réel. Nolan rappelle sous 24 h.",
-  ctaImmobilier: "Démo mandataire — Nolan m'appelle",
-  ctaBtp: "Démo artisan — Nolan m'appelle",
+  ctaImmobilier: "Démo mandataire — Nolan vous rappelle",
+  ctaBtp: "Démo artisan — Nolan vous rappelle",
   priceHintBtp: "Artisans : démo 20 min · tarifs sur la landing BTP",
 } as const;
 

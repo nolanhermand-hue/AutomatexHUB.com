@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sécurité des données — Automatex | RGPD mandataires",
+  title: "Sécurité des données — Automatex | RGPD artisans & TPE",
   description:
     "Où sont hébergées vos données, qui y accède, effacement à la résiliation, continuité si arrêt du service.",
   alternates: { canonical: `${SITE_URL}/securite` },

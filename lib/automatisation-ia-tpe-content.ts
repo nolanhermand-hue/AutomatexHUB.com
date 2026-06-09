@@ -8,7 +8,7 @@ export const TPE_META = {
     "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois. RGPD UE.",
   ogTitle: "Automatisation IA pour TPE — Sans compétences techniques · Automatex Hub",
   ogDescription:
-    "Un système qui travaille à votre place. clients, devis, Drive, relances. Packs Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
+    "Un système qui travaille à votre place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
 } as const;
 
 export const TPE_HERO = {

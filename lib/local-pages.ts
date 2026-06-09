@@ -92,7 +92,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
       {
         title: "Tarification claire",
         paragraphs: [
-          "Trois packs : Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois, avec remise annuelle affichée en pourcentage. un client récupéré peut représenter ~3 500 € de commission potentielle (hypothèse marché) — ordre de grandeur pour comparer au coût du service.",
+          "Trois packs : Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois, avec remise annuelle affichée en pourcentage. Un dossier récupéré peut représenter environ 3 500 € de commission potentielle (hypothèse marché) — ordre de grandeur pour comparer au coût du service.",
           "Réservez une audit de 20 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
         ],
       },
@@ -145,7 +145,7 @@ export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = 
     path: "/mandataires-normandie",
     metaTitle: "Mandataires immobiliers en Normandie | Automatex",
     metaDescription:
-      "Service français pour mandataires IAD, SAFTI, Capifrance en Normandie. clients, mails, documents. Flers (61), déploiement Orne et départements voisins.",
+      "Service français pour mandataires IAD, SAFTI, Capifrance en Normandie : demandes, mails et documents. Flers (61), déploiement Orne et départements voisins.",
     h1: "Automatex pour les mandataires immobiliers en Normandie",
     city: "Normandie",
     areaServedLabel: "Normandie (priorité Orne, Calvados, Manche limitrophe)",

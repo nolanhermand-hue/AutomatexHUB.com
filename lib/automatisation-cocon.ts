@@ -78,7 +78,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Relances & suivi",
     heroAccroche: "Le devis est parti. Le silence aussi.",
     heroSub:
-      "On déclenche une relance propre après le délai que vous choisissez, sans réécrire le même mail chaque soir. [À VÉRIFIER KEYWORD PLANNER]",
+      "On déclenche une relance propre après le délai que vous choisissez, sans réécrire le même mail chaque soir.",
     howItWorks: [
       {
         title: "Vous marquez le devis comme envoyé",
@@ -151,7 +151,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Appels & terrain",
     heroAccroche: "Le client appelle. Vous posez. Il raccroche.",
     heroSub:
-      "Un SMS personnalisé part en quelques secondes : vous rappellerez, avec la référence devis si vous voulez. [À VÉRIFIER KEYWORD PLANNER]",
+      "Un SMS personnalisé part en quelques secondes : vous rappellerez, avec la référence devis si vous voulez.",
     howItWorks: [
       { title: "Appel non décroché détecté", body: "Via votre standard, mobile pro ou règle opérateur — on cale ça en démo." },
       { title: "SMS immédiat", body: "Texte validé avec vous : prénom, délai de rappel, numéro direct." },
@@ -209,7 +209,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Relances & pièces",
     heroAccroche: "Vous livrez quand c'est payé — ou quand le dossier est complet.",
     heroSub:
-      "Rappels automatiques sur facture en attente ou pièce manquante, avec le ton que vous validez. [À VÉRIFIER KEYWORD PLANNER]",
+      "Rappels automatiques sur facture en attente ou pièce manquante, avec le ton que vous validez.",
     howItWorks: [
       { title: "Vous définissez le déclencheur", body: "J+7 impayé, rapport diag sans paiement, dossier crédit incomplet." },
       { title: "Message factuel", body: "Montant, référence, pièce attendue — pas de menace, pas de jargon huissier." },
@@ -267,7 +267,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Demandes & réponses",
     heroAccroche: "Le prospect écrit. Vous êtes sur le terrain.",
     heroSub:
-      "Un message de prise en charge part tout de suite — créneau de rappel ou question fermée. [À VÉRIFIER KEYWORD PLANNER]",
+      "Un message de prise en charge part tout de suite — créneau de rappel ou question fermée.",
     leadFirst: true,
     howItWorks: [
       { title: "Demande entrante", body: "Mail, formulaire ou portail — on lit ce qui arrive déjà dans votre boîte." },
@@ -334,7 +334,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Agenda & terrain",
     heroAccroche: "Cinq mails pour trouver un créneau, c'est cinq soirées perdues.",
     heroSub:
-      "On propose des plages depuis votre calendrier ou vos règles, le client choisit, vous recevez la confirmation. [À VÉRIFIER KEYWORD PLANNER]",
+      "On propose des plages depuis votre calendrier ou vos règles, le client choisit, vous recevez la confirmation.",
     howItWorks: [
       { title: "Demande de RDV", body: "Mail ou SMS entrant après demande ou relance." },
       { title: "Créneaux proposés", body: "Lien ou liste courte alignée sur Google Calendar / Outlook." },
