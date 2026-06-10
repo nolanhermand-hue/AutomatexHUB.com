@@ -112,7 +112,7 @@ export const VOS_DONNEES_NEVER = [
   "Revendre vos données à des tiers",
   "Utiliser vos données pour de la publicité",
   "Partager vos données avec d'autres clients",
-  "Entraîner nos modèles IA avec vos données",
+  "Entraîner des modèles avec vos données",
   "Stocker des données sensibles (numéros CB, mots de passe, données médicales)",
   "Accéder à vos données sans votre accord explicite",
   "Transférer vos données hors de l'Union Européenne via nos prestations (hors outils que vous choisissez, ex. Gmail)",
@@ -157,7 +157,7 @@ export const VOS_DONNEES_FAQ = [
   },
   {
     q: "Que se passe-t-il à la résiliation ?",
-    a: "Vos enchaînements N8N sont désactivés et supprimés sous 48h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. Automatex ne conserve rien.",
+    a: "Vos enchaînements N8N sont désactivés et supprimés sous 48 h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. Automatex ne conserve rien.",
   },
   {
     q: "Mes données de clients (leurs noms, leurs emails) sont-elles partagées ?",
@@ -168,7 +168,7 @@ export const VOS_DONNEES_FAQ = [
     a: "Non. Mistral AI ne réutilise pas les données envoyées via API pour entraîner ses modèles. C'est garanti contractuellement dans leur Data Processing Agreement (DPA), aligné RGPD.",
   },
   {
-    q: "Puis-je exporter toutes mes données avant de partir ?",
+    q: "Pouvez-vous exporter toutes vos données avant de partir ?",
     a: "Oui. Sur demande, vous recevez un export de toutes vos données dans les 7 jours : logs d'automatisation, configurations, et tout ce qui vous appartient. Format CSV ou JSON selon votre préférence.",
   },
   {

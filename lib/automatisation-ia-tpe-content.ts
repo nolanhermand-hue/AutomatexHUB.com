@@ -3,16 +3,16 @@ import { PRIMARY_DEMO_CTA, NAP, SOVEREIGNTY_TRUST_LINE, SUR_MESURE_BOOKING_CTA }
 export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 
 export const TPE_META = {
-  title: "Automatisation IA pour TPE & PME — Accompagnement humain · Automatex",
+  title: "Automatisation pour TPE & PME — Accompagnement humain · Automatex",
   description:
-    "Automatisez vos tâches répétitives avec l'IA. Réponses automatiques, devis, classement documents, relances. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois. RGPD UE.",
-  ogTitle: "Automatisation IA pour TPE — Sans compétences techniques · Automatex Hub",
+    "Réponses, devis, classement documents et relances sur vos outils actuels. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois. RGPD UE.",
+  ogTitle: "Automatisation pour TPE — Sans compétences techniques · Automatex Hub",
   ogDescription:
     "Un système qui travaille à votre place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
 } as const;
 
 export const TPE_HERO = {
-  eyebrow: "AUTOMATISATION IA · TPE & PME · FRANCE",
+  eyebrow: "AUTOMATISATION · TPE & PME · FRANCE",
   h1Line1: "40 % de votre temps sur des tâches",
   h1Line2: "qui pourraient se faire toutes seules.",
   statSource: "BCG 2025 (ordre de grandeur TPE)",
@@ -46,7 +46,7 @@ export const TPE_PAIN = {
     {
       stat: "3 000 €/an",
       label: "d'abonnements SaaS empilés qu'un système unique peut remplacer",
-      source: "Analyse marché 2026",
+      source: "Estimation interne (ordre de grandeur)",
     },
   ] as const,
   dayLabel: "UNE JOURNÉE SANS AUTOMATEX",
@@ -63,8 +63,8 @@ export const TPE_AUTOMATION_DOMAINS = [
   {
     num: "01",
     title: "Réponses & clients",
-    desc: "Chaque message entrant reçoit une réponse personnalisée en moins de 90 secondes pendant que vous travaillez.",
-    examples: ["client portail pendant visite", "SMS appel manqué artisan", "Qualification entrant"],
+    desc: "Chaque message entrant reçoit une réponse personnalisée en moins de 2 minutes pendant que vous travaillez.",
+    examples: ["demande portail pendant visite", "SMS appel manqué artisan", "Qualification entrante"],
     target: "Immo · BTP · Commerce",
   },
   {
@@ -229,7 +229,7 @@ export const TPE_GEO_BLOCKS = [
   },
   {
     q: "Quel est le prix de l'automatisation pour une TPE chez Automatex ?",
-    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Pack Pilote : 1690€ puis 449€/mois. Accompagnement mensuel inclus sur chaque pack.",
+    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1 690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack.",
   },
   {
     q: "Automatex utilise-t-il des modèles conformes RGPD ?",
@@ -248,7 +248,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Combien coûte l'automatisation IA pour une TPE en 2026 ?",
-    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Pack Pilote : 1690€ puis 449€/mois. Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.",
+    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1 690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.",
   },
   {
     q: "Faut-il être technique ?",
@@ -256,7 +256,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Quelle différence avec Zapier ou Make ?",
-    a: "Zapier et Make sont des outils à bricoler seul. Automatex, c'est Nolan qui installe et maintient — avec un point mensuel inclus et un tarif bloqué en fidélité.",
+    a: "Zapier et Make sont des outils à bricoler seuls. Automatex, c'est Nolan qui installe et maintient — avec un point mensuel inclus et un tarif bloqué en fidélité.",
   },
   {
     q: "Est-ce conforme RGPD pour une TPE ?",

@@ -23,7 +23,7 @@ export function LeadImmobilierDemo({ active }: DemoAnimationProps) {
         <p className="text-xs text-primary">Demande SeLoger : M. Martin, 3 pièces Flers</p>
       </div>
       <div className="demo-beat text-center text-sm text-[var(--color-text)]">
-        Réponse auto en 90 s pendant la visite
+        Réponse auto en moins de 2 min pendant la visite
       </div>
       <div className="demo-beat text-center">
         <p className="max-w-xs text-xs text-[var(--color-text)]/90">
@@ -31,7 +31,7 @@ export function LeadImmobilierDemo({ active }: DemoAnimationProps) {
         </p>
       </div>
       <div className="demo-beat text-center">
-        <p className="text-sm text-[#38a169]">✅ Client engagé · 0 client perdu</p>
+        <p className="text-sm text-[#38a169]">✅ Client engagé · 0 demande perdue</p>
         <p className="demo-glow-roi text-lg font-semibold text-primary">3 500 € préservés</p>
       </div>
     </div>

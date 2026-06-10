@@ -62,7 +62,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 4,
     category: "general",
-    q: "Suis-je concerné si je suis artisan, agent immobilier, diagnostiqueur ou dirigeant de TPE ?",
+    q: "Êtes-vous concerné (artisan, agent immobilier, diagnostiqueur, dirigeant de TPE) ?",
     a: "Oui si vous perdez des opportunités faute de réponse rapide, si vos devis traînent ou si votre boîte mail vous prend plus d'une heure par jour sans produire de chiffre. Un audit de 20 minutes permet de trancher sans engagement.",
   },
   {
@@ -75,7 +75,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 6,
     category: "general",
     q: "En quoi êtes-vous différent d'une grosse agence ou d'un freelance ?",
-    a: "Ce n'est ni une plateforme à configurer seul ni une agence anonyme : une seule personne installe, reste joignable et ajuste le ton sur votre métier. Tarifs publics (mise en place + mensualité), sans engagement de durée, données traitées en France et en UE.",
+    a: "Ce n'est ni une plateforme à configurer seuls ni une agence anonyme : une seule personne installe, reste joignable et ajuste le ton sur votre métier. Tarifs publics (mise en place + mensualité), sans engagement de durée, données traitées en France et en UE.",
   },
   {
     id: 7,
@@ -92,19 +92,19 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 9,
     category: "problem",
-    q: "Combien de temps puis-je espérer gagner ?",
+    q: "Combien de temps pouvez-vous espérer gagner ?",
     a: "L’objectif est de récupérer du temps sur la paperasse et les relances, pas de vous promettre un nombre d’heures : chaque métier et chaque volume de messages est différent. On cale le périmètre en démo de 20 minutes avant toute mise en place.",
   },
   {
     id: 10,
     category: "problem",
-    q: "Que se passe-t-il quand je rate un appel client ?",
+    q: "Que se passe-t-il quand vous ratez un appel client ?",
     a: "Souvent le prospect contacte un concurrent dans les minutes qui suivent. Le système peut envoyer un SMS ou un mail court pour confirmer que le message est bien reçu et proposer un créneau — pendant que vous êtes encore sur le terrain.",
   },
   {
     id: 11,
     category: "problem",
-    q: "Pourquoi je perds des clients sans m'en rendre compte ?",
+    q: "Pourquoi perdez-vous des clients sans vous en rendre compte ?",
     a: "Parce que l'absence de réponse rapide ou de relance est invisible dans votre agenda : le client ne se plaint pas, il signe ailleurs. D'où l'intérêt d'une réponse en moins de 2 minutes et de relances automatiques polies.",
   },
   {
@@ -146,7 +146,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 18,
     category: "rgpd",
-    q: "Que deviennent mes données si j'arrête ?",
+    q: "Que deviennent vos données si vous arrêtez ?",
     a: "Vous résiliez par mail : effet en fin de mois en cours, coupure des accès, restitution ou suppression des copies chez Automatex sous 7 jours, avec confirmation écrite possible.",
   },
   {
@@ -164,7 +164,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 21,
     category: "setup",
-    q: "Dois-je changer mes outils actuels ?",
+    q: "Devez-vous changer vos outils actuels ?",
     a: "Non dans la majorité des cas : Gmail, Google Drive, calendrier, téléphone, Telegram ou WhatsApp selon votre habitude. Pas de nouveau CRM imposé.",
   },
   {
@@ -200,7 +200,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 27,
     category: "reliability",
-    q: "Suis-je accompagné après la mise en place ?",
+    q: "Êtes-vous accompagné après la mise en place ?",
     a: "Oui : suivi les 30 premiers jours, point trimestriel inclus sur l'année, et ajustements du ton ou des portails quand votre activité change.",
   },
   {
@@ -212,13 +212,13 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 29,
     category: "reliability",
-    q: "Et si je ne sais pas par où commencer ?",
+    q: "Et si vous ne savez pas par où commencer ?",
     a: "L'audit de 20 minutes sert à ça : on classe vos pertes de temps (appels, devis, mails) et on démarre par 2 leviers maximum, pas par 15 fonctions d'un coup.",
   },
   {
     id: 30,
     category: "reliability",
-    q: "Puis-je faire évoluer mon automatisation plus tard ?",
+    q: "Pouvez-vous faire évoluer votre automatisation plus tard ?",
     a: "Oui : nouvelle zone, nouveau type de client, autre portail — on reconfigure sans tout casser, souvent en quelques jours une fois le périmètre validé.",
   },
   {
@@ -230,7 +230,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 32,
     category: "pricing",
-    q: "Comment puis-je résilier ?",
+    q: "Comment résilier ?",
     a: "Un mail à nolan.hermand@automatex-hub.com avec votre prénom et la mention de résiliation suffit. Pas de formulaire de rétention. Données effacées sous 7 jours.",
   },
   {
@@ -249,7 +249,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 35,
     category: "pricing",
     q: "Pourquoi une mensualité et pas un paiement unique ?",
-    a: "Parce que les portails, le ton et votre charge évoluent : la mensualité couvre maintenance N8N, ajustements et points de suivi — pas seulement la première installation.",
+    a: "Parce que les portails, le ton et votre charge évoluent : la mensualité couvre la maintenance des automatisations, les ajustements et les points de suivi — pas seulement la première installation.",
   },
   {
     id: 36,
@@ -278,7 +278,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 40,
     category: "trust",
-    q: "Comment je démarre concrètement ?",
+    q: "Comment démarrer concrètement ?",
     a: `Réservez 20 minutes sur /rendez-vous ou appelez le ${NAP.phoneDisplay}. Nolan confirme sous 24 h, cadrage, puis ${SETUP_48H_NUANCE} si vous validez.`,
   },
 ];

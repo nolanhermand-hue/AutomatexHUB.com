@@ -13,7 +13,7 @@ export const HOME_HERO = {
     "Réponse aux messages, devis et relances branchés sur vos outils actuels. Nolan installe à distance — vous restez sur le terrain.",
   reassurance: `Démo 20 min gratuite · ${SETUP_48H_NUANCE}`,
   integrationsLine:
-    "On se branche sur ce que vous utilisez déjà. Rien de nouveau à apprendre.",
+    "Branchement sur ce que vous utilisez déjà. Rien de nouveau à apprendre.",
 } as const;
 
 export const HOME_PROBLEM = {
@@ -34,7 +34,7 @@ export const HOME_PROBLEM = {
     },
     {
       value: "5 min",
-      label: "sans réponse : le prospect contacte souvent un concurrent.",
+      label: "sans réponse rapide : le prospect contacte souvent un concurrent.",
       source: "Observation terrain (non chiffrée universellement)",
     },
   ],
@@ -134,7 +134,7 @@ export const HOME_FAQ_HEADING = {
 
 export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   {
-    q: "Est-ce que je dois changer mes outils ?",
+    q: "Faut-il changer vos outils ?",
     a: "Non. On part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à apprendre : les automatisations tournent en arrière-plan.",
   },
   {

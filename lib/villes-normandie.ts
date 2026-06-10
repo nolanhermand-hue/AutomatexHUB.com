@@ -342,7 +342,7 @@ const villes: NormandieVillePage[] = [
       "Évreux est un pôle pour l’Eure : pavillons, zones d’activité, liaisons vers l’Île-de-France. Diagnostiqueurs et artisans y reçoivent des demandes de propriétaires pressés par les délais de financement.",
     problemH2: "Évreux et la couronne : flux péri-urbains",
     problemIntro:
-      "Clients parfois moins patients que en rural profond — habitude de réactivité type grande couronne. Répondre tard coûte des dossiers.",
+      "Clients parfois moins patients qu'en rural profond — habitude de réactivité type grande couronne. Répondre tard coûte des dossiers.",
     problemPoints: [
       "Zones commerciales et lotissements récents : diagnostics neufs et rénovation énergétique.",
       "TPE de services (hors BTP) avec boîte mail saturée.",
@@ -434,7 +434,7 @@ const villes: NormandieVillePage[] = [
     ],
     localFaq: [
       {
-        q: "Puis-je voir Nolan en personne à Flers ?",
+        q: "Pouvez-vous voir Nolan en personne à Flers ?",
         a: "Oui pour l’audit ou la démo si vous préférez. Sinon à distance comme partout en Normandie.",
       },
       {

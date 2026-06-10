@@ -71,7 +71,7 @@ export const ABOUT_PAGE = {
   ],
   launchTransparency: {
     title: "Transparence sur le lancement",
-    body: "Automatex est en phase de lancement dans l'Orne. Il n'y a pas encore de dizaines de clients à vous montrer. Ce que je peux vous montrer, c'est le système en action sur votre propre cas — lors d'un appel de 20 minutes, gratuit, sans engagement. Les 5 premiers clients bénéficient d'un tarif fondateur bloqué à vie.",
+    body: "Automatex est en phase de lancement dans l'Orne. Pas de faux avis : Nolan préfère 5 clients bien accompagnés qu'une vitrine pleine de logos. En démo de 20 minutes, vous voyez le système sur votre cas réel — gratuit, sans engagement. Tarif fondateur sur demande si encore disponible.",
     cta: "Voir si le tarif fondateur est encore ouvert →",
     href: "/rendez-vous",
   },

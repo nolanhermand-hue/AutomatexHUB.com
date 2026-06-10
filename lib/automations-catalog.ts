@@ -22,17 +22,17 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
   {
     id: "client-reponse-90s",
     category: "Demandes & réponses",
-    title: "Réponse client en moins de 90 secondes",
+    title: "Réponse aux demandes en moins de 2 minutes",
     tagline: "Premier mail personnalisé avant la visite suivante.",
     target: "immo",
     formula: "pilote",
     steps: [
-      { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouveau demande SeLoger — M. Martin, 3P Flers · 185 000 €.", type: "in" },
+      { from: "Portail", to: "Automatex", icon: "bolt", message: "Nouvelle demande SeLoger — M. Martin, 3P Flers · 185 000 €.", type: "in" },
       { from: "Automatex", to: "Moteur", icon: "spark", message: "Prénom, bien et source extraits pour le template.", type: "system", delay: 5 },
       { from: "Moteur", to: "Outlook", icon: "mail", message: "Envoi à M. Martin : créneaux dispo + lien Calendly (Argentan demain 14h).", type: "out" },
-      { from: "Automatex", to: "CRM", icon: "check", message: "client étiqueté « contacté < 2 min ».", type: "result" },
+      { from: "Automatex", to: "CRM", icon: "check", message: "Demande étiquetée « contacté < 2 min ».", type: "result" },
     ],
-    impact: "Moins de clients froids, plus de rendez-vous terrain.",
+    impact: "Moins de demandes froides, plus de rendez-vous terrain.",
   },
   {
     id: "client-relance-j1",

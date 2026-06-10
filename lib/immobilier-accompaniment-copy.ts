@@ -1,6 +1,6 @@
 /** Section accompagnement — landing mandataires (sans jargon interdit). */
 export const IMMOBILIER_ACCOMPANIMENT = {
-  h2: "Le système, c'est Nolan. Pas vous.",
+  h2: "Nolan installe et règle — vous gardez vos outils et vos décisions.",
   intro:
     "Vous n'avez pas à tout configurer seul. Nolan installe, ajuste et rappelle chaque mois — pendant que vous êtes en visite ou en rendez-vous.",
   pillars: [

@@ -12,7 +12,7 @@ export const NORMANDIE_GENERIC_FAQ: ReadonlyArray<NormandieFaqItem> = [
     a: "Non. On part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à maîtriser : les automatisations tournent en arrière-plan pendant que vous êtes sur chantier ou en visite.",
   },
   {
-    q: "L’installation se fait comment si je ne suis pas dans l’Orne ?",
+    q: "L’installation se fait comment si vous n’êtes pas dans l’Orne ?",
     a: "À distance partout en Normandie (et au-delà si besoin). Nolan est basé à Flers : rendez-vous terrain possibles dans l’Orne. Après l’audit de 20 minutes, la mise en place suit le périmètre validé ensemble.",
   },
   {

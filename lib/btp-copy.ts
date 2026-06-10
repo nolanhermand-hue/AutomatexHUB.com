@@ -3,7 +3,7 @@ import { SOVEREIGNTY_TRUST_LINE, SUR_MESURE_BOOKING_CTA } from "@/lib/constants"
 
 /** Landing BTP — ton terrain, sans jargon « logiciel / formation ». */
 export const BTP_HERO = {
-  h1: "Vos devis partent tout seuls. Vos clients ont une réponse en 90 secondes. Vous, vous finissez votre chantier.",
+  h1: "Vos devis partent sans ressaisie le soir. Réponse en 90 secondes sur appel manqué. Vous finissez votre chantier.",
   sub:
     "Un système automatique installé sur vos outils actuels. Vous n'apprenez rien de nouveau. On s'occupe de tout — et on reste là.",
   ctaDemo: "Nolan m'appelle demain — démo 20 min gratuite",
@@ -175,15 +175,15 @@ export const BTP_FAQ = {
   h2: "Ce que vous vous demandez sûrement",
   items: [
     {
-      q: "J'ai mes habitudes — je travaille comme ça depuis 20 ans.",
+      q: "Vous avez vos habitudes — vous travaillez ainsi depuis 20 ans.",
       a: "Automatex ne change pas vos habitudes. Il travaille dans votre boîte mail, votre Telegram, votre Google Calendar — des outils que vous utilisez déjà ou qui s'y ajoutent sans effort. Votre seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
     },
     {
-      q: "Je ne suis pas doué avec la technologie.",
+      q: "Vous n'êtes pas à l'aise avec la technologie.",
       a: "C'est exactement pour ça qu'on est là. Vous n'installez rien. Nolan s'occupe de tout. Votre seul outil nouveau : recevoir un message Telegram le soir.",
     },
     {
-      q: "J'ai déjà payé pour des trucs qui ne marchaient pas.",
+      q: "Vous avez déjà payé pour des outils qui n'ont pas marché.",
       a: "On commence par une démo sur votre propre cas — vos vrais appels, vos vrais chantiers. Vous voyez avant de signer.",
     },
     {
@@ -199,15 +199,15 @@ export const BTP_FAQ = {
       a: `${SOVEREIGNTY_TRUST_LINE}. Mistral (Paris) et automatisations en UE. Vos devis et contacts : vous et Nolan uniquement.`,
     },
     {
-      q: "Je travaille seul, sans secrétaire — c'est vraiment pour moi ?",
+      q: "Vous travaillez seul, sans secrétaire — est-ce fait pour vous ?",
       a: "C'est exactement pour ça que c'est conçu. Automatex remplace ce que ferait une secrétaire — répondre aux appels, envoyer les devis, relancer les clients. Sans embauche, sans formation, sans charges. Et Nolan est là si quelque chose coince.",
     },
     {
-      q: "Il a 19 ans — c'est suffisamment sérieux ?",
+      q: "Nolan a 19 ans — est-ce suffisamment sérieux ?",
       a: "Juste : Nolan a 19 ans. Ce qu'il a aussi, c'est un SIRET (103 208 054 00017), une adresse à Flers, un système testé sur des scénarios réels.",
     },
     {
-      q: "Et si j'ai un problème un vendredi soir ?",
+      q: "Et si vous avez un problème un vendredi soir ?",
       a: "Pack Pilote : réponse sous 4 h en semaine. Déclic et Système : réponse le jour ouvré suivant. Dans tous les cas : vous n'êtes jamais seul.",
     },
   ],
@@ -215,7 +215,7 @@ export const BTP_FAQ = {
 
 export const BTP_BETA = {
   title: "Lancement dans l'Orne — tarif fondateur",
-  body: "Les 5 premiers artisans bénéficient d'un tarif fondateur bloqué à vie, mentionné au contrat. Pas de faux avis : Nolan préfère 5 clients bien accompagnés qu'une vitrine pleine de logos.",
+  body: "Tarif fondateur pour les premiers dossiers (mention au contrat). Phase de lancement dans l'Orne : pas de faux avis — Nolan préfère 5 clients bien accompagnés qu'une vitrine pleine de logos.",
   slots: "Places limitées — demandez si le tarif fondateur est encore ouvert.",
 } as const;
 
@@ -296,7 +296,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     h1: "Automatisation BTP dans l'Orne — Flers, Argentan, Alençon",
     metaTitle: "Automatisation BTP Orne — devis, appels, relances · Automatex Hub",
     metaDescription:
-      "Automatex Hub automatise les devis, les réponses aux appels manqués et les relances clients pour les artisans BTP dans l'Orne (61). Basé à Flers. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
+      "Automatex Hub automatise les devis, les réponses aux appels manqués et les relances clients pour les artisans BTP dans l'Orne (61). Basé à Flers. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
     localHook:
       "De Flers à Alençon, Argentan et les zones artisanales de l'Orne : un interlocuteur local, pas une hotline parisienne.",
     localDetail:
@@ -309,7 +309,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     h1: "Automatisation pour artisans à Flers — Orne",
     metaTitle: "Automatisation artisan Flers (61) — devis & appels · Automatex",
     metaDescription:
-      "Automatisation pour artisans à Flers : devis depuis note vocale, SMS appels manqués, relances clients. Nolan à Flers (61100). Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
+      "Automatisation pour artisans à Flers : devis depuis note vocale, SMS appels manqués, relances clients. Nolan à Flers (61100). Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
     localHook: "Siège à Saint-Georges-des-Groseillers — Nolan intervient sur Flers et l'agglo en 20 minutes.",
     localDetail:
       "Les artisans de la zone industrielle des Provinces, du centre-ville de Flers et de l'agglo : devis le soir, appels manqués en journée — le système répond pendant que vous êtes sur le chantier.",
@@ -321,7 +321,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     h1: "Automatisation pour artisans à Alençon",
     metaTitle: "Automatisation artisan Alençon (61) — devis automatiques · Automatex",
     metaDescription:
-      "Automatisation pour artisans à Alençon : appels manqués, devis vocaux, relances. Nolan à Flers, 35 min. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
+      "Automatisation pour artisans à Alençon : appels manqués, devis vocaux, relances. Nolan à Flers, 35 min. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
     localHook: "Artisans du quartier Saint-Léonard et de la zone d'activités : même numéro, même suivi.",
     localDetail:
       "Les artisans du quartier Saint-Léonard, de la zone des Fourches et des chantiers périphériques d'Alençon : un prestataire à Flers, à 35 minutes, pas une hotline parisienne.",
@@ -333,7 +333,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     h1: "Automatisation pour artisans à Argentan",
     metaTitle: "Automatisation artisan Argentan (61) — appels & devis · Automatex",
     metaDescription:
-      "Automatisation pour artisans à Argentan et zone Ar'Nor : devis, relances, SMS appels manqués. Basé à Flers. Déclic 390€+99€/mois · Système 990€+249€/mois · Pilote 1690€+449€/mois.",
+      "Automatisation pour artisans à Argentan et zone Ar'Nor : devis, relances, SMS appels manqués. Basé à Flers. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
     localHook: "Zone Ar'Nor et centre-ville d'Argentan : prestataire basé à Flers, à 35 minutes.",
     localDetail:
       "Les artisans de la zone Ar'Nor et du centre-ville d'Argentan : Nolan Hermand installe et suit le système depuis Flers, avec le même numéro direct.",

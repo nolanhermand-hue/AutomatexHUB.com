@@ -28,7 +28,7 @@ const TOP_THREE = [
 export const BTP_ORNE_SEO_FAQ = [
   {
     q: "Quel est le coût d'une automatisation pour un artisan BTP dans l'Orne ?",
-    a: "Pack Déclic : mise en place 390€ (1er mois inclus), puis 99€/mois. Pack Système (recommandé) : 990€ puis 249€/mois. Pack Pilote : 1690€ puis 449€/mois. Un chantier récupéré grâce à une réponse rapide couvre généralement plusieurs mois de pack.",
+    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1 690 € puis 449 €/mois. Un chantier récupéré grâce à une réponse rapide couvre généralement plusieurs mois de pack.",
   },
   {
     q: "Faut-il être informaticien pour utiliser l'automatisation BTP ?",

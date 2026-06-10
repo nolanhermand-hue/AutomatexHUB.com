@@ -8,6 +8,7 @@ import {
   VOS_DONNEES_NEVER,
   VOS_DONNEES_RIGHTS,
 } from "@/lib/vos-donnees-content";
+import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 function ModuleHeader({ n, title }: { n: string; title?: string }) {
   return (
@@ -41,7 +42,7 @@ export function VosDonneesView() {
           répond à ces questions sans langue de bois.
         </p>
         <p className="mt-4 max-w-2xl text-sm text-muted">
-          Formulation honnête : IA française · automatisations en Europe · RGPD natif. Le site public est
+          {SOVEREIGNTY_TRUST_LINE}. Le site public est
           servi en statique (Netlify) ; les automatisations tournent en UE (N8N Cloud, Francfort).
         </p>
 

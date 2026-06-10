@@ -17,7 +17,7 @@ export function RoiCounter({ variant, className }: RoiCounterProps) {
 
   const foot =
     variant === "immobilier"
-      ? "1 client ≈ 3 500 € · Pack Système rentable dès le premier client récupéré."
+      ? "1 dossier ≈ 3 500 € (hypothèse marché) · le pack Système se compare à une commission potentielle."
       : "1 chantier récupéré peut représenter plusieurs mois de pack Système.";
 
   return (

@@ -260,10 +260,10 @@ const pains: CoconPainPage[] = [
   {
     slug: "rappel-lead-instantane",
     path: `${COCON_PILIER_PATH}/rappel-lead-instantane`,
-    metaTitle: "Réponse client instantanée — diagnostiqueurs et artisans",
+    metaTitle: "Réponse aux demandes instantanée — diagnostiqueurs et artisans",
     metaDescription:
       "Premier contact prospect pendant que vous êtes en mission. Mail ou SMS de prise en charge — pas un portail immo. J1 : diag et couvreurs. Démo 20 min.",
-    h1: "Réponse client instantanée — pendant que vous êtes en mission",
+    h1: "Réponse aux demandes instantanée — pendant que vous êtes en mission",
     heroEyebrow: "Demandes & réponses",
     heroAccroche: "Le prospect écrit. Vous êtes sur le terrain.",
     heroSub:

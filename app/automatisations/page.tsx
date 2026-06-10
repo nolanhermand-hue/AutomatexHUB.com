@@ -29,7 +29,7 @@ export default function AutomatisationsPage() {
       <section className="mx-auto max-w-content pb-16 text-center">
         <span className="label-micro text-faint">Catalogue complet</span>
         <h1 className="mt-4 font-heading text-3xl font-bold text-text md:text-4xl">
-          Tout ce qu&apos;Automatex fait à votre place — chaque jour
+          Ce qu&apos;Automatex peut faire à votre place
         </h1>
         <p className="mx-auto mt-5 max-w-readable text-base leading-relaxed text-muted">
           Chaque automatisation ci-dessous est une configuration réelle, avec le message exact qui

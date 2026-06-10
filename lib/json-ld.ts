@@ -21,7 +21,7 @@ const JSONLD_PACKS = [
   { name: "Pack Pilote", setup: 1690, monthly: 449 },
 ] as const;
 
-const JSONLD_PRICE_RANGE = "390€–1690€ mise en place · 99€–449€/mois";
+const JSONLD_PRICE_RANGE = "390 € – 1 690 € mise en place · 99 € – 449 €/mois";
 
 function buildJsonLdPackOffers(nameSuffix = "") {
   return JSONLD_PACKS.map(({ name, setup, monthly }) => ({
@@ -247,7 +247,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
       ]
     : [
         "Automatisation mandataire immobilier",
-        "clients immobilier perdus",
+        "demandes immobilières perdues",
         "IAD France",
         "SAFTI",
         "Capifrance",

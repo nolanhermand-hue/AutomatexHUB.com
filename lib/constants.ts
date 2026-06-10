@@ -1,7 +1,7 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://automatex-hub.com";
 
 /** Formulation officielle souveraineté (alignée /vos-donnees). */
-export const SOVEREIGNTY_TRUST_LINE = "IA française · Automations UE · RGPD" as const;
+export const SOVEREIGNTY_TRUST_LINE = "IA française · Automatisations UE · RGPD" as const;
 
 /** Heures administratives non productives estimées par vente sur l'année (ordre de grandeur terrain). */
 export const HOURS_LOST_PER_SALE_PER_YEAR = 8;
@@ -101,12 +101,12 @@ export const META = {
     "Réponse aux appels et messages, devis et relances pendant que vous êtes sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 20 min · Sans engagement.",
   ogTitle: "Automatex — Artisans & TPE en Normandie | Démo 20 min",
   ogDescription:
-    "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). IA française · Automations UE · RGPD · Sans engagement.",
+    "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). IA française · Automatisations UE · RGPD · Sans engagement.",
 } as const;
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
 export const GEO_DEFINITION =
-  "Automatex est un service d'automatisation français pour artisans BTP, TPE et mandataires immobiliers indépendants (IAD, SAFTI, Capifrance, Optimhome, EffiCity) en Normandie. Basé à Saint-Georges-des-Groseillers (61100, agglomération de Flers), Automatex connecte Gmail, Telegram, Google Drive, portails et téléphone pour répondre aux demandes en moins de 2 minutes, relancer les devis et classer les documents. Automatisations hébergées en UE (Francfort), traitement linguistique en France/UE, conformes RGPD." as const;
+  "Automatex installe réponse aux demandes, devis et relances pour artisans BTP, TPE et mandataires en Normandie, depuis Flers (Orne). Branchement sur Gmail, Drive, portails et téléphone — sans changer vos outils. Données et automatisations en UE, conformes RGPD (détail sur /vos-donnees)." as const;
 
 export const META_KEYWORDS = [
   "mandataire immobilier Normandie",
@@ -175,7 +175,7 @@ export const TRUST_BAR_ITEMS = [
   "EffiCity",
   SOVEREIGNTY_TRUST_LINE,
   "RGPD",
-  "Opérationnel en 48h",
+  "Opérationnel en 48 h",
   "Flers, Orne (61)",
 ] as const;
 
@@ -184,7 +184,7 @@ export const AUTOMATIONS_SECTION = {
   subtitle:
     "Chaque mandataire est différent. Chaque configuration est construite sur votre façon de travailler. Ce qui est déjà en place.",
   introLine:
-    "Vos journées, avec Automatex.",
+    "Configurations réelles, adaptées à votre façon de travailler.",
   footnote:
     "Ce ne sont pas des exemples. Ce sont des configurations actives, adaptables à votre façon de travailler.",
 } as const;
@@ -200,7 +200,7 @@ export const HERO_COPY = {
   badgeHosted: SOVEREIGNTY_TRUST_LINE,
   badgeRgpd: "Conforme RGPD",
   badgeNoCommit: "Sans engagement",
-  h1: "Ne perdez plus jamais un client à 3 500 €.",
+  h1: "Un client non rattrapé peut coûter ~3 500 € (hypothèse).",
   subtitle:
     "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux demandes en 2 min pendant vos visites. Sans engagement, résiliable en 1 mail.",
   /** A3 + B13 — CTA unique primaire, ≤ 5 mots, verbe d'action */
@@ -209,7 +209,7 @@ export const HERO_COPY = {
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
   statAnchor:
-    "1 client perdu peut représenter ~3 500 € de commission potentielle (hypothèse marché) — souvent chez le concurrent.",
+    "Commission potentielle par dossier qualifié : ordre de grandeur marché (voir source sous les chiffres).",
   /** A10 — Compteur social proof crédible */
   liveCounter: "Onboardings limités pour garder un suivi humain serré — demandez en démo si une place est ouverte",
   /** A15 — Mention hébergeur nommé */
@@ -302,7 +302,7 @@ export const AGITATION_COPY = {
 
 /** B5 — Solution : verbes actifs (On installe / Vous approuvez / Ça tourne) */
 export const SOLUTION_HEADING = {
-  h2: "Comment Automatex s'installe en 48 h — 3 étapes pour mandataires normands",
+  h2: "Mise en route en 3 étapes (48 h après validation du périmètre)",
 } as const;
 
 export const SOLUTION_STEPS: ReadonlyArray<{
@@ -620,7 +620,7 @@ export const OFFERS: PricingOffer[] = [
       "1 automatisation sur-mesure (cadrée sur votre activité)",
       "Réponse aux demandes entrantes en moins de 2 minutes",
       "Notification téléphone immédiate sur chaque message urgent",
-      "Mise en place en 48 h après l'appel découverte",
+      `Mise en place : ${SETUP_48H_NUANCE}`,
       ...PACK_ACCOMP_BULLETS.declic,
       OFFER_YEARLY_HUMAN_BULLET,
     ],
@@ -736,7 +736,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Oui. Nolan installe et configure, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
   },
   {
-    question: "Est-ce que je dois être à l'aise avec la technologie ?",
+    question: "Devez-vous être à l'aise avec la technologie ?",
     answer:
       "Non. Vous recevez des messages clairs sur Telegram ou par mail, comme aujourd'hui. Vous validez les réponses quand vous le souhaitez. Aucune application à apprendre, aucun logiciel à installer. La configuration se fait à distance pendant que vous êtes sur le terrain.",
   },
@@ -751,7 +751,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "48 heures ouvrées après notre appel de validation du périmètre (accès outils, règles, tests). Nolan configure, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des mandataires repartent avec leurs premières réponses actives dès le week-end suivant.",
   },
   {
-    question: "Et si je veux arrêter ?",
+    question: "Et si vous voulez arrêter ?",
     answer:
       "Vous êtes libre. Aucun engagement de durée, résiliable en un mail. Vos données vous sont restituées et effacées sous 7 jours.",
   },
@@ -761,17 +761,17 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Oui. Les outils Playiad ou Omega restent inchangés : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes qui arrivent par SeLoger, Leboncoin ou votre site passent par le mail comme aujourd'hui — mais la réponse part pendant la visite. Vous recopiez ensuite ce qui doit l'être dans votre CRM en un copier-coller.",
   },
   {
-    question: "J'ai déjà essayé des outils qui n'ont pas marché. Pourquoi ce serait différent ?",
+    question: "Vous avez déjà essayé des outils qui n'ont pas marché — pourquoi serait-ce différent ?",
     answer:
       "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous restez sans engagement, résiliable en un mail.",
   },
   {
-    question: "J'ai mes habitudes — je travaille comme ça depuis 20 ans.",
+    question: "Vous avez vos habitudes — vous travaillez ainsi depuis 20 ans.",
     answer:
       "Automatex ne change pas vos habitudes. Il travaille dans votre boîte mail, votre Telegram, votre Google Calendar — des outils que vous utilisez déjà. Votre seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
   },
   {
-    question: "Il a 19 ans — c'est suffisamment sérieux ?",
+    question: "Nolan a 19 ans — est-ce suffisamment sérieux ?",
     answer:
       "Nolan a 19 ans. Il a aussi un SIRET (103 208 054 00017), une adresse à Flers, et un système testé sur des scénarios réels avant que vous ne signiez.",
   },
