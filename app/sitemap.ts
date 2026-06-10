@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/lib/constants";
+import { AUTOMATISATION_CEST_QUOI_LAST_MODIFIED } from "@/lib/automatisation-cest-quoi";
 import { COCON_CLUSTER_LAST_MODIFIED } from "@/lib/automatisation-cocon-shared";
 import { COCON_PAIN_PAGES, COCON_PILIER } from "@/lib/automatisation-cocon";
 import {
@@ -55,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/btp`, lastModified, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/automatisation-ia-tpe`, lastModified, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/automatisations`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    {
+      url: `${SITE_URL}/automatisation-c-est-quoi`,
+      lastModified: new Date(AUTOMATISATION_CEST_QUOI_LAST_MODIFIED),
+      changeFrequency: "monthly",
+      priority: 0.88,
+    },
     { url: `${SITE_URL}/faq`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/accompagnement`, lastModified, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE_URL}/rendez-vous`, lastModified, changeFrequency: "weekly", priority: 0.95 },

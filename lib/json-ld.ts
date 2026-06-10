@@ -656,6 +656,44 @@ export function buildAutomatisationCoconPilierJsonLd(opts: {
   };
 }
 
+/** JSON-LD page pédagogique /automatisation-c-est-quoi (FAQPage unique sur le document). */
+export function buildAutomatisationCestQuoiJsonLd(opts: {
+  description: string;
+  dateModified: string;
+  faq: ReadonlyArray<{ q: string; a: string }>;
+}) {
+  const businessId = `${SITE_URL}#business`;
+  const pageUrl = `${SITE_URL}/automatisation-c-est-quoi`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "C'est quoi une automatisation ?", path: "/automatisation-c-est-quoi" },
+      ]),
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: "C'est quoi une automatisation ?",
+        description: opts.description,
+        dateModified: opts.dateModified,
+        inLanguage: "fr-FR",
+        isPartOf: { "@id": `${SITE_URL}#website` },
+      },
+      {
+        "@type": "Service",
+        name: "Automatex — comprendre les automatisations pour TPE et artisans",
+        provider: { "@id": businessId },
+        description: opts.description,
+        areaServed: ["France", "Normandie", "Orne"],
+        serviceType: "Mise en place d'automatisations sur outils existants (SMS, mail, agenda)",
+      },
+      buildFaqPageFromItems(opts.faq),
+    ],
+  };
+}
+
 /** JSON-LD page douleur cocon. */
 export function buildAutomatisationCoconPainJsonLd(opts: {
   path: string;

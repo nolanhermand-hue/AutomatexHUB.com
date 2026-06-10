@@ -1,3 +1,4 @@
+import { AUTOMATISATION_CEST_QUOI_PATH } from "@/lib/automatisation-cest-quoi";
 import { CATEGORY_SUIVI_RAPPORTS, categoryToAnchor } from "@/lib/automations-catalog";
 
 export { categoryToAnchor };
@@ -45,6 +46,13 @@ export const SOLUTIONS_MENU = {
       href: "/btp#demo",
     },
   ],
+} as const;
+
+/** Page pédagogique — visible dans Mega Nav (Solutions + Automatisations + mobile). */
+export const MEGA_NAV_PEDAGOGIE = {
+  label: "C'est quoi une automatisation ?",
+  href: AUTOMATISATION_CEST_QUOI_PATH,
+  desc: "Définition simple, exemples terrain, sans jargon",
 } as const;
 
 export const AUTOMATIONS_MENU = {

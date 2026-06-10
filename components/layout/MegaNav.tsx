@@ -7,6 +7,7 @@ import { contactHref } from "@/lib/hub-nav";
 import {
   AUTOMATIONS_MENU,
   type MegaDropdownKey,
+  MEGA_NAV_PEDAGOGIE,
   SOLUTIONS_MENU,
 } from "@/lib/mega-nav-data";
 import { AUTOMATIONS_CATALOG } from "@/lib/automations-catalog";
@@ -248,10 +249,17 @@ export function MegaNav() {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-5 border-t border-border pt-4">
+                    <div className="mt-5 space-y-2 border-t border-border pt-4">
+                      <Link
+                        href={MEGA_NAV_PEDAGOGIE.href}
+                        className="block text-xs font-semibold text-text hover:text-primary hover:underline"
+                        onClick={() => handleNavClick(MEGA_NAV_PEDAGOGIE.href)}
+                      >
+                        → {MEGA_NAV_PEDAGOGIE.label}
+                      </Link>
                       <Link
                         href="/automatisations"
-                        className="text-xs font-semibold text-primary hover:underline"
+                        className="block text-xs font-semibold text-primary hover:underline"
                         onClick={() => handleNavClick("/automatisations")}
                       >
                         → Voir les {AUTOMATIONS_CATALOG.length} automatisations
@@ -336,6 +344,25 @@ export function MegaNav() {
                       </li>
                     </ul>
                   </div>
+                </div>
+                <div className="border-t border-border bg-surface-2/60 px-4 py-3">
+                  <Link
+                    href={MEGA_NAV_PEDAGOGIE.href}
+                    role="menuitem"
+                    className="block text-sm font-semibold text-text hover:text-primary"
+                    onClick={() => handleNavClick(MEGA_NAV_PEDAGOGIE.href)}
+                  >
+                    {MEGA_NAV_PEDAGOGIE.label}
+                  </Link>
+                  <p className="mt-0.5 text-xs text-muted">{MEGA_NAV_PEDAGOGIE.desc}</p>
+                  <Link
+                    href="/automatisations"
+                    role="menuitem"
+                    className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
+                    onClick={() => handleNavClick("/automatisations")}
+                  >
+                    → Catalogue ({AUTOMATIONS_CATALOG.length} automatisations)
+                  </Link>
                 </div>
               </div>
             ) : null}
@@ -450,6 +477,7 @@ export function MegaNav() {
                 ))}
               <div className="my-2 border-t border-border" />
               {[
+                { label: MEGA_NAV_PEDAGOGIE.label, href: MEGA_NAV_PEDAGOGIE.href },
                 { label: "Catalogue automatisations", href: "/automatisations" },
                 { label: "Accompagnement", href: "/accompagnement" },
                 { label: "Vos données", href: "/vos-donnees" },

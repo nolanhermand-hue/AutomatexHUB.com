@@ -510,3 +510,14 @@
 .sticky-cta-bar--visible {
   /* transition dans globals.css — pas d’animation translate (CLS) */
 }
+
+@keyframes automation-flow-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.automation-flow-line {
+  stroke-dasharray: 10 8;
+  animation: automation-flow-dash 1.4s linear infinite;
+}
