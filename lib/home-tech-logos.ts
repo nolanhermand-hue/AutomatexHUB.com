@@ -23,7 +23,6 @@ export const HOME_TECH_LOGOS = [
   { id: "google-sheets", name: "Google Sheets", src: `${BASE}/google-sheets.svg`, ring: "inner" as const },
   { id: "google-maps", name: "Google Maps", src: `${BASE}/google-maps.svg`, ring: "inner" as const },
   { id: "brevo", name: "Brevo", src: `${BASE}/brevo.svg`, ring: "outer" as const },
-  { id: "twilio", name: "Twilio", src: `${BASE}/twilio.svg`, ring: "outer" as const },
   { id: "telegram", name: "Telegram", src: `${BASE}/telegram.svg`, ring: "outer" as const },
   { id: "leboncoin", name: "Leboncoin", src: `${BASE}/leboncoin.svg`, ring: "outer" as const },
   { id: "linkedin", name: "LinkedIn", src: `${BASE}/linkedin.svg`, ring: "outer" as const },

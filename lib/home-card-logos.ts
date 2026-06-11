@@ -18,8 +18,8 @@ export type HomePillarId = "leads" | "devis" | "relances" | "drive";
 /** Logos sur les 4 cartes « Quatre leviers… » (accueil). */
 export const HOME_PILLAR_LOGOS: Record<HomePillarId, IntegrationLogo[]> = {
   leads: logos(
-    { src: P.twilio, alt: "Twilio SMS" },
     { src: P.gmail, alt: "Gmail" },
+    { src: "/assets/integrations/sms-apple.svg", alt: "Messages (SMS)" },
   ),
   devis: logos(
     { src: P.mistral, alt: "Mistral AI" },
