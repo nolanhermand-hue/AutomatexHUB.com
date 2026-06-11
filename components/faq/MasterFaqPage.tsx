@@ -78,7 +78,7 @@ export function MasterFaqPage() {
           {PRIMARY_DEMO_CTA}
         </AnalyticsCta>
         <p className="text-center text-sm text-muted">
-          Sans engagement · résiliable en 1 mail · conditions 30 jours sur /cgv
+          Sans engagement · résiliable en 1 mail · RGPD France
         </p>
       </div>
     </div>

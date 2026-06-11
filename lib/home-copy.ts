@@ -100,8 +100,7 @@ export const HOME_PRICING = {
   eyebrow: "Tarifs",
   h2: "3 packs + sur mesure pour artisans et TPE en Normandie",
   sub: "Mise en place + mensualité transparente. Système = pack recommandé pour la plupart des TPE.",
-  banner:
-    "Sans engagement · résiliable en 1 mail · 30 jours remboursés sur la mise en place · RGPD France",
+  banner: "Sans engagement · résiliable en 1 mail · RGPD France",
 } as const;
 
 export const HOME_FOUNDER = {
@@ -151,7 +150,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Et si ça ne me convient pas ?",
-    a: "30 jours remboursés sur la mise en place si le système ne correspond pas au cadrage de l’audit (voir conditions sur /cgv). Ensuite, résiliation en un mail, effet fin de mois.",
+    a: "Résiliation en un mail, effet en fin de mois. Vos données restent les vôtres ; effacement sous 7 jours après votre départ (détail sur /cgv et /vos-donnees). Les ajustements dans le périmètre validé à l’audit sont inclus dans la mensualité.",
   },
   {
     q: "Intervenez-vous seulement en Normandie ?",

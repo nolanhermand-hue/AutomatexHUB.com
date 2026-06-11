@@ -122,20 +122,22 @@ export default function CgvPage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Article 9 — Garantie sur la mise en place (30 jours)">
+      <LegalSection title="Article 9 — Périmètre convenu et conformité du service">
         <LegalP>
-          Si le service mis en ligne ne correspond pas au périmètre validé lors de l&apos;audit de
-          cadrage (scénarios, canaux et délais convenus), le Client peut demander le remboursement
-          des <strong className="text-text">frais de mise en place</strong> (installation initiale)
-          dans les 30 jours calendaires suivant la mise en service effective, par email à {c.email},
-          en décrivant l&apos;écart constaté.
+          Le service est déployé conformément au périmètre validé lors de l&apos;audit de cadrage
+          (scénarios, canaux, délais et messages types convenus). Les{" "}
+          <strong className="text-text">ajustements mineurs</strong> nécessaires pour tenir ce
+          périmètre sont inclus dans la mensualité, dans la limite des capacités techniques des
+          outils connectés.
         </LegalP>
         <LegalP>
-          La garantie suppose la coopération du Client (accès fournis, tests réalisés, retours dans
-          des délais raisonnables). Elle ne couvre pas les mensualités déjà échues, les changements
-          de périmètre demandés après validation, ni l&apos;absence de résultats commerciaux (voir
-          article 12). En cas de remboursement accepté, les automatisations sont désactivées et les
-          données traitées effacées selon l&apos;article 10.
+          Toute extension hors périmètre (nouveau canal, nouveau métier, volume non prévu) fait
+          l&apos;objet d&apos;un devis complémentaire ou d&apos;un changement de formule. Le Client
+          coopère à la mise en service (accès, tests, retours dans des délais raisonnables).{" "}
+          <strong className="text-text">Aucun remboursement des frais de mise en place</strong> n&apos;est
+          dû en cas de différend sur les résultats commerciaux ou sur un périmètre modifié après
+          validation (voir article 12). En cas de résiliation, les modalités de l&apos;article 10
+          s&apos;appliquent.
         </LegalP>
       </LegalSection>
 

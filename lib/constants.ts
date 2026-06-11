@@ -38,7 +38,7 @@ export const SUR_MESURE_BOOKING_CTA =
 export const PRICING_CARD_CTA = "Réserver 20 min" as const;
 
 export const PRICING_REASSURANCE_CARD =
-  "Sans engagement · résiliable en 1 mail · 30 jours remboursés sur la mise en place · RGPD France" as const;
+  "Sans engagement · résiliable en 1 mail · RGPD France" as const;
 
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
@@ -544,7 +544,7 @@ export const PRICING_OFFER_DISPLAY: Record<
   declic: {
     home: {
       promise: "Vous ne ratez plus jamais un client qui vous appelle.",
-      roiEncart: "Un seul chantier récupéré rembourse l'année.",
+      roiEncart: "Un dossier ou un chantier récupéré peut couvrir plusieurs mois de formule.",
     },
     immo: {
       promise: "Vous ne ratez plus jamais un client pendant vos visites.",
@@ -804,7 +804,7 @@ export const DATA_TRUST_COPY = {
 export const RESILIATION_COPY = {
   h2: "Arrêter ? Un seul mail.",
   body:
-    "Sans engagement : pas de formulaire de rétention, pas de période minimale. Un mail suffit — effet en fin de mois en cours. Données effacées sous 7 jours. Garantie 30 jours remboursée sur la mise en place si le système ne correspond pas au cadrage de l’audit (conditions détaillées sur /cgv).",
+    "Sans engagement : pas de formulaire de rétention, pas de période minimale. Un mail suffit — effet en fin de mois en cours. Données effacées sous 7 jours (voir /cgv).",
   emailLine: "nolan.hermand@automatex-hub.com",
   mailHint: "Objet : Résiliation Automatex — indiquez votre prénom et « je souhaite résilier ».",
   cta: "Résilier en ligne →",
@@ -821,7 +821,7 @@ export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: strin
 ] as const;
 
 export const CTA_REASSURANCE_LINE =
-  "Sans engagement · résiliable en 1 mail · 30 jours remboursés sur la mise en place · RGPD France" as const;
+  "Sans engagement · résiliable en 1 mail · RGPD France" as const;
 
 export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 

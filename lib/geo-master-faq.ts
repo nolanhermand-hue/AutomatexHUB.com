@@ -236,8 +236,8 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 33,
     category: "pricing",
-    q: "Comment fonctionne la garantie 30 jours ?",
-    a: "Si le système ne correspond pas au cadrage validé lors de l'audit, la mise en place peut être remboursée dans les 30 jours suivant la mise en service — conditions et exclusions détaillées sur /cgv (notamment respect du périmètre convenu).",
+    q: "Que se passe-t-il si le service ne correspond pas au cadrage ?",
+    a: "L'audit de 20 min fixe scénarios, canaux et délais avant mise en place. Les ajustements dans ce périmètre sont inclus dans la mensualité. Toute extension hors périmètre fait l'objet d'un devis ou d'un changement de formule. Pas de promesse de chiffre commercial (voir /cgv). Résiliation possible en un mail, effet fin de mois.",
   },
   {
     id: 34,
