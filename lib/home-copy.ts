@@ -3,14 +3,14 @@ import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 export const HOME_META = {
   title: "Automatisation artisans & TPE en Normandie | Automatex",
   description:
-    `Demandes, devis et relances tournent pendant que vous êtes sur chantier. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
+    `Demandes, devis et relances avancent pendant que vous êtes en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
 } as const;
 
 export const HOME_HERO = {
   h1: "Automatisation pour artisans et TPE en Normandie",
   accroche: "Vos clients ne vous attendent plus.",
   sub:
-    "Réponse aux messages, devis et relances branchés sur vos outils actuels. Nolan installe à distance — vous restez sur le terrain.",
+    "Réponse aux messages, devis et relances branchés sur vos outils actuels. Nolan installe à distance — vous restez concentré sur vos clients et vos dossiers.",
   reassurance: `Démo 20 min gratuite · ${SETUP_48H_NUANCE}`,
   integrationsLine:
     "Branchement sur ce que vous utilisez déjà. Rien de nouveau à apprendre.",
@@ -20,22 +20,22 @@ export const HOME_PROBLEM = {
   eyebrow: "Le coût du silence",
   h2: "Combien vous perdez quand vous ne pouvez pas décrocher ?",
   intro:
-    "Sur chantier, en visite ou au volant : les messages s’empilent. Sans réponse rapide, le client suivant passe ailleurs.",
+    "En rendez-vous, sur chantier ou derrière votre bureau : les messages s’empilent. Sans réponse rapide, le client suivant passe ailleurs.",
   stats: [
     {
-      value: "60 %",
-      label: "de chances de perdre un chantier si le devis part après 24 h.",
-      source: "FFB, 2023",
+      value: "78 %",
+      label: "des clients achètent chez le premier professionnel qui répond correctement.",
+      source: "Lead Connect",
     },
     {
-      value: "2 h / jour",
-      label: "d’administratif moyen pour une TPE de 1 à 5 personnes.",
-      source: "Hypothèse terrain (non auditée)",
+      value: "8–12 h",
+      label: "d’administratif par semaine pour une TPE ou un indépendant (ordre de grandeur).",
+      source: "CAPEB",
     },
     {
-      value: "5 min",
-      label: "sans réponse rapide : le prospect contacte souvent un concurrent.",
-      source: "Observation terrain (non chiffrée universellement)",
+      value: "×21",
+      label: "plus de chances de qualifier un contact en répondant sous 5 min plutôt qu’après 30 min.",
+      source: "MIT / HBR, 2011",
     },
   ],
 } as const;
@@ -57,7 +57,7 @@ export const HOME_SOLUTION = {
     {
       id: "relances",
       title: "Relances",
-      body: "J+4, J+8 : rappels polis sans que vous ayez à t’en souvenir. Devis et prospects suivis.",
+      body: "J+4, J+8 : rappels polis sans que vous ayez à vous en souvenir. Devis et dossiers suivis.",
     },
     {
       id: "drive",
@@ -90,7 +90,7 @@ export const HOME_HOW = {
     },
     {
       title: "Moins de paperasse",
-      body: "Les réponses partent pendant que vous êtes sur le terrain — moins de mails et de devis à rattraper le soir. Chaque activité est différente : on cale le rythme sur votre cas en démo.",
+      body: "Les réponses partent pendant que vous êtes indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : on cale le rythme sur votre cas en démo.",
       time: "Au fil des semaines",
     },
   ],
@@ -106,14 +106,14 @@ export const HOME_PRICING = {
 
 export const HOME_FOUNDER = {
   eyebrow: "Qui installe",
-  h2: "Du chantier à l’automatisation — Nolan connaît votre cadence",
+  h2: "Deux ans sur chantier, aujourd’hui au service des TPE",
   storyLead:
     "2 ans sur les chantiers, en menuiserie puis couverture. J’ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l’automatisation pour régler exactement ça.",
   bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en me formant à l’automatisation. Aujourd’hui j’installe des systèmes qui répondent à votre place quand vous ne pouvez pas décrocher.`,
   painSteps: [
     {
-      title: "Sur le terrain",
-      body: "Appels pendant la visite ou sur le toit : impossible de tout traiter à la main.",
+      title: "Pendant la journée",
+      body: "Appels pendant une visite, un chantier ou une réunion : impossible de tout traiter à la main.",
     },
     {
       title: "Le soir",
