@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-/** Source de vérité avatar fondateur (photo réelle) */
+/** Source de vérité avatar Nolan (photo réelle) */
 const FOUNDER_AVATAR_SRC = "/assets/brand/founder-avatar.webp";
 
 type FounderAvatarProps = {
@@ -39,7 +39,7 @@ function FounderAvatarPlaceholder({
 }
 
 /**
- * Avatar fondateur (photo WebP) avec fallback placeholder si échec de chargement.
+ * Avatar Nolan (photo WebP) avec fallback placeholder si échec de chargement.
  */
 export function FounderAvatar({ size = 48, className = "", priority = false }: FounderAvatarProps) {
   const [failed, setFailed] = useState(false);

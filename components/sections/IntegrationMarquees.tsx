@@ -34,7 +34,7 @@ const BAND2_ITEMS: Band2Item[] = [
   { name: "DPE", kind: "card", initials: "DPE", bg: "#FFF0F0", text: "#A00510" },
   { name: "Amiante", kind: "card", initials: "AM", bg: "#FFF8E1", text: "#8B5A00" },
   { name: "Liciel", kind: "card", initials: "LC", bg: "#E8F5E9", text: "#2E7D32" },
-  { name: "ORIS", kind: "card", initials: "OR", bg: "#FFF3E8", text: "#E65100" },
+  { name: "Alain Immo", kind: "card", initials: "AI", bg: "#FFF3E8", text: "#E65100" },
   { name: "Google Drive", kind: "card", initials: "GD", bg: "#EDE7F6", text: "#4527A0" },
   { name: "Telegram", kind: "card", initials: "TG", bg: "#E3F2FD", text: "#1565C0" },
   { name: "Annuaire agences", kind: "card", initials: "AN", bg: "#FCE4EC", text: "#880E4F" },
@@ -199,7 +199,7 @@ export function IntegrationMarquees() {
     >
       <p className="sr-only">
         Compatible avec Gmail, Telegram, Google Drive, Google Calendar, SeLoger, Leboncoin,
-        Agences locales, DPE, amiante, Liciel, ORIS, Google Drive, Telegram. {SOVEREIGNTY_TRUST_LINE}.
+        Agences locales, DPE, amiante, Liciel, Alain, Google Drive, Telegram. {SOVEREIGNTY_TRUST_LINE}.
         Conforme RGPD.
       </p>
       <div className="bg-surface">

@@ -2,7 +2,7 @@ import { PrimaryDemoCta } from "@/components/shared/PrimaryDemoCta";
 import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 /**
- * FINAL CTA — bandeau ORIS (navy + accent orange).
+ * FINAL CTA — bandeau navy + accent orange.
  */
 export function FinalCta() {
   return (

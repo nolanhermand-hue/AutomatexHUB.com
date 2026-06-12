@@ -124,7 +124,7 @@ export const HOME_FOUNDER = {
     },
   ] as const,
   quote:
-    "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que vous utilisez déjà — pour que le soir, vous arrêtiez de boucler vos devis à la va-vite.",
+    "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que vous utilisez déjà — pour que le soir vous boucliez vos devis sans les bricoler à minuit.",
 } as const;
 
 export const HOME_FAQ_HEADING = {

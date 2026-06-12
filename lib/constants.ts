@@ -78,7 +78,7 @@ export const NAP = {
   phoneDisplay: "06 45 38 42 33",
   phoneE164: "+33645384233",
   email: "nolan.hermand@automatex-hub.com",
-  /** Profil professionnel fondateur */
+  /** Profil professionnel Nolan */
   linkedinUrl: "https://www.linkedin.com/in/nolan-hermand-369958412",
   /** Compte marque */
   tiktokUrl: "https://www.tiktok.com/@automatex_hub",
@@ -745,7 +745,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Vous êtes libre. Aucun engagement de durée, résiliable en un mail. Vos données vous sont restituées et effacées sous 7 jours.",
   },
   {
-    question: "Votre logiciel métier (Liciel, ORIS, Alain…) est fermé. Ça marche quand même ?",
+    question: "Votre logiciel métier (Liciel, Alain…) est fermé. Ça marche quand même ?",
     answer:
       "Oui. Votre logiciel de saisie diagnostic reste inchangé : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes agences passent par le mail comme aujourd'hui — mais la réponse part pendant la mission. Vous recopiez ensuite la mission dans votre outil en un copier-coller.",
   },
@@ -918,7 +918,7 @@ export const SOCIAL_PROOF_ITEMS: ReadonlyArray<{
   location: string;
 }> = [];
 
-/** B11 + E13 — Story fondateur enrichie */
+/** B11 + E13 — Story Nolan enrichie */
 export const ABOUT_FOUNDER = {
   eyebrow: "À propos de Nolan",
   h2: "Construit par un expert du terrain, pas par une startup.",
@@ -929,7 +929,7 @@ export const ABOUT_FOUNDER = {
     { value: "48 h", label: "Mise en place après validation périmètre" },
     { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
-  /** E10 — téléphone cliquable contact direct fondateur */
+  /** E10 — téléphone cliquable contact direct Nolan */
   directContact: "Une question avant de vous lancer ? Appelez Nolan : 06 45 38 42 33",
 } as const;
 

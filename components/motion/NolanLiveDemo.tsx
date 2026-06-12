@@ -27,7 +27,7 @@ export function NolanLiveDemo() {
         data-quality-min="medium"
         className="rounded-xl border border-primary/25 bg-surface p-5 md:p-6"
         role="img"
-        aria-label="Simulation : Nolan intervient le soir via Telegram sans que l'artisan ait à demander"
+        aria-label="Exemple : Nolan intervient le soir via Telegram sans que l'artisan ait à demander"
       >
         <div className="demo-beat space-y-2 text-sm text-[var(--color-text)]/90">
           <p className="text-xs text-muted">Téléphone · Jeudi · 20 h 47</p>
@@ -67,7 +67,7 @@ export function NolanLiveDemo() {
           demoId="point-mensuel-accompagnement"
           staticSrc={DEMO_STATIC.pointMensuel.src}
           staticAlt={DEMO_STATIC.pointMensuel.alt}
-          ariaLabel="Simulation du point mensuel et des relances automatiques"
+          ariaLabel="Exemple du point mensuel et des relances automatiques"
         />
       </div>
     </div>

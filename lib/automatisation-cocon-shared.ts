@@ -9,7 +9,7 @@ export const COCON_POSITIONING_LINE =
   "Compatible avec votre outil actuel — nous automatisons ce qu'il ne fait pas : relances, rappels, tri, pas la saisie métier à sa place." as const;
 
 export const COCON_POSITIONING_DETAIL =
-  "Liciel, ORIS, Tolteck, Obat, Batappli, ProDevis : vous gardez votre logiciel. Automatex branche des relances et des réponses par-dessus Gmail, SMS et calendrier." as const;
+  "Liciel, Alain, Tolteck, Obat, Batappli, ProDevis : vous gardez votre logiciel. Automatex branche des relances et des réponses par-dessus Gmail, SMS et calendrier." as const;
 
 export const COCON_CTA_REASSURANCE = `${PRICING_REASSURANCE_CARD} · ${RESPONSE_DELAYS.demo}` as const;
 

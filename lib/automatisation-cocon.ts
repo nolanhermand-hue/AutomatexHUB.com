@@ -54,7 +54,7 @@ export const COCON_PILIER: CoconPilierPage = {
   pilierFaq: [
     {
       q: "Est-ce un logiciel de devis ou de DPE ?",
-      a: "Non. Automatex ne remplace pas ProDevis, Tolteck, Liciel ou ORIS. Nolan automatise relances, réponses et rappels autour de ce que vous faites déjà dans ces outils.",
+      a: "Non. Automatex ne remplace pas ProDevis, Tolteck ou Liciel. Nolan automatise relances, réponses et rappels autour de ce que vous faites déjà dans ces outils.",
     },
     {
       q: "Quelles automatisations sont prêtes en premier ?",
@@ -118,9 +118,9 @@ const pains: CoconPainPage[] = [
         h2: "Diagnostiqueur — missions et prescripteurs",
         paragraphs: [
           "Les agences et prescripteurs attendent un retour rapide sur le devis de mission. Un silence de plusieurs jours fait passer le dossier à un confrère.",
-          "Relance ciblée sur la mission (adresse, type de diag) sans reprendre toute la saisie Liciel ou ORIS.",
+          "Relance ciblée sur la mission (adresse, type de diag) sans reprendre toute la saisie Liciel ou Alain.",
         ],
-        toolsLine: "Compatible avec votre flux Liciel / ORIS — relance seulement.",
+        toolsLine: "Compatible avec votre flux Liciel / Alain — relance seulement.",
       },
       {
         id: "chauffagiste",
@@ -178,7 +178,7 @@ const pains: CoconPainPage[] = [
         paragraphs: [
           "Un prescripteur appelle entre deux visites. Le SMS confirme que vous avez vu l'appel et proposes un créneau de rappel.",
         ],
-        toolsLine: "Compatible missions Liciel / ORIS — pas de saisie diag automatique.",
+        toolsLine: "Compatible missions Liciel / Alain — pas de saisie diag automatique.",
       },
       {
         id: "chauffagiste",
@@ -194,7 +194,7 @@ const pains: CoconPainPage[] = [
         paragraphs: [
           "Appel manqué sur un dossier en montage : SMS professionnel, invitation à envoyer pièces par le canal habituel.",
         ],
-        toolsLine: "Complète votre logiciel dossier — pas de simulation de crédit.",
+        toolsLine: "Complète votre logiciel dossier — pas de scoring crédit automatisé.",
       },
     ],
     relatedSlugs: ["relance-devis-automatique", "rappel-lead-instantane"],
@@ -236,7 +236,7 @@ const pains: CoconPainPage[] = [
         paragraphs: [
           "Pas de rapport final tant que la mission n'est pas réglée ou qu'une pièce agence manque. Relance prescripteur et client selon votre règle.",
         ],
-        toolsLine: "Liciel / ORIS inchangés — relance et statut seulement.",
+        toolsLine: "Liciel / Alain inchangés — relance et statut seulement.",
       },
       {
         id: "chauffagiste",
@@ -287,7 +287,7 @@ const pains: CoconPainPage[] = [
         paragraphs: [
           "Mission urgente pour une vente : l'agence contacte trois diagnostics. La première réponse structurée garde le créneau.",
         ],
-        toolsLine: "Boîte mail + calendrier — saisie mission reste dans Liciel / ORIS.",
+        toolsLine: "Boîte mail + calendrier — saisie mission reste dans Liciel / Alain.",
       },
       {
         id: "couvreur",
@@ -319,7 +319,7 @@ const pains: CoconPainPage[] = [
         paragraphs: [
           "Même mécanique sur une demande agence : réponse rapide pendant la mission DPE ou amiante. Le hub dédié diagnostiqueurs est /immobilier.",
         ],
-        toolsLine: "Mail existant — saisie mission reste dans Liciel / ORIS.",
+        toolsLine: "Mail existant — saisie mission reste dans Liciel / Alain.",
       },
     ],
     relatedSlugs: ["prise-rdv-automatique", "sms-appel-manque"],
@@ -353,7 +353,7 @@ const pains: CoconPainPage[] = [
         paragraphs: [
           "L'agence propose trois logements : vous envoyez automatiquement vos plages de visite diag disponibles.",
         ],
-        toolsLine: "Calendrier + mail — mission saisie ensuite dans Liciel / ORIS.",
+        toolsLine: "Calendrier + mail — mission saisie ensuite dans Liciel / Alain.",
       },
       {
         id: "couvreur",

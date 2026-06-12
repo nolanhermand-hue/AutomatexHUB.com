@@ -24,7 +24,7 @@ const badgeMuted = "bg-[#2a2a2a] text-[rgba(245,244,241,0.55)]";
 export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
   immobilier: {
     title: "Ce qui se passe quand un client arrive à 22h",
-    note: "Simulation basée sur une configuration type diagnostiqueur indépendant en Normandie.",
+    note: "Exemple basé sur une configuration type diagnostiqueur indépendant en Normandie.",
     steps: [
       {
         time: "22h03",
@@ -76,7 +76,7 @@ Diagnostiqueur immobilier · Orne`,
   },
   "btp-appel": {
     title: "Ce qui se passe quand vous ne pouvez pas décrocher",
-    note: "Simulation basée sur une configuration type artisan BTP solo dans l'Orne.",
+    note: "Exemple basé sur une configuration type artisan BTP solo dans l'Orne.",
     steps: [
       {
         time: "10h17",
@@ -123,7 +123,7 @@ J'ai bien reçu votre appel. Je suis sur un chantier — je vous rappelle avant 
   },
   "btp-devis": {
     title: "De la note vocale au devis envoyé — 4 minutes",
-    note: "Simulation. Le template devis est personnalisé lors de l'onboarding avec vos tarifs.",
+    note: "Exemple type. Le template devis est personnalisé lors de l'onboarding avec vos tarifs.",
     steps: [
       {
         time: "17h34",

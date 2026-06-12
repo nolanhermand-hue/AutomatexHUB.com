@@ -16,7 +16,7 @@ export function RoiCounter({ variant, className }: RoiCounterProps) {
   const label =
     variant === "immobilier"
       ? "Mission moyenne préservée si 1 créneau agence est rattrapé à temps"
-      : "Ordre de grandeur si 1 devis part pendant que vous êtes sur le chantier";
+      : "Exemple terrain si 1 devis part pendant que vous êtes sur le chantier";
 
   const foot =
     variant === "immobilier"

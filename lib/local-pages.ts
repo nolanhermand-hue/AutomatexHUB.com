@@ -41,7 +41,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
       {
         h2: "Outils déjà en place",
         paragraphs: [
-          "Gmail ou Outlook, Google Agenda, Liciel / ORIS / Alain pour la saisie mission : Automatex se branche sur la boîte mail existante. Pas de changement visible pour l'agence.",
+          "Gmail ou Outlook, Google Agenda, Liciel / Alain pour la saisie mission : Automatex se branche sur la boîte mail existante. Pas de changement visible pour l'agence.",
         ],
       },
     ],
