@@ -34,7 +34,7 @@ export function VosDonneesView() {
         <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-text">
           Vos données vous appartiennent.
           <br />
-          On vous dit exactement ce qu&apos;on en fait.
+          Automatex vous dit exactement ce qu&apos;il en fait.
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
           Automatex manipule des données professionnelles sensibles — emails, devis, contacts clients.
@@ -90,6 +90,16 @@ export function VosDonneesView() {
 
         <SectionBlock>
           <ModuleHeader n="02" />
+          <h2 className="mb-3 text-2xl font-bold text-text">Flux métier en Union européenne</h2>
+          <p className="mb-6 text-sm leading-relaxed text-muted">
+            Automatisations, traitement linguistique et classement documents clients : hébergement et
+            sous-traitants documentés ci-dessous (priorité UE).
+          </p>
+          <h3 className="mb-3 text-lg font-semibold text-text">Site vitrine et formulaires</h3>
+          <p className="mb-8 text-sm leading-relaxed text-muted">
+            Le site public est statique (Netlify). Les formulaires de démo passent par Netlify Forms
+            (USA) — détail et statut de migration en bas de liste.
+          </p>
           <h2 className="mb-3 text-2xl font-bold text-text">Où vont vos données — exactement</h2>
           <p className="mb-8 text-sm leading-relaxed text-muted">
             Chaque outil utilisé par Automatex, avec la localisation précise des serveurs et le type de

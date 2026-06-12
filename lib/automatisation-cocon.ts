@@ -49,12 +49,12 @@ export const COCON_PILIER: CoconPilierPage = {
   h1: "Automatisations pour artisans et indépendants — sans changer votre logiciel métier",
   intro: [
     "Vous avez déjà un outil pour chiffrer, diagnostiquer ou monter un dossier. Le trou, c'est souvent après : relancer, répondre quand vous êtes sur le terrain, rappeler un client ou bloquer un livrable tant qu'une pièce manque.",
-    "Automatex branche des enchaînements par-dessus Gmail, SMS et calendrier. Pas de promesse magique : on cadre le périmètre en démo de 20 minutes.",
+    "Automatex branche des enchaînements par-dessus Gmail, SMS et calendrier. Pas de promesse magique : Nolan cade le périmètre en démo de 20 minutes.",
   ],
   pilierFaq: [
     {
       q: "Est-ce un logiciel de devis ou de DPE ?",
-      a: "Non. On ne remplace pas ProDevis, Tolteck, Liciel ou ORIS. On automatise relances, réponses et rappels autour de ce que vous faites déjà dans ces outils.",
+      a: "Non. Automatex ne remplace pas ProDevis, Tolteck, Liciel ou ORIS. Nolan automatise relances, réponses et rappels autour de ce que vous faites déjà dans ces outils.",
     },
     {
       q: "Quelles automatisations sont prêtes en premier ?",
@@ -78,7 +78,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Relances & suivi",
     heroAccroche: "Le devis est parti. Le silence aussi.",
     heroSub:
-      "On déclenche une relance propre après le délai que vous choisissez, sans réécrire le même mail chaque soir.",
+      "Automatex déclenche une relance propre après le délai que vous choisissez, sans réécrire le même mail chaque soir.",
     howItWorks: [
       {
         title: "Vous marquez le devis comme envoyé",
@@ -95,8 +95,8 @@ const pains: CoconPainPage[] = [
     ],
     localFaq: [
       {
-        q: "Ça remplace mon logiciel de devis ?",
-        a: "Non. La relance part autour du devis déjà produit dans Tolteck, Obat, Batappli ou ProDevis. On ne refait pas le chiffrage à votre place.",
+        q: "Ça remplace votre logiciel de devis ?",
+        a: "Non. La relance part autour du devis déjà produit dans Tolteck, Obat, Batappli ou ProDevis. Automatex ne refait pas le chiffrage à votre place.",
       },
       {
         q: "Et si le client a déjà signé ailleurs ?",
@@ -160,7 +160,7 @@ const pains: CoconPainPage[] = [
     localFaq: [
       {
         q: "Le client voit un numéro bizarre ?",
-        a: "On utilise votre numéro professionnel ou un expéditeur validé avec vous. Pas de spam massif : un SMS par appel manqué utile.",
+        a: "Nolan utilise votre numéro professionnel ou un expéditeur validé avec vous. Pas de spam massif : un SMS par appel manqué utile.",
       },
     ],
     tradeSections: [
@@ -334,7 +334,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Agenda & terrain",
     heroAccroche: "Cinq mails pour trouver un créneau, c'est cinq soirées perdues.",
     heroSub:
-      "On propose des plages depuis votre calendrier ou vos règles, le client choisit, vous recevez la confirmation.",
+      "Automatex propose des plages depuis votre calendrier ou vos règles, le client choisit, vous recevez la confirmation.",
     howItWorks: [
       { title: "Demande de RDV", body: "Mail ou SMS entrant après demande ou relance." },
       { title: "Créneaux proposés", body: "Lien ou liste courte alignée sur Google Calendar / Outlook." },

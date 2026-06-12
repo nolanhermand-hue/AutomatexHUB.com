@@ -65,7 +65,7 @@ export function AccompanimentPillars({
               Mon travail, c&apos;est que vous n&apos;y pensiez plus.&rdquo;
             </p>
             <footer className="font-mono text-[11px] uppercase tracking-wide text-faint">
-              — Nolan Hermand · Fondateur · Flers, Orne
+              — Nolan Hermand · Flers, Orne
             </footer>
           </blockquote>
         ) : null}

@@ -15,7 +15,7 @@ export type HomeHeroIntegrationLogo = (typeof HOME_HERO_INTEGRATION_LOGOS)[numbe
 
 /** 15 outils — barre de confiance (hors hero). */
 export const HOME_TECH_LOGOS = [
-  { id: "n8n", name: "N8N", src: `${BASE}/n8n.svg`, ring: "hub" as const },
+  { id: "n8n", name: "Automatisations UE", src: `${BASE}/n8n.svg`, ring: "hub" as const },
   { id: "mistral", name: "Mistral", src: `${BASE}/mistral.svg`, ring: "inner" as const },
   { id: "gmail", name: "Gmail", src: `${BASE}/gmail.svg`, ring: "inner" as const },
   { id: "google-drive", name: "Google Drive", src: `${BASE}/google-drive.svg`, ring: "inner" as const },

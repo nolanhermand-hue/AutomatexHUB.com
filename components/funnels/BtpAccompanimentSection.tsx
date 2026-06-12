@@ -24,7 +24,7 @@ export function BtpAccompanimentSection() {
         <blockquote className="mt-10 border-l-4 border-primary pl-4 text-muted">
           <p className="italic">&ldquo;{BTP_ACCOMPANIMENT.quote}&rdquo;</p>
           <footer className="mt-2 text-sm font-semibold text-text">
-            — {NAP.founder}, fondateur Automatex Hub
+            — {NAP.founder}, Automatex Hub
           </footer>
         </blockquote>
         <p className="mt-6">

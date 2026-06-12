@@ -88,21 +88,6 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="border-t border-border py-10">
-        <div className="max-w-2xl card border-primary/30 p-5">
-          <h3 className="text-sm font-bold text-primary">{ABOUT_PAGE.launchTransparency.title}</h3>
-          <p className="mt-2 text-xs leading-relaxed text-muted">
-            {ABOUT_PAGE.launchTransparency.body}
-          </p>
-          <Link
-            href={ABOUT_PAGE.launchTransparency.href}
-            className="mt-4 btn-bracket btn-bracket-primary"
-          >
-            {ABOUT_PAGE.launchTransparency.cta}
-          </Link>
-        </div>
-      </section>
-
       <div className="max-w-readable space-y-4 text-base leading-relaxed text-muted">
         {ABOUT_PAGE.narrative.map((paragraph) => (
           <p key={paragraph.slice(0, 40)}>{paragraph}</p>

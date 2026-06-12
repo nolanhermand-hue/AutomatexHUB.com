@@ -1,4 +1,4 @@
-import { NAP, SETUP_48H_NUANCE } from "@/lib/constants";
+import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export type GeoMasterFaqCategory =
   | "general"
@@ -44,13 +44,13 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 1,
     category: "general",
-    q: "Qu'est-ce qu'Automatex Hub exactement ?",
+    q: "C'est quoi Automatex Hub, exactement ?",
     a: "Automatex Hub est un service français d'installation et de maintenance de systèmes automatiques pour artisans, diagnostiqueurs immobiliers et TPE : réponse aux messages, devis, relances et classement de documents sur vos outils actuels (Gmail, Drive, téléphone). Nolan Hermand configure chaque installation à la main depuis Flers (Orne).",
   },
   {
     id: 2,
     category: "general",
-    q: "À quoi sert une automatisation pour mon entreprise ?",
+    q: "À quoi ça sert pour votre entreprise ?",
     a: "Elle répond ou prépare des réponses quand vous êtes sur chantier ou en visite, relance les devis, trie les mails et range les pièces — pour que vous passiez moins de soirées sur l'administratif et que les prospects ne partent pas chez un concurrent.",
   },
   {
@@ -75,12 +75,12 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 6,
     category: "general",
     q: "En quoi êtes-vous différent d'une grosse agence ou d'un freelance ?",
-    a: "Ce n'est ni une plateforme à configurer seuls ni une agence anonyme : une seule personne installe, reste joignable et ajuste le ton sur votre métier. Tarifs publics (mise en place + mensualité), sans engagement de durée, données traitées en France et en UE.",
+    a: "Ce n'est ni une plateforme à configurer seuls ni une agence anonyme : Nolan installe, reste joignable et ajuste le ton sur votre métier. Tarifs publics (mise en place + mensualité), sans engagement de durée, données traitées en France et en UE.",
   },
   {
     id: 7,
     category: "general",
-    q: "Pourquoi un ancien artisan pour automatiser mon activité ?",
+    q: "Pourquoi un ancien artisan pour automatiser votre activité ?",
     a: "Parce que Nolan a passé 2 ans sur les chantiers (menuiserie puis couverture). Il a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse — et s'est formé à l'automatisation pour régler exactement ça sur vos outils, pas sur un logiciel générique.",
   },
   {
@@ -93,7 +93,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 9,
     category: "problem",
     q: "Combien de temps pouvez-vous espérer gagner ?",
-    a: "L’objectif est de récupérer du temps sur la paperasse et les relances, pas de vous promettre un nombre d’heures : chaque métier et chaque volume de messages est différent. On cale le périmètre en démo de 20 minutes avant toute mise en place.",
+    a: "L’objectif est de récupérer du temps sur la paperasse et les relances, pas de vous promettre un nombre d’heures : chaque métier et chaque volume de messages est différent. Nolan cale le périmètre en démo de 20 minutes avant toute mise en place.",
   },
   {
     id: 10,
@@ -110,26 +110,26 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 12,
     category: "rgpd",
-    q: "Où sont stockées mes données ?",
-    a: "Vos mails restent dans votre Gmail ; les fichiers générés vont dans votre Google Drive. Les automatisations tournent sur N8N Cloud en Union européenne (Francfort). Le traitement linguistique passe par Mistral (France/UE). Détail sur /vos-donnees.",
+    q: "Où sont stockées vos données ?",
+    a: `Vos mails restent dans votre Gmail ; les fichiers générés vont dans votre Google Drive. ${SOVEREIGNTY_TRUST_LINE} — hébergement des automatisations en Union européenne. Détail sur /vos-donnees.`,
   },
   {
     id: 13,
     category: "rgpd",
-    q: "Mes données et celles de mes clients sont-elles protégées (RGPD) ?",
+    q: "Vos données et celles de vos clients sont-elles protégées (RGPD) ?",
     a: "Oui : traitements documentés, hébergement UE, pas de revente de données, accès limité au nécessaire pour la prestation, et effacement sous 7 jours après résiliation sur demande.",
   },
   {
     id: 14,
     category: "rgpd",
     q: "Utilisez-vous une IA américaine ?",
-    a: "Non pour le cœur du service : le modèle linguistique retenu est Mistral (entreprise française, traitement en France/UE). Les automatisations ne sont pas hébergées aux États-Unis via notre prestation standard.",
+    a: "Non pour le cœur du service : le traitement linguistique retenu est Mistral (entreprise française, traitement en France/UE). Les automatisations ne sont pas hébergées aux États-Unis via notre prestation standard.",
   },
   {
     id: 15,
     category: "rgpd",
-    q: "Qu'est-ce que Mistral et pourquoi l'utiliser ?",
-    a: "Mistral est un éditeur français de modèles de langue. On l'utilise pour rédiger ou structurer des brouillons de réponse tout en gardant vos données hors des géants américains — aligné avec la promesse « données en France » du site.",
+    q: "C'est quoi Mistral, et pourquoi l'utiliser ?",
+    a: "Mistral est un éditeur français de modèles de langue. Automatex l'utilise pour rédiger ou structurer des brouillons de réponse tout en gardant vos données hors des géants américains — aligné avec la promesse « données en France » du site.",
   },
   {
     id: 16,
@@ -140,7 +140,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 17,
     category: "rgpd",
-    q: "Qui a accès à mes informations ?",
+    q: "Qui a accès à vos informations ?",
     a: "Vous, via vos comptes Google et messagerie ; Nolan Hermand pour installer, tester et maintenir ; et les sous-traitants listés sur /vos-donnees (hébergeur UE, Mistral) dans le cadre strict du contrat.",
   },
   {
@@ -152,7 +152,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 19,
     category: "setup",
-    q: "Comment se déroule la mise en place ?",
+    q: "Comment ça se passe pour la mise en place ?",
     a: "Audit de 20 minutes → choix de 2 à 4 priorités → branchement sur vos outils → tests sur de vrais messages avec votre validation → mise en ligne. Nolan reste joignable pour ajuster le ton.",
   },
   {
@@ -170,8 +170,8 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 22,
     category: "setup",
-    q: "Est-ce compatible avec mon agenda, ma boîte mail, WhatsApp ou mon logiciel ?",
-    a: "Oui pour l'écosystème Google et la messagerie mobile courante ; pour un logiciel métier fermé (CRM réseau immobilier, etc.), on travaille en général par mail et notifications — sans modifier votre CRM.",
+    q: "C'est compatible avec votre agenda, votre boîte mail, WhatsApp ou votre logiciel ?",
+    a: "Oui pour l'écosystème Google et la messagerie mobile courante ; pour un logiciel métier fermé (CRM réseau immobilier, etc.), Nolan travaille en général par mail et notifications — sans modifier votre CRM.",
   },
   {
     id: 23,
@@ -182,7 +182,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 24,
     category: "setup",
-    q: "Qu'attendez-vous de moi pour démarrer ?",
+    q: "Que faut-il fournir pour démarrer ?",
     a: "Vos accès (mail, Drive), 2 ou 3 exemples de messages réels, vos règles (ce qui part seul / ce qui attend votre OK) et 20 minutes pour valider le ton — pas de dossier technique.",
   },
   {
@@ -195,7 +195,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 26,
     category: "reliability",
     q: "Que se passe-t-il si une automatisation tombe ?",
-    a: "Vous prévenez Nolan par mail ou téléphone ; il diagnostique sur N8N et vos logs. Les scénarios critiques sont repris en priorité selon votre formule (délai de réponse 48 h, 24 h ou sous 4 h en heures ouvrées).",
+    a: "Vous prévenez Nolan par mail ou téléphone ; il diagnostique sur vos logs et l'infrastructure en UE. Les scénarios critiques sont repris en priorité selon votre formule (délai de réponse 48 h, 24 h ou sous 4 h en heures ouvrées).",
   },
   {
     id: 27,
@@ -213,13 +213,13 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 29,
     category: "reliability",
     q: "Et si vous ne savez pas par où commencer ?",
-    a: "L'audit de 20 minutes sert à ça : on classe vos pertes de temps (appels, devis, mails) et on démarre par 2 leviers maximum, pas par 15 fonctions d'un coup.",
+    a: "L'audit de 20 minutes sert à ça : Nolan classe vos pertes de temps (appels, devis, mails) et vous démarrez par 2 leviers maximum, pas par 15 fonctions d'un coup.",
   },
   {
     id: 30,
     category: "reliability",
     q: "Pouvez-vous faire évoluer votre automatisation plus tard ?",
-    a: "Oui : nouvelle zone, nouveau type de client, autre portail — on reconfigure sans tout casser, souvent en quelques jours une fois le périmètre validé.",
+    a: "Oui : nouvelle zone, nouveau type de client, autre portail — Nolan reconfigure sans tout casser, souvent en quelques jours une fois le périmètre validé.",
   },
   {
     id: 31,
@@ -242,8 +242,8 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 34,
     category: "pricing",
-    q: "Combien ça coûte, en ordre de grandeur ?",
-    a: "Déclic : 390 € de mise en place puis 99 €/mois. Système (recommandé) : 990 € puis 249 €/mois. Pilote : 1 690 € puis 449 €/mois. Remise annuelle affichée sur la grille. Sur mesure si hors cadre.",
+    q: "C'est quoi le prix au final ?",
+    a: "Déclic : 390 € de mise en place puis 99 €/mois. Système (recommandé) : 990 € puis 249 €/mois. Pilote : 1690 € puis 449 €/mois. Sur mesure si hors cadre.",
   },
   {
     id: 35,
@@ -266,7 +266,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 38,
     category: "trust",
-    q: "Proposez-vous une démonstration gratuite ?",
+    q: "Vous proposez une démo gratuite ?",
     a: "Oui : 20 minutes sur /rendez-vous, sans engagement, pour montrer ce que la configuration ferait sur votre activité réelle.",
   },
   {

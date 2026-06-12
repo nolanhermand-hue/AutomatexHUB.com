@@ -32,7 +32,7 @@ function stepBadgeClass(step: LiveDemoStep): string {
 export function LiveDemoBlock({
   variant,
   ctaHref = "/rendez-vous",
-  ctaLabel = "Voir comment ça s'installe sur mon activité",
+  ctaLabel = "Voir comment ça s'installe sur votre activité",
 }: LiveDemoBlockProps) {
   const demo = LIVE_DEMOS[variant];
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,7 +76,7 @@ export function LiveDemoBlock({
           <span className="ml-2 font-mono text-[11px] text-faint">{demo.title}</span>
         </div>
         <span className="rounded border border-border bg-surface-2 px-2 py-0.5 font-mono text-[10px] uppercase text-faint">
-          simulation
+          démo
         </span>
       </div>
 

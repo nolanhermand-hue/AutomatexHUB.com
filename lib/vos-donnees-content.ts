@@ -15,27 +15,6 @@ export type InfraStackItem = {
 export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
   {
     id: "01",
-    role: "Site web & landing pages",
-    provider: "Netlify",
-    location: "CDN mondial · Données serveur : USA",
-    flag: "🌍",
-    dataType: "Pages statiques uniquement · Aucune donnée personnelle stockée",
-    rgpd: true,
-    note: "Le site est un fichier HTML statique. Aucune donnée utilisateur n'est stockée sur Netlify.",
-  },
-  {
-    id: "02",
-    role: "Formulaires de contact",
-    provider: "Netlify Forms",
-    location: "USA (AWS)",
-    flag: "🇺🇸",
-    dataType: "Prénom · Téléphone · Activité professionnelle",
-    rgpd: true,
-    note: "Les soumissions de formulaires sont stockées temporairement sur Netlify (USA). Nolan les consulte et les supprime après traitement. Durée de conservation : 30 jours maximum.",
-    action: "Migration vers hébergement EU envisagée en 2026",
-  },
-  {
-    id: "03",
     role: "Moteur d'automatisation",
     provider: "N8N Cloud",
     location: "Francfort · Allemagne · Union Européenne",
@@ -47,7 +26,7 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     docs: "https://docs.n8n.io/privacy-security/",
   },
   {
-    id: "04",
+    id: "02",
     role: "Intelligence artificielle",
     provider: "Mistral AI",
     location: "Paris · France · Union Européenne",
@@ -58,7 +37,7 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     docs: "https://mistral.ai/privacy/",
   },
   {
-    id: "05",
+    id: "03",
     role: "Stockage documents (clients Pro+)",
     provider: "Google Drive",
     location: "UE (option régionale) · USA possible",
@@ -66,6 +45,27 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     dataType: "Documents professionnels du client (devis, factures, contrats)",
     rgpd: true,
     note: "Google Drive appartient au client — Automatex y accède uniquement pour classer les documents du client. Aucune copie sur les serveurs Automatex. Le client contrôle son Drive.",
+  },
+  {
+    id: "04",
+    role: "Site web & landing pages",
+    provider: "Netlify",
+    location: "CDN mondial · Données serveur : USA",
+    flag: "🌍",
+    dataType: "Pages statiques uniquement · Aucune donnée personnelle stockée",
+    rgpd: true,
+    note: "Le site est un fichier HTML statique. Aucune donnée utilisateur n'est stockée sur Netlify.",
+  },
+  {
+    id: "05",
+    role: "Formulaires de contact",
+    provider: "Netlify Forms",
+    location: "USA (AWS)",
+    flag: "🇺🇸",
+    dataType: "Prénom · Téléphone · Activité professionnelle",
+    rgpd: false,
+    note: "Les soumissions de formulaires sont stockées temporairement sur Netlify (USA). Nolan les consulte et les supprime après traitement. Durée de conservation : 30 jours maximum. Transfert hors UE documenté ; vous pouvez aussi nous écrire directement par mail ou téléphone.",
+    action: "Migration vers stockage formulaires en UE : en cours de cadrage (mise à jour juin 2026)",
   },
 ];
 
@@ -152,7 +152,7 @@ export const VOS_DONNEES_FAQ = [
     a: "Non via Automatex. Le traitement est fait par Mistral AI (Paris/Allemagne). L'orchestration est faite par N8N Cloud (Francfort, Allemagne). Vos emails ne transitent pas par les États-Unis via nos prestations. Ils restent dans votre boîte Gmail — Google est américain, c'est un choix que vous avez fait avant Automatex.",
   },
   {
-    q: "Nolan peut-il lire mes emails ?",
+    q: "Nolan peut-il lire vos emails ?",
     a: "Techniquement, Nolan a accès aux enchaînements N8N qui traitent vos emails. Il peut voir les logs d'exécution pendant le débogage. Il s'engage contractuellement à ne pas lire le contenu de vos emails sauf si vous lui demandez explicitement de l'aide pour résoudre un problème.",
   },
   {
@@ -164,7 +164,7 @@ export const VOS_DONNEES_FAQ = [
     a: "Non. Les données de vos clients sont traitées dans votre espace N8N dédié, isolé des autres clients Automatex. Nolan ne les voit pas sauf en cas de débogage explicitement demandé. Elles ne sont jamais partagées avec d'autres clients.",
   },
   {
-    q: "Mistral apprend-il à partir de mes données ?",
+    q: "Mistral apprend-il à partir de vos données ?",
     a: "Non. Mistral AI ne réutilise pas les données envoyées via API pour entraîner ses modèles. C'est garanti contractuellement dans leur Data Processing Agreement (DPA), aligné RGPD.",
   },
   {

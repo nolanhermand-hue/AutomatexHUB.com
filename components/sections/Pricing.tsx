@@ -1,23 +1,29 @@
 "use client";
 
-import { BillingSwitch } from "@/components/ui/BillingSwitch";
 import { PricingPackGrid } from "@/components/pricing/PricingPackGrid";
 import { PricingSurMesureBanner } from "@/components/pricing/PricingSurMesureBanner";
 import { PRICING_HEADING } from "@/lib/constants";
 import { HOME_PRICING } from "@/lib/home-copy";
+import { BTP_PRICING_HEADING } from "@/lib/btp-copy";
 import { cn } from "@/lib/cn";
 import { SectionCta } from "@/components/ui/SectionCta";
-import { useState } from "react";
-import type { PricingBillingCycle } from "@/components/pricing/PricingPackCard";
+import type { PricingPackAudience } from "@/lib/constants";
 
 type PricingProps = {
-  audience?: "default" | "home";
+  audience?: PricingPackAudience;
 };
 
 export function Pricing({ audience = "default" }: PricingProps) {
   const isHome = audience === "home";
-  const [cycle, setCycle] = useState<PricingBillingCycle>("monthly");
-  const packAudience = isHome ? "home" : "default";
+  const isBtp = audience === "btp";
+
+  const eyebrow = isHome ? HOME_PRICING.eyebrow : PRICING_HEADING.eyebrow;
+  const h2 = isBtp ? BTP_PRICING_HEADING.h2 : isHome ? HOME_PRICING.h2 : PRICING_HEADING.h2;
+  const sub = isBtp
+    ? BTP_PRICING_HEADING.sub
+    : isHome
+      ? HOME_PRICING.sub
+      : PRICING_HEADING.h2SurMesureHint;
 
   return (
     <section
@@ -29,34 +35,17 @@ export function Pricing({ audience = "default" }: PricingProps) {
       data-analytics-section="pricing"
     >
       <div className="mx-auto max-w-content">
-        <p className="label-micro text-accent">
-          {isHome ? HOME_PRICING.eyebrow : PRICING_HEADING.eyebrow}
-        </p>
-        <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">
-          {isHome ? HOME_PRICING.h2 : PRICING_HEADING.h2}
-        </h2>
+        <p className="label-micro text-accent">{eyebrow}</p>
+        <h2 className="mt-2 font-heading text-3xl text-text md:text-4xl">{h2}</h2>
         <p className="mt-3 max-w-[52ch] text-sm font-medium leading-relaxed text-muted md:text-[15px]">
-          {isHome ? HOME_PRICING.sub : PRICING_HEADING.h2SurMesureHint}
+          {sub}
         </p>
-
-        <BillingSwitch
-          isAnnual={cycle === "annual"}
-          onChange={(annual) => setCycle(annual ? "annual" : "monthly")}
-          monthlyLabel={PRICING_HEADING.toggleMonthly}
-          annualLabel={PRICING_HEADING.toggleAnnual}
-          discountLabel={PRICING_HEADING.annualDiscountLabel}
-          className="mt-8"
-        />
 
         <PricingSurMesureBanner />
 
-        <PricingPackGrid
-          cycle={cycle}
-          audience={packAudience}
-          variant={isHome ? "home" : "default"}
-        />
+        <PricingPackGrid audience={audience} variant={isHome ? "home" : "default"} />
 
-        {!isHome ? (
+        {!isHome && !isBtp ? (
           <p className="mx-auto mt-10 max-w-[52ch] text-center text-sm leading-relaxed text-muted md:text-[15px]">
             {PRICING_HEADING.customFitFootnote}
           </p>

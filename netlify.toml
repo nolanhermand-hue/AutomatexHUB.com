@@ -16,22 +16,22 @@
   status = 301
   force = true
 
-# Mandataires → cluster Normandie
+# Mandataires (legacy) → pilier immobilier / diagnostiqueurs
 [[redirects]]
   from = "/mandataires-flers"
-  to = "/normandie/flers"
+  to = "/immobilier"
   status = 301
 [[redirects]]
   from = "/mandataires-alencon"
-  to = "/normandie/alencon"
+  to = "/immobilier"
   status = 301
 [[redirects]]
   from = "/mandataires-argentan"
-  to = "/normandie/argentan"
+  to = "/immobilier"
   status = 301
 [[redirects]]
   from = "/mandataires-normandie"
-  to = "/normandie"
+  to = "/immobilier"
   status = 301
 
 # Devis legacy → pilier cocon

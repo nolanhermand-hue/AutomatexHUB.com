@@ -1,4 +1,5 @@
 import { AutomationCard } from "@/components/catalog/AutomationCard";
+import { CATALOG_CATEGORY_ANSWER } from "@/lib/automatisations-catalog-pricing";
 import { CATEGORIES, categoryToAnchor, getByCategory } from "@/lib/automations-catalog";
 
 export function AutomatisationsCatalogSections() {
@@ -19,6 +20,11 @@ export function AutomatisationsCatalogSections() {
                 {items.length} automatisation{items.length > 1 ? "s" : ""}
               </span>
             </div>
+            {CATALOG_CATEGORY_ANSWER[category] ? (
+              <p className="mb-6 max-w-readable text-sm leading-relaxed text-text">
+                {CATALOG_CATEGORY_ANSWER[category]}
+              </p>
+            ) : null}
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {items.map((automation) => (
                 <div key={automation.id} className="animate-on-scroll">

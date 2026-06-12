@@ -99,6 +99,15 @@ export function Footer() {
           {" · "}
           <span itemProp="founder">{NAP.founder}</span>
           <br />
+          <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+            <span itemProp="streetAddress">{NAP.streetAddress}</span>
+            {", "}
+            <span itemProp="postalCode">{NAP.postalCode}</span>{" "}
+            <span itemProp="addressLocality">{NAP.city}</span>
+            {", "}
+            <span itemProp="addressRegion">{NAP.region}</span>
+          </span>
+          <br />
           <a href={`mailto:${NAP.email}`} itemProp="email" className="text-text hover:text-primary">
             {NAP.email}
           </a>

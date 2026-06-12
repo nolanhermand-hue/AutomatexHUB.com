@@ -106,7 +106,7 @@ export function HubEntry() {
               className="btn-bracket btn-bracket-primary"
               data-analytics-cta="hub_demo_unified"
             >
-              Nolan me rappelle sous 24 h
+              Nolan vous rappelle sous 24 h
             </Link>
             <p className="font-mono text-[10px] uppercase tracking-wide text-faint">
               Démo gratuite · 20 min · Sans engagement · Flers, Orne

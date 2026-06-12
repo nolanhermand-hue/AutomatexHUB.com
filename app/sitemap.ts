@@ -7,6 +7,7 @@ import {
   NORMANDIE_PILIER,
   NORMANDIE_VILLES,
 } from "@/lib/villes-normandie";
+import { COMPARATIF_LAST_UPDATED } from "@/lib/comparatif-shared";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
@@ -56,6 +57,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/btp`, lastModified, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/automatisation-ia-tpe`, lastModified, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/automatisations`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    {
+      url: `${SITE_URL}/comparatif/telesecretariat-artisan`,
+      lastModified: new Date(COMPARATIF_LAST_UPDATED),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${SITE_URL}/comparatif/demandes-agences-diagnostiqueur`,
+      lastModified: new Date(COMPARATIF_LAST_UPDATED),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
     {
       url: `${SITE_URL}/automatisation-c-est-quoi`,
       lastModified: new Date(AUTOMATISATION_CEST_QUOI_LAST_MODIFIED),

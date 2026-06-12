@@ -1,7 +1,7 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
 import { MARKETING_REASSURANCE_BANNER } from "@/lib/constants";
 
-/** FAQ BTP SSR + accessible (C11) — style ORIS aligné FAQ immo. */
+/** FAQ BTP SSR + accessible (C11) — aligné FAQ immo. */
 export function BtpFaq() {
   return (
     <section id="faq" className="border-t border-border px-gutter py-16 md:py-20">

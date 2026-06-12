@@ -15,8 +15,8 @@ export const COCON_CTA_REASSURANCE = `${PRICING_REASSURANCE_CARD} · ${RESPONSE_
 
 export const COCON_GENERIC_FAQ: ReadonlyArray<CoconFaqItem> = [
   {
-    q: "Automatex remplace-t-il mon logiciel métier ?",
-    a: "Non. On ne vend pas de logiciel de devis, de DPE ou de chiffrage. On enchaîne des relances, des SMS et des mails à partir de ce que vous avez déjà saisi ou envoyé.",
+    q: "Automatex remplace-t-il votre logiciel métier ?",
+    a: "Non. Automatex ne vend pas de logiciel de devis, de DPE ou de chiffrage. Nolan enchaîne des relances, des SMS et des mails à partir de ce que vous avez déjà saisi ou envoyé.",
   },
   {
     q: "Comment on cale le périmètre ?",

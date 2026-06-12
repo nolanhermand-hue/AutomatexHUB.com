@@ -9,10 +9,10 @@ export function LocalGeoLinks() {
       aria-labelledby="geo-nav-heading"
     >
       <h2 id="geo-nav-heading" className="sr-only">
-        Mandataires immobiliers en Normandie — pages locales
+        Diagnostiqueurs et artisans en Normandie — pages locales
       </h2>
       <p className="mx-auto max-w-content text-center text-xs leading-relaxed text-muted md:text-sm">
-        <span className="font-medium text-text">Mandataires en Normandie : </span>
+        <span className="font-medium text-text">Normandie &amp; Orne : </span>
         {FOOTER_LOCAL_LINKS.map((link, index) => (
           <span key={link.href}>
             {index > 0 ? " · " : null}
@@ -24,6 +24,13 @@ export function LocalGeoLinks() {
             </Link>
           </span>
         ))}
+        {" · "}
+        <Link
+          href="/immobilier"
+          className="underline underline-offset-2 transition-colors hover:text-primary"
+        >
+          Diagnostiqueurs
+        </Link>
         {" · "}
         <Link
           href="/securite"
@@ -43,7 +50,7 @@ export function LocalGeoLinks() {
           href="/automatisation-ia-tpe"
           className="underline underline-offset-2 transition-colors hover:text-primary"
         >
-          Solution pour toute TPE
+          Automatisation pour toute TPE
         </Link>
       </p>
     </section>

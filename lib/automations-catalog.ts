@@ -308,35 +308,6 @@ export const AUTOMATIONS_CATALOG: CatalogAutomation[] = [
       { from: "Automatex", to: "Vous", icon: "bell", message: "Confirmation Telegram « RDV OK ».", type: "result" },
     ],
   },
-  {
-    id: "pipeline-hebdo",
-    category: "Suivi & Rapports Métier",
-    title: "Synthèse hebdomadaire des dossiers",
-    tagline: "Prospects actifs, visites et relances en retard.",
-    target: "both",
-    formula: "pilote",
-    steps: [
-      { from: "CRM", to: "Automatex", icon: "database", message: "Vue pipe vendredi 17 h.", type: "in" },
-      { from: "Automatex", to: "Moteur", icon: "chart", message: "Retards, taux conversion étape → étape.", type: "system", delay: 45 },
-      { from: "Automatex", to: "Mail", icon: "mail", message: "Récap PDF + top 5 actions semaine suivante.", type: "out" },
-      { from: "Automatex", to: "Direction", icon: "check", message: "Archivage dans `Pilotage/2026`.", type: "result" },
-    ],
-  },
-  {
-    id: "tableau-kpi-telegram",
-    category: "Suivi & Rapports Métier",
-    title: "Indicateurs temps réel sur Telegram",
-    tagline: "Nouvelle vente ou objectif sous le seuil : vous voyez tout.",
-    target: "both",
-    formula: "pilote",
-    steps: [
-      { from: "CRM / Caisse", to: "Automatex", icon: "bolt", message: "Événement : compromis signé ou CA jour.", type: "in" },
-      { from: "Automatex", to: "Calcul", icon: "chart", message: "Recalcul % objectif mensuel.", type: "system", delay: 1 },
-      { from: "Automatex", to: "Telegram", icon: "send", message: "Carte KPI : jauge verte ou alerte rouge.", type: "out" },
-      { from: "Automatex", to: "Historique", icon: "archive", message: "Épingle dans le canal `#pilotage`.", type: "result" },
-    ],
-    impact: "Réactivité collective sans réunion de service.",
-  },
 ];
 
 const CATEGORY_ANCHORS: Record<string, string> = {

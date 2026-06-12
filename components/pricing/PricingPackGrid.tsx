@@ -1,20 +1,19 @@
 "use client";
 
-import { trackOfferViewed } from "@/lib/analytics";
-import { PAID_OFFERS, type PricingPackAudience } from "@/lib/constants";
+import type { PricingPackAudience } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 import { useEffect } from "react";
-import { PricingPackCard, type PricingBillingCycle } from "@/components/pricing/PricingPackCard";
+import { PricingPackCard } from "@/components/pricing/PricingPackCard";
+import { PAID_OFFERS } from "@/lib/constants";
+import { trackOfferViewed } from "@/lib/analytics";
 
 type PricingPackGridProps = {
-  cycle: PricingBillingCycle;
   audience: PricingPackAudience;
   variant?: "default" | "home";
   className?: string;
 };
 
 export function PricingPackGrid({
-  cycle,
   audience,
   variant = "default",
   className,
@@ -60,7 +59,6 @@ export function PricingPackGrid({
           <PricingPackCard
             offer={offer}
             level={offerIndex + 1}
-            cycle={cycle}
             audience={audience}
             variant={variant}
           />

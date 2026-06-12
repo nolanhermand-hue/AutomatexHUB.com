@@ -5,17 +5,17 @@ export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 export const TPE_META = {
   title: "Automatisation pour TPE & PME — Accompagnement humain · Automatex",
   description:
-    "Réponses, devis, classement documents et relances sur vos outils actuels. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois. RGPD UE.",
+    "Réponses, devis, classement documents et relances sur vos outils actuels. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois. RGPD UE.",
   ogTitle: "Automatisation pour TPE — Sans compétences techniques · Automatex Hub",
   ogDescription:
-    "Un système qui travaille à votre place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois.",
+    "Un système qui travaille à votre place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois.",
 } as const;
 
 export const TPE_HERO = {
   eyebrow: "AUTOMATISATION · TPE & PME · FRANCE",
   h1Line1: "40 % de votre temps sur des tâches",
   h1Line2: "qui pourraient se faire toutes seules.",
-  statSource: "BCG 2025 (ordre de grandeur TPE)",
+  statSource: "BCG 2025",
   subtitle:
     "Automatex installe un système sur vos outils actuels. Zéro compétence technique de votre côté. Accompagnement mensuel inclus — vous restez sur votre métier.",
   stats: [
@@ -25,7 +25,7 @@ export const TPE_HERO = {
     { value: "UE", label: "RGPD · données UE" },
   ] as const,
   ctaPrimary: PRIMARY_DEMO_CTA,
-  ctaSecondary: "Voir ce qu'on automatise",
+  ctaSecondary: "Voir le catalogue d'automatisations",
 } as const;
 
 export const TPE_PAIN = {
@@ -39,14 +39,14 @@ export const TPE_PAIN = {
     },
     {
       stat: "26 %",
-      label: "des TPE françaises utilisent déjà l'IA en 2026",
+      label: "des TPE françaises ont accéléré l'admin numérique en 2026",
       source: "France Num 2026",
       trend: "↑ depuis 13 % en 2024",
     },
     {
       stat: "3 000 €/an",
       label: "d'abonnements SaaS empilés qu'un système unique peut remplacer",
-      source: "Estimation interne (ordre de grandeur)",
+      source: "Estimation interne",
     },
   ] as const,
   dayLabel: "UNE JOURNÉE SANS AUTOMATEX",
@@ -181,7 +181,7 @@ export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
     setup: 390,
     monthly: 99,
     blurb: "1 automatisation sur-mesure · accompagnement Essentiel inclus",
-    cta: "Tester sans risque",
+    cta: PRIMARY_DEMO_CTA,
   },
   {
     id: "systeme",
@@ -214,7 +214,7 @@ export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
 ];
 
 export const TPE_SECTORS = [
-  { icon: "🏠", label: "Mandataires immobiliers", href: "/immobilier", cta: "Voir la solution →" },
+  { icon: "🏠", label: "Diagnostiqueurs immobiliers", href: "/immobilier", cta: "Voir l'offre →" },
   { icon: "🪖", label: "Artisans BTP", href: "/btp", cta: "Voir la solution →" },
   { icon: "⚖️", label: "Professions libérales", href: "/rendez-vous", cta: "En parler →" },
   { icon: "🛍️", label: "Commerce de proximité", href: "/rendez-vous", cta: "En parler →" },
@@ -229,7 +229,7 @@ export const TPE_GEO_BLOCKS = [
   },
   {
     q: "Quel est le prix de l'automatisation pour une TPE chez Automatex ?",
-    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1 690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack.",
+    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack.",
   },
   {
     q: "Automatex utilise-t-il des modèles conformes RGPD ?",
@@ -248,7 +248,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Combien coûte l'automatisation IA pour une TPE en 2026 ?",
-    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1 690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.",
+    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.",
   },
   {
     q: "Faut-il être technique ?",
@@ -275,6 +275,3 @@ export const TPE_FAQ = [
     a: "Oui. Installation et maintenance à distance. Point mensuel par téléphone.",
   },
 ] as const;
-
-export const TPE_FOUNDERS_NOTE =
-  "Setup −20 %, prix mensuel bloqué à vie, accès prioritaire aux nouveautés — témoignage filmable avec votre accord.";

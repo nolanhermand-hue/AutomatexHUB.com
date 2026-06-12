@@ -8,6 +8,9 @@ export function Problem() {
         <h2 className="font-heading text-3xl text-text md:text-4xl">
           {PROBLEM_HEADING.h2}
         </h2>
+        <p className="mt-4 max-w-readable text-base leading-relaxed text-text">
+          {PROBLEM_HEADING.answerFirst}
+        </p>
         <div className="mt-8 overflow-hidden rounded-xl border border-border bg-bg-card md:grid md:grid-cols-3 md:divide-x md:divide-border">
           {PROBLEM_ITEMS.map((item) => {
             return (

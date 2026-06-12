@@ -17,7 +17,7 @@ const CUBES = [
     fill: "var(--color-terracotta)",
     stroke: "var(--color-primary)",
     label: "ACTION",
-    quote: "Ton système réagit seul",
+    quote: "Votre système réagit seul",
     detail: "Le système exécute : SMS, mail, devis, rappel.",
     icon: "gear" as const,
   },
@@ -26,8 +26,8 @@ const CUBES = [
     fill: "var(--color-forest)",
     stroke: "#3d7a66",
     label: "RÉSULTAT",
-    quote: "Le client est traité, toi non",
-    detail: "Client répondu. Toi, toujours sur ton chantier.",
+    quote: "Le client est traité, pas vous",
+    detail: "Client répondu. Vous, toujours sur votre chantier.",
     icon: "check" as const,
   },
 ] as const;
@@ -129,7 +129,7 @@ export function AutomatisationPrincipleDiagram() {
         ))}
       </div>
       <figcaption className="mx-auto mt-8 max-w-readable text-center text-sm leading-relaxed text-muted">
-        Toute automatisation suit ce schéma. Le reste, c&apos;est du sur-mesure pour ton métier.
+        Toute automatisation suit ce schéma. Le reste, c&apos;est du sur-mesure pour votre métier.
       </figcaption>
     </figure>
   );

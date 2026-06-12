@@ -6,6 +6,7 @@ export function BtpSolutionSection() {
     <section id="solution" className="bg-bg-card px-gutter py-12 md:py-16">
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text">{BTP_AUTOMATIONS.h2}</h2>
+        <p className="mt-4 max-w-readable text-base leading-relaxed text-text">{BTP_AUTOMATIONS.answerFirst}</p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {BTP_AUTOMATIONS.items.map((item) => (
             <article key={item.id} className="rounded-xl border border-border p-6">

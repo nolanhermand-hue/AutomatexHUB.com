@@ -58,6 +58,9 @@ export function Solution() {
         <h2 className="font-heading text-3xl text-text md:text-4xl">
           {SOLUTION_HEADING.h2}
         </h2>
+        <p className="mt-4 max-w-readable text-base leading-relaxed text-text">
+          {SOLUTION_HEADING.answerFirst}
+        </p>
 
         <div ref={lineWrapRef} className="relative mt-10 md:mt-12">
           <div

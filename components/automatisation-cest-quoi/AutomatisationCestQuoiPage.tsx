@@ -94,7 +94,7 @@ export function AutomatisationCestQuoiPage() {
           ))}
         </ul>
         <p className="mt-10 max-w-readable text-sm leading-relaxed text-muted">
-          Pour aller plus loin : consulte la{" "}
+          Pour aller plus loin : consultez la{" "}
           <Link href={AUTOMATISATION_CEST_QUOI_LINKS.pricingHref} className="text-primary underline">
             {AUTOMATISATION_CEST_QUOI_LINKS.pricingLabel}
           </Link>

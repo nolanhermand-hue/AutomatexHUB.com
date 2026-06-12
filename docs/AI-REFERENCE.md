@@ -139,7 +139,7 @@ Thème **sombre fixe** · `html` avec classe **`dark`** · pas de thème crème.
 | Route | Rôle | Composant / note |
 |-------|------|------------------|
 | `/` | Hub choix parcours | `HubEntry` · classe `hub-entry-hero` |
-| `/immobilier` | Landing mandataires | `ImmobilierHome` |
+| `/immobilier` | Landing diagnostiqueurs | `ImmobilierHome` |
 | `/btp` | Landing artisans BTP | `BtpLanding` (sections dynamic SSR) |
 | `/automatisation-ia-tpe` | Pilier TPE/PME | `TpeAutomatisationPricing` · `#tarifs` · CTA → `/rendez-vous` |
 | `/automatisations` | Catalogue | `AutomatisationsCatalogSections` |
@@ -152,10 +152,7 @@ Thème **sombre fixe** · `html` avec classe **`dark`** · pas de thème crème.
 | `/politique-confidentialite` | RGPD | idem |
 | `/cgv` | Contrat | idem |
 | `/securite` | Sécurité | idem |
-| `/mandataires-normandie` | SEO immo | hub local |
-| `/mandataires-flers` | SEO local | `MandatairesLocalPage` · `lib/local-pages.ts` |
-| `/mandataires-alencon` | idem | idem |
-| `/mandataires-argentan` | idem | idem |
+| `/mandataires-*` | **301 → `/immobilier`** | `netlify.toml` |
 | `/automatisation-btp-orne` | SEO BTP | `BtpLocalPage` |
 | `/automatisation-artisan-flers` | SEO BTP ville | `lib/btp-copy.ts` `BTP_LOCAL_PAGES` |
 | `/automatisation-artisan-alencon` | idem | idem |
@@ -201,8 +198,8 @@ Mega-menu : `lib/mega-nav-data.ts`
 
 ### Libellés CTA récurrents (`lib/constants.ts`)
 
-- `BOOKING_CTA_LABEL` = « Réserver mon appel avec Nolan »
-- Hub unifié : « Nolan me rappelle sous 24 h » (`HubEntry`)
+- `BOOKING_CTA_LABEL` = « Réserver votre appel avec Nolan »
+- Hub unifié : « Nolan vous rappelle sous 24 h » (`HubEntry`)
 - Cadre commercial : **Sans engagement** · résiliation **1 mail**
 
 ---
@@ -214,7 +211,7 @@ Mega-menu : `lib/mega-nav-data.ts`
 | Immobilier | `lib/constants.ts` | `OFFERS` — Déclic / Système ⭐ / Pilote / Sur mesure |
 | BTP | `components/sections/BtpPricing.tsx` | Grille `PAID_OFFERS` + `PricingPackGrid` (audience `btp`) · bandeau Sur mesure |
 | TPE | `lib/automatisation-ia-tpe-content.ts` | offres page pilier |
-| Fidélité / annuel | `lib/pricing.ts` | −15 % annuel, M13, M37 |
+| Fidélité / annuel | — | **Retiré** (grille mensuelle N1–N3 uniquement) |
 
 **Ordres de grandeur copy :** 1 lead immo ≈ **3 500 €** (`VALUE_PER_LEAD_EUROS`) · ROI section statique (plus d’anim GSAP).
 

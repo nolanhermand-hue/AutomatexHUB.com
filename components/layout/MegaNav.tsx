@@ -509,7 +509,7 @@ export function MegaNav() {
                 className="nav-mobile-item mt-3 inline-flex min-h-[52px] w-full items-center justify-center btn-bracket btn-bracket-primary"
                 onClick={() => handleNavClick(contactLink)}
               >
-                Nolan me rappelle sous 24 h
+                Nolan vous rappelle sous 24 h
               </Link>
               <p className="nav-mobile-item text-center text-sm text-muted">
                 {NAP.founder} · {NAP.city} · {NAP.phoneDisplay}

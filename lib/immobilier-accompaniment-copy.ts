@@ -6,11 +6,11 @@ export const IMMOBILIER_ACCOMPANIMENT = {
   pillars: [
     {
       title: "Point mensuel inclus",
-      body: "Chaque mois, Nolan vous appelle. On regarde combien de demandes agences ont été traitées, ce qui bloque encore. Puis on ajuste.",
+      body: "Chaque mois, Nolan vous appelle. Il regarde combien de demandes agences ont été traitées, ce qui bloque encore. Puis il ajuste.",
     },
     {
       title: "Ajustements en continu",
-      body: "Nouvelle agence partenaire, nouveau type de mission ? On adapte vos réponses et vos modèles. Sans surcoût.",
+      body: "Nouvelle agence partenaire, nouveau type de mission ? Nolan adapte vos réponses et vos modèles. Sans surcoût.",
     },
     {
       title: "Un interlocuteur à Flers",

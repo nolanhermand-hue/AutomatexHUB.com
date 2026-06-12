@@ -1,4 +1,5 @@
 import { BTP_FAQ } from "@/lib/btp-copy";
+import { CATALOG_JSONLD_UNIT_OFFERS } from "@/lib/automatisations-catalog-pricing";
 import { TPE_FAQ, TPE_PAGE_PATH } from "@/lib/automatisation-ia-tpe-content";
 import { GEO_MASTER_FAQ } from "@/lib/geo-master-faq";
 import { HOME_FAQ } from "@/lib/home-copy";
@@ -21,7 +22,7 @@ const JSONLD_PACKS = [
   { name: "Pack Pilote", setup: 1690, monthly: 449 },
 ] as const;
 
-const JSONLD_PRICE_RANGE = "390 € – 1 690 € mise en place · 99 € – 449 €/mois";
+const JSONLD_PRICE_RANGE = "390 € – 1690 € mise en place · 99 € – 449 €/mois";
 
 function buildJsonLdPackOffers(nameSuffix = "") {
   return JSONLD_PACKS.map(({ name, setup, monthly }) => ({
@@ -220,15 +221,15 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const jsonLdAudience = isHome ? "home" : "default";
   const offerCatalog = PAID_OFFERS.map((offer) => ({
     "@type": "Offer",
-    name: `${offer.name} — ${offer.annual} €/an`,
+    name: `${offer.name} — ${offer.monthly} €/mois`,
     description: getPricingOfferDisplay(offer.id as PackId, jsonLdAudience).roiEncart,
-    price: String(offer.annual),
+    price: String(offer.monthly),
     priceCurrency: "EUR",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
-      price: String(offer.annual),
+      price: String(offer.monthly),
       priceCurrency: "EUR",
-      referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "ANN" },
+      referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "MON" },
     },
   }));
 
@@ -307,7 +308,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           itemListElement: offerCatalog,
         },
       },
-      // Person — fondateur
+      // Person — Nolan Hermand
       {
         "@type": "Person",
         "@id": personId,
@@ -426,14 +427,14 @@ export function buildBtpServiceJsonLd(path: string) {
     "@type": "ProfessionalService",
     name: "Automatex Hub",
     description:
-      `Système pour diagnostiqueurs immobiliers et artisans BTP dans l'Orne et Normandie. Devis, appels manqués, accompagnement mensuel. ${SOVEREIGNTY_TRUST_LINE}.`,
+      `Automatisation pour artisans BTP dans l'Orne et Normandie : SMS appels manqués, devis, relances, accompagnement mensuel. ${SOVEREIGNTY_TRUST_LINE}.`,
     url: isBtpLanding ? `${SITE_URL}/btp` : pageUrl,
     telephone: NAP.phoneE164,
     email: NAP.email,
     founder: {
       "@type": "Person",
       name: NAP.founder,
-      jobTitle: "Fondateur et dirigeant",
+      jobTitle: "Dirigeant",
     },
     address: {
       "@type": "PostalAddress",
@@ -722,6 +723,88 @@ export function buildAutomatisationCoconPainJsonLd(opts: {
         serviceType: "Automatisation administrative pour indépendants",
       },
       buildFaqPageFromItems(opts.faq),
+    ],
+  };
+}
+
+/** JSON-LD catalogue /automatisations — offres unitaires N1–N3 (distinct des packs). */
+export function buildAutomatisationsCatalogJsonLd() {
+  const businessId = `${SITE_URL}#business`;
+  const pageUrl = `${SITE_URL}/automatisations`;
+  const catalogOffers = CATALOG_JSONLD_UNIT_OFFERS.map(({ name, setup, monthly }) => ({
+    "@type": "Offer" as const,
+    name,
+    price: String(setup),
+    priceCurrency: "EUR",
+    description: `Mise en place ${setup}€ (1er mois inclus), puis ${monthly}€/mois — tarif catalogue unitaire`,
+    priceSpecification: [
+      {
+        "@type": "UnitPriceSpecification",
+        name: "Mise en place",
+        price: String(setup),
+        priceCurrency: "EUR",
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        name: "Mensualité",
+        price: String(monthly),
+        priceCurrency: "EUR",
+        referenceQuantity: { "@type": "QuantitativeValue", value: "1", unitCode: "MON" },
+      },
+    ],
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Catalogue automatisations", path: "/automatisations" },
+      ]),
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: "Catalogue des automatisations Automatex",
+        dateModified: new Date().toISOString().slice(0, 10),
+        inLanguage: "fr-FR",
+      },
+      {
+        "@type": "Service",
+        name: "Catalogue automatisations — tarifs unitaires",
+        provider: { "@id": businessId },
+        description:
+          "18 automatisations configurables pour diagnostiqueurs et artisans BTP. Tarifs unitaires N1 à N3 sur cette page ; packs Déclic, Système et Pilote sur les pages tarifs.",
+        areaServed: ["Normandie", "Orne", "France"],
+        offers: catalogOffers,
+      },
+    ],
+  };
+}
+
+export function buildComparatifPageJsonLd(opts: {
+  path: string;
+  name: string;
+  description: string;
+  dateModified: string;
+}) {
+  const pageUrl = `${SITE_URL}${opts.path}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Accueil", path: "/" },
+        { name: "Comparatif", path: opts.path },
+      ]),
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: opts.name,
+        description: opts.description,
+        dateModified: opts.dateModified,
+        inLanguage: "fr-FR",
+      },
     ],
   };
 }

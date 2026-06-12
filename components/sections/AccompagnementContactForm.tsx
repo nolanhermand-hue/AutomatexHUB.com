@@ -140,7 +140,7 @@ export function AccompagnementContactForm() {
           disabled={pending}
           className="btn-bracket btn-bracket-primary mt-2 w-full justify-center"
         >
-          {pending ? "Envoi en cours…" : "Nolan me rappelle sous 24 h →"}
+          {pending ? "Envoi en cours…" : "Nolan vous rappelle sous 24 h →"}
         </button>
         {submitFeedback ? (
           <p role="status" className="text-center text-xs text-muted">

@@ -5,6 +5,11 @@ import {
   FEATURED_BTP,
   FEATURED_IMMO,
 } from "@/lib/automations-catalog";
+import {
+  CATALOG_COMPOSITION_INTRO,
+  CATALOG_UNIT_TIERS,
+} from "@/lib/automatisations-catalog-pricing";
+import { buildAutomatisationsCatalogJsonLd } from "@/lib/json-ld";
 import { SETUP_48H_NUANCE, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -24,7 +29,11 @@ export const metadata: Metadata = {
 };
 
 export default function AutomatisationsPage() {
+  const catalogJsonLd = buildAutomatisationsCatalogJsonLd();
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogJsonLd) }} />
     <main className="funnel-surface min-h-screen px-gutter pb-20 pt-[88px] md:pt-[100px]">
       <section className="mx-auto max-w-content pb-16 text-center">
         <span className="label-micro text-faint">Catalogue complet</span>
@@ -73,6 +82,33 @@ export default function AutomatisationsPage() {
         </p>
       </section>
 
+      <section className="mx-auto max-w-content border-t border-border py-12">
+        <h2 className="font-heading text-xl font-bold text-text">Tarifs unitaires du catalogue</h2>
+        <p className="mt-4 max-w-readable text-sm leading-relaxed text-text">{CATALOG_COMPOSITION_INTRO}</p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+          {CATALOG_UNIT_TIERS.map((tier) => (
+            <li key={tier.tier} className="rounded-xl border border-border bg-surface p-4 text-sm">
+              <p className="font-semibold text-text">{tier.tier}</p>
+              <p className="mt-1 text-muted">{tier.label}</p>
+              <p className="mt-2 text-text">
+                {tier.setup} € mise en place · {tier.monthly} €/mois
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-xs text-muted">
+          Packs site (Déclic / Système / Pilote) : voir{" "}
+          <Link href="/immobilier#pricing" className="text-primary underline">
+            immobilier
+          </Link>{" "}
+          ou{" "}
+          <Link href="/btp#pricing" className="text-primary underline">
+            BTP
+          </Link>
+          .
+        </p>
+      </section>
+
       <AutomatisationsCatalogSections />
 
       <section className="mx-auto max-w-content border-t border-border py-16 text-center">
@@ -101,5 +137,6 @@ export default function AutomatisationsPage() {
         </p>
       </section>
     </main>
+    </>
   );
 }

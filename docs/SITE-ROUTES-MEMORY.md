@@ -1,13 +1,13 @@
 # Automatex Hub — mémo routes (agents)
 
-> **Màj** : 2026-06-03 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final)
+> **Màj** : 2026-06-12 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final)
 
 ---
 
 ## JSON-LD (static export)
 
 - **Global graph** : `StructuredDataServer` + `JsonLdLayout` dans un **`layout.tsx` par route** (pas de `usePathname` client).
-- **Modes FAQ** (`lib/json-ld.ts` → `JsonLdFaqMode`) : `home` (`/`), `tpe` (`/automatisation-ia-tpe`), `btp` (`/btp` + pages locales BTP/devis), `mandataires` (immobilier, mandataires, légal, hub).
+- **Modes FAQ** (`lib/json-ld.ts` → `JsonLdFaqMode`) : `home` (`/`), `tpe` (`/automatisation-ia-tpe`), `btp` (`/btp` + pages locales BTP/devis), `diagnostiqueurs` (immobilier, légal, hub).
 - **Scripts additionnels** (sans 2e FAQPage) : `BtpStructuredData`, `buildTpeAutomatisationJsonLd` (layout TPE), `LocalStructuredData`, `buildAboutPageJsonLd`.
 - **Vérif post-build** : `npm run check:faqpage` (alias `node scripts/check-faqpage-html.mjs out`) — chaîné dans `npm run build`
 
@@ -34,10 +34,10 @@
 | Route | Rôle | Template / composant clé |
 |-------|------|---------------------------|
 | `/` | Landing artisans & TPE (Normandie) | `HomePage` |
-| `/immobilier` | Landing mandataires (Pascal) | `ImmobilierHome` |
+| `/immobilier` | Landing diagnostiqueurs | `ImmobilierHome` |
 | `/btp` | Landing artisans BTP (Kévin) | `BtpLanding` |
 | `/automatisation-ia-tpe` | Pilier TPE/PME + tarifs + contact | page + `TpeAutomatisationPricing` |
-| `/automatisations` | Catalogue 20 automatisations | `AutomatisationsCatalogSections` |
+| `/automatisations` | Catalogue 18 automatisations | `AutomatisationsCatalogSections` |
 | `/rendez-vous` | **Contact canonique** · formulaire prospect | `Contact` variant `hub` |
 | `/accompagnement` | Offre humaine 12 mois | CTA → `/rendez-vous` |
 | `/a-propos` | Fondateur / histoire | contenu statique |
@@ -47,10 +47,10 @@
 | `/politique-confidentialite` | RGPD | idem |
 | `/cgv` | Contrat | idem |
 | `/securite` | Résumé sécurité | idem |
-| `/mandataires-normandie` | SEO régional immo | hub local |
-| `/mandataires-flers` | SEO local | `MandatairesLocalPage` ← `lib/local-pages.ts` |
-| `/mandataires-alencon` | SEO local | idem |
-| `/mandataires-argentan` | SEO local | idem |
+| `/mandataires-normandie` | **301 → `/immobilier`** | Netlify redirect |
+| `/mandataires-flers` | **301 → `/immobilier`** | idem |
+| `/mandataires-alencon` | **301 → `/immobilier`** | idem |
+| `/mandataires-argentan` | **301 → `/immobilier`** | idem |
 | `/automatisation-btp-orne` | SEO BTP Orne (+ extension) | `BtpLocalPage` |
 | `/automatisation-artisan-flers` | SEO BTP ville | `BtpLocalPage` ← `lib/btp-copy.ts` `BTP_LOCAL_PAGES` |
 | `/automatisation-artisan-alencon` | idem | idem |

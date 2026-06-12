@@ -9,15 +9,12 @@ export function HomeHero() {
     <section id="hero" className="relative px-gutter pb-16 pt-24 md:pb-20 md:pt-28">
       <div className="mx-auto grid max-w-content gap-10 lg:grid-cols-[1fr_minmax(240px,360px)] lg:items-center">
         <div className="hero-enter">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--terracotta)]">
-            Automatex · Orne · Normandie
+          <p className="text-base font-medium leading-relaxed text-muted md:text-lg">
+            {HOME_HERO.seoLine}
           </p>
           <h1 className="mt-3 max-w-3xl font-heading text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-tight tracking-tight text-text">
             {HOME_HERO.h1}
           </h1>
-          <p className="mt-6 max-w-xl text-[clamp(1.35rem,3vw,2rem)] font-semibold leading-snug text-[var(--cream)]">
-            {HOME_HERO.accroche}
-          </p>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted md:text-lg">
             {HOME_HERO.sub}
           </p>

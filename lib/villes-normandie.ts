@@ -63,7 +63,7 @@ export const NORMANDIE_PILIER: NormandiePilierPage = {
       a: "Oui. Le périmètre est cadré en démo : prise de RDV, réponses aux demandes, classement de pièces, relances — selon votre métier et votre volume de messages.",
     },
     {
-      q: "Comment réserver une démo pour ma ville ?",
+      q: "Comment réserver une démo pour votre ville ?",
       a: "Choisissez votre ville ci-dessous ou allez sur /rendez-vous : nom, téléphone et métier suffisent. Nolan rappelle sous 24 h en semaine pour un audit de 20 minutes.",
     },
   ],
@@ -99,14 +99,14 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Les diagnostiqueurs à Caen ont-ils besoin d’un logiciel métier en plus ?",
-        a: "Pas obligatoire. On se branche sur ce que vous utilisez déjà (mail, calendrier, Drive). L’objectif est de libérer du temps sur les confirmations et relances, pas d’ajouter un écran de plus.",
+        a: "Pas obligatoire. Automatex se branche sur ce que vous utilisez déjà (mail, calendrier, Drive). L’objectif est de libérer du temps sur les confirmations et relances, pas d’ajouter un écran de plus.",
       },
       {
         q: "Couvreurs et charpentiers de l’agglo : par quoi commencer ?",
-        a: "Souvent par un SMS ou mail court quand vous ne décrochez pas, puis par la relance devis. On choisit 2 priorités en démo de 20 min sur vos vrais messages.",
+        a: "Souvent par un SMS ou mail court quand vous ne décrochez pas, puis par la relance devis. Vous choisissez 2 priorités en démo de 20 min avec Nolan sur vos vrais messages.",
       },
       {
-        q: "Peut-on installer depuis Flers si mon entreprise est basée à Caen ?",
+        q: "Peut-on installer depuis Flers si votre entreprise est basée à Caen ?",
         a: "Oui, c’est le fonctionnement habituel : audit à distance, tests sur vos numéros et boîtes mail. Nolan peut se déplacer dans l’Orne si besoin ; pour le Calvados, tout se fait en visio.",
       },
     ],
@@ -183,11 +183,11 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Couvreur au Havre : qu’est-ce qui part en premier en démo ?",
-        a: "En général accusé d’appel / SMS et relance devis en attente. On adapte le ton à votre façon de parler aux clients du 76.",
+        a: "En général accusé d’appel / SMS et relance devis en attente. Nolan adapte le ton à votre façon de parler aux clients du 76.",
       },
       {
         q: "Ça marche pour la façade et l’étanchéité aussi ?",
-        a: "Oui tant que le flux passe par téléphone, mail ou formulaire — on automatise la réponse et le suivi, pas la pose.",
+        a: "Oui tant que le flux passe par téléphone, mail ou formulaire — Automatex automatise la réponse et le suivi, pas la pose.",
       },
       {
         q: "Données hébergées où ?",
@@ -224,8 +224,8 @@ const villes: NormandieVillePage[] = [
     ],
     localFaq: [
       {
-        q: "Je couvre tout le Cotentin depuis Cherbourg : c’est pertinent ?",
-        a: "Oui si vous recevez appels et mails sur le même téléphone pro. On automatise la première réponse et le suivi, pas le déplacement.",
+        q: "Vous couvrez tout le Cotentin depuis Cherbourg : c’est pertinent ?",
+        a: "Oui si vous recevez appels et mails sur le même téléphone pro. Automatex automatise la première réponse et le suivi, pas le déplacement.",
       },
       {
         q: "Diagnostiqueurs immobiliers sur le 50 ?",
@@ -313,7 +313,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Artisan du bâtiment en zone rurale 14 ?",
-        a: "Même principe SMS/mail sur appel manqué. On configure vos textes avec vos mots, pas une réponse catalogue.",
+        a: "Même principe SMS/mail sur appel manqué. Nolan configure vos textes avec vos mots, pas une réponse catalogue.",
       },
       {
         q: "Proximité avec Flers ?",
@@ -351,7 +351,7 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Diagnostiqueur 27 : compatible avec les logiciels métiers ?",
-        a: "On ne remplace pas votre outil diag : on traite mail, SMS et calendrier autour. Moins de double saisie manuelle sur les confirmations.",
+        a: "Automatex ne remplace pas votre outil diag : Nolan traite mail, SMS et calendrier autour. Moins de double saisie manuelle sur les confirmations.",
       },
       {
         q: "Artisan couvreur entre Évreux et Giverny ?",
@@ -439,7 +439,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Couvreur / menuisier du bocage : par où commencer ?",
-        a: "En général appels manqués + relance devis. On part de vos messages réels, pas d’un scénario théorique.",
+        a: "En général appels manqués + relance devis. Nolan part de vos messages réels, pas d’un scénario théorique.",
       },
       {
         q: "Lien avec /automatisation-artisan-flers ?",

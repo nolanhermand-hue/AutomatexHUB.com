@@ -4,7 +4,7 @@ import { NAP, SETUP_48H_NUANCE } from "@/lib/constants";
 export const ABOUT_PAGE = {
   metaTitle: "À propos — Automatex · Flers, Normandie",
   metaDescription:
-    "Automatex Hub : accompagnement et systèmes pour diagnostiqueurs immobiliers et artisans BTP en Orne. Conçu à Flers, données OVHcloud France, RGPD.",
+    "Automatex Hub : accompagnement et systèmes pour diagnostiqueurs immobiliers et artisans BTP en Orne. Conçu à Flers · site CDN Netlify · données métier en UE · RGPD.",
   h1: "Construit à Flers, pour les diagnostiqueurs et artisans de l'Orne",
   facts: [
     { label: "Marque", value: NAP.brand },
@@ -69,10 +69,4 @@ export const ABOUT_PAGE = {
       desc: "Un message Telegram ou un appel. Je réponds. Pas un ticket, pas un formulaire. C'est moi qui ai installé — c'est moi qui règle.",
     },
   ],
-  launchTransparency: {
-    title: "Transparence sur le lancement",
-    body: "Automatex est en phase de lancement dans l'Orne. Pas de faux avis : Nolan préfère 5 clients bien accompagnés qu'une vitrine pleine de logos. En démo de 20 minutes, vous voyez le système sur votre cas réel — gratuit, sans engagement. Tarif fondateur sur demande si encore disponible.",
-    cta: "Voir si le tarif fondateur est encore ouvert →",
-    href: "/rendez-vous",
-  },
 } as const;

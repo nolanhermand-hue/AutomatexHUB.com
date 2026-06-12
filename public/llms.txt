@@ -1,23 +1,31 @@
 # Automatex Hub
 
-> Automatex Hub est un service de réponse automatique aux demandes agences et de tri de boîte mail pour diagnostiqueurs immobiliers indépendants et artisans BTP en Normandie. Fondé par Nolan Hermand à Flers (Orne, 61). Site vitrine sur CDN Netlify ; automatisations N8N Cloud (Francfort, UE) et traitement linguistique Mistral (Paris/UE). Détail : https://automatex-hub.com/vos-donnees
+> Automatex Hub installe réponses aux demandes, devis, relances et tri mail pour diagnostiqueurs immobiliers indépendants et artisans BTP en Normandie (Flers, Orne). Données métier et automatisations en UE. Détail : https://automatex-hub.com/vos-donnees
 
-## Services
+## Packs (grille officielle site)
 
-- [Diagnostiqueurs immobiliers](https://automatex-hub.com/immobilier): Réponse aux demandes agences en moins de 2 minutes, tri de boîte mail, classement Drive. Packs Déclic, Système, Pilote (99–449 €/mois après mise en place).
-- [Artisans BTP](https://automatex-hub.com/btp): SMS automatique en 90 secondes sur appel manqué, devis par dictée vocale, résumé Telegram à 18h. Même grille Déclic / Système / Pilote.
-- [Accompagnement](https://automatex-hub.com/accompagnement): Essentiel, Suivi ou Copilote selon le pack — point mensuel, ajustements, ligne directe 06 45 38 42 33.
-- [Tarifs](https://automatex-hub.com/immobilier#pricing): Sans engagement · résiliable en 1 mail.
+- **Déclic** : 390 € mise en place (1er mois inclus) + 99 €/mois — 1 automatisation sur-mesure
+- **Système** (recommandé) : 990 € + 249 €/mois — 3 à 4 automatisations
+- **Pilote** : 1690 € + 449 €/mois — ensemble d’outils + fonction sur mesure
+- Sans engagement · résiliable en 1 mail · CGV : https://automatex-hub.com/cgv
 
-## Zone géographique
+## Catalogue (/automatisations — tarifs unitaires N1–N3)
 
-- [Normandie](https://automatex-hub.com/normandie): Orne (priorité), Calvados, Manche. Basé à Flers (61100).
-- [Flers & agglo](https://automatex-hub.com/normandie/flers): Artisans et diagnostiqueurs du bassin de Flers.
-- [Alençon](https://automatex-hub.com/normandie/alencon): BTP, diag et TPE nord-Orne.
-- [Argentan](https://automatex-hub.com/normandie/argentan): BTP, diag et TPE sud-Orne.
+- N1 : 390 € + 99 €/mois (1 scénario)
+- N2 : 590 € + 129 €/mois (2 scénarios)
+- N3 : 890 € + 169 €/mois (3–4 scénarios)
+- 18 automatisations documentées : https://automatex-hub.com/automatisations
+
+## Pages clés
+
+- [Immobilier / tarifs](https://automatex-hub.com/immobilier#pricing)
+- [BTP / tarifs](https://automatex-hub.com/btp#pricing)
+- [Accompagnement](https://automatex-hub.com/accompagnement)
+- [FAQ tarifs](https://automatex-hub.com/faq)
+- [Comparatif télésecrétariat artisan](https://automatex-hub.com/comparatif/telesecretariat-artisan)
+- [Comparatif demandes agences diagnostiqueur](https://automatex-hub.com/comparatif/demandes-agences-diagnostiqueur)
+- [Normandie](https://automatex-hub.com/normandie) · [À propos](https://automatex-hub.com/a-propos)
 
 ## Optional
 
-- [À propos](https://automatex-hub.com/a-propos): Contexte fondateur, SIRET 10320805400017, transparence hébergement sur /vos-donnees.
-- [Vos données](https://automatex-hub.com/vos-donnees): Politique RGPD, sous-traitants, droits utilisateurs.
-- [Mentions légales](https://automatex-hub.com/mentions-legales): Informations légales.
+- [Vos données](https://automatex-hub.com/vos-donnees) · [Mentions légales](https://automatex-hub.com/mentions-legales)

@@ -6,7 +6,7 @@ export const HUB_ENTRY_COPY = {
   headlineLine1: "Vous perdez du temps sur des tâches",
   headlineLine2: "qui pourraient se faire toutes seules.",
   subline:
-    "On les prend en charge. Vous vous concentrez sur votre vrai travail. Et on reste là — chaque mois — pour que ça tourne.",
+    "Automatex les prend en charge. Vous vous concentrez sur votre vrai travail. Nolan reste joignable — chaque mois — pour que ça tourne.",
   badges: [
     SOVEREIGNTY_TRUST_LINE,
     "RGPD",
@@ -33,11 +33,11 @@ export const HUB_ENTRY_COPY = {
 } as const;
 
 export const HUB_ACCOMPANIMENT = {
-  h2: "On ne vous vend pas un outil. On prend en charge le problème.",
+  h2: "Automatex ne vous vend pas un outil. Nolan prend en charge le problème.",
   pillars: [
     {
       title: "Point mensuel inclus",
-      body: "Chaque mois, Nolan vous appelle. 20 minutes. On regarde ce qui marche, ce qu'on ajuste. Pas de surprise. Pas de frais cachés.",
+      body: "Chaque mois, Nolan vous appelle. 20 minutes. Il regarde ce qui marche et ce qu'il ajuste. Pas de surprise. Pas de frais cachés.",
     },
     {
       title: "Ajustements en continu",

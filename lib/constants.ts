@@ -1,7 +1,7 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://automatex-hub.com";
 
 /** Formulation officielle souveraineté (alignée /vos-donnees). */
-export const SOVEREIGNTY_TRUST_LINE = "IA française · Automatisations UE · RGPD" as const;
+export const SOVEREIGNTY_TRUST_LINE = "Mistral UE · Automatisations UE · RGPD" as const;
 
 /** Heures administratives non productives estimées par vente sur l'année (ordre de grandeur terrain). */
 export const HOURS_LOST_PER_SALE_PER_YEAR = 8;
@@ -24,7 +24,7 @@ export const SETUP_48H_NUANCE =
   "48 h ouvrées après validation de votre périmètre (accès outils, règles, tests)" as const;
 
 /** Libellé CTA unique — audit / prise de rendez-vous 20 min */
-export const BOOKING_CTA_LABEL = "Réserver mon appel avec Nolan" as const;
+export const BOOKING_CTA_LABEL = "Réserver votre appel avec Nolan" as const;
 
 /** CTA démo 20 min — accueil & landings artisans/TPE */
 export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur votre cas" as const;
@@ -38,7 +38,7 @@ export const SUR_MESURE_BOOKING_CTA =
 export const PRICING_CARD_CTA = "Réserver 20 min" as const;
 
 export const PRICING_REASSURANCE_CARD =
-  "Sans engagement · résiliable en 1 mail · RGPD France" as const;
+  "Sans engagement · résiliable en 1 mail · mise en place en 3× sans frais" as const;
 
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
@@ -61,7 +61,7 @@ export const NAP = {
   brand: "Automatex",
   legalName: "Automatex",
   founder: "Nolan Hermand",
-  role: "Fondateur",
+  role: "Dirigeant",
   /** Adresse établissement principal (formalité URSSAF / INSEE) */
   streetAddress: "50 rue de l'Equerre",
   city: "Saint-Georges-des-Groseillers",
@@ -83,7 +83,7 @@ export const NAP = {
   /** Compte marque */
   tiktokUrl: "https://www.tiktok.com/@automatex_hub",
   /** Hébergeur explicite (signal de souveraineté française) */
-  hostingProvider: "Mistral Paris · N8N Francfort (UE)",
+  hostingProvider: "Mistral UE · Automatisations UE",
 } as const;
 
 /** Libellé accessibilité — lien LinkedIn externe */
@@ -121,7 +121,7 @@ export const META_KEYWORDS = [
   "diagnostiqueur indépendant Caen Rouen Alençon",
   "automatisation boîte mail diagnostiqueur",
   "DPE amiante électricité Normandie",
-  "OVHcloud données France immobilier",
+  "automatisation demandes agences immobilier",
 ] as const;
 
 /** Tableau comparatif (accessibilité + citations LLM). */
@@ -183,7 +183,7 @@ export const AUTOMATIONS_SECTION = {
   introLine:
     "Configurations réelles, adaptées à votre façon de travailler.",
   footnote:
-    "Ce ne sont pas des exemples. Ce sont des configurations actives, adaptables à votre façon de travailler.",
+    "Scénarios configurables lors de l'onboarding — pas des maquettes génériques.",
 } as const;
 
 /**
@@ -206,11 +206,11 @@ export const HERO_COPY = {
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
   statAnchor:
-    "Mission diagnostic moyenne : ordre de grandeur terrain (voir source sous les chiffres).",
+    "Mission diagnostic moyenne : hypothèse terrain (voir source sous les chiffres).",
   /** A10 — Compteur social proof crédible */
   liveCounter: "Onboardings limités pour garder un suivi humain serré — demandez en démo si une place est ouverte",
   /** A15 — Mention hébergeur nommé */
-  hostingMention: "Automatisations UE (N8N Francfort) · Mistral Paris",
+  hostingMention: "Automatisations UE · traitement linguistique Paris/UE",
   /** A7 — Téléphone cliquable */
   socialProof:
     "Conçu pour les diagnostiqueurs indépendants en Orne et Normandie.",
@@ -224,7 +224,7 @@ export const HERO_STATS = [
 ] as const;
 
 export const HERO_STATS_SOURCE =
-  "Source : barème mission DPE / pack diag courant 180–250 € (ordre de grandeur terrain, 2025)." as const;
+  "Source : barème mission DPE / pack diag courant 180–250 € (hypothèse terrain, 2025)." as const;
 
 /** A13 / C6 / E6 — Outils intégrés : preuve sociale technique */
 export const INTEGRATIONS_LOGOS: ReadonlyArray<{
@@ -257,6 +257,8 @@ export const CALCULATOR_COPY = {
 /** B2 — Headline Problème : douleur palpable */
 export const PROBLEM_HEADING = {
   h2: "Pourquoi les diagnostiqueurs indépendants perdent des créneaux agences chaque semaine",
+  answerFirst:
+    "Parce qu’un mail agence arrive en pleine mission : sans réponse en quelques minutes, l’agence propose le créneau au confrère suivant.",
 } as const;
 
 export type ProblemIconId = "lead" | "mail" | "document";
@@ -294,12 +296,14 @@ export const AGITATION_COPY = {
   body:
     "Sur la base d'une hypothèse de ~220 € par mission diagnostic, rater 25 créneaux dans l'année représente un manque à gagner visible. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
   microNote:
-    "Source : barème mission DPE / pack diag courant 180–250 € (ordre de grandeur terrain, 2025).",
+    "Source : barème mission DPE / pack diag courant 180–250 € (hypothèse terrain, 2025).",
 } as const;
 
 /** B5 — Solution : verbes actifs (On installe / Vous approuvez / Ça tourne) */
 export const SOLUTION_HEADING = {
   h2: "Mise en route en 3 étapes (48 h après validation du périmètre)",
+  answerFirst:
+    "Vous validez le ton et les scénarios en démo, Nolan branche vos outils, puis les réponses et relances tournent seuls — avec un point mensuel pour ajuster.",
 } as const;
 
 export const SOLUTION_STEPS: ReadonlyArray<{
@@ -309,9 +313,9 @@ export const SOLUTION_STEPS: ReadonlyArray<{
 }> = [
   {
     kicker: "01",
-    title: "On installe",
+    title: "Nolan installe",
     body:
-      "20 minutes d'appel pour cadrer votre activité. On branche votre boîte mail, votre téléphone et votre espace Google. Aucun outil à apprendre. Aucune migration. Tout reste sur vos comptes.",
+      "20 minutes d'appel pour cadrer votre activité. Nolan branche votre boîte mail, votre téléphone et votre espace Google. Aucun outil à apprendre. Aucune migration. Tout reste sur vos comptes.",
   },
   {
     kicker: "02",
@@ -363,7 +367,7 @@ export const ACCOMPANIMENT_COPY = {
     {
       step: "Trimestres 2 à 4",
       title: "Suivi toute l’année",
-      body: "Bilan de 15–20 min chaque trimestre : ce qui tourne, ce qu’on affine. Nolan reste joignable.",
+      body: "Bilan de 15–20 min chaque trimestre : ce qui tourne, ce que Nolan affine. Nolan reste joignable.",
     },
   ] as const,
   pillars: [
@@ -423,17 +427,17 @@ export const BENEFITS_ITEMS: ReadonlyArray<{
   },
   {
     icon: "shield",
-    stat: "0 client perdu",
+    stat: "Moins de stress",
     title: "Tranquillité d'esprit",
     body:
-      "Plus de stress à 22h le vendredi en pensant aux clients non rappelés. Automatex tient la veille pendant vos week-ends et vos visites.",
+      "Moins de pression le vendredi soir sur les relances oubliées. Automatex tient la veille pendant vos week-ends et vos visites.",
   },
   {
     icon: "flag",
     stat: SOVEREIGNTY_TRUST_LINE,
     title: "Données souveraines",
     body:
-      "Vos flux métier restent en Union européenne (N8N Francfort, Mistral Paris/UE). Conformité RGPD prouvée, pas déclarative.",
+      `Vos flux métier restent en Union européenne (${SOVEREIGNTY_TRUST_LINE}). Conformité RGPD prouvée, pas déclarative.`,
   },
 ];
 
@@ -476,15 +480,9 @@ export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
   h2: "Tarifs Automatex — 3 packs + sur mesure pour diagnostiqueurs en Normandie",
   h2SurMesureHint:
-    "Mise en place + mensualité transparente. Basculez mensuel ou annuel (−15 %). Suivi humain 12 mois sur chaque pack.",
+    "Mise en place + mensualité transparente. Suivi humain 12 mois sur chaque pack.",
   chooseCta: PRIMARY_DEMO_CTA,
-  toggleMonthly: "Mensuel",
-  toggleAnnual: "Annuel",
-  /** Paiement 12 mois d'avance : −15 % sur le mensuel */
-  annualDiscountLabel: "Économisez 15% · Paiement annuel",
-  annualDiscountPercent: 15,
   monthlySuffix: "/mois",
-  annualSuffix: "/an",
   bannerLine: PRICING_REASSURANCE_CARD,
   guaranteeLine: "Sans engagement · Résiliable en 1 mail",
   customFitFootnote: "Besoin hors-cadre ? Devis sur-mesure.",
@@ -519,8 +517,6 @@ export type PricingOffer = {
   setup: number;
   /** Tarif mensuel (€/mois) */
   monthly: number;
-  /** Tarif annuel (€/an) — 12 mois × mensuel × (1 − 15 %) */
-  annual: number;
   benefits: string[];
   roiLine: string;
   cta: string;
@@ -545,20 +541,20 @@ export const PRICING_OFFER_DISPLAY: Record<
     },
     immo: {
       promise: "Vous ne ratez plus jamais une demande agence pendant vos missions.",
-      roiEncart: "1 mission récupérée rembourse plusieurs mois de formule.",
+      roiEncart: "1 mission récupérée peut amortir plusieurs mois de formule (hypothèse).",
     },
     tpe: {
       promise: "Une automatisation cadrée sur votre activité — accompagnement Essentiel inclus.",
-      roiEncart: "Un flux récupéré rembourse plusieurs mois de formule.",
+      roiEncart: "Un flux récupéré peut amortir plusieurs mois de formule (hypothèse).",
     },
   },
   systeme: {
     home: {
-      promise: "Votre administratif tourne tout seul, sans vous.",
+      promise: "Votre administratif tourne tout seul.",
       roiEncart: "Jusqu'à 8 h par semaine récupérées sur le terrain.",
     },
     immo: {
-      promise: "Votre administratif tourne tout seul, sans vous.",
+      promise: "Votre administratif tourne tout seul.",
       roiEncart: "Jusqu'à 8 h par semaine récupérées sur les missions et les confirmations agences.",
     },
     tpe: {
@@ -612,7 +608,6 @@ export const OFFERS: PricingOffer[] = [
     featured: false,
     setup: 390,
     monthly: 99,
-    annual: 1010,
     benefits: [
       "1 automatisation sur-mesure (cadrée sur votre activité)",
       "Réponse aux demandes entrantes en moins de 2 minutes",
@@ -631,7 +626,6 @@ export const OFFERS: PricingOffer[] = [
     featured: true,
     setup: 990,
     monthly: 249,
-    annual: 2540,
     benefits: [
       "3 à 4 automatisations sur-mesure",
       "Tout le périmètre Déclic",
@@ -650,7 +644,6 @@ export const OFFERS: PricingOffer[] = [
     featured: false,
     setup: 1690,
     monthly: 449,
-    annual: 4580,
     benefits: [
       "Ensemble de vos outils + fonction sur mesure",
       "Tout le périmètre Système",
@@ -671,7 +664,6 @@ export const OFFERS: PricingOffer[] = [
     customOffer: true,
     setup: 0,
     monthly: 0,
-    annual: 0,
     benefits: [
       "Périmètre plus léger ou plus complet que les formules standards",
       "Devis transparent après l’entretien de cadrage",
@@ -711,7 +703,7 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
   { feature: "Tri des mails matin/soir", declic: false, systeme: true, pilote: true },
   { feature: "Brouillons de réponses prêts", declic: false, systeme: true, pilote: true },
   { feature: "Classement Google Drive automatique", declic: false, systeme: true, pilote: true },
-  { feature: "Accès direct fondateur < 4 h", declic: false, systeme: false, pilote: true },
+  { feature: "Accès direct Nolan < 4 h", declic: false, systeme: false, pilote: true },
   { feature: "Compte-rendu vocal post-visite", declic: false, systeme: false, pilote: true },
   { feature: "Réglage mensuel + rapport activité", declic: false, systeme: false, pilote: true },
 ];
@@ -740,12 +732,12 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Mes données sont-elles bien protégées en Europe ?",
     answer:
-      "Oui. Les automatisations tournent sur N8N Cloud à Francfort (UE). Le modèle de langue est Mistral AI (Paris/UE). Vos emails restent dans votre Gmail ; Automatex ne revend rien. Chaque client a un espace cloisonné. Politique RGPD et registre des traitements disponibles sur /vos-donnees.",
+      `Oui. ${SOVEREIGNTY_TRUST_LINE} — automatisations et traitement linguistique en Union européenne. Vos emails restent dans votre Gmail ; Automatex ne revend rien. Chaque client a un espace cloisonné. Politique RGPD et registre des traitements disponibles sur /vos-donnees.`,
   },
   {
     question: "Combien de temps pour la mise en place ?",
     answer:
-      "48 heures ouvrées après notre appel de validation du périmètre (accès outils, règles, tests). Nolan configure, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des diagnostiqueurs repartent avec leurs premières réponses actives dès le week-end suivant.",
+      `${SETUP_48H_NUANCE}. Nolan configure, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des diagnostiqueurs repartent avec leurs premières réponses actives dès le week-end suivant.`,
   },
   {
     question: "Et si vous voulez arrêter ?",
@@ -753,7 +745,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Vous êtes libre. Aucun engagement de durée, résiliable en un mail. Vos données vous sont restituées et effacées sous 7 jours.",
   },
   {
-    question: "Mon logiciel métier (Liciel, ORIS, Alain…) est fermé. Ça marche quand même ?",
+    question: "Votre logiciel métier (Liciel, ORIS, Alain…) est fermé. Ça marche quand même ?",
     answer:
       "Oui. Votre logiciel de saisie diagnostic reste inchangé : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes agences passent par le mail comme aujourd'hui — mais la réponse part pendant la mission. Vous recopiez ensuite la mission dans votre outil en un copier-coller.",
   },
@@ -775,7 +767,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "En combien de temps une agence sans réponse passe-t-elle au confrère ?",
     answer:
-      "Souvent quelques minutes. Une agence pressée pour une vente contacte fréquemment deux ou trois diagnostiqueurs de l’annuaire (ordre de grandeur terrain, pas une loi fixe). Une confirmation de créneau tôt fait la différence. Automatex vise une réponse en moins de 2 minutes sur les demandes entrantes.",
+      "Souvent quelques minutes. Une agence pressée pour une vente contacte fréquemment deux ou trois diagnostiqueurs de l’annuaire. Une confirmation de créneau tôt fait la différence. Automatex vise une réponse en moins de 2 minutes sur les demandes entrantes.",
   },
 ];
 
@@ -787,10 +779,10 @@ export const DATA_TRUST_COPY = {
     "Vos données ne sont jamais vendues",
     "Vos données ne sont jamais partagées avec des tiers commerciaux",
     "Aucun accès au-delà du nécessaire au service",
-    "Aucune donnée métier stockée aux États-Unis via nos prestations (N8N UE, Mistral UE)",
+    "Aucune donnée métier stockée aux États-Unis via nos prestations (automatisations UE, Mistral UE)",
   ],
   always: [
-    "Automatisations sur N8N Cloud Francfort (UE)",
+    "Automatisations hébergées en Union européenne (Francfort, UE)",
     "Chiffrement en transit (HTTPS)",
     "Effacement complet sous 7 jours après votre départ",
     "Confirmation écrite d'effacement sur demande",
@@ -809,7 +801,7 @@ export const RESILIATION_COPY = {
 } as const;
 
 export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: string }> = [
-  { title: SOVEREIGNTY_TRUST_LINE, subtitle: "N8N Francfort · Mistral Paris" },
+  { title: SOVEREIGNTY_TRUST_LINE, subtitle: "Automatisations UE · Mistral UE" },
   { title: "Conforme RGPD", subtitle: "Données souveraines · Jamais revendues" },
   { title: "Sans engagement", subtitle: "Résiliable en 1 mail · Immédiatement" },
   { title: "Résiliable en 1 mail", subtitle: "Sans période minimale · Aucun verrou" },
@@ -818,14 +810,14 @@ export const TRUST_BADGES_FOOTER: ReadonlyArray<{ title: string; subtitle: strin
 ] as const;
 
 export const CTA_REASSURANCE_LINE =
-  "Sans engagement · résiliable en 1 mail · RGPD France" as const;
+  "Sans engagement · résiliable en 1 mail · mise en place en 3× sans frais" as const;
 
 export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
-    "On vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Nolan en direct, pas un ticket anonyme.",
+    "Nolan vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Nolan en direct, pas un ticket anonyme.",
   formTitle: "Vos coordonnées",
   firstNameLabel: "Prénom",
   lastNameLabel: "Nom",
@@ -833,13 +825,13 @@ export const CONTACT_COPY = {
   phoneLabel: "Téléphone",
   networkLabel: "Profil professionnel",
   networkPlaceholder: "Choisissez votre profil",
-  submitLabel: "Réserver mon appel avec Nolan",
+  submitLabel: "Réserver votre appel avec Nolan",
   emailHint: "Votre email ne sera jamais partagé ni revendu.",
   phoneHint: "10 chiffres — affichage 06 45 38 42 33.",
   formFooter: "Nolan, Flers (61).",
   formReassurance: "Sans engagement",
-  resiliationSubmitLabel: "Envoyer ma demande de résiliation",
-  hubFounderLine: "Fondateur · basé à Flers (Orne)",
+  resiliationSubmitLabel: "Envoyer votre demande de résiliation",
+  hubFounderLine: "Nolan Hermand · basé à Flers (Orne)",
   hubFounderSub: "Démo 20 min sur votre cas — Nolan vous rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisissez votre secteur",

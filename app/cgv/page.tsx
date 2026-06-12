@@ -49,13 +49,13 @@ export default function CgvPage() {
           ajustements continus).
         </LegalP>
         <LegalP>
-          <strong className="text-text">Pilote</strong> — Mise en place 1 690 € HT (1er mois inclus)
+          <strong className="text-text">Pilote</strong> — Mise en place 1690 € HT (1er mois inclus)
           · puis 449 € HT / mois : Ensemble de vos outils + fonction sur mesure, accompagnement Copilote (réponse 4
           h, optimisation proactive).
         </LegalP>
         <LegalP>
           Une offre <strong className="text-text">sur mesure</strong> peut être définie après
-          entretien de cadrage (30 min) — devis écrit. Tarifs annuels : voir grille sur l&apos;
+          entretien de cadrage (30 min) — devis écrit. Grille publique sur l&apos;
           <Link href="/#pricing" className="text-primary underline">
             accueil
           </Link>

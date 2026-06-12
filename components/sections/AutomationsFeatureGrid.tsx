@@ -37,8 +37,7 @@ export function AutomationsFeatureGrid() {
         </div>
 
         <p className="mt-6 text-xs italic text-faint">
-          Ce sont des configurations actives, adaptées lors de l&apos;onboarding — pas des exemples
-          génériques.
+          Scénarios configurables lors de l&apos;onboarding — pas des maquettes génériques.
         </p>
 
         <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">

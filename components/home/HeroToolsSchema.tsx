@@ -3,6 +3,7 @@ import {
   type HomeHeroIntegrationLogo,
 } from "@/lib/home-tech-logos";
 import { HOME_HERO } from "@/lib/home-copy";
+import { SystemCapturePlaceholder } from "@/components/ui/SystemCapturePlaceholder";
 
 const ARIA_LABEL = `Outils connectés : ${HOME_HERO_INTEGRATION_LOGOS.map((t) => t.name).join(", ")}.`;
 
@@ -15,22 +16,27 @@ function LogoTile({ logo }: { logo: HomeHeroIntegrationLogo }) {
         alt={logo.name}
         width={32}
         height={32}
-        loading="lazy"
+        loading="eager"
         decoding="async"
-        fetchPriority="low"
+        fetchPriority="high"
         className="max-h-8 max-w-8 object-contain opacity-95"
       />
     </div>
   );
 }
 
-/** Bande d’intégrations hero : sous-titre + 3 logos statiques (pas de marquee). */
+/** Bande d’intégrations hero + capture produit (colonne droite). */
 export function HeroToolsSchema() {
   return (
-    <figure
+    <div
       className="mx-auto w-full max-w-[min(100%,360px)] lg:max-w-none"
       aria-label={ARIA_LABEL}
     >
+      <SystemCapturePlaceholder
+        src="/assets/demos/devis-auto-static.webp"
+        priority
+        className="mb-6"
+      />
       <figcaption className="text-center text-sm leading-relaxed text-muted md:text-base lg:text-left">
         {HOME_HERO.integrationsLine}
       </figcaption>
@@ -41,6 +47,6 @@ export function HeroToolsSchema() {
           </li>
         ))}
       </ul>
-    </figure>
+    </div>
   );
 }

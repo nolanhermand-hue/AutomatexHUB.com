@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Automatex | RGPD · OVHcloud France",
+  title: "Politique de confidentialité — Automatex | RGPD · UE",
   description:
     "Politique RGPD Automatex : données collectées, sous-traitants, durées, droits, sécurité, Plausible sans cookie, contact CNIL.",
   alternates: { canonical: `${SITE_URL}/politique-confidentialite` },
@@ -164,10 +164,10 @@ export default function PolitiqueConfidentialitePage() {
         <LegalUl
           items={[
             "Chiffrement en transit (HTTPS / TLS)",
-            "Données chiffrées au repos sur OVHcloud",
+            "Données métier hébergées en Union européenne (automatisations Francfort, traitement linguistique Paris/UE)",
             "Accès restreint aux configurations de production",
             "Authentification renforcée (MFA) sur les comptes de production",
-            "Sauvegardes sur infrastructure France",
+            "Sauvegardes sur infrastructure UE",
             "Notification en cas de violation sous 72 h (art. 33 RGPD)",
           ]}
         />

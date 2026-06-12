@@ -1,24 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { ImmobilierLeadDemoStaticFallback } from "@/components/demo/ImmobilierLeadDemoStaticFallback";
 import { DEMO_STATIC, loadLeadImmobilier } from "@/lib/demo-loaders";
 
 const MotionDemo = dynamic(
   () => import("@/components/demo/MotionDemo").then((m) => ({ default: m.MotionDemo })),
   {
     ssr: false,
-    loading: () => (
-      <div
-        className="relative w-full overflow-hidden rounded-xl border border-border bg-surface p-4 md:p-6"
-        style={{ minHeight: "min(100%, 520px)" }}
-        aria-hidden="true"
-      >
-        <div
-          className="mx-auto w-full max-w-[640px] animate-pulse rounded-lg bg-border/50"
-          style={{ aspectRatio: "640 / 420" }}
-        />
-      </div>
-    ),
+    loading: () => <ImmobilierLeadDemoStaticFallback />,
   },
 );
 
@@ -33,6 +23,9 @@ export function ImmobilierLeadDemoSection() {
           Une demande reçoit une réponse en moins de 2 minutes — vous terminez la visite sereinement.
         </p>
         <div className="mt-8">
+          <noscript>
+            <ImmobilierLeadDemoStaticFallback />
+          </noscript>
           <MotionDemo
             demoId="lead-immobilier"
             staticSrc={DEMO_STATIC.leadImmobilier.src}

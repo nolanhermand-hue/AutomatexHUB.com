@@ -6,7 +6,7 @@ function defaultOpen(index: number): boolean {
   return index === 1 || index === (crmIndex >= 0 ? crmIndex : 5);
 }
 
-/** FAQ en `<details>` natif — style ORIS. */
+/** FAQ en `<details>` natif — style accordéon site. */
 export function FAQ() {
   return (
     <section id="faq" className="border-t border-border px-gutter py-16 md:py-20">

@@ -7,10 +7,10 @@ export const HOME_META = {
 } as const;
 
 export const HOME_HERO = {
-  h1: "Automatisation pour artisans et TPE en Normandie",
-  accroche: "Vos clients ne vous attendent plus.",
+  seoLine: "Automatisation pour artisans et TPE en Normandie",
+  h1: "Vos clients n'attendent plus. Votre système leur répond.",
   sub:
-    "Réponse aux messages, devis et relances branchés sur vos outils actuels. Nolan installe à distance — vous restez concentré sur vos clients et vos dossiers.",
+    "Réponses, devis et relances : tout est branché sur vos outils actuels. Nolan installe à distance — vous restez concentré sur vos clients.",
   reassurance: `Démo 20 min gratuite · ${SETUP_48H_NUANCE}`,
   integrationsLine:
     "Branchement sur ce que vous utilisez déjà. Rien de nouveau à apprendre.",
@@ -29,7 +29,7 @@ export const HOME_PROBLEM = {
     },
     {
       value: "8–12 h",
-      label: "d’administratif par semaine pour une TPE ou un indépendant (ordre de grandeur).",
+      label: "d’administratif par semaine pour une TPE ou un indépendant.",
       source: "CAPEB",
     },
     {
@@ -70,8 +70,8 @@ export const HOME_SOLUTION = {
 export const HOME_CATALOG = {
   eyebrow: "Catalogue",
   h2: "15 automatisations prêtes pour votre métier",
-  sub: "Chaque bloc est configurable sur votre réalité. Le catalogue complet compte 20 scénarios.",
-  cta: "Voir les 20 automatisations",
+  sub: "Chaque bloc est configurable sur votre réalité. Le catalogue complet compte 18 scénarios.",
+  cta: "Voir les 18 automatisations",
 } as const;
 
 export const HOME_HOW = {
@@ -80,17 +80,17 @@ export const HOME_HOW = {
   steps: [
     {
       title: "Audit 20 min",
-      body: "Vous montrez votre journée type : appels, devis, mails. On choisit 2 à 4 priorités.",
+      body: "Vous montrez votre journée type : appels, devis, mails. Nolan choisit avec vous 2 à 4 priorités.",
       time: "20 min",
     },
     {
       title: "Installation",
-      body: `Branchement sur Gmail, Drive, calendrier. Tests avec de vrais messages. ${SETUP_48H_NUANCE}.`,
+      body: "Branchement sur Gmail, Drive, calendrier. Tests avec de vrais messages. Mise en ligne sous 48 h ouvrées.",
       time: "48 h",
     },
     {
       title: "Moins de paperasse",
-      body: "Les réponses partent pendant que vous êtes indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : on cale le rythme sur votre cas en démo.",
+      body: "Les réponses partent pendant que vous êtes indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : Nolan cale le rythme sur votre cas en démo.",
       time: "Au fil des semaines",
     },
   ],
@@ -100,15 +100,15 @@ export const HOME_PRICING = {
   eyebrow: "Tarifs",
   h2: "3 packs + sur mesure pour artisans et TPE en Normandie",
   sub: "Mise en place + mensualité transparente. Système = pack recommandé pour la plupart des TPE.",
-  banner: "Sans engagement · résiliable en 1 mail · RGPD France",
+  banner: "Sans engagement · résiliable en 1 mail · mise en place en 3× sans frais",
 } as const;
 
 export const HOME_FOUNDER = {
   eyebrow: "Qui installe",
   h2: "Deux ans sur chantier, aujourd’hui au service des TPE",
   storyLead:
-    "2 ans sur les chantiers, en menuiserie puis couverture. J’ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l’automatisation pour régler exactement ça.",
-  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en me formant à l’automatisation. Aujourd’hui j’installe des systèmes qui répondent à votre place quand vous ne pouvez pas décrocher.`,
+    "2 ans sur les chantiers, en menuiserie puis couverture. Nolan a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Il s’est formé à l’automatisation pour régler exactement ça.",
+  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en se formant à l’automatisation. Aujourd’hui, Nolan installe des systèmes qui répondent à votre place quand vous ne pouvez pas décrocher.`,
   painSteps: [
     {
       title: "Pendant la journée",
@@ -124,7 +124,7 @@ export const HOME_FOUNDER = {
     },
   ] as const,
   quote:
-    "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que vous utilisez déjà — pour que le soir vous bouclez moins de devis à la va-vite.",
+    "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que vous utilisez déjà — pour que le soir, vous arrêtiez de boucler vos devis à la va-vite.",
 } as const;
 
 export const HOME_FAQ_HEADING = {
@@ -134,22 +134,22 @@ export const HOME_FAQ_HEADING = {
 export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: "Faut-il changer vos outils ?",
-    a: "Non. On part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à apprendre : les automatisations tournent en arrière-plan.",
+    a: "Non. Automatex part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à apprendre : les automatisations tournent en arrière-plan.",
   },
   {
     q: "Combien de temps pour être en ligne ?",
-    a: `Après l’audit de 20 minutes, la mise en place standard : ${SETUP_48H_NUANCE}. Vous validez chaque message type avant envoi réel.`,
+    a: "Après l’audit de 20 minutes, mise en ligne sous 48 h ouvrées. Vous validez chaque message type avant envoi réel.",
   },
   {
     q: "C’est quoi le prix au final ?",
-    a: "Déclic : 390 € de mise en place puis 99 €/mois. Système (recommandé) : 990 € puis 249 €/mois. Pilote : 1 690 € puis 449 €/mois. Sans engagement, résiliable en un mail.",
+    a: "Déclic : 390 € de mise en place puis 99 €/mois. Système (recommandé) : 990 € puis 249 €/mois. Pilote : 1690 € puis 449 €/mois. Sans engagement, résiliable en un mail.",
   },
   {
     q: "Mes données restent où ?",
     a: `${SOVEREIGNTY_TRUST_LINE}. Hébergement automatisations en UE, traitement linguistique en France. Vos mails restent dans votre boîte. Détail sur /vos-donnees.`,
   },
   {
-    q: "Et si ça ne me convient pas ?",
+    q: "Et si ça ne vous convient pas ?",
     a: "Résiliation en un mail, effet en fin de mois. Vos données restent les vôtres ; effacement sous 7 jours après votre départ (détail sur /cgv et /vos-donnees). Les ajustements dans le périmètre validé à l’audit sont inclus dans la mensualité.",
   },
   {

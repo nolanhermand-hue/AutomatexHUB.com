@@ -1,8 +1,7 @@
 import { AccompagnementPointMensuelDemo } from "@/components/demo/AccompagnementPointMensuelDemo";
-import { FounderTrustBlock } from "@/components/ui/FounderTrustBlock";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
-import { ACCOMPANIMENT_COPY, NAP, PRICING_HEADING } from "@/lib/constants";
+import { ACCOMPANIMENT_COPY, PRICING_HEADING } from "@/lib/constants";
 import { rendezVousHref } from "@/lib/hub-nav";
 import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
@@ -16,7 +15,7 @@ const ACCOMP_PILL_ACTIVE =
 export const metadata: Metadata = {
   title: "Accompagnement humain inclus · Flers · Automatex Hub",
   description:
-    "Point mensuel, ajustements continus, ligne directe Nolan à Flers. Inclus dans chaque formule — ou sur mesure (plus léger ou plus complet, prix sur devis). Mandataires et artisans Orne.",
+    "Point mensuel, ajustements continus, ligne directe Nolan à Flers. Inclus dans chaque formule — ou sur mesure (plus léger ou plus complet, prix sur devis). Diagnostiqueurs et artisans Orne.",
   openGraph: {
     title: "Vous n'êtes jamais seul avec votre système — Automatex Hub",
     description:
@@ -39,10 +38,6 @@ export default function AccompagnementPage() {
           <span className={ACCOMP_PILL_ACTIVE}>Packs Déclic · Système · Pilote</span>
           <span className={ACCOMP_PILL}>Sur mesure · prix sur devis</span>
           <span className={ACCOMP_PILL}>Sans engagement · résiliable en 1 mail</span>
-        </div>
-
-        <div className="mt-8 card border-primary/30 p-6">
-          <FounderTrustBlock />
         </div>
 
         <div className="mt-14 space-y-16">
@@ -69,7 +64,7 @@ export default function AccompagnementPage() {
             <h2 className="font-heading text-2xl text-text">{ACCOMPANIMENT_PAGE.sections[1].h2}</h2>
             <p className="mt-4 max-w-readable text-muted">{ACCOMPANIMENT_PAGE.sections[1].body}</p>
             <p className="mt-4 text-sm italic text-muted">
-              Exemple (simulation) : un couvreur commence la rénovation énergétique — le template de
+              Exemple : un couvreur commence la rénovation énergétique — le template de
               devis est adapté en 48 h, sans surcoût.
             </p>
           </section>
@@ -77,16 +72,10 @@ export default function AccompagnementPage() {
           <section>
             <h2 className="font-heading text-2xl text-text">{ACCOMPANIMENT_PAGE.sections[2].h2}</h2>
             <p className="mt-4 max-w-readable text-muted">{ACCOMPANIMENT_PAGE.sections[2].body}</p>
-            <p className="mt-6 font-semibold text-text">
-              <a href={`tel:${NAP.phoneE164}`} className="text-primary underline">
-                {NAP.phoneDisplay}
-              </a>{" "}
-              — {NAP.founder}, {NAP.city}
-            </p>
           </section>
 
           <section>
-            <h2 className="font-heading text-2xl text-text">Nolan en action (simulation)</h2>
+            <h2 className="font-heading text-2xl text-text">Nolan en action</h2>
             <NolanLiveDemo />
           </section>
 
@@ -179,7 +168,7 @@ export default function AccompagnementPage() {
             href={rendezVousHref()}
             className="btn-bracket btn-bracket-primary mt-8 justify-center"
           >
-            Réserver mon créneau
+            Réserver votre créneau
             <span aria-hidden>→</span>
           </Link>
         </section>

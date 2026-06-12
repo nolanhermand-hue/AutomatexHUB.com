@@ -1,5 +1,4 @@
 import { BTP_BETA, BTP_SOCIAL_PROOF } from "@/lib/btp-copy";
-import { formatFoundersAvailability } from "@/lib/pricing";
 import { LAUNCH_HONESTY } from "@/lib/trust-copy";
 import { NAP } from "@/lib/constants";
 
@@ -10,7 +9,6 @@ export function BtpSocialProof() {
         <div className="rounded-xl border border-primary/30 bg-bg-card p-6 md:p-8">
           <h2 className="font-heading text-xl text-text">{BTP_BETA.title}</h2>
           <p className="mt-2 text-sm text-muted">{BTP_BETA.body}</p>
-          <p className="mt-2 text-sm font-semibold text-primary">{formatFoundersAvailability()}</p>
         </div>
 
         <p className="rounded-lg border border-border bg-bg-card px-4 py-3 text-sm text-muted">
@@ -25,11 +23,11 @@ export function BtpSocialProof() {
           ))}
         </ul>
 
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">Mot du fondateur</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted">Mot de Nolan</p>
         <blockquote className="rounded-xl border border-border bg-bg-card p-6">
           <p className="italic leading-relaxed text-muted">&ldquo;{BTP_SOCIAL_PROOF.founderQuote}&rdquo;</p>
           <footer className="mt-3 text-sm font-semibold text-text">
-            — {NAP.founder}, fondateur Automatex Hub
+            — {NAP.founder}, Automatex Hub
           </footer>
         </blockquote>
 
