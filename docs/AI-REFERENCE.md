@@ -2,7 +2,7 @@
 
 > **Document canonique** pour Gemini, Cursor, Claude et tout agent travaillant sur ce dépôt.  
 > **Dernière consolidation :** 2026-05-27 · **Site :** https://automatex-hub.com  
-> En cas de conflit : **code + ce fichier + `SITE-ROUTES-MEMORY.md`** > hyper-prompt marketing.
+> En cas de conflit : **code + ce fichier + `SITE-ROUTES-MEMORY.md`**.
 
 ---
 
@@ -12,9 +12,7 @@
 |----------|---------|--------|
 | 1 | **`docs/AI-REFERENCE.md`** (ce fichier) | Contexte global : routes, design, copy, stack |
 | 2 | **`docs/SITE-ROUTES-MEMORY.md`** | Détail URLs, ancres, schémas Mermaid, checklist route |
-| 3 | **`docs/REPO-ALIGNMENT-v3.md`** | Hyper-prompt vs réalité du code |
-| 4 | **`docs/HYPER-PROMPT-SITE-v3.md`** | Stratégie marketing / GEO / mobile |
-| 5 | **`docs/guide-fichiers-search-console-gemini.md`** | GSC + perf déjà livrée |
+| 3 | **`docs/guide-fichiers-search-console-gemini.md`** | GSC + perf déjà livrée |
 
 **Règle Cursor (workspace) :** `.cursor/rules/site-routes.mdc` — lire avant toute nouvelle URL ou copy stratégique.
 

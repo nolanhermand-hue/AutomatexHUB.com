@@ -1,6 +1,6 @@
 # Automatex Hub — mémo routes (agents)
 
-> **Màj** : 2026-06-03 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final) · **GO prod** : [`LAUNCH-READINESS.md`](./LAUNCH-READINESS.md)
+> **Màj** : 2026-06-03 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final)
 
 ---
 

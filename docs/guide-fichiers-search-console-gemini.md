@@ -81,7 +81,6 @@ Document de référence pour **Gemini** (ou tout autre assistant) : bonnes prati
 | **JSON-LD BTP** | `components/seo/BtpStructuredData.tsx` | Landing `/btp`. |
 | **JSON-LD local** | `components/seo/LocalStructuredData.tsx` | Pages mandataires / géo. |
 | **Routes & SEO mémo** | `docs/SITE-ROUTES-MEMORY.md` | Source de vérité URLs / ancres. |
-| **Alignement produit** | `docs/HYPER-PROMPT-SITE-v3.md`, `docs/REPO-ALIGNMENT-v3.md` | Copy, piliers, tarifs. |
 
 **Soumission GSC :** `https://automatex-hub.com/sitemap.xml`  
 **Pilier TPE :** `/automatisation-ia-tpe` · ancre suivi : `#suivi-rapports` · contact : `lib/hub-nav.ts` (`contactHref`).
@@ -179,9 +178,6 @@ npm run build
 ## Partie F — Prompts & docs internes Cursor
 
 - Routes / URLs : `docs/SITE-ROUTES-MEMORY.md`
-- Stratégie site : `docs/HYPER-PROMPT-SITE-v3.md`
-- Alignement code : `docs/REPO-ALIGNMENT-v3.md`
-- Lancement : `docs/LAUNCH-READINESS.md`
 - Règle Cursor : `.cursor/rules/site-routes.mdc` (lire avant nouvelle URL ou copy stratégique)
 
 ---
