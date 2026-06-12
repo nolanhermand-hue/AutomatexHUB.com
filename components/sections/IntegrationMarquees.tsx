@@ -9,7 +9,7 @@ type Band1Item =
   | { name: string; file: string }
   | { name: string; mistral: true };
 
-/** Stack cible mandataires — outils métiers visibles (sans moteur technique en hero). */
+/** Stack cible diagnostiqueurs — outils métiers visibles (sans moteur technique en hero). */
 const BAND1_ITEMS: Band1Item[] = [
   { name: "Gmail", file: "gmail" },
   { name: "Telegram", file: "telegram" },
@@ -29,15 +29,15 @@ type Band2Item =
     };
 
 const BAND2_ITEMS: Band2Item[] = [
-  { name: "SeLoger", kind: "card", initials: "SL", bg: "#F0F4FF", text: "#2D4EAA" },
-  { name: "Leboncoin", kind: "icon", file: "leboncoin" },
-  { name: "Logic-Immo", kind: "card", initials: "LI", bg: "#FFF0F0", text: "#A00510" },
-  { name: "PAP.fr", kind: "card", initials: "PAP", bg: "#FFF8E1", text: "#8B5A00" },
-  { name: "IAD France", kind: "card", initials: "IAD", bg: "#E8F5E9", text: "#2E7D32" },
-  { name: "SAFTI", kind: "card", initials: "SAFTI", bg: "#FFF3E8", text: "#E65100" },
-  { name: "Capifrance", kind: "card", initials: "CF", bg: "#EDE7F6", text: "#4527A0" },
-  { name: "Optimhome", kind: "card", initials: "OH", bg: "#E3F2FD", text: "#1565C0" },
-  { name: "EffiCity", kind: "card", initials: "EC", bg: "#FCE4EC", text: "#880E4F" },
+  { name: "Agences locales", kind: "card", initials: "AG", bg: "#F0F4FF", text: "#2D4EAA" },
+  { name: "Gmail", kind: "icon", file: "gmail" },
+  { name: "DPE", kind: "card", initials: "DPE", bg: "#FFF0F0", text: "#A00510" },
+  { name: "Amiante", kind: "card", initials: "AM", bg: "#FFF8E1", text: "#8B5A00" },
+  { name: "Liciel", kind: "card", initials: "LC", bg: "#E8F5E9", text: "#2E7D32" },
+  { name: "ORIS", kind: "card", initials: "OR", bg: "#FFF3E8", text: "#E65100" },
+  { name: "Google Drive", kind: "card", initials: "GD", bg: "#EDE7F6", text: "#4527A0" },
+  { name: "Telegram", kind: "card", initials: "TG", bg: "#E3F2FD", text: "#1565C0" },
+  { name: "Annuaire agences", kind: "card", initials: "AN", bg: "#FCE4EC", text: "#880E4F" },
 ];
 
 function initialsFallback(label: string): string {
@@ -199,7 +199,7 @@ export function IntegrationMarquees() {
     >
       <p className="sr-only">
         Compatible avec Gmail, Telegram, Google Drive, Google Calendar, SeLoger, Leboncoin,
-        Logic-Immo, PAP, IAD France, SAFTI, Capifrance, Optimhome, EffiCity. {SOVEREIGNTY_TRUST_LINE}.
+        Agences locales, DPE, amiante, Liciel, ORIS, Google Drive, Telegram. {SOVEREIGNTY_TRUST_LINE}.
         Conforme RGPD.
       </p>
       <div className="bg-surface">

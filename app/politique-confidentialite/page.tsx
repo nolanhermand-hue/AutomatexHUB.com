@@ -48,7 +48,7 @@ export default function PolitiqueConfidentialitePage() {
 
       <LegalSection title="1. Qui sommes-nous ?">
         <LegalP>
-          {NAP.brand} est un service d&apos;automatisation pour mandataires immobiliers,
+          {NAP.brand} est un service d&apos;automatisation pour diagnostiqueurs immobiliers,
           artisans BTP et TPE, édité par {c.founder} ({LEGAL.status}), basé à {NAP.city}, Orne (
           {NAP.postalCode}).
         </LegalP>

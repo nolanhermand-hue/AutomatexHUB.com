@@ -19,7 +19,7 @@ function sortTrades(page: CoconPainPage): ReadonlyArray<CoconTradeSection> {
     "couvreur",
     "chauffagiste",
     "courtier",
-    "mandataireImmo",
+    "immobilierDiag",
   ];
   const byId = new Map(page.tradeSections.map((s) => [s.id, s]));
   return order.map((id) => byId.get(id)).filter((s): s is CoconTradeSection => !!s);

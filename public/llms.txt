@@ -1,20 +1,20 @@
 # Automatex Hub
 
-> Automatex Hub est un service de réponse automatique aux leads et de tri de boîte mail pour mandataires immobiliers, diagnostiqueurs et artisans BTP indépendants en Normandie. Fondé par Nolan Hermand à Flers (Orne, 61). Site vitrine sur CDN Netlify ; automatisations N8N Cloud (Francfort, UE) et traitement linguistique Mistral (Paris/UE). Détail : https://automatex-hub.com/vos-donnees
+> Automatex Hub est un service de réponse automatique aux demandes agences et de tri de boîte mail pour diagnostiqueurs immobiliers indépendants et artisans BTP en Normandie. Fondé par Nolan Hermand à Flers (Orne, 61). Site vitrine sur CDN Netlify ; automatisations N8N Cloud (Francfort, UE) et traitement linguistique Mistral (Paris/UE). Détail : https://automatex-hub.com/vos-donnees
 
 ## Services
 
-- [Mandataires immobiliers](https://automatex-hub.com/immobilier): Réponse automatique aux leads SeLoger et LeBonCoin en moins de 2 minutes, tri de boîte mail, classement Drive. Packs Déclic, Système, Pilote (99–449 €/mois après mise en place).
+- [Diagnostiqueurs immobiliers](https://automatex-hub.com/immobilier): Réponse aux demandes agences en moins de 2 minutes, tri de boîte mail, classement Drive. Packs Déclic, Système, Pilote (99–449 €/mois après mise en place).
 - [Artisans BTP](https://automatex-hub.com/btp): SMS automatique en 90 secondes sur appel manqué, devis par dictée vocale, résumé Telegram à 18h. Même grille Déclic / Système / Pilote.
 - [Accompagnement](https://automatex-hub.com/accompagnement): Essentiel, Suivi ou Copilote selon le pack — point mensuel, ajustements, ligne directe 06 45 38 42 33.
 - [Tarifs](https://automatex-hub.com/immobilier#pricing): Sans engagement · résiliable en 1 mail.
 
 ## Zone géographique
 
-- [Normandie](https://automatex-hub.com/mandataires-normandie): Orne (priorité), Calvados, Manche. Basé à Flers (61100).
-- [Mandataires Flers](https://automatex-hub.com/mandataires-flers): Mandataires IAD, SAFTI, Capifrance du bassin de Flers.
-- [Mandataires Alençon](https://automatex-hub.com/mandataires-alencon): Mandataires du secteur d'Alençon (61000).
-- [Mandataires Argentan](https://automatex-hub.com/mandataires-argentan): Mandataires du secteur d'Argentan (61200).
+- [Normandie](https://automatex-hub.com/normandie): Orne (priorité), Calvados, Manche. Basé à Flers (61100).
+- [Flers & agglo](https://automatex-hub.com/normandie/flers): Artisans et diagnostiqueurs du bassin de Flers.
+- [Alençon](https://automatex-hub.com/normandie/alencon): BTP, diag et TPE nord-Orne.
+- [Argentan](https://automatex-hub.com/normandie/argentan): BTP, diag et TPE sud-Orne.
 
 ## Optional
 

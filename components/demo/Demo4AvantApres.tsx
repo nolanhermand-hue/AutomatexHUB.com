@@ -52,9 +52,9 @@ export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
           ))}
         </ul>
         <div className="border-t border-border bg-bg px-5 py-4">
-          <p className="font-mono text-2xl font-bold tabular-nums text-danger">− 3 500 €</p>
+          <p className="font-mono text-2xl font-bold tabular-nums text-danger">− 220 €</p>
           <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-faint">
-            Commission perdue
+            Mission perdue
           </p>
         </div>
       </div>
@@ -91,9 +91,9 @@ export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
           ))}
         </ul>
         <div className="border-t border-primary/20 bg-bg px-5 py-4">
-          <p className="font-mono text-2xl font-bold tabular-nums text-success">+ 3 500 €</p>
+          <p className="font-mono text-2xl font-bold tabular-nums text-success">+ 220 €</p>
           <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-faint">
-            Commission préservée
+            Mission préservée
           </p>
         </div>
       </div>

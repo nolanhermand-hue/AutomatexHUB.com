@@ -16,7 +16,7 @@ export function AutomationsFeatureGrid() {
         </h2>
         <p className="mt-2 max-w-readable text-sm text-muted md:text-base">
           Chaque configuration est construite sur votre façon de travailler. Voici les fonctions les
-          plus utilisées par les mandataires normands.
+          plus utilisées par les diagnostiqueurs normands.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">

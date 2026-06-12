@@ -21,8 +21,8 @@ export function Footer() {
               <LogoOrbit variant="symbol" href="/" height={40} />
             </div>
             <p className="mb-6 max-w-sm text-[13px] leading-relaxed text-muted">
-              Automatisations pour artisans BTP, diagnostiqueurs, courtiers, gérants de TPE et
-              mandataires immobiliers — installé à Flers, déployé en Orne et Normandie.{" "}
+              Automatisations pour artisans BTP, diagnostiqueurs immobiliers, courtiers, gérants de
+              TPE — installé à Flers, déployé en Orne et Normandie.{" "}
               {SOVEREIGNTY_TRUST_LINE}.
             </p>
             <FooterTrustBadges />
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
         </div>
 
-        <nav aria-label="Pages locales mandataires" className="mb-8">
+        <nav aria-label="Pages locales Normandie" className="mb-8">
           <p className="font-mono text-[10px] uppercase tracking-widest text-faint">
             {FOOTER_COPY.localHeading}
           </p>

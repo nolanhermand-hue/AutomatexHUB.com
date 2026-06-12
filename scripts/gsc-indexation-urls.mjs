@@ -11,8 +11,8 @@ const paths = [
   "/automatisation-artisan-alencon",
   "/automatisation-artisan-argentan",
   "/devis-automatique-artisan-orne",
-  "/mandataires-normandie",
-  "/mandataires-flers",
+  "/normandie",
+  "/normandie/flers",
   "/a-propos",
 ];
 

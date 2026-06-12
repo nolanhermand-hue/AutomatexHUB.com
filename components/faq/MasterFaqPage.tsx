@@ -16,7 +16,7 @@ export function MasterFaqPage() {
           40 réponses sur Automatex
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-muted md:text-base">
-          Questions fréquentes des artisans, mandataires et TPE — réponses courtes, vérifiables,
+          Questions fréquentes des artisans, diagnostiqueurs et TPE — réponses courtes, vérifiables,
           citables. Pour aller plus vite : réservez une démo de 20 minutes sur votre cas.
         </p>
       </header>

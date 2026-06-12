@@ -19,7 +19,7 @@ import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
 import { RENDEZ_VOUS_PATH } from "@/lib/hub-nav";
 
-/** Parcours mandataires — HTML complet au build (évite CLS skeleton / dynamic). */
+/** Parcours diagnostiqueurs — HTML complet au build (évite CLS skeleton / dynamic). */
 export function ImmobilierHome() {
   return (
     <div className="funnel-surface">

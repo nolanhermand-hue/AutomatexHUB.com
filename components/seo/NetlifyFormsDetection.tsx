@@ -20,7 +20,7 @@ export function NetlifyFormsDetection() {
         <input name="prenom" />
         <input name="telephone" />
         <select name="activite">
-          <option value="mandataire-iad">Mandataire IAD</option>
+          <option value="diagnostiqueur">Diagnostiqueur immobilier</option>
         </select>
         <input name="company_website" />
       </form>

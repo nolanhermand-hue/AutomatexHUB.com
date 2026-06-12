@@ -1,7 +1,7 @@
 {
   "name": "Automatex Hub",
   "short_name": "Automatex",
-  "description": "Automatisation pour mandataires immobiliers et artisans BTP en Normandie.",
+  "description": "Automatisation pour diagnostiqueurs immobiliers et artisans BTP en Normandie.",
   "lang": "fr-FR",
   "start_url": "/",
   "scope": "/",

@@ -215,7 +215,7 @@ export function VosDonneesView() {
                 </p>
                 <p>
                   <strong className="text-text">Seul Nolan a accès aux enchaînements.</strong> Isolés par
-                  client — jamais partagés entre artisans ou mandataires.
+                  client — jamais partagés entre artisans ou diagnostiqueurs.
                 </p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">

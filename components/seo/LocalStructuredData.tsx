@@ -1,4 +1,4 @@
-import { buildLocalMandatairesJsonLd } from "@/lib/json-ld";
+import { buildLocalDiagnostiqueurJsonLd } from "@/lib/json-ld";
 
 type Props = {
   path: string;
@@ -8,7 +8,7 @@ type Props = {
 };
 
 export function LocalStructuredData({ path, pageName, city, description }: Props) {
-  const json = buildLocalMandatairesJsonLd({ path, pageName, city, description });
+  const json = buildLocalDiagnostiqueurJsonLd({ path, pageName, city, description });
   return (
     <script
       type="application/ld+json"

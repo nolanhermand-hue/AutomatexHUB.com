@@ -43,7 +43,7 @@ export function HubEntry() {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Link href={rendezVousHref()} className="btn-bracket" data-analytics-cta="hub_immobilier_cta">
-              Je suis mandataire
+              Je suis diagnostiqueur
             </Link>
             <Link
               href={rendezVousHref()}

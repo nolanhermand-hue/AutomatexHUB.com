@@ -54,14 +54,13 @@ export function Hero() {
               </p>
 
               <p className="sr-only">
-                Automatisation pour mandataires immobiliers indépendants en Normandie et dans
-                l&apos;Orne — Flers (61). Réponse immédiate aux demandes, tri de mails, classement de
-                documents pour IAD, SAFTI et Capifrance.
+                Automatisation pour diagnostiqueurs immobiliers indépendants en Normandie et dans
+                l&apos;Orne — Flers (61). Réponse immédiate aux demandes agences, tri de mails,
+                classement de rapports DPE et pièces mission.
               </p>
 
               <h1 className="hero-h1 mt-5 font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold leading-[1.05] text-text md:text-[clamp(2.75rem,5vw,5rem)]">
-                Ne perdez plus jamais un client{" "}
-                <span className="italic text-primary">à 3 500 €</span>.
+                {HERO_COPY.h1}
               </h1>
 
               <p className="sr-only" aria-hidden="true">
@@ -119,7 +118,7 @@ export function Hero() {
 
             <aside
               className="hero-aside mt-10 rounded-xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_var(--color-border)] lg:mt-5 lg:p-7"
-              aria-label="Chiffres clés mandataires"
+              aria-label="Chiffres clés diagnostiqueurs"
             >
               <ul className="space-y-6">
                 {HERO_STATS.map((stat) => (

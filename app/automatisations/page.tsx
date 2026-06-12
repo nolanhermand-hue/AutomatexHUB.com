@@ -13,11 +13,11 @@ import { rendezVousHref } from "@/lib/hub-nav";
 export const metadata: Metadata = {
   title: "Tout ce qu'Automatex peut faire — Catalogue des automatisations · Orne",
   description:
-    "Réponse aux demandes, tri mails, devis automatiques, classement Drive, résumé Telegram, note vocale, relances clients — catalogue complet pour mandataires et artisans BTP en Orne.",
+    "Réponse aux demandes, tri mails, devis automatiques, classement Drive, résumé Telegram, note vocale, relances clients — catalogue complet pour diagnostiqueurs et artisans BTP en Orne.",
   openGraph: {
     title: "Ce qu'Automatex fait à votre place — Catalogue complet · Automatex Hub",
     description:
-      "Toutes les automatisations pour mandataires immobiliers et artisans BTP en Normandie. Chaque fonction expliquée avec un exemple réel.",
+      "Toutes les automatisations pour diagnostiqueurs immobiliers et artisans BTP en Normandie. Chaque fonction expliquée avec un exemple réel.",
     url: `${SITE_URL}/automatisations`,
   },
   alternates: { canonical: `${SITE_URL}/automatisations` },
@@ -62,7 +62,7 @@ export default function AutomatisationsPage() {
             TPE & PME — voir l&apos;offre →
           </Link>
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
-            Mandataire immobilier →
+            Diagnostiqueur immobilier →
           </Link>
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
             Artisan BTP →
@@ -87,7 +87,7 @@ export default function AutomatisationsPage() {
             TPE & PME — voir l&apos;offre →
           </Link>
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
-            Mandataire immobilier →
+            Diagnostiqueur immobilier →
           </Link>
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
             Artisan BTP →

@@ -15,7 +15,7 @@ export function FeaturedAutomationsSection({ variant }: FeaturedAutomationsSecti
   const featured = AUTOMATIONS_CATALOG.filter((a) => ids.includes(a.id));
   const subtitle =
     variant === "immo"
-      ? "Par les mandataires IAD, SAFTI et Capifrance en Normandie."
+      ? "Par les diagnostiqueurs indépendants en Normandie."
       : "Par les artisans solo dans l'Orne — plomberie, électricité, carrelage, couverture.";
 
   return (

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { VALUE_PER_LEAD_EUROS } from "@/lib/constants";
 
 type RoiCounterProps = {
   variant: "immobilier" | "btp";
@@ -10,14 +11,16 @@ type RoiCounterProps = {
  * Valeur statique au build — pas d’anim GSAP (CLS + TBT desktop).
  */
 export function RoiCounter({ variant, className }: RoiCounterProps) {
+  const immoValue = VALUE_PER_LEAD_EUROS.toLocaleString("fr-FR");
+
   const label =
     variant === "immobilier"
-      ? "Commission moyenne préservée si 1 client est rattrapé à temps"
+      ? "Mission moyenne préservée si 1 créneau agence est rattrapé à temps"
       : "Ordre de grandeur si 1 devis part pendant que vous êtes sur le chantier";
 
   const foot =
     variant === "immobilier"
-      ? "1 dossier ≈ 3 500 € (hypothèse marché) · le pack Système se compare à une commission potentielle."
+      ? `1 mission ≈ ${immoValue} € (hypothèse terrain) · le pack Système se compare à quelques missions récupérées.`
       : "1 chantier récupéré peut représenter plusieurs mois de pack Système.";
 
   return (
@@ -35,7 +38,7 @@ export function RoiCounter({ variant, className }: RoiCounterProps) {
           className="demo-glow-roi mt-3 font-heading text-4xl font-bold tabular-nums text-primary md:text-5xl"
           style={{ minWidth: "11ch" }}
         >
-          <span className="inline-block text-right">3 500</span> €
+          <span className="inline-block text-right">{immoValue}</span> €
         </p>
         <p className="mx-auto mt-4 max-w-readable text-sm text-muted">{foot}</p>
       </div>

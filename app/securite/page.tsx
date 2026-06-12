@@ -25,7 +25,7 @@ export default function SecuritePage() {
     <LegalPageShell title="Comment Automatex protège vos données clients">
       <LegalInfraCallout />
       <LegalP>
-        En tant que mandataire ou artisan, vous traitez des données de clients. Voici comment{" "}
+        En tant que diagnostiqueur ou artisan, vous traitez des données de clients. Voici comment{" "}
         {c.brand} protège votre périmètre.
       </LegalP>
 

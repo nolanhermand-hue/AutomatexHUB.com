@@ -161,7 +161,7 @@ export default function AccompagnementPage() {
               href="/immobilier#pricing"
               className="btn-bracket btn-bracket-outline flex-1 justify-center"
             >
-              Tarifs mandataires
+              Tarifs diagnostiqueurs
             </Link>
             <Link href="/btp#pricing" className="btn-bracket btn-bracket-outline flex-1 justify-center">
               Tarifs artisans BTP

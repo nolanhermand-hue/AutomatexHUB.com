@@ -19,20 +19,20 @@ export function LeadImmobilierDemo({ active }: DemoAnimationProps) {
   return (
     <div ref={rootRef} className="demo-gsap-stack">
       <div className="demo-beat flex flex-col items-center gap-2 text-center">
-        <p className="text-sm text-[var(--color-text)]">🏠 Visite en cours</p>
-        <p className="text-xs text-primary">Demande SeLoger : M. Martin, 3 pièces Flers</p>
+        <p className="text-sm text-[var(--color-text)]">🏠 Mission DPE en cours</p>
+        <p className="text-xs text-primary">Mail agence : DPE urgent avant compromis — Flers</p>
       </div>
       <div className="demo-beat text-center text-sm text-[var(--color-text)]">
-        Réponse auto en moins de 2 min pendant la visite
+        Réponse auto en moins de 2 min pendant la mission
       </div>
       <div className="demo-beat text-center">
         <p className="max-w-xs text-xs text-[var(--color-text)]/90">
-          Bonjour M. Martin, je suis en visite. Je vous rappelle dans 30 minutes.
+          Bonjour, je suis en mission sur le terrain. Je confirme un créneau dans 30 minutes.
         </p>
       </div>
       <div className="demo-beat text-center">
-        <p className="text-sm text-[#38a169]">✅ Client engagé · 0 demande perdue</p>
-        <p className="demo-glow-roi text-lg font-semibold text-primary">3 500 € préservés</p>
+        <p className="text-sm text-[#38a169]">✅ Créneau confirmé · 0 demande perdue</p>
+        <p className="demo-glow-roi text-lg font-semibold text-primary">~220 € préservés</p>
       </div>
     </div>
   );
