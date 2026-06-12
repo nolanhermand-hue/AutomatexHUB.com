@@ -8,16 +8,16 @@ export const HOURS_LOST_PER_SALE_PER_YEAR = 8;
 
 export const SHOW_CALCULATOR_HOURS_ROW = true;
 
-export const DEFAULT_SALES_PER_YEAR = 12;
+export const DEFAULT_SALES_PER_YEAR = 180;
 
 export const CALCULATOR_SALES_MIN = 1;
 export const CALCULATOR_SALES_MAX = 30;
 
 /**
- * Hypothèse mandataire : commission potentielle ~3 500 € par dossier qualifié
- * (ordre de grandeur marché, pas un gain garanti par Automatex).
+ * Hypothèse diagnostiqueur : mission moyenne ~220 € (DPE / pack diag courant)
+ * (ordre de grandeur terrain, pas un gain garanti par Automatex).
  */
-export const VALUE_PER_LEAD_EUROS = 3500;
+export const VALUE_PER_LEAD_EUROS = 220;
 
 /** Délai standard de mise en ligne — après validation du périmètre client. */
 export const SETUP_48H_NUANCE =
@@ -106,33 +106,32 @@ export const META = {
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
 export const GEO_DEFINITION =
-  "Automatex installe réponse aux demandes, devis et relances pour artisans BTP, TPE et mandataires en Normandie, depuis Flers (Orne). Branchement sur Gmail, Drive, portails et téléphone — sans changer vos outils. Données et automatisations en UE, conformes RGPD (détail sur /vos-donnees)." as const;
+  "Automatex installe réponse aux demandes agences, devis et relances pour artisans BTP, TPE et diagnostiqueurs immobiliers indépendants en Normandie, depuis Flers (Orne). Branchement sur Gmail, Drive, annuaires agences et téléphone — sans changer vos outils. Données et automatisations en UE, conformes RGPD (détail sur /vos-donnees)." as const;
 
 export const META_KEYWORDS = [
-  "mandataire immobilier Normandie",
-  "automatisation mandataire IAD",
-  "réponse demandes SeLoger automatique",
+  "diagnostiqueur immobilier Normandie",
+  "automatisation diagnostiqueur indépendant",
+  "réponse demande agence DPE automatique",
   "Flers Orne 61",
   "RGPD France automatisation",
-  "mandataire SAFTI Normandie",
-  "mandataire Capifrance Orne",
-  "clients immobilier perdus solution",
-  "assistant mandataire Telegram",
-  "Google Drive classement documents mandataire",
-  "mandataire indépendant Caen Rouen Alençon",
-  "automatisation boîte mail agent immobilier",
-  "mandataire IAD Orne automatisation",
+  "diagnostiqueur certifié Orne",
+  "créneau agence perdu solution",
+  "assistant diagnostiqueur Telegram",
+  "Google Drive classement rapports DPE",
+  "diagnostiqueur indépendant Caen Rouen Alençon",
+  "automatisation boîte mail diagnostiqueur",
+  "DPE amiante électricité Normandie",
   "OVHcloud données France immobilier",
 ] as const;
 
 /** Tableau comparatif (accessibilité + citations LLM). */
 export const COMPARISON_TABLE = {
-  caption: "Comparatif mandataire avec et sans Automatex",
+  caption: "Comparatif diagnostiqueur avec et sans Automatex",
   headers: ["Situation", "Sans Automatex", "Avec Automatex"] as const,
   rows: [
     [
-      "demande SeLoger reçu à 22h pendant une visite",
-      "Perdu à 9h le lundi matin",
+      "Mail agence pour créneau DPE pendant une mission amiante",
+      "Vu le lendemain — créneau passé au confrère",
       "Réponse en moins de 2 minutes",
     ],
     [
@@ -168,11 +167,9 @@ export const NAV_LINKS = [
 
 /** Items défilants sous le hero (trust bar). */
 export const TRUST_BAR_ITEMS = [
-  "IAD · Normandie",
-  "SAFTI · Orne",
-  "Capifrance",
-  "Optimhome",
-  "EffiCity",
+  "Certifié indépendant",
+  "DPE · amiante · élec",
+  "Annuaire agences",
   SOVEREIGNTY_TRUST_LINE,
   "RGPD",
   "Opérationnel en 48 h",
@@ -182,7 +179,7 @@ export const TRUST_BAR_ITEMS = [
 export const AUTOMATIONS_SECTION = {
   h2: "Vos journées, avec Automatex.",
   subtitle:
-    "Chaque mandataire est différent. Chaque configuration est construite sur votre façon de travailler. Ce qui est déjà en place.",
+    "Chaque diagnostiqueur est différent. Chaque configuration est construite sur votre façon de travailler. Ce qui est déjà en place.",
   introLine:
     "Configurations réelles, adaptées à votre façon de travailler.",
   footnote:
@@ -196,38 +193,38 @@ export const AUTOMATIONS_SECTION = {
  */
 export const HERO_COPY = {
   /** A5 — Pre-heading badge geo */
-  preHeading: "Pour les mandataires indépendants en Normandie",
+  preHeading: "Pour les diagnostiqueurs indépendants en Normandie",
   badgeHosted: SOVEREIGNTY_TRUST_LINE,
   badgeRgpd: "Conforme RGPD",
   badgeNoCommit: "Sans engagement",
-  h1: "Un client non rattrapé peut coûter ~3 500 € (hypothèse).",
+  h1: "Un créneau agence perdu peut coûter ~220 € (hypothèse).",
   subtitle:
-    "Pour mandataires IAD, SAFTI, Capifrance en Normandie. Réponse aux demandes en 2 min pendant vos visites. Sans engagement, résiliable en 1 mail.",
+    "Pour diagnostiqueurs certifiés en Normandie. Réponse aux demandes agences en 2 min pendant vos missions DPE ou amiante. Sans engagement, résiliable en 1 mail.",
   /** A3 + B13 — CTA unique primaire, ≤ 5 mots, verbe d'action */
   ctaPrimary: PRIMARY_DEMO_CTA,
   /** Lien secondaire dégradé en texte simple — pas un bouton */
   ctaSecondary: "Voir comment ça marche",
   /** A8 — Stat anchor visible */
   statAnchor:
-    "Commission potentielle par dossier qualifié : ordre de grandeur marché (voir source sous les chiffres).",
+    "Mission diagnostic moyenne : ordre de grandeur terrain (voir source sous les chiffres).",
   /** A10 — Compteur social proof crédible */
   liveCounter: "Onboardings limités pour garder un suivi humain serré — demandez en démo si une place est ouverte",
   /** A15 — Mention hébergeur nommé */
   hostingMention: "Automatisations UE (N8N Francfort) · Mistral Paris",
   /** A7 — Téléphone cliquable */
   socialProof:
-    "Conçu pour les mandataires IAD, SAFTI et Capifrance en Orne et Normandie.",
+    "Conçu pour les diagnostiqueurs indépendants en Orne et Normandie.",
 } as const;
 
-/** Carte stats hero (Framer) — chiffres alignés agitation / commission */
+/** Carte stats hero (Framer) — chiffres alignés agitation / missions */
 export const HERO_STATS = [
-  { value: "~3 500 €", label: "Commission potentielle par client (hypothèse marché)" },
-  { value: "17 500 €", label: "Sur 5 clients ratés en 12 mois" },
-  { value: "< 5 min", label: "Fenêtre de réponse avant le concurrent" },
+  { value: "~220 €", label: "Mission diagnostic moyenne (hypothèse terrain)" },
+  { value: "1 100 €", label: "Sur 5 créneaux agences ratés en un mois" },
+  { value: "< 5 min", label: "Fenêtre de réponse avant le confrère" },
 ] as const;
 
 export const HERO_STATS_SOURCE =
-  "Source : commission moyenne IAD ~3,4 % sur ~250 000 € (Immo Matin, juil. 2025)." as const;
+  "Source : barème mission DPE / pack diag courant 180–250 € (ordre de grandeur terrain, 2025)." as const;
 
 /** A13 / C6 / E6 — Outils intégrés : preuve sociale technique */
 export const INTEGRATIONS_LOGOS: ReadonlyArray<{
@@ -245,21 +242,21 @@ export const INTEGRATIONS_LOGOS: ReadonlyArray<{
 
 export const CALCULATOR_COPY = {
   sectionEyebrow: "Estimation",
-  title: "Combien de clients perdez-vous chaque semaine ?",
+  title: "Combien de créneaux agences perdez-vous chaque semaine ?",
   subtitle:
-    "Déplacez le curseur selon votre nombre de ventes annuelles. Les montants en euros sont une hypothèse (commission potentielle), pas un gain garanti.",
-  salesLabel: "Ventes par an",
-  outLeadsLabel: "clients perdus par semaine (estimation)",
-  outEurosLabel: "Commissions en jeu par an (hypothèse)",
+    "Déplacez le curseur selon votre nombre de missions annuelles. Les montants en euros sont une hypothèse (mission moyenne), pas un gain garanti.",
+  salesLabel: "Missions par an",
+  outLeadsLabel: "créneaux perdus par semaine (estimation)",
+  outEurosLabel: "CA en jeu par an (hypothèse)",
   outHoursLabel: "Heures perdues par an sur l'administratif",
-  ctaPrefix: "Récupérer ces clients",
+  ctaPrefix: "Récupérer ces créneaux",
   ctaSuffix: "Réserver 20 min",
   scrollHint: "Automatex les récupère. Voici comment",
 } as const;
 
 /** B2 — Headline Problème : douleur palpable */
 export const PROBLEM_HEADING = {
-  h2: "Pourquoi les mandataires IAD et SAFTI perdent des clients chaque semaine",
+  h2: "Pourquoi les diagnostiqueurs indépendants perdent des créneaux agences chaque semaine",
 } as const;
 
 export type ProblemIconId = "lead" | "mail" | "document";
@@ -272,32 +269,32 @@ export const PROBLEM_ITEMS: ReadonlyArray<{
 }> = [
   {
     icon: "lead",
-    title: "Vendredi 22h : une demande reçue, perdue à 9h lundi",
+    title: "Mardi 11h : mail agence pendant un DPE, répondu à 18h",
     body:
-      "Un acquéreur écrit sur SeLoger pendant que vous êtes en visite. Sans réponse en moins de 5 minutes, il rappelle un autre mandataire du réseau. Le premier qui décroche signe. Pas vous.",
+      "Une agence demande un créneau urgent pour une vente pendant que vous êtes chez le vendeur. Sans réponse en moins de 5 minutes, elle confirme un autre diagnostiqueur de l’annuaire. Le premier qui valide le RDV prend la mission.",
   },
   {
     icon: "mail",
-    title: "Relance manuelle oubliée : un mandat exclusif chez un confrère",
+    title: "Relance agence oubliée : le dossier part au confrère",
     body:
-      "Votre boîte mail grossit chaque jour. Une offre d'achat ou une relance vendeur se perd au milieu de dizaines de messages non triés. Trois heures plus tard, le vendeur a déjà rappelé un confrère.",
+      "Votre boîte mail grossit chaque jour. Une demande amiante ou un complément DPE se perd au milieu de dizaines de messages non triés. Trois heures plus tard, l’agence a déjà booké un confrère.",
   },
   {
     icon: "document",
-    title: "Soirées à trier la boîte mail au lieu de relancer",
+    title: "Soirées à trier la boîte mail au lieu de confirmer des RDV",
     body:
-      "Votre fichier de prospection attend. Pendant que vous classez des mails et cherchez un diagnostic dans le fil, vos vendeurs chauds refroidissent. La pige et les visites passent après l’administratif.",
+      "Vos rapports attendent. Pendant que vous classez des mails et cherchez un bon de commande dans le fil, les agences pressées passent au suivant. Les missions du lendemain se jouent la veille au soir.",
   },
 ];
 
 /** B4 — Agitation chiffrée : loss-frame à l'année */
 export const AGITATION_COPY = {
   eyebrow: "L'addition annuelle",
-  h2: "5 clients ratés en 12 mois = 17 500 € de manque à gagner.",
+  h2: "25 créneaux agences ratés en 12 mois = 5 500 € de manque à gagner.",
   body:
-    "Sur la base d'une hypothèse de ~3 500 € de commission potentielle par client qualifié, rater 5 opportunités dans l'année représente un manque à gagner important. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
+    "Sur la base d'une hypothèse de ~220 € par mission diagnostic, rater 25 créneaux dans l'année représente un manque à gagner visible. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
   microNote:
-    "Source : commission moyenne IAD 3,4 % sur transaction à ~250 000 € (Immo Matin, juillet 2025).",
+    "Source : barème mission DPE / pack diag courant 180–250 € (ordre de grandeur terrain, 2025).",
 } as const;
 
 /** B5 — Solution : verbes actifs (On installe / Vous approuvez / Ça tourne) */
@@ -419,10 +416,10 @@ export const BENEFITS_ITEMS: ReadonlyArray<{
   },
   {
     icon: "money",
-    stat: "+ 1 à 2 ventes/an",
-    title: "Ventes supplémentaires",
+    stat: "+ 1 à 2 missions/sem",
+    title: "Missions récupérées",
     body:
-      "Sur la base d'un mandataire moyen (12 ventes/an à 5 800 € net), récupérer 1 à 2 clients ratés représente +5 800 à +11 600 € de commission nette.",
+      "Sur la base d'un diagnostiqueur actif (~180 missions/an), récupérer 1 à 2 créneaux agences par semaine représente plusieurs milliers d'euros de CA sur l'année.",
   },
   {
     icon: "shield",
@@ -454,16 +451,16 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
   {
     time: "Vendredi 21h",
     scenario:
-      "Un acquéreur écrit sur SeLoger à propos de votre annonce à Flers. Vous êtes en famille, téléphone en silencieux.",
+      "Une agence de Flers demande un DPE lundi matin pour une vente urgente. Vous êtes en famille, téléphone en silencieux.",
     result:
-      "Automatex envoie un message personnalisé en 30 secondes, propose un créneau samedi 10h, et vous notifie sur Telegram. Lundi : le RDV est tenu, vous décrochez la visite.",
+      "Automatex envoie un message personnalisé en 30 secondes, propose un créneau lundi 8h30, et vous notifie sur Telegram. Lundi : le RDV est confirmé, vous gardez la mission.",
   },
   {
     time: "Lundi 7h45",
     scenario:
-      "Trois offres d'achat ont atterri dans votre boîte mail pendant le week-end, mélangées à 47 autres messages.",
+      "Trois demandes agences ont atterri dans votre boîte mail pendant le week-end, mélangées à 47 autres messages.",
     result:
-      "Votre planning du matin sur le téléphone affiche : « 3 offres prioritaires, 2 relances vendeur attendues ». Vous traitez l'urgent en 12 minutes au lieu d'1h.",
+      "Votre planning du matin sur le téléphone affiche : « 3 missions prioritaires, 2 confirmations agence attendues ». Vous traitez l'urgent en 12 minutes au lieu d'1h.",
   },
   {
     time: "Mercredi 14h",
@@ -477,7 +474,7 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
 /** D1 — 3 packs unifiés (Déclic / Système / Pilote) */
 export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
-  h2: "Tarifs Automatex — 3 packs + sur mesure pour mandataires en Normandie",
+  h2: "Tarifs Automatex — 3 packs + sur mesure pour diagnostiqueurs en Normandie",
   h2SurMesureHint:
     "Mise en place + mensualité transparente. Basculez mensuel ou annuel (−15 %). Suivi humain 12 mois sur chaque pack.",
   chooseCta: PRIMARY_DEMO_CTA,
@@ -536,7 +533,7 @@ export type PricingDisplayAudience = "home" | "immo" | "tpe";
 /** Audience passée aux sections tarifs (home / immo / btp / tpe). */
 export type PricingPackAudience = "default" | "home" | "btp" | "tpe";
 
-/** Promesses et encarts ROI affichés sur les cartes (home = artisan, immo = mandataire). */
+/** Promesses et encarts ROI affichés sur les cartes (home = artisan, immo = diagnostiqueur). */
 export const PRICING_OFFER_DISPLAY: Record<
   PackId,
   Record<PricingDisplayAudience, { promise: string; roiEncart: string }>
@@ -547,8 +544,8 @@ export const PRICING_OFFER_DISPLAY: Record<
       roiEncart: "Un dossier ou un chantier récupéré peut couvrir plusieurs mois de formule.",
     },
     immo: {
-      promise: "Vous ne ratez plus jamais un client pendant vos visites.",
-      roiEncart: "1 mandat rentré rembourse l'année.",
+      promise: "Vous ne ratez plus jamais une demande agence pendant vos missions.",
+      roiEncart: "1 mission récupérée rembourse plusieurs mois de formule.",
     },
     tpe: {
       promise: "Une automatisation cadrée sur votre activité — accompagnement Essentiel inclus.",
@@ -562,7 +559,7 @@ export const PRICING_OFFER_DISPLAY: Record<
     },
     immo: {
       promise: "Votre administratif tourne tout seul, sans vous.",
-      roiEncart: "Jusqu'à 8 h par semaine récupérées sur la prospection et les visites.",
+      roiEncart: "Jusqu'à 8 h par semaine récupérées sur les missions et les confirmations agences.",
     },
     tpe: {
       promise: "3 à 4 automatisations — votre administratif avance sans vous bloquer.",
@@ -722,7 +719,7 @@ export const FEATURE_COMPARISON: ReadonlyArray<FeatureRow> = [
 export const PAID_OFFERS = OFFERS.filter((o) => !o.customOffer);
 
 export const FAQ_HEADING = {
-  h2: "Questions des mandataires IAD, SAFTI et Capifrance avant de démarrer",
+  h2: "Questions des diagnostiqueurs indépendants avant de démarrer",
 } as const;
 
 /** Index FAQ ouverte par défaut (objection abandon après paiement) */
@@ -733,7 +730,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: FAQ_DEFAULT_OPEN_QUESTION,
     answer:
-      "Oui. Nolan installe et configure, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les portails et la charge de visites. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
+      "Oui. Nolan installe et configure, vous accompagne de près les 30 premiers jours, puis reste joignable toute la première année. Chaque trimestre, un point de contrôle de 15 à 20 minutes pour revoir le ton, les agences et la charge de missions. Si un scénario coince, vous écrivez ou vous appelez — ce n’est pas une carte livrée puis oubliée. Sans engagement de durée : vous pouvez arrêter en un mail.",
   },
   {
     question: "Devez-vous être à l'aise avec la technologie ?",
@@ -748,7 +745,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Combien de temps pour la mise en place ?",
     answer:
-      "48 heures ouvrées après notre appel de validation du périmètre (accès outils, règles, tests). Nolan configure, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des mandataires repartent avec leurs premières réponses actives dès le week-end suivant.",
+      "48 heures ouvrées après notre appel de validation du périmètre (accès outils, règles, tests). Nolan configure, teste deux ou trois scénarios réels avec vous et reste disponible par téléphone pour ajuster le ton. La plupart des diagnostiqueurs repartent avec leurs premières réponses actives dès le week-end suivant.",
   },
   {
     question: "Et si vous voulez arrêter ?",
@@ -756,9 +753,9 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Vous êtes libre. Aucun engagement de durée, résiliable en un mail. Vos données vous sont restituées et effacées sous 7 jours.",
   },
   {
-    question: "Mon CRM réseau (Playiad, Omega) est fermé. Ça marche quand même ?",
+    question: "Mon logiciel métier (Liciel, ORIS, Alain…) est fermé. Ça marche quand même ?",
     answer:
-      "Oui. Les outils Playiad ou Omega restent inchangés : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes qui arrivent par SeLoger, Leboncoin ou votre site passent par le mail comme aujourd'hui — mais la réponse part pendant la visite. Vous recopiez ensuite ce qui doit l'être dans votre CRM en un copier-coller.",
+      "Oui. Votre logiciel de saisie diagnostic reste inchangé : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes agences passent par le mail comme aujourd'hui — mais la réponse part pendant la mission. Vous recopiez ensuite la mission dans votre outil en un copier-coller.",
   },
   {
     question: "Vous avez déjà essayé des outils qui n'ont pas marché — pourquoi serait-ce différent ?",
@@ -776,9 +773,9 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
       "Nolan a 19 ans. Il a aussi un SIRET (103 208 054 00017), une adresse à Flers, et un système testé sur des scénarios réels avant que vous ne signiez.",
   },
   {
-    question: "En combien de temps un client non rappelé part-il à la concurrence ?",
+    question: "En combien de temps une agence sans réponse passe-t-elle au confrère ?",
     answer:
-      "Souvent quelques minutes. Un acquéreur ou un vendeur qui n'a pas de réponse rapide contacte fréquemment d'autres mandataires dans la foulée (ordre de grandeur terrain, pas une loi fixe). Une réponse personnalisée tôt fait la différence. Automatex vise une réponse en moins de 2 minutes sur les demandes entrantes.",
+      "Souvent quelques minutes. Une agence pressée pour une vente contacte fréquemment deux ou trois diagnostiqueurs de l’annuaire (ordre de grandeur terrain, pas une loi fixe). Une confirmation de créneau tôt fait la différence. Automatex vise une réponse en moins de 2 minutes sur les demandes entrantes.",
   },
 ];
 
@@ -834,8 +831,8 @@ export const CONTACT_COPY = {
   lastNameLabel: "Nom",
   emailLabel: "Email",
   phoneLabel: "Téléphone",
-  networkLabel: "Réseau mandataire",
-  networkPlaceholder: "Choisissez votre réseau",
+  networkLabel: "Profil professionnel",
+  networkPlaceholder: "Choisissez votre profil",
   submitLabel: "Réserver mon appel avec Nolan",
   emailHint: "Votre email ne sera jamais partagé ni revendu.",
   phoneHint: "10 chiffres — affichage 06 45 38 42 33.",
@@ -866,7 +863,7 @@ export const HUB_CONTACT_REASSURANCE = [
 export const PROSPECT_SECTEUR_OPTIONS = [
   { value: "artisan", label: "Artisan / BTP (couvreur, charpentier…)" },
   { value: "diagnostiqueur", label: "Diagnostiqueur immobilier" },
-  { value: "immobilier", label: "Immobilier (mandataire, agence…)" },
+  { value: "immobilier", label: "Immobilier (agence, autre…)" },
   { value: "tpe", label: "TPE / PME (autre secteur)" },
 ] as const;
 
@@ -881,11 +878,9 @@ export const ORNE_ZONE_OPTIONS = [
 ] as const;
 
 export const NETWORK_OPTIONS = [
-  "IAD",
-  "SAFTI",
-  "Capifrance",
-  "Optimhome",
-  "EffiCity",
+  "Certifié indépendant (ADI)",
+  "Salarié cabinet / franchise",
+  "Multi-activité",
   "Autre",
 ] as const;
 
@@ -896,7 +891,7 @@ export const FOOTER_COPY = {
   privacy: "Politique de confidentialité",
   cgv: "CGV",
   security: "Sécurité des données",
-  localHeading: "Mandataires en Normandie",
+  localHeading: "Diagnostiqueurs & Normandie",
   tagline: `© 2026 Automatex · ${SOVEREIGNTY_TRUST_LINE}`,
 } as const;
 
@@ -916,7 +911,7 @@ export const STICKY_CTA_COPY = {
 /** Remplace les faux témoignages — phase bêta */
 export const BETA_PHASE_COPY = {
   title: "Phase bêta — places limitées",
-  body: "Automatex onboard au maximum quatre mandataires par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
+  body: "Automatex onboard au maximum quatre diagnostiqueurs par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
   badge: "Places limitées — statut sur demande en démo",
 } as const;
 

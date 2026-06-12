@@ -4,8 +4,8 @@ import { NAP, SETUP_48H_NUANCE } from "@/lib/constants";
 export const ABOUT_PAGE = {
   metaTitle: "À propos — Automatex · Flers, Normandie",
   metaDescription:
-    "Automatex Hub : accompagnement et systèmes pour mandataires immobiliers et artisans BTP en Orne. Conçu à Flers, données OVHcloud France, RGPD.",
-  h1: "Construit à Flers, pour les mandataires et artisans de l'Orne",
+    "Automatex Hub : accompagnement et systèmes pour diagnostiqueurs immobiliers et artisans BTP en Orne. Conçu à Flers, données OVHcloud France, RGPD.",
+  h1: "Construit à Flers, pour les diagnostiqueurs et artisans de l'Orne",
   facts: [
     { label: "Marque", value: NAP.brand },
     { label: "Éditeur", value: `${NAP.founder} — ${NAP.role}, 19 ans` },
@@ -15,7 +15,7 @@ export const ABOUT_PAGE = {
     { label: "Code APE", value: `${NAP.ape} — ${NAP.apeLabel}` },
     {
       label: "Activité",
-      value: "Systèmes automatiques + accompagnement pour mandataires immobiliers et artisans BTP",
+      value: "Systèmes automatiques + accompagnement pour diagnostiqueurs immobiliers et artisans BTP",
     },
     { label: "Hébergement données", value: NAP.hostingProvider },
     { label: "Site", value: "Export statique Next.js · CDN Netlify" },
@@ -27,7 +27,7 @@ export const ABOUT_PAGE = {
     },
   ],
   narrative: [
-    "Nolan Hermand a passé 2 ans sur les chantiers (menuiserie puis couverture) à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des mandataires indépendants et des artisans de l'Orne — IAD, SAFTI, Capifrance, plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
+    "Nolan Hermand a passé 2 ans sur les chantiers (menuiserie puis couverture) à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des diagnostiqueurs indépendants et des artisans de l'Orne — plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
     "Le constat revient souvent : les clients ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
     "Automatex Hub est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec vous.",
     "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
@@ -40,9 +40,9 @@ export const ABOUT_PAGE = {
   directContact: "Une question avant de vous lancer ? Appelez :",
   storyHeading: "Pourquoi Automatex existe",
   storyParagraphs: [
-    "Pendant des mois, j'ai discuté avec des mandataires IAD et SAFTI dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
-    "À chaque fois, la même chose revenait : les demandes qui arrivent pendant les visites, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
-    "2 ans sur les chantiers, en menuiserie puis couverture. J'ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l'automatisation pour régler exactement ça. J'ai 19 ans. En immobilier, j'apprends en échangeant avec les mandataires. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à votre réalité — pas à un PowerPoint.",
+    "Pendant des mois, j'ai discuté avec des diagnostiqueurs indépendants dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
+    "À chaque fois, la même chose revenait : les demandes agences qui arrivent pendant les missions, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
+    "2 ans sur les chantiers, en menuiserie puis couverture. J'ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l'automatisation pour régler exactement ça. J'ai 19 ans. En diagnostic immobilier, j'apprends en échangeant avec les indépendants du secteur. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à votre réalité — pas à un PowerPoint.",
   ],
   storyFootnote:
     "Sans engagement et résiliable en un mail : vous gardez la main à tout moment.",

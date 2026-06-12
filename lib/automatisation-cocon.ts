@@ -6,7 +6,7 @@ export type CoconTradeId =
   | "couvreur"
   | "chauffagiste"
   | "courtier"
-  | "mandataireImmo";
+  | "immobilierDiag";
 
 export type CoconTradeSection = {
   id: CoconTradeId;
@@ -276,8 +276,8 @@ const pains: CoconPainPage[] = [
     ],
     localFaq: [
       {
-        q: "C'est pour les mandataires immobiliers en priorité ?",
-        a: "Non. Cible J1 : diagnostiqueurs et artisans BTP. Le mandataire immo est un cas parmi d'autres — voir /immobilier pour le funnel dédié immo.",
+        q: "C'est pour les diagnostiqueurs immobiliers en priorité ?",
+        a: "Oui pour le funnel /immobilier. Cette page pilier couvre aussi artisans BTP et autres indépendants — chaque métier a son parcours dédié sur le site.",
       },
     ],
     tradeSections: [
@@ -314,12 +314,12 @@ const pains: CoconPainPage[] = [
         toolsLine: "Complète votre outil dossier crédit.",
       },
       {
-        id: "mandataireImmo",
-        h2: "Mandataire immo — mention secondaire",
+        id: "immobilierDiag",
+        h2: "Diagnostiqueur — parcours /immobilier",
         paragraphs: [
-          "Même mécanique sur une demande SeLoger ou Leboncoin : réponse rapide pendant la visite. Pour un parcours immo complet, le hub dédié reste /immobilier.",
+          "Même mécanique sur une demande agence : réponse rapide pendant la mission DPE ou amiante. Le hub dédié diagnostiqueurs est /immobilier.",
         ],
-        toolsLine: "Mail existant — pas de remplacement Playiad / Omega.",
+        toolsLine: "Mail existant — saisie mission reste dans Liciel / ORIS.",
       },
     ],
     relatedSlugs: ["prise-rdv-automatique", "sms-appel-manque"],

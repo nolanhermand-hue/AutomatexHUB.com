@@ -75,14 +75,14 @@ export function buildAboutPageJsonLd() {
         name: "À propos d'Automatex",
         url: `${SITE_URL}/a-propos`,
         description:
-          "Automatex, service français pour mandataires immobiliers en Normandie. Fondé en 2025 à Flers par Nolan Hermand.",
+          "Automatex, service français pour diagnostiqueurs immobiliers indépendants en Normandie. Fondé en 2025 à Flers par Nolan Hermand.",
       },
     ],
   };
 }
 
-/** JSON-LD page locale mandataires + fil d'Ariane. */
-export function buildLocalMandatairesJsonLd(opts: {
+/** JSON-LD page locale diagnostiqueur + fil d'Ariane. */
+export function buildLocalDiagnostiqueurJsonLd(opts: {
   path: string;
   pageName: string;
   city: string;
@@ -98,18 +98,18 @@ export function buildLocalMandatairesJsonLd(opts: {
       ]),
       {
         "@type": "Service",
-        name: `Automatex — mandataires immobiliers ${opts.city}`,
+        name: `Automatex — diagnostiqueurs immobiliers ${opts.city}`,
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: [opts.city, "Orne", "Normandie"],
-        serviceType: "Réponse immédiate aux demandes pour mandataires",
+        serviceType: "Réponse immédiate aux demandes agences et prescripteurs",
       },
     ],
   };
 }
 
 /** FAQ JSON-LD variant for the global layout graph (0 or 1 FAQPage per HTML document). */
-export type JsonLdFaqMode = "none" | "mandataires" | "btp" | "tpe" | "home" | "master";
+export type JsonLdFaqMode = "none" | "diagnostiqueur" | "btp" | "tpe" | "home" | "master";
 
 const BTP_JSONLD_PATHS = [
   "/btp",
@@ -123,6 +123,7 @@ export const JSON_LD_FAQ_MODE_BY_PATH: Readonly<Record<string, JsonLdFaqMode>> =
   "": "home",
   "/": "home",
   "/faq": "master",
+  "/immobilier": "diagnostiqueur",
   [TPE_PAGE_PATH]: "tpe",
   ...Object.fromEntries(BTP_JSONLD_PATHS.map((p) => [p, "btp" as const])),
 };
@@ -163,14 +164,18 @@ function buildFaqMainEntity(mode: JsonLdFaqMode) {
       acceptedAnswer: { "@type": "Answer", text: item.a },
     }));
   }
-  return FAQ_ITEMS.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  }));
+  if (mode === "diagnostiqueur") {
+    return FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    }));
+  }
+  const _exhaustive: never = mode;
+  throw new Error(`Unhandled JsonLdFaqMode: ${String(_exhaustive)}`);
 }
 
 /**
@@ -178,7 +183,7 @@ function buildFaqMainEntity(mode: JsonLdFaqMode) {
  *           H5 (HowTo), guarantee Offer.
  */
 export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
-  const faqMode = options?.faqMode ?? "mandataires";
+  const faqMode = options?.faqMode ?? "diagnostiqueur";
   const isHome = faqMode === "home";
   const businessId = `${SITE_URL}#business`;
   const localBusinessId = `${SITE_URL}#local-business`;
@@ -231,7 +236,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
 
   const businessDescription = isHome
     ? "Automatex installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
-    : "Automatex installe une réponse immédiate aux demandes, un tri de mails et un classement des documents pour mandataires immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
+    : "Automatex installe une réponse immédiate aux demandes agences, un tri de mails et un classement des documents pour diagnostiqueurs immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
 
   const knowsAbout = isHome
     ? [
@@ -246,13 +251,11 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         NAP.hostingProvider,
       ]
     : [
-        "Automatisation mandataire immobilier",
-        "demandes immobilières perdues",
-        "IAD France",
-        "SAFTI",
-        "Capifrance",
-        "Optimhome",
-        "EffiCity",
+        "Automatisation diagnostiqueur immobilier",
+        "demandes agences perdues",
+        "DPE amiante électricité",
+        "certification diagnostiqueur indépendant",
+        "annuaire agences immobilières",
         "Gmail automatisation",
         "Telegram immobilier",
         "RGPD automatisation",
@@ -262,7 +265,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
 
   const offerCatalogName = isHome
     ? "Formules Automatex pour artisans et TPE"
-    : "Formules Automatex pour mandataires immobiliers";
+    : "Formules Automatex pour diagnostiqueurs immobiliers";
 
   const graph: Record<string, unknown>[] = [
       {
@@ -356,7 +359,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           : `${SOLUTION_HEADING.h2.replace(/\.$/, "")} en Normandie`,
         description: isHome
           ? "Automatex installe réponse aux messages, devis et relances pour artisans et TPE à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement."
-          : "Automatex installe une réponse immédiate et un tri des mails pour mandataires immobiliers à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement.",
+          : "Automatex installe une réponse immédiate et un tri des mails pour diagnostiqueurs immobiliers à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement.",
         totalTime: "P2D",
         step: howToSteps,
       },
@@ -365,15 +368,15 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         "@type": "Service",
         name: isHome
           ? "Automatisation clients, devis et relances pour artisans et TPE"
-          : "Réponse automatique aux demandes immobilières pour mandataires",
+          : "Réponse automatique aux demandes agences pour diagnostiqueurs",
         provider: { "@id": businessId },
         description: isHome
           ? "Service de Réponse aux demandes, devis, relances et classement documents pour artisans BTP et TPE en Normandie et dans l'Orne."
-          : "Service de réponse immédiate aux demandes entrantes, tri des mails et classement des documents pour mandataires IAD, SAFTI, Capifrance en Normandie et dans l'Orne.",
+          : "Service de réponse immédiate aux demandes agences et prescripteurs, tri des mails et classement des documents pour diagnostiqueurs indépendants en Normandie et dans l'Orne.",
         areaServed,
         serviceType: isHome
           ? "Automatisation administrative pour artisans et TPE"
-          : "Automatisation administrative pour mandataires immobiliers",
+          : "Automatisation administrative pour diagnostiqueurs immobiliers",
         offers: offerCatalog,
       },
       buildBreadcrumbList([{ name: "Accueil", path: "/" }]),
@@ -385,7 +388,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         image: logoUrl,
         description: isHome
           ? "Réponse aux demandes en moins de 2 minutes, devis, relances et classement Google Drive pour artisans et TPE en Normandie."
-          : "Réponse aux demandes en moins de 2 minutes, tri des emails et classement Google Drive pour mandataires IAD, SAFTI et Capifrance en Normandie.",
+          : "Réponse aux demandes en moins de 2 minutes, tri des emails et classement Google Drive pour diagnostiqueurs indépendants en Normandie.",
         provider: { "@id": businessId },
         featureList: [
           "Réponse aux demandes en moins de 2 minutes",
@@ -423,7 +426,7 @@ export function buildBtpServiceJsonLd(path: string) {
     "@type": "ProfessionalService",
     name: "Automatex Hub",
     description:
-      `Système pour mandataires immobiliers et artisans BTP dans l'Orne et Normandie. Devis, appels manqués, accompagnement mensuel. ${SOVEREIGNTY_TRUST_LINE}.`,
+      `Système pour diagnostiqueurs immobiliers et artisans BTP dans l'Orne et Normandie. Devis, appels manqués, accompagnement mensuel. ${SOVEREIGNTY_TRUST_LINE}.`,
     url: isBtpLanding ? `${SITE_URL}/btp` : pageUrl,
     telephone: NAP.phoneE164,
     email: NAP.email,

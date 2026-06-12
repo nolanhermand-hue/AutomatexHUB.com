@@ -24,14 +24,14 @@ const badgeMuted = "bg-[#2a2a2a] text-[rgba(245,244,241,0.55)]";
 export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
   immobilier: {
     title: "Ce qui se passe quand un client arrive à 22h",
-    note: "Simulation basée sur une configuration type mandataire IAD/SAFTI en Normandie.",
+    note: "Simulation basée sur une configuration type diagnostiqueur indépendant en Normandie.",
     steps: [
       {
         time: "22h03",
-        label: "Nouvelle demande entrant · SeLoger",
+        label: "Nouvelle demande agence · Gmail",
         icon: "📩",
         message:
-          "M. Martin, 3 pièces Flers, budget 180 000 €\nTéléphone : 06 XX XX XX XX",
+          "Agence Dupont Immo — DPE urgent avant compromis\n12 rue des Tilleuls, Flers · 06 XX XX XX XX",
         color: "border-primary",
         badge: "Demande entrante",
         badgeClass: badgeOrange,
@@ -49,15 +49,15 @@ export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
         time: "22h04",
         label: "Mail envoyé automatiquement · Gmail",
         icon: "✉️",
-        message: `Bonjour M. Martin,
+        message: `Bonjour,
 
-Merci pour votre message. J'ai bien noté votre demande pour un 3 pièces à Flers dans votre budget.
+Merci pour votre demande de DPE à Flers avant compromis.
 
-Je suis actuellement en visite — je vous rappelle demain matin avant 9h.
+Je suis en mission sur le terrain — je confirme un créneau demain matin avant 9h par retour de mail.
 
 Cordialement,
 [Votre prénom]
-Mandataire IAD · Orne`,
+Diagnostiqueur immobilier · Orne`,
         color: "border-[#38a169]",
         badge: "Mail envoyé",
         badgeClass: badgeGreen,
@@ -67,7 +67,7 @@ Mandataire IAD · Orne`,
         label: "Notification · Telegram",
         icon: "📲",
         message:
-          "✅ client traité : M. Martin (3P Flers, 180k)\nRéponse envoyée · Rappel : demain avant 9h\n\nVous pouvez continuer votre visite.",
+          "✅ mission traitée : DPE Flers (agence Dupont)\nRéponse envoyée · Créneau : demain avant 9h\n\nVous pouvez continuer votre mission.",
         color: "border-[#2a2a2a]",
         badge: "Telegram",
         badgeClass: badgeMuted,

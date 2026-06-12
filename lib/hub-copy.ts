@@ -1,4 +1,4 @@
-/** Copy hub d’entrée — vocabulaire mandataire-safe (pas « automatisation »). */
+/** Copy hub d’entrée — vocabulaire métier-safe (pas « automatisation »). */
 import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export const HUB_ENTRY_COPY = {
@@ -14,9 +14,9 @@ export const HUB_ENTRY_COPY = {
     "Démo sous 24 h · Pilote : réponse 4 h (sem.)",
   ] as const,
   blockImmobilier: {
-    title: "Mandataire immobilier",
+    title: "Diagnostiqueur immobilier",
     quote:
-      "Vous perdez des clients pendant vos visites. Impossible de tout rappeler à la main.",
+      "Vous perdez des créneaux agences pendant vos missions. Impossible de tout rappeler à la main.",
     cta: "Voir la solution immobilier",
   },
   blockBtp: {
@@ -27,7 +27,7 @@ export const HUB_ENTRY_COPY = {
   },
   footerNote:
     "Dans les deux cas : démo gratuite 20 min sur votre cas réel. Nolan rappelle sous 24 h.",
-  ctaImmobilier: "Démo mandataire — Nolan vous rappelle",
+  ctaImmobilier: "Démo diagnostiqueur — Nolan vous rappelle",
   ctaBtp: "Démo artisan — Nolan vous rappelle",
   priceHintBtp: "Artisans : démo 20 min · tarifs sur la landing BTP",
 } as const;
@@ -54,5 +54,5 @@ export const HUB_ACCOMPANIMENT = {
 export const HUB_META = {
   title: "Automatex Hub — Immobilier & artisans BTP en Orne",
   description:
-    `Système automatique et accompagnement humain à Flers pour mandataires immobiliers et artisans du BTP en Orne et Normandie. ${SOVEREIGNTY_TRUST_LINE}.`,
+    `Système automatique et accompagnement humain à Flers pour diagnostiqueurs immobiliers et artisans du BTP en Orne et Normandie. ${SOVEREIGNTY_TRUST_LINE}.`,
 } as const;

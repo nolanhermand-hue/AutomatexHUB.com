@@ -22,11 +22,11 @@ export const PRICING_CONFIG = {
       setupDiscount: 0.2,
       label: "Artisans BTP fondateurs",
     },
-    mandataires: {
+    diagnostiqueurs: {
       total: 5,
       taken: 0,
       setupDiscount: 0.2,
-      label: "Mandataires fondateurs",
+      label: "Diagnostiqueurs fondateurs",
     },
   },
 } as const;
@@ -63,21 +63,21 @@ function segmentSlotsLabel(
 ): string {
   const f = PRICING_CONFIG.founders[segment];
   const left = Math.max(0, f.total - f.taken);
-  const noun = segment === "artisans" ? "artisans" : "mandataires";
+  const noun = segment === "artisans" ? "artisans" : "diagnostiqueurs";
   return `${left} place${left > 1 ? "s" : ""} ${noun}`;
 }
 
 /** Compteur honnête — deux segments */
 export function formatFoundersAvailability(): string {
   const art = PRICING_CONFIG.founders.artisans;
-  const man = PRICING_CONFIG.founders.mandataires;
+  const diag = PRICING_CONFIG.founders.diagnostiqueurs;
   const artLeft = art.total - art.taken;
-  const manLeft = man.total - man.taken;
+  const diagLeft = diag.total - diag.taken;
 
-  if (artLeft === art.total && manLeft === man.total) {
-    return `${art.total} places artisans · ${man.total} places mandataires · toutes disponibles`;
+  if (artLeft === art.total && diagLeft === diag.total) {
+    return `${art.total} places artisans · ${diag.total} places diagnostiqueurs · toutes disponibles`;
   }
-  return `${segmentSlotsLabel("artisans")} · ${segmentSlotsLabel("mandataires")}`;
+  return `${segmentSlotsLabel("artisans")} · ${segmentSlotsLabel("diagnostiqueurs")}`;
 }
 
 /** Copy client : mise en place (1er mois inclus) + mensuel. */

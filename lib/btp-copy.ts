@@ -243,7 +243,7 @@ export const BTP_METIERS = [
 export const ACCOMPANIMENT_PAGE = {
   h1: "Vous n'êtes jamais seul avec votre système.",
   sub:
-    "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles mandataires et artisans sont transparentes ; si vous voulez moins ou plus que les packs affichés, on part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
+    "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles diagnostiqueurs et artisans sont transparentes ; si vous voulez moins ou plus que les packs affichés, on part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
   monthlyIntro:
     "20 minutes. On regarde les chiffres ensemble : combien de clients ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis on ajuste — immédiatement, sans rendez-vous supplémentaire.",
   timelineHorizontal: [

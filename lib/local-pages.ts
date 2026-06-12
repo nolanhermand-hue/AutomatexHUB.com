@@ -1,190 +1,141 @@
-/** Contenu long-tail SEO — pages mandataires par zone. */
+/** Contenu long-tail SEO — pages diagnostiqueurs par zone (template futur). */
+
 import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
-export type LocalMandatairesPageData = {
+export type LocalDiagnostiqueurPageData = {
   slug: string;
   path: string;
   metaTitle: string;
   metaDescription: string;
   h1: string;
-  city: string;
-  areaServedLabel: string;
   intro: string;
-  sections: ReadonlyArray<{ title: string; paragraphs: ReadonlyArray<string> }>;
+  sections: ReadonlyArray<{ h2: string; paragraphs: ReadonlyArray<string> }>;
+  ctaLabel: string;
 };
 
-export const LOCAL_MANDATAIRES_PAGES: ReadonlyArray<LocalMandatairesPageData> = [
+export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageData> = [
   {
     slug: "flers",
-    path: "/mandataires-flers",
-    metaTitle: "Mandataires immobiliers à Flers (61100) | Automatex",
+    path: "/diagnostiqueurs-flers",
+    metaTitle: "Diagnostiqueur immobilier Flers · réponse agences 2 min · Automatex",
     metaDescription:
-      `Réponse aux demandes en 2 min pour mandataires IAD, SAFTI et Capifrance à Flers et dans le bocage ornais. Mise en place en 48 h ouvrées après validation du périmètre. ${SOVEREIGNTY_TRUST_LINE}.`,
-    h1: "Automatisation pour mandataires immobiliers à Flers et dans l'Orne",
-    city: "Flers",
-    areaServedLabel: "Flers, bocage ornais, Suisse normande (61)",
+      `Réponse aux demandes agences en 2 min pour diagnostiqueurs indépendants à Flers et dans le bocage ornais. Mise en place en 48 h ouvrées après validation du périmètre. ${SOVEREIGNTY_TRUST_LINE}.`,
+    h1: "Automatisation pour diagnostiqueurs immobiliers à Flers et dans l'Orne",
     intro:
-      "Flers concentre un marché résidentiel dense : maisons de ville, pavillons en lotissement et biens de caractère vers La Ferté-Macé. Les mandataires y enchaînent visites, estimations et signatures : une demande SeLoger ou Leboncoin qui attend plus de dix minutes part souvent chez un confrère.",
+      "Flers et l'agglo concentrent un flux régulier de ventes et de diagnostics avant compromis. Les diagnostiqueurs indépendants y enchaînent DPE, amiante et missions électricité : un mail agence qui attend plus de dix minutes pendant une mission part souvent au confrère de l'annuaire.",
     sections: [
       {
-        title: "Typologie de biens autour de Flers",
+        h2: "Marché local et concurrence",
         paragraphs: [
-          "Le parc se partage entre transactions de pavillons (110–220 m²), appartements du centre-ville et maisons de campagne sur les communes périphériques (La Ferté-Macé, Condeau, Domfront). Les acquéreurs sont souvent des familles en mobilité depuis Caen ou l'Île-de-France, sensibles à la réactivité du premier contact.",
-          "Les mandataires IAD et SAFTI dominent l'offre indépendante ; Capifrance et Optimhome complètent le paysage. La concurrence sur un même bien se joue parfois en quelques heures : la première réponse structurée fait la différence.",
+          "Agences de centre-ville et notaires envoient des demandes de créneaux serrés. La première confirmation structurée — date, adresse, type de diag — garde la mission.",
+          "Les diagnostiqueurs flériens couvrent un rayon large vers La Ferté-Macé ou Domfront : la mobilité multiplie les créneaux sans réseau fixe.",
         ],
       },
       {
-        title: "Pourquoi les clients se perdent en visite",
+        h2: "Ce qu'Automatex installe",
         paragraphs: [
-          "Pendant une visite de 45 minutes, trois notifications peuvent arriver : estimation, demande de visite, relance notaire. Sans accroche automatique, le prospect reçoit un silence interprété comme un manque d'intérêt.",
-          "Automatex envoie une réponse personnalisée en moins de deux minutes, qualifie le besoin (budget, délai, financement) et vous notifie sur mobile. Vous rappelez avec le contexte déjà posé.",
+          "Réponse en moins de 2 minutes sur les mails agences et prescripteurs, tri des urgences, classement des rapports et bons de commande dans Google Drive.",
+          `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai cible : 48 h ouvrées après validation du périmètre (accès outils, règles, tests). ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé entre clients.`,
         ],
       },
       {
-        title: "Mise en place depuis Flers",
+        h2: "Outils déjà en place",
         paragraphs: [
-          `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai cible : 48 h ouvrées après validation du périmètre (accès outils, règles, tests). ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé avec d'autres mandataires.`,
-          "Sans engagement, résiliable en 1 mail sur les packs Déclic, Système et Pilote. Onboardings limités à quatre par mois pour garder un suivi humain.",
-        ],
-      },
-      {
-        title: "Réseaux et outils déjà utilisés",
-        paragraphs: [
-          "Les mandataires flériens s'appuient sur SeLoger, Leboncoin, les portails réseau (IAD, SAFTI) et souvent Google Agenda + Gmail ou Outlook. Automatex se branche sur votre boîte mail existante : pas de changement d'outil visible pour le client.",
-          "Le tri des pièces (mandats, diagnostics, offres) peut être activé sur le pack Système ou Pilote pour éviter les dossiers incomplets avant compromis.",
+          "Gmail ou Outlook, Google Agenda, Liciel / ORIS / Alain pour la saisie mission : Automatex se branche sur la boîte mail existante. Pas de changement visible pour l'agence.",
         ],
       },
     ],
+    ctaLabel: "Réserver une démo 20 min",
   },
   {
     slug: "alencon",
-    path: "/mandataires-alencon",
-    metaTitle: "Mandataires immobiliers à Alençon | Automatex Normandie",
+    path: "/diagnostiqueurs-alencon",
+    metaTitle: "Diagnostiqueur Alençon · demandes agences · Automatex",
     metaDescription:
-      "Ne perdez plus de clients à Alençon et dans l'Orne. Réponse immédiate pour mandataires indépendants. Audit 20 min, sans engagement.",
-    h1: "Mandataires immobiliers à Alençon : Réponse aux demandes pendant vos visites",
-    city: "Alençon",
-    areaServedLabel: "Alençon, agglomération, Orne (61)",
+      "Ne perdez plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Audit 20 min, sans engagement.",
+    h1: "Automatisation pour diagnostiqueurs à Alençon et nord de l'Orne",
     intro:
-      "Alençon est le pôle administratif et commercial de l'Orne : flux régulier de maisons de ville, programmes neufs en périphérie et biens ruraux vers Sées ou Mortagne. Les mandataires y gèrent un volume de messages supérieur à la moyenne départementale.",
+      "Alençon concentre services, agences et prescripteurs pour tout le nord de l'Orne. Les diagnostiqueurs y gèrent un volume de messages supérieur à la moyenne rurale — souvent pendant des missions longues en pavillon ou en lotissement.",
     sections: [
       {
-        title: "Marché local et profils d'acheteurs",
+        h2: "Pression des agences",
         paragraphs: [
-          "Le centre historique attire des acquéreurs en quête de pierre et de surfaces modérées ; les lotissements de Semallé ou Saint-Germain-du-Corbéis ciblent les primo-accédants. Les délais de vente restent raisonnables quand le bien est bien exposé et que le premier échange est rapide.",
-          "Les réseaux nationaux (IAD, SAFTI, Capifrance) y sont bien représentés ; la différenciation passe par la disponibilité perçue, pas seulement par le mandat exclusif.",
+          "Ventes avant compromis, dossiers amiante en urgence : l'agence contacte souvent deux ou trois diagnostiqueurs. Celui qui confirme le créneau et le périmètre garde le dossier.",
         ],
       },
       {
-        title: "Charge administrative réelle",
+        h2: "Installation",
         paragraphs: [
-          "Relances vendeur, pièces manquantes, demandes de visite le samedi : la boîte mail devient un second métier. Automatex classe les demandes entrantes, répond aux demandes standards et vous laisse les dossiers à fort enjeu.",
-          "Objectif terrain : moins de « je vous rappelle » sans contexte, plus de conversations déjà qualifiées.",
+          "Même méthode qu'à Flers : cadrage 20 min, tests sur de vrais mails agences, notifications Telegram pour les urgences.",
         ],
       },
       {
-        title: "Zone desservie depuis Alençon",
+        h2: "Prise de contact",
         paragraphs: [
-          "Service pensé pour l'agglomération alençonnaise et les communes jusqu'à Flers, Argentan et la Suisse normande. Support en français, par téléphone direct avec le fondateur (06 45 38 42 33).",
-          "Conformité RGPD : traitement des données en Union européenne, politique de confidentialité publiée, droit d'accès et de suppression sur simple demande.",
-        ],
-      },
-      {
-        title: "Tarification claire",
-        paragraphs: [
-          "Trois packs : Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1 690 € + 449 €/mois, avec remise annuelle affichée en pourcentage. Un dossier récupéré peut représenter environ 3 500 € de commission potentielle (hypothèse marché) — ordre de grandeur pour comparer au coût du service.",
-          "Réservez une audit de 20 minutes depuis cette page ou depuis l'accueil : créneau prioritaire pour les mandataires de l'Orne.",
+          "Réservez un audit de 20 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
         ],
       },
     ],
+    ctaLabel: "Réserver une démo 20 min",
   },
   {
     slug: "argentan",
-    path: "/mandataires-argentan",
-    metaTitle: "Mandataires à Argentan et Suisse normande | Automatex",
+    path: "/diagnostiqueurs-argentan",
+    metaTitle: "Diagnostiqueur Argentan · réponse agences 2 min",
     metaDescription:
-      `demandes immobilières à Argentan : réponse en 2 min, tri des mails, documents classés. Pour mandataires Normandie. ${SOVEREIGNTY_TRUST_LINE}. Sans engagement.`,
-    h1: "Mandataires immobiliers à Argentan et en Suisse normande",
-    city: "Argentan",
-    areaServedLabel: "Argentan, Suisse normande, Orne et Calvados limitrophe",
+      `Demandes agences à Argentan : réponse en 2 min, tri des mails, rapports classés. Pour diagnostiqueurs Normandie. ${SOVEREIGNTY_TRUST_LINE}. Sans engagement.`,
+    h1: "Automatisation pour diagnostiqueurs à Argentan et sud-Orne",
     intro:
-      "Argentan relie l'Orne au Calvados : marché mixte entre maisons de bourg, propriétés équestres et résidences secondaires vers les lacs. Les mandataires couvrent un rayon large ; les déplacements multiplient les créneaux sans réseau.",
+      "Argentan relie l'Orne au Calvados : biens de bourg, résidences secondaires, propriétés avec accès difficiles. Les diagnostiqueurs couvrent un rayon large ; les déplacements multiplient les créneaux sans réseau.",
     sections: [
       {
-        title: "Spécificités du secteur Argentan",
+        h2: "Contexte terrain",
         paragraphs: [
-          "Biens de caractère et parcelles plus grandes qu'à Flers : les acquéreurs posent plus de questions avant la visite. Une réponse automatique qui reprend le type de bien, le quartier et les créneaux proposés rassure et filtre les curieux.",
-          "Saisonnalité modérée : pics au printemps et en septembre, comme sur le reste de la Normandie intérieure.",
+          "Agences locales et notaires du secteur envoient des demandes groupées avant les week-ends de visite. Une réponse tardive fait basculer la mission sur un confrère de Caen ou d'Alençon.",
         ],
       },
       {
-        title: "Concurrence inter-réseaux",
+        h2: "Méthode Automatex",
         paragraphs: [
-          "Plusieurs mandataires peuvent présenter des biens comparables sur les mêmes portails. Celui qui confirme la prise en charge et propose un créneau précis garde la relation.",
-          "Automatex ne remplace pas votre négociation : il verrouille la première impression et vous transmet un résumé actionnable.",
-        ],
-      },
-      {
-        title: "Sécurité et souveraineté des données",
-        paragraphs: [
-          "Flux mail traités sur infrastructure française (OVHcloud). Pas de revente de données, pas d'entraînement de modèle public sur vos conversations clients.",
-          "Méthode : orchestration privée (n8n) configurée mandataire par mandataire, pas de catalogue générique « one size fits all ».",
-        ],
-      },
-      {
-        title: "Passer à l'action",
-        paragraphs: [
-          "Audit gratuit de 20 minutes, sans engagement. Installation cible en 48 h après validation du périmètre (boîtes mail, modèles de réponse, règles de qualification).",
-          "Retour à l'accueil pour comparer les formules et le cadre d'accompagnement affiché sur le site.",
+          "Orchestration privée configurée diagnostiqueur par diagnostiqueur — pas de catalogue générique. Vous validez le ton et les modèles de confirmation de RDV.",
         ],
       },
     ],
+    ctaLabel: "Réserver une démo 20 min",
   },
   {
     slug: "normandie",
-    path: "/mandataires-normandie",
-    metaTitle: "Mandataires immobiliers en Normandie | Automatex",
+    path: "/diagnostiqueurs-normandie",
+    metaTitle: "Diagnostiqueurs immobiliers Normandie · Automatex",
     metaDescription:
-      "Service français pour mandataires IAD, SAFTI, Capifrance en Normandie : demandes, mails et documents. Flers (61), déploiement Orne et départements voisins.",
-    h1: "Automatex pour les mandataires immobiliers en Normandie",
-    city: "Normandie",
-    areaServedLabel: "Normandie (priorité Orne, Calvados, Manche limitrophe)",
+      "Service français pour diagnostiqueurs indépendants en Normandie : demandes agences, mails et documents. Flers (61), déploiement Orne et départements voisins.",
+    h1: "Automatex pour les diagnostiqueurs immobiliers en Normandie",
     intro:
-      "La Normandie regroupe des marchés contrastés : pression forte autour de Caen et Rouen, rythme plus lent sur l'axe Flers–Alençon–Argentan. Les mandataires indépendants y partagent les mêmes contraintes : mobilité, réactivité sur les portails, conformité RGPD.",
+      "La Normandie mélange agglo tendue (Caen, Rouen) et axes plus ruraux (Flers–Alençon–Argentan). Les diagnostiqueurs indépendants partagent les mêmes contraintes : mobilité, réactivité sur les mails agences, conformité RGPD.",
     sections: [
       {
-        title: "Pourquoi un acteur ancré dans l'Orne",
+        h2: "Ancrage Flers",
         paragraphs: [
-          "Automatex est conçu et opéré depuis Flers (61100) par Nolan Hermand. La proximité terrain avec les mandataires ornais informe les scénarios par défaut (SeLoger, Leboncoin, relances vendeur, demandes de visite).",
-          "Extension progressive vers le Calvados et la Manche selon les onboardings mensuels (quota de quatre pour conserver la qualité de configuration).",
+          "Automatex est conçu et opéré depuis Flers (61100) par Nolan Hermand. La proximité terrain avec les diagnostiqueurs ornais informe les scénarios par défaut (confirmation RDV, relances agence, classement rapports).",
         ],
       },
       {
-        title: "Ce que fait le service (sans jargon)",
+        h2: "Profils couverts",
         paragraphs: [
-          "Réponse immédiate aux nouvelles demandes avec un ton professionnel aligné sur votre marque personnelle.",
-          "Tri et priorisation des mails entrants pour traiter d'abord ce qui rapporte.",
-          "Classement des pièces et rappels sur les formules supérieures.",
+          "Certifiés indépendants (ADI), salariés de cabinets multi-sites, multi-activité : le paramétrage est adapté à votre flux mail et à vos types de mission (DPE, amiante, électricité, gaz).",
         ],
       },
       {
-        title: "Réseaux accompagnés",
+        h2: "Pages ville",
         paragraphs: [
-          "Configurations déjà testées pour des profils IAD, SAFTI, Capifrance, Optimhome et EffiCity. Chaque réseau a ses habitudes de notification : le paramétrage est adapté, pas copié-collé.",
-          "Pas de témoignages inventés sur le site — retours pilotes publiés uniquement avec accord explicite.",
-        ],
-      },
-      {
-        title: "Pages locales",
-        paragraphs: [
-          "Contenu détaillé par ville : Flers, Alençon, Argentan. Chaque page décrit le marché local et les bénéfices concrets pour les mandataires qui y exercent.",
-          "Contact : page Rendez-vous (/rendez-vous), téléphone 06 45 38 42 33, email nolan.hermand@automatex-hub.com.",
+          "Contenu détaillé par ville : Flers, Alençon, Argentan. Chaque page décrit le marché local et les bénéfices concrets pour les diagnostiqueurs qui y exercent.",
         ],
       },
     ],
+    ctaLabel: "Réserver une démo 20 min",
   },
-] as const;
+];
 
-export function getLocalPageBySlug(slug: string): LocalMandatairesPageData | undefined {
-  return LOCAL_MANDATAIRES_PAGES.find((p) => p.slug === slug);
+export function getLocalPageBySlug(slug: string): LocalDiagnostiqueurPageData | undefined {
+  return LOCAL_DIAGNOSTIQUEUR_PAGES.find((p) => p.slug === slug);
 }

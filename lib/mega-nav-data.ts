@@ -16,9 +16,9 @@ export const SOLUTIONS_MENU = {
       desc: "Maçon · Plombier · Électricien · Orne",
     },
     {
-      label: "Mandataires immobiliers",
+      label: "Diagnostiqueurs immobiliers",
       href: "/immobilier",
-      desc: "IAD · SAFTI · Capifrance · Orne",
+      desc: "DPE · amiante · agences · Orne",
     },
   ],
   parBesoin: [

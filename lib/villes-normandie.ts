@@ -93,7 +93,7 @@ const villes: NormandieVillePage[] = [
       "L’agglo tire à la fois sur le BTP (extensions, couverture après intempéries) et sur l’immobilier (DPE, diagnostics avant vente). Un seul professionnel sur le toit ou chez le vendeur ne peut pas tenir Gmail et le téléphone en même temps.",
     problemPoints: [
       "Pavillons des années 70–90 : beaucoup de devis comparent 3 artisans — le premier qui confirme un créneau garde souvent le chantier.",
-      "Diagnostiqueurs : les agences et mandataires attendent une confirmation de RDV rapide ; un mail vu 6 h plus tard fait passer le dossier à un confrère.",
+      "Diagnostiqueurs : les agences attendent une confirmation de RDV rapide ; un mail vu 6 h plus tard fait passer le dossier à un confrère.",
       "Traversée Caen–périphérie : les temps de route mangent les créneaux pour rappeler entre deux rendez-vous.",
     ],
     localFaq: [
@@ -300,7 +300,7 @@ const villes: NormandieVillePage[] = [
       "Lisieux et l’Auge attirent résidences secondaires et ventes de corps de ferme. Diagnostics avant acte et travaux de toiture sont fréquents. Les propriétaires parisiens attendent des confirmations rapides, pas un rappel le lendemain.",
     problemH2: "Pays d’Auge : ventes et saisonnalité",
     problemIntro:
-      "Biens de caractère, accès par chemins : visites longues. Les agences locales et mandataires envoient des demandes de créneaux serrés.",
+      "Biens de caractère, accès par chemins : missions longues. Les agences locales envoient des demandes de créneaux serrés.",
     problemPoints: [
       "Diagnostics obligatoires sur l’ancien : volume stable, peu de marge pour oublier une relance.",
       "Artisans couvreur / charpente : toitures complexes, devis à plusieurs postes.",
@@ -400,8 +400,8 @@ const villes: NormandieVillePage[] = [
         a: "Oui si vous préférez le face-à-face pour l’audit ; sinon à distance.",
       },
       {
-        q: "Mandataires immobiliers à Alençon ?",
-        a: "Voir aussi /immobilier pour le parcours clients immo dédié ; cette page cible surtout BTP, diag et TPE en Normandie.",
+        q: "Diagnostiqueurs immobiliers à Alençon ?",
+        a: "Voir aussi /immobilier pour le parcours diagnostiqueur dédié ; cette page cible surtout BTP, diag et TPE en Normandie.",
       },
     ],
     neighborSlugs: ["flers", "argentan", "saint-lo"],
