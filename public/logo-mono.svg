@@ -1,0 +1,5 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AutomateX-HUB">
+  <rect x="6" y="6" width="88" height="88" rx="22" fill="#2D3A4A"/>
+  <line x1="30" y1="30" x2="70" y2="70" stroke="#F4EDE4" stroke-width="10" stroke-linecap="round"/>
+  <line x1="70" y1="30" x2="30" y2="70" stroke="#E07856" stroke-width="10" stroke-linecap="round"/>
+</svg>

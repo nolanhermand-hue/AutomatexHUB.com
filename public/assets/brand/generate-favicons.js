@@ -1,5 +1,5 @@
 /**
- * Génère favicons (PNG + ICO) depuis le symbole marque (cubes cercle ou orbit ardoise).
+ * Génère favicons (PNG + ICO) depuis direction X (favicon.svg / favicon-master.png).
  * Usage : npm run brand:favicons
  *
  * App Router (prioritaire en dev) :
@@ -17,13 +17,8 @@ const faviconsDir = path.join(dir, "favicons");
 const imagesDir = path.join(dir, "..", "images");
 const publicRoot = path.join(dir, "..", "..");
 const appDir = path.join(publicRoot, "..", "app");
-const masterWebp = path.join(dir, "logo-automatex-circle.webp");
-const masterSlateSvg = path.join(dir, "logo-orbit-symbol-on-bg-slate.svg");
+const masterSvgPublic = path.join(publicRoot, "favicon.svg");
 const masterPngFallback = path.join(publicRoot, "..", "scripts", "brand-sources", "favicon-master.png");
-
-const SLATE_BG = "#2D3A4A";
-/** Partie haute du cercle (cubes + orbites), sans mot AUTOMATEX */
-const CIRCLE_MARK_CROP_RATIO = 0.58;
 
 const iconSizes = [
   { name: "favicon-16.png", size: 16 },
@@ -38,28 +33,19 @@ const iconSizes = [
 async function buildFaviconMasterPng() {
   fs.mkdirSync(path.dirname(masterPngFallback), { recursive: true });
 
-  if (fs.existsSync(masterWebp)) {
-    const { width, height } = await sharp(masterWebp).metadata();
-    const cropH = Math.round(height * CIRCLE_MARK_CROP_RATIO);
-    await sharp(masterWebp)
-      .extract({ left: 0, top: 0, width, height: cropH })
-      .resize(512, 512, { fit: "contain", background: SLATE_BG })
-      .png()
-      .toFile(masterPngFallback);
-    console.log(
-      `✓ scripts/brand-sources/favicon-master.png (cubes, fond ${SLATE_BG}, sans wordmark)`,
-    );
+  if (fs.existsSync(masterPngFallback)) {
+    console.log(`✓ scripts/brand-sources/favicon-master.png (source déposée)`);
     return masterPngFallback;
   }
 
-  if (fs.existsSync(masterSlateSvg)) {
-    await sharp(masterSlateSvg).resize(512, 512).png().toFile(masterPngFallback);
-    console.log(`✓ scripts/brand-sources/favicon-master.png (orbit ardoise SVG)`);
+  if (fs.existsSync(masterSvgPublic)) {
+    await sharp(masterSvgPublic).resize(512, 512).png().toFile(masterPngFallback);
+    console.log(`✓ scripts/brand-sources/favicon-master.png (from public/favicon.svg)`);
     return masterPngFallback;
   }
 
   throw new Error(
-    `Missing ${masterWebp} or ${masterSlateSvg} — source favicon (cercle WebP ou SVG ardoise).`,
+    `Missing public/favicon.svg or scripts/brand-sources/favicon-master.png — source favicon direction X.`,
   );
 }
 
@@ -74,6 +60,28 @@ function resizeFaviconIcon(masterPath, size) {
   return pipeline.png();
 }
 
+async function writeLockupFromMaster(masterPath, baseName) {
+  const height = 100;
+  const width = 420;
+  const symbol = await sharp(masterPath).resize(height, height).png().toBuffer();
+
+  const makePng = (w, h) =>
+    sharp({
+      create: {
+        width: w,
+        height: h,
+        channels: 4,
+        background: { r: 0, g: 0, b: 0, alpha: 0 },
+      },
+    })
+      .composite([{ input: symbol, left: 0, top: 0 }])
+      .png();
+
+  await makePng(width, height).toFile(path.join(dir, `${baseName}.png`));
+  await makePng(width * 2, height * 2).toFile(path.join(dir, `${baseName}@2x.png`));
+  console.log(`✓ ${baseName}.png + @2x (symbole seul)`);
+}
+
 async function generate() {
   fs.mkdirSync(faviconsDir, { recursive: true });
   fs.mkdirSync(imagesDir, { recursive: true });
@@ -82,40 +90,31 @@ async function generate() {
   const masterPath = await buildFaviconMasterPng();
   console.log(`Source favicon raster: ${path.basename(masterPath)}`);
 
-  const lockupLight = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-light.svg"));
-  const lockupDark = fs.readFileSync(path.join(dir, "logo-orbit-horizontal-dark.svg"));
-  const ogSvg = fs.readFileSync(path.join(dir, "og-image.svg"));
-  const ogBtpSvg = fs.readFileSync(path.join(dir, "og-image-btp.svg"));
+  const ogSvgPath = path.join(dir, "og-image.svg");
+  const ogBtpSvgPath = path.join(dir, "og-image-btp.svg");
 
   for (const { name, size } of iconSizes) {
     await resizeFaviconIcon(masterPath, size).toFile(path.join(faviconsDir, name));
     console.log(`✓ favicons/${name}`);
   }
 
-  await sharp(lockupLight).resize(420, 100).png().toFile(path.join(dir, "logo-orbit-lockup-light.png"));
-  await sharp(lockupLight)
-    .resize(840, 200)
-    .png()
-    .toFile(path.join(dir, "logo-orbit-lockup-light@2x.png"));
-  console.log("✓ logo-orbit-lockup-light.png + @2x");
-
-  await sharp(lockupDark).resize(420, 100).png().toFile(path.join(dir, "logo-orbit-lockup-dark.png"));
-  await sharp(lockupDark)
-    .resize(840, 200)
-    .png()
-    .toFile(path.join(dir, "logo-orbit-lockup-dark@2x.png"));
-  console.log("✓ logo-orbit-lockup-dark.png + @2x");
+  await writeLockupFromMaster(masterPath, "logo-orbit-lockup-light");
+  await writeLockupFromMaster(masterPath, "logo-orbit-lockup-dark");
 
   await sharp(masterPath).resize(128, 128).png().toFile(path.join(dir, "logo-orbit-symbol-128.png"));
   console.log("✓ logo-orbit-symbol-128.png (from favicon master)");
 
-  const ogOutBrand = path.join(dir, "og-image.png");
-  await sharp(ogSvg).resize(1200, 630).png().toFile(ogOutBrand);
-  await sharp(ogSvg).resize(1200, 630).png().toFile(path.join(imagesDir, "og-image.png"));
-  console.log("✓ og-image.png (brand + assets/images)");
+  if (fs.existsSync(ogSvgPath)) {
+    const ogOutBrand = path.join(dir, "og-image.png");
+    await sharp(ogSvgPath).resize(1200, 630).png().toFile(ogOutBrand);
+    await sharp(ogSvgPath).resize(1200, 630).png().toFile(path.join(imagesDir, "og-image.png"));
+    console.log("✓ og-image.png (brand + assets/images)");
+  }
 
-  await sharp(ogBtpSvg).resize(1200, 630).png().toFile(path.join(dir, "og-image-btp.png"));
-  console.log("✓ og-image-btp.png");
+  if (fs.existsSync(ogBtpSvgPath)) {
+    await sharp(ogBtpSvgPath).resize(1200, 630).png().toFile(path.join(dir, "og-image-btp.png"));
+    console.log("✓ og-image-btp.png");
+  }
 
   const favicon16Path = path.join(faviconsDir, "favicon-16.png");
   const favicon32Path = path.join(faviconsDir, "favicon-32.png");
@@ -140,15 +139,10 @@ async function generate() {
   fs.copyFileSync(favicon32Path, path.join(publicRoot, "favicon.png"));
   fs.copyFileSync(appleTouchPath, path.join(publicRoot, "apple-touch-icon.png"));
 
-  const legacyFaviconSvg = path.join(dir, "favicon.svg");
-  if (fs.existsSync(legacyFaviconSvg)) {
-    fs.unlinkSync(legacyFaviconSvg);
-    console.log("✓ removed favicon.svg (ICO/PNG only — évite SVG + PNG embarqué dégradé)");
-  }
-
   console.log("✓ app/favicon.ico (ICO 16+32)");
   console.log("✓ app/icon.png, app/apple-icon.png");
   console.log("✓ public/favicon.png, public/apple-touch-icon.png");
+  console.log("✓ public/favicon.svg + public/logo-mono.svg (sources UI, non modifiées)");
   console.log("Done.");
 }
 

@@ -12,7 +12,7 @@ export function HomeFounder() {
         aria-hidden="true"
       >
         <Image
-          src="/assets/brand/logo-orbit-symbol-on-bg.svg"
+          src="/logo-mono.svg"
           alt=""
           width={200}
           height={200}

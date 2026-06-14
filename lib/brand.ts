@@ -1,21 +1,23 @@
 /** Chemins publics des assets marque — source unique pour head, JSON-LD, UI. */
 export const BRAND = {
-  /** Symbole rond officiel (WebP) */
-  symbolCircle: "/assets/brand/logo-automatex-circle.webp",
-  symbolCircle2x: "/assets/brand/logo-automatex-circle@2x.webp",
-  symbolSvg: "/assets/brand/logo-orbit-symbol-on-bg.svg",
-  symbolTransparentSvg: "/assets/brand/logo-orbit-symbol.svg",
-  /** Affichage UI / JSON-LD — cercle WebP */
-  symbol128: "/assets/brand/logo-automatex-circle.webp",
-  symbolTransparent: "/assets/brand/logo-automatex-circle.webp",
-  lockupLight: "/assets/brand/logo-orbit-lockup-light.png",
-  lockupLight2x: "/assets/brand/logo-orbit-lockup-light@2x.png",
-  lockupDark: "/assets/brand/logo-orbit-lockup-dark.png",
-  lockupDark2x: "/assets/brand/logo-orbit-lockup-dark@2x.png",
+  /** Symbole direction X (SVG unique déposé) */
+  symbolCircle: "/logo-mono.svg",
+  symbolCircle2x: "/logo-mono.svg",
+  symbolSvg: "/favicon.svg",
+  symbolTransparentSvg: "/logo-mono.svg",
+  /** Affichage UI / JSON-LD */
+  symbol128: "/logo-mono.svg",
+  symbolTransparent: "/logo-mono.svg",
+  /** Pas de lockup horizontal — même symbole (nav/footer en variant symbol) */
+  lockupLight: "/logo-mono.svg",
+  lockupLight2x: "/logo-mono.svg",
+  lockupDark: "/logo-mono.svg",
+  lockupDark2x: "/logo-mono.svg",
   ogImage: "/assets/brand/og-image.png",
   ogImageSvg: "/assets/brand/og-image.svg",
   manifest: "/site.webmanifest",
   themeColor: "#080D1A",
+  faviconSvg: "/favicon.svg",
   favicons: {
     16: "/assets/brand/favicons/favicon-16.png",
     32: "/assets/brand/favicons/favicon-32.png",

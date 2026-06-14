@@ -13,46 +13,27 @@ type LogoOrbitProps = {
   onClick?: () => void;
 };
 
-const LOCKUP_RATIO = 420 / 100;
-
 export function LogoOrbit({
   variant = "lockup",
-  theme = "light",
+  theme: _theme = "light",
   className,
   href = "/",
   height = 40,
   onClick,
 }: LogoOrbitProps) {
-  const isLockup = variant === "lockup";
-  const width = isLockup ? Math.round(height * LOCKUP_RATIO) : height;
+  void _theme;
+  void variant;
+  const size = height;
 
-  const img = isLockup ? (
-    // eslint-disable-next-line @next/next/no-img-element -- lockup PNG raster
-    <img
-      src={theme === "light" ? BRAND.lockupLight : BRAND.lockupDark}
-      srcSet={
-        theme === "light"
-          ? `${BRAND.lockupLight} 1x, ${BRAND.lockupLight2x} 2x`
-          : `${BRAND.lockupDark} 1x, ${BRAND.lockupDark2x} 2x`
-      }
-      alt="Automatex"
-      width={width}
-      height={height}
-      className={cn("block shrink-0 object-contain object-left", className)}
-      style={{ height, width, maxHeight: height, maxWidth: width }}
-      loading="eager"
-      decoding="async"
-      fetchPriority="high"
-    />
-  ) : (
+  const img = (
     <Image
-      src={BRAND.symbolCircle}
+      src={BRAND.symbolTransparentSvg}
       alt="Automatex"
-      width={512}
-      height={512}
-      sizes={`${height}px`}
+      width={100}
+      height={100}
+      sizes={`${size}px`}
       className={cn("block shrink-0 object-contain", className)}
-      style={{ height, width: height, maxHeight: height, maxWidth: height }}
+      style={{ height: size, width: size, maxHeight: size, maxWidth: size }}
       priority
     />
   );

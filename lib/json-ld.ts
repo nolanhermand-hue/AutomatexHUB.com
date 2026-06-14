@@ -233,7 +233,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
     },
   }));
 
-  const logoUrl = brandAbsolute(BRAND.symbolCircle, SITE_URL);
+  const logoUrl = brandAbsolute(BRAND.symbolSvg, SITE_URL);
 
   const businessDescription = isHome
     ? "Automatex installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."

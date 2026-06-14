@@ -85,6 +85,7 @@ export const metadata: Metadata = {
   manifest: BRAND.manifest,
   icons: {
     icon: [
+      { url: BRAND.faviconSvg, type: "image/svg+xml" },
       { url: "/icon.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
     ],
@@ -120,6 +121,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <CriticalAboveFoldStyles />
         <link rel="dns-prefetch" href="https://plausible.io" />
+        <link rel="icon" href={BRAND.faviconSvg} type="image/svg+xml" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href={BRAND.manifest} />
