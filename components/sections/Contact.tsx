@@ -7,7 +7,6 @@ import {
   FORM_NAME,
   HUB_CONTACT_REASSURANCE,
   NAP,
-  ORNE_ZONE_OPTIONS,
   PROSPECT_SECTEUR_OPTIONS,
   SUR_MESURE_BOOKING_CTA,
 } from "@/lib/constants";
@@ -50,7 +49,6 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     telephone: "",
     precisions: "",
     secteur: "",
-    zoneOrne: "",
   });
   const [offerHint, setOfferHint] = useState<string>("");
   const [sujetHint, setSujetHint] = useState<string>("");
@@ -83,13 +81,9 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     const nomOk = fields.nom.trim() !== "";
     const prenomOk = isHub || fields.prenom.trim() !== "";
     const phoneOk = fields.telephone.replace(/\D/g, "").length >= 10;
-    const emailTrim = fields.email.trim();
-    const emailOk = isHub
-      ? emailTrim === "" || isValidEmail(emailTrim)
-      : isValidEmail(fields.email);
-    const secteurOk = !isHub || fields.secteur !== "";
+    const emailOk = isHub ? true : isValidEmail(fields.email);
 
-    if (!prenomOk || !nomOk || !phoneOk || !emailOk || !secteurOk) {
+    if (!prenomOk || !nomOk || !phoneOk || !emailOk) {
       return;
     }
 
@@ -209,7 +203,6 @@ type ContactFields = {
   telephone: string;
   precisions: string;
   secteur: string;
-  zoneOrne: string;
 };
 
 type ContactFormProps = {
@@ -245,6 +238,8 @@ function ContactForm({
   submitFeedback,
   handleSubmit,
 }: ContactFormProps) {
+  const [hubDetailsOpen, setHubDetailsOpen] = useState(false);
+
   return (
         <form
           name={FORM_NAME}
@@ -375,100 +370,115 @@ function ContactForm({
 
           {isHub ? (
             <>
-              <div>
-                <label
-                  htmlFor="secteur"
-                  className="text-xs font-semibold uppercase tracking-wide text-muted"
+              <input type="hidden" name="email" value="" />
+              {!hubDetailsOpen ? (
+                <>
+                  <input type="hidden" name="secteur" value={fields.secteur} />
+                  <input type="hidden" name="precisions" value={fields.precisions} />
+                </>
+              ) : null}
+              <p className="text-xs text-muted">{CONTACT_COPY.hubStep1Hint}</p>
+              {!hubDetailsOpen ? (
+                <button
+                  type="button"
+                  className="w-full rounded-md border border-border bg-surface px-4 py-3 text-left text-sm font-medium text-text transition hover:border-primary/40"
+                  onClick={() => setHubDetailsOpen(true)}
+                  aria-expanded={false}
+                  aria-controls="hub-details-panel"
                 >
-                  {CONTACT_COPY.hubMetierLabel}
-                </label>
-                <select
-                  id="secteur"
-                  name="secteur"
-                  required
-                  aria-required="true"
-                  aria-describedby="secteur-error"
-                  value={fields.secteur}
-                  onChange={(e) => setFields((f) => ({ ...f, secteur: e.target.value }))}
-                  className={fieldClass(touched, fields.secteur, true)}
+                  {CONTACT_COPY.hubExpandLabel}
+                </button>
+              ) : (
+                <div
+                  id="hub-details-panel"
+                  className="space-y-4 rounded-md border border-border bg-surface/50 p-4"
+                  aria-label="Précisions pour l'appel"
                 >
-                  <option value="">{CONTACT_COPY.hubMetierPlaceholder}</option>
-                  {PROSPECT_SECTEUR_OPTIONS.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
-                {touched && !fields.secteur && (
-                  <p id="secteur-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                    <span aria-hidden>⚠</span> Choisissez votre métier.
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                    Étape 2 sur 2 — optionnel
                   </p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="zone_orne"
-                  className="text-xs font-semibold uppercase tracking-wide text-muted"
-                >
-                  {CONTACT_COPY.zoneOrneLabel}
-                </label>
-                <select
-                  id="zone_orne"
-                  name="zone_orne"
-                  aria-describedby="zone-orne-hint"
-                  value={fields.zoneOrne}
-                  onChange={(e) => setFields((f) => ({ ...f, zoneOrne: e.target.value }))}
-                  className={fieldClass(false, fields.zoneOrne, false)}
-                >
-                  <option value="">{CONTACT_COPY.zoneOrnePlaceholder}</option>
-                  {ORNE_ZONE_OPTIONS.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
-                <p id="zone-orne-hint" className="mt-1 text-xs text-faint">
-                  Utile si vous êtes dans l&apos;Orne — pas obligatoire.
-                </p>
-              </div>
+                  <div>
+                    <label
+                      htmlFor="secteur"
+                      className="text-xs font-semibold uppercase tracking-wide text-muted"
+                    >
+                      {CONTACT_COPY.hubMetierLabel}
+                    </label>
+                    <select
+                      id="secteur"
+                      name="secteur"
+                      aria-describedby="secteur-hint"
+                      value={fields.secteur}
+                      onChange={(e) => setFields((f) => ({ ...f, secteur: e.target.value }))}
+                      className={fieldClass(false, fields.secteur, false)}
+                    >
+                      <option value="">{CONTACT_COPY.hubMetierPlaceholder}</option>
+                      {PROSPECT_SECTEUR_OPTIONS.map((opt) => (
+                        <option key={opt.value} value={opt.value}>
+                          {opt.label}
+                        </option>
+                      ))}
+                    </select>
+                    <p id="secteur-hint" className="mt-1 text-xs text-faint">
+                      Recommandé — Nolan prépare la démo.
+                    </p>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="precisions"
+                      className="text-xs font-semibold uppercase tracking-wide text-muted"
+                    >
+                      {CONTACT_COPY.hubBesoinLabel}
+                    </label>
+                    <textarea
+                      id="precisions"
+                      name="precisions"
+                      rows={3}
+                      placeholder={CONTACT_COPY.hubBesoinPlaceholder}
+                      value={fields.precisions}
+                      onChange={(e) => setFields((f) => ({ ...f, precisions: e.target.value }))}
+                      className={fieldClass(false, fields.precisions, false)}
+                    />
+                  </div>
+                </div>
+              )}
             </>
           ) : null}
 
+          {!isHub ? (
           <div>
             <label
               htmlFor="email"
               className="text-xs font-semibold uppercase tracking-wide text-muted"
             >
-              {isHub ? CONTACT_COPY.hubEmailLabel : CONTACT_COPY.emailLabel}
+              {CONTACT_COPY.emailLabel}
             </label>
             <input
               id="email"
               name="email"
               type="email"
-              required={!isHub}
+              required
               inputMode="email"
               autoComplete="email"
               placeholder="vous@exemple.com"
-              aria-required={isHub ? undefined : true}
+              aria-required="true"
               aria-describedby="email-error"
               value={fields.email}
               onChange={(e) => setFields((f) => ({ ...f, email: e.target.value }))}
-              className={fieldClass(touched, fields.email, !isHub)}
+              className={fieldClass(touched, fields.email, true)}
             />
-            {touched &&
-              (isHub
-                ? fields.email.trim() !== "" && !isValidEmail(fields.email)
-                : !isValidEmail(fields.email)) && (
+            {touched && !isValidEmail(fields.email) && (
               <p id="email-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
                 <span aria-hidden>⚠</span> Indiquez une adresse email valide.
               </p>
             )}
             <p className="mt-1 text-xs text-faint">
-              {isHub ? CONTACT_COPY.hubEmailHint : CONTACT_COPY.emailHint}
+              {CONTACT_COPY.emailHint}
             </p>
           </div>
+          ) : null}
 
+          {!isHub ? (
           <div>
             <label
               htmlFor="precisions"
@@ -486,6 +496,7 @@ function ContactForm({
               className={fieldClass(false, fields.precisions, false)}
             />
           </div>
+          ) : null}
 
           <button
             type="submit"

@@ -143,8 +143,8 @@ Thème **sombre fixe** · `html` avec classe **`dark`** · pas de thème crème.
 | `/btp` | Landing artisans BTP | `BtpLanding` (sections dynamic SSR) |
 | `/automatisation-ia-tpe` | Pilier TPE/PME | `TpeAutomatisationPricing` · `#tarifs` · CTA → `/rendez-vous` |
 | `/automatisations` | Catalogue | `AutomatisationsCatalogSections` |
-| `/accompagnement` | Offre 12 mois | CTA → `/rendez-vous` · `AccompagnementContactForm` |
-| `/rendez-vous` | Contact canonique | `Contact` variant hub |
+| `/accompagnement` | Offre 12 mois | CTA → `/rendez-vous` |
+| `/rendez-vous` | Contact canonique | `Contact` variant hub — nom + tél requis ; activité/besoin en panneau optionnel |
 | `/a-propos` | Fondateur | statique |
 | `/vos-donnees` | Transparence infra | `VosDonneesView` |
 | `/merci` | Post-formulaire | **off-SEO** |
@@ -263,7 +263,7 @@ Guide détaillé GSC + historique perf : **`docs/guide-fichiers-search-console-g
 | Footer | `components/layout/Footer.tsx` |
 | Providers | `providers/AppProviders.tsx` — reduced motion, GSAP ScrollTrigger idle |
 | Perf différée | `components/layout/DeferredPerfChrome.tsx` — curseur, UTM, scroll depth |
-| Contact | `components/sections/Contact.tsx` — variants `immobilier` \| `btp` \| `hub` |
+| Contact | `components/sections/Contact.tsx` — production : variant `hub` (nom + téléphone requis ; panneau activité/besoin optionnel) · legacy `immobilier` / `btp` non montés |
 | Curseur desktop | `components/layout/CustomCursor.tsx` — halo bleu, `body.cursor-custom` |
 
 **data-cursor :** `cta` \| `link` \| `card` \| `nav` \| `slider` — `lib/cursorKinds.ts`

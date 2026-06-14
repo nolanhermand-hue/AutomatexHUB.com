@@ -70,7 +70,7 @@
 | Tarifs / offre (`rendezVousHref({ offre })`) | `/rendez-vous?offre=declic\|systeme\|pilote\|sur-mesure` |
 | Résiliation (`rendezVousHref({ sujet: "resiliation" })`) | `/rendez-vous?sujet=resiliation` |
 
-Formulaire Netlify : nom **`contact`** · webhook inchangé · redirect **`/merci`**. Sections `#contact` optionnelles sur landings (immo/btp/TPE) ; **CTA booking** pointent vers `/rendez-vous`.
+Formulaire Netlify : nom **`contact`** · hub : **nom + téléphone** requis ; **activité / besoin** optionnels (panneau) · webhook inchangé · redirect **`/merci`**. Sections `#contact` optionnelles sur landings (immo/btp/TPE) ; **CTA booking** pointent vers `/rendez-vous`.
 
 ---
 
