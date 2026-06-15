@@ -67,7 +67,7 @@ export default function CgvPage() {
         <LegalUl
           items={[
             "Demande via le formulaire ou contact direct",
-            "Appel découverte de 20 minutes",
+            "Appel découverte de 30 minutes",
             "Validation écrite ou orale de l'offre",
             "Paiement des frais d'installation",
           ]}

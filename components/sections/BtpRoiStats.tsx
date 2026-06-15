@@ -11,7 +11,7 @@ export function BtpRoiStats() {
     },
     {
       title: "Sur votre cas",
-      body: "La démo de 20 min montre ce qui tournerait chez vous — sans chiffre garanti.",
+      body: "La démo de 30 min montre ce qui tournerait chez vous — sans chiffre garanti.",
     },
   ] as const;
 

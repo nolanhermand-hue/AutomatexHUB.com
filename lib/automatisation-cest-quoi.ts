@@ -99,7 +99,7 @@ export const AUTOMATISATION_CEST_QUOI_FAQ_LD: ReadonlyArray<AutomatisationCestQu
 
 export const AUTOMATISATION_CEST_QUOI_CTA = {
   title: "Vous voulez voir ce que cela donne sur votre activité ?",
-  button: "Démo gratuite 20 min sur votre cas",
+  button: "Démo gratuite 30 min sur votre cas",
   subline: "Pas de démo générique. Nolan part de vos appels, vos devis, vos journées.",
 } as const;
 

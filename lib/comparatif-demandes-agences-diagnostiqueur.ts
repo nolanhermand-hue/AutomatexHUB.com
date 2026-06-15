@@ -45,7 +45,7 @@ export const COMPARATIF_DEMANDES_AGENCES = {
       answerFirst:
         "Une seule automatisation (réponse demandes) correspond au pack Déclic ; 3–4 flux (tri, relances, Drive) au pack Système recommandé.",
       body:
-        "Réservez 20 minutes de démo : Nolan montre le scénario sur un mail agence réel (données anonymisées). Vous validez le ton avant envoi production.",
+        "Réservez 30 minutes de démo : Nolan montre le scénario sur un mail agence réel (données anonymisées). Vous validez le ton avant envoi production.",
     },
   ],
   cta: {

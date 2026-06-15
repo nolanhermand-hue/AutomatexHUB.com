@@ -117,7 +117,7 @@ export const TPE_YEAR_TIMELINE = [
     period: "M1–M3",
     phase: "INSTALLATION",
     what: [
-      "Onboarding 20 min — Nolan comprend votre façon de travailler",
+      "Onboarding 30 min — Nolan comprend votre façon de travailler",
       "Configuration sur mesure sur vos outils",
       "2 points téléphoniques — ajustements en direct",
       "Objectif : le système tourne seul avant M3",
@@ -245,7 +245,7 @@ export const TPE_GEO_BLOCKS = [
   },
   {
     q: "En combien de temps une TPE est-elle opérationnelle ?",
-    a: "48 h ouvrées après validation du périmètre (accès outils, règles, tests), suite à l'onboarding de 20 min. Nolan configure le système sur vos outils existants (Gmail, Calendar, Telegram). Aucune compétence technique requise.",
+    a: "48 h ouvrées après validation du périmètre (accès outils, règles, tests), suite à l'onboarding de 30 min. Nolan configure le système sur vos outils existants (Gmail, Calendar, Telegram). Aucune compétence technique requise.",
   },
 ] as const;
 
@@ -272,7 +272,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Combien de temps avant d'être opérationnel ?",
-    a: "48 h ouvrées après validation du périmètre, suite à l'onboarding de 20 minutes.",
+    a: "48 h ouvrées après validation du périmètre, suite à l'onboarding de 30 minutes.",
   },
   {
     q: "Peut-on arrêter à tout moment ?",

@@ -46,7 +46,7 @@ export function DiagnostiqueurLocalPage({ page }: { page: LocalDiagnostiqueurPag
       <div className="mt-14 rounded-lg border border-primary/30 bg-surface p-8">
         <h2 className="font-heading text-xl text-text">Réserver une démo</h2>
         <p className="mt-3 text-muted">
-          Diagnostiqueurs en Normandie : démo 20 min sur ton cas, mise en route en 48 h.{" "}
+          Diagnostiqueurs en Normandie : démo 30 min sur ton cas, mise en route en 48 h.{" "}
           <a className="text-primary underline" href={`tel:${NAP.phoneE164}`}>
             {NAP.phoneDisplay}
           </a>

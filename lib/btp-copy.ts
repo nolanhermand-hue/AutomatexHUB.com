@@ -223,7 +223,7 @@ export const BTP_DECLIC_HINT =
 
 export const BTP_CONTACT = {
   h2: "Prêt à voir ce que ça change sur tes chantiers ?",
-  sub: "Nolan t'appelle sous 24 h. 20 minutes. Il te montre sur tes propres chantiers ce que le système ferait.",
+  sub: "Nolan t'appelle sous 24 h. 30 minutes. Il te montre sur tes propres chantiers ce que le système ferait.",
   cta: PRIMARY_DEMO_CTA,
   foot: "Démo gratuite · Sans engagement · Basé à Flers, Orne",
 } as const;

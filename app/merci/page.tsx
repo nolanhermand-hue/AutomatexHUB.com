@@ -11,7 +11,7 @@ export default function MerciPage() {
           Merci. Nous vous recontactons sous 24 h.
         </h1>
         <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-          C&apos;est reçu. Nous vous contactons sous 24 h pour fixer les 20 minutes (ou confirmer
+          C&apos;est reçu. Nous vous contactons sous 24 h pour fixer les 30 minutes (ou confirmer
           votre résiliation). Pas de relance automatique entre-temps.
         </p>
 
@@ -32,7 +32,7 @@ export default function MerciPage() {
               2
             </span>
             <div>
-              <p className="font-semibold text-text">Échange de 20 minutes (démo)</p>
+              <p className="font-semibold text-text">Échange de 30 minutes (démo)</p>
               <p className="mt-1 text-sm text-muted">
                 Démonstration sur votre activité réelle — pas de présentation générique.
               </p>

@@ -8,7 +8,7 @@ export function NormandieVilleFinalCta({ ville }: { ville: NormandieVillePage })
       <div className="mx-auto max-w-content">
         <div className="glass-panel mx-auto max-w-xl p-8 text-center md:p-10">
           <h2 className="font-heading text-2xl font-bold text-text md:text-3xl">
-            Démo gratuite 20 min — {ville.name}
+            Démo gratuite 30 min — {ville.name}
           </h2>
           <p className="mx-auto mt-3 max-w-readable text-sm text-muted md:text-base">
             Nolan cale le scénario sur ton métier {ville.nameWithArticle}. Il confirme sous 24 h en

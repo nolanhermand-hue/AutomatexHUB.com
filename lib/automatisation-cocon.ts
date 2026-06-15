@@ -45,11 +45,11 @@ export const COCON_PILIER: CoconPilierPage = {
   path: COCON_PILIER_PATH,
   metaTitle: "Automatisations pour artisans et indépendants",
   metaDescription:
-    "Relances de devis, SMS appels manqués, demandes, RDV — sans remplacer Liciel, Tolteck ou votre logiciel métier. Basé à Flers (Orne). Démo 20 min.",
+    "Relances de devis, SMS appels manqués, demandes, RDV — sans remplacer Liciel, Tolteck ou votre logiciel métier. Basé à Flers (Orne). Démo 30 min.",
   h1: "Automatisations pour artisans et indépendants — sans changer votre logiciel métier",
   intro: [
     "Vous avez déjà un outil pour chiffrer, diagnostiquer ou monter un dossier. Le trou, c'est souvent après : relancer, répondre quand vous êtes sur le terrain, rappeler un client ou bloquer un livrable tant qu'une pièce manque.",
-    "AutomateX branche des automatisations par-dessus Gmail, SMS et calendrier. Pas de promesse magique : Nolan cale le périmètre en démo de 20 minutes.",
+    "AutomateX branche des automatisations par-dessus Gmail, SMS et calendrier. Pas de promesse magique : Nolan cale le périmètre en démo de 30 minutes.",
   ],
   pilierFaq: [
     {
@@ -62,7 +62,7 @@ export const COCON_PILIER: CoconPilierPage = {
     },
     {
       q: "Comment démarrer ?",
-      a: "Page /rendez-vous : nom, téléphone, métier. Nolan rappelle sous 24 h en semaine pour une démo de 20 minutes.",
+      a: "Page /rendez-vous : nom, téléphone, métier. Nolan rappelle sous 24 h en semaine pour une démo de 30 minutes.",
     },
   ],
 };
@@ -73,7 +73,7 @@ const pains: CoconPainPage[] = [
     path: `${COCON_PILIER_PATH}/relance-devis-automatique`,
     metaTitle: "Relance de devis automatique pour artisans",
     metaDescription:
-      "Devis envoyé sans réponse ? Relance mail ou SMS selon vos règles — compatible Tolteck, Obat, Batappli. Pas un logiciel de chiffrage. Démo 20 min.",
+      "Devis envoyé sans réponse ? Relance mail ou SMS selon vos règles — compatible Tolteck, Obat, Batappli. Pas un logiciel de chiffrage. Démo 30 min.",
     h1: "Relance de devis automatique — quand le client ne répond plus",
     heroEyebrow: "Relances & suivi",
     heroAccroche: "Le devis est parti. Le silence aussi.",
@@ -146,7 +146,7 @@ const pains: CoconPainPage[] = [
     path: `${COCON_PILIER_PATH}/sms-appel-manque`,
     metaTitle: "SMS automatique sur appel manqué — artisans",
     metaDescription:
-      "Sur le chantier, vous ne décroquez pas. Un SMS pro part tout de suite avec votre signature. Compatible avec votre téléphone et votre CRM. Démo 20 min.",
+      "Sur le chantier, vous ne décroquez pas. Un SMS pro part tout de suite avec votre signature. Compatible avec votre téléphone et votre CRM. Démo 30 min.",
     h1: "SMS automatique quand vous manquez un appel sur le chantier",
     heroEyebrow: "Appels & terrain",
     heroAccroche: "Le client appelle. Vous posez. Il raccroche.",
@@ -204,7 +204,7 @@ const pains: CoconPainPage[] = [
     path: `${COCON_PILIER_PATH}/relance-impayes-livrable`,
     metaTitle: "Relance impayés et blocage livrable",
     metaDescription:
-      "Facture impayée ou rapport bloqué faute de pièce ? Relances factuelles, pas de recouvrement agressif. Compatible avec vos outils. Démo 20 min.",
+      "Facture impayée ou rapport bloqué faute de pièce ? Relances factuelles, pas de recouvrement agressif. Compatible avec vos outils. Démo 30 min.",
     h1: "Relance impayés et blocage livrable — sans harceler",
     heroEyebrow: "Relances & pièces",
     heroAccroche: "Vous livrez quand c'est payé — ou quand le dossier est complet.",
@@ -262,7 +262,7 @@ const pains: CoconPainPage[] = [
     path: `${COCON_PILIER_PATH}/rappel-lead-instantane`,
     metaTitle: "Réponse aux demandes instantanée — diagnostiqueurs et artisans",
     metaDescription:
-      "Premier contact prospect pendant que vous êtes en mission. Mail ou SMS de prise en charge — pas un portail immo. J1 : diag et couvreurs. Démo 20 min.",
+      "Premier contact prospect pendant que vous êtes en mission. Mail ou SMS de prise en charge — pas un portail immo. J1 : diag et couvreurs. Démo 30 min.",
     h1: "Réponse aux demandes instantanée — pendant que vous êtes en mission",
     heroEyebrow: "Demandes & réponses",
     heroAccroche: "Le prospect écrit. Vous êtes sur le terrain.",
@@ -329,7 +329,7 @@ const pains: CoconPainPage[] = [
     path: `${COCON_PILIER_PATH}/prise-rdv-automatique`,
     metaTitle: "Prise de RDV automatique pour pros",
     metaDescription:
-      "Créneaux de visite, mission diag ou rappel client : proposition automatique depuis votre disponibilité. Compatible calendrier existant. Démo 20 min.",
+      "Créneaux de visite, mission diag ou rappel client : proposition automatique depuis votre disponibilité. Compatible calendrier existant. Démo 30 min.",
     h1: "Prise de RDV automatique — créneaux sans aller-retour",
     heroEyebrow: "Agenda & terrain",
     heroAccroche: "Cinq mails pour trouver un créneau, c'est cinq soirées perdues.",

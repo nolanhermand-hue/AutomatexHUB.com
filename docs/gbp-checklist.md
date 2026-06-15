@@ -11,7 +11,7 @@
 
 ## Contenu
 
-- [ ] Description ≤ 750 car. : artisans BTP + diagnostiqueurs, démo 20 min, packs Déclic / Système / Pilote (990 € + 249 € Système)
+- [ ] Description ≤ 750 car. : artisans BTP + diagnostiqueurs, démo 30 min, packs Déclic / Système / Pilote (990 € + 249 € Système)
 - [ ] Pas de faux avis · pas de logos clients inventés
 - [ ] 3–5 photos réelles (Nolan, bureau Flers, capture système floutée)
 - [ ] Lien rendez-vous : /rendez-vous

@@ -204,10 +204,10 @@ function transformLine(line) {
     ["Après un client,", "Après une demande,"],
     ["Même mécanique sur un client SeLoger", "Même mécanique sur une demande SeLoger"],
     ["Connaît ta cadence", "Connaît votre cadence"],
-    ["ta démo de 20 minutes", "votre démo de 20 minutes"],
+    ["ta démo de 30 minutes", "votre démo de 30 minutes"],
     ["Questions avant de réserver ta démo", "Questions avant de réserver votre démo"],
-    ["Démo gratuite 20 min sur ton cas", "Démo gratuite 20 min sur votre cas"],
-    ["Démo 20 min sur ton cas", "Démo 20 min sur votre cas"],
+    ["Démo gratuite 30 min sur ton cas", "Démo gratuite 30 min sur votre cas"],
+    ["Démo 30 min sur ton cas", "Démo 30 min sur votre cas"],
     ["réponse clients en 90s", "réponse clients en 90 s"],
   ];
 

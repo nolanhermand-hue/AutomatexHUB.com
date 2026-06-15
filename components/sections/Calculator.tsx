@@ -41,7 +41,7 @@ export function Calculator() {
 
   const dynamicCta =
     euros > 30000
-      ? `Ces ${formatEuro(euros)} méritent un appel — Réserver 20 min`
+      ? `Ces ${formatEuro(euros)} méritent un appel — Réserver 30 min`
       : `${CALCULATOR_COPY.ctaPrefix} (${formatEuro(euros)}) — ${CALCULATOR_COPY.ctaSuffix}`;
 
   const goToRendezVous = () => {

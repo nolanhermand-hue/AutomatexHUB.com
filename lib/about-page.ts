@@ -50,7 +50,7 @@ export const ABOUT_PAGE = {
   concreteSteps: [
     {
       step: "01",
-      title: "Onboarding en 20 min",
+      title: "Onboarding en 30 min",
       desc: "On se parle. Je comprends votre façon de travailler. Je construis la configuration sur votre vocabulaire, vos portails, votre réseau.",
     },
     {

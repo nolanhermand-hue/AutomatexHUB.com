@@ -26,7 +26,7 @@ Ce document est la **source de vérité** pour les URLs publiques. Pour les règ
 | URL | Fichier source | Type | Titre / H1 (bref) | Notes |
 |-----|----------------|------|-------------------|-------|
 | `/` | `app/page.tsx` | Landing transverse | Title : *Automatisation artisans & TPE en Normandie* · H1 : *Tes clients n'attendent plus…* (`lib/home-copy.ts`) | `HomePage` · CTA → `rendezVousHref()` · pas de `#contact` sur la home |
-| `/rendez-vous` | `app/rendez-vous/page.tsx` | Conversion | Title : *Prendre rendez-vous · Démo 20 min* · H1 : *Réserve 20 minutes de démo sur ton cas* | `Contact` `variant="hub"` · query `?offre=` / `?sujet=resiliation` |
+| `/rendez-vous` | `app/rendez-vous/page.tsx` | Conversion | Title : *Prendre rendez-vous · Démo 30 min* · H1 : *Réserve 30 minutes de démo sur ton cas* | `Contact` `variant="hub"` · query `?offre=` / `?sujet=resiliation` |
 | `/immobilier` | `app/immobilier/page.tsx` | Funnel immo | Title : *Diagnostiqueur immo · Orne — réponse agences 2 min* | `ImmobilierHome` · ancres ci-dessous |
 | `/btp` | `app/btp/page.tsx` | Funnel BTP | Title : *Artisans BTP · devis & appels automatiques · Orne* · H1 : `BTP_HERO.h1` (`lib/btp-copy.ts`) | Landing Kévin / artisans |
 | `/automatisation-ia-tpe` | `app/automatisation-ia-tpe/page.tsx` | Pilier TPE | Title : `TPE_META` · H1 deux lignes `TPE_HERO` | Tarifs + `#contact` via `Contact` |

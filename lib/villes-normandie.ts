@@ -47,7 +47,7 @@ export const NORMANDIE_PILIER: NormandiePilierPage = {
   path: NORMANDIE_PILIER_PATH,
   metaTitle: "Automatisation artisans & diagnostiqueurs · Normandie",
   metaDescription:
-    "Réponse aux appels, devis et relances pour couvreurs, diagnostiqueurs et TPE en Normandie. Basé à Flers (Orne). Démo 20 min gratuite · sans engagement.",
+    "Réponse aux appels, devis et relances pour couvreurs, diagnostiqueurs et TPE en Normandie. Basé à Flers (Orne). Démo 30 min gratuite · sans engagement.",
   h1: "Automatisation pour artisans et diagnostiqueurs en Normandie",
   intro: [
     "Couvreurs, charpentiers, diagnostiqueurs immobiliers et TPE : la même galère — être sur le terrain quand le téléphone sonne, et rattraper la paperasse le soir. AutomateX branche des réponses et des relances sur vos outils actuels, sans promesse de chiffre magique.",
@@ -64,7 +64,7 @@ export const NORMANDIE_PILIER: NormandiePilierPage = {
     },
     {
       q: "Comment réserver une démo pour votre ville ?",
-      a: "Choisis ta ville ci-dessous ou va sur /rendez-vous : nom, téléphone et métier suffisent. Nolan rappelle sous 24 h en semaine pour une démo de 20 minutes sur ton cas.",
+      a: "Choisis ta ville ci-dessous ou va sur /rendez-vous : nom, téléphone et métier suffisent. Nolan rappelle sous 24 h en semaine pour une démo de 30 minutes sur ton cas.",
     },
   ],
 };
@@ -82,7 +82,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "diagnostiqueur",
     metaTitle: "Automatisation artisans & diag à Caen (14)",
     metaDescription:
-      "Couvreurs, charpentiers et diagnostiqueurs à Caen : réponses et relances pendant vos chantiers. Démo 20 min · Nolan, Flers (Orne). Sans engagement.",
+      "Couvreurs, charpentiers et diagnostiqueurs à Caen : réponses et relances pendant vos chantiers. Démo 30 min · Nolan, Flers (Orne). Sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Caen",
     heroEyebrow: "Calvados (14) · agglo caennaise",
     heroAccroche: "Entre deux chantiers ou deux diagnostics, personne ne décroche à votre place.",
@@ -103,7 +103,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Couvreurs et charpentiers de l’agglo : par quoi commencer ?",
-        a: "Souvent par un SMS ou mail court quand vous ne décrochez pas, puis par la relance devis. Vous choisissez 2 priorités en démo de 20 min avec Nolan sur vos vrais messages.",
+        a: "Souvent par un SMS ou mail court quand vous ne décrochez pas, puis par la relance devis. Vous choisissez 2 priorités en démo de 30 min avec Nolan sur vos vrais messages.",
       },
       {
         q: "Peut-on installer depuis Flers si votre entreprise est basée à Caen ?",
@@ -124,7 +124,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "immo-urbain",
     metaTitle: "Automatisation TPE & diag à Rouen (76)",
     metaDescription:
-      "Diagnostiqueurs, artisans et TPE à Rouen Métropole : messages traités pendant vos visites. Démo gratuite 20 min · sans engagement.",
+      "Diagnostiqueurs, artisans et TPE à Rouen Métropole : messages traités pendant vos visites. Démo gratuite 30 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Rouen",
     heroEyebrow: "Seine-Maritime (76) · Métropole Rouen Normandie",
     heroAccroche: "Sur la rive droite ou en visite immeuble, les clients ne patientent pas.",
@@ -166,7 +166,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "couvreur",
     metaTitle: "Automatisation couvreurs & artisans au Havre",
     metaDescription:
-      "Couvreurs et artisans au Havre : réponse aux appels pendant le chantier. Démo 20 min · installé depuis Flers (Orne). Sans engagement.",
+      "Couvreurs et artisans au Havre : réponse aux appels pendant le chantier. Démo 30 min · installé depuis Flers (Orne). Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans au Havre",
     heroEyebrow: "Seine-Maritime (76) · littoral",
     heroAccroche: "Vent, sel et pluie : sur le toit, vous ne répondez pas au premier appel.",
@@ -208,7 +208,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "couvreur",
     metaTitle: "Automatisation artisans Cherbourg Cotentin (50)",
     metaDescription:
-      "Artisans et couvreurs à Cherbourg-en-Cotentin : réponses automatiques sur chantier. Démo 20 min · Nolan Flers. Sans engagement.",
+      "Artisans et couvreurs à Cherbourg-en-Cotentin : réponses automatiques sur chantier. Démo 30 min · Nolan Flers. Sans engagement.",
     h1: "Automatisations pour artisans à Cherbourg-en-Cotentin",
     heroEyebrow: "Manche (50) · Cotentin",
     heroAccroche: "Sur la presqu’île, un client qui n’a pas de nouvelles appelle le suivant sur la liste.",
@@ -250,7 +250,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "btp-mixte",
     metaTitle: "Automatisation artisans à Saint-Lô (50)",
     metaDescription:
-      "Artisans et TPE à Saint-Lô et agglo : moins de paperasse le soir. Démo 20 min gratuite · depuis Flers (Orne).",
+      "Artisans et TPE à Saint-Lô et agglo : moins de paperasse le soir. Démo 30 min gratuite · depuis Flers (Orne).",
     h1: "Automatisations pour artisans et TPE à Saint-Lô",
     heroEyebrow: "Manche (50) · préfecture du département",
     heroAccroche: "Préfecture rurale : vous roulez toute la journée, pas le temps de trier les mails.",
@@ -271,7 +271,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Faut-il être à Saint-Lô pour la démo ?",
-        a: "Non, visio ou téléphone. 20 minutes sur votre journée type.",
+        a: "Non, visio ou téléphone. 30 minutes sur votre journée type.",
       },
       {
         q: "Engagement minimum ?",
@@ -292,7 +292,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "diagnostiqueur",
     metaTitle: "Automatisation diag & artisans à Lisieux (14)",
     metaDescription:
-      "Diagnostiqueurs et artisans du Pays d’Auge : réponses pendant vos visites. Démo 20 min · Nolan à Flers. Sans engagement.",
+      "Diagnostiqueurs et artisans du Pays d’Auge : réponses pendant vos visites. Démo 30 min · Nolan à Flers. Sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Lisieux",
     heroEyebrow: "Calvados (14) · Pays d’Auge",
     heroAccroche: "Longères et colombages : en visite, vous ne voyez pas les demandes qui tombent.",
@@ -334,7 +334,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "diagnostiqueur",
     metaTitle: "Automatisation TPE & diag à Évreux (27)",
     metaDescription:
-      "Diagnostiqueurs et artisans à Évreux et l’Eure : réponses et relances automatisées. Démo 20 min · sans engagement.",
+      "Diagnostiqueurs et artisans à Évreux et l’Eure : réponses et relances automatisées. Démo 30 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Évreux",
     heroEyebrow: "Eure (27) · axe Paris–Normandie",
     heroAccroche: "Entre deux pavillons de Vernon ou Évreux, les mails agences s’empilent.",
@@ -376,7 +376,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "btp-mixte",
     metaTitle: "Automatisation artisans à Alençon (61)",
     metaDescription:
-      "Couvreurs, diagnostiqueurs et TPE à Alençon : installé depuis Flers (Orne). Démo 20 min gratuite · sans engagement.",
+      "Couvreurs, diagnostiqueurs et TPE à Alençon : installé depuis Flers (Orne). Démo 30 min gratuite · sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Alençon",
     heroEyebrow: "Orne (61) · préfecture · proche de Flers",
     heroAccroche: "Entre la préfecture et les chantiers du bocage, les appels s’entassent.",
@@ -418,7 +418,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "btp-mixte",
     metaTitle: "Automatisation artisans à Flers (61)",
     metaDescription:
-      "Couvreurs, charpentiers et diagnostiqueurs à Flers : Nolan installe depuis chez lui. Démo 20 min · sans engagement.",
+      "Couvreurs, charpentiers et diagnostiqueurs à Flers : Nolan installe depuis chez lui. Démo 30 min · sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Flers",
     heroEyebrow: "Orne (61) · base Nolan · bocage ornais",
     heroAccroche: "Ici, tout le monde connaît quelqu’un sur les chantiers — et personne ne répond au premier coup.",
@@ -460,7 +460,7 @@ const villes: NormandieVillePage[] = [
     dominantAngle: "couvreur",
     metaTitle: "Automatisation artisans à Argentan (61)",
     metaDescription:
-      "Couvreurs et artisans sud Orne à Argentan : réponses sur chantier. Démo 20 min · Nolan à Flers. Sans engagement.",
+      "Couvreurs et artisans sud Orne à Argentan : réponses sur chantier. Démo 30 min · Nolan à Flers. Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans à Argentan",
     heroEyebrow: "Orne (61) · sud Orne · Suisse normande",
     heroAccroche: "Sur les toits du secteur Argentan–Falaise, le téléphone vibre sans arrêt.",

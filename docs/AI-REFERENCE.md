@@ -199,7 +199,7 @@ Mega-menu : `lib/mega-nav-data.ts`
 ### Libellés CTA récurrents (`lib/constants.ts`)
 
 - `BOOKING_CTA_LABEL` = « Réserver ton appel avec Nolan »
-- `PRIMARY_DEMO_CTA` = « Démo gratuite 20 min sur ton cas » (unique hors cartes tarifs)
+- `PRIMARY_DEMO_CTA` = « Démo gratuite 30 min sur ton cas » (unique hors cartes tarifs)
 - Rappel démo : Nolan te rappelle **sous 24 h** (pas « demain »)
 - Cadre commercial : **Sans engagement** · résiliation **1 mail**
 

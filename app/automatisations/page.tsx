@@ -18,7 +18,7 @@ import { rendezVousHref } from "@/lib/hub-nav";
 export const metadata: Metadata = {
   title: "Catalogue automatisations · Orne",
   description:
-    "Réponse aux demandes, tri mails, devis, classement Drive, résumé Telegram — catalogue pour diagnostiqueurs et artisans BTP en Orne. Démo 20 min.",
+    "Réponse aux demandes, tri mails, devis, classement Drive, résumé Telegram — catalogue pour diagnostiqueurs et artisans BTP en Orne. Démo 30 min.",
   openGraph: {
     title: "Ce qu'AutomateX fait pour toi — Catalogue",
     description:
@@ -78,7 +78,7 @@ export default function AutomatisationsPage() {
           </Link>
         </div>
         <p className="mt-3 text-center text-xs text-faint">
-          Démo 20 min · Gratuite · Nolan te rappelle sous 24 h
+          Démo 30 min · Gratuite · Nolan te rappelle sous 24 h
         </p>
       </section>
 
@@ -116,7 +116,7 @@ export default function AutomatisationsPage() {
           Mise en route selon ton périmètre
         </h2>
         <p className="mx-auto mt-4 max-w-readable text-sm leading-relaxed text-muted">
-          {SETUP_48H_NUANCE}. Nolan t&apos;appelle pour cadrer 2 à 4 priorités en 20 minutes.
+          {SETUP_48H_NUANCE}. Nolan t&apos;appelle pour cadrer 2 à 4 priorités en 30 minutes.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-primary">
@@ -130,7 +130,7 @@ export default function AutomatisationsPage() {
           </Link>
         </div>
         <p className="mt-6 text-xs text-faint">
-          Démo gratuite · 20 min · Sans engagement · Basé à Flers, Orne
+          Démo gratuite · 30 min · Sans engagement · Basé à Flers, Orne
         </p>
         <p className="sr-only">
           Featured immobilier: {FEATURED_IMMO.join(", ")}. Featured BTP: {FEATURED_BTP.join(", ")}.

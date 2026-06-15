@@ -30,16 +30,16 @@ export const SETUP_48H_NUANCE =
 /** Libellé CTA — prise de rendez-vous (hors libellé démo principal). */
 export const BOOKING_CTA_LABEL = "Réserver ton appel avec Nolan" as const;
 
-/** CTA démo 20 min — unique sur le site (hors cartes tarifs). */
-export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur ton cas" as const;
-export const PRIMARY_DEMO_CTA_SHORT = "Démo 20 min" as const;
+/** CTA démo 30 min — unique sur le site (hors cartes tarifs). */
+export const PRIMARY_DEMO_CTA = "Démo gratuite 30 min sur ton cas" as const;
+export const PRIMARY_DEMO_CTA_SHORT = "Démo 30 min" as const;
 
-/** Offre sur mesure — entretien de cadrage (distinct de la démo 20 min). */
+/** Offre sur mesure — cadrage périmètre / devis (distinct de la démo standard). */
 export const SUR_MESURE_BOOKING_CTA =
   "Réserver un rendez-vous sur mesure — 30 min" as const;
 
-/** CTA carte tarif — prise de RDV 20 min (home + immobilier). */
-export const PRICING_CARD_CTA = "Réserver 20 min" as const;
+/** CTA carte tarif — prise de RDV démo 30 min (home + immobilier). */
+export const PRICING_CARD_CTA = "Réserver 30 min" as const;
 
 export const PRICING_REASSURANCE_CARD =
   "Sans engagement · résiliable en 1 mail · mise en place en 3× sans frais" as const;
@@ -115,8 +115,8 @@ export const META = {
   title:
     "AutomateX — Artisans, diagnostiqueurs & TPE · Orne · Normandie",
   description:
-    "Réponse aux appels et messages, devis et relances pendant que tu es sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 20 min · Sans engagement.",
-  ogTitle: "AutomateX — Artisans & TPE en Normandie | Démo 20 min",
+    "Réponse aux appels et messages, devis et relances pendant que tu es sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 30 min · Sans engagement.",
+  ogTitle: "AutomateX — Artisans & TPE en Normandie | Démo 30 min",
   ogDescription:
     "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). Mistral UE · Automatisations UE · RGPD · Sans engagement.",
 } as const;
@@ -332,7 +332,7 @@ export const SOLUTION_STEPS: ReadonlyArray<{
     kicker: "01",
     title: "Nolan installe",
     body:
-      "20 minutes d'appel pour cadrer votre activité. Nolan branche votre boîte mail, votre téléphone et votre espace Google. Aucun outil à apprendre. Aucune migration. Tout reste sur vos comptes.",
+      "30 minutes d'appel pour cadrer votre activité. Nolan branche votre boîte mail, votre téléphone et votre espace Google. Aucun outil à apprendre. Aucune migration. Tout reste sur vos comptes.",
   },
   {
     kicker: "02",
@@ -369,7 +369,7 @@ export const ACCOMPANIMENT_COPY = {
     {
       step: "J0",
       title: "Appel découverte",
-      body: "20 minutes pour cadrer votre activité, vos portails et votre ton. Aucun engagement.",
+      body: "30 minutes pour cadrer votre activité, vos portails et votre ton. Aucun engagement.",
     },
     {
       step: "Semaine 1",
@@ -832,7 +832,7 @@ export const CTA_REASSURANCE_LINE =
 export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 
 export const CONTACT_COPY = {
-  h2: "20 minutes. Aucun engagement. Aucun préparatif.",
+  h2: "30 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
     "Nolan te montre en direct ce que la configuration fait sur une activité comme la tienne. Si ça ne te convient pas, tu pars sans rien. Nolan en direct, pas un ticket anonyme.",
   formTitle: "Tes coordonnées",
@@ -849,7 +849,7 @@ export const CONTACT_COPY = {
   formReassurance: "Sans engagement",
   resiliationSubmitLabel: "Envoyer ta demande de résiliation",
   hubFounderLine: "Nolan Hermand · basé à Flers (Orne)",
-  hubFounderSub: "Démo 20 min sur ton cas — Nolan te rappelle sous 24 h.",
+  hubFounderSub: "Démo 30 min sur ton cas — Nolan te rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisis ton secteur",
   hubMetierLabel: "Activité",

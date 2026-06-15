@@ -14,7 +14,7 @@ export function FinalCta() {
       <div className="mx-auto max-w-content">
         <p className="label-micro text-muted">Prochaine étape</p>
         <h2 className="mt-3 mx-auto max-w-readable font-heading text-3xl leading-tight text-text md:text-5xl">
-          20 minutes.{" "}
+          30 minutes.{" "}
           <span className="italic text-primary">Aucun engagement.</span> Aucun préparatif.
         </h2>
         <p className="mx-auto mt-4 max-w-readable text-base leading-[1.6] text-muted md:text-lg">

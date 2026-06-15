@@ -63,7 +63,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 4,
     category: "general",
     q: "Es-tu concerné (artisan, diagnostiqueur, dirigeant de TPE) ?",
-    a: "Oui si tu perds des opportunités faute de réponse rapide, si tes devis traînent ou si ta boîte mail te prend plus d'une heure par jour sans produire de chiffre. Une démo de 20 minutes permet de trancher sans engagement.",
+    a: "Oui si tu perds des opportunités faute de réponse rapide, si tes devis traînent ou si ta boîte mail te prend plus d'une heure par jour sans produire de chiffre. Une démo de 30 minutes permet de trancher sans engagement.",
   },
   {
     id: 5,
@@ -93,7 +93,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 9,
     category: "problem",
     q: "Combien de temps pouvez-vous espérer gagner ?",
-    a: "L’objectif est de récupérer du temps sur la paperasse et les relances, pas de vous promettre un nombre d’heures : chaque métier et chaque volume de messages est différent. Nolan cale le périmètre en démo de 20 minutes avant toute mise en place.",
+    a: "L’objectif est de récupérer du temps sur la paperasse et les relances, pas de vous promettre un nombre d’heures : chaque métier et chaque volume de messages est différent. Nolan cale le périmètre en démo de 30 minutes avant toute mise en place.",
   },
   {
     id: 10,
@@ -153,7 +153,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 19,
     category: "setup",
     q: "Comment ça se passe pour la mise en place ?",
-    a: "Audit de 20 minutes → choix de 2 à 4 priorités → branchement sur vos outils → tests sur de vrais messages avec votre validation → mise en ligne. Nolan reste joignable pour ajuster le ton.",
+    a: "Audit de 30 minutes → choix de 2 à 4 priorités → branchement sur vos outils → tests sur de vrais messages avec votre validation → mise en ligne. Nolan reste joignable pour ajuster le ton.",
   },
   {
     id: 20,
@@ -183,7 +183,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 24,
     category: "setup",
     q: "Que faut-il fournir pour démarrer ?",
-    a: "Vos accès (mail, Drive), 2 ou 3 exemples de messages réels, vos règles (ce qui part seul / ce qui attend votre OK) et 20 minutes pour valider le ton — pas de dossier technique.",
+    a: "Vos accès (mail, Drive), 2 ou 3 exemples de messages réels, vos règles (ce qui part seul / ce qui attend votre OK) et 30 minutes pour valider le ton — pas de dossier technique.",
   },
   {
     id: 25,
@@ -213,7 +213,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 29,
     category: "reliability",
     q: "Et si vous ne savez pas par où commencer ?",
-    a: "La démo de 20 minutes sert à ça : Nolan classe tes pertes de temps (appels, devis, mails) et tu démarres par 2 leviers maximum, pas par 15 fonctions d'un coup.",
+    a: "La démo de 30 minutes sert à ça : Nolan classe tes pertes de temps (appels, devis, mails) et tu démarres par 2 leviers maximum, pas par 15 fonctions d'un coup.",
   },
   {
     id: 30,
@@ -237,7 +237,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 33,
     category: "pricing",
     q: "Que se passe-t-il si le service ne correspond pas au cadrage ?",
-    a: "La démo de 20 min fixe scénarios, canaux et délais avant mise en place. Les ajustements dans ce périmètre sont inclus dans la mensualité. Toute extension hors périmètre fait l'objet d'un devis ou d'un changement de formule. Pas de promesse de chiffre commercial (voir /cgv). Résiliation possible en un mail, effet fin de mois.",
+    a: "La démo de 30 min fixe scénarios, canaux et délais avant mise en place. Les ajustements dans ce périmètre sont inclus dans la mensualité. Toute extension hors périmètre fait l'objet d'un devis ou d'un changement de formule. Pas de promesse de chiffre commercial (voir /cgv). Résiliation possible en un mail, effet fin de mois.",
   },
   {
     id: 34,
@@ -261,13 +261,13 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 37,
     category: "trust",
     q: "Vous débutez : pourquoi vous faire confiance ?",
-    a: "Parce que le site ne montre pas de faux avis : vous pouvez tester sur votre cas en démo 20 min, voir le SIRET et l'adresse à Flers, et arrêter en un mail. Nolan assume une phase de lancement avec peu de clients — la preuve, c'est le scénario qui tourne chez vous.",
+    a: "Parce que le site ne montre pas de faux avis : vous pouvez tester sur votre cas en démo 30 min, voir le SIRET et l'adresse à Flers, et arrêter en un mail. Nolan assume une phase de lancement avec peu de clients — la preuve, c'est le scénario qui tourne chez vous.",
   },
   {
     id: 38,
     category: "trust",
     q: "Vous proposez une démo gratuite ?",
-    a: "Oui : 20 minutes sur /rendez-vous, sans engagement, pour montrer ce que la configuration ferait sur votre activité réelle.",
+    a: "Oui : 30 minutes sur /rendez-vous, sans engagement, pour montrer ce que la configuration ferait sur votre activité réelle.",
   },
   {
     id: 39,
@@ -279,7 +279,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 40,
     category: "trust",
     q: "Comment démarrer concrètement ?",
-    a: `Réservez 20 minutes sur /rendez-vous ou appelez le ${NAP.phoneDisplay}. Nolan confirme sous 24 h, cadrage, puis ${SETUP_48H_NUANCE} si vous validez.`,
+    a: `Réservez 30 minutes sur /rendez-vous ou appelez le ${NAP.phoneDisplay}. Nolan confirme sous 24 h, cadrage, puis ${SETUP_48H_NUANCE} si vous validez.`,
   },
 ];
 

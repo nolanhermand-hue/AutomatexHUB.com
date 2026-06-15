@@ -13,7 +13,7 @@ export const NORMANDIE_GENERIC_FAQ: ReadonlyArray<NormandieFaqItem> = [
   },
   {
     q: "L’installation se fait comment si tu n’es pas dans l’Orne ?",
-    a: "À distance partout en Normandie (et au-delà si besoin). Nolan est basé à Flers : rendez-vous terrain possibles dans l’Orne. Après la démo de 20 minutes sur ton cas, la mise en place suit le périmètre validé ensemble.",
+    a: "À distance partout en Normandie (et au-delà si besoin). Nolan est basé à Flers : rendez-vous terrain possibles dans l’Orne. Après la démo de 30 minutes sur ton cas, la mise en place suit le périmètre validé ensemble.",
   },
   {
     q: "Vos données et la conformité RGPD ?",

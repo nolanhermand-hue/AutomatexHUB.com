@@ -428,7 +428,7 @@ export function MegaNav() {
             onClick={() => trackCtaClicked("navbar_contact")}
             className="btn-bracket hidden text-[11px] lg:inline-flex"
           >
-            Réserver 20 min
+            Réserver 30 min
           </Link>
         </div>
 

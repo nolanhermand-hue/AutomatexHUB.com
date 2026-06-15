@@ -57,7 +57,7 @@ export function NormandiePilierTemplate() {
           </h2>
           <p className="mt-3 max-w-readable text-sm text-muted md:text-base">
             Chaque page décrit le contexte local (BTP, diagnostiqueurs, TPE). Même interlocuteur, même
-            démo de 20 minutes.
+            démo de 30 minutes.
           </p>
           <div className="mt-10 space-y-10">
             {NORMANDIE_DEPARTMENTS.map((dept) => (

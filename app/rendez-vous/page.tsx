@@ -4,14 +4,14 @@ import { buildRendezVousHowToJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prendre rendez-vous · Démo 20 min",
+  title: "Prendre rendez-vous · Démo 30 min",
   description:
-    "Réserve un appel avec Nolan (Flers, Orne) : démo 20 minutes sur ton cas, sans engagement. Artisan, immobilier ou TPE.",
+    "Réserve un appel avec Nolan (Flers, Orne) : démo 30 minutes sur ton cas, sans engagement. Artisan, immobilier ou TPE.",
   alternates: { canonical: `${SITE_URL}/rendez-vous` },
   openGraph: {
     title: "Prendre rendez-vous",
     description:
-      "Démo gratuite 20 min sur ton cas · Nolan te rappelle sous 24 h · Sans engagement.",
+      "Démo gratuite 30 min sur ton cas · Nolan te rappelle sous 24 h · Sans engagement.",
     url: `${SITE_URL}/rendez-vous`,
   },
 };
@@ -27,7 +27,7 @@ export default function RendezVousPage() {
       />
       <div className="mx-auto max-w-content px-gutter pb-2 pt-4 md:pb-4">
         <h1 className="font-heading text-3xl text-text md:text-4xl">
-          Réserve 20 minutes de démo sur ton cas
+          Réserve 30 minutes de démo sur ton cas
         </h1>
       </div>
       <Contact variant="hub" />

@@ -3,7 +3,7 @@ import { NAP, PRIMARY_DEMO_CTA, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE, FOUNDE
 export const HOME_META = {
   title: "Automatisation artisans & TPE en Normandie",
   description:
-    `Demandes, devis et relances avancent pendant que tu es en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
+    `Demandes, devis et relances avancent pendant que tu es en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 30 min gratuite.`,
 } as const;
 
 export const HOME_HERO = {
@@ -11,7 +11,7 @@ export const HOME_HERO = {
   h1: "Tes clients n'attendent plus. Ton système leur répond.",
   sub:
     "Réponses, devis et relances : tout est branché sur tes outils actuels. Nolan installe à distance — tu restes concentré sur tes clients.",
-  reassurance: `Démo 20 min gratuite · ${SETUP_48H_NUANCE}`,
+  reassurance: `Démo 30 min gratuite · ${SETUP_48H_NUANCE}`,
   integrationsLine:
     "Branchement sur ce que tu utilises déjà. Rien de nouveau à apprendre.",
 } as const;
@@ -72,9 +72,9 @@ export const HOME_HOW = {
   h2: "Comment ça se passe concrètement ?",
   steps: [
     {
-      title: "Démo 20 min",
+      title: "Démo 30 min",
       body: "Tu montres ta journée type : appels, devis, mails. Nolan choisit avec toi 2 à 4 priorités.",
-      time: "20 min",
+      time: "30 min",
     },
     {
       title: "Installation",
@@ -121,7 +121,7 @@ export const HOME_FOUNDER = {
 } as const;
 
 export const HOME_FAQ_HEADING = {
-  h2: "Questions avant de réserver ta démo de 20 minutes",
+  h2: "Questions avant de réserver ta démo de 30 minutes",
 } as const;
 
 export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
@@ -131,7 +131,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Combien de temps pour être en ligne ?",
-    a: "Après la démo de 20 minutes, mise en ligne sous 48 h ouvrées. Tu valides chaque message type avant envoi réel.",
+    a: "Après la démo de 30 minutes, mise en ligne sous 48 h ouvrées. Tu valides chaque message type avant envoi réel.",
   },
   {
     q: "C'est quoi le prix au final ?",

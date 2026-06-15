@@ -45,14 +45,14 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 20 min",
+    ctaLabel: "Réserver une démo 30 min",
   },
   {
     slug: "alencon",
     path: "/diagnostiqueurs-alencon",
     metaTitle: `Diagnostiqueur Alençon · demandes agences · ${BRAND_SHORT}`,
     metaDescription:
-      "Ne perds plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Démo 20 min sur ton cas, sans engagement.",
+      "Ne perds plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Démo 30 min sur ton cas, sans engagement.",
     h1: "Automatisation pour diagnostiqueurs à Alençon et nord de l'Orne",
     intro:
       "Alençon concentre services, agences et prescripteurs pour tout le nord de l'Orne. Les diagnostiqueurs y gèrent un volume de messages supérieur à la moyenne rurale — souvent pendant des missions longues en pavillon ou en lotissement.",
@@ -66,17 +66,17 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
       {
         h2: "Installation",
         paragraphs: [
-          "Même méthode qu'à Flers : cadrage 20 min, tests sur de vrais mails agences, notifications Telegram pour les urgences.",
+          "Même méthode qu'à Flers : cadrage 30 min, tests sur de vrais mails agences, notifications Telegram pour les urgences.",
         ],
       },
       {
         h2: "Prise de contact",
         paragraphs: [
-          "Réserve une démo de 20 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
+          "Réserve une démo de 30 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 20 min",
+    ctaLabel: "Réserver une démo 30 min",
   },
   {
     slug: "argentan",
@@ -101,7 +101,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 20 min",
+    ctaLabel: "Réserver une démo 30 min",
   },
   {
     slug: "normandie",
@@ -132,7 +132,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 20 min",
+    ctaLabel: "Réserver une démo 30 min",
   },
 ];
 

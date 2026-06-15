@@ -122,7 +122,7 @@ export function BtpOrneSeoExtension() {
       <section className="mt-14 rounded-2xl border border-primary/30 bg-section/80 p-8 text-center">
         <h2 className="font-heading text-xl text-text">Tu es artisan BTP dans l&apos;Orne ?</h2>
         <p className="mt-3 text-sm text-muted">
-          Nolan te rappelle sous 24 h. 20 minutes. Il te montre sur ton activité.
+          Nolan te rappelle sous 24 h. 30 minutes. Il te montre sur ton activité.
         </p>
         <Link
           href="/rendez-vous"

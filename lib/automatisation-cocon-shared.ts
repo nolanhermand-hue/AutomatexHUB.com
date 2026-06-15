@@ -20,7 +20,7 @@ export const COCON_GENERIC_FAQ: ReadonlyArray<CoconFaqItem> = [
   },
   {
     q: "Comment on cale le périmètre ?",
-    a: "Démo gratuite 20 min sur ton cas : nom, téléphone, métier. Nolan valide avec toi les déclencheurs (délai, ton, canal) avant mise en place.",
+    a: "Démo gratuite 30 min sur ton cas : nom, téléphone, métier. Nolan valide avec toi les déclencheurs (délai, ton, canal) avant mise en place.",
   },
   {
     q: "Où sont hébergées les automatisations ?",
