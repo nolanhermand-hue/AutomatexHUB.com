@@ -16,7 +16,7 @@ const nextConfig = {
   trailingSlash: false,
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ["lottie-react", "gsap"],
+    optimizePackageImports: ["gsap"],
   },
   webpack: (config, { webpack, isServer, dev }) => {
     if (!isServer && !dev) {

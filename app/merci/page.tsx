@@ -8,11 +8,11 @@ export default function MerciPage() {
       <div className="max-w-readable">
         <p className="label-micro text-accent">Demande reçue</p>
         <h1 className="mt-3 font-heading text-4xl text-text md:text-5xl">
-          Merci. Nous vous recontactons sous 24 h.
+          Merci. Nolan te recontacte sous 24 h.
         </h1>
         <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-          C&apos;est reçu. Nous vous contactons sous 24 h pour fixer les 30 minutes (ou confirmer
-          votre résiliation). Pas de relance automatique entre-temps.
+          C&apos;est reçu. Nolan t&apos;appelle sous 24 h pour caler les 30 minutes (ou confirmer
+          ta résiliation). Pas de relance automatique entre-temps.
         </p>
 
         <ol className="mt-8 space-y-5">
@@ -23,7 +23,7 @@ export default function MerciPage() {
             <div>
               <p className="font-semibold text-text">Confirmation sous 24 heures</p>
               <p className="mt-1 text-sm text-muted">
-                Nolan confirme le créneau ou la prise en compte de votre demande.
+                Nolan confirme le créneau ou la prise en compte de ta demande.
               </p>
             </div>
           </li>
@@ -34,7 +34,7 @@ export default function MerciPage() {
             <div>
               <p className="font-semibold text-text">Échange de 30 minutes (démo)</p>
               <p className="mt-1 text-sm text-muted">
-                Démonstration sur votre activité réelle — pas de présentation générique.
+                Démonstration sur ton activité réelle — pas de présentation générique.
               </p>
             </div>
           </li>

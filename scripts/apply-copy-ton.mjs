@@ -13,8 +13,6 @@ const files = [
   "lib/about-page.ts",
   "lib/geo-master-faq.ts",
   "lib/local-pages.ts",
-  "lib/live-demo.ts",
-  "lib/demo-loaders.ts",
   "lib/immobilier-daily-features.ts",
   "lib/immobilier-accompaniment-copy.ts",
   "lib/automations-catalog.ts",

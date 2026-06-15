@@ -18,7 +18,7 @@ export function Footer() {
         <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <LogoOrbit variant="symbol" href="/" height={40} />
+              <LogoOrbit variant="lockup" href="/" height={40} />
             </div>
             <p className="mb-6 max-w-sm text-[13px] leading-relaxed text-muted">
               Automatisations pour artisans BTP, diagnostiqueurs immobiliers, courtiers, gérants de

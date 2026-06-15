@@ -1,4 +1,5 @@
 import { Contact } from "@/components/sections/Contact";
+import { BookingEmbed, hasBookingEmbed } from "@/components/sections/BookingEmbed";
 import { SITE_URL } from "@/lib/constants";
 import { buildRendezVousHowToJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
@@ -29,7 +30,14 @@ export default function RendezVousPage() {
         <h1 className="font-heading text-3xl text-text md:text-4xl">
           Réserve 30 minutes de démo sur ton cas
         </h1>
+        {hasBookingEmbed ? (
+          <p className="mt-3 max-w-readable text-sm text-muted md:text-base">
+            Choisis directement ton créneau ci-dessous. Pas de créneau qui te
+            convient ? Laisse tes coordonnées plus bas, Nolan te rappelle.
+          </p>
+        ) : null}
       </div>
+      <BookingEmbed />
       <Contact variant="hub" />
     </div>
   );

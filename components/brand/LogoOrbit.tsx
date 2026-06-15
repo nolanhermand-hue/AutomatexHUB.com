@@ -17,31 +17,48 @@ type LogoOrbitProps = {
 
 export function LogoOrbit({
   variant = "lockup",
-  theme: _theme = "light",
+  theme = "light",
   className,
   href = "/",
   height = 40,
   priority = false,
   onClick,
 }: LogoOrbitProps) {
-  void _theme;
-  void variant;
   const size = height;
 
-  const img = (
+  const symbol = (
     <Image
       src={BRAND.symbolTransparentSvg}
       alt="AutomateX"
       width={100}
       height={100}
       sizes={`${size}px`}
-      className={cn("block shrink-0 object-contain", className)}
+      className="block shrink-0 object-contain"
       style={{ height: size, width: size, maxHeight: size, maxWidth: size }}
       priority={priority}
     />
   );
 
-  if (!href) return img;
+  // Wordmark rendu en HTML pour garantir la police Inter (next/font) + le thème.
+  // theme="light" = texte clair (fonds sombres : nav/footer) · "dark" = texte sombre.
+  const wordmarkColor = theme === "dark" ? "var(--color-bg)" : "var(--color-text)";
+
+  const content =
+    variant === "lockup" ? (
+      <span className="inline-flex items-center gap-2.5">
+        {symbol}
+        <span
+          className={cn("font-heading font-bold leading-none tracking-tight", className)}
+          style={{ fontSize: Math.round(size * 0.62), color: wordmarkColor }}
+        >
+          Automate<span style={{ color: "var(--color-accent)" }}>X</span>
+        </span>
+      </span>
+    ) : (
+      <span className={cn("inline-flex", className)}>{symbol}</span>
+    );
+
+  if (!href) return content;
 
   return (
     <Link
@@ -51,7 +68,7 @@ export function LogoOrbit({
       aria-label="AutomateX — accueil"
       onClick={onClick}
     >
-      {img}
+      {content}
     </Link>
   );
 }

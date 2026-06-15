@@ -1,17 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { sequentialDemoBeats, useGsapDemoLoop } from "@/lib/motion/useGsapDemoLoop";
-import { DEMO_STATIC } from "@/lib/demo-loaders";
-import Image from "next/image";
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import { useRef } from "react";
 
-const MotionDemo = dynamic(
-  () => import("@/components/demo/MotionDemo").then((m) => ({ default: m.MotionDemo })),
-  { ssr: false },
-);
-
-/** Animation Nolan en live (Telegram) + capture statique de repli. */
+/** Animation Nolan en live (Telegram) + démo du point mensuel. */
 export function NolanLiveDemo() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +18,7 @@ export function NolanLiveDemo() {
         ref={rootRef}
         data-motion="nolan-live"
         data-quality-min="medium"
-        className="rounded-xl border border-primary/25 bg-surface p-5 md:p-6"
+        className="surface-dark rounded-xl border border-primary/25 bg-surface p-5 md:p-6"
         role="img"
         aria-label="Exemple : Nolan intervient le soir via Telegram sans que l'artisan ait à demander"
       >
@@ -46,30 +39,7 @@ export function NolanLiveDemo() {
         </div>
       </div>
 
-      <figure>
-        <div
-          className="relative w-full overflow-hidden rounded-xl border border-border bg-surface"
-          style={{ aspectRatio: "640 / 420" }}
-        >
-          <Image
-            src={DEMO_STATIC.pointMensuel.src}
-            alt={DEMO_STATIC.pointMensuel.alt}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 480px"
-          />
-        </div>
-        <figcaption className="mt-2 text-xs text-muted">Capture du système — données de test</figcaption>
-      </figure>
-
-      <div className="lg:col-span-2">
-        <MotionDemo
-          demoId="point-mensuel-accompagnement"
-          staticSrc={DEMO_STATIC.pointMensuel.src}
-          staticAlt={DEMO_STATIC.pointMensuel.alt}
-          ariaLabel="Exemple du point mensuel et des relances automatiques"
-        />
-      </div>
+      <DemoVideo id="point-mensuel" caption="Exemple du point mensuel — données de test" />
     </div>
   );
 }

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <section className="border-b border-border px-gutter py-16 md:py-20">
+    <section className="surface-light border-b border-border px-gutter py-16 md:py-20">
       <MasterFaqPage />
     </section>
   );
