@@ -34,8 +34,9 @@ export const BTP_DAY_PAIN = {
     { time: "19h00", text: "Devis pas encore fait. La fatigue gagne." },
     { time: "21h00", text: "Le devis n'est pas parti. Le client a pris quelqu'un d'autre." },
   ],
-  stat: "Un devis envoyé après 24 h = 60 % de chances de perdre le chantier.",
-  source: "Source : Fédération Française du Bâtiment, 2023.",
+  stat:
+    "×21 plus de chances de qualifier un contact en répondant sous 5 min plutôt qu'après 30 min.",
+  source: "Source : MIT / HBR, 2011.",
 } as const;
 
 export const BTP_AUTOMATIONS = {
@@ -107,8 +108,7 @@ export const BTP_PILOTE_HIGHLIGHT =
 
 export const BTP_SOCIAL_PROOF = {
   stats: [
-    "60 % des devis envoyés après 24 h ne sont pas signés. (FFB 2023)",
-    "Relancer un devis sous 48 h améliore nettement les chances de signature (études sectorielles BTP — pas une promesse AutomateX).",
+    "Un devis qui traîne refroidit le client — des relances polies à J+4 et J+8 rappellent votre dossier sans que vous y pensiez.",
   ],
   founderQuote:
     "J'ai construit ce système en pensant aux artisans de l'Orne : devis le soir, appels manqués, paperasse. AutomateX enlève ce qui peut tourner sans toi — pour que tu restes sur le chantier.",
@@ -293,7 +293,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     path: "/automatisation-btp-orne",
     city: "Orne",
     h1: "Automatisation BTP dans l'Orne — Flers, Argentan, Alençon",
-    metaTitle: "Automatisation BTP Orne — devis, appels, relances · AutomateX-HUB",
+    metaTitle: "Automatisation BTP Orne — devis, appels, relances",
     metaDescription:
       "AutomateX-HUB automatise les devis, les réponses aux appels manqués et les relances clients pour les artisans BTP dans l'Orne (61). Basé à Flers. 390 € à la mise en place, puis 99 €/mois · 990 € / 249 € · 1690 € / 449 €.",
     localHook:
@@ -306,7 +306,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     path: "/automatisation-artisan-flers",
     city: "Flers",
     h1: "Automatisation pour artisans à Flers — Orne",
-    metaTitle: "Automatisation artisan Flers (61) — devis & appels · AutomateX",
+    metaTitle: "Automatisation artisan Flers (61) — devis & appels",
     metaDescription:
       "Automatisation pour artisans à Flers : devis depuis note vocale, SMS appels manqués, relances clients. Nolan à Flers (61100). 390 € à la mise en place, puis 99 €/mois · 990 € / 249 € · 1690 € / 449 €.",
     localHook: "Siège à Saint-Georges-des-Groseillers — Nolan intervient sur Flers et l'agglo en 20 minutes.",
@@ -318,7 +318,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     path: "/automatisation-artisan-alencon",
     city: "Alençon",
     h1: "Automatisation pour artisans à Alençon",
-    metaTitle: "Automatisation artisan Alençon (61) — devis automatiques · AutomateX",
+    metaTitle: "Automatisation artisan Alençon (61) — devis automatiques",
     metaDescription:
       "Automatisation pour artisans à Alençon : appels manqués, devis vocaux, relances. Nolan à Flers, 35 min. 390 € à la mise en place, puis 99 €/mois · 990 € / 249 € · 1690 € / 449 €.",
     localHook: "Artisans du quartier Saint-Léonard et de la zone d'activités : même numéro, même suivi.",
@@ -330,7 +330,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
     path: "/automatisation-artisan-argentan",
     city: "Argentan",
     h1: "Automatisation pour artisans à Argentan",
-    metaTitle: "Automatisation artisan Argentan (61) — appels & devis · AutomateX",
+    metaTitle: "Automatisation artisan Argentan (61) — appels & devis",
     metaDescription:
       "Automatisation pour artisans à Argentan et zone Ar'Nor : devis, relances, SMS appels manqués. Basé à Flers. 390 € à la mise en place, puis 99 €/mois · 990 € / 249 € · 1690 € / 449 €.",
     localHook: "Zone Ar'Nor et centre-ville d'Argentan : prestataire basé à Flers, à 35 minutes.",

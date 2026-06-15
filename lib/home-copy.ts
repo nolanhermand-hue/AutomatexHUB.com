@@ -1,7 +1,7 @@
 import { NAP, PRIMARY_DEMO_CTA, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export const HOME_META = {
-  title: "Automatisation artisans & TPE en Normandie | AutomateX",
+  title: "Automatisation artisans & TPE en Normandie",
   description:
     `Demandes, devis et relances avancent pendant que tu es en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
 } as const;
@@ -139,7 +139,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Mes données restent où ?",
-    a: `${SOVEREIGNTY_TRUST_LINE}. Hébergement automatisations en UE, traitement linguistique en France. Tes mails restent dans ta boîte. Détail sur /vos-donnees.`,
+    a: `${SOVEREIGNTY_TRUST_LINE}. Automatisations N8N Francfort (UE), traitement linguistique Mistral Paris (UE), site vitrine CDN Netlify. Tes mails restent dans ta boîte. Détail sur /vos-donnees.`,
   },
   {
     q: "Et si ça ne te convient pas ?",

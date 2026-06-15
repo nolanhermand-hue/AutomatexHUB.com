@@ -12,10 +12,10 @@ import {
 export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 
 export const TPE_META = {
-  title: `Automatisation pour TPE & PME — Accompagnement humain · ${BRAND_SHORT}`,
+  title: "Automatisation pour TPE & PME — Accompagnement humain",
   description:
     "Réponses, devis, classement documents et relances sur tes outils actuels. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois. RGPD UE.",
-  ogTitle: `Automatisation pour TPE — Sans compétences techniques · ${BRAND_FULL}`,
+  ogTitle: "Automatisation pour TPE — Sans compétences techniques",
   ogDescription:
     "Un système qui travaille à ta place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois.",
 } as const;
@@ -53,9 +53,9 @@ export const TPE_PAIN = {
       trend: "↑ depuis 13 % en 2024",
     },
     {
-      stat: "3 000 €/an",
-      label: "d'abonnements SaaS empilés qu'un système unique peut remplacer",
-      source: "Estimation interne",
+      stat: "Empilés",
+      label: "plusieurs outils mensuels qu'un système unique peut remplacer",
+      source: "Constat terrain TPE",
     },
   ] as const,
   dayLabel: `UNE JOURNÉE SANS ${BRAND_SHORT.toUpperCase()}`,

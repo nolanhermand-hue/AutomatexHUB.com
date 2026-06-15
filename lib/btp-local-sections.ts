@@ -13,7 +13,7 @@ export function buildBtpLocalSections(page: BtpLocalPageDef): BtpLocalSection[] 
       title: `Ce que les artisans de ${city} perdent chaque semaine`,
       paragraphs: [
         `${localHook} ${localDetail}`,
-        `Un devis envoyé après 24 h a peu de chances d'être signé. ${BRAND_FULL} installe un système qui répond en moins de 2 minutes et envoie tes devis pendant que tu finis la journée sur le terrain.`,
+        `Sur le chantier, le client suivant ne patiente pas longtemps. ${BRAND_FULL} installe un système qui répond en moins de 2 minutes et t'aide à faire partir tes devis sans repartir sur la paperasse le soir.`,
       ],
     },
     {

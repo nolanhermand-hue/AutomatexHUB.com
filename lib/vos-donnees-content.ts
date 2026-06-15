@@ -33,7 +33,7 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     flag: "🇫🇷",
     dataType: "Transcriptions vocales · Classification emails · Rédaction automatique",
     rgpd: true,
-    note: "Mistral AI est une entreprise française, fondée à Paris. Hébergement en France et Allemagne. Données non utilisées pour entraîner les modèles. Contrats DPA alignés RGPD.",
+    note: "Mistral AI est une entreprise française, fondée à Paris. Traitement linguistique hébergé en France (UE). Données non utilisées pour entraîner les modèles. Contrats DPA alignés RGPD. Les automatisations métier tournent sur N8N Cloud à Francfort (UE) — voir ligne moteur d'automatisation.",
     docs: "https://mistral.ai/privacy/",
   },
   {

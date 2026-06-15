@@ -10,17 +10,17 @@ import {
   CATALOG_UNIT_TIERS,
 } from "@/lib/automatisations-catalog-pricing";
 import { buildAutomatisationsCatalogJsonLd } from "@/lib/json-ld";
-import { SETUP_48H_NUANCE, SITE_URL, PRIMARY_DEMO_CTA, BRAND_FULL } from "@/lib/constants";
+import { SETUP_48H_NUANCE, SITE_URL, PRIMARY_DEMO_CTA } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { rendezVousHref } from "@/lib/hub-nav";
 
 export const metadata: Metadata = {
-  title: `Catalogue automatisations · ${BRAND_FULL} · Orne`,
+  title: "Catalogue automatisations · Orne",
   description:
     "Réponse aux demandes, tri mails, devis, classement Drive, résumé Telegram — catalogue pour diagnostiqueurs et artisans BTP en Orne. Démo 20 min.",
   openGraph: {
-    title: `Ce qu'AutomateX fait pour toi — Catalogue · ${BRAND_FULL}`,
+    title: "Ce qu'AutomateX fait pour toi — Catalogue",
     description:
       "Chaque automatisation expliquée avec un exemple terrain. Diagnostiqueurs et artisans BTP en Normandie.",
     url: `${SITE_URL}/automatisations`,

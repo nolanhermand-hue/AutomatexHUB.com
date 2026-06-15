@@ -232,7 +232,7 @@ export const HERO_COPY = {
 /** Carte stats hero (Framer) — chiffres alignés agitation / missions */
 export const HERO_STATS = [
   { value: "~220 €", label: "Mission diagnostic moyenne (hypothèse terrain)" },
-  { value: "1 100 €", label: "Sur 5 créneaux agences ratés en un mois" },
+  { value: "1 100 €", label: "Manque à gagner (hypothèse) : 5 créneaux × ~220 €" },
   { value: "< 5 min", label: "Fenêtre de réponse avant le confrère" },
 ] as const;
 

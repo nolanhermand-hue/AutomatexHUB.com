@@ -188,8 +188,9 @@ export function VosDonneesView() {
                   comprend vos emails, transcrit vos notes vocales et rédige les réponses automatiques.
                 </p>
                 <p>
-                  Serveurs en France et en Allemagne. Vos données ne transitent pas vers les États-Unis via
-                  cette prestation. Aucun risque lié au Cloud Act américain sur ce flux.
+                  Traitement hébergé à Paris (France, UE). Vos contenus linguistiques ne transitent pas
+                  vers les États-Unis via cette prestation. Aucun risque lié au Cloud Act américain sur
+                  ce flux — les automatisations, elles, tournent sur N8N Cloud à Francfort (UE).
                 </p>
                 <p>
                   <strong className="text-text">Vos données n&apos;entraînent pas les modèles.</strong>{" "}

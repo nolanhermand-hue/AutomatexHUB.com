@@ -1,5 +1,8 @@
 # AutomateX-HUB — mémo routes (agents)
 
+> **Inventaire URLs** : remplacé par **`docs/ROUTES-SITE.md`** (table complète, slugs dynamiques, sitemap, redirects).  
+> Ce fichier reste utile pour **règles agents** : JSON-LD, ancres funnel, Mermaid, checklist nouvelle route.
+
 > **Màj** : 2026-06-12 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final)
 
 ---

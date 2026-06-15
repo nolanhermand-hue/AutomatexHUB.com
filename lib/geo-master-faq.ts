@@ -75,7 +75,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 6,
     category: "general",
     q: "En quoi êtes-vous différent d'une grosse agence ou d'un freelance ?",
-    a: "Ce n'est ni une plateforme à configurer seuls ni une agence anonyme : Nolan installe, reste joignable et ajuste le ton sur votre métier. Tarifs publics (mise en place + mensualité), sans engagement de durée, données traitées en France et en UE.",
+    a: "Ce n'est ni une plateforme à configurer seuls ni une agence anonyme : Nolan installe, reste joignable et ajuste le ton sur votre métier. Tarifs publics (mise en place + mensualité), sans engagement de durée — automatisations N8N Francfort (UE), traitement linguistique Mistral Paris (UE), site vitrine CDN Netlify.",
   },
   {
     id: 7,
@@ -123,13 +123,13 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 14,
     category: "rgpd",
     q: "Utilisez-vous une IA américaine ?",
-    a: "Non pour le cœur du service : le traitement linguistique retenu est Mistral (entreprise française, traitement en France/UE). Les automatisations ne sont pas hébergées aux États-Unis via notre prestation standard.",
+    a: "Non pour le cœur du service : le traitement linguistique retenu est Mistral (Paris, UE). Les automatisations tournent sur N8N Cloud (Francfort, UE). Elles ne sont pas hébergées aux États-Unis via notre prestation standard.",
   },
   {
     id: 15,
     category: "rgpd",
     q: "C'est quoi Mistral, et pourquoi l'utiliser ?",
-    a: "Mistral est un éditeur français de modèles de langue. AutomateX l'utilise pour rédiger ou structurer des brouillons de réponse tout en gardant vos données hors des géants américains — aligné avec la promesse « données en France » du site.",
+    a: "Mistral est un éditeur français de modèles de langue (Paris, UE). AutomateX l'utilise pour rédiger ou structurer des brouillons de réponse — flux métier en UE, hors géants américains sur la prestation standard.",
   },
   {
     id: 16,

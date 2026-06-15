@@ -80,7 +80,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~106 000",
     distanceFromFlers: "environ 80 km au nord-ouest de Flers (~1 h)",
     dominantAngle: "diagnostiqueur",
-    metaTitle: "Automatisation artisans & diag à Caen (14) | AutomateX",
+    metaTitle: "Automatisation artisans & diag à Caen (14)",
     metaDescription:
       "Couvreurs, charpentiers et diagnostiqueurs à Caen : réponses et relances pendant vos chantiers. Démo 20 min · Nolan, Flers (Orne). Sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Caen",
@@ -122,7 +122,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~110 000",
     distanceFromFlers: "environ 130 km au nord de Flers (~1 h 30)",
     dominantAngle: "immo-urbain",
-    metaTitle: "Automatisation TPE & diag à Rouen (76) | AutomateX",
+    metaTitle: "Automatisation TPE & diag à Rouen (76)",
     metaDescription:
       "Diagnostiqueurs, artisans et TPE à Rouen Métropole : messages traités pendant vos visites. Démo gratuite 20 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Rouen",
@@ -164,7 +164,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~166 000",
     distanceFromFlers: "environ 150 km au nord-ouest de Flers",
     dominantAngle: "couvreur",
-    metaTitle: "Automatisation couvreurs & artisans au Havre | AutomateX",
+    metaTitle: "Automatisation couvreurs & artisans au Havre",
     metaDescription:
       "Couvreurs et artisans au Havre : réponse aux appels pendant le chantier. Démo 20 min · installé depuis Flers (Orne). Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans au Havre",
@@ -248,7 +248,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~19 000",
     distanceFromFlers: "environ 70 km à l’ouest de Flers (~1 h)",
     dominantAngle: "btp-mixte",
-    metaTitle: "Automatisation artisans à Saint-Lô (50) | AutomateX",
+    metaTitle: "Automatisation artisans à Saint-Lô (50)",
     metaDescription:
       "Artisans et TPE à Saint-Lô et agglo : moins de paperasse le soir. Démo 20 min gratuite · depuis Flers (Orne).",
     h1: "Automatisations pour artisans et TPE à Saint-Lô",
@@ -332,7 +332,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~47 000",
     distanceFromFlers: "environ 100 km à l’est de Flers",
     dominantAngle: "diagnostiqueur",
-    metaTitle: "Automatisation TPE & diag à Évreux (27) | AutomateX",
+    metaTitle: "Automatisation TPE & diag à Évreux (27)",
     metaDescription:
       "Diagnostiqueurs et artisans à Évreux et l’Eure : réponses et relances automatisées. Démo 20 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Évreux",
@@ -374,7 +374,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~26 000",
     distanceFromFlers: "environ 50 km au nord-est de Flers (~45 min)",
     dominantAngle: "btp-mixte",
-    metaTitle: "Automatisation artisans à Alençon (61) | AutomateX",
+    metaTitle: "Automatisation artisans à Alençon (61)",
     metaDescription:
       "Couvreurs, diagnostiqueurs et TPE à Alençon : installé depuis Flers (Orne). Démo 20 min gratuite · sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Alençon",
@@ -416,7 +416,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~14 000",
     distanceFromFlers: "base AutomateX — Saint-Georges-des-Groseillers / agglo Flers",
     dominantAngle: "btp-mixte",
-    metaTitle: "Automatisation artisans à Flers (61) | AutomateX",
+    metaTitle: "Automatisation artisans à Flers (61)",
     metaDescription:
       "Couvreurs, charpentiers et diagnostiqueurs à Flers : Nolan installe depuis chez lui. Démo 20 min · sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Flers",
@@ -458,7 +458,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~14 000",
     distanceFromFlers: "environ 35 km au nord de Flers (~35 min)",
     dominantAngle: "couvreur",
-    metaTitle: "Automatisation artisans à Argentan (61) | AutomateX",
+    metaTitle: "Automatisation artisans à Argentan (61)",
     metaDescription:
       "Couvreurs et artisans sud Orne à Argentan : réponses sur chantier. Démo 20 min · Nolan à Flers. Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans à Argentan",
