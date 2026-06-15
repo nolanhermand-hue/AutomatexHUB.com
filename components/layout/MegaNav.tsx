@@ -156,7 +156,7 @@ export function MegaNav() {
     >
       <div className="mx-auto flex min-h-[44px] max-w-content items-center justify-between gap-3 px-gutter lg:min-h-[48px]">
         <LogoOrbit
-          variant="lockup"
+          variant="symbol"
           href="/"
           height={36}
           onClick={() => handleNavClick("/")}

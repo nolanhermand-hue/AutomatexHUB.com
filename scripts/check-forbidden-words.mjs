@@ -21,7 +21,6 @@ const IGNORE_DIRS = new Set([
   "audits",
   "docs",
   ".cursor",
-  ".claude",
 ]);
 
 const PATTERNS = [

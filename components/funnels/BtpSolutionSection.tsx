@@ -1,4 +1,4 @@
-import { DemoVideo } from "@/components/demo/DemoVideo";
+import { LiveDemoBlock } from "@/components/demo/LiveDemoBlock";
 import { BTP_AUTOMATIONS } from "@/lib/btp-copy";
 
 export function BtpSolutionSection() {
@@ -16,14 +16,8 @@ export function BtpSolutionSection() {
           ))}
         </div>
         <div className="mt-10 space-y-8">
-          <DemoVideo
-            id="btp-appel"
-            cta={{ href: "/rendez-vous", label: "Voir comment ça s'installe sur votre activité" }}
-          />
-          <DemoVideo
-            id="btp-devis"
-            cta={{ href: "/rendez-vous", label: "Voir comment ça s'installe sur votre activité" }}
-          />
+          <LiveDemoBlock variant="btp-appel" ctaHref="/rendez-vous" />
+          <LiveDemoBlock variant="btp-devis" ctaHref="/rendez-vous" />
         </div>
       </div>
     </section>

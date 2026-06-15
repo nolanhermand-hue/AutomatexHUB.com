@@ -5,7 +5,7 @@ import { rendezVousHref } from "@/lib/hub-nav";
 export function PricingSurMesureBanner() {
   return (
     <div
-      className="surface-dark mt-8 rounded-xl border p-6 md:p-8"
+      className="mt-8 rounded-xl border p-6 md:p-8"
       style={{
         backgroundColor: "#2D3A4A",
         borderColor: "#E07856",

@@ -1,4 +1,4 @@
-import { DemoVideo } from "@/components/demo/DemoVideo";
+import { LiveDemoBlock } from "@/components/demo/LiveDemoBlock";
 
 export function ImmobilierLiveDemoSection() {
   return (
@@ -12,10 +12,7 @@ export function ImmobilierLiveDemoSection() {
           personnalisés avec votre prénom lors de l&apos;onboarding.
         </p>
         <div className="mt-8">
-          <DemoVideo
-            id="immobilier"
-            cta={{ href: "/rendez-vous", label: "Voir comment ça s'installe sur votre activité" }}
-          />
+          <LiveDemoBlock variant="immobilier" ctaHref="/rendez-vous" />
         </div>
       </div>
     </section>

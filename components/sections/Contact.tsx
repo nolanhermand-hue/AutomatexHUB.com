@@ -1,6 +1,6 @@
 "use client";
 
-import { trackFormSubmitted, trackLeadConversion } from "@/lib/analytics";
+import { trackFormSubmitted } from "@/lib/analytics";
 import { BTP_CONTACT } from "@/lib/btp-copy";
 import {
   CONTACT_COPY,
@@ -34,32 +34,6 @@ function fieldClass(touched: boolean, value: string, required: boolean) {
 
 function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-}
-
-const OFFER_LABELS: Record<string, string> = {
-  declic: "Déclic",
-  systeme: "Système",
-  pilote: "Pilote",
-  "sur-mesure": "Sur mesure",
-};
-
-const SUJET_LABELS: Record<string, string> = {
-  resiliation: "Résiliation",
-  demo: "Démo 30 min",
-  question: "Question",
-};
-
-function humanizeSlug(slug: string): string {
-  const cleaned = slug.replace(/[-_]+/g, " ").trim();
-  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
-}
-
-function offerLabel(slug: string): string {
-  return OFFER_LABELS[slug] ?? humanizeSlug(slug);
-}
-
-function sujetLabel(slug: string): string {
-  return SUJET_LABELS[slug] ?? humanizeSlug(slug);
 }
 
 export function Contact({ variant = "immobilier" }: ContactProps) {
@@ -125,11 +99,8 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
       return;
     }
 
-    if (!result.honeypot) {
-      trackFormSubmitted();
-      trackLeadConversion(variant);
-    }
-    setSubmitFeedback("Merci, tes informations sont bien envoyées.");
+    if (!result.honeypot) trackFormSubmitted();
+    setSubmitFeedback("Merci, vos informations sont bien envoyées.");
     window.location.assign("/merci");
   };
 
@@ -174,7 +145,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
         </h2>
         <p className="mt-3 max-w-readable text-sm text-muted md:text-lg">
           {isResiliation
-            ? "Indique tes coordonnées. Nolan confirme la prise en compte sous 48 h ouvrées. Effet en fin de mois en cours."
+            ? "Indiquez vos coordonnées. Nous confirmons la prise en compte sous 48 h ouvrées. Effet en fin de mois en cours."
             : isBtp
               ? BTP_CONTACT.sub
               : CONTACT_COPY.subtitle}
@@ -293,12 +264,12 @@ function ContactForm({
             </p>
             {offerHint ? (
               <p className="btn-bracket btn-bracket-primary w-full justify-center">
-                <span aria-hidden>✓</span> Offre : {offerLabel(offerHint)}
+                <span aria-hidden>✓</span> Offre : {offerHint}
               </p>
             ) : null}
             {sujetHint && !offerHint ? (
               <p className="btn-bracket btn-bracket-primary w-full justify-center">
-                <span aria-hidden>✓</span> Sujet : {sujetLabel(sujetHint)}
+                <span aria-hidden>✓</span> Sujet : {sujetHint}
               </p>
             ) : null}
           </div>
@@ -326,7 +297,7 @@ function ContactForm({
               />
               {touched && !fields.prenom.trim() && (
                 <p id="prenom-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                  <span aria-hidden>⚠</span> Indique ton prénom.
+                  <span aria-hidden>⚠</span> Ce champ est requis.
                 </p>
               )}
             </div>
@@ -352,7 +323,7 @@ function ContactForm({
             />
             {touched && !fields.nom.trim() && (
               <p id="nom-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                <span aria-hidden>⚠</span> Indique ton nom.
+                <span aria-hidden>⚠</span> Ce champ est requis.
               </p>
             )}
           </div>
@@ -389,7 +360,7 @@ function ContactForm({
                 role="alert"
                 className="mt-1 flex items-center gap-1 text-xs font-semibold text-text"
               >
-                <span aria-hidden>⚠</span> Indique un numéro à 10 chiffres.
+                <span aria-hidden>⚠</span> Indiquez un numéro à 10 chiffres.
               </p>
             )}
             <p id="telephone-hint" className="mt-1 text-xs text-faint">
@@ -489,7 +460,7 @@ function ContactForm({
               required
               inputMode="email"
               autoComplete="email"
-              placeholder="prenom@exemple.com"
+              placeholder="vous@exemple.com"
               aria-required="true"
               aria-describedby="email-error"
               value={fields.email}
@@ -498,7 +469,7 @@ function ContactForm({
             />
             {touched && !isValidEmail(fields.email) && (
               <p id="email-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                <span aria-hidden>⚠</span> Indique une adresse email valide.
+                <span aria-hidden>⚠</span> Indiquez une adresse email valide.
               </p>
             )}
             <p className="mt-1 text-xs text-faint">

@@ -660,88 +660,12 @@ body::before {
   --text-subtle: #a7b0ba;
   --glass-bg: rgb(255 255 255 / 0.06);
   --glass-border: rgb(255 255 255 / 0.12);
-  --glass-bg-strong: rgb(255 255 255 / 0.09);
-  --glass-border-strong: rgb(255 255 255 / 0.16);
   --radius-glass: 1.75rem;
 }
 
-/* Thème clair chaud — pages marketing (home, funnel, FAQ).
-   Nav + footer restent sombres (chrome global, hors wrapper). */
 .home-surface,
-.funnel-surface,
-.surface-light {
-  --color-bg: #f6f1ea;
-  --color-night: #f6f1ea;
-  --color-section: #f6f1ea;
-  --color-surface: #ffffff;
-  --color-surface-2: #f3ece2;
-  --color-surface-3: #ece2d4;
-  --color-bg-card: #ffffff;
-
-  --color-border: #e4d9cb;
-  --color-border-light: #d2c4b2;
-  --color-border-subtle: #ece3d7;
-
-  --color-primary: #c2562d;
-  --color-accent: #c2562d;
-  --color-accent-dark: #a8481f;
-  --color-accent-light: rgb(194 86 45 / 0.1);
-  --color-accent-mid: rgb(194 86 45 / 0.22);
-
-  /* WCAG 1.4.3 AA — texte ≥ 4.5:1 sur bg #f6f1ea et card #ffffff */
-  --color-cta: #241f1b;
-  --color-cta-fg: #ffffff;
-  --color-text: #241f1b;
-  --color-black: #241f1b;
-  --color-muted: #5f554d;
-  --color-faint: #6e645c;
-  --color-text-subtle: #5f554d;
-  --color-footer: #f6f1ea;
-
-  --glass-bg: rgb(255 255 255 / 0.62);
-  --glass-border: rgb(36 31 27 / 0.1);
-  --glass-bg-strong: rgb(255 255 255 / 0.85);
-  --glass-border-strong: rgb(36 31 27 / 0.12);
-
-  background: radial-gradient(120% 80% at 50% -10%, #fbf7f1 0%, #f6f1ea 55%);
-  color: var(--color-text);
-}
-
-/* Îlots sombres — démos & captures système au sein des pages claires.
-   Restaure les tokens sombres pour que .bg-surface/.text-* redeviennent foncés. */
-.surface-dark {
-  --color-bg: #080d1a;
-  --color-night: #080d1a;
-  --color-section: #080d1a;
-  --color-surface: #0d1526;
-  --color-surface-2: #111e35;
-  --color-surface-3: #162240;
-  --color-bg-card: #0d1526;
-
-  --color-border: #1a2540;
-  --color-border-light: #2a3a5c;
-  --color-border-subtle: #1a2540;
-
-  --color-primary: #e07856;
-  --color-accent: #e07856;
-  --color-accent-dark: #e88a6a;
-  --color-accent-light: rgb(224 120 86 / 0.12);
-  --color-accent-mid: rgb(224 120 86 / 0.25);
-
-  --color-cta: #e8edf5;
-  --color-cta-fg: #080d1a;
-  --color-text: #e8edf5;
-  --color-black: #e8edf5;
-  --color-muted: #94a3b8;
-  --color-faint: #8892a4;
-  --color-text-subtle: #a7b0ba;
-
-  --glass-bg: rgb(255 255 255 / 0.06);
-  --glass-border: rgb(255 255 255 / 0.12);
-  --glass-bg-strong: rgb(255 255 255 / 0.09);
-  --glass-border-strong: rgb(255 255 255 / 0.16);
-
-  color: var(--color-text);
+.funnel-surface {
+  background: linear-gradient(180deg, var(--slate-deep) 0%, var(--color-bg) 42%);
 }
 
 .glass-panel {
@@ -754,8 +678,8 @@ body::before {
 
 .glass-panel-strong {
   border-radius: var(--radius-glass);
-  border: 1px solid var(--glass-border-strong);
-  background: var(--glass-bg-strong);
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: rgb(255 255 255 / 0.09);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }

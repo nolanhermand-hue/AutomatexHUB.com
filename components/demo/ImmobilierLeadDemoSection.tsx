@@ -1,6 +1,16 @@
 "use client";
 
-import { DemoVideo } from "@/components/demo/DemoVideo";
+import dynamic from "next/dynamic";
+import { ImmobilierLeadDemoStaticFallback } from "@/components/demo/ImmobilierLeadDemoStaticFallback";
+import { DEMO_STATIC, loadLeadImmobilier } from "@/lib/demo-loaders";
+
+const MotionDemo = dynamic(
+  () => import("@/components/demo/MotionDemo").then((m) => ({ default: m.MotionDemo })),
+  {
+    ssr: false,
+    loading: () => <ImmobilierLeadDemoStaticFallback />,
+  },
+);
 
 export function ImmobilierLeadDemoSection() {
   return (
@@ -13,7 +23,16 @@ export function ImmobilierLeadDemoSection() {
           Une demande reçoit une réponse en moins de 2 minutes — vous terminez la visite sereinement.
         </p>
         <div className="mt-8">
-          <DemoVideo id="lead-immobilier" />
+          <noscript>
+            <ImmobilierLeadDemoStaticFallback />
+          </noscript>
+          <MotionDemo
+            demoId="lead-immobilier"
+            staticSrc={DEMO_STATIC.leadImmobilier.src}
+            ariaLabel="Demande immobilière traitée automatiquement pendant une visite"
+            staticAlt={DEMO_STATIC.leadImmobilier.alt}
+            loadAnimation={loadLeadImmobilier}
+          />
         </div>
       </div>
     </section>

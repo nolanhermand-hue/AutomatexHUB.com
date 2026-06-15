@@ -19,7 +19,7 @@ export function SystemCapturePlaceholder({
   return (
     <figure className={`w-full ${className}`.trim()}>
       <div
-        className="surface-dark relative w-full overflow-hidden rounded-xl border border-border bg-surface"
+        className="relative w-full overflow-hidden rounded-xl border border-border bg-surface"
         style={{ aspectRatio: "640 / 420" }}
       >
         <Image

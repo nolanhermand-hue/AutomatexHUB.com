@@ -9,7 +9,7 @@ const ARIA_LABEL = `Outils connectés : ${HOME_HERO_INTEGRATION_LOGOS.map((t) =>
 
 function LogoTile({ logo }: { logo: HomeHeroIntegrationLogo }) {
   return (
-    <div className="surface-dark flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-surface-2 p-2 sm:size-12">
+    <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/10 p-2 sm:size-12">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={logo.src}
@@ -35,7 +35,6 @@ export function HeroToolsSchema() {
       <SystemCapturePlaceholder
         src="/assets/demos/devis-auto-static.webp"
         className="mb-6"
-        priority
       />
       <figcaption className="text-center text-sm leading-relaxed text-muted md:text-base lg:text-left">
         {HOME_HERO.integrationsLine}
