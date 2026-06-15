@@ -1,4 +1,4 @@
-import { NAP, OFFER_PRICING_THREE_PACKS, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { NAP, OFFER_PRICING_THREE_PACKS, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE, FOUNDER_CHANTIER_CREDENTIAL } from "@/lib/constants";
 
 export type GeoMasterFaqCategory =
   | "general"
@@ -81,7 +81,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 7,
     category: "general",
     q: "Pourquoi un ancien artisan pour automatiser votre activité ?",
-    a: "Parce que Nolan a passé 2 ans sur les chantiers (menuiserie puis couverture). Il a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse — et s'est formé à l'automatisation pour régler exactement ça sur vos outils, pas sur un logiciel générique.",
+    a: `Parce que Nolan a passé ${FOUNDER_CHANTIER_CREDENTIAL} sur les chantiers. Il a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse — et s'est formé à l'automatisation pour régler exactement ça sur vos outils, pas sur un logiciel générique.`,
   },
   {
     id: 8,

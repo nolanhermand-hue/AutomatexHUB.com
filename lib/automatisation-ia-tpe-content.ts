@@ -22,9 +22,9 @@ export const TPE_META = {
 
 export const TPE_HERO = {
   eyebrow: "AUTOMATISATION · TPE & PME · FRANCE",
-  h1Line1: "40 % de votre temps sur des tâches",
-  h1Line2: "qui pourraient se faire toutes seules.",
-  statSource: "BCG 2025",
+  h1Line1: "13 h 21 par mois",
+  h1Line2: "en moyenne perdues en gestion pour une TPE.",
+  statSource: "Qonto · 2026",
   subtitle:
     `${BRAND_SHORT} installe un système sur tes outils actuels. Zéro compétence technique de ton côté. Accompagnement mensuel inclus — tu restes sur ton métier.`,
   stats: [
@@ -42,20 +42,19 @@ export const TPE_PAIN = {
   h2: "Ce que ça coûte de ne pas automatiser",
   cards: [
     {
-      stat: "40 %",
-      label: "du temps des TPE sur des tâches automatisables",
-      source: "BCG 2025",
+      stat: "28 %",
+      label: "du temps de travail consacré aux e-mails",
+      source: "McKinsey · Social Economy · 2012",
     },
     {
-      stat: "26 %",
-      label: "des TPE françaises ont accéléré l'admin numérique en 2026",
-      source: "France Num 2026",
-      trend: "↑ depuis 13 % en 2024",
+      stat: "13 h 21",
+      label: "de gestion admin par mois pour une micro-entreprise",
+      source: "Qonto · 2026",
     },
     {
-      stat: "Empilés",
-      label: "plusieurs outils mensuels qu'un système unique peut remplacer",
-      source: "Constat terrain TPE",
+      stat: "8–12 h",
+      label: "d'administratif par semaine pour une TPE ou un indépendant",
+      source: "CAPEB",
     },
   ] as const,
   dayLabel: `UNE JOURNÉE SANS ${BRAND_SHORT.toUpperCase()}`,
@@ -134,7 +133,7 @@ export const TPE_YEAR_TIMELINE = [
       "1 ajustement basé sur les données réelles",
       "Montée en formule proposée si le volume le justifie",
     ],
-    nolan: "À ce stade, beaucoup de clients ont déjà amorti le setup.",
+    nolan: "À ce stade, le setup est souvent amorti.",
   },
   {
     period: "M7–M9",

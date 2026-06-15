@@ -76,7 +76,7 @@ export default function AutomatisationIaTpePage() {
                 <p className="font-heading text-3xl font-bold text-primary">{c.stat}</p>
                 <p className="mt-2 text-sm text-text">{c.label}</p>
                 <p className="mt-2 text-xs text-faint">{c.source}</p>
-                {"trend" in c && c.trend ? (
+                {"trend" in c && typeof c.trend === "string" ? (
                   <p className="mt-1 text-xs text-accent">{c.trend}</p>
                 ) : null}
               </div>

@@ -1,4 +1,4 @@
-import { BRAND_FULL, NAP, SETUP_48H_NUANCE } from "@/lib/constants";
+import { BRAND_FULL, NAP, SETUP_48H_NUANCE, FOUNDER_CHANTIER_CREDENTIAL } from "@/lib/constants";
 
 /** Page À propos — version transparente (légal / confiance). */
 export const ABOUT_PAGE = {
@@ -27,7 +27,7 @@ export const ABOUT_PAGE = {
     },
   ],
   narrative: [
-    "Nolan Hermand a passé 2 ans sur les chantiers (menuiserie puis couverture) à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des diagnostiqueurs indépendants et des artisans de l'Orne — plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
+    `Nolan Hermand a passé ${FOUNDER_CHANTIER_CREDENTIAL} sur les chantiers à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des diagnostiqueurs indépendants et des artisans de l'Orne — plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.`,
     "Le constat revient souvent : les clients ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
     `${BRAND_FULL} est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec toi.`,
     "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
@@ -42,7 +42,7 @@ export const ABOUT_PAGE = {
   storyParagraphs: [
     "Pendant des mois, j'ai discuté avec des diagnostiqueurs indépendants dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
     "À chaque fois, la même chose revenait : les demandes agences qui arrivent pendant les missions, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",
-    "2 ans sur les chantiers, en menuiserie puis couverture. J'ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l'automatisation pour régler exactement ça. J'ai 19 ans. En diagnostic immobilier, j'apprends en échangeant avec les indépendants du secteur. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à votre réalité — pas à un PowerPoint.",
+    `${FOUNDER_CHANTIER_CREDENTIAL} sur les chantiers. J'ai vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Je me suis formé à l'automatisation pour régler exactement ça. J'ai 19 ans. En diagnostic immobilier, j'apprends en échangeant avec les indépendants du secteur. Ce que j'apporte : des systèmes qui tiennent, être joignable, m'adapter à votre réalité — pas à un PowerPoint.`,
   ],
   storyFootnote:
     "Sans engagement et résiliable en un mail : vous gardez la main à tout moment.",

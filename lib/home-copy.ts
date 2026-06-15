@@ -1,4 +1,4 @@
-import { NAP, PRIMARY_DEMO_CTA, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { NAP, PRIMARY_DEMO_CTA, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE, FOUNDER_CHANTIER_CREDENTIAL } from "@/lib/constants";
 
 export const HOME_META = {
   title: "Automatisation artisans & TPE en Normandie",
@@ -100,8 +100,8 @@ export const HOME_FOUNDER = {
   eyebrow: "Qui installe",
   h2: "Deux ans sur chantier, aujourd’hui au service des TPE",
   storyLead:
-    "2 ans sur les chantiers, en menuiserie puis couverture. Nolan a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Il s’est formé à l’automatisation pour régler exactement ça.",
-  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en se formant à l'automatisation. Aujourd'hui, Nolan installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
+    `${FOUNDER_CHANTIER_CREDENTIAL} sur chantier. Nolan a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Il s’est formé à l’automatisation pour régler exactement ça.`,
+  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). ${FOUNDER_CHANTIER_CREDENTIAL}, tout en se formant à l'automatisation. Aujourd'hui, Nolan installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
   painSteps: [
     {
       title: "Pendant la journée",

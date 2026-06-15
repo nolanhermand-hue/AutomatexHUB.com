@@ -3,6 +3,10 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://automatex-h
 /** Formulation officielle souveraineté (alignée /vos-donnees). */
 export const SOVEREIGNTY_TRUST_LINE = "Mistral UE · Automatisations UE · RGPD" as const;
 
+/** Parcours terrain fondateur — formulation unique (home, FAQ, à propos, Normandie). */
+export const FOUNDER_CHANTIER_CREDENTIAL =
+  "2 ans en menuiserie, puis la couverture" as const;
+
 /** Heures administratives non productives estimées par vente sur l'année (ordre de grandeur terrain). */
 export const HOURS_LOST_PER_SALE_PER_YEAR = 8;
 
@@ -865,7 +869,7 @@ export const CONTACT_COPY = {
 export const HUB_CONTACT_REASSURANCE = [
   "Sans engagement",
   "Résiliable en 1 mail",
-  "RGPD France",
+  "RGPD",
   SOVEREIGNTY_TRUST_LINE,
 ] as const;
 
@@ -940,7 +944,7 @@ export const ABOUT_FOUNDER = {
   eyebrow: "À propos de Nolan",
   h2: "Construit par un expert du terrain, pas par une startup.",
   body:
-    "Nolan Hermand configure chaque installation à la main à Flers (Google, portails, messagerie). 2 ans sur les chantiers (menuiserie puis couverture), formation autodidacte à l'automatisation en parallèle. Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.",
+    `Nolan Hermand configure chaque installation à la main à Flers (Google, portails, messagerie). ${FOUNDER_CHANTIER_CREDENTIAL} sur chantier, formation autodidacte à l'automatisation en parallèle. Après l’installation, il reste joignable 12 mois : bilan chaque trimestre, réponses selon votre formule — un humain, pas un logiciel abandonné.`,
   stats: [
     { value: "< 2 min", label: "Délai de réponse moyen" },
     { value: "48 h", label: "Mise en place après validation périmètre" },

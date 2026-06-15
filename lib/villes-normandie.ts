@@ -1,6 +1,6 @@
 import type { NormandieFaqItem } from "@/lib/normandie-shared";
 import { NORMANDIE_PILIER_PATH } from "@/lib/normandie-shared";
-import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { SOVEREIGNTY_TRUST_LINE, FOUNDER_CHANTIER_CREDENTIAL } from "@/lib/constants";
 
 /** Date de révision contenu cluster — mettre à jour manuellement (sitemap). */
 export const NORMANDIE_CLUSTER_LAST_MODIFIED = "2026-06-09";
@@ -51,7 +51,7 @@ export const NORMANDIE_PILIER: NormandiePilierPage = {
   h1: "Automatisation pour artisans et diagnostiqueurs en Normandie",
   intro: [
     "Couvreurs, charpentiers, diagnostiqueurs immobiliers et TPE : la même galère — être sur le terrain quand le téléphone sonne, et rattraper la paperasse le soir. AutomateX branche des réponses et des relances sur vos outils actuels, sans promesse de chiffre magique.",
-    "Nolan Hermand installe depuis Flers (Orne), avec 2 ans sur les chantiers en menuiserie et couverture. Installations à distance dans toute la Normandie ; pages ci-dessous par ville pour le contexte local.",
+    `Nolan Hermand installe depuis Flers (Orne), avec ${FOUNDER_CHANTIER_CREDENTIAL} sur les chantiers. Installations à distance dans toute la Normandie ; pages ci-dessous par ville pour le contexte local.`,
   ],
   pilierFaq: [
     {

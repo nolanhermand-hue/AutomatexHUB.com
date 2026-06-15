@@ -86,7 +86,7 @@ export const VOS_DONNEES_RIGHTS = [
     right: "Droit à l'effacement",
     article: "Art. 17 RGPD",
     what: "Supprimer toutes vos données de nos systèmes.",
-    how: "Un email · Suppression confirmée sous 7 jours · Vous recevez confirmation.",
+    how: "Un email · Enchaînements désactivés sous 48 h ; effacement complet des données sous 7 jours.",
   },
   {
     right: "Droit à la portabilité",
@@ -104,7 +104,7 @@ export const VOS_DONNEES_RIGHTS = [
     right: "Droit de résiliation",
     article: "Contrat AutomateX",
     what: "Mettre fin au service et récupérer toutes vos données.",
-    how: "Un seul email suffit. Aucun délai de préavis. Aucun frais.",
+    how: "Un seul email suffit. Enchaînements désactivés sous 48 h ; effacement complet des données sous 7 jours.",
   },
 ] as const;
 
@@ -149,7 +149,7 @@ export const VOS_DONNEES_COLLECTION_ROWS = [
 export const VOS_DONNEES_FAQ = [
   {
     q: "Mes emails passent-ils par des serveurs américains ?",
-    a: "Non via AutomateX. Le traitement est fait par Mistral AI (Paris/Allemagne). L'orchestration est faite par N8N Cloud (Francfort, Allemagne). Vos emails ne transitent pas par les États-Unis via nos prestations. Ils restent dans votre boîte Gmail — Google est américain, c'est un choix que vous avez fait avant AutomateX.",
+    a: "Non via AutomateX. Le traitement est fait par Mistral AI (Paris, France). L'orchestration est faite par N8N Cloud (Francfort, Allemagne). Vos emails ne transitent pas par les États-Unis via nos prestations. Ils restent dans votre boîte Gmail — Google est américain, c'est un choix que vous avez fait avant AutomateX.",
   },
   {
     q: "Nolan peut-il lire vos emails ?",
@@ -157,7 +157,7 @@ export const VOS_DONNEES_FAQ = [
   },
   {
     q: "Que se passe-t-il à la résiliation ?",
-    a: "Vos enchaînements N8N sont désactivés et supprimés sous 48 h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. AutomateX ne conserve rien.",
+    a: "Enchaînements désactivés sous 48 h ; effacement complet des données sous 7 jours. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. AutomateX ne conserve rien.",
   },
   {
     q: "Mes données de clients (leurs noms, leurs emails) sont-elles partagées ?",

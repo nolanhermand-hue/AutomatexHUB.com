@@ -1,5 +1,5 @@
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
-import { BRAND_SHORT, PRIMARY_DEMO_CTA } from "@/lib/constants";
+import { BRAND_SHORT, PRIMARY_DEMO_CTA, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 import {
   GEO_MASTER_FAQ_CATEGORY_LABELS,
   GEO_MASTER_FAQ_CATEGORY_ORDER,
@@ -78,7 +78,7 @@ export function MasterFaqPage() {
           {PRIMARY_DEMO_CTA}
         </AnalyticsCta>
         <p className="text-center text-sm text-muted">
-          Sans engagement · résiliable en 1 mail · RGPD France
+          Sans engagement · résiliable en 1 mail · {SOVEREIGNTY_TRUST_LINE}
         </p>
       </div>
     </div>
