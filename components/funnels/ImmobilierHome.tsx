@@ -2,22 +2,70 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Problem } from "@/components/sections/Problem";
 import { Agitation } from "@/components/sections/Agitation";
-import { Solution } from "@/components/sections/Solution";
 import { AccompanimentPillars } from "@/components/sections/AccompanimentPillars";
 import { Pricing } from "@/components/sections/Pricing";
 import { DataTrustSection } from "@/components/sections/DataTrustSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { LocalGeoLinks } from "@/components/sections/LocalGeoLinks";
 import { ResiliationSection } from "@/components/sections/ResiliationSection";
-import { ImmobilierLiveDemoSection } from "@/components/demo/ImmobilierLiveDemoSection";
-import { ImmobilierLeadDemoSection } from "@/components/demo/ImmobilierLeadDemoSection";
-import { FeaturedAutomationsSection } from "@/components/sections/FeaturedAutomationsSection";
-import { RoiCounter } from "@/components/motion/RoiCounter";
-import { IntegrationMarquees } from "@/components/sections/IntegrationMarquees";
-import { AutomationsFeatureGrid } from "@/components/sections/AutomationsFeatureGrid";
 import { IMMOBILIER_ACCOMPANIMENT } from "@/lib/immobilier-accompaniment-copy";
+import dynamic from "next/dynamic";
 
-/** Parcours diagnostiqueurs — HTML complet au build (évite CLS skeleton / dynamic). */
+const sectionPulse = (minH: string, bg: string) => (
+  <div className={`${minH} animate-pulse ${bg}`} aria-hidden />
+);
+
+const Solution = dynamic(
+  () => import("@/components/sections/Solution").then((m) => ({ default: m.Solution })),
+  { ssr: true, loading: () => sectionPulse("min-h-[400px]", "bg-night") },
+);
+
+const ImmobilierLiveDemoSection = dynamic(
+  () =>
+    import("@/components/demo/ImmobilierLiveDemoSection").then((m) => ({
+      default: m.ImmobilierLiveDemoSection,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-64", "bg-bg-card") },
+);
+
+const ImmobilierLeadDemoSection = dynamic(
+  () =>
+    import("@/components/demo/ImmobilierLeadDemoSection").then((m) => ({
+      default: m.ImmobilierLeadDemoSection,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-64", "bg-night") },
+);
+
+const FeaturedAutomationsSection = dynamic(
+  () =>
+    import("@/components/sections/FeaturedAutomationsSection").then((m) => ({
+      default: m.FeaturedAutomationsSection,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-40", "bg-night") },
+);
+
+const RoiCounter = dynamic(
+  () => import("@/components/motion/RoiCounter").then((m) => ({ default: m.RoiCounter })),
+  { ssr: true, loading: () => sectionPulse("min-h-32", "bg-bg-card") },
+);
+
+const IntegrationMarquees = dynamic(
+  () =>
+    import("@/components/sections/IntegrationMarquees").then((m) => ({
+      default: m.IntegrationMarquees,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-24", "bg-night") },
+);
+
+const AutomationsFeatureGrid = dynamic(
+  () =>
+    import("@/components/sections/AutomationsFeatureGrid").then((m) => ({
+      default: m.AutomationsFeatureGrid,
+    })),
+  { ssr: true, loading: () => sectionPulse("min-h-48", "bg-bg-card") },
+);
+
+/** Parcours diagnostiqueurs — sections lourdes chargées à la demande (perf mobile). */
 export function ImmobilierHome() {
   return (
     <div className="funnel-surface">

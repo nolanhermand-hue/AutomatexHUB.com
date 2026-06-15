@@ -27,7 +27,7 @@ export function BtpSocialProof() {
         <blockquote className="rounded-xl border border-border bg-bg-card p-6">
           <p className="italic leading-relaxed text-muted">&ldquo;{BTP_SOCIAL_PROOF.founderQuote}&rdquo;</p>
           <footer className="mt-3 text-sm font-semibold text-text">
-            — {NAP.founder}, Automatex Hub
+            — {NAP.founder}, AutomateX-HUB
           </footer>
         </blockquote>
 

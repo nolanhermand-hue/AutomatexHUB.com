@@ -1,4 +1,4 @@
-# Référence IA — Automatex Hub (mémoire partagée)
+# Référence IA — AutomateX-HUB (mémoire partagée)
 
 > **Document canonique** pour Gemini, Cursor, Claude et tout agent travaillant sur ce dépôt.  
 > **Dernière consolidation :** 2026-05-27 · **Site :** https://automatex-hub.com  
@@ -22,7 +22,7 @@
 
 | Clé | Valeur |
 |-----|--------|
-| Marque publique | **Automatex** / **Automatex Hub** |
+| Marque publique | **AutomateX** / **AutomateX-HUB** (`BRAND_SHORT` / `BRAND_FULL` dans `lib/constants.ts`) |
 | Fondateur | **Nolan Hermand** |
 | URL canonique | `https://automatex-hub.com` (apex, **sans** `www` → 301 Netlify) |
 | Adresse | 50 rue de l'Equerre, 61100 Saint-Georges-des-Groseillers, Orne, Normandie, FR |
@@ -31,7 +31,7 @@
 | Téléphone | `06 45 38 42 33` · E.164 `+33645384233` |
 | Email | `nolan.hermand@automatex-hub.com` |
 | GEO (meta) | `48.7483;-0.5711` |
-| Ligne souveraineté (partout) | **`SOVEREIGNTY_TRUST_LINE`** = `IA française · Automations UE · RGPD` |
+| Ligne souveraineté (partout) | **`SOVEREIGNTY_TRUST_LINE`** = `Mistral UE · Automatisations UE · RGPD` |
 | Détail infra (page dédiée) | `/vos-donnees` — Netlify CDN, N8N Francfort, Mistral Paris |
 | Source code NAP | `lib/constants.ts` → `NAP`, `META`, `GEO_DEFINITION` |
 
@@ -138,7 +138,7 @@ Thème **sombre fixe** · `html` avec classe **`dark`** · pas de thème crème.
 
 | Route | Rôle | Composant / note |
 |-------|------|------------------|
-| `/` | Hub choix parcours | `HubEntry` · classe `hub-entry-hero` |
+| `/` | Landing artisans & TPE (Normandie) | `HomePage` |
 | `/immobilier` | Landing diagnostiqueurs | `ImmobilierHome` |
 | `/btp` | Landing artisans BTP | `BtpLanding` (sections dynamic SSR) |
 | `/automatisation-ia-tpe` | Pilier TPE/PME | `TpeAutomatisationPricing` · `#tarifs` · CTA → `/rendez-vous` |
@@ -198,8 +198,9 @@ Mega-menu : `lib/mega-nav-data.ts`
 
 ### Libellés CTA récurrents (`lib/constants.ts`)
 
-- `BOOKING_CTA_LABEL` = « Réserver votre appel avec Nolan »
-- Hub unifié : « Nolan vous rappelle sous 24 h » (`HubEntry`)
+- `BOOKING_CTA_LABEL` = « Réserver ton appel avec Nolan »
+- `PRIMARY_DEMO_CTA` = « Démo gratuite 20 min sur ton cas » (unique hors cartes tarifs)
+- Rappel démo : Nolan te rappelle **sous 24 h** (pas « demain »)
 - Cadre commercial : **Sans engagement** · résiliation **1 mail**
 
 ---
@@ -223,7 +224,7 @@ Mega-menu : `lib/mega-nav-data.ts`
 
 `IA` · intelligence artificielle · workflow · API · SaaS · abonnement · LLM · no-code · chatbot · robot · bot · algorithme · machine learning
 
-**Autorisé :** « automatisations », « Automatex », URLs `/automatisation-*`, ligne `SOVEREIGNTY_TRUST_LINE` (exception contrôlée).
+**Autorisé :** « automatisations », « AutomateX », URLs `/automatisation-*`, ligne `SOVEREIGNTY_TRUST_LINE` (exception contrôlée).
 
 ### Angles qui convertissent
 
@@ -231,7 +232,7 @@ Mega-menu : `lib/mega-nav-data.ts`
 
 ### Personas
 
-- **Immo (Pascal)** : IAD, SAFTI, Capifrance, Optimhome, EffiCity — Orne/Normandie
+- **Immo (Pascal)** : diagnostiqueurs immobiliers indépendants — Orne / Normandie (pas mandataires réseau)
 - **BTP (Kévin)** : maçon, plombier, électricien — appels manqués, devis
 
 ---
@@ -322,7 +323,7 @@ npm run demos:static
 
 ## 16. Arborescence mentale (1 ligne)
 
-`/` hub → **immo** `/immobilier` + `/mandataires-*` | **btp** `/btp` + `/automatisation-*` `/devis-*` | **tpe** `/automatisation-ia-tpe` | **catalogue** `/automatisations#*` | **trust** `/vos-donnees` `/accompagnement` | **legal** ×4 | **merci** off-SEO
+`/` **HomePage** → **immo** `/immobilier` (+ `/mandataires-*` 301) | **btp** `/btp` + `/automatisation-*` `/devis-*` | **tpe** `/automatisation-ia-tpe` | **catalogue** `/automatisations#*` | **trust** `/vos-donnees` `/accompagnement` | **contact** `/rendez-vous` | **legal** ×4 | **merci** off-SEO
 
 ---
 

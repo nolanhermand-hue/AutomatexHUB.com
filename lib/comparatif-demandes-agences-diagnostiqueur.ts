@@ -1,3 +1,4 @@
+import { BRAND_SHORT, OFFER_PRICING_COPY } from "@/lib/constants";
 import { COMPARATIF_LAST_UPDATED } from "@/lib/comparatif-shared";
 
 export const COMPARATIF_DEMANDES_AGENCES = {
@@ -20,16 +21,16 @@ export const COMPARATIF_DEMANDES_AGENCES = {
     {
       h2: "Télésecrétariat ou assistant vs automatisation",
       answerFirst:
-        "Un humain au téléphone ou en back-office coûte en général plus cher qu’un pack Système Automatex (990 € de mise en place puis 249 €/mois) dès que vous traitez plusieurs demandes par semaine.",
+        `Un humain au téléphone ou en back-office coûte en général plus cher qu’un pack Système ${BRAND_SHORT} (${OFFER_PRICING_COPY.systeme}) dès que tu traites plusieurs demandes par semaine.`,
       body:
-        "Le secrétariat ne voit pas toujours vos portails (SeLoger, briques locales). Automatex se branche sur votre messagerie et vos règles métier : réponse < 2 min, relance J+1, tri « 7 familles », classement Drive. Nolan reste joignable pour ajuster le ton après chaque retour agence.",
+        `Le secrétariat ne voit pas toujours tes mails agences. ${BRAND_SHORT} se branche sur ta messagerie et tes règles métier : réponse < 2 min, relance J+1, tri « 7 familles », classement Drive. Nolan reste joignable pour ajuster le ton après chaque retour agence.`,
     },
     {
       h2: "Tableau comparatif",
       answerFirst:
         "La réponse automatique cible le mail agence et le créneau ; le télésecrétariat couvre surtout la voix et la prise de message.",
       table: {
-        headers: ["Critère", "Secrétariat / assistant", "Automatex immobilier"],
+        headers: ["Critère", "Secrétariat / assistant", `${BRAND_SHORT} immobilier`],
         rows: [
           ["Demande mail agence", "Relecture manuelle", "Réponse < 2 min + brouillon"],
           ["Disponibilité", "Heures bureau", "24 h/24 sur les flux configurés"],

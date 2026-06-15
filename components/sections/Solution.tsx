@@ -155,7 +155,7 @@ export function Solution() {
             Vous restez maître de tout.
           </p>
           <p className="mt-1 text-sm text-muted">
-            Automatex répond, vous validez. Votre relation client et vos décisions
+            AutomateX répond, vous validez. Votre relation client et vos décisions
             commerciales restent entre vos mains.
           </p>
         </div>

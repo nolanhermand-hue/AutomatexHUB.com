@@ -99,7 +99,7 @@ Objectif produit : **Performance ≥ 95** (mobile et desktop), **CLS &lt; 0,05**
 | CLS | ~0,334 | ~0,342 | Même source structurelle (pas viewport) |
 | TBT | ~90 ms | ~160 ms | Thread principal chargé au montage |
 
-**CLS home (`/`) — cause majeure identifiée :** chargement **async** de la feuille CSS globale (`scripts/optimize-static-html-css.mjs` avec `media="print"` + `onload`) → shift ~**0,335** sur la section hero hub (`HubEntry`, classe `hub-entry-hero`).
+**CLS home (`/`) — cause majeure identifiée :** chargement **async** de la feuille CSS globale (`scripts/optimize-static-html-css.mjs` avec `media="print"` + `onload`) → shift ~**0,335** sur le hero d’accueil (`components/home/HomeHero.tsx`, grille hero + capture produit).
 
 ### Correctifs livrés (commits récents sur `main`)
 
@@ -107,12 +107,12 @@ Objectif produit : **Performance ≥ 95** (mobile et desktop), **CLS &lt; 0,05**
 
 - **CSS global bloquant** : suppression du différé async dans `scripts/optimize-static-html-css.mjs` ; conservation du **preload** font Inter woff2.
 - **CSS critique** : `components/seo/CriticalAboveFoldStyles.tsx` (shell hub, header, badges, `max-w-content`, typo).
-- **Hub** : `components/hub/HubEntry.tsx` → classe `hub-entry-hero`.
+- **Accueil** : `components/home/HomeHero.tsx` + `HeroToolsSchema` (capture WebP lazy, pas de priorité LCP sur logos outils).
 - **Inter** : `fallback` + `adjustFontFallback` dans `app/layout.tsx`.
 - **ROI** : `components/motion/RoiCounter.tsx` statique (plus d’anim GSAP → pas de shift chiffres).
 - **Sticky mobile** : `opacity` / `visibility` au lieu de `translateY` / `display:none` (`app/globals.css`, `app/animations.css`).
 - **Démos** : `MotionDemo` dimensions + lazy ; skeleton `ImmobilierLeadDemoSection` ; WebP dans `lib/demo-loaders.ts` / `public/assets/demos/*.webp`.
-- **Parcours immobilier** : HTML complet au build (`ImmobilierHome.tsx` sans dynamic skeleton inutile).
+- **Parcours immobilier** : sections lourdes en `dynamic()` dans `ImmobilierHome.tsx` (démos, GSAP Solution, grilles) ; hero HTML complet au build.
 
 #### TBT (desktop)
 

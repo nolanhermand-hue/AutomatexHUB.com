@@ -12,7 +12,7 @@ type SystemCapturePlaceholderProps = {
 /** Conteneur ratio fixe pour captures produit (swap WebP sans reflow). */
 export function SystemCapturePlaceholder({
   src = "/assets/demos/point-mensuel-static.webp",
-  alt = "Aperçu du tableau de bord Automatex — données de démonstration",
+  alt = "Aperçu du tableau de bord AutomateX — données de démonstration",
   priority = false,
   className = "",
 }: SystemCapturePlaceholderProps) {

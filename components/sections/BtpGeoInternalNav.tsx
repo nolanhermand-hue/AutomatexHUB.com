@@ -9,7 +9,7 @@ export function BtpGeoInternalNav() {
       className="border-t border-border bg-bg-card px-gutter py-10"
     >
       <div className="mx-auto max-w-content">
-        <p className="text-xs text-muted">Automatex Hub intervient dans l&apos;Orne :</p>
+        <p className="text-xs text-muted">AutomateX-HUB intervient dans l&apos;Orne :</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {BTP_GEO_INTERNAL_LINKS.map((item) => (
             <Link

@@ -8,7 +8,7 @@ type TikTokLinkProps = {
 
 const TIKTOK_ICON = "/assets/integrations/tiktok.svg";
 
-/** Logo cliquable → compte TikTok Automatex (nouvel onglet). */
+/** Logo cliquable → compte TikTok AutomateX (nouvel onglet). */
 export function TikTokLink({ className, size = 24 }: TikTokLinkProps) {
   return (
     <a
@@ -16,7 +16,7 @@ export function TikTokLink({ className, size = 24 }: TikTokLinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={TIKTOK_PROFILE_ARIA}
-      title="TikTok — Automatex"
+      title="TikTok — AutomateX"
       className={cn(
         "relative z-10 inline-flex shrink-0 cursor-pointer items-center justify-center",
         "transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",

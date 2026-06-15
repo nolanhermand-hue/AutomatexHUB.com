@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section id="hero" className="relative [scroll-margin-top:60px] lg:[scroll-margin-top:72px]">
       <HeroScene>
-        <div className="mx-auto max-w-content px-gutter pb-8 pt-[76px] lg:pb-12 lg:pt-[96px]">
+        <div className="mx-auto max-w-content px-gutter pb-6 pt-[68px] lg:pb-12 lg:pt-[96px]">
           <div className="hero-layout lg:grid lg:grid-cols-[1fr_minmax(260px,320px)] lg:items-start lg:gap-12">
             <div className="hero-content flex flex-col">
               <p className="badge badge-default hero-badge hero-badge-enter inline-flex w-fit items-center gap-2">
@@ -67,11 +67,11 @@ export function Hero() {
                 {GEO_DEFINITION}
               </p>
 
-              <p className="hero-subtitle mt-5 max-w-readable font-body text-base leading-[1.6] text-muted md:mt-6 md:text-xl">
+              <p className="hero-subtitle mt-3 max-w-readable font-body text-base leading-[1.55] text-muted md:mt-6 md:text-xl">
                 {HERO_COPY.subtitle}
               </p>
 
-              <p className="hero-subtitle mt-4 max-w-readable text-sm font-medium text-text md:text-base">
+              <p className="hero-subtitle mt-3 max-w-readable hidden text-sm font-medium text-text sm:block md:text-base">
                 {HERO_COPY.statAnchor}
               </p>
 
@@ -79,13 +79,13 @@ export function Hero() {
                 href={rendezVousHref()}
                 data-cursor="cta"
                 analyticsId="hero_primary"
-                className="hero-cta-primary btn-bracket btn-bracket-primary mt-6 w-full justify-center md:mt-8 lg:mt-6 lg:w-auto"
+                className="hero-cta-primary btn-bracket btn-bracket-primary mt-5 w-full justify-center md:mt-8 lg:mt-6 lg:w-auto"
               >
                 {HERO_COPY.ctaPrimary}
                 <span aria-hidden>→</span>
               </AnalyticsCta>
 
-              <ul className="hero-trust mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+              <ul className="hero-trust mt-4 hidden flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted sm:flex">
                 <li className="inline-flex items-center gap-1.5">
                   <ReassuranceIcon kind="fr" />
                   {HERO_COPY.badgeHosted}
@@ -100,7 +100,7 @@ export function Hero() {
                 </li>
               </ul>
 
-              <div className="hero-avatar mt-6 max-w-readable">
+              <div className="hero-avatar mt-6 hidden max-w-readable md:block">
                 <FounderTrustBlock compact />
               </div>
 
@@ -108,16 +108,16 @@ export function Hero() {
                 href="#solution"
                 data-cursor="link"
                 analyticsId="hero_secondary"
-                className="hero-cta-secondary mt-4 inline-flex min-h-[48px] w-full items-center justify-center text-sm font-semibold text-muted underline underline-offset-4 transition-colors duration-200 hover:text-text sm:w-auto sm:justify-start"
+                className="hero-cta-secondary mt-4 hidden min-h-[48px] w-full items-center justify-center text-sm font-semibold text-muted underline underline-offset-4 transition-colors duration-200 hover:text-text sm:inline-flex sm:w-auto sm:justify-start"
               >
                 {HERO_COPY.ctaSecondary}
               </AnalyticsCta>
 
-              <p className="mt-4 text-xs font-medium text-muted">{CTA_REASSURANCE_LINE}</p>
+              <p className="mt-4 hidden text-xs font-medium text-muted md:block">{CTA_REASSURANCE_LINE}</p>
             </div>
 
             <aside
-              className="hero-aside mt-10 rounded-xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_var(--color-border)] lg:mt-5 lg:p-7"
+              className="hero-aside mt-8 hidden rounded-xl border border-border bg-bg-card p-6 shadow-[0_0_0_0.5px_var(--color-border)] md:block lg:mt-5 lg:p-7"
               aria-label="Chiffres clés diagnostiqueurs"
             >
               <ul className="space-y-6">

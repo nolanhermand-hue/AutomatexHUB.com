@@ -109,5 +109,5 @@ export const AUTOMATISATION_CEST_QUOI_LINKS = {
   catalogHref: "/automatisations",
   catalogLabel: "catalogue des 18 automatisations",
   founderHref: "/a-propos",
-  founderLabel: "qui installe chez Automatex",
+  founderLabel: "qui installe chez AutomateX",
 } as const;

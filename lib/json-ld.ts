@@ -6,6 +6,7 @@ import { HOME_FAQ } from "@/lib/home-copy";
 import {
   FAQ_ITEMS,
   getPricingOfferDisplay,
+  BRAND_FULL,
   NAP,
   PAID_OFFERS,
   SITE_URL,
@@ -15,6 +16,7 @@ import {
   type PackId,
 } from "@/lib/constants";
 import { BRAND, brandAbsolute } from "@/lib/brand";
+import { formatMiseEnPlacePuisMensuel } from "@/lib/pricing";
 
 const JSONLD_PACKS = [
   { name: "Pack Déclic", setup: 390, monthly: 99 },
@@ -30,7 +32,7 @@ function buildJsonLdPackOffers(nameSuffix = "") {
     name: nameSuffix ? `${name} ${nameSuffix}` : name,
     price: String(setup),
     priceCurrency: "EUR",
-    description: `Mise en place ${setup}€ (1er mois inclus), puis ${monthly}€/mois`,
+    description: formatMiseEnPlacePuisMensuel(setup, monthly),
     priceSpecification: [
       {
         "@type": "UnitPriceSpecification",
@@ -73,10 +75,10 @@ export function buildAboutPageJsonLd() {
       ]),
       {
         "@type": "AboutPage",
-        name: "À propos d'Automatex",
+        name: "À propos d'AutomateX",
         url: `${SITE_URL}/a-propos`,
         description:
-          "Automatex, service français pour diagnostiqueurs immobiliers indépendants en Normandie. Fondé en 2025 à Flers par Nolan Hermand.",
+          "AutomateX, service français pour diagnostiqueurs immobiliers indépendants en Normandie. Fondé en 2025 à Flers par Nolan Hermand.",
       },
     ],
   };
@@ -99,7 +101,7 @@ export function buildLocalDiagnostiqueurJsonLd(opts: {
       ]),
       {
         "@type": "Service",
-        name: `Automatex — diagnostiqueurs immobiliers ${opts.city}`,
+        name: `AutomateX — diagnostiqueurs immobiliers ${opts.city}`,
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: [opts.city, "Orne", "Normandie"],
@@ -186,8 +188,11 @@ function buildFaqMainEntity(mode: JsonLdFaqMode) {
 export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const faqMode = options?.faqMode ?? "diagnostiqueur";
   const isHome = faqMode === "home";
+  const isBtp = faqMode === "btp";
+  const isTpe = faqMode === "tpe";
   const businessId = `${SITE_URL}#business`;
   const localBusinessId = `${SITE_URL}#local-business`;
+  const organizationId = `${SITE_URL}#organization`;
   const personId = `${SITE_URL}#person-nolan`;
 
   const faqEntities = buildFaqMainEntity(faqMode);
@@ -197,7 +202,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
     "@type": "HowToStep",
     position: index + 1,
     name: step.title,
-    text: `${step.body} Source : Automatex, Flers (Orne), Normandie.`,
+    text: `${step.body} Source : AutomateX, Flers (Orne), Normandie.`,
   }));
 
   // H9 — Géographie couverte
@@ -218,7 +223,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   ];
 
   // Offer catalog mappé sur les 3 offres réelles (D1)
-  const jsonLdAudience = isHome ? "home" : "default";
+  const jsonLdAudience = isHome || isBtp ? "home" : isTpe ? "tpe" : "default";
   const offerCatalog = PAID_OFFERS.map((offer) => ({
     "@type": "Offer",
     name: `${offer.name} — ${offer.monthly} €/mois`,
@@ -236,8 +241,12 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const logoUrl = brandAbsolute(BRAND.symbolSvg, SITE_URL);
 
   const businessDescription = isHome
-    ? "Automatex installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
-    : "Automatex installe une réponse immédiate aux demandes agences, un tri de mails et un classement des documents pour diagnostiqueurs immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
+    ? "AutomateX installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
+    : isBtp
+      ? "AutomateX installe SMS appels manqués, devis et relances pour artisans BTP en Normandie et dans l'Orne. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
+      : isTpe
+        ? "AutomateX installe réponse aux messages, devis et relances pour TPE et PME en Normandie. Démo 20 min ; mise en place en 48 h ouvrées après validation du périmètre."
+        : "AutomateX installe une réponse immédiate aux demandes agences, un tri de mails et un classement des documents pour diagnostiqueurs immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
 
   const knowsAbout = isHome
     ? [
@@ -251,6 +260,29 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         SOVEREIGNTY_TRUST_LINE,
         NAP.hostingProvider,
       ]
+    : isBtp
+      ? [
+          "Automatisation artisan BTP",
+          "Devis automatique chantier",
+          "SMS appel manqué",
+          "Relances devis",
+          "Google Drive classement",
+          "Gmail automatisation",
+          "RGPD automatisation",
+          SOVEREIGNTY_TRUST_LINE,
+          NAP.hostingProvider,
+        ]
+      : isTpe
+        ? [
+            "Automatisation TPE",
+            "Devis automatiques",
+            "Relances clients",
+            "Classement documents",
+            "Gmail automatisation",
+            "RGPD automatisation",
+            SOVEREIGNTY_TRUST_LINE,
+            NAP.hostingProvider,
+          ]
     : [
         "Automatisation diagnostiqueur immobilier",
         "demandes agences perdues",
@@ -265,10 +297,36 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
       ];
 
   const offerCatalogName = isHome
-    ? "Formules Automatex pour artisans et TPE"
-    : "Formules Automatex pour diagnostiqueurs immobiliers";
+    ? "Formules AutomateX pour artisans et TPE"
+    : isBtp
+      ? "Formules AutomateX pour artisans BTP"
+      : isTpe
+        ? "Formules AutomateX pour TPE et PME"
+        : "Formules AutomateX pour diagnostiqueurs immobiliers";
+
+  const segmentAudience = isHome
+    ? "Artisans, diagnostiqueurs et TPE en Normandie"
+    : isBtp
+      ? "Artisans et entreprises BTP en Normandie"
+      : isTpe
+        ? "TPE et PME de services en Normandie"
+        : "Diagnostiqueurs immobiliers indépendants en Normandie";
 
   const graph: Record<string, unknown>[] = [
+      {
+        "@type": "Organization",
+        "@id": organizationId,
+        name: BRAND_FULL,
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: logoUrl,
+          width: 512,
+          height: 512,
+        },
+        founder: { "@id": personId },
+        audience: { "@type": "Audience", audienceType: segmentAudience },
+      },
       {
         "@type": "ProfessionalService",
         "@id": businessId,
@@ -284,6 +342,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
           width: 512,
           height: 512,
         },
+        parentOrganization: { "@id": organizationId },
         priceRange: "€€",
         openingHours: "Mo-Fr 09:00-18:00",
         address: {
@@ -336,6 +395,7 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         image: logoUrl,
         priceRange: "€€",
         openingHours: "Mo-Fr 09:00-18:00",
+        audience: { "@type": "Audience", audienceType: segmentAudience },
         address: {
           "@type": "PostalAddress",
           streetAddress: NAP.streetAddress,
@@ -357,10 +417,18 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         "@type": "HowTo",
         name: isHome
           ? `${SOLUTION_HEADING.h2.replace(/\.$/, "")} pour artisans et TPE en Normandie`
-          : `${SOLUTION_HEADING.h2.replace(/\.$/, "")} en Normandie`,
+          : isBtp
+            ? `${SOLUTION_HEADING.h2.replace(/\.$/, "")} pour artisans BTP en Normandie`
+            : isTpe
+              ? `${SOLUTION_HEADING.h2.replace(/\.$/, "")} pour TPE en Normandie`
+              : `${SOLUTION_HEADING.h2.replace(/\.$/, "")} en Normandie`,
         description: isHome
-          ? "Automatex installe réponse aux messages, devis et relances pour artisans et TPE à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement."
-          : "Automatex installe une réponse immédiate et un tri des mails pour diagnostiqueurs immobiliers à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement.",
+          ? "AutomateX installe réponse aux messages, devis et relances pour artisans et TPE à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement."
+          : isBtp
+            ? "AutomateX installe SMS appels manqués, devis et relances pour artisans BTP à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement."
+            : isTpe
+              ? "AutomateX installe réponse aux messages, devis et relances pour TPE à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement."
+              : "AutomateX installe une réponse immédiate et un tri des mails pour diagnostiqueurs immobiliers à Flers (Orne) et en Normandie. 48 h ouvrées après validation du périmètre, sans engagement.",
         totalTime: "P2D",
         step: howToSteps,
       },
@@ -369,21 +437,33 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
         "@type": "Service",
         name: isHome
           ? "Automatisation clients, devis et relances pour artisans et TPE"
-          : "Réponse automatique aux demandes agences pour diagnostiqueurs",
+          : isBtp
+            ? "Automatisation devis et relances pour artisans BTP"
+            : isTpe
+              ? "Automatisation administrative pour TPE et PME"
+              : "Réponse automatique aux demandes agences pour diagnostiqueurs",
         provider: { "@id": businessId },
         description: isHome
           ? "Service de Réponse aux demandes, devis, relances et classement documents pour artisans BTP et TPE en Normandie et dans l'Orne."
-          : "Service de réponse immédiate aux demandes agences et prescripteurs, tri des mails et classement des documents pour diagnostiqueurs indépendants en Normandie et dans l'Orne.",
+          : isBtp
+            ? "Service de SMS appels manqués, devis, relances et classement documents pour artisans BTP en Normandie et dans l'Orne."
+            : isTpe
+              ? "Service de réponse aux messages, devis, relances et classement documents pour TPE et PME en Normandie."
+              : "Service de réponse immédiate aux demandes agences et prescripteurs, tri des mails et classement des documents pour diagnostiqueurs indépendants en Normandie et dans l'Orne.",
         areaServed,
         serviceType: isHome
           ? "Automatisation administrative pour artisans et TPE"
-          : "Automatisation administrative pour diagnostiqueurs immobiliers",
+          : isBtp
+            ? "Automatisation administrative pour artisans BTP"
+            : isTpe
+              ? "Automatisation administrative pour TPE et PME"
+              : "Automatisation administrative pour diagnostiqueurs immobiliers",
         offers: offerCatalog,
       },
       buildBreadcrumbList([{ name: "Accueil", path: "/" }]),
       {
         "@type": "SoftwareApplication",
-        name: "Automatex",
+        name: "AutomateX",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         image: logoUrl,
@@ -425,7 +505,7 @@ export function buildBtpServiceJsonLd(path: string) {
 
   const professional = {
     "@type": "ProfessionalService",
-    name: "Automatex Hub",
+    name: BRAND_FULL,
     description:
       `Automatisation pour artisans BTP dans l'Orne et Normandie : SMS appels manqués, devis, relances, accompagnement mensuel. ${SOVEREIGNTY_TRUST_LINE}.`,
     url: isBtpLanding ? `${SITE_URL}/btp` : pageUrl,
@@ -468,7 +548,7 @@ export function buildBtpServiceJsonLd(path: string) {
   const btpService = {
     "@type": "Service",
     name: "Système artisans BTP — Orne",
-    provider: { "@type": "Organization", name: "Automatex Hub" },
+    provider: { "@type": "Organization", name: BRAND_FULL },
     areaServed: { "@type": "AdministrativeArea", name: "Orne" },
     audience: { "@type": "Audience", audienceType: "Artisans BTP TPE" },
     offers: buildJsonLdPackOffers("BTP"),
@@ -491,7 +571,7 @@ export function buildTpeAutomatisationJsonLd() {
       ]),
       {
         "@type": "Service",
-        name: "Automatisation IA pour TPE et PME — Automatex Hub",
+        name: "Automatisation pour TPE et PME — AutomateX-HUB",
         url: `${SITE_URL}${TPE_PAGE_PATH}`,
         description:
           "Système d'automatisation pour TPE et PME : réponses automatiques, devis, classement documents, relances. Accompagnement humain mensuel inclus.",
@@ -537,7 +617,7 @@ export function buildLocalBtpJsonLd(opts: {
       ]),
       {
         "@type": "Service",
-        name: `Automatex — artisans BTP ${opts.city}`,
+        name: `AutomateX — artisans BTP ${opts.city}`,
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: [opts.city, "Orne", "Normandie"],
@@ -581,7 +661,7 @@ export function buildNormandieVilleJsonLd(opts: {
       ]),
       {
         "@type": "Service",
-        name: `Automatex — artisans et diagnostiqueurs ${opts.cityName}`,
+        name: `AutomateX — artisans et diagnostiqueurs ${opts.cityName}`,
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: [opts.cityName, opts.department, "Normandie", "France"],
@@ -623,7 +703,7 @@ export function buildNormandiePilierJsonLd(opts: {
       ]),
       {
         "@type": "Service",
-        name: "Automatex — automatisation artisans et diagnostiqueurs Normandie",
+        name: "AutomateX — automatisation artisans et diagnostiqueurs Normandie",
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: ["Normandie", "Orne", "Calvados", "Manche", "Eure", "Seine-Maritime"],
@@ -649,7 +729,7 @@ export function buildAutomatisationCoconPilierJsonLd(opts: {
       ]),
       {
         "@type": "Service",
-        name: "Automatex — automatisations pour artisans et indépendants",
+        name: "AutomateX — automatisations pour artisans et indépendants",
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: ["Normandie", "Orne", "France"],
@@ -687,7 +767,7 @@ export function buildAutomatisationCestQuoiJsonLd(opts: {
       },
       {
         "@type": "Service",
-        name: "Automatex — comprendre les automatisations pour TPE et artisans",
+        name: "AutomateX — comprendre les automatisations pour TPE et artisans",
         provider: { "@id": businessId },
         description: opts.description,
         areaServed: ["France", "Normandie", "Orne"],
@@ -736,7 +816,7 @@ export function buildAutomatisationsCatalogJsonLd() {
     name,
     price: String(setup),
     priceCurrency: "EUR",
-    description: `Mise en place ${setup}€ (1er mois inclus), puis ${monthly}€/mois — tarif catalogue unitaire`,
+    description: `${formatMiseEnPlacePuisMensuel(setup, monthly)} — tarif catalogue unitaire`,
     priceSpecification: [
       {
         "@type": "UnitPriceSpecification",
@@ -765,7 +845,7 @@ export function buildAutomatisationsCatalogJsonLd() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Catalogue des automatisations Automatex",
+        name: "Catalogue des automatisations AutomateX",
         dateModified: new Date().toISOString().slice(0, 10),
         inLanguage: "fr-FR",
       },
@@ -804,6 +884,45 @@ export function buildComparatifPageJsonLd(opts: {
         description: opts.description,
         dateModified: opts.dateModified,
         inLanguage: "fr-FR",
+      },
+    ],
+  };
+}
+
+/** HowTo — prise de RDV hub (sans FAQPage supplémentaire). */
+export function buildRendezVousHowToJsonLd() {
+  const pageUrl = `${SITE_URL}/rendez-vous`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Réserver ta démo 20 min avec Nolan",
+    description:
+      "Tu remplis le formulaire sur la page rendez-vous : Nolan te rappelle sous 24 h pour une démo gratuite de 20 minutes sur ton cas.",
+    totalTime: "PT5M",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Ouvre la page rendez-vous",
+        text: `Va sur ${pageUrl} depuis ton téléphone ou ton ordinateur.`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Renseigne ton nom et ton téléphone",
+        text: "Indique comment Nolan peut te joindre — pas d’engagement à ce stade.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Précise ton métier",
+        text: "Diagnostiqueur, artisan BTP ou TPE : Nolan cale la démo sur ton cas réel.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Envoie le formulaire",
+        text: "Tu reçois une confirmation à l’écran ; Nolan te rappelle sous 24 h pour fixer les 20 minutes.",
       },
     ],
   };

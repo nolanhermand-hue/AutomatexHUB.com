@@ -29,7 +29,7 @@ function FounderAvatarPlaceholder({
         fontSize: size * 0.32,
       }}
       role="img"
-      aria-label="Nolan Hermand, Automatex Hub, Flers Orne"
+      aria-label="Nolan Hermand, AutomateX-HUB, Flers Orne"
     >
       <span className="select-none" aria-hidden>
         NH
@@ -52,7 +52,7 @@ export function FounderAvatar({ size = 48, className = "", priority = false }: F
     // eslint-disable-next-line @next/next/no-img-element -- export statique : LCP + dimensions explicites
     <img
       src={FOUNDER_AVATAR_SRC}
-      alt="Nolan Hermand, Automatex Hub — Flers, Orne"
+      alt="Nolan Hermand, AutomateX-HUB — Flers, Orne"
       width={size}
       height={size}
       loading={priority ? "eager" : "lazy"}

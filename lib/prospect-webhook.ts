@@ -12,7 +12,7 @@ type SubmitProspectPayloadArgs = {
   variant?: string;
 };
 
-/** Minimal JSON body for n8n — no duplicates, no honeypot, no UTM. */
+/** Minimal JSON body for n8n — no duplicates, no honeypot. */
 export type ProspectWebhookPayload = {
   prenom: string;
   nom: string;
@@ -21,7 +21,24 @@ export type ProspectWebhookPayload = {
   precisions?: string;
   secteur?: string;
   zone_orne?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  gclid?: string;
+  fbclid?: string;
 };
+
+const UTM_PAYLOAD_KEYS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "gclid",
+  "fbclid",
+] as const;
 
 export type ProspectWebhookResult =
   | { ok: true; honeypot?: boolean }
@@ -60,6 +77,11 @@ export function buildProspectWebhookPayload({
   const zone_orne = getStringValue(formData, "zone_orne");
   if (secteur) payload.secteur = secteur;
   if (zone_orne) payload.zone_orne = zone_orne;
+
+  for (const key of UTM_PAYLOAD_KEYS) {
+    const value = getStringValue(formData, key);
+    if (value) payload[key] = value;
+  }
 
   return payload;
 }

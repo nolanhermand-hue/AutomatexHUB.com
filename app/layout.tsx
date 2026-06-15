@@ -4,7 +4,7 @@ import { NetlifyFormsDetection } from "@/components/seo/NetlifyFormsDetection";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { Plausible } from "@/components/seo/Plausible";
 import { BRAND, brandAbsolute } from "@/lib/brand";
-import { META, META_KEYWORDS, NAP, SITE_URL } from "@/lib/constants";
+import { BRAND_FULL, BRAND_SHORT, META, META_KEYWORDS, NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -35,13 +35,13 @@ const gscVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: "Automatex",
+  applicationName: BRAND_SHORT,
   ...(gscVerification
     ? { verification: { google: gscVerification } }
     : {}),
   title: {
     default: META.title,
-    template: "%s · Automatex Hub",
+    template: `%s · ${BRAND_FULL}`,
   },
   description: META.description,
   keywords: [...META_KEYWORDS],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: SITE_URL,
-    siteName: "Automatex",
+    siteName: BRAND_FULL,
     title: META.ogTitle,
     description: META.ogDescription,
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: "Automatex — artisans, diagnostiqueurs et TPE en Normandie",
+        alt: `${BRAND_FULL} — artisans, diagnostiqueurs et TPE en Normandie`,
         type: "image/png",
       },
     ],
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "Automatex",
+    title: BRAND_SHORT,
     statusBarStyle: "black-translucent",
   },
   other: {
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     "geo.position": "48.7483;-0.5711",
     ICBM: "48.7483, -0.5711",
     language: "fr-FR",
-    author: `${NAP.brand} — ${NAP.city}, ${NAP.region}`,
+    author: `${BRAND_FULL} — ${NAP.city}, ${NAP.region}`,
   },
 };
 

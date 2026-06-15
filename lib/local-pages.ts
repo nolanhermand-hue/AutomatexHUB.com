@@ -1,6 +1,6 @@
 /** Contenu long-tail SEO — pages diagnostiqueurs par zone (template futur). */
 
-import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { BRAND_SHORT, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export type LocalDiagnostiqueurPageData = {
   slug: string;
@@ -17,7 +17,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
   {
     slug: "flers",
     path: "/diagnostiqueurs-flers",
-    metaTitle: "Diagnostiqueur immobilier Flers · réponse agences 2 min · Automatex",
+    metaTitle: `Diagnostiqueur immobilier Flers · réponse agences 2 min · ${BRAND_SHORT}`,
     metaDescription:
       `Réponse aux demandes agences en 2 min pour diagnostiqueurs indépendants à Flers et dans le bocage ornais. Mise en place en 48 h ouvrées après validation du périmètre. ${SOVEREIGNTY_TRUST_LINE}.`,
     h1: "Automatisation pour diagnostiqueurs immobiliers à Flers et dans l'Orne",
@@ -32,7 +32,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
       {
-        h2: "Ce qu'Automatex installe",
+        h2: "Ce qu'AutomateX installe",
         paragraphs: [
           "Réponse en moins de 2 minutes sur les mails agences et prescripteurs, tri des urgences, classement des rapports et bons de commande dans Google Drive.",
           `La configuration se fait à distance ou en rendez-vous à Flers (61100). Délai cible : 48 h ouvrées après validation du périmètre (accès outils, règles, tests). ${SOVEREIGNTY_TRUST_LINE} ; aucun compte partagé entre clients.`,
@@ -41,7 +41,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
       {
         h2: "Outils déjà en place",
         paragraphs: [
-          "Gmail ou Outlook, Google Agenda, Liciel / Alain pour la saisie mission : Automatex se branche sur la boîte mail existante. Pas de changement visible pour l'agence.",
+          "Gmail ou Outlook, Google Agenda, Liciel / Alain pour la saisie mission : AutomateX se branche sur la boîte mail existante. Pas de changement visible pour l'agence.",
         ],
       },
     ],
@@ -50,9 +50,9 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
   {
     slug: "alencon",
     path: "/diagnostiqueurs-alencon",
-    metaTitle: "Diagnostiqueur Alençon · demandes agences · Automatex",
+    metaTitle: `Diagnostiqueur Alençon · demandes agences · ${BRAND_SHORT}`,
     metaDescription:
-      "Ne perdez plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Audit 20 min, sans engagement.",
+      "Ne perds plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Démo 20 min sur ton cas, sans engagement.",
     h1: "Automatisation pour diagnostiqueurs à Alençon et nord de l'Orne",
     intro:
       "Alençon concentre services, agences et prescripteurs pour tout le nord de l'Orne. Les diagnostiqueurs y gèrent un volume de messages supérieur à la moyenne rurale — souvent pendant des missions longues en pavillon ou en lotissement.",
@@ -72,7 +72,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
       {
         h2: "Prise de contact",
         paragraphs: [
-          "Réservez un audit de 20 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
+          "Réserve une démo de 20 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
         ],
       },
     ],
@@ -95,7 +95,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
       {
-        h2: "Méthode Automatex",
+        h2: "Méthode AutomateX",
         paragraphs: [
           "Orchestration privée configurée diagnostiqueur par diagnostiqueur — pas de catalogue générique. Vous validez le ton et les modèles de confirmation de RDV.",
         ],
@@ -106,17 +106,17 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
   {
     slug: "normandie",
     path: "/diagnostiqueurs-normandie",
-    metaTitle: "Diagnostiqueurs immobiliers Normandie · Automatex",
+    metaTitle: `Diagnostiqueurs immobiliers Normandie · ${BRAND_SHORT}`,
     metaDescription:
       "Service français pour diagnostiqueurs indépendants en Normandie : demandes agences, mails et documents. Flers (61), déploiement Orne et départements voisins.",
-    h1: "Automatex pour les diagnostiqueurs immobiliers en Normandie",
+    h1: "AutomateX pour les diagnostiqueurs immobiliers en Normandie",
     intro:
       "La Normandie mélange agglo tendue (Caen, Rouen) et axes plus ruraux (Flers–Alençon–Argentan). Les diagnostiqueurs indépendants partagent les mêmes contraintes : mobilité, réactivité sur les mails agences, conformité RGPD.",
     sections: [
       {
         h2: "Ancrage Flers",
         paragraphs: [
-          "Automatex est conçu et opéré depuis Flers (61100) par Nolan Hermand. La proximité terrain avec les diagnostiqueurs ornais informe les scénarios par défaut (confirmation RDV, relances agence, classement rapports).",
+          "AutomateX est conçu et opéré depuis Flers (61100) par Nolan Hermand. La proximité terrain avec les diagnostiqueurs ornais informe les scénarios par défaut (confirmation RDV, relances agence, classement rapports).",
         ],
       },
       {

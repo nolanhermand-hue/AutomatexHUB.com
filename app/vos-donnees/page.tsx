@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Vos données — Sécurité, RGPD, hébergement · Automatex Hub",
+    absolute: "Vos données — Sécurité, RGPD, hébergement · AutomateX-HUB",
   },
   description:
-    "Comment Automatex Hub traite vos données : N8N Cloud (Frankfurt, UE), Mistral AI (Paris), hébergement site Netlify. RGPD natif. Registre disponible sur demande.",
+    "Comment AutomateX-HUB traite vos données : N8N Cloud (Frankfurt, UE), Mistral AI (Paris), hébergement site Netlify. RGPD natif. Registre disponible sur demande.",
   alternates: { canonical: `${SITE_URL}/vos-donnees` },
   openGraph: {
-    title: "Vos données en sécurité — Automatex Hub",
+    title: "Vos données en sécurité — AutomateX-HUB",
     description:
       "Hébergement européen pour les automatisations. Mistral français. RGPD. Aucune revente. Vous restez propriétaire.",
     url: `${SITE_URL}/vos-donnees`,
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 const vosDonneesSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Vos données — Automatex Hub",
+  name: "Vos données — AutomateX-HUB",
   description:
-    "Politique de sécurité et de traitement des données personnelles d'Automatex Hub",
+    "Politique de sécurité et de traitement des données personnelles d'AutomateX-HUB",
   url: `${SITE_URL}/vos-donnees`,
   publisher: {
     "@type": "Organization",

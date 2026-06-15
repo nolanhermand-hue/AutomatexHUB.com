@@ -28,7 +28,7 @@ function AppelManqueGsap({ active }: DemoAnimationProps) {
         <p className="demo-pulse-red text-center text-sm">Appel manqué — vous êtes sur le chantier</p>
       </div>
       <div className="demo-beat flex flex-col items-center gap-2 text-center">
-        <p className="text-sm text-primary">SMS en 90 s</p>
+        <p className="text-sm text-primary">SMS en moins de 2 min</p>
         <p className="max-w-xs text-xs text-[var(--color-text)]/90">
           Bonjour M. Dupont, j&apos;ai bien reçu votre appel. Je vous rappelle avant 18 h.
         </p>

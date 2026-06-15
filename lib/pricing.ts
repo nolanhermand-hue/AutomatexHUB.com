@@ -1,6 +1,6 @@
 /** Tarification catalogue — affichage client (mensuel uniquement). */
 
-/** Copy client : mise en place (1er mois inclus) + mensuel. */
+/** Copy client : mise en place + mensuel (format prospect officiel). */
 export function formatMiseEnPlacePuisMensuel(setup: number, monthly: number): string {
-  return `Mise en place ${setup.toLocaleString("fr-FR")}€ (1er mois inclus), puis ${monthly.toLocaleString("fr-FR")}€/mois.`;
+  return `${setup.toLocaleString("fr-FR")} € à la mise en place, puis ${monthly.toLocaleString("fr-FR")} €/mois.`;
 }

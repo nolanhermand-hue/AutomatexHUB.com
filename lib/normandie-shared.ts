@@ -1,4 +1,4 @@
-import { PRICING_REASSURANCE_CARD, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { BRAND_SHORT, PRICING_REASSURANCE_CARD, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 import { RESPONSE_DELAYS } from "@/lib/trust-copy";
 
 export const NORMANDIE_PILIER_PATH = "/normandie" as const;
@@ -8,12 +8,12 @@ export type NormandieFaqItem = { readonly q: string; readonly a: string };
 /** FAQ communes affichées sous les FAQ locales (HTML + JSON-LD). */
 export const NORMANDIE_GENERIC_FAQ: ReadonlyArray<NormandieFaqItem> = [
   {
-    q: "Faut-il changer vos outils pour travailler avec Automatex ?",
-    a: "Non. Automatex part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à maîtriser : les automatisations tournent en arrière-plan pendant que vous êtes sur chantier ou en visite.",
+    q: `Faut-il changer tes outils pour travailler avec ${BRAND_SHORT} ?`,
+    a: `Non. ${BRAND_SHORT} part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à maîtriser : les automatisations tournent en arrière-plan pendant que tu es sur chantier ou en visite.`,
   },
   {
-    q: "L’installation se fait comment si vous n’êtes pas dans l’Orne ?",
-    a: "À distance partout en Normandie (et au-delà si besoin). Nolan est basé à Flers : rendez-vous terrain possibles dans l’Orne. Après l’audit de 20 minutes, la mise en place suit le périmètre validé ensemble.",
+    q: "L’installation se fait comment si tu n’es pas dans l’Orne ?",
+    a: "À distance partout en Normandie (et au-delà si besoin). Nolan est basé à Flers : rendez-vous terrain possibles dans l’Orne. Après la démo de 20 minutes sur ton cas, la mise en place suit le périmètre validé ensemble.",
   },
   {
     q: "Vos données et la conformité RGPD ?",

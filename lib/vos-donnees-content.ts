@@ -44,7 +44,7 @@ export const VOS_DONNEES_INFRA_STACK: InfraStackItem[] = [
     flag: "🌍",
     dataType: "Documents professionnels du client (devis, factures, contrats)",
     rgpd: true,
-    note: "Google Drive appartient au client — Automatex y accède uniquement pour classer les documents du client. Aucune copie sur les serveurs Automatex. Le client contrôle son Drive.",
+    note: "Google Drive appartient au client — AutomateX y accède uniquement pour classer les documents du client. Aucune copie sur les serveurs AutomateX. Le client contrôle son Drive.",
   },
   {
     id: "04",
@@ -73,7 +73,7 @@ export const VOS_DONNEES_RIGHTS = [
   {
     right: "Droit d'accès",
     article: "Art. 15 RGPD",
-    what: "Obtenir la liste de toutes vos données traitées par Automatex Hub.",
+    what: "Obtenir la liste de toutes vos données traitées par AutomateX Hub.",
     how: "Un email à nolan.hermand@automatex-hub.com · Réponse sous 30 jours.",
   },
   {
@@ -102,7 +102,7 @@ export const VOS_DONNEES_RIGHTS = [
   },
   {
     right: "Droit de résiliation",
-    article: "Contrat Automatex",
+    article: "Contrat AutomateX",
     what: "Mettre fin au service et récupérer toutes vos données.",
     how: "Un seul email suffit. Aucun délai de préavis. Aucun frais.",
   },
@@ -149,7 +149,7 @@ export const VOS_DONNEES_COLLECTION_ROWS = [
 export const VOS_DONNEES_FAQ = [
   {
     q: "Mes emails passent-ils par des serveurs américains ?",
-    a: "Non via Automatex. Le traitement est fait par Mistral AI (Paris/Allemagne). L'orchestration est faite par N8N Cloud (Francfort, Allemagne). Vos emails ne transitent pas par les États-Unis via nos prestations. Ils restent dans votre boîte Gmail — Google est américain, c'est un choix que vous avez fait avant Automatex.",
+    a: "Non via AutomateX. Le traitement est fait par Mistral AI (Paris/Allemagne). L'orchestration est faite par N8N Cloud (Francfort, Allemagne). Vos emails ne transitent pas par les États-Unis via nos prestations. Ils restent dans votre boîte Gmail — Google est américain, c'est un choix que vous avez fait avant AutomateX.",
   },
   {
     q: "Nolan peut-il lire vos emails ?",
@@ -157,11 +157,11 @@ export const VOS_DONNEES_FAQ = [
   },
   {
     q: "Que se passe-t-il à la résiliation ?",
-    a: "Vos enchaînements N8N sont désactivés et supprimés sous 48 h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. Automatex ne conserve rien.",
+    a: "Vos enchaînements N8N sont désactivés et supprimés sous 48 h. Les logs sont effacés. Vous récupérez tous vos fichiers Drive et Google Calendar intacts — ils ne vous ont jamais appartenu qu'à vous. AutomateX ne conserve rien.",
   },
   {
     q: "Mes données de clients (leurs noms, leurs emails) sont-elles partagées ?",
-    a: "Non. Les données de vos clients sont traitées dans votre espace N8N dédié, isolé des autres clients Automatex. Nolan ne les voit pas sauf en cas de débogage explicitement demandé. Elles ne sont jamais partagées avec d'autres clients.",
+    a: "Non. Les données de vos clients sont traitées dans votre espace N8N dédié, isolé des autres clients AutomateX. Nolan ne les voit pas sauf en cas de débogage explicitement demandé. Elles ne sont jamais partagées avec d'autres clients.",
   },
   {
     q: "Mistral apprend-il à partir de vos données ?",

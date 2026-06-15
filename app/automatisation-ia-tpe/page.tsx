@@ -125,7 +125,7 @@ export default function AutomatisationIaTpePage() {
         <div className="mx-auto max-w-content">
           <p className="label-micro text-muted">MODULE 03 — L&apos;ACCOMPAGNEMENT</p>
           <h2 className="mt-3 font-heading text-3xl text-text">
-            Un an avec Automatex — mois par mois
+            Un an avec AutomateX — mois par mois
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {TPE_YEAR_TIMELINE.map((block) => (

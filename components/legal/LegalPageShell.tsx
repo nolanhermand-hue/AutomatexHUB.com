@@ -14,7 +14,7 @@ export function LegalPageShell({ title, children }: LegalPageShellProps) {
   return (
     <article className="min-h-screen bg-night px-gutter pb-16 pt-[88px] md:pt-[100px]">
       <div className="mx-auto max-w-content">
-        <p className="font-mono text-[11px] uppercase tracking-widest text-faint">Automatex · Juridique</p>
+        <p className="font-mono text-[11px] uppercase tracking-widest text-faint">AutomateX · Juridique</p>
         <h1 className="mt-3 font-heading text-[clamp(1.75rem,4vw,2.5rem)] text-text">{title}</h1>
         <p className="mt-3 font-mono text-xs text-muted">
           Dernière mise à jour : {LEGAL.lastUpdated}

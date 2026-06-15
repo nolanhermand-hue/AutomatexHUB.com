@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Automatex | Saint-Georges-des-Groseillers (61100), Orne",
+  title: "Mentions légales — AutomateX | Saint-Georges-des-Groseillers (61100), Orne",
   description:
     "Mentions légales LCEN : éditeur Nolan Hermand (EI), hébergeurs Netlify et OVHcloud, propriété intellectuelle, RGPD, Plausible Analytics.",
   alternates: { canonical: `${SITE_URL}/mentions-legales` },

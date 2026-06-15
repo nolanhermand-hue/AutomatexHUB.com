@@ -1,3 +1,4 @@
+import { BRAND_SHORT } from "@/lib/constants";
 import { COMPARATIF_LAST_UPDATED } from "@/lib/comparatif-shared";
 
 export const COMPARATIF_TELESECRETARIAT = {
@@ -8,7 +9,7 @@ export const COMPARATIF_TELESECRETARIAT = {
     "Secrétaire externalisée ou système sur vos outils ? Coûts, délais, RGPD et cas BTP — comparatif pour artisans en Normandie.",
   h1: "Télésecrétariat pour artisan ou réponse automatique sur vos outils : que choisir en 2026 ?",
   intro:
-    "Un télésecrétariat prend vos appels à votre place ; Automatex installe des réponses SMS et mail sur votre numéro et votre messagerie existants. Les deux visent à ne plus perdre de demandes quand vous êtes sur chantier — avec des coûts et des niveaux de contrôle différents.",
+    `Un télésecrétariat prend tes appels à ta place ; ${BRAND_SHORT} installe des réponses SMS et mail sur ton numéro et ta messagerie existants. Les deux visent à ne plus perdre de demandes quand tu es sur chantier — avec des coûts et des niveaux de contrôle différents.`,
   sections: [
     {
       h2: "Combien coûte un télésecrétariat pour artisan ?",
@@ -27,11 +28,11 @@ export const COMPARATIF_TELESECRETARIAT = {
     {
       h2: "Tableau comparatif",
       answerFirst:
-        "Le télésecrétariat externalise la voix ; Automatex automatise SMS, mails et relances sur vos outils, avec des packs à partir de 390 € de mise en place puis 99 €/mois.",
+        `Le télésecrétariat externalise la voix ; ${BRAND_SHORT} automatise SMS, mails et relances sur tes outils, avec des packs à partir de 390 € à la mise en place puis 99 €/mois.`,
       table: {
-        headers: ["Critère", "Télésecrétariat classique", "Automatex (packs BTP)"],
+        headers: ["Critère", "Télésecrétariat classique", `${BRAND_SHORT} (packs BTP)`],
         rows: [
-          ["Réponse appel manqué", "Humain au standard", "SMS ~90 s + notification"],
+          ["Réponse appel manqué", "Humain au standard", "SMS < 2 min + notification"],
           ["Devis / relances", "Rarement inclus", "Inclus dès pack Système"],
           ["Connaissance métier", "Variable selon équipe", "Config sur votre vocabulaire"],
           ["Engagement", "Souvent 12 mois", "Sans engagement · 1 mail pour résilier"],
@@ -42,9 +43,9 @@ export const COMPARATIF_TELESECRETARIAT = {
     {
       h2: "RGPD et données : où est la différence ?",
       answerFirst:
-        "Automatex documente hébergement UE (automatisations Francfort, Mistral Paris) sur /vos-donnees ; un secrétariat doit aussi vous indiquer où sont enregistrés les messages clients.",
+        `${BRAND_SHORT} documente hébergement UE (automatisations Francfort, Mistral Paris) sur /vos-donnees ; un secrétariat doit aussi t'indiquer où sont enregistrés les messages clients.`,
       body:
-        "Avant de confier vos contacts chantier, demandez le sous-traitant, la durée de conservation et le DPA. Automatex ne revend pas les données et efface les flux de démo sous 30 jours maximum.",
+        `Avant de confier tes contacts chantier, demande le sous-traitant, la durée de conservation et le DPA. ${BRAND_SHORT} ne revend pas les données et efface les flux de démo sous 30 jours maximum.`,
     },
   ],
   cta: {

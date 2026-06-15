@@ -432,6 +432,15 @@ export function MegaNav() {
           </Link>
         </div>
 
+        <a
+          href={`tel:${NAP.phoneE164}`}
+          className="inline-flex min-h-[48px] shrink-0 items-center rounded-md px-2 text-sm font-semibold text-primary lg:hidden"
+          aria-label={`Appeler ${NAP.founder} — ${NAP.phoneDisplay}`}
+          onClick={() => trackCtaClicked("nav_mobile_tel")}
+        >
+          {NAP.phoneDisplay}
+        </a>
+
         <button
           ref={burgerRef}
           type="button"
@@ -511,8 +520,16 @@ export function MegaNav() {
               >
                 Nolan vous rappelle sous 24 h
               </Link>
+              <a
+                href={`tel:${NAP.phoneE164}`}
+                className="nav-mobile-item inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-border bg-section text-base font-semibold text-text"
+                onClick={() => trackCtaClicked("nav_drawer_tel")}
+                aria-label={`Appeler ${NAP.founder} — ${NAP.phoneDisplay}`}
+              >
+                {NAP.phoneDisplay}
+              </a>
               <p className="nav-mobile-item text-center text-sm text-muted">
-                {NAP.founder} · {NAP.city} · {NAP.phoneDisplay}
+                {NAP.founder} · {NAP.city}
               </p>
             </div>
         </div>

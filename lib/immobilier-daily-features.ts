@@ -5,7 +5,7 @@ export const IMMOBILIER_DAILY_FEATURES = [
   {
     icon: "⚡",
     title: "Réponse en moins de 2 minutes",
-    desc: "Une demande arrive sur SeLoger ou LBC pendant votre visite. La réponse part avant que vous sortiez de la maison.",
+    desc: "Une demande arrive par mail agence ou portail pendant ta visite. La réponse part avant que tu sortes de la maison.",
   },
   {
     icon: "📲",

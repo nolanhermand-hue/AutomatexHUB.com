@@ -158,7 +158,7 @@ export function Calculator() {
           className="font-semibold text-text underline-offset-4 hover:underline"
           data-cursor="link"
         >
-          Nolan les récupère avec vous →
+          Nolan les récupère avec toi →
         </button>
       </p>
     </section>

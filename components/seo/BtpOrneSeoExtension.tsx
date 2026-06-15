@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { PRIMARY_DEMO_CTA, BRAND_FULL, OFFER_PRICING_THREE_PACKS, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 const METIERS = [
   "Maçon Orne",
@@ -12,8 +12,8 @@ const METIERS = [
 
 const TOP_THREE = [
   {
-    title: "1. Réponse automatique aux appels manqués (< 90 secondes)",
-    body: "Vous êtes sur un chantier à Flers ou Argentan. Un client potentiel appelle. En moins de 90 secondes, il reçoit un SMS : vous avez bien reçu son appel, vous le rappelez avant 18 h. Le client attend au lieu d'appeler un concurrent.",
+    title: "1. Réponse automatique aux appels manqués (moins de 2 minutes)",
+    body: "Tu es sur un chantier à Flers ou Argentan. Un client potentiel appelle. En moins de 2 minutes, il reçoit un SMS : tu as bien reçu son appel, tu le rappelles avant 18 h. Le client attend au lieu d'appeler un concurrent.",
   },
   {
     title: "2. Devis automatique depuis note vocale",
@@ -28,7 +28,7 @@ const TOP_THREE = [
 export const BTP_ORNE_SEO_FAQ = [
   {
     q: "Quel est le coût d'une automatisation pour un artisan BTP dans l'Orne ?",
-    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1690 € puis 449 €/mois. Un chantier récupéré grâce à une réponse rapide peut amortir plusieurs mois de pack (hypothèse).",
+    a: `${OFFER_PRICING_THREE_PACKS} Un chantier récupéré grâce à une réponse rapide peut amortir plusieurs mois de pack (hypothèse).`,
   },
   {
     q: "Faut-il être informaticien pour utiliser l'automatisation BTP ?",
@@ -39,7 +39,7 @@ export const BTP_ORNE_SEO_FAQ = [
     a: `Oui. ${SOVEREIGNTY_TRUST_LINE}. Transparence complète sur /vos-donnees.`,
   },
   {
-    q: "Automatex Hub intervient-il dans toute l'Orne ?",
+    q: `${BRAND_FULL} intervient-il dans toute l'Orne ?`,
     a: "Oui. Nolan est basé à Flers (61100) et accompagne les artisans BTP dans tout le département de l'Orne : Flers, Argentan, Alençon, Mortagne-au-Perche, L'Aigle, Vire.",
   },
 ] as const;
@@ -120,15 +120,15 @@ export function BtpOrneSeoExtension() {
       </section>
 
       <section className="mt-14 rounded-2xl border border-primary/30 bg-section/80 p-8 text-center">
-        <h2 className="font-heading text-xl text-text">Vous êtes artisan BTP dans l&apos;Orne ?</h2>
+        <h2 className="font-heading text-xl text-text">Tu es artisan BTP dans l&apos;Orne ?</h2>
         <p className="mt-3 text-sm text-muted">
-          Nolan vous appelle sous 24 h. 20 minutes. Il vous montre sur votre propre activité.
+          Nolan te rappelle sous 24 h. 20 minutes. Il te montre sur ton activité.
         </p>
         <Link
           href="/rendez-vous"
           className="mt-6 btn-bracket btn-bracket-primary w-full justify-center"
         >
-          Réserver une démo gratuite →
+          {PRIMARY_DEMO_CTA} →
         </Link>
       </section>
     </>

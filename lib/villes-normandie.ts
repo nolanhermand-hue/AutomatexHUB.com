@@ -50,12 +50,12 @@ export const NORMANDIE_PILIER: NormandiePilierPage = {
     "Réponse aux appels, devis et relances pour couvreurs, diagnostiqueurs et TPE en Normandie. Basé à Flers (Orne). Démo 20 min gratuite · sans engagement.",
   h1: "Automatisation pour artisans et diagnostiqueurs en Normandie",
   intro: [
-    "Couvreurs, charpentiers, diagnostiqueurs immobiliers et TPE : la même galère — être sur le terrain quand le téléphone sonne, et rattraper la paperasse le soir. Automatex branche des réponses et des relances sur vos outils actuels, sans promesse de chiffre magique.",
+    "Couvreurs, charpentiers, diagnostiqueurs immobiliers et TPE : la même galère — être sur le terrain quand le téléphone sonne, et rattraper la paperasse le soir. AutomateX branche des réponses et des relances sur vos outils actuels, sans promesse de chiffre magique.",
     "Nolan Hermand installe depuis Flers (Orne), avec 2 ans sur les chantiers en menuiserie et couverture. Installations à distance dans toute la Normandie ; pages ci-dessous par ville pour le contexte local.",
   ],
   pilierFaq: [
     {
-      q: "Automatex couvre-t-il toute la Normandie ?",
+      q: "AutomateX couvre-t-il toute la Normandie ?",
       a: "Oui : Calvados, Eure, Manche, Orne et Seine-Maritime. L’ancrage opérationnel est à Flers (61) ; les mises en place se font à distance avec le même interlocuteur.",
     },
     {
@@ -64,7 +64,7 @@ export const NORMANDIE_PILIER: NormandiePilierPage = {
     },
     {
       q: "Comment réserver une démo pour votre ville ?",
-      a: "Choisissez votre ville ci-dessous ou allez sur /rendez-vous : nom, téléphone et métier suffisent. Nolan rappelle sous 24 h en semaine pour un audit de 20 minutes.",
+      a: "Choisis ta ville ci-dessous ou va sur /rendez-vous : nom, téléphone et métier suffisent. Nolan rappelle sous 24 h en semaine pour une démo de 20 minutes sur ton cas.",
     },
   ],
 };
@@ -80,14 +80,14 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~106 000",
     distanceFromFlers: "environ 80 km au nord-ouest de Flers (~1 h)",
     dominantAngle: "diagnostiqueur",
-    metaTitle: "Automatisation artisans & diag à Caen (14) | Automatex",
+    metaTitle: "Automatisation artisans & diag à Caen (14) | AutomateX",
     metaDescription:
       "Couvreurs, charpentiers et diagnostiqueurs à Caen : réponses et relances pendant vos chantiers. Démo 20 min · Nolan, Flers (Orne). Sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Caen",
     heroEyebrow: "Calvados (14) · agglo caennaise",
     heroAccroche: "Entre deux chantiers ou deux diagnostics, personne ne décroche à votre place.",
     heroSub:
-      "Caen concentre rénovation de pavillons, copropriétés en centre et lotissements en couronne (Hérouville, Mondeville). Les demandes de devis et de créneau diag s’empilent dès que vous êtes en visite. Automatex répond et classe pendant que vous restez sur le terrain.",
+      "Caen concentre rénovation de pavillons, copropriétés en centre et lotissements en couronne (Hérouville, Mondeville). Les demandes de devis et de créneau diag s’empilent dès que vous êtes en visite. AutomateX répond et classe pendant que vous restez sur le terrain.",
     problemH2: "Pourquoi les demandes s’encombrent autour de Caen ?",
     problemIntro:
       "L’agglo tire à la fois sur le BTP (extensions, couverture après intempéries) et sur l’immobilier (DPE, diagnostics avant vente). Un seul professionnel sur le toit ou chez le vendeur ne peut pas tenir Gmail et le téléphone en même temps.",
@@ -99,7 +99,7 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Les diagnostiqueurs à Caen ont-ils besoin d’un logiciel métier en plus ?",
-        a: "Pas obligatoire. Automatex se branche sur ce que vous utilisez déjà (mail, calendrier, Drive). L’objectif est de libérer du temps sur les confirmations et relances, pas d’ajouter un écran de plus.",
+        a: "Pas obligatoire. AutomateX se branche sur ce que vous utilisez déjà (mail, calendrier, Drive). L’objectif est de libérer du temps sur les confirmations et relances, pas d’ajouter un écran de plus.",
       },
       {
         q: "Couvreurs et charpentiers de l’agglo : par quoi commencer ?",
@@ -107,7 +107,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Peut-on installer depuis Flers si votre entreprise est basée à Caen ?",
-        a: "Oui, c’est le fonctionnement habituel : audit à distance, tests sur vos numéros et boîtes mail. Nolan peut se déplacer dans l’Orne si besoin ; pour le Calvados, tout se fait en visio.",
+        a: "Oui, c’est le fonctionnement habituel : démo à distance, tests sur tes numéros et boîtes mail. Nolan peut se déplacer dans l’Orne si besoin ; pour le Calvados, tout se fait en visio.",
       },
     ],
     neighborSlugs: ["lisieux", "rouen", "le-havre"],
@@ -122,7 +122,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~110 000",
     distanceFromFlers: "environ 130 km au nord de Flers (~1 h 30)",
     dominantAngle: "immo-urbain",
-    metaTitle: "Automatisation TPE & diag à Rouen (76) | Automatex",
+    metaTitle: "Automatisation TPE & diag à Rouen (76) | AutomateX",
     metaDescription:
       "Diagnostiqueurs, artisans et TPE à Rouen Métropole : messages traités pendant vos visites. Démo gratuite 20 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Rouen",
@@ -164,7 +164,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~166 000",
     distanceFromFlers: "environ 150 km au nord-ouest de Flers",
     dominantAngle: "couvreur",
-    metaTitle: "Automatisation couvreurs & artisans au Havre | Automatex",
+    metaTitle: "Automatisation couvreurs & artisans au Havre | AutomateX",
     metaDescription:
       "Couvreurs et artisans au Havre : réponse aux appels pendant le chantier. Démo 20 min · installé depuis Flers (Orne). Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans au Havre",
@@ -187,7 +187,7 @@ const villes: NormandieVillePage[] = [
       },
       {
         q: "Ça marche pour la façade et l’étanchéité aussi ?",
-        a: "Oui tant que le flux passe par téléphone, mail ou formulaire — Automatex automatise la réponse et le suivi, pas la pose.",
+        a: "Oui tant que le flux passe par téléphone, mail ou formulaire — AutomateX automatise la réponse et le suivi, pas la pose.",
       },
       {
         q: "Données hébergées où ?",
@@ -225,7 +225,7 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Vous couvrez tout le Cotentin depuis Cherbourg : c’est pertinent ?",
-        a: "Oui si vous recevez appels et mails sur le même téléphone pro. Automatex automatise la première réponse et le suivi, pas le déplacement.",
+        a: "Oui si vous recevez appels et mails sur le même téléphone pro. AutomateX automatise la première réponse et le suivi, pas le déplacement.",
       },
       {
         q: "Diagnostiqueurs immobiliers sur le 50 ?",
@@ -248,7 +248,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~19 000",
     distanceFromFlers: "environ 70 km à l’ouest de Flers (~1 h)",
     dominantAngle: "btp-mixte",
-    metaTitle: "Automatisation artisans à Saint-Lô (50) | Automatex",
+    metaTitle: "Automatisation artisans à Saint-Lô (50) | AutomateX",
     metaDescription:
       "Artisans et TPE à Saint-Lô et agglo : moins de paperasse le soir. Démo 20 min gratuite · depuis Flers (Orne).",
     h1: "Automatisations pour artisans et TPE à Saint-Lô",
@@ -332,7 +332,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~47 000",
     distanceFromFlers: "environ 100 km à l’est de Flers",
     dominantAngle: "diagnostiqueur",
-    metaTitle: "Automatisation TPE & diag à Évreux (27) | Automatex",
+    metaTitle: "Automatisation TPE & diag à Évreux (27) | AutomateX",
     metaDescription:
       "Diagnostiqueurs et artisans à Évreux et l’Eure : réponses et relances automatisées. Démo 20 min · sans engagement.",
     h1: "Automatisations pour diagnostiqueurs et artisans à Évreux",
@@ -351,7 +351,7 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Diagnostiqueur 27 : compatible avec les logiciels métiers ?",
-        a: "Automatex ne remplace pas votre outil diag : Nolan traite mail, SMS et calendrier autour. Moins de double saisie manuelle sur les confirmations.",
+        a: "AutomateX ne remplace pas votre outil diag : Nolan traite mail, SMS et calendrier autour. Moins de double saisie manuelle sur les confirmations.",
       },
       {
         q: "Artisan couvreur entre Évreux et Giverny ?",
@@ -374,7 +374,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~26 000",
     distanceFromFlers: "environ 50 km au nord-est de Flers (~45 min)",
     dominantAngle: "btp-mixte",
-    metaTitle: "Automatisation artisans à Alençon (61) | Automatex",
+    metaTitle: "Automatisation artisans à Alençon (61) | AutomateX",
     metaDescription:
       "Couvreurs, diagnostiqueurs et TPE à Alençon : installé depuis Flers (Orne). Démo 20 min gratuite · sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Alençon",
@@ -393,11 +393,11 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Pourquoi choisir un installateur basé à Flers pour Alençon ?",
-        a: "Même département, mêmes réalités terrain. Nolan a travaillé sur les chantiers ornais avant de monter Automatex.",
+        a: "Même département, mêmes réalités terrain. Nolan a travaillé sur les chantiers ornais avant de monter AutomateX.",
       },
       {
         q: "Rendez-vous possible à Alençon ?",
-        a: "Oui si vous préférez le face-à-face pour l’audit ; sinon à distance.",
+        a: "Oui si tu préfères le face-à-face pour la démo ; sinon à distance.",
       },
       {
         q: "Diagnostiqueurs immobiliers à Alençon ?",
@@ -414,16 +414,16 @@ const villes: NormandieVillePage[] = [
     department: "Orne",
     departmentCode: "61",
     populationApprox: "~14 000",
-    distanceFromFlers: "base Automatex — Saint-Georges-des-Groseillers / agglo Flers",
+    distanceFromFlers: "base AutomateX — Saint-Georges-des-Groseillers / agglo Flers",
     dominantAngle: "btp-mixte",
-    metaTitle: "Automatisation artisans à Flers (61) | Automatex",
+    metaTitle: "Automatisation artisans à Flers (61) | AutomateX",
     metaDescription:
       "Couvreurs, charpentiers et diagnostiqueurs à Flers : Nolan installe depuis chez lui. Démo 20 min · sans engagement.",
     h1: "Automatisations pour artisans et diagnostiqueurs à Flers",
     heroEyebrow: "Orne (61) · base Nolan · bocage ornais",
     heroAccroche: "Ici, tout le monde connaît quelqu’un sur les chantiers — et personne ne répond au premier coup.",
     heroSub:
-      "Flers et l’agglo (La Ferté-Macé, Domfront-en-Poiraie) vivent au rythme des PME du bâtiment et des diagnostics sur pavillons. Automatex est installé dans le même bassin : pas de hotline anonyme, un interlocuteur qui connaît la cadence locale.",
+      "Flers et l’agglo (La Ferté-Macé, Domfront-en-Poiraie) vivent au rythme des PME du bâtiment et des diagnostics sur pavillons. AutomateX est installé dans le même bassin : pas de hotline anonyme, un interlocuteur qui connaît la cadence locale.",
     problemH2: "Flers : carnet d’adresses et bouche-à-oreille",
     problemIntro:
       "Les clients appellent souvent le patron directement. Si vous êtes sur la toiture ou chez le vendeur, le répondeur classique ne suffit pas — il faut un message utile tout de suite.",
@@ -435,7 +435,7 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Pouvez-vous voir Nolan en personne à Flers ?",
-        a: "Oui pour l’audit ou la démo si vous préférez. Sinon à distance comme partout en Normandie.",
+        a: "Oui pour la démo si tu préfères. Sinon à distance comme partout en Normandie.",
       },
       {
         q: "Couvreur / menuisier du bocage : par où commencer ?",
@@ -458,7 +458,7 @@ const villes: NormandieVillePage[] = [
     populationApprox: "~14 000",
     distanceFromFlers: "environ 35 km au nord de Flers (~35 min)",
     dominantAngle: "couvreur",
-    metaTitle: "Automatisation artisans à Argentan (61) | Automatex",
+    metaTitle: "Automatisation artisans à Argentan (61) | AutomateX",
     metaDescription:
       "Couvreurs et artisans sud Orne à Argentan : réponses sur chantier. Démo 20 min · Nolan à Flers. Sans engagement.",
     h1: "Automatisations pour couvreurs et artisans à Argentan",
@@ -477,7 +477,7 @@ const villes: NormandieVillePage[] = [
     localFaq: [
       {
         q: "Artisan à Argentan, installateur à Flers : logistique ?",
-        a: "Installation à distance ; déplacement possible dans l’Orne pour l’audit si vous le souhaitez.",
+        a: "Installation à distance ; déplacement possible dans l’Orne pour la démo si tu le souhaites.",
       },
       {
         q: "Diagnostiqueur sur le secteur sud Orne ?",

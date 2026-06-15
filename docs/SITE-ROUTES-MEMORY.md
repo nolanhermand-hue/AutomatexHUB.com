@@ -1,4 +1,4 @@
-# Automatex Hub — mémo routes (agents)
+# AutomateX-HUB — mémo routes (agents)
 
 > **Màj** : 2026-06-12 · **Canon** : `https://automatex-hub.com` (apex, sans `www` → 301 Netlify) · **Build** : Next 15 `output:"export"` · **`trailingSlash:false`** (URLs sans `/` final)
 
@@ -7,7 +7,7 @@
 ## JSON-LD (static export)
 
 - **Global graph** : `StructuredDataServer` + `JsonLdLayout` dans un **`layout.tsx` par route** (pas de `usePathname` client).
-- **Modes FAQ** (`lib/json-ld.ts` → `JsonLdFaqMode`) : `home` (`/`), `tpe` (`/automatisation-ia-tpe`), `btp` (`/btp` + pages locales BTP/devis), `diagnostiqueurs` (immobilier, légal, hub).
+- **Modes FAQ** (`lib/json-ld.ts` → `JsonLdFaqMode`) : `home` (`/`), `tpe` (`/automatisation-ia-tpe`), `btp` (`/btp` + pages locales BTP/devis), `diagnostiqueurs` (immobilier + pages légales liées diag).
 - **Scripts additionnels** (sans 2e FAQPage) : `BtpStructuredData`, `buildTpeAutomatisationJsonLd` (layout TPE), `LocalStructuredData`, `buildAboutPageJsonLd`.
 - **Vérif post-build** : `npm run check:faqpage` (alias `node scripts/check-faqpage-html.mjs out`) — chaîné dans `npm run build`
 
@@ -25,7 +25,7 @@
 | `/api/*` (App Router) | **Aucune** page API Next ; forms → Netlify |
 | `/merci` indexable | **Non** : `robots.txt` `Disallow: /merci`, absent du sitemap |
 
-**Home `/`** : landing artisans & TPE (`HomePage`), pas le hub choix parcours. CTA hero → **`rendezVousHref()`** ; formulaire `#contact` sur la page (Netlify + webhook).
+**Home `/`** : landing artisans & TPE (`HomePage`), pas de hub choix parcours. CTA hero → **`rendezVousHref()`** ; **pas** de formulaire `#contact` sur la home (contact canonique = **`/rendez-vous`**).
 
 ---
 
@@ -139,14 +139,12 @@ node scripts/audit-routes.mjs   # prod option AUDIT_BASE_URL=
 ```mermaid
 flowchart TB
   subgraph edge["Edge · automatex-hub.com"]
-    WWW["www.*"] -->|301| ROOT["/"]
+    WWW["www.*"] -->|301| ROOT["/ · HomePage"]
   end
 
-  ROOT --> HUB["/ · HubEntry"]
-
-  HUB --> IMMO["/immobilier"]
-  HUB --> BTP["/btp"]
-  HUB --> TPE["/automatisation-ia-tpe"]
+  ROOT --> IMMO["/immobilier"]
+  ROOT --> BTP["/btp"]
+  ROOT --> TPE["/automatisation-ia-tpe"]
 
   subgraph immo["Immo · Pascal"]
     IMMO --> IM_H["#hero #solution #demo #pricing #faq #contact"]
@@ -180,7 +178,7 @@ flowchart TB
     TPE --> T_H["#automatisations #tarifs #faq #contact"]
   end
 
-  HUB --> CAT & ACC & APRO & VD
+  ROOT --> CAT & ACC & APRO & VD
   IMMO & BTP & TPE --> CAT
   IMMO & BTP --> ACC
 
@@ -227,4 +225,4 @@ flowchart TB
 
 ## Arborescence mentale (1 ligne)
 
-`/` hub → **immo** `/immobilier` + locals `/mandataires-*` | **btp** `/btp` + locals `/automatisation-*` `/devis-*` | **tpe** `/automatisation-ia-tpe` | **catalogue** `/automatisations#*` | **trust** `/vos-donnees` `/accompagnement` | **legal** 4 pages | **merci** off-SEO
+`/` **HomePage** → **immo** `/immobilier` (+ redirects `/mandataires-*`) | **btp** `/btp` + locals `/automatisation-*` `/devis-*` | **tpe** `/automatisation-ia-tpe` | **catalogue** `/automatisations#*` | **trust** `/vos-donnees` `/accompagnement` | **contact** `/rendez-vous` | **legal** 4 pages | **merci** off-SEO

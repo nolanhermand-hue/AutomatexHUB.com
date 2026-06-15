@@ -340,7 +340,7 @@ function ContactForm({
               name="telephone"
               type="tel"
               required
-              inputMode="numeric"
+              inputMode="tel"
               autoComplete="tel"
               placeholder="06 12 34 56 78"
               aria-required="true"

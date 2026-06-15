@@ -12,9 +12,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Automatex | RGPD · UE",
+  title: "Politique de confidentialité — AutomateX | RGPD · UE",
   description:
-    "Politique RGPD Automatex : données collectées, sous-traitants, durées, droits, sécurité, Plausible sans cookie, contact CNIL.",
+    "Politique RGPD AutomateX : données collectées, sous-traitants, durées, droits, sécurité, Plausible sans cookie, contact CNIL.",
   alternates: { canonical: `${SITE_URL}/politique-confidentialite` },
 };
 
@@ -78,7 +78,7 @@ export default function PolitiqueConfidentialitePage() {
           <strong className="text-text">2.2 Utilisation du service (clients)</strong>
         </LegalP>
         <LegalP>
-          Dans le cadre de la prestation, Automatex accède aux outils que vous autorisez : emails
+          Dans le cadre de la prestation, AutomateX accède aux outils que vous autorisez : emails
           entrants (lecture), calendrier Google (lecture), Google Drive (lecture et création de
           dossiers), notifications Telegram (envoi). Ces données servent uniquement à exécuter la
           prestation. Elles ne sont ni vendues ni cédées. {LEGAL_BUSINESS_DATA_ROUTING}{" "}
@@ -198,7 +198,7 @@ export default function PolitiqueConfidentialitePage() {
         <LegalP>
           Voir aussi :{" "}
           <Link href="/securite" className="text-primary underline">
-            comment Automatex protège vos données
+            comment AutomateX protège vos données
           </Link>
           .
         </LegalP>

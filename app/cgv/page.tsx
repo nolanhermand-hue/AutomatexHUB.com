@@ -12,9 +12,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Conditions générales de vente — Automatex",
+  title: "Conditions générales de vente — AutomateX",
   description:
-    "CGV Automatex : packs Déclic, Système, Pilote, paiement, résiliation en ligne, sous-traitance RGPD, droit français.",
+    "CGV AutomateX : packs Déclic, Système, Pilote, paiement, résiliation en ligne, sous-traitance RGPD, droit français.",
   alternates: { canonical: `${SITE_URL}/cgv` },
 };
 
@@ -32,7 +32,7 @@ export default function CgvPage() {
         <LegalP>
           Les présentes CGV régissent les relations entre {c.founder} ({c.brand}, {LEGAL.status},
           {c.address}) et tout client professionnel (diagnostiqueur immobilier, artisan BTP, TPE ou PME)
-          souscrivant une offre Automatex. Elles prévalent sur toute autre condition, sauf accord
+          souscrivant une offre AutomateX. Elles prévalent sur toute autre condition, sauf accord
           écrit contraire.
         </LegalP>
       </LegalSection>
@@ -158,8 +158,8 @@ export default function CgvPage() {
 
       <LegalSection title="Article 11 — Données (sous-traitance RGPD)">
         <LegalP>
-          Automatex accède aux outils du Client pour exécuter le contrat. Le Client reste
-          responsable de traitement vis-à-vis de ses propres clients. Automatex s&apos;engage à
+          AutomateX accède aux outils du Client pour exécuter le contrat. Le Client reste
+          responsable de traitement vis-à-vis de ses propres clients. AutomateX s&apos;engage à
           traiter uniquement sur instruction, sans revente. {LEGAL_BUSINESS_DATA_ROUTING} Restitution /
           effacement sous 7 jours après fin de contrat, notification de violation sous 72 h. Voir{" "}
           <Link href="/politique-confidentialite" className="text-primary underline">

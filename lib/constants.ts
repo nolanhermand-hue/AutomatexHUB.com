@@ -15,7 +15,7 @@ export const CALCULATOR_SALES_MAX = 30;
 
 /**
  * Hypothèse diagnostiqueur : mission moyenne ~220 € (DPE / pack diag courant)
- * (ordre de grandeur terrain, pas un gain garanti par Automatex).
+ * (ordre de grandeur terrain, pas un gain garanti par AutomateX).
  */
 export const VALUE_PER_LEAD_EUROS = 220;
 
@@ -23,11 +23,11 @@ export const VALUE_PER_LEAD_EUROS = 220;
 export const SETUP_48H_NUANCE =
   "48 h ouvrées après validation de votre périmètre (accès outils, règles, tests)" as const;
 
-/** Libellé CTA unique — audit / prise de rendez-vous 20 min */
-export const BOOKING_CTA_LABEL = "Réserver votre appel avec Nolan" as const;
+/** Libellé CTA — prise de rendez-vous (hors libellé démo principal). */
+export const BOOKING_CTA_LABEL = "Réserver ton appel avec Nolan" as const;
 
-/** CTA démo 20 min — accueil & landings artisans/TPE */
-export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur votre cas" as const;
+/** CTA démo 20 min — unique sur le site (hors cartes tarifs). */
+export const PRIMARY_DEMO_CTA = "Démo gratuite 20 min sur ton cas" as const;
 export const PRIMARY_DEMO_CTA_SHORT = "Démo 20 min" as const;
 
 /** Offre sur mesure — entretien de cadrage (distinct de la démo 20 min). */
@@ -57,9 +57,22 @@ export const FORBIDDEN_WORDS = [
   "machine learning",
 ] as const;
 
+export const BRAND_SHORT = "AutomateX" as const;
+export const BRAND_FULL = "AutomateX-HUB" as const;
+
+/** Copy tarifs packs — format officiel prospect. */
+export const OFFER_PRICING_COPY = {
+  declic: "390 € à la mise en place, puis 99 €/mois",
+  systeme: "990 € à la mise en place, puis 249 €/mois",
+  pilote: "1690 € à la mise en place, puis 449 €/mois",
+} as const;
+
+export const OFFER_PRICING_THREE_PACKS =
+  `Déclic : ${OFFER_PRICING_COPY.declic}. Système (recommandé) : ${OFFER_PRICING_COPY.systeme}. Pilote : ${OFFER_PRICING_COPY.pilote}.` as const;
+
 export const NAP = {
-  brand: "Automatex",
-  legalName: "Automatex",
+  brand: BRAND_SHORT,
+  legalName: BRAND_FULL,
   founder: "Nolan Hermand",
   role: "Dirigeant",
   /** Adresse établissement principal (formalité URSSAF / INSEE) */
@@ -91,22 +104,22 @@ export const LINKEDIN_PROFILE_ARIA =
   "Profil LinkedIn de Nolan Hermand — s'ouvre dans un nouvel onglet" as const;
 
 export const TIKTOK_PROFILE_ARIA =
-  "Compte TikTok Automatex — s'ouvre dans un nouvel onglet" as const;
+  "Compte TikTok AutomateX — s'ouvre dans un nouvel onglet" as const;
 
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
 export const META = {
   title:
-    "Automatex — Artisans, diagnostiqueurs & TPE · Orne · Normandie",
+    "AutomateX — Artisans, diagnostiqueurs & TPE · Orne · Normandie",
   description:
-    "Réponse aux appels et messages, devis et relances pendant que vous êtes sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 20 min · Sans engagement.",
-  ogTitle: "Automatex — Artisans & TPE en Normandie | Démo 20 min",
+    "Réponse aux appels et messages, devis et relances pendant que tu es sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 20 min · Sans engagement.",
+  ogTitle: "AutomateX — Artisans & TPE en Normandie | Démo 20 min",
   ogDescription:
-    "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). IA française · Automatisations UE · RGPD · Sans engagement.",
+    "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). Mistral UE · Automatisations UE · RGPD · Sans engagement.",
 } as const;
 
 /** Paragraphe définitionnel crawlable (GEO / moteurs génératifs) — sans mots interdits. */
 export const GEO_DEFINITION =
-  "Automatex installe réponse aux demandes agences, devis et relances pour artisans BTP, TPE et diagnostiqueurs immobiliers indépendants en Normandie, depuis Flers (Orne). Branchement sur Gmail, Drive, annuaires agences et téléphone — sans changer vos outils. Données et automatisations en UE, conformes RGPD (détail sur /vos-donnees)." as const;
+  "AutomateX installe réponse aux demandes agences, devis et relances pour artisans BTP, TPE et diagnostiqueurs immobiliers indépendants en Normandie, depuis Flers (Orne). Branchement sur Gmail, Drive, annuaires agences et téléphone — sans changer tes outils. Données et automatisations en UE, conformes RGPD (détail sur /vos-donnees)." as const;
 
 export const META_KEYWORDS = [
   "diagnostiqueur immobilier Normandie",
@@ -126,8 +139,8 @@ export const META_KEYWORDS = [
 
 /** Tableau comparatif (accessibilité + citations LLM). */
 export const COMPARISON_TABLE = {
-  caption: "Comparatif diagnostiqueur avec et sans Automatex",
-  headers: ["Situation", "Sans Automatex", "Avec Automatex"] as const,
+  caption: "Comparatif diagnostiqueur avec et sans AutomateX",
+  headers: ["Situation", "Sans AutomateX", "Avec AutomateX"] as const,
   rows: [
     [
       "Mail agence pour créneau DPE pendant une mission amiante",
@@ -177,7 +190,7 @@ export const TRUST_BAR_ITEMS = [
 ] as const;
 
 export const AUTOMATIONS_SECTION = {
-  h2: "Vos journées, avec Automatex.",
+  h2: "Tes journées, avec AutomateX.",
   subtitle:
     "Chaque diagnostiqueur est différent. Chaque configuration est construite sur votre façon de travailler. Ce qui est déjà en place.",
   introLine:
@@ -249,9 +262,9 @@ export const CALCULATOR_COPY = {
   outLeadsLabel: "créneaux perdus par semaine (estimation)",
   outEurosLabel: "CA en jeu par an (hypothèse)",
   outHoursLabel: "Heures perdues par an sur l'administratif",
-  ctaPrefix: "Récupérer ces créneaux",
-  ctaSuffix: "Réserver 20 min",
-  scrollHint: "Automatex les récupère. Voici comment",
+  ctaPrefix: PRIMARY_DEMO_CTA_SHORT,
+  ctaSuffix: PRICING_CARD_CTA,
+  scrollHint: "AutomateX te montre comment — ci-dessous",
 } as const;
 
 /** B2 — Headline Problème : douleur palpable */
@@ -294,7 +307,7 @@ export const AGITATION_COPY = {
   eyebrow: "L'addition annuelle",
   h2: "25 créneaux agences ratés en 12 mois = 5 500 € de manque à gagner.",
   body:
-    "Sur la base d'une hypothèse de ~220 € par mission diagnostic, rater 25 créneaux dans l'année représente un manque à gagner visible. Ce chiffre illustre l'enjeu, pas un gain garanti par Automatex.",
+    "Sur la base d'une hypothèse de ~220 € par mission diagnostic, rater 25 créneaux dans l'année représente un manque à gagner visible. Ce chiffre illustre l'enjeu, pas un gain garanti par AutomateX.",
   microNote:
     "Source : barème mission DPE / pack diag courant 180–250 € (hypothèse terrain, 2025).",
 } as const;
@@ -321,7 +334,7 @@ export const SOLUTION_STEPS: ReadonlyArray<{
     kicker: "02",
     title: "Vous approuvez",
     body:
-      "Avant chaque réponse automatique, vous validez le ton et les exemples sur vos vrais clients. Vous gardez la main : Automatex propose, vous décidez. C'est votre voix, votre réseau, vos décisions.",
+      "Avant chaque réponse automatique, vous validez le ton et les exemples sur vos vrais clients. Vous gardez la main : AutomateX propose, vous décidez. C'est votre voix, votre réseau, vos décisions.",
   },
   {
     kicker: "03",
@@ -347,7 +360,7 @@ export const ACCOMPANIMENT_COPY = {
   eyebrow: "Accompagnement humain",
   h2: "Vous n’achetez pas une licence. Vous gardez un interlocuteur.",
   intro:
-    "La peur la plus fréquente : payer, être livré, puis ne plus avoir personne au bout du fil. Chez Automatex, Nolan configure à la main, vous accompagne serré les 30 premiers jours, puis reste joignable toute la première année — avec un bilan chaque trimestre, sur toutes les formules.",
+    "La peur la plus fréquente : payer, être livré, puis ne plus avoir personne au bout du fil. Chez AutomateX, Nolan configure à la main, vous accompagne serré les 30 premiers jours, puis reste joignable toute la première année — avec un bilan chaque trimestre, sur toutes les formules.",
   timeline: [
     {
       step: "J0",
@@ -430,7 +443,7 @@ export const BENEFITS_ITEMS: ReadonlyArray<{
     stat: "Moins de stress",
     title: "Tranquillité d'esprit",
     body:
-      "Moins de pression le vendredi soir sur les relances oubliées. Automatex tient la veille pendant vos week-ends et vos visites.",
+      "Moins de pression le vendredi soir sur les relances oubliées. AutomateX tient la veille pendant vos week-ends et vos visites.",
   },
   {
     icon: "flag",
@@ -457,7 +470,7 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
     scenario:
       "Une agence de Flers demande un DPE lundi matin pour une vente urgente. Vous êtes en famille, téléphone en silencieux.",
     result:
-      "Automatex envoie un message personnalisé en 30 secondes, propose un créneau lundi 8h30, et vous notifie sur Telegram. Lundi : le RDV est confirmé, vous gardez la mission.",
+      "AutomateX envoie un message personnalisé en moins de 2 minutes, propose un créneau lundi 8h30, et te notifie sur Telegram. Lundi : le RDV est confirmé, tu gardes la mission.",
   },
   {
     time: "Lundi 7h45",
@@ -478,7 +491,7 @@ export const USE_CASES_ITEMS: ReadonlyArray<{
 /** D1 — 3 packs unifiés (Déclic / Système / Pilote) */
 export const PRICING_HEADING = {
   eyebrow: "Tarifs transparents",
-  h2: "Tarifs Automatex — 3 packs + sur mesure pour diagnostiqueurs en Normandie",
+  h2: "Tarifs AutomateX — 3 packs + sur mesure pour diagnostiqueurs en Normandie",
   h2SurMesureHint:
     "Mise en place + mensualité transparente. Suivi humain 12 mois sur chaque pack.",
   chooseCta: PRIMARY_DEMO_CTA,
@@ -732,7 +745,7 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Mes données sont-elles bien protégées en Europe ?",
     answer:
-      `Oui. ${SOVEREIGNTY_TRUST_LINE} — automatisations et traitement linguistique en Union européenne. Vos emails restent dans votre Gmail ; Automatex ne revend rien. Chaque client a un espace cloisonné. Politique RGPD et registre des traitements disponibles sur /vos-donnees.`,
+      `Oui. ${SOVEREIGNTY_TRUST_LINE} — automatisations et traitement linguistique en Union européenne. Vos emails restent dans votre Gmail ; AutomateX ne revend rien. Chaque client a un espace cloisonné. Politique RGPD et registre des traitements disponibles sur /vos-donnees.`,
   },
   {
     question: "Combien de temps pour la mise en place ?",
@@ -747,17 +760,17 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Votre logiciel métier (Liciel, Alain…) est fermé. Ça marche quand même ?",
     answer:
-      "Oui. Votre logiciel de saisie diagnostic reste inchangé : Automatex ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes agences passent par le mail comme aujourd'hui — mais la réponse part pendant la mission. Vous recopiez ensuite la mission dans votre outil en un copier-coller.",
+      "Oui. Votre logiciel de saisie diagnostic reste inchangé : AutomateX ne s'y connecte pas. La configuration lit et répond sur votre boîte mail, prévient votre téléphone et classe vos pièces dans votre espace Google. Les demandes agences passent par le mail comme aujourd'hui — mais la réponse part pendant la mission. Vous recopiez ensuite la mission dans votre outil en un copier-coller.",
   },
   {
     question: "Vous avez déjà essayé des outils qui n'ont pas marché — pourquoi serait-ce différent ?",
     answer:
-      "Parce qu'Automatex n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous restez sans engagement, résiliable en un mail.",
+      "Parce qu'AutomateX n'est pas un logiciel à apprendre ni une formation en ligne. C'est une configuration construite manuellement sur vos annonces, votre vocabulaire, votre réseau. Vous restez sans engagement, résiliable en un mail.",
   },
   {
     question: "Vous avez vos habitudes — vous travaillez ainsi depuis 20 ans.",
     answer:
-      "Automatex ne change pas vos habitudes. Il travaille dans votre boîte mail, votre Telegram, votre Google Calendar — des outils que vous utilisez déjà. Votre seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
+      "AutomateX ne change pas vos habitudes. Il travaille dans votre boîte mail, votre Telegram, votre Google Calendar — des outils que vous utilisez déjà. Votre seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
   },
   {
     question: "Nolan a 19 ans — est-ce suffisamment sérieux ?",
@@ -767,14 +780,14 @@ export const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "En combien de temps une agence sans réponse passe-t-elle au confrère ?",
     answer:
-      "Souvent quelques minutes. Une agence pressée pour une vente contacte fréquemment deux ou trois diagnostiqueurs de l’annuaire. Une confirmation de créneau tôt fait la différence. Automatex vise une réponse en moins de 2 minutes sur les demandes entrantes.",
+      "Souvent quelques minutes. Une agence pressée pour une vente contacte fréquemment deux ou trois diagnostiqueurs de l’annuaire. Une confirmation de créneau tôt fait la différence. AutomateX vise une réponse en moins de 2 minutes sur les demandes entrantes.",
   },
 ];
 
 export const DATA_TRUST_COPY = {
   h2: "Vos données restent les vôtres. Toujours.",
   intro:
-    "Automatex accède à votre Gmail et votre Drive pour exécuter la prestation. Voici ce qui ne se passe jamais — et ce qui se passe toujours.",
+    "AutomateX accède à votre Gmail et votre Drive pour exécuter la prestation. Voici ce qui ne se passe jamais — et ce qui se passe toujours.",
   never: [
     "Vos données ne sont jamais vendues",
     "Vos données ne sont jamais partagées avec des tiers commerciaux",
@@ -795,7 +808,7 @@ export const RESILIATION_COPY = {
   body:
     "Sans engagement : pas de formulaire de rétention, pas de période minimale. Un mail suffit — effet en fin de mois en cours. Données effacées sous 7 jours (voir /cgv).",
   emailLine: "nolan.hermand@automatex-hub.com",
-  mailHint: "Objet : Résiliation Automatex — indiquez votre prénom et « je souhaite résilier ».",
+  mailHint: "Objet : Résiliation AutomateX — indiquez votre prénom et « je souhaite résilier ».",
   cta: "Résilier en ligne →",
   legalNote: "Conformément à la loi n°2022-1158 — voir",
 } as const;
@@ -817,35 +830,35 @@ export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 export const CONTACT_COPY = {
   h2: "20 minutes. Aucun engagement. Aucun préparatif.",
   subtitle:
-    "Nolan vous montre en direct ce que la configuration fait sur une activité comme la vôtre. Si ça ne vous convient pas, vous partez sans rien. Nolan en direct, pas un ticket anonyme.",
-  formTitle: "Vos coordonnées",
+    "Nolan te montre en direct ce que la configuration fait sur une activité comme la tienne. Si ça ne te convient pas, tu pars sans rien. Nolan en direct, pas un ticket anonyme.",
+  formTitle: "Tes coordonnées",
   firstNameLabel: "Prénom",
   lastNameLabel: "Nom",
   emailLabel: "Email",
   phoneLabel: "Téléphone",
   networkLabel: "Profil professionnel",
-  networkPlaceholder: "Choisissez votre profil",
-  submitLabel: "Réserver votre appel avec Nolan",
-  emailHint: "Votre email ne sera jamais partagé ni revendu.",
+  networkPlaceholder: "Choisis ton profil",
+  submitLabel: BOOKING_CTA_LABEL,
+  emailHint: "Ton email ne sera jamais partagé ni revendu.",
   phoneHint: "10 chiffres — affichage 06 45 38 42 33.",
   formFooter: "Nolan, Flers (61).",
   formReassurance: "Sans engagement",
-  resiliationSubmitLabel: "Envoyer votre demande de résiliation",
+  resiliationSubmitLabel: "Envoyer ta demande de résiliation",
   hubFounderLine: "Nolan Hermand · basé à Flers (Orne)",
-  hubFounderSub: "Démo 20 min sur votre cas — Nolan vous rappelle sous 24 h.",
+  hubFounderSub: "Démo 20 min sur ton cas — Nolan te rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
-  secteurPlaceholder: "Choisissez votre secteur",
+  secteurPlaceholder: "Choisis ton secteur",
   hubMetierLabel: "Activité",
   hubMetierPlaceholder: "Artisan, diagnostiqueur, TPE…",
-  hubStep1Hint: "Nom et téléphone suffisent — Nolan vous rappelle.",
+  hubStep1Hint: "Nom et téléphone suffisent — Nolan te rappelle.",
   hubExpandLabel: "Préciser mon appel (activité, besoin)",
   hubBesoinLabel: "Besoin (optionnel)",
   hubBesoinPlaceholder: "Ex. créneau préféré, type de chantier…",
   hubFullNameLabel: "Nom",
   hubEmailLabel: "Email (optionnel)",
-  hubEmailHint: "Pour la confirmation de créneau — sinon Nolan vous rappelle au numéro indiqué.",
+  hubEmailHint: "Pour la confirmation de créneau — sinon Nolan te rappelle au numéro indiqué.",
   zoneOrneLabel: "Zone (Orne, optionnel)",
-  zoneOrnePlaceholder: "Où êtes-vous basé ?",
+  zoneOrnePlaceholder: "Où es-tu basé ?",
 } as const;
 
 /** Badges compacts — page /rendez-vous (variant hub). */
@@ -859,7 +872,7 @@ export const HUB_CONTACT_REASSURANCE = [
 export const PROSPECT_SECTEUR_OPTIONS = [
   { value: "artisan", label: "Artisan / BTP (couvreur, charpentier…)" },
   { value: "diagnostiqueur", label: "Diagnostiqueur immobilier" },
-  { value: "immobilier", label: "Immobilier (agence, autre…)" },
+  { value: "immobilier", label: "Autre activité immobilière" },
   { value: "tpe", label: "TPE / PME (autre secteur)" },
 ] as const;
 
@@ -888,7 +901,7 @@ export const FOOTER_COPY = {
   cgv: "CGV",
   security: "Sécurité des données",
   localHeading: "Diagnostiqueurs & Normandie",
-  tagline: `© 2026 Automatex · ${SOVEREIGNTY_TRUST_LINE}`,
+  tagline: `© 2026 AutomateX · ${SOVEREIGNTY_TRUST_LINE}`,
 } as const;
 
 /** Maillage interne SEO — pages locales indexables (GSC). */
@@ -907,7 +920,7 @@ export const STICKY_CTA_COPY = {
 /** Remplace les faux témoignages — phase bêta */
 export const BETA_PHASE_COPY = {
   title: "Phase bêta — places limitées",
-  body: "Automatex onboard au maximum quatre diagnostiqueurs par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
+  body: "AutomateX onboard au maximum quatre diagnostiqueurs par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
   badge: "Places limitées — statut sur demande en démo",
 } as const;
 

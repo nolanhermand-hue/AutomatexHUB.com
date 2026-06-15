@@ -12,7 +12,7 @@ export function HubBeforeAfterDemo() {
   return (
     <section
       className="border-t border-border px-gutter py-16 md:py-20"
-      aria-label="Comparaison journée sans et avec Automatex"
+      aria-label="Comparaison journée sans et avec AutomateX"
     >
       <div className="mx-auto max-w-content">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-widest text-muted">

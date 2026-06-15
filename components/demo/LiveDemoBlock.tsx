@@ -41,7 +41,8 @@ export function LiveDemoBlock({
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
+    const narrow = window.matchMedia("(max-width: 767px)").matches;
+    if (reduced || narrow) {
       setVisibleSteps(demo.steps.length);
       return;
     }

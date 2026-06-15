@@ -11,7 +11,7 @@ export function NormandieVilleFinalCta({ ville }: { ville: NormandieVillePage })
             Démo gratuite 20 min — {ville.name}
           </h2>
           <p className="mx-auto mt-3 max-w-readable text-sm text-muted md:text-base">
-            Nolan cale le scénario sur votre métier {ville.nameWithArticle}. Il confirme sous 24 h en
+            Nolan cale le scénario sur ton métier {ville.nameWithArticle}. Il confirme sous 24 h en
             semaine.
           </p>
           <div className="mt-8 flex justify-center">

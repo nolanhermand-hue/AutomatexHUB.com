@@ -1,5 +1,6 @@
 "use client";
 
+import { BRAND_SHORT } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
 type Mode = "avant" | "apres";
@@ -12,7 +13,7 @@ const AVANT_LINES = [
 ] as const;
 
 const APRES_LINES = [
-  { time: "07h", text: "Réponse automatique — 90 s" },
+  { time: "07h", text: "Réponse automatique — < 2 min" },
   { time: "12h", text: "Devis PDF envoyé" },
   { time: "18h", text: "Relance automatique" },
   { time: "21h", text: "Résumé Telegram reçu" },
@@ -38,7 +39,7 @@ export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
       >
         <div className="flex items-center justify-between border-b border-border px-5 py-3">
           <span className="font-mono text-[11px] uppercase tracking-widest text-danger/90">
-            Sans Automatex
+            Sans {BRAND_SHORT}
           </span>
           <span className="h-2 w-2 rounded-full bg-danger/60" aria-hidden="true" />
         </div>
@@ -68,7 +69,7 @@ export function Demo4AvantApres({ mode, className }: Demo4AvantApresProps) {
       >
         <div className="flex items-center justify-between border-b border-primary/20 px-5 py-3">
           <span className="font-mono text-[11px] uppercase tracking-widest text-primary">
-            Avec Automatex
+            Avec {BRAND_SHORT}
           </span>
           <span className="h-2 w-2 animate-pulse rounded-full bg-success" aria-hidden="true" />
         </div>

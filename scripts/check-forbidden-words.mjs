@@ -67,7 +67,6 @@ for (const file of files) {
   if (rel === path.join("lib", "automatisation-ia-tpe-content.ts")) continue;
   if (rel.startsWith(`app${path.sep}automatisation-ia-tpe`)) continue;
   if (rel.startsWith(`components${path.sep}tpe`)) continue;
-  if (rel === path.join("lib", "hub-copy.ts")) continue;
   if (rel === path.join("lib", "home-copy.ts")) continue;
   if (rel.startsWith(`components${path.sep}home`)) continue;
   if (rel.startsWith(`app${path.sep}mentions-legales`)) continue;

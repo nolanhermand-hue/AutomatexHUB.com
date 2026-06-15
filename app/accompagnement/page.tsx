@@ -1,7 +1,7 @@
 import { AccompagnementPointMensuelDemo } from "@/components/demo/AccompagnementPointMensuelDemo";
 import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
-import { ACCOMPANIMENT_COPY, PRICING_HEADING } from "@/lib/constants";
+import { ACCOMPANIMENT_COPY, BRAND_FULL, PRICING_HEADING } from "@/lib/constants";
 import { rendezVousHref } from "@/lib/hub-nav";
 import { ACCOMPANIMENT_CONTINUITY } from "@/lib/trust-copy";
 import type { Metadata } from "next";
@@ -13,13 +13,13 @@ const ACCOMP_PILL_ACTIVE =
   "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-primary bg-[#0D1526] px-3 py-1.5 text-primary";
 
 export const metadata: Metadata = {
-  title: "Accompagnement humain inclus · Flers · Automatex Hub",
+  title: `Accompagnement humain inclus · Flers · ${BRAND_FULL}`,
   description:
     "Point mensuel, ajustements continus, ligne directe Nolan à Flers. Inclus dans chaque formule — ou sur mesure (plus léger ou plus complet, prix sur devis). Diagnostiqueurs et artisans Orne.",
   openGraph: {
-    title: "Vous n'êtes jamais seul avec votre système — Automatex Hub",
+    title: `Tu n'es jamais seul avec ton système — ${BRAND_FULL}`,
     description:
-      "Nolan vous appelle chaque mois. Il ajuste. Il répond. Basé à Flers, Orne. L'accompagnement est inclus — pas en option.",
+      "Nolan t'appelle chaque mois. Il ajuste. Il répond. Basé à Flers, Orne. L'accompagnement est inclus — pas en option.",
     url: "https://automatex-hub.com/accompagnement",
   },
   alternates: { canonical: "https://automatex-hub.com/accompagnement" },

@@ -1,26 +1,26 @@
-import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { NAP, PRIMARY_DEMO_CTA, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export const HOME_META = {
-  title: "Automatisation artisans & TPE en Normandie | Automatex",
+  title: "Automatisation artisans & TPE en Normandie | AutomateX",
   description:
-    `Demandes, devis et relances avancent pendant que vous êtes en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
+    `Demandes, devis et relances avancent pendant que tu es en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 20 min gratuite.`,
 } as const;
 
 export const HOME_HERO = {
   seoLine: "Automatisation pour artisans et TPE en Normandie",
-  h1: "Vos clients n'attendent plus. Votre système leur répond.",
+  h1: "Tes clients n'attendent plus. Ton système leur répond.",
   sub:
-    "Réponses, devis et relances : tout est branché sur vos outils actuels. Nolan installe à distance — vous restez concentré sur vos clients.",
+    "Réponses, devis et relances : tout est branché sur tes outils actuels. Nolan installe à distance — tu restes concentré sur tes clients.",
   reassurance: `Démo 20 min gratuite · ${SETUP_48H_NUANCE}`,
   integrationsLine:
-    "Branchement sur ce que vous utilisez déjà. Rien de nouveau à apprendre.",
+    "Branchement sur ce que tu utilises déjà. Rien de nouveau à apprendre.",
 } as const;
 
 export const HOME_PROBLEM = {
   eyebrow: "Le coût du silence",
-  h2: "Combien vous perdez quand vous ne pouvez pas décrocher ?",
+  h2: "Combien tu perds quand tu ne peux pas décrocher ?",
   intro:
-    "En rendez-vous, sur chantier ou derrière votre bureau : les messages s’empilent. Sans réponse rapide, le client suivant passe ailleurs.",
+    "En rendez-vous, sur chantier ou derrière ton bureau : les messages s'empilent. Sans réponse rapide, le client suivant passe ailleurs.",
   stats: [
     {
       value: "78 %",
@@ -47,7 +47,7 @@ export const HOME_SOLUTION = {
     {
       id: "leads",
       title: "Demandes & appels",
-      body: "SMS ou mail en moins de 2 minutes quand vous êtes indisponible. Le client sait que vous avez vu son message.",
+      body: "SMS ou mail en moins de 2 minutes quand tu es indisponible. Le client sait que tu as vu son message.",
     },
     {
       id: "devis",
@@ -57,21 +57,14 @@ export const HOME_SOLUTION = {
     {
       id: "relances",
       title: "Relances",
-      body: "J+4, J+8 : rappels polis sans que vous ayez à vous en souvenir. Devis et dossiers suivis.",
+      body: "J+4, J+8 : rappels polis sans que tu aies à t'en souvenir. Devis et dossiers suivis.",
     },
     {
       id: "drive",
       title: "Drive & mails",
-      body: "Pièces rangées, mails triés, résumé du soir sur votre téléphone. Vous ouvrez votre boîte, vous savez quoi faire.",
+      body: "Pièces rangées, mails triés, résumé du soir sur ton téléphone. Tu ouvres ta boîte, tu sais quoi faire.",
     },
   ],
-} as const;
-
-export const HOME_CATALOG = {
-  eyebrow: "Catalogue",
-  h2: "15 automatisations prêtes pour votre métier",
-  sub: "Chaque bloc est configurable sur votre réalité. Le catalogue complet compte 18 scénarios.",
-  cta: "Voir les 18 automatisations",
 } as const;
 
 export const HOME_HOW = {
@@ -79,8 +72,8 @@ export const HOME_HOW = {
   h2: "Comment ça se passe concrètement ?",
   steps: [
     {
-      title: "Audit 20 min",
-      body: "Vous montrez votre journée type : appels, devis, mails. Nolan choisit avec vous 2 à 4 priorités.",
+      title: "Démo 20 min",
+      body: "Tu montres ta journée type : appels, devis, mails. Nolan choisit avec toi 2 à 4 priorités.",
       time: "20 min",
     },
     {
@@ -90,7 +83,7 @@ export const HOME_HOW = {
     },
     {
       title: "Moins de paperasse",
-      body: "Les réponses partent pendant que vous êtes indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : Nolan cale le rythme sur votre cas en démo.",
+      body: "Les réponses partent pendant que tu es indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : Nolan cale le rythme sur ton cas en démo.",
       time: "Au fil des semaines",
     },
   ],
@@ -108,7 +101,7 @@ export const HOME_FOUNDER = {
   h2: "Deux ans sur chantier, aujourd’hui au service des TPE",
   storyLead:
     "2 ans sur les chantiers, en menuiserie puis couverture. Nolan a vu les patrons interrompus sans arrêt — devis le soir, appels manqués, paperasse. Il s’est formé à l’automatisation pour régler exactement ça.",
-  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en se formant à l’automatisation. Aujourd’hui, Nolan installe des systèmes qui répondent à votre place quand vous ne pouvez pas décrocher.`,
+  bio: `${NAP.founder} — 19 ans, basé à Flers (Orne). 2 ans sur les chantiers (menuiserie puis couverture), tout en se formant à l'automatisation. Aujourd'hui, Nolan installe des systèmes qui répondent à ta place quand tu ne peux pas décrocher.`,
   painSteps: [
     {
       title: "Pendant la journée",
@@ -124,41 +117,41 @@ export const HOME_FOUNDER = {
     },
   ] as const,
   quote:
-    "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que vous utilisez déjà — pour que le soir vous boucliez vos devis sans les bricoler à minuit.",
+    "Je ne vends pas un logiciel. Je branche ce qui manque sur ce que tu utilises déjà — pour que le soir tu boucles tes devis sans les bricoler à minuit.",
 } as const;
 
 export const HOME_FAQ_HEADING = {
-  h2: "Questions avant de réserver votre démo de 20 minutes",
+  h2: "Questions avant de réserver ta démo de 20 minutes",
 } as const;
 
 export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   {
-    q: "Faut-il changer vos outils ?",
-    a: "Non. Automatex part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à apprendre : les automatisations tournent en arrière-plan.",
+    q: "Faut-il changer tes outils ?",
+    a: "Non. AutomateX part de Gmail, Google Drive, calendrier et téléphone. Pas de nouvelle appli à apprendre : les automatisations tournent en arrière-plan.",
   },
   {
     q: "Combien de temps pour être en ligne ?",
-    a: "Après l’audit de 20 minutes, mise en ligne sous 48 h ouvrées. Vous validez chaque message type avant envoi réel.",
+    a: "Après la démo de 20 minutes, mise en ligne sous 48 h ouvrées. Tu valides chaque message type avant envoi réel.",
   },
   {
-    q: "C’est quoi le prix au final ?",
-    a: "Déclic : 390 € de mise en place puis 99 €/mois. Système (recommandé) : 990 € puis 249 €/mois. Pilote : 1690 € puis 449 €/mois. Sans engagement, résiliable en un mail.",
+    q: "C'est quoi le prix au final ?",
+    a: "Déclic : 390 € à la mise en place, puis 99 €/mois. Système (recommandé) : 990 € à la mise en place, puis 249 €/mois. Pilote : 1690 € à la mise en place, puis 449 €/mois. Sans engagement, résiliable en un mail.",
   },
   {
     q: "Mes données restent où ?",
-    a: `${SOVEREIGNTY_TRUST_LINE}. Hébergement automatisations en UE, traitement linguistique en France. Vos mails restent dans votre boîte. Détail sur /vos-donnees.`,
+    a: `${SOVEREIGNTY_TRUST_LINE}. Hébergement automatisations en UE, traitement linguistique en France. Tes mails restent dans ta boîte. Détail sur /vos-donnees.`,
   },
   {
-    q: "Et si ça ne vous convient pas ?",
-    a: "Résiliation en un mail, effet en fin de mois. Vos données restent les vôtres ; effacement sous 7 jours après votre départ (détail sur /cgv et /vos-donnees). Les ajustements dans le périmètre validé à l’audit sont inclus dans la mensualité.",
+    q: "Et si ça ne te convient pas ?",
+    a: "Résiliation en un mail, effet en fin de mois. Tes données restent les tiennes ; effacement sous 7 jours après ton départ (détail sur /cgv et /vos-donnees). Les ajustements dans le périmètre validé en démo sont inclus dans la mensualité.",
   },
   {
     q: "Intervenez-vous seulement en Normandie ?",
-    a: `Installations à distance partout en France. ${NAP.founder} est basé à ${NAP.localityLabel} : rendez-vous terrain possibles dans l’Orne.`,
+    a: `Installations à distance partout en France. ${NAP.founder} est basé à ${NAP.localityLabel} : rendez-vous terrain possibles dans l'Orne.`,
   },
 ];
 
 export const HOME_FINAL_CTA = {
-  h2: "Démo gratuite 20 min sur votre cas",
-  sub: "Choisissez votre créneau sur la page rendez-vous — Nolan confirme sous 24 h. Sans engagement.",
+  h2: PRIMARY_DEMO_CTA,
+  sub: "Choisis ton créneau sur la page rendez-vous — Nolan te confirme sous 24 h. Sans engagement.",
 } as const;

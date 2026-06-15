@@ -16,9 +16,9 @@ function LogoTile({ logo }: { logo: HomeHeroIntegrationLogo }) {
         alt={logo.name}
         width={32}
         height={32}
-        loading="eager"
+        loading="lazy"
         decoding="async"
-        fetchPriority="high"
+        fetchPriority="low"
         className="max-h-8 max-w-8 object-contain opacity-95"
       />
     </div>
@@ -34,7 +34,6 @@ export function HeroToolsSchema() {
     >
       <SystemCapturePlaceholder
         src="/assets/demos/devis-auto-static.webp"
-        priority
         className="mb-6"
       />
       <figcaption className="text-center text-sm leading-relaxed text-muted md:text-base lg:text-left">

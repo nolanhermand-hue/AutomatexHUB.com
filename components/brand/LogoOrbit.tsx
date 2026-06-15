@@ -10,6 +10,8 @@ type LogoOrbitProps = {
   href?: string;
   /** Hauteur d'affichage CSS (px) */
   height?: number;
+  /** Réservé aux zones LCP explicites — nav : false par défaut */
+  priority?: boolean;
   onClick?: () => void;
 };
 
@@ -19,6 +21,7 @@ export function LogoOrbit({
   className,
   href = "/",
   height = 40,
+  priority = false,
   onClick,
 }: LogoOrbitProps) {
   void _theme;
@@ -28,13 +31,13 @@ export function LogoOrbit({
   const img = (
     <Image
       src={BRAND.symbolTransparentSvg}
-      alt="Automatex"
+      alt="AutomateX"
       width={100}
       height={100}
       sizes={`${size}px`}
       className={cn("block shrink-0 object-contain", className)}
       style={{ height: size, width: size, maxHeight: size, maxWidth: size }}
-      priority
+      priority={priority}
     />
   );
 
@@ -45,7 +48,7 @@ export function LogoOrbit({
       href={href}
       className="inline-flex shrink-0 items-center overflow-visible"
       data-cursor="link"
-      aria-label="Automatex — accueil"
+      aria-label="AutomateX — accueil"
       onClick={onClick}
     >
       {img}

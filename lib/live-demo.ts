@@ -42,7 +42,7 @@ export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
         icon: "⚡",
         message: "Détection · Qualification · Rédaction de la réponse…",
         color: "border-[#2a2a2a]",
-        badge: "< 90 secondes",
+        badge: "< 2 min",
         badgeClass: badgeMuted,
       },
       {
@@ -93,7 +93,7 @@ Diagnostiqueur immobilier · Orne`,
         icon: "⚡",
         message: "Numéro détecté · SMS de rappel en cours…",
         color: "border-[#2a2a2a]",
-        badge: "< 90 secondes",
+        badge: "< 2 min",
         badgeClass: badgeMuted,
       },
       {

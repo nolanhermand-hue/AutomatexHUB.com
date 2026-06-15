@@ -1,10 +1,10 @@
-import { NAP, SETUP_48H_NUANCE } from "@/lib/constants";
+import { BRAND_FULL, NAP, SETUP_48H_NUANCE } from "@/lib/constants";
 
 /** Page À propos — version transparente (légal / confiance). */
 export const ABOUT_PAGE = {
-  metaTitle: "À propos — Automatex · Flers, Normandie",
+  metaTitle: `À propos — ${NAP.brand} · Flers, Normandie`,
   metaDescription:
-    "Automatex Hub : accompagnement et systèmes pour diagnostiqueurs immobiliers et artisans BTP en Orne. Conçu à Flers · site CDN Netlify · données métier en UE · RGPD.",
+    `${BRAND_FULL} : accompagnement et systèmes pour diagnostiqueurs immobiliers et artisans BTP en Orne. Conçu à Flers · site CDN Netlify · données métier en UE · RGPD.`,
   h1: "Construit à Flers, pour les diagnostiqueurs et artisans de l'Orne",
   facts: [
     { label: "Marque", value: NAP.brand },
@@ -29,7 +29,7 @@ export const ABOUT_PAGE = {
   narrative: [
     "Nolan Hermand a passé 2 ans sur les chantiers (menuiserie puis couverture) à Flers, tout en se formant en autodidacte à l'automatisation, puis des mois à échanger avec des diagnostiqueurs indépendants et des artisans de l'Orne — plombiers, électriciens, maçons — pour comprendre où leur activité perd du temps et de l'argent.",
     "Le constat revient souvent : les clients ou appels pendant le chantier, les devis qui traînent le soir, les mails qui s'accumulent, les documents introuvables au moment où le client rappelle.",
-    "Automatex Hub est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec vous.",
+    `${BRAND_FULL} est né de ce terrain-là, pas d'un pitch générique. Chaque configuration est construite manuellement, testée sur des scénarios réels, puis ajustée chaque mois avec toi.`,
     "Sans engagement : vous pouvez arrêter à tout moment avec un simple mail.",
   ],
   stats: [
@@ -38,7 +38,7 @@ export const ABOUT_PAGE = {
     { value: "Sans engagement", label: "Résiliable en 1 mail" },
   ],
   directContact: "Une question avant de vous lancer ? Appelez :",
-  storyHeading: "Pourquoi Automatex existe",
+  storyHeading: `Pourquoi ${NAP.brand} existe`,
   storyParagraphs: [
     "Pendant des mois, j'ai discuté avec des diagnostiqueurs indépendants dans l'Orne, et avec des artisans — plombiers, électriciens, maçons — qui travaillent dans les mêmes coins que moi. Flers, Argentan, Alençon, les zones industrielles, les bourgs.",
     "À chaque fois, la même chose revenait : les demandes agences qui arrivent pendant les missions, les devis qui traînent parce qu'on est trop fatigué le soir, les mails qui s'accumulent. Des problèmes simples. Des solutions qui n'existaient pas à un tarif accessible pour des indépendants.",

@@ -1,14 +1,23 @@
-import { PRIMARY_DEMO_CTA, NAP, SOVEREIGNTY_TRUST_LINE, SUR_MESURE_BOOKING_CTA } from "@/lib/constants";
+import {
+  BRAND_FULL,
+  BRAND_SHORT,
+  OFFER_PRICING_THREE_PACKS,
+  PRIMARY_DEMO_CTA,
+  PRICING_CARD_CTA,
+  NAP,
+  SOVEREIGNTY_TRUST_LINE,
+  SUR_MESURE_BOOKING_CTA,
+} from "@/lib/constants";
 
 export const TPE_PAGE_PATH = "/automatisation-ia-tpe" as const;
 
 export const TPE_META = {
-  title: "Automatisation pour TPE & PME — Accompagnement humain · Automatex",
+  title: `Automatisation pour TPE & PME — Accompagnement humain · ${BRAND_SHORT}`,
   description:
-    "Réponses, devis, classement documents et relances sur vos outils actuels. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois. RGPD UE.",
-  ogTitle: "Automatisation pour TPE — Sans compétences techniques · Automatex Hub",
+    "Réponses, devis, classement documents et relances sur tes outils actuels. Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois. RGPD UE.",
+  ogTitle: `Automatisation pour TPE — Sans compétences techniques · ${BRAND_FULL}`,
   ogDescription:
-    "Un système qui travaille à votre place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois.",
+    "Un système qui travaille à ta place : demandes, devis, Drive, relances. Packs Déclic 390 € + 99 €/mois · Système 990 € + 249 €/mois · Pilote 1690 € + 449 €/mois.",
 } as const;
 
 export const TPE_HERO = {
@@ -17,7 +26,7 @@ export const TPE_HERO = {
   h1Line2: "qui pourraient se faire toutes seules.",
   statSource: "BCG 2025",
   subtitle:
-    "Automatex installe un système sur vos outils actuels. Zéro compétence technique de votre côté. Accompagnement mensuel inclus — vous restez sur votre métier.",
+    `${BRAND_SHORT} installe un système sur tes outils actuels. Zéro compétence technique de ton côté. Accompagnement mensuel inclus — tu restes sur ton métier.`,
   stats: [
     { value: "< 2 min", label: "pour réserver" },
     { value: "48 h", label: "opérationnel" },
@@ -49,7 +58,7 @@ export const TPE_PAIN = {
       source: "Estimation interne",
     },
   ] as const,
-  dayLabel: "UNE JOURNÉE SANS AUTOMATEX",
+  dayLabel: `UNE JOURNÉE SANS ${BRAND_SHORT.toUpperCase()}`,
   daySteps: [
     { time: "08h", text: "Répondre aux mails de la veille — 45 min" },
     { time: "10h", text: "Chercher un document dans Drive — 15 min" },
@@ -191,7 +200,7 @@ export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
     setup: 990,
     monthly: 249,
     blurb: "3–4 automatisations · accompagnement Suivi (point 20 min / mois)",
-    cta: "Démarrer en 48 h",
+    cta: PRICING_CARD_CTA,
   },
   {
     id: "pilote",
@@ -199,7 +208,7 @@ export const TPE_DISPLAY_OFFERS: TpeDisplayOffer[] = [
     setup: 1690,
     monthly: 449,
     blurb: "Ensemble de vos outils + fonction sur mesure · Copilote · réponse 4 h",
-    cta: "Ne plus être seul",
+    cta: PRICING_CARD_CTA,
   },
   {
     id: "sur-mesure",
@@ -224,15 +233,15 @@ export const TPE_SECTORS = [
 
 export const TPE_GEO_BLOCKS = [
   {
-    q: "Automatex Hub accompagne-t-il les TPE dans toute la France ?",
+    q: `${BRAND_FULL} accompagne-t-il les TPE dans toute la France ?`,
     a: `Oui. ${NAP.brand} est fondé par ${NAP.founder}, basé à ${NAP.city} (${NAP.postalCode}) et accompagne des TPE et PME dans toute la France à distance.`,
   },
   {
-    q: "Quel est le prix de l'automatisation pour une TPE chez Automatex ?",
-    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack.",
+    q: `Quel est le prix de l'automatisation pour une TPE chez ${BRAND_SHORT} ?`,
+    a: `${OFFER_PRICING_THREE_PACKS} Accompagnement mensuel inclus sur chaque pack.`,
   },
   {
-    q: "Automatex utilise-t-il des modèles conformes RGPD ?",
+    q: `${BRAND_SHORT} utilise-t-il des modèles conformes RGPD ?`,
     a: `Oui. ${SOVEREIGNTY_TRUST_LINE}. Mistral (Paris) et automatisations hébergées en UE (${NAP.hostingProvider}). Transparence complète sur /vos-donnees.`,
   },
   {
@@ -243,12 +252,12 @@ export const TPE_GEO_BLOCKS = [
 
 export const TPE_FAQ = [
   {
-    q: "Qu'est-ce que l'automatisation IA pour une TPE concrètement ?",
+    q: "Qu'est-ce que l'automatisation pour une TPE concrètement ?",
     a: "Un système qui répond à vos emails, envoie vos devis, classe vos documents et relance vos clients — pendant que vous travaillez. Nolan installe, maintient et ajuste le système chaque mois.",
   },
   {
-    q: "Combien coûte l'automatisation IA pour une TPE en 2026 ?",
-    a: "Pack Déclic : mise en place 390 € (1er mois inclus), puis 99 €/mois. Pack Système (recommandé) : 990 € puis 249 €/mois. Pack Pilote : 1690 € puis 449 €/mois. Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.",
+    q: "Combien coûte l'automatisation pour une TPE en 2026 ?",
+    a: `${OFFER_PRICING_THREE_PACKS} Accompagnement mensuel inclus sur chaque pack. Sur mesure si hors-cadre.`,
   },
   {
     q: "Faut-il être technique ?",
@@ -256,7 +265,7 @@ export const TPE_FAQ = [
   },
   {
     q: "Quelle différence avec Zapier ou Make ?",
-    a: "Zapier et Make sont des outils à bricoler seuls. Automatex, c'est Nolan qui installe et maintient — avec un point mensuel inclus et un tarif bloqué en fidélité.",
+    a: `Zapier et Make sont des outils à bricoler seuls. ${BRAND_SHORT}, c'est Nolan qui installe et maintient — avec un point mensuel inclus et un tarif bloqué en fidélité.`,
   },
   {
     q: "Est-ce conforme RGPD pour une TPE ?",
@@ -271,7 +280,7 @@ export const TPE_FAQ = [
     a: "Oui. Un mail suffit. Sans engagement, résiliable à tout moment.",
   },
   {
-    q: "Automatex intervient-il hors de l'Orne ?",
+    q: `${BRAND_SHORT} intervient-il hors de l'Orne ?`,
     a: "Oui. Installation et maintenance à distance. Point mensuel par téléphone.",
   },
 ] as const;

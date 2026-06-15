@@ -15,7 +15,7 @@ export const loadPointMensuel = () =>
 export const DEMO_STATIC = {
   appelManque: {
     src: "/assets/demos/appel-manque-static.webp",
-    alt: "Appel manqué traité par une réponse en 90 secondes",
+    alt: "Appel manqué traité par une réponse en moins de 2 minutes",
   },
   devisAuto: {
     src: "/assets/demos/devis-auto-static.webp",
@@ -27,7 +27,7 @@ export const DEMO_STATIC = {
   },
   avantApres: {
     src: "/assets/demos/avant-apres-static.webp",
-    alt: "Journée avant et après Automatex",
+    alt: "Journée avant et après AutomateX",
   },
   pointMensuel: {
     src: "/assets/demos/point-mensuel-static.webp",

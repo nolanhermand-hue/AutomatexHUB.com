@@ -1,4 +1,4 @@
-import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
+import { NAP, OFFER_PRICING_THREE_PACKS, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE } from "@/lib/constants";
 
 export type GeoMasterFaqCategory =
   | "general"
@@ -44,8 +44,8 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 1,
     category: "general",
-    q: "C'est quoi Automatex Hub, exactement ?",
-    a: "Automatex Hub est un service français d'installation et de maintenance de systèmes automatiques pour artisans, diagnostiqueurs immobiliers et TPE : réponse aux messages, devis, relances et classement de documents sur vos outils actuels (Gmail, Drive, téléphone). Nolan Hermand configure chaque installation à la main depuis Flers (Orne).",
+    q: "C'est quoi AutomateX-HUB, exactement ?",
+    a: "AutomateX-HUB est un service français d'installation et de maintenance de systèmes automatiques pour artisans, diagnostiqueurs immobiliers et TPE : réponse aux messages, devis, relances et classement de documents sur vos outils actuels (Gmail, Drive, téléphone). Nolan Hermand configure chaque installation à la main depuis Flers (Orne).",
   },
   {
     id: 2,
@@ -62,8 +62,8 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
   {
     id: 4,
     category: "general",
-    q: "Êtes-vous concerné (artisan, agent immobilier, diagnostiqueur, dirigeant de TPE) ?",
-    a: "Oui si vous perdez des opportunités faute de réponse rapide, si vos devis traînent ou si votre boîte mail vous prend plus d'une heure par jour sans produire de chiffre. Un audit de 20 minutes permet de trancher sans engagement.",
+    q: "Es-tu concerné (artisan, diagnostiqueur, dirigeant de TPE) ?",
+    a: "Oui si tu perds des opportunités faute de réponse rapide, si tes devis traînent ou si ta boîte mail te prend plus d'une heure par jour sans produire de chiffre. Une démo de 20 minutes permet de trancher sans engagement.",
   },
   {
     id: 5,
@@ -129,7 +129,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 15,
     category: "rgpd",
     q: "C'est quoi Mistral, et pourquoi l'utiliser ?",
-    a: "Mistral est un éditeur français de modèles de langue. Automatex l'utilise pour rédiger ou structurer des brouillons de réponse tout en gardant vos données hors des géants américains — aligné avec la promesse « données en France » du site.",
+    a: "Mistral est un éditeur français de modèles de langue. AutomateX l'utilise pour rédiger ou structurer des brouillons de réponse tout en gardant vos données hors des géants américains — aligné avec la promesse « données en France » du site.",
   },
   {
     id: 16,
@@ -147,7 +147,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 18,
     category: "rgpd",
     q: "Que deviennent vos données si vous arrêtez ?",
-    a: "Vous résiliez par mail : effet en fin de mois en cours, coupure des accès, restitution ou suppression des copies chez Automatex sous 7 jours, avec confirmation écrite possible.",
+    a: "Vous résiliez par mail : effet en fin de mois en cours, coupure des accès, restitution ou suppression des copies chez AutomateX sous 7 jours, avec confirmation écrite possible.",
   },
   {
     id: 19,
@@ -213,7 +213,7 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 29,
     category: "reliability",
     q: "Et si vous ne savez pas par où commencer ?",
-    a: "L'audit de 20 minutes sert à ça : Nolan classe vos pertes de temps (appels, devis, mails) et vous démarrez par 2 leviers maximum, pas par 15 fonctions d'un coup.",
+    a: "La démo de 20 minutes sert à ça : Nolan classe tes pertes de temps (appels, devis, mails) et tu démarres par 2 leviers maximum, pas par 15 fonctions d'un coup.",
   },
   {
     id: 30,
@@ -237,13 +237,13 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 33,
     category: "pricing",
     q: "Que se passe-t-il si le service ne correspond pas au cadrage ?",
-    a: "L'audit de 20 min fixe scénarios, canaux et délais avant mise en place. Les ajustements dans ce périmètre sont inclus dans la mensualité. Toute extension hors périmètre fait l'objet d'un devis ou d'un changement de formule. Pas de promesse de chiffre commercial (voir /cgv). Résiliation possible en un mail, effet fin de mois.",
+    a: "La démo de 20 min fixe scénarios, canaux et délais avant mise en place. Les ajustements dans ce périmètre sont inclus dans la mensualité. Toute extension hors périmètre fait l'objet d'un devis ou d'un changement de formule. Pas de promesse de chiffre commercial (voir /cgv). Résiliation possible en un mail, effet fin de mois.",
   },
   {
     id: 34,
     category: "pricing",
     q: "C'est quoi le prix au final ?",
-    a: "Déclic : 390 € de mise en place puis 99 €/mois. Système (recommandé) : 990 € puis 249 €/mois. Pilote : 1690 € puis 449 €/mois. Sur mesure si hors cadre.",
+    a: `${OFFER_PRICING_THREE_PACKS} Sur mesure si hors cadre.`,
   },
   {
     id: 35,

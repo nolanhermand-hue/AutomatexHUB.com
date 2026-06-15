@@ -10,19 +10,19 @@ import {
   CATALOG_UNIT_TIERS,
 } from "@/lib/automatisations-catalog-pricing";
 import { buildAutomatisationsCatalogJsonLd } from "@/lib/json-ld";
-import { SETUP_48H_NUANCE, SITE_URL } from "@/lib/constants";
+import { SETUP_48H_NUANCE, SITE_URL, PRIMARY_DEMO_CTA, BRAND_FULL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { rendezVousHref } from "@/lib/hub-nav";
 
 export const metadata: Metadata = {
-  title: "Tout ce qu'Automatex peut faire — Catalogue des automatisations · Orne",
+  title: `Catalogue automatisations · ${BRAND_FULL} · Orne`,
   description:
-    "Réponse aux demandes, tri mails, devis automatiques, classement Drive, résumé Telegram, note vocale, relances clients — catalogue complet pour diagnostiqueurs et artisans BTP en Orne.",
+    "Réponse aux demandes, tri mails, devis, classement Drive, résumé Telegram — catalogue pour diagnostiqueurs et artisans BTP en Orne. Démo 20 min.",
   openGraph: {
-    title: "Ce qu'Automatex fait à votre place — Catalogue complet · Automatex Hub",
+    title: `Ce qu'AutomateX fait pour toi — Catalogue · ${BRAND_FULL}`,
     description:
-      "Toutes les automatisations pour diagnostiqueurs immobiliers et artisans BTP en Normandie. Chaque fonction expliquée avec un exemple réel.",
+      "Chaque automatisation expliquée avec un exemple terrain. Diagnostiqueurs et artisans BTP en Normandie.",
     url: `${SITE_URL}/automatisations`,
   },
   alternates: { canonical: `${SITE_URL}/automatisations` },
@@ -38,11 +38,11 @@ export default function AutomatisationsPage() {
       <section className="mx-auto max-w-content pb-16 text-center">
         <span className="label-micro text-faint">Catalogue complet</span>
         <h1 className="mt-4 font-heading text-3xl font-bold text-text md:text-4xl">
-          Ce qu&apos;Automatex peut faire à votre place
+          Ce qu&apos;AutomateX peut faire pour toi
         </h1>
         <p className="mx-auto mt-5 max-w-readable text-base leading-relaxed text-muted">
           Chaque automatisation ci-dessous est une configuration réelle, avec le message exact qui
-          part et l&apos;impact sur votre activité. Pages par douleur métier (relances, SMS, demandes) :{" "}
+          part et l&apos;impact sur ton activité. Pages par douleur métier (relances, SMS, demandes) :{" "}
           <Link href="/automatisation-pour-artisans" className="text-primary underline">
             hub automatisations pro
           </Link>
@@ -68,17 +68,17 @@ export default function AutomatisationsPage() {
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-primary">
-            TPE & PME — voir l&apos;offre →
+            {PRIMARY_DEMO_CTA}
           </Link>
-          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
+          <Link href="/immobilier" className="btn-bracket btn-bracket-outline">
             Diagnostiqueur immobilier →
           </Link>
-          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
+          <Link href="/btp" className="btn-bracket btn-bracket-outline">
             Artisan BTP →
           </Link>
         </div>
         <p className="mt-3 text-center text-xs text-faint">
-          Démo 20 min · Gratuite · Nolan rappelle sous 24 h
+          Démo 20 min · Gratuite · Nolan te rappelle sous 24 h
         </p>
       </section>
 
@@ -113,20 +113,20 @@ export default function AutomatisationsPage() {
 
       <section className="mx-auto max-w-content border-t border-border py-16 text-center">
         <h2 className="font-heading text-2xl font-bold text-text">
-          Mise en route selon votre périmètre
+          Mise en route selon ton périmètre
         </h2>
         <p className="mx-auto mt-4 max-w-readable text-sm leading-relaxed text-muted">
-          {SETUP_48H_NUANCE}. Nolan vous appelle pour cadrer 2 à 4 priorités en 20 minutes.
+          {SETUP_48H_NUANCE}. Nolan t&apos;appelle pour cadrer 2 à 4 priorités en 20 minutes.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
           <Link href={rendezVousHref()} className="btn-bracket btn-bracket-primary">
-            TPE & PME — voir l&apos;offre →
+            {PRIMARY_DEMO_CTA}
           </Link>
-          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
-            Diagnostiqueur immobilier →
+          <Link href="/immobilier#pricing" className="btn-bracket btn-bracket-outline">
+            Tarifs diagnostiqueur →
           </Link>
-          <Link href={rendezVousHref()} className="btn-bracket btn-bracket-outline">
-            Artisan BTP →
+          <Link href="/btp#pricing" className="btn-bracket btn-bracket-outline">
+            Tarifs artisan BTP →
           </Link>
         </div>
         <p className="mt-6 text-xs text-faint">

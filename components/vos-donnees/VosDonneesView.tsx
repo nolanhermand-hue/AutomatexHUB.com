@@ -34,10 +34,10 @@ export function VosDonneesView() {
         <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-text">
           Vos données vous appartiennent.
           <br />
-          Automatex vous dit exactement ce qu&apos;il en fait.
+          AutomateX vous dit exactement ce qu&apos;il en fait.
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-          Automatex manipule des données professionnelles sensibles — emails, devis, contacts clients.
+          AutomateX manipule des données professionnelles sensibles — emails, devis, contacts clients.
           Vous avez le droit de savoir où elles vont, qui y accède, et comment les supprimer. Cette page
           répond à ces questions sans langue de bois.
         </p>
@@ -102,7 +102,7 @@ export function VosDonneesView() {
           </p>
           <h2 className="mb-3 text-2xl font-bold text-text">Où vont vos données — exactement</h2>
           <p className="mb-8 text-sm leading-relaxed text-muted">
-            Chaque outil utilisé par Automatex, avec la localisation précise des serveurs et le type de
+            Chaque outil utilisé par AutomateX, avec la localisation précise des serveurs et le type de
             données traitées.
           </p>
           <div className="space-y-4">
@@ -243,7 +243,7 @@ export function VosDonneesView() {
           <ModuleHeader n="04" />
           <h2 className="mb-3 text-2xl font-bold text-text">Vos droits — exercez-les en un email</h2>
           <p className="mb-8 text-sm text-muted">
-            Le RGPD vous donne 6 droits. Voici comment les exercer chez Automatex.
+            Le RGPD vous donne 6 droits. Voici comment les exercer chez AutomateX.
           </p>
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {VOS_DONNEES_RIGHTS.map((item) => (
@@ -341,7 +341,7 @@ export function VosDonneesView() {
                 REGISTRE DES TRAITEMENTS
               </p>
               <p className="mb-4 text-[13px] leading-relaxed text-muted">
-                Automatex Hub tient à jour un registre de ses traitements de données personnelles,
+                AutomateX Hub tient à jour un registre de ses traitements de données personnelles,
                 conformément à l&apos;article 30 du RGPD. Il est disponible sur demande.
               </p>
               <a

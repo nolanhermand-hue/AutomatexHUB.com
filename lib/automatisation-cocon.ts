@@ -49,12 +49,12 @@ export const COCON_PILIER: CoconPilierPage = {
   h1: "Automatisations pour artisans et indépendants — sans changer votre logiciel métier",
   intro: [
     "Vous avez déjà un outil pour chiffrer, diagnostiquer ou monter un dossier. Le trou, c'est souvent après : relancer, répondre quand vous êtes sur le terrain, rappeler un client ou bloquer un livrable tant qu'une pièce manque.",
-    "Automatex branche des enchaînements par-dessus Gmail, SMS et calendrier. Pas de promesse magique : Nolan cade le périmètre en démo de 20 minutes.",
+    "AutomateX branche des automatisations par-dessus Gmail, SMS et calendrier. Pas de promesse magique : Nolan cale le périmètre en démo de 20 minutes.",
   ],
   pilierFaq: [
     {
       q: "Est-ce un logiciel de devis ou de DPE ?",
-      a: "Non. Automatex ne remplace pas ProDevis, Tolteck ou Liciel. Nolan automatise relances, réponses et rappels autour de ce que vous faites déjà dans ces outils.",
+      a: "Non. AutomateX ne remplace pas ProDevis, Tolteck ou Liciel. Nolan automatise relances, réponses et rappels autour de ce que vous faites déjà dans ces outils.",
     },
     {
       q: "Quelles automatisations sont prêtes en premier ?",
@@ -78,14 +78,14 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Relances & suivi",
     heroAccroche: "Le devis est parti. Le silence aussi.",
     heroSub:
-      "Automatex déclenche une relance propre après le délai que vous choisissez, sans réécrire le même mail chaque soir.",
+      "AutomateX déclenche une relance propre après le délai que vous choisissez, sans réécrire le même mail chaque soir.",
     howItWorks: [
       {
         title: "Vous marquez le devis comme envoyé",
         body: "Dans votre habitude actuelle (mail, export PDF, statut dans votre outil). Pas besoin de changer de logiciel.",
       },
       {
-        title: "Automatex surveille le délai",
+        title: "AutomateX surveille le délai",
         body: "Exemple : 48 h sans réponse. Un message court part avec votre signature et la référence du dossier.",
       },
       {
@@ -96,7 +96,7 @@ const pains: CoconPainPage[] = [
     localFaq: [
       {
         q: "Ça remplace votre logiciel de devis ?",
-        a: "Non. La relance part autour du devis déjà produit dans Tolteck, Obat, Batappli ou ProDevis. Automatex ne refait pas le chiffrage à votre place.",
+        a: "Non. La relance part autour du devis déjà produit dans Tolteck, Obat, Batappli ou ProDevis. AutomateX ne refait pas le chiffrage à votre place.",
       },
       {
         q: "Et si le client a déjà signé ailleurs ?",
@@ -334,7 +334,7 @@ const pains: CoconPainPage[] = [
     heroEyebrow: "Agenda & terrain",
     heroAccroche: "Cinq mails pour trouver un créneau, c'est cinq soirées perdues.",
     heroSub:
-      "Automatex propose des plages depuis votre calendrier ou vos règles, le client choisit, vous recevez la confirmation.",
+      "AutomateX propose des plages depuis votre calendrier ou vos règles, le client choisit, vous recevez la confirmation.",
     howItWorks: [
       { title: "Demande de RDV", body: "Mail ou SMS entrant après demande ou relance." },
       { title: "Créneaux proposés", body: "Lien ou liste courte alignée sur Google Calendar / Outlook." },

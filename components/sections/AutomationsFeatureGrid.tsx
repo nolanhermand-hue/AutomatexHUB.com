@@ -12,7 +12,7 @@ export function AutomationsFeatureGrid() {
     >
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-2xl text-text md:text-3xl">
-          Ce qu&apos;Automatex fait à votre place — chaque jour
+          Ce qu&apos;AutomateX fait à votre place — chaque jour
         </h2>
         <p className="mt-2 max-w-readable text-sm text-muted md:text-base">
           Chaque configuration est construite sur votre façon de travailler. Voici les fonctions les

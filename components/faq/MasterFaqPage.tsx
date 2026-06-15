@@ -1,5 +1,5 @@
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
-import { PRIMARY_DEMO_CTA } from "@/lib/constants";
+import { BRAND_SHORT, PRIMARY_DEMO_CTA } from "@/lib/constants";
 import {
   GEO_MASTER_FAQ_CATEGORY_LABELS,
   GEO_MASTER_FAQ_CATEGORY_ORDER,
@@ -13,7 +13,7 @@ export function MasterFaqPage() {
       <header className="animate-on-scroll section-reveal max-w-2xl">
         <p className="label-micro text-muted">Centre d&apos;aide</p>
         <h1 className="mt-2 font-heading text-3xl font-bold text-text md:text-4xl">
-          40 réponses sur Automatex
+          40 réponses sur {BRAND_SHORT}
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-muted md:text-base">
           Questions fréquentes des artisans, diagnostiqueurs et TPE — réponses courtes, vérifiables,

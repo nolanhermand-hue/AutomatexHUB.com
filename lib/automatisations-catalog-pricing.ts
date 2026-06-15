@@ -20,7 +20,7 @@ export const CATALOG_CATEGORY_ANSWER: Record<string, string> = {
   "Dictée & terrain":
     "Une note vocale après visite devient compte-rendu ou devis structuré sans ressaisie.",
   "Appels & terrain BTP":
-    "Un appel manqué sur chantier déclenche un SMS pro en ~90 secondes pour rassurer le client.",
+    "Un appel manqué sur chantier déclenche un SMS pro en moins de 2 minutes pour rassurer le client.",
   "Suivi & Rapports Métier":
     "Un rapport périodique résume l’activité pour ajuster le ton et les règles avec Nolan.",
 };

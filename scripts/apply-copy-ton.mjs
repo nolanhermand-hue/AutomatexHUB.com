@@ -20,7 +20,6 @@ const files = [
   "lib/automations-catalog.ts",
   "lib/automatisation-ia-tpe-content.ts",
   "lib/vos-donnees-content.ts",
-  "lib/hub-copy.ts",
   "lib/json-ld.ts",
   "app/immobilier/page.tsx",
   "app/automatisations/page.tsx",

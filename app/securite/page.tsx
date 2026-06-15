@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sécurité des données — Automatex | RGPD artisans & TPE",
+  title: "Sécurité des données — AutomateX | RGPD artisans & TPE",
   description:
     "Où sont hébergées vos données, qui y accède, effacement à la résiliation, continuité si arrêt du service.",
   alternates: { canonical: `${SITE_URL}/securite` },
@@ -22,7 +22,7 @@ export default function SecuritePage() {
   const c = legalContactBlock();
 
   return (
-    <LegalPageShell title="Comment Automatex protège vos données clients">
+    <LegalPageShell title="Comment AutomateX protège vos données clients">
       <LegalInfraCallout />
       <LegalP>
         En tant que diagnostiqueur ou artisan, vous traitez des données de clients. Voici comment{" "}
@@ -59,10 +59,10 @@ export default function SecuritePage() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection title="Si Automatex cesse son activité" code="04 // CONTINUITÉ">
+      <LegalSection title="Si AutomateX cesse son activité" code="04 // CONTINUITÉ">
         <LegalP>
           Vos comptes Gmail, Drive et Telegram restent les vôtres. Vous conservez emails et
-          documents ; seules les automatisations configurées par Automatex cesseraient de tourner.
+          documents ; seules les automatisations configurées par AutomateX cesseraient de tourner.
         </LegalP>
       </LegalSection>
 
