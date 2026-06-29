@@ -17,9 +17,9 @@ export type LiveDemoConfig = {
 };
 
 const badgeOrange = "bg-primary/20 text-primary";
-const badgeGreen = "bg-[#38a169]/20 text-[#38a169]";
-const badgeRed = "bg-[#e53e3e]/20 text-[#e53e3e]";
-const badgeMuted = "bg-[#2a2a2a] text-[rgba(245,244,241,0.55)]";
+const badgeGreen = "bg-success/20 text-success";
+const badgeRed = "bg-danger/20 text-danger";
+const badgeMuted = "bg-surface-2 text-muted";
 
 export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
   immobilier: {
@@ -41,7 +41,7 @@ export const LIVE_DEMOS: Record<LiveDemoVariant, LiveDemoConfig> = {
         label: "Traitement automatique",
         icon: "⚡",
         message: "Détection · Qualification · Rédaction de la réponse…",
-        color: "border-[#2a2a2a]",
+        color: "border-border",
         badge: "< 2 min",
         badgeClass: badgeMuted,
       },
@@ -58,7 +58,7 @@ Je suis en mission sur le terrain — je confirme un créneau demain matin avant
 Cordialement,
 [Votre prénom]
 Diagnostiqueur immobilier · Orne`,
-        color: "border-[#38a169]",
+        color: "border-success",
         badge: "Mail envoyé",
         badgeClass: badgeGreen,
       },
@@ -68,7 +68,7 @@ Diagnostiqueur immobilier · Orne`,
         icon: "📲",
         message:
           "✅ mission traitée : DPE Flers (agence Dupont)\nRéponse envoyée · Créneau : demain avant 9h\n\nVous pouvez continuer votre mission.",
-        color: "border-[#2a2a2a]",
+        color: "border-border",
         badge: "Telegram",
         badgeClass: badgeMuted,
       },
@@ -83,7 +83,7 @@ Diagnostiqueur immobilier · Orne`,
         label: "Appel manqué — vous êtes sur le chantier",
         icon: "📞",
         message: "Appel manqué\n+33 6 XX XX XX XX",
-        color: "border-[#e53e3e]",
+        color: "border-danger",
         badge: "Appel manqué",
         badgeClass: badgeRed,
       },
@@ -92,7 +92,7 @@ Diagnostiqueur immobilier · Orne`,
         label: "Détection et réponse automatique",
         icon: "⚡",
         message: "Numéro détecté · SMS de rappel en cours…",
-        color: "border-[#2a2a2a]",
+        color: "border-border",
         badge: "< 2 min",
         badgeClass: badgeMuted,
       },
@@ -105,7 +105,7 @@ Diagnostiqueur immobilier · Orne`,
 J'ai bien reçu votre appel. Je suis sur un chantier — je vous rappelle avant 18h.
 
 [Prénom] · [Téléphone]`,
-        color: "border-[#38a169]",
+        color: "border-success",
         badge: "SMS envoyé",
         badgeClass: badgeGreen,
       },
@@ -115,7 +115,7 @@ J'ai bien reçu votre appel. Je suis sur un chantier — je vous rappelle avant 
         icon: "📲",
         message:
           "📊 Résumé · Mercredi\n\n✅ 2 appels manqués traités\n✅ 1 devis envoyé (Dupont · 2 400 €)\n⏳ 1 rappel en attente\n\nBonne soirée.",
-        color: "border-[#2a2a2a]",
+        color: "border-border",
         badge: "18h · Telegram",
         badgeClass: badgeMuted,
       },
@@ -140,7 +140,7 @@ J'ai bien reçu votre appel. Je suis sur un chantier — je vous rappelle avant 
         label: "Transcription et génération du devis",
         icon: "⚡",
         message: "Transcription · structuration · mise en page PDF…",
-        color: "border-[#2a2a2a]",
+        color: "border-border",
         badge: "< 2 minutes",
         badgeClass: badgeMuted,
       },
@@ -156,7 +156,7 @@ Pose (2 j) ....................... 560 €
 ────────────────────
 Total HT ........................ 2 400 €
 Total TTC ...................... 2 880 €`,
-        color: "border-[#38a169]",
+        color: "border-success",
         badge: "Devis envoyé",
         badgeClass: badgeGreen,
       },
@@ -165,7 +165,7 @@ Total TTC ...................... 2 880 €`,
         label: "Réponse du client",
         icon: "✅",
         message: "Bonjour, devis reçu, c'est parfait.\nOn peut démarrer lundi prochain ?",
-        color: "border-[#38a169]",
+        color: "border-success",
         badge: "Accepté",
         badgeClass: badgeGreen,
       },

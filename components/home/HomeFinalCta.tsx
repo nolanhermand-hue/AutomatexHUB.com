@@ -1,5 +1,5 @@
 import { PrimaryDemoCta } from "@/components/shared/PrimaryDemoCta";
-import { HOME_FINAL_CTA } from "@/lib/home-copy";
+import { HOME_FINAL_CTA, HOME_PRIMARY_CTA } from "@/lib/home-copy";
 
 export function HomeFinalCta() {
   return (
@@ -10,7 +10,9 @@ export function HomeFinalCta() {
           <p className="mx-auto mt-3 max-w-readable text-sm text-muted md:text-base">{HOME_FINAL_CTA.sub}</p>
         </div>
         <div className="animate-on-scroll fade mt-8 flex justify-center">
-          <PrimaryDemoCta analyticsId="home_final_cta" className="btn-bracket btn-bracket-primary" />
+          <PrimaryDemoCta analyticsId="home_final_cta" className="btn-bracket btn-bracket-primary">
+            {HOME_PRIMARY_CTA}
+          </PrimaryDemoCta>
         </div>
       </div>
     </section>

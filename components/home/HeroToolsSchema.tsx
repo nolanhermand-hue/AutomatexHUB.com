@@ -34,6 +34,7 @@ export function HeroToolsSchema() {
     >
       <SystemCapturePlaceholder
         src="/assets/demos/devis-auto-static.webp"
+        priority
         className="mb-6"
       />
       <figcaption className="text-center text-sm leading-relaxed text-muted md:text-base lg:text-left">

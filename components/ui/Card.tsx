@@ -17,7 +17,7 @@ export function Card({
       data-cursor="card"
       className={cn(
         "card relative flex flex-col overflow-hidden p-6 md:p-8",
-        featured && "border-primary/50 shadow-lg shadow-primary/10 card-recommended",
+        featured && "border-accent/50 shadow-lg shadow-accent/10 card-recommended",
         dimmed && "opacity-50",
         className,
       )}

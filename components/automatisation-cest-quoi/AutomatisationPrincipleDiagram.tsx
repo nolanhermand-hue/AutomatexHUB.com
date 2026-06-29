@@ -24,7 +24,7 @@ const CUBES = [
   {
     key: "result",
     fill: "var(--color-forest)",
-    stroke: "#3d7a66",
+    stroke: "var(--color-success)",
     label: "RÉSULTAT",
     quote: "Le client est traité, pas vous",
     detail: "Client répondu. Vous, toujours sur votre chantier.",

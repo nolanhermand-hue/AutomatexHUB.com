@@ -30,19 +30,23 @@ export const SETUP_48H_NUANCE =
 /** Libellé CTA — prise de rendez-vous (hors libellé démo principal). */
 export const BOOKING_CTA_LABEL = "Réserver ton appel avec Nolan" as const;
 
-/** CTA démo 30 min — unique sur le site (hors cartes tarifs). */
-export const PRIMARY_DEMO_CTA = "Démo gratuite 30 min sur ton cas" as const;
-export const PRIMARY_DEMO_CTA_SHORT = "Démo 30 min" as const;
+/** CTA audit 30 min — unique sur le site (hors cartes tarifs). Cadre consultatif. */
+export const PRIMARY_DEMO_CTA = "Réserver l'audit 30 min" as const;
+export const PRIMARY_DEMO_CTA_SHORT = "Audit 30 min" as const;
 
-/** Offre sur mesure — cadrage périmètre / devis (distinct de la démo standard). */
+/** Offre sur mesure — cadrage périmètre / devis (distinct de l'audit standard). */
 export const SUR_MESURE_BOOKING_CTA =
   "Réserver un rendez-vous sur mesure — 30 min" as const;
 
-/** CTA carte tarif — prise de RDV démo 30 min (home + immobilier). */
-export const PRICING_CARD_CTA = "Réserver 30 min" as const;
+/** CTA carte tarif — prise de RDV audit 30 min (home + immobilier). */
+export const PRICING_CARD_CTA = "Réserver l'audit" as const;
 
 export const PRICING_REASSURANCE_CARD =
   "Sans engagement · résiliable en 1 mail · mise en place en 3× sans frais" as const;
+
+/** Conseil d'ancrage sur la formule recommandée (Système) — pas une statistique. */
+export const PRICING_FEATURED_RECOMMENDATION =
+  "Le bon départ pour la plupart des TPE." as const;
 
 /** Mots interdits sur tout le site (copy, code visible, JSON-LD). « Automatisations » (catalogue) est autorisé. */
 export const FORBIDDEN_WORDS = [
@@ -849,12 +853,13 @@ export const CONTACT_COPY = {
   formReassurance: "Sans engagement",
   resiliationSubmitLabel: "Envoyer ta demande de résiliation",
   hubFounderLine: "Nolan Hermand · basé à Flers (Orne)",
-  hubFounderSub: "Démo 30 min sur ton cas — Nolan te rappelle sous 24 h.",
+  hubFounderSub: "Audit 30 min sur ton cas — Nolan te rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisis ton secteur",
   hubMetierLabel: "Activité",
   hubMetierPlaceholder: "Artisan, diagnostiqueur, TPE…",
-  hubStep1Hint: "Nom et téléphone suffisent — Nolan te rappelle.",
+  hubStep1Hint: "Nom, téléphone et métier suffisent — Nolan te rappelle.",
+  hubResiliationHint: "Nom et téléphone suffisent — Nolan confirme ta résiliation sous 48 h ouvrées.",
   hubExpandLabel: "Préciser mon appel (activité, besoin)",
   hubBesoinLabel: "Besoin (optionnel)",
   hubBesoinPlaceholder: "Ex. créneau préféré, type de chantier…",

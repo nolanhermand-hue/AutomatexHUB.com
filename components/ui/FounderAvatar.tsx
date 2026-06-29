@@ -25,7 +25,7 @@ function FounderAvatarPlaceholder({
       style={{
         width: size,
         height: size,
-        background: "linear-gradient(135deg, #e07856 0%, #b85a3a 100%)",
+        background: "linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)",
         fontSize: size * 0.32,
       }}
       role="img"

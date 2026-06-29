@@ -1,7 +1,6 @@
 import { HeroToolsSchema } from "@/components/home/HeroToolsSchema";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
-import { PRIMARY_DEMO_CTA } from "@/lib/constants";
-import { HOME_HERO } from "@/lib/home-copy";
+import { HOME_HERO, HOME_PRIMARY_CTA } from "@/lib/home-copy";
 import { rendezVousHref } from "@/lib/hub-nav";
 
 export function HomeHero() {
@@ -24,7 +23,7 @@ export function HomeHero() {
               analyticsId="home_hero_demo"
               className="btn-bracket btn-bracket-primary"
             >
-              {PRIMARY_DEMO_CTA}
+              {HOME_PRIMARY_CTA}
             </AnalyticsCta>
           </div>
           <p className="mt-6 max-w-lg text-xs leading-relaxed text-[var(--text-subtle)] md:text-sm">

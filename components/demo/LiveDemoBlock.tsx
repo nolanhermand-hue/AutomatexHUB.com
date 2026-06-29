@@ -98,7 +98,7 @@ export function LiveDemoBlock({
                 <span className="font-mono text-[10px] tabular-nums text-faint">{step.time}</span>
               </div>
             </div>
-            <pre className="whitespace-pre-wrap rounded-lg border border-border bg-[#060a12] px-4 py-3 font-mono text-xs leading-relaxed text-muted">
+            <pre className="whitespace-pre-wrap rounded-lg border border-border bg-night px-4 py-3 font-mono text-xs leading-relaxed text-muted">
               {step.message}
             </pre>
           </div>

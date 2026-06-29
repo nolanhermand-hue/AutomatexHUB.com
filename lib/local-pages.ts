@@ -45,7 +45,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 30 min",
+    ctaLabel: "Réserver l'audit 30 min",
   },
   {
     slug: "alencon",
@@ -76,7 +76,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 30 min",
+    ctaLabel: "Réserver l'audit 30 min",
   },
   {
     slug: "argentan",
@@ -101,7 +101,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 30 min",
+    ctaLabel: "Réserver l'audit 30 min",
   },
   {
     slug: "normandie",
@@ -132,7 +132,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
         ],
       },
     ],
-    ctaLabel: "Réserver une démo 30 min",
+    ctaLabel: "Réserver l'audit 30 min",
   },
 ];
 

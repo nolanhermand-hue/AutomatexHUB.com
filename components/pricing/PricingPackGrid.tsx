@@ -52,7 +52,7 @@ export function PricingPackGrid({
           data-offer-id={offer.id}
           className={cn(
             "h-full animate-on-scroll scale scroll-mt-24",
-            offer.featured && "md:-translate-y-2",
+            offer.featured && "md:z-10 md:-translate-y-3 md:scale-[1.04]",
           )}
           style={{ transitionDelay: `${offerIndex * 100}ms` }}
         >

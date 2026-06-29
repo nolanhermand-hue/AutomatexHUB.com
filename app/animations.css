@@ -182,6 +182,23 @@
   animation: slide-up var(--duration-hero) var(--ease-decel) both;
 }
 
+/* LCP : le H1 du hero (élément LCP au-dessus de la ligne de flottaison) est peint
+   immédiatement — visible dès le premier paint, sans fondu d'opacité. Il conserve
+   un léger glissement vertical, qui n'affecte pas la visibilité du texte. */
+@keyframes hero-rise {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-enter > h1 {
+  opacity: 1;
+  animation-name: hero-rise;
+}
+
 .hero-enter > *:nth-child(1) {
   animation-delay: 0ms;
 }
@@ -358,7 +375,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #e07856, #e88a6a, #e07856);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover), var(--color-accent));
   z-index: -1;
   opacity: 0.6;
   pointer-events: none;

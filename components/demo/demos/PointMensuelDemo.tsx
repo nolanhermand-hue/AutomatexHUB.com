@@ -28,7 +28,7 @@ function PointMensuelGsap({ active }: DemoAnimationProps) {
           Nolan : on améliore le template devis cette semaine.
         </p>
       </div>
-      <div className="demo-beat text-center text-sm text-[#38a169]">
+      <div className="demo-beat text-center text-sm text-success">
         ✅ Système mis à jour — sans que vous ayez demandé
       </div>
     </div>

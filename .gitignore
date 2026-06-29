@@ -2,9 +2,13 @@
 
 # dependencies
 /node_modules
+/remotion/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+
+# remotion render cache
+/remotion/.remotion-cache
 
 # testing
 /coverage

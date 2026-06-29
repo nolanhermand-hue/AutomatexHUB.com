@@ -1,7 +1,9 @@
 import { AutomationFlowSchema } from "@/components/catalog/AutomationFlowSchema";
+import { CatalogDemoVideo } from "@/components/catalog/CatalogDemoVideo";
 import type { CatalogAutomation } from "@/lib/automations-catalog";
 
 export function AutomationCard({
+  id,
   category,
   title,
   tagline,
@@ -10,6 +12,8 @@ export function AutomationCard({
 }: CatalogAutomation) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors duration-200 hover:border-border-light">
+      <CatalogDemoVideo id={id} title={title} />
+
       <div className="border-b border-border px-5 pb-4 pt-5">
         <div className="mb-3 flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">

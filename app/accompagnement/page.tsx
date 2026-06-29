@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const ACCOMP_PILL =
-  "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-[#1A2540] bg-[#0D1526] px-3 py-1.5 text-muted";
+  "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-border bg-surface px-3 py-1.5 text-muted";
 const ACCOMP_PILL_ACTIVE =
-  "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-primary bg-[#0D1526] px-3 py-1.5 text-primary";
+  "inline-flex items-center font-mono text-xs uppercase tracking-wider border border-primary bg-surface px-3 py-1.5 text-primary";
 
 export const metadata: Metadata = {
   title: "Accompagnement humain inclus · Flers",

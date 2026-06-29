@@ -31,7 +31,7 @@ export function LeadImmobilierDemo({ active }: DemoAnimationProps) {
         </p>
       </div>
       <div className="demo-beat text-center">
-        <p className="text-sm text-[#38a169]">✅ Créneau confirmé · 0 demande perdue</p>
+        <p className="text-sm text-success">✅ Créneau confirmé · 0 demande perdue</p>
         <p className="demo-glow-roi text-lg font-semibold text-primary">~220 € préservés</p>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/Card";
 import {
   getPricingOfferDisplay,
   PRICING_CARD_CTA,
+  PRICING_FEATURED_RECOMMENDATION,
   PRICING_REASSURANCE_CARD,
   type PackId,
   type PricingOffer,
@@ -56,7 +57,19 @@ export function PricingPackCard({
           {offer.badge}
         </p>
       ) : null}
-      <h3 className="mt-2 font-heading text-xl font-bold text-text">{offer.name}</h3>
+      <h3
+        className={cn(
+          "mt-2 font-heading font-bold text-text",
+          isFeatured ? "text-2xl" : "text-xl",
+        )}
+      >
+        {offer.name}
+      </h3>
+      {isFeatured ? (
+        <p className="mt-1 text-xs font-semibold leading-snug text-[var(--color-terracotta)]">
+          {PRICING_FEATURED_RECOMMENDATION}
+        </p>
+      ) : null}
       <p className="mt-3 text-sm font-medium leading-snug text-text">{display.promise}</p>
       <p className="mt-4 text-sm leading-relaxed text-muted">
         {formatMiseEnPlacePuisMensuel(offer.setup, offer.monthly)}

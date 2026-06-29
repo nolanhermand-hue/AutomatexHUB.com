@@ -16,7 +16,7 @@ export const BRAND = {
   ogImage: "/assets/brand/og-image.png",
   ogImageSvg: "/assets/brand/og-image.svg",
   manifest: "/site.webmanifest",
-  themeColor: "#080D1A",
+  themeColor: "#070D1B",
   faviconSvg: "/favicon.svg",
   favicons: {
     16: "/assets/brand/favicons/favicon-16.png",

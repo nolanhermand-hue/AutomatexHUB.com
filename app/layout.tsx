@@ -2,19 +2,31 @@ import { CriticalAboveFoldStyles } from "@/components/seo/CriticalAboveFoldStyle
 import { LayoutChrome } from "@/components/layout/LayoutChrome";
 import { NetlifyFormsDetection } from "@/components/seo/NetlifyFormsDetection";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
+import { CookieConsent } from "@/components/seo/CookieConsent";
 import { Plausible } from "@/components/seo/Plausible";
+import { ConsentProvider } from "@/providers/ConsentProvider";
 import { BRAND, brandAbsolute } from "@/lib/brand";
 import { BRAND_FULL, BRAND_SHORT, META, META_KEYWORDS, NAP, SITE_URL } from "@/lib/constants";
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import type { ReactNode } from "react";
 
 const inter = Inter({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
   weight: ["400", "500", "600", "700"],
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["system-ui", "Segoe UI", "Arial", "sans-serif"],
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+  weight: ["600", "700", "800"],
   preload: true,
   adjustFontFallback: true,
   fallback: ["system-ui", "Segoe UI", "Arial", "sans-serif"],
@@ -117,7 +129,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="fr" className={`dark ${inter.variable} ${geist.variable} ${jetbrainsMono.variable}`}>
       <head>
         <CriticalAboveFoldStyles />
         <link rel="dns-prefetch" href="https://plausible.io" />
@@ -125,13 +137,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href={BRAND.manifest} />
-        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#E07856" />
-        <meta name="theme-color" content="#080D1A" />
+        <link rel="mask-icon" href={BRAND.symbolTransparentSvg} color="#E07757" />
+        <meta name="theme-color" content="#070D1B" />
       </head>
       <body className="min-h-screen font-body antialiased">
-        <GoogleAnalytics />
-        <Plausible />
-        <LayoutChrome>{children}</LayoutChrome>
+        <ConsentProvider>
+          <GoogleAnalytics />
+          <Plausible />
+          <LayoutChrome>{children}</LayoutChrome>
+          <CookieConsent />
+        </ConsentProvider>
         <NetlifyFormsDetection />
       </body>
     </html>

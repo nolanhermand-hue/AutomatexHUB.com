@@ -1,17 +1,20 @@
-import { NAP, PRIMARY_DEMO_CTA, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE, FOUNDER_CHANTIER_CREDENTIAL } from "@/lib/constants";
+import { NAP, SETUP_48H_NUANCE, SOVEREIGNTY_TRUST_LINE, FOUNDER_CHANTIER_CREDENTIAL } from "@/lib/constants";
+
+/** CTA unique de la home (libellé home-only, n'impacte pas les autres pages). */
+export const HOME_PRIMARY_CTA = "Réserver l'audit 30 min" as const;
 
 export const HOME_META = {
   title: "Automatisation artisans & TPE en Normandie",
   description:
-    `Demandes, devis et relances avancent pendant que tu es en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · démo 30 min gratuite.`,
+    `Demandes, devis et relances avancent pendant que tu es en mission, en visite ou au téléphone. ${SETUP_48H_NUANCE}. Flers, Orne · audit 30 min gratuit.`,
 } as const;
 
 export const HOME_HERO = {
   seoLine: "Automatisation pour artisans et TPE en Normandie",
-  h1: "Tes clients n'attendent plus. Ton système leur répond.",
+  h1: "Ton devis part avant que ton concurrent ait rappelé.",
   sub:
-    "Réponses, devis et relances : tout est branché sur tes outils actuels. Nolan installe à distance — tu restes concentré sur tes clients.",
-  reassurance: `Démo 30 min gratuite · ${SETUP_48H_NUANCE}`,
+    "Dicte ton devis depuis le chantier — il revient en PDF prêt à envoyer. Et quand tu ne peux pas décrocher, le client a une vraie réponse en moins de 2 minutes. Nolan branche tout sur ton téléphone et ta boîte mail. Rien de nouveau à apprendre.",
+  reassurance: "Audit 30 min gratuit · sans engagement · installé en 48 h",
   integrationsLine:
     "Branchement sur ce que tu utilises déjà. Rien de nouveau à apprendre.",
 } as const;
@@ -40,19 +43,27 @@ export const HOME_PROBLEM = {
   ],
 } as const;
 
+export const HOME_VOICE = {
+  eyebrow: "Le geste qui change tout",
+  h2: "Tu dictes. Le devis part.",
+  body:
+    "Entre deux feux rouges, tu dictes les lignes du devis à la voix. Le système le met en forme, le PDF est prêt à envoyer. Tu ne touches plus à Word le soir.",
+  figureCaption: "Démo réelle — données de test",
+} as const;
+
 export const HOME_SOLUTION = {
-  eyebrow: "Ce qui tourne pour vous",
+  eyebrow: "Ce qui tourne pour toi",
   h2: "Quatre leviers installés une fois, actifs tous les jours",
   cards: [
+    {
+      id: "devis",
+      title: "Devis dictés à la voix",
+      body: "Dicte ton devis entre deux chantiers. Il revient en PDF prêt à envoyer. Fini Word à 21 h.",
+    },
     {
       id: "leads",
       title: "Demandes & appels",
       body: "SMS ou mail en moins de 2 minutes quand tu es indisponible. Le client sait que tu as vu son message.",
-    },
-    {
-      id: "devis",
-      title: "Devis",
-      body: "Notes vocales ou formulaire → PDF prêt à envoyer. Moins de soirées perdues sur Word.",
     },
     {
       id: "relances",
@@ -72,7 +83,7 @@ export const HOME_HOW = {
   h2: "Comment ça se passe concrètement ?",
   steps: [
     {
-      title: "Démo 30 min",
+      title: "Audit 30 min",
       body: "Tu montres ta journée type : appels, devis, mails. Nolan choisit avec toi 2 à 4 priorités.",
       time: "30 min",
     },
@@ -83,10 +94,17 @@ export const HOME_HOW = {
     },
     {
       title: "Moins de paperasse",
-      body: "Les réponses partent pendant que tu es indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : Nolan cale le rythme sur ton cas en démo.",
+      body: "Les réponses partent pendant que tu es indisponible — moins de mails et de devis à rattraper en fin de journée. Chaque activité est différente : Nolan cale le rythme sur ton cas en audit.",
       time: "Au fil des semaines",
     },
   ],
+} as const;
+
+export const HOME_PROOF = {
+  eyebrow: "La preuve",
+  h2: "Mon premier client, c'est moi.",
+  body:
+    "J'utilise ce système tous les jours pour faire tourner AutomateX : mes devis, mes mails, mes relances. Avant de l'installer chez toi, je le fais tourner chez moi.",
 } as const;
 
 export const HOME_PRICING = {
@@ -113,7 +131,7 @@ export const HOME_FOUNDER = {
     },
     {
       title: "La solution",
-      body: "Réponse rapide, devis et relances branchés sur Gmail et votre téléphone — sans nouvelle appli.",
+      body: "Réponse rapide, devis et relances branchés sur Gmail et ton téléphone — sans nouvelle appli.",
     },
   ] as const,
   quote:
@@ -121,7 +139,7 @@ export const HOME_FOUNDER = {
 } as const;
 
 export const HOME_FAQ_HEADING = {
-  h2: "Questions avant de réserver ta démo de 30 minutes",
+  h2: "Questions avant de réserver ton audit de 30 minutes",
 } as const;
 
 export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
@@ -131,7 +149,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Combien de temps pour être en ligne ?",
-    a: "Après la démo de 30 minutes, mise en ligne sous 48 h ouvrées. Tu valides chaque message type avant envoi réel.",
+    a: "Après l'audit de 30 minutes, mise en ligne sous 48 h ouvrées. Tu valides chaque message type avant envoi réel.",
   },
   {
     q: "C'est quoi le prix au final ?",
@@ -143,7 +161,7 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Et si ça ne te convient pas ?",
-    a: "Résiliation en un mail, effet en fin de mois. Tes données restent les tiennes ; effacement sous 7 jours après ton départ (détail sur /cgv et /vos-donnees). Les ajustements dans le périmètre validé en démo sont inclus dans la mensualité.",
+    a: "Résiliation en un mail, effet en fin de mois. Tes données restent les tiennes ; effacement sous 7 jours après ton départ (détail sur /cgv et /vos-donnees). Les ajustements dans le périmètre validé en audit sont inclus dans la mensualité.",
   },
   {
     q: "Intervenez-vous seulement en Normandie ?",
@@ -152,6 +170,6 @@ export const HOME_FAQ: ReadonlyArray<{ q: string; a: string }> = [
 ];
 
 export const HOME_FINAL_CTA = {
-  h2: PRIMARY_DEMO_CTA,
+  h2: HOME_PRIMARY_CTA,
   sub: "Choisis ton créneau sur la page rendez-vous — Nolan te confirme sous 24 h. Sans engagement.",
 } as const;

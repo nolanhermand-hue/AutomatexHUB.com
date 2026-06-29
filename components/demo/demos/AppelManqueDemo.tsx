@@ -34,7 +34,7 @@ function AppelManqueGsap({ active }: DemoAnimationProps) {
         </p>
       </div>
       <div className="demo-beat text-center">
-        <p className="text-sm text-[#38a169]">✅ Client rassuré · Rappel planifié</p>
+        <p className="text-sm text-success">✅ Client rassuré · Rappel planifié</p>
         <p className="text-xs text-[var(--color-text)]/80">Résumé Telegram 18 h</p>
       </div>
     </div>

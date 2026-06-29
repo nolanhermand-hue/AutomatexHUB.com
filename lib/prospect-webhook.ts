@@ -93,18 +93,18 @@ export async function submitProspectFromFormData(
     return { ok: true, honeypot: true };
   }
 
-  const prenom = getStringValue(args.formData, "prenom");
   const nom = getStringValue(args.formData, "nom");
-  const email = getStringValue(args.formData, "email");
   const telephoneRaw = getStringValue(args.formData, "telephone");
   const phoneOk = Boolean(normalizeFrenchPhoneDigits(telephoneRaw));
   const variant = args.variant;
+  const isResiliation = getStringValue(args.formData, "sujet") === "resiliation";
 
-  if (variant === "hub") {
-    if (!nom || !phoneOk) {
-      return { ok: false, error: "Merci de remplir nom et téléphone." };
+  if (variant === "hub" && !isResiliation) {
+    const secteur = getStringValue(args.formData, "secteur");
+    if (!nom || !phoneOk || !secteur) {
+      return { ok: false, error: "Merci de remplir nom, téléphone et métier." };
     }
-  } else if (!prenom || !nom || !email || !phoneOk) {
+  } else if (!nom || !phoneOk) {
     return { ok: false, error: "Merci de remplir tous les champs obligatoires." };
   }
 

@@ -8,24 +8,22 @@ import {
 
 /** Landing BTP — ton terrain, sans jargon « logiciel / formation ». */
 export const BTP_HERO = {
-  h1: "Tes devis partent sans ressaisie le soir. Réponse en moins de 2 minutes sur appel manqué. Tu finis ton chantier.",
+  h1: "Le premier qui répond signe le chantier. Fais que ce soit toi.",
   sub:
-    "Un système automatique installé sur tes outils actuels. Tu n'apprends rien de nouveau. Nolan installe et reste joignable.",
+    "Tes devis dictés partent en PDF, tes appels manqués reçoivent une réponse en moins de 2 minutes, tes relances tournent seules. Branché sur ton téléphone, installé en 48 h ouvrées. Rien de nouveau à apprendre.",
   ctaDemo: PRIMARY_DEMO_CTA,
   ctaHow: "Voir comment ça marche — 2 minutes",
   priceFrom: "Sans engagement · voir la grille Déclic · Système · Pilote ci-dessous",
   localBandeau:
     "Plombier, maçon, électricien dans l'Orne ? Même système — Nolan installe à distance ; mise en ligne en 48 h ouvrées après validation du périmètre.",
   badges: [
-    SOVEREIGNTY_TRUST_LINE,
-    "RGPD — vos données restent chez vous",
+    "Sans engagement",
     "Basé à Flers, Orne",
-    "Démo sous 24 h · Pilote : réponse 4 h (sem.)",
   ],
 } as const;
 
 export const BTP_DAY_PAIN = {
-  h2: "Vous reconnaissez cette journée ?",
+  h2: "Tu reconnais cette journée ?",
   steps: [
     { time: "06h00", text: "Réveil. Déjà 3 messages WhatsApp de clients." },
     { time: "07h00", text: "Chantier. Le téléphone sonne. Impossible de décrocher." },
@@ -40,7 +38,7 @@ export const BTP_DAY_PAIN = {
 } as const;
 
 export const BTP_AUTOMATIONS = {
-  h2: "Ce que le système fait à votre place",
+  h2: "Ce que le système fait à ta place",
   answerFirst:
     "Quatre leviers couvrent l’essentiel du terrain : SMS sur appel manqué, devis depuis la voix, relances polies et résumé du soir sur Telegram.",
   items: [
@@ -54,35 +52,35 @@ export const BTP_AUTOMATIONS = {
       id: "devis",
       title: "Devis automatique",
       body:
-        "Vous revenez d'une visite. Vous dictez 2 minutes dans votre téléphone. Le devis est mis en page, en PDF, et envoyé au client.",
+        "Tu reviens d'une visite. Tu dictes 2 minutes dans ton téléphone. Le devis est mis en page, en PDF, et envoyé au client.",
     },
     {
       id: "relance",
       title: "Relances sans honte",
       body:
-        "Le client n'a pas répondu à votre devis depuis 4 jours. Le système lui envoie un message poli à J+4 et J+8. Vous ne vous souvenez même pas d'avoir relancé.",
+        "Le client n'a pas répondu à ton devis depuis 4 jours. Le système lui envoie un message poli à J+4 et J+8. Tu ne te souviens même pas d'avoir relancé.",
     },
     {
       id: "resume",
       title: "Résumé de journée",
       body:
-        "À 18 h, vous recevez sur Telegram : 2 devis envoyés, 1 relance automatique, 1 appel en attente de rappel. Votre journée, en 10 secondes.",
+        "À 18 h, tu reçois sur Telegram : 2 devis envoyés, 1 relance automatique, 1 appel en attente de rappel. Ta journée, en 10 secondes.",
     },
   ],
 } as const;
 
 export const BTP_ACCOMPANIMENT = {
-  h2: "Le système, c'est nous. Pas vous.",
+  h2: "Le système, c'est nous. Pas toi.",
   body:
-    "Vous n'avez pas à comprendre comment ça fonctionne. Vous n'avez pas à l'installer. Vous n'avez pas à le former. Et si quelque chose coince un jeudi soir — vous envoyez un message à Nolan.",
+    "Tu n'as pas à comprendre comment ça fonctionne. Tu n'as pas à l'installer. Tu n'as pas à le former. Et si quelque chose coince un jeudi soir — tu envoies un message à Nolan.",
   pillars: [
     {
       title: "Point mensuel inclus",
-      body: "Chaque mois, Nolan vous appelle. Il regarde ce qui marche et ce qu'il ajuste. 20 minutes. Pas de surprise.",
+      body: "Chaque mois, Nolan t'appelle. Il regarde ce qui marche et ce qu'il ajuste. 20 minutes. Pas de surprise.",
     },
     {
       title: "Ajustements en continu",
-      body: "Votre activité change. Le système change avec vous. Nouveau type de chantier ? Nolan adapte. Sans surcoût.",
+      body: "Ton activité change. Le système change avec toi. Nouveau type de chantier ? Nolan adapte. Sans surcoût.",
     },
     {
       title: "Un vrai interlocuteur local",
@@ -90,11 +88,11 @@ export const BTP_ACCOMPANIMENT = {
     },
   ],
   quote:
-    "Je construis ce système pour des gens qui n'ont pas le temps de s'en occuper. Mon travail, c'est que vous n'y pensiez plus. Et si un jour vous avez besoin de moi — je suis là.",
+    "Je construis ce système pour des gens qui n'ont pas le temps de s'en occuper. Mon travail, c'est que tu n'y penses plus. Et si un jour tu as besoin de moi — je suis là.",
 } as const;
 
 export const BTP_PRICING_HEADING = {
-  h2: "Choisissez votre niveau de tranquillité",
+  h2: "Choisis ton niveau de tranquillité",
   sub: "Grille transparente. Besoin de moins ou de plus que les packs ? Formule sur mesure — prix sur devis après 30 min. Sans engagement.",
 } as const;
 
@@ -104,11 +102,11 @@ export type BtpOffer = PricingOffer & {
 };
 
 export const BTP_PILOTE_HIGHLIGHT =
-  "Accompagnement Copilote · Point mensuel 20 min · Réponse sous 4 h · Rapport mensuel Telegram. Nolan suit votre activité chaque mois.";
+  "Accompagnement Copilote · Point mensuel 20 min · Réponse sous 4 h · Rapport mensuel Telegram. Nolan suit ton activité chaque mois.";
 
 export const BTP_SOCIAL_PROOF = {
   stats: [
-    "Un devis qui traîne refroidit le client — des relances polies à J+4 et J+8 rappellent votre dossier sans que vous y pensiez.",
+    "Un devis qui traîne refroidit le client — des relances polies à J+4 et J+8 rappellent ton dossier sans que tu y penses.",
   ],
   founderQuote:
     "J'ai construit ce système en pensant aux artisans de l'Orne : devis le soir, appels manqués, paperasse. AutomateX enlève ce qui peut tourner sans toi — pour que tu restes sur le chantier.",
@@ -166,40 +164,40 @@ export const BTP_OFFERS: BtpOffer[] = [
     systemLine: "Périmètre plus léger ou plus complet que les 3 packs.",
     nolanLine: "Entretien de cadrage, puis devis transparent avant tout engagement.",
     benefits: [],
-    roiLine: "Idéal si votre activité ne rentre pas dans une case standard.",
+    roiLine: "Idéal si ton activité ne rentre pas dans une case standard.",
     cta: SUR_MESURE_BOOKING_CTA,
   },
 ];
 
 export const BTP_FAQ = {
-  h2: "Ce que vous vous demandez sûrement",
+  h2: "Ce que tu te demandes sûrement",
   items: [
     {
-      q: "Vous avez vos habitudes — vous travaillez ainsi depuis 20 ans.",
+      q: "Tu as tes habitudes — tu travailles ainsi depuis 20 ans.",
       a: "AutomateX ne change pas tes habitudes. Il travaille dans ta boîte mail, ton Telegram, ton Google Calendar — des outils que tu utilises déjà ou qui s'y ajoutent sans effort. Ton seul nouveau geste : recevoir un message le soir qui dit ce qui a été fait.",
     },
     {
-      q: "Vous n'êtes pas à l'aise avec la technologie.",
-      a: "C'est exactement pour ça qu'on est là. Vous n'installez rien. Nolan s'occupe de tout. Votre seul outil nouveau : recevoir un message Telegram le soir.",
+      q: "Tu n'es pas à l'aise avec la technologie.",
+      a: "C'est exactement pour ça qu'on est là. Tu n'installes rien. Nolan s'occupe de tout. Ton seul outil nouveau : recevoir un message Telegram le soir.",
     },
     {
-      q: "Vous avez déjà payé pour des outils qui n'ont pas marché.",
-      a: "La démo commence sur votre propre cas — vos vrais appels, vos vrais chantiers. Vous voyez avant de signer.",
+      q: "Tu as déjà payé pour des outils qui n'ont pas marché.",
+      a: "L'audit commence sur ton propre cas — tes vrais appels, tes vrais chantiers. Tu vois avant de signer.",
     },
     {
       q: "Et si ça tombe en panne ?",
-      a: "Vous écrivez à Nolan. Réponse sous 4 h en semaine (pack Pilote). Chaque mois, un point pour anticiper les blocages.",
+      a: "Tu écris à Nolan. Réponse sous 4 h en semaine (pack Pilote). Chaque mois, un point pour anticiper les blocages.",
     },
     {
       q: "C'est quoi le vrai prix ?",
-      a: "Setup unique + mensuel fixe. Aucun coût caché. Vous pouvez arrêter — Nolan vous explique comment récupérer vos données.",
+      a: "Frais de mise en place unique + mensuel fixe. Aucun coût caché. Tu peux arrêter — Nolan t'explique comment récupérer tes données.",
     },
     {
       q: "Mes données sont en sécurité ?",
-      a: `${SOVEREIGNTY_TRUST_LINE}. Mistral (Paris) et automatisations en UE. Vos devis et contacts : vous et Nolan uniquement.`,
+      a: `${SOVEREIGNTY_TRUST_LINE}. Mistral (Paris) et automatisations en UE. Tes devis et contacts : toi et Nolan uniquement.`,
     },
     {
-      q: "Vous travaillez seul, sans secrétaire — est-ce fait pour vous ?",
+      q: "Tu travailles seul, sans secrétaire — est-ce fait pour toi ?",
       a: "C'est exactement pour ça que c'est conçu. AutomateX remplace ce que ferait une secrétaire — répondre aux appels, envoyer les devis, relancer les clients. Sans embauche, sans formation, sans charges. Et Nolan est là si quelque chose coince.",
     },
     {
@@ -207,8 +205,8 @@ export const BTP_FAQ = {
       a: "Juste : Nolan a 19 ans. Ce qu'il a aussi, c'est un SIRET (103 208 054 00017), une adresse à Flers, un système testé sur des scénarios réels.",
     },
     {
-      q: "Et si vous avez un problème un vendredi soir ?",
-      a: "Pack Pilote : réponse sous 4 h en semaine. Déclic et Système : réponse le jour ouvré suivant. Dans tous les cas : vous n'êtes jamais seul.",
+      q: "Et si tu as un problème un vendredi soir ?",
+      a: "Pack Pilote : réponse sous 4 h en semaine. Déclic et Système : réponse le jour ouvré suivant. Dans tous les cas : tu n'es jamais seul.",
     },
   ],
 } as const;
@@ -225,7 +223,7 @@ export const BTP_CONTACT = {
   h2: "Prêt à voir ce que ça change sur tes chantiers ?",
   sub: "Nolan t'appelle sous 24 h. 30 minutes. Il te montre sur tes propres chantiers ce que le système ferait.",
   cta: PRIMARY_DEMO_CTA,
-  foot: "Démo gratuite · Sans engagement · Basé à Flers, Orne",
+  foot: "Audit gratuit · Sans engagement · Basé à Flers, Orne",
 } as const;
 
 export const BTP_METIERS = [
@@ -240,30 +238,30 @@ export const BTP_METIERS = [
 ] as const;
 
 export const ACCOMPANIMENT_PAGE = {
-  h1: "Vous n'êtes jamais seul avec votre système.",
+  h1: "Tu n'es jamais seul avec ton système.",
   sub:
-    "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles diagnostiqueurs et artisans sont transparentes ; si vous voulez moins ou plus que les packs affichés, Nolan part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
+    "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles diagnostiqueurs et artisans sont transparentes ; si tu veux moins ou plus que les packs affichés, Nolan part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
   monthlyIntro:
-    "20 minutes. Nolan regarde les chiffres avec vous : combien de clients ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis il ajuste — immédiatement, sans rendez-vous supplémentaire.",
+    "20 minutes. Nolan regarde les chiffres avec toi : combien de clients ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis il ajuste — immédiatement, sans rendez-vous supplémentaire.",
   timelineHorizontal: [
     { month: "Mois 1", text: "Installation · premier point · premiers ajustements" },
-    { month: "Mois 2", text: "Le système tourne · Nolan ajuste avec vos retours terrain" },
-    { month: "Mois 3", text: "Vous n'y pensez plus · rapport automatique" },
+    { month: "Mois 2", text: "Le système tourne · Nolan ajuste avec tes retours terrain" },
+    { month: "Mois 3", text: "Tu n'y penses plus · rapport automatique" },
     { month: "Mois 6", text: "Bilan semestriel · nouveaux automatismes si besoin" },
-    { month: "Mois 12", text: "Bilan ensemble · renouveler ou non — votre choix" },
+    { month: "Mois 12", text: "Bilan ensemble · renouveler ou non — ton choix" },
   ],
   roi: {
     h2: "Ce qu’on vise sur 12 mois",
-    body: "Moins de temps perdu sur l’admin le soir, des réponses plus rapides quand vous êtes sur le chantier, des relances qui ne dépendent plus de votre mémoire. Pas de promesse de chiffre : Nolan part de votre démo et ajuste mois après mois.",
+    body: "Moins de temps perdu sur l’admin le soir, des réponses plus rapides quand tu es sur le chantier, des relances qui ne dépendent plus de ta mémoire. Pas de promesse de chiffre : Nolan part de ton audit et ajuste mois après mois.",
   },
   sections: [
     {
       h2: "Le point mensuel",
-      body: "Chaque mois, Nolan vous appelle. 20 minutes. Combien de devis partis, ce qui bloque encore. Puis il ajuste.",
+      body: "Chaque mois, Nolan t'appelle. 20 minutes. Combien de devis partis, ce qui bloque encore. Puis il ajuste.",
     },
     {
       h2: "Les ajustements en continu",
-      body: "Nouveau type de client ? Nouvelle zone ? Nolan reconfigure sans surcoût. Exemple : adapter un template de devis sous 48 h ouvrées.",
+      body: "Nouveau type de client ? Nouvelle zone ? Nolan reconfigure sans surcoût. Exemple : adapter un modèle de devis sous 48 h ouvrées.",
     },
     {
       h2: "La ligne directe",
@@ -271,7 +269,7 @@ export const ACCOMPANIMENT_PAGE = {
     },
     {
       h2: "Ce que ça change sur 12 mois",
-      body: "Mois 1 : installation. Mois 3 : le système tourne seul. Mois 12 : ROI calculé ensemble — renouveler ou non, votre choix.",
+      body: "Mois 1 : installation. Mois 3 : le système tourne seul. Mois 12 : ROI calculé ensemble — renouveler ou non, ton choix.",
     },
   ],
 } as const;
@@ -311,7 +309,7 @@ export const BTP_LOCAL_PAGES: BtpLocalPageDef[] = [
       "Automatisation pour artisans à Flers : devis depuis note vocale, SMS appels manqués, relances clients. Nolan à Flers (61100). 390 € à la mise en place, puis 99 €/mois · 990 € / 249 € · 1690 € / 449 €.",
     localHook: "Siège à Saint-Georges-des-Groseillers — Nolan intervient sur Flers et l'agglo en 20 minutes.",
     localDetail:
-      "Les artisans de la zone industrielle des Provinces, du centre-ville de Flers et de l'agglo : devis le soir, appels manqués en journée — le système répond pendant que vous êtes sur le chantier.",
+      "Les artisans de la zone industrielle des Provinces, du centre-ville de Flers et de l'agglo : devis le soir, appels manqués en journée — le système répond pendant que tu es sur le chantier.",
     distanceFromFlers: "Nolan est à Flers — même commune",
   },
   {

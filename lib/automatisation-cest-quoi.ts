@@ -99,8 +99,8 @@ export const AUTOMATISATION_CEST_QUOI_FAQ_LD: ReadonlyArray<AutomatisationCestQu
 
 export const AUTOMATISATION_CEST_QUOI_CTA = {
   title: "Vous voulez voir ce que cela donne sur votre activité ?",
-  button: "Démo gratuite 30 min sur votre cas",
-  subline: "Pas de démo générique. Nolan part de vos appels, vos devis, vos journées.",
+  button: "Réserver l'audit 30 min",
+  subline: "Pas d'audit générique. Nolan part de vos appels, vos devis, vos journées.",
 } as const;
 
 export const AUTOMATISATION_CEST_QUOI_LINKS = {

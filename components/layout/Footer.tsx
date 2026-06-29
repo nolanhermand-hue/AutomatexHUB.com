@@ -1,5 +1,6 @@
 import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { FooterTrustBadges } from "@/components/layout/FooterTrustBadges";
+import { ManageCookiesButton } from "@/components/seo/ManageCookiesButton";
 import { LinkedInLink } from "@/components/ui/LinkedInLink";
 import { TikTokLink } from "@/components/ui/TikTokLink";
 import {
@@ -56,6 +57,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <ManageCookiesButton className="text-[13px] text-muted transition hover:text-text" />
+              </li>
             </ul>
           </div>
         </div>

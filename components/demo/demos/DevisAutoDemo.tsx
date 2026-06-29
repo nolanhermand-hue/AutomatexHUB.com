@@ -29,7 +29,7 @@ function DevisAutoGsap({ active }: DemoAnimationProps) {
       <div className="demo-beat text-center text-sm text-[var(--color-text)]">
         📧 Envoyé à m.dupont@gmail.com · 17 h 23
       </div>
-      <div className="demo-beat text-center text-sm text-[#38a169]">✅ Devis accepté</div>
+      <div className="demo-beat text-center text-sm text-success">✅ Devis accepté</div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
-import { PRIMARY_DEMO_CTA } from "@/lib/constants";
-import { HOME_FAQ, HOME_FAQ_HEADING } from "@/lib/home-copy";
+import { HOME_FAQ, HOME_FAQ_HEADING, HOME_PRIMARY_CTA } from "@/lib/home-copy";
 import { rendezVousHref } from "@/lib/hub-nav";
 import Link from "next/link";
 
@@ -56,7 +55,7 @@ export function HomeFAQ() {
             analyticsId="home_faq_demo"
             className="btn-bracket btn-bracket-primary"
           >
-            {PRIMARY_DEMO_CTA}
+            {HOME_PRIMARY_CTA}
           </AnalyticsCta>
         </div>
       </div>

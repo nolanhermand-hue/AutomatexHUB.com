@@ -72,6 +72,8 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     return () => window.removeEventListener("hashchange", applyParams);
   }, []);
 
+  const isResiliation = sujetHint === "resiliation";
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (pending) return;
@@ -79,11 +81,11 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     setSubmitFeedback("");
 
     const nomOk = fields.nom.trim() !== "";
-    const prenomOk = isHub || fields.prenom.trim() !== "";
     const phoneOk = fields.telephone.replace(/\D/g, "").length >= 10;
-    const emailOk = isHub ? true : isValidEmail(fields.email);
+    const emailOk = isHub ? true : fields.email.trim() === "" || isValidEmail(fields.email);
+    const secteurOk = isHub && !isResiliation ? fields.secteur.trim() !== "" : true;
 
-    if (!prenomOk || !nomOk || !phoneOk || !emailOk) {
+    if (!nomOk || !phoneOk || !emailOk || !secteurOk) {
       return;
     }
 
@@ -103,8 +105,6 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     setSubmitFeedback("Merci, vos informations sont bien envoyées.");
     window.location.assign("/merci");
   };
-
-  const isResiliation = sujetHint === "resiliation";
 
   const formClassName = [
     "contact-form relative space-y-6 rounded-xl border border-border bg-bg-card p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] md:p-8",
@@ -282,24 +282,16 @@ function ContactForm({
                 htmlFor="firstName"
                 className="text-xs font-semibold uppercase tracking-wide text-muted"
               >
-                {CONTACT_COPY.firstNameLabel}
+                {CONTACT_COPY.firstNameLabel} (optionnel)
               </label>
               <input
                 id="firstName"
                 name="prenom"
-                required
                 autoComplete="given-name"
-                aria-required="true"
-                aria-describedby="prenom-error"
                 value={fields.prenom}
                 onChange={(e) => setFields((f) => ({ ...f, prenom: e.target.value }))}
-                className={fieldClass(touched, fields.prenom, true)}
+                className={fieldClass(false, fields.prenom, false)}
               />
-              {touched && !fields.prenom.trim() && (
-                <p id="prenom-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                  <span aria-hidden>⚠</span> Ce champ est requis.
-                </p>
-              )}
             </div>
           )}
 
@@ -371,23 +363,56 @@ function ContactForm({
           {isHub ? (
             <>
               <input type="hidden" name="email" value="" />
+              {isResiliation ? (
+                <input type="hidden" name="secteur" value="" />
+              ) : (
+                <div>
+                  <label
+                    htmlFor="secteur"
+                    className="text-xs font-semibold uppercase tracking-wide text-muted"
+                  >
+                    {CONTACT_COPY.hubMetierLabel}
+                  </label>
+                  <select
+                    id="secteur"
+                    name="secteur"
+                    required
+                    aria-required="true"
+                    aria-describedby="secteur-error"
+                    value={fields.secteur}
+                    onChange={(e) => setFields((f) => ({ ...f, secteur: e.target.value }))}
+                    className={fieldClass(touched, fields.secteur, true)}
+                  >
+                    <option value="">{CONTACT_COPY.hubMetierPlaceholder}</option>
+                    {PROSPECT_SECTEUR_OPTIONS.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                  {touched && !fields.secteur.trim() && (
+                    <p id="secteur-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
+                      <span aria-hidden>⚠</span> Choisis ton métier.
+                    </p>
+                  )}
+                </div>
+              )}
+              <p className="text-xs text-muted">
+                {isResiliation ? CONTACT_COPY.hubResiliationHint : CONTACT_COPY.hubStep1Hint}
+              </p>
               {!hubDetailsOpen ? (
                 <>
-                  <input type="hidden" name="secteur" value={fields.secteur} />
                   <input type="hidden" name="precisions" value={fields.precisions} />
+                  <button
+                    type="button"
+                    className="w-full rounded-md border border-border bg-surface px-4 py-3 text-left text-sm font-medium text-text transition hover:border-primary/40"
+                    onClick={() => setHubDetailsOpen(true)}
+                    aria-expanded={false}
+                    aria-controls="hub-details-panel"
+                  >
+                    {CONTACT_COPY.hubExpandLabel}
+                  </button>
                 </>
-              ) : null}
-              <p className="text-xs text-muted">{CONTACT_COPY.hubStep1Hint}</p>
-              {!hubDetailsOpen ? (
-                <button
-                  type="button"
-                  className="w-full rounded-md border border-border bg-surface px-4 py-3 text-left text-sm font-medium text-text transition hover:border-primary/40"
-                  onClick={() => setHubDetailsOpen(true)}
-                  aria-expanded={false}
-                  aria-controls="hub-details-panel"
-                >
-                  {CONTACT_COPY.hubExpandLabel}
-                </button>
               ) : (
                 <div
                   id="hub-details-panel"
@@ -395,34 +420,8 @@ function ContactForm({
                   aria-label="Précisions pour l'appel"
                 >
                   <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-                    Étape 2 sur 2 — optionnel
+                    Précision — optionnel
                   </p>
-                  <div>
-                    <label
-                      htmlFor="secteur"
-                      className="text-xs font-semibold uppercase tracking-wide text-muted"
-                    >
-                      {CONTACT_COPY.hubMetierLabel}
-                    </label>
-                    <select
-                      id="secteur"
-                      name="secteur"
-                      aria-describedby="secteur-hint"
-                      value={fields.secteur}
-                      onChange={(e) => setFields((f) => ({ ...f, secteur: e.target.value }))}
-                      className={fieldClass(false, fields.secteur, false)}
-                    >
-                      <option value="">{CONTACT_COPY.hubMetierPlaceholder}</option>
-                      {PROSPECT_SECTEUR_OPTIONS.map((opt) => (
-                        <option key={opt.value} value={opt.value}>
-                          {opt.label}
-                        </option>
-                      ))}
-                    </select>
-                    <p id="secteur-hint" className="mt-1 text-xs text-faint">
-                      Recommandé — Nolan prépare la démo.
-                    </p>
-                  </div>
                   <div>
                     <label
                       htmlFor="precisions"
@@ -451,23 +450,21 @@ function ContactForm({
               htmlFor="email"
               className="text-xs font-semibold uppercase tracking-wide text-muted"
             >
-              {CONTACT_COPY.emailLabel}
+              {CONTACT_COPY.emailLabel} (optionnel)
             </label>
             <input
               id="email"
               name="email"
               type="email"
-              required
               inputMode="email"
               autoComplete="email"
               placeholder="vous@exemple.com"
-              aria-required="true"
               aria-describedby="email-error"
               value={fields.email}
               onChange={(e) => setFields((f) => ({ ...f, email: e.target.value }))}
-              className={fieldClass(touched, fields.email, true)}
+              className={fieldClass(touched, fields.email, false)}
             />
-            {touched && !isValidEmail(fields.email) && (
+            {touched && fields.email.trim() !== "" && !isValidEmail(fields.email) && (
               <p id="email-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
                 <span aria-hidden>⚠</span> Indiquez une adresse email valide.
               </p>
