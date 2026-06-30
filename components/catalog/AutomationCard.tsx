@@ -24,9 +24,13 @@ export function AutomationCard({
         <p className="text-[13px] leading-relaxed text-muted">{tagline}</p>
       </div>
 
-      <div className="flex-1 border-t border-border bg-bg/40">
+      <details className="group/flow flex-1 border-t border-border bg-bg/40">
+        <summary className="cursor-pointer list-none px-5 py-3 font-mono text-[11px] uppercase tracking-wide text-muted transition-colors hover:text-text [&::-webkit-details-marker]:hidden">
+          <span className="text-primary group-open/flow:hidden">+ Scénario pas à pas</span>
+          <span className="hidden text-primary group-open/flow:inline">− Scénario pas à pas</span>
+        </summary>
         <AutomationFlowSchema steps={steps} />
-      </div>
+      </details>
 
       {impact ? (
         <div className="border-t border-border bg-bg px-5 py-3">

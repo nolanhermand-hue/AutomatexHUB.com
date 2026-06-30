@@ -857,7 +857,7 @@ export const CONTACT_COPY = {
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisis ton secteur",
   hubMetierLabel: "Activité",
-  hubMetierPlaceholder: "Artisan, diagnostiqueur, TPE…",
+  hubMetierPlaceholder: "Choisis ton activité",
   hubStep1Hint: "Nom, téléphone et métier suffisent — Nolan te rappelle.",
   hubResiliationHint: "Nom et téléphone suffisent — Nolan confirme ta résiliation sous 48 h ouvrées.",
   hubExpandLabel: "Préciser mon appel (activité, besoin)",
@@ -881,9 +881,23 @@ export const HUB_CONTACT_REASSURANCE = [
 export const PROSPECT_SECTEUR_OPTIONS = [
   { value: "artisan", label: "Artisan / BTP (couvreur, charpentier…)" },
   { value: "diagnostiqueur", label: "Diagnostiqueur immobilier" },
-  { value: "immobilier", label: "Autre activité immobilière" },
+  { value: "immobilier", label: "Agent ou pro immobilier (hors diagnostic)" },
   { value: "tpe", label: "TPE / PME (autre secteur)" },
 ] as const;
+
+/** Une seule entrée par `value` — évite les doublons si plusieurs listes sont fusionnées. */
+export function uniqueProspectSecteurOptions<
+  T extends ReadonlyArray<{ readonly value: string; readonly label: string }>,
+>(options: T): Array<T[number]> {
+  const seen = new Set<string>();
+  const out: Array<T[number]> = [];
+  for (const opt of options) {
+    if (seen.has(opt.value)) continue;
+    seen.add(opt.value);
+    out.push(opt);
+  }
+  return out;
+}
 
 export const ORNE_ZONE_OPTIONS = [
   { value: "61", label: "Tout l'Orne (61)" },

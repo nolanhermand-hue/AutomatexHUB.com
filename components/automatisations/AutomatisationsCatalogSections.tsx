@@ -3,10 +3,17 @@ import { CATALOG_CATEGORY_ANSWER } from "@/lib/automatisations-catalog-pricing";
 import { CATEGORIES, categoryToAnchor, getByCategory } from "@/lib/automations-catalog";
 
 export function AutomatisationsCatalogSections() {
+  const renderedIds = new Set<string>();
+
   return (
     <div>
       {CATEGORIES.map((category) => {
-        const items = getByCategory(category);
+        const items = getByCategory(category).filter((automation) => {
+          if (renderedIds.has(automation.id)) return false;
+          renderedIds.add(automation.id);
+          return true;
+        });
+        if (items.length === 0) return null;
         return (
           <section
             key={category}

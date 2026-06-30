@@ -1,12 +1,12 @@
-import { HeroToolsSchema } from "@/components/home/HeroToolsSchema";
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import { AnalyticsCta } from "@/components/ui/AnalyticsCta";
-import { HOME_HERO, HOME_PRIMARY_CTA } from "@/lib/home-copy";
+import { HOME_HERO, HOME_PRIMARY_CTA, HOME_VOICE } from "@/lib/home-copy";
 import { rendezVousHref } from "@/lib/hub-nav";
 
 export function HomeHero() {
   return (
     <section id="hero" className="relative px-gutter pb-16 pt-24 md:pb-20 md:pt-28">
-      <div className="mx-auto grid max-w-content gap-10 lg:grid-cols-[1fr_minmax(240px,360px)] lg:items-center">
+      <div className="mx-auto grid max-w-content items-center gap-10 lg:grid-cols-2">
         <div className="hero-enter">
           <p className="text-base font-medium leading-relaxed text-muted md:text-lg">
             {HOME_HERO.seoLine}
@@ -30,9 +30,11 @@ export function HomeHero() {
             {HOME_HERO.reassurance}
           </p>
         </div>
-        <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-          <HeroToolsSchema />
-        </div>
+        <DemoVideo
+          id="voix-devis"
+          caption={HOME_VOICE.figureCaption}
+          className="hero-enter mx-auto w-full max-w-lg lg:max-w-none"
+        />
       </div>
     </section>
   );

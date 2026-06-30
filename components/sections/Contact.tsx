@@ -8,6 +8,7 @@ import {
   HUB_CONTACT_REASSURANCE,
   NAP,
   PROSPECT_SECTEUR_OPTIONS,
+  uniqueProspectSecteurOptions,
   SUR_MESURE_BOOKING_CTA,
 } from "@/lib/constants";
 import { formatFrenchPhoneDisplay } from "@/lib/phone-fr";
@@ -384,7 +385,7 @@ function ContactForm({
                     className={fieldClass(touched, fields.secteur, true)}
                   >
                     <option value="">{CONTACT_COPY.hubMetierPlaceholder}</option>
-                    {PROSPECT_SECTEUR_OPTIONS.map((opt) => (
+                    {uniqueProspectSecteurOptions(PROSPECT_SECTEUR_OPTIONS).map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>

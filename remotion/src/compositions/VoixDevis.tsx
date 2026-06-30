@@ -120,17 +120,30 @@ export const VoixDevis: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          inset: 0,
+          top: 96,
+          left: 48,
+          right: 48,
+          bottom: 96,
           display: "flex",
-          alignItems: "center",
-          gap: 36,
-          padding: "0 64px",
+          alignItems: "stretch",
+          justifyContent: "center",
+          gap: 20,
+          zIndex: 1,
         }}
       >
         {/* Panneau gauche — dictée vocale */}
         <Sequence from={6}>
-          <Panel style={{ flex: 1, opacity: fade(frame, 6), transform: `translateY(${rise(frame, 6, fps)}px)` }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 22 }}>
+          <Panel
+            style={{
+              flex: 1,
+              minWidth: 0,
+              maxHeight: "100%",
+              overflow: "hidden",
+              opacity: fade(frame, 6),
+              transform: `translateY(${rise(frame, 6, fps)}px)`,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
               <LogoChip name="twilio" alt="Appel / voix" />
               <div>
                 <div style={{ fontSize: 22, fontWeight: 700 }}>Note vocale</div>
@@ -144,8 +157,8 @@ export const VoixDevis: React.FC = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: 5,
-                height: 64,
-                marginBottom: 24,
+                height: 48,
+                marginBottom: 16,
               }}
             >
               {bars.map((_, i) => {
@@ -180,7 +193,7 @@ export const VoixDevis: React.FC = () => {
                     borderRadius: 14,
                     background: THEME.navbar,
                     border: `1px solid ${THEME.border}`,
-                    fontSize: 20,
+                    fontSize: 17,
                     color: THEME.text,
                   }}
                 >
@@ -199,20 +212,32 @@ export const VoixDevis: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: 12,
+              justifyContent: "center",
+              gap: 8,
+              flexShrink: 0,
+              width: 72,
               opacity: fade(frame, 92),
             }}
           >
             <LogoChip name="mistral" alt="Mise en forme" />
             <Label color={THEME.accent}>Mise en forme</Label>
-            <div style={{ fontSize: 40, color: THEME.accent, lineHeight: 1 }}>→</div>
+            <div style={{ fontSize: 32, color: THEME.accent, lineHeight: 1 }}>→</div>
           </div>
         </Sequence>
 
         {/* Panneau droit — devis PDF */}
         <Sequence from={150}>
-          <Panel style={{ flex: 1, opacity: fade(frame, 150), transform: `translateY(${rise(frame, 150, fps)}px)` }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 22 }}>
+          <Panel
+            style={{
+              flex: 1,
+              minWidth: 0,
+              maxHeight: "100%",
+              overflow: "hidden",
+              opacity: fade(frame, 150),
+              transform: `translateY(${rise(frame, 150, fps)}px)`,
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
               <div>
                 <div style={{ fontSize: 22, fontWeight: 700 }}>Devis · PDF</div>
                 <Label>Prêt à envoyer</Label>
@@ -235,7 +260,7 @@ export const VoixDevis: React.FC = () => {
                     justifyContent: "space-between",
                     padding: "12px 4px",
                     borderBottom: `1px solid ${THEME.border}`,
-                    fontSize: 20,
+                    fontSize: 17,
                     color: THEME.text,
                   }}
                 >
@@ -302,17 +327,21 @@ export const VoixDevis: React.FC = () => {
         <div
           style={{
             position: "absolute",
-            bottom: 40,
-            left: 64,
-            right: 64,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 2,
+            padding: "20px 48px 28px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
+            gap: 24,
+            background: `linear-gradient(to top, ${THEME.body} 65%, transparent)`,
             opacity: fade(frame, 278),
           }}
         >
-          <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: -0.5 }}>
-            Vous dictez. <span style={{ color: THEME.accent }}>Le devis part.</span>
+          <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: -0.5, lineHeight: 1.15 }}>
+            Tu dictes. <span style={{ color: THEME.accent }}>Le devis part.</span>
           </div>
           <Label>automatex-hub · Flers (61)</Label>
         </div>

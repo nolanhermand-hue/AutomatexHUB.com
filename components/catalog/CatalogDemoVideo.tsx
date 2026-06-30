@@ -10,31 +10,79 @@ type CatalogDemoVideoProps = {
 const BASE = "/assets/demos/video/catalog";
 
 /**
- * Vignette de démo pour une carte du catalogue : poster lazy par défaut,
- * la vidéo (.webm) ne se charge QUE quand l'utilisateur clique « Lire ».
- * Perf-safe : aucune autolecture, aucune vidéo chargée au scroll.
+ * Vignette catalogue : poster par défaut, .webm chargé et lu en boucle
+ * uniquement quand visible (IntersectionObserver). Pause hors viewport.
+ * Repli poster si prefers-reduced-motion.
  */
 export function CatalogDemoVideo({ id, title }: CatalogDemoVideoProps) {
   const poster = `${BASE}/${id}.webp`;
   const src = `${BASE}/${id}.webm`;
-  const [playing, setPlaying] = useState(false);
-  const [reduced, setReduced] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const srcAssignedRef = useRef(false);
+  const [reduced, setReduced] = useState(true);
 
   useEffect(() => {
-    setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const onChange = () => setReduced(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
 
   useEffect(() => {
-    if (playing) void videoRef.current?.play().catch(() => {});
-  }, [playing]);
+    if (reduced) return;
+    const el = videoRef.current;
+    if (!el) return;
+
+    const tryPlay = () => {
+      void el.play().catch(() => {});
+    };
+
+    const ensureSrcAndPlay = () => {
+      if (!srcAssignedRef.current) {
+        srcAssignedRef.current = true;
+        el.src = src;
+        el.load();
+        const onCanPlay = () => tryPlay();
+        if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+          tryPlay();
+        } else {
+          el.addEventListener("canplay", onCanPlay, { once: true });
+        }
+      } else {
+        tryPlay();
+      }
+    };
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry) return;
+        if (entry.isIntersecting) ensureSrcAndPlay();
+        else el.pause();
+      },
+      { threshold: 0.25 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [reduced, src]);
 
   return (
     <div
       className="relative w-full overflow-hidden bg-bg"
       style={{ aspectRatio: "1280 / 720" }}
     >
-      {playing && !reduced ? (
+      {reduced ? (
+        // eslint-disable-next-line @next/next/no-img-element -- export statique, poster dimensionné
+        <img
+          src={poster}
+          alt={`Démo animée : ${title}`}
+          width={1280}
+          height={720}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      ) : (
         <video
           ref={videoRef}
           poster={poster}
@@ -44,45 +92,9 @@ export function CatalogDemoVideo({ id, title }: CatalogDemoVideoProps) {
           muted
           loop
           playsInline
-          autoPlay
-          preload="auto"
+          preload="none"
           aria-label={`Démo animée : ${title}`}
-        >
-          <source src={src} type="video/webm" />
-        </video>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setPlaying(true)}
-          className="group/btn absolute inset-0 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-          aria-label={`Lire la démo : ${title}`}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element -- export statique, poster dimensionné */}
-          <img
-            src={poster}
-            alt=""
-            width={1280}
-            height={720}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover"
-          />
-          <span
-            className="absolute inset-0 bg-night/30 transition-colors group-hover/btn:bg-night/10"
-            aria-hidden="true"
-          />
-          <span
-            className="relative flex h-14 w-14 items-center justify-center rounded-full border border-border bg-navbar/80 text-title backdrop-blur-sm transition-transform group-hover/btn:scale-110"
-            aria-hidden="true"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </span>
-          <span className="absolute bottom-2 right-2 rounded border border-border bg-navbar/80 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-faint">
-            démo
-          </span>
-        </button>
+        />
       )}
     </div>
   );

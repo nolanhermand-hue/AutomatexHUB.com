@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "studio": "remotion studio",
-    "render": "node render-all.mjs"
+    "render": "node render-all.mjs",
+    "render:voix-devis": "node render-one.mjs voix-devis"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.0",
