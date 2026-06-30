@@ -3,7 +3,7 @@
 import { cn } from "@/lib/cn";
 import { useEffect, useRef, useState } from "react";
 
-export type DemoVideoId = "voix-devis" | "accompagnement";
+export type DemoVideoId = "voix-devis" | "accompagnement" | "vos-donnees";
 
 type DemoMeta = { width: number; height: number; alt: string };
 
@@ -18,6 +18,11 @@ const DEMOS: Record<DemoVideoId, DemoMeta> = {
     width: 1280,
     height: 800,
     alt: "Démo : installation, point mensuel 20 min, ajustements et ligne directe Nolan à Flers",
+  },
+  "vos-donnees": {
+    width: 1280,
+    height: 800,
+    alt: "Illustration : mails dans Gmail, automatisations N8N à Francfort, Mistral à Paris, site statique Netlify, droits RGPD et résiliation",
   },
 };
 

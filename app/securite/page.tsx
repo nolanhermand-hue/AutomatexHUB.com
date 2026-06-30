@@ -1,3 +1,4 @@
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import {
   LegalInfraCallout,
   LegalPageShell,
@@ -28,6 +29,13 @@ export default function SecuritePage() {
         En tant que diagnostiqueur ou artisan, vous traitez des données de clients. Voici comment{" "}
         {c.brand} protège votre périmètre.
       </LegalP>
+
+      <div className="my-10 max-w-2xl">
+        <DemoVideo
+          id="vos-donnees"
+          caption="Parcours des données : Gmail, N8N Francfort, Mistral Paris, site Netlify (schéma de test)"
+        />
+      </div>
 
       <LegalSection title="Où sont vos données ?" code="01 // PÉRIMÈTRE">
         <LegalP>{LEGAL_SITE_CDN_TRANSPARENCY}</LegalP>

@@ -1,17 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import { sequentialDemoBeats, useGsapDemoLoop } from "@/lib/motion/useGsapDemoLoop";
-import { DEMO_STATIC } from "@/lib/demo-loaders";
-import Image from "next/image";
 import { useRef } from "react";
 
-const MotionDemo = dynamic(
-  () => import("@/components/demo/MotionDemo").then((m) => ({ default: m.MotionDemo })),
-  { ssr: false },
-);
-
-/** Animation Nolan en live (Telegram) + capture statique de repli. */
+/** Telegram terrain (GSAP) + démo vidéo accompagnement (point mensuel). */
 export function NolanLiveDemo() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -46,30 +39,11 @@ export function NolanLiveDemo() {
         </div>
       </div>
 
-      <figure>
-        <div
-          className="relative w-full overflow-hidden rounded-xl border border-border bg-surface"
-          style={{ aspectRatio: "640 / 420" }}
-        >
-          <Image
-            src={DEMO_STATIC.pointMensuel.src}
-            alt={DEMO_STATIC.pointMensuel.alt}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 480px"
-          />
-        </div>
-        <figcaption className="mt-2 text-xs text-muted">Capture du système — données de test</figcaption>
-      </figure>
-
-      <div className="lg:col-span-2">
-        <MotionDemo
-          demoId="point-mensuel-accompagnement"
-          staticSrc={DEMO_STATIC.pointMensuel.src}
-          staticAlt={DEMO_STATIC.pointMensuel.alt}
-          ariaLabel="Exemple du point mensuel et des relances automatiques"
-        />
-      </div>
+      <DemoVideo
+        id="accompagnement"
+        caption="Installation, point mensuel, ajustements — Nolan à Flers (données de test)"
+        className="w-full"
+      />
     </div>
   );
 }

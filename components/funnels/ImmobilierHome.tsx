@@ -28,14 +28,6 @@ const ImmobilierLiveDemoSection = dynamic(
   { ssr: true, loading: () => sectionPulse("min-h-64", "bg-bg-card") },
 );
 
-const ImmobilierLeadDemoSection = dynamic(
-  () =>
-    import("@/components/demo/ImmobilierLeadDemoSection").then((m) => ({
-      default: m.ImmobilierLeadDemoSection,
-    })),
-  { ssr: true, loading: () => sectionPulse("min-h-64", "bg-night") },
-);
-
 const FeaturedAutomationsSection = dynamic(
   () =>
     import("@/components/sections/FeaturedAutomationsSection").then((m) => ({
@@ -75,7 +67,6 @@ export function ImmobilierHome() {
       <Agitation />
       <Solution />
       <ImmobilierLiveDemoSection />
-      <ImmobilierLeadDemoSection />
       <FeaturedAutomationsSection variant="immo" />
       <AccompanimentPillars
         h2={IMMOBILIER_ACCOMPANIMENT.h2}

@@ -1,8 +1,12 @@
-"use client";
-
+import { CatalogDemoVideo } from "@/components/catalog/CatalogDemoVideo";
 import { BRAND_SHORT } from "@/lib/constants";
-import { MotionDemo } from "@/components/demo/MotionDemo";
-import { DEMO_STATIC, loadAppelManque, loadDevisAuto } from "@/lib/demo-loaders";
+import { AUTOMATIONS_CATALOG } from "@/lib/automations-catalog";
+
+const BTP_DEMO_IDS = ["appel-manque-sms-btp", "note-vocale-devis-btp"] as const;
+
+function demoTitle(id: (typeof BTP_DEMO_IDS)[number]): string {
+  return AUTOMATIONS_CATALOG.find((a) => a.id === id)?.title ?? id;
+}
 
 export function BtpDemoSection() {
   return (
@@ -10,20 +14,17 @@ export function BtpDemoSection() {
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text">Voici ce qui change avec {BRAND_SHORT}</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <MotionDemo
-            demoId="appel-manque"
-            staticSrc={DEMO_STATIC.appelManque.src}
-            ariaLabel="Appel manqué traité par une réponse automatique en moins de 2 minutes"
-            staticAlt={DEMO_STATIC.appelManque.alt}
-            loadAnimation={loadAppelManque}
-          />
-          <MotionDemo
-            demoId="devis-auto"
-            staticSrc={DEMO_STATIC.devisAuto.src}
-            ariaLabel="Devis généré après dictée vocale"
-            staticAlt={DEMO_STATIC.devisAuto.alt}
-            loadAnimation={loadDevisAuto}
-          />
+          {BTP_DEMO_IDS.map((id) => (
+            <figure
+              key={id}
+              className="overflow-hidden rounded-xl border border-border bg-surface"
+            >
+              <CatalogDemoVideo id={id} title={demoTitle(id)} />
+              <figcaption className="px-4 py-3 text-xs text-muted">
+                {demoTitle(id)} — données de test
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

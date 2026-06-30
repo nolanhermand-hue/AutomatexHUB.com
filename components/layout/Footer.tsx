@@ -1,6 +1,7 @@
 import { LogoOrbit } from "@/components/brand/LogoOrbit";
 import { FooterTrustBadges } from "@/components/layout/FooterTrustBadges";
 import { ManageCookiesButton } from "@/components/seo/ManageCookiesButton";
+import { FacebookLink } from "@/components/ui/FacebookLink";
 import { LinkedInLink } from "@/components/ui/LinkedInLink";
 import { TikTokLink } from "@/components/ui/TikTokLink";
 import {
@@ -121,6 +122,8 @@ export function Footer() {
           </a>
           {" · "}
           <LinkedInLink className="align-middle" size={22} />
+          {" · "}
+          <FacebookLink className="align-middle" size={22} />
           {" · "}
           <TikTokLink className="align-middle" size={22} />
         </address>

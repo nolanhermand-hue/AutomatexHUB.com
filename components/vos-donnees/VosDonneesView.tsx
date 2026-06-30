@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import type { ReactNode } from "react";
 import {
   VOS_DONNEES_COLLECTION_ROWS,
@@ -29,33 +30,45 @@ function SectionBlock({ children, className = "" }: { children: ReactNode; class
 export function VosDonneesView() {
   return (
     <main className="min-h-screen">
-      <section className="mx-auto max-w-4xl px-gutter pb-16 pt-24">
-        <p className="label-micro mb-6 text-primary">SÉCURITÉ · RGPD · TRANSPARENCE</p>
-        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-text">
-          Vos données vous appartiennent.
-          <br />
-          AutomateX vous dit exactement ce qu&apos;il en fait.
-        </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-          AutomateX manipule des données professionnelles sensibles — emails, devis, contacts clients.
-          Vous avez le droit de savoir où elles vont, qui y accède, et comment les supprimer. Cette page
-          répond à ces questions sans langue de bois.
-        </p>
-        <p className="mt-4 max-w-2xl text-sm text-muted">
-          {SOVEREIGNTY_TRUST_LINE}. Le site public est
-          servi en statique (Netlify) ; les automatisations tournent en UE (N8N Cloud, Francfort).
-        </p>
+      <section className="mx-auto max-w-content px-gutter pb-16 pt-24">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="label-micro mb-6 text-primary">SÉCURITÉ · RGPD · TRANSPARENCE</p>
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-text">
+              Vos données vous appartiennent.
+              <br />
+              AutomateX vous dit exactement ce qu&apos;il en fait.
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+              AutomateX manipule des données professionnelles sensibles — emails, devis, contacts clients.
+              Vous avez le droit de savoir où elles vont, qui y accède, et comment les supprimer. Cette page
+              répond à ces questions sans langue de bois.
+            </p>
+            <p className="mt-4 max-w-2xl text-sm text-muted">
+              {SOVEREIGNTY_TRUST_LINE}. Le site public est
+              servi en statique (Netlify) ; les automatisations tournent en UE (N8N Cloud, Francfort).
+            </p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          {VOS_DONNEES_HERO_BADGES.map((b) => (
-            <span
-              key={b.label}
-              className="badge badge-default flex items-center gap-2 px-4 py-2 text-[11px] normal-case tracking-wide"
-            >
-              <span aria-hidden>{b.icon}</span>
-              {b.label}
-            </span>
-          ))}
+            <div className="mt-8 flex flex-wrap gap-3">
+              {VOS_DONNEES_HERO_BADGES.filter((b) =>
+                ["🔒", "🚫", "✋"].includes(b.icon),
+              ).map((b) => (
+                <span
+                  key={b.label}
+                  className="badge badge-default flex items-center gap-2 px-4 py-2 text-[11px] normal-case tracking-wide"
+                >
+                  <span aria-hidden>{b.icon}</span>
+                  {b.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <DemoVideo
+            id="vos-donnees"
+            className="w-full"
+            caption="Gmail, Francfort, Paris, site statique — illustration · pas vos données réelles"
+          />
         </div>
       </section>
 

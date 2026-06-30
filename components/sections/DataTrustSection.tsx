@@ -1,3 +1,4 @@
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import { DATA_TRUST_COPY } from "@/lib/constants";
 
 export function DataTrustSection() {
@@ -10,6 +11,9 @@ export function DataTrustSection() {
       <div className="mx-auto max-w-content">
         <h2 className="font-heading text-3xl text-text md:text-4xl">{DATA_TRUST_COPY.h2}</h2>
         <p className="mt-4 max-w-readable text-muted">{DATA_TRUST_COPY.intro}</p>
+        <div className="mt-8 max-w-2xl">
+          <DemoVideo id="vos-donnees" caption="Où transitent vos mails et automatisations (données de test)" />
+        </div>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-muted">Jamais</p>

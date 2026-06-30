@@ -103,6 +103,8 @@ export const NAP = {
   linkedinUrl: "https://www.linkedin.com/in/nolan-hermand-369958412",
   /** Compte marque */
   tiktokUrl: "https://www.tiktok.com/@automatex_hub",
+  /** Page Facebook marque */
+  facebookUrl: "https://www.facebook.com/profile.php?id=61591685603620",
   /** Hébergeur explicite (signal de souveraineté française) */
   hostingProvider: "Mistral UE · Automatisations UE",
 } as const;
@@ -113,6 +115,9 @@ export const LINKEDIN_PROFILE_ARIA =
 
 export const TIKTOK_PROFILE_ARIA =
   "Compte TikTok AutomateX — s'ouvre dans un nouvel onglet" as const;
+
+export const FACEBOOK_PROFILE_ARIA =
+  "Page Facebook AutomateX — s'ouvre dans un nouvel onglet" as const;
 
 /** Meta tags : H2 — title ≤ 60 car / description ≤ 160 car, keyword local en début */
 export const META = {

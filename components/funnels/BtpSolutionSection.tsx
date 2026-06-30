@@ -1,4 +1,3 @@
-import { LiveDemoBlock } from "@/components/demo/LiveDemoBlock";
 import { BTP_AUTOMATIONS } from "@/lib/btp-copy";
 
 export function BtpSolutionSection() {
@@ -14,10 +13,6 @@ export function BtpSolutionSection() {
               <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
             </article>
           ))}
-        </div>
-        <div className="mt-10 space-y-8">
-          <LiveDemoBlock variant="btp-appel" ctaHref="/rendez-vous" />
-          <LiveDemoBlock variant="btp-devis" ctaHref="/rendez-vous" />
         </div>
       </div>
     </section>
