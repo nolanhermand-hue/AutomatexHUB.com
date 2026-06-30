@@ -102,7 +102,7 @@ export async function submitProspectFromFormData(
   if (variant === "hub" && !isResiliation) {
     const secteur = getStringValue(args.formData, "secteur");
     if (!nom || !phoneOk || !secteur) {
-      return { ok: false, error: "Merci de remplir nom, téléphone et métier." };
+      return { ok: false, error: "Merci de remplir nom, téléphone et activité." };
     }
   } else if (!nom || !phoneOk) {
     return { ok: false, error: "Merci de remplir tous les champs obligatoires." };

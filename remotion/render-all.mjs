@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Rend les démos AutomateX en .webm (boucle muette) + poster .webp.
- *  - voix-devis  → public/assets/demos/video/voix-devis.{webm,webp}
+ *  - voix-devis · accompagnement → public/assets/demos/video/<id>.{webm,webp}
  *  - auto-<id>   → public/assets/demos/video/catalog/<id>.{webm,webp}
  *
  * Usage : cd remotion && npm install && npm run render

@@ -1,5 +1,4 @@
-import { AccompagnementPointMensuelDemo } from "@/components/demo/AccompagnementPointMensuelDemo";
-import { NolanLiveDemo } from "@/components/motion/NolanLiveDemo";
+import { DemoVideo } from "@/components/demo/DemoVideo";
 import { ACCOMPANIMENT_PAGE } from "@/lib/btp-copy";
 import { ACCOMPANIMENT_COPY, PRICING_HEADING } from "@/lib/constants";
 import { rendezVousHref } from "@/lib/hub-nav";
@@ -26,27 +25,36 @@ export const metadata: Metadata = {
 };
 
 export default function AccompagnementPage() {
+  const [sectionPoint, sectionAdjust, sectionLine] = ACCOMPANIMENT_PAGE.sections;
+
   return (
     <div className="funnel-surface px-gutter pb-16 pt-[88px] md:pt-[100px]">
       <div className="mx-auto max-w-content">
-        <h1 className="font-heading text-[clamp(2rem,5vw,3rem)] font-bold text-text">
-          {ACCOMPANIMENT_PAGE.h1}
-        </h1>
-        <p className="mt-4 max-w-readable text-lg text-muted">{ACCOMPANIMENT_PAGE.sub}</p>
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h1 className="font-heading text-[clamp(2rem,5vw,3rem)] font-bold text-text">
+              {ACCOMPANIMENT_PAGE.h1}
+            </h1>
+            <p className="mt-4 max-w-readable text-lg text-muted">{ACCOMPANIMENT_PAGE.sub}</p>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <span className={ACCOMP_PILL_ACTIVE}>Packs Déclic · Système · Pilote</span>
-          <span className={ACCOMP_PILL}>Sur mesure · prix sur devis</span>
-          <span className={ACCOMP_PILL}>Sans engagement · résiliable en 1 mail</span>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <span className={ACCOMP_PILL_ACTIVE}>Packs Déclic · Système · Pilote</span>
+              <span className={ACCOMP_PILL}>Sur mesure · prix sur devis</span>
+              <span className={ACCOMP_PILL}>Sans engagement · résiliable en 1 mail</span>
+            </div>
+          </div>
+
+          <DemoVideo
+            id="accompagnement"
+            className="w-full"
+            caption="Installation, point mensuel, ajustements — Nolan à Flers (données de test)"
+          />
         </div>
 
         <div className="mt-14 space-y-16">
           <section>
-            <h2 className="font-heading text-2xl text-text">Chaque mois, Nolan vous appelle.</h2>
+            <h2 className="font-heading text-2xl text-text">{sectionPoint.h2}</h2>
             <p className="mt-4 max-w-readable text-muted">{ACCOMPANIMENT_PAGE.monthlyIntro}</p>
-            <div className="mt-8">
-              <AccompagnementPointMensuelDemo />
-            </div>
             <ol className="mt-10 flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-5 md:overflow-visible">
               {ACCOMPANIMENT_PAGE.timelineHorizontal.map((step) => (
                 <li
@@ -61,22 +69,17 @@ export default function AccompagnementPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-2xl text-text">{ACCOMPANIMENT_PAGE.sections[1].h2}</h2>
-            <p className="mt-4 max-w-readable text-muted">{ACCOMPANIMENT_PAGE.sections[1].body}</p>
+            <h2 className="font-heading text-2xl text-text">{sectionAdjust.h2}</h2>
+            <p className="mt-4 max-w-readable text-muted">{sectionAdjust.body}</p>
             <p className="mt-4 text-sm italic text-muted">
-              Exemple : un couvreur commence la rénovation énergétique — le template de
-              devis est adapté en 48 h, sans surcoût.
+              Exemple : un couvreur commence la rénovation énergétique — le template de devis est
+              adapté en 48 h, sans surcoût.
             </p>
           </section>
 
           <section>
-            <h2 className="font-heading text-2xl text-text">{ACCOMPANIMENT_PAGE.sections[2].h2}</h2>
-            <p className="mt-4 max-w-readable text-muted">{ACCOMPANIMENT_PAGE.sections[2].body}</p>
-          </section>
-
-          <section>
-            <h2 className="font-heading text-2xl text-text">Nolan en action</h2>
-            <NolanLiveDemo />
+            <h2 className="font-heading text-2xl text-text">{sectionLine.h2}</h2>
+            <p className="mt-4 max-w-readable text-muted">{sectionLine.body}</p>
           </section>
 
           <section>
@@ -97,15 +100,6 @@ export default function AccompagnementPage() {
           </section>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <Link href="/immobilier#pricing" className="btn-bracket btn-bracket-outline flex-1 justify-center">
-            Voir les formules immobilier
-          </Link>
-          <Link href="/btp#pricing" className="btn-bracket btn-bracket-outline flex-1 justify-center">
-            Voir les formules BTP
-          </Link>
-        </div>
-
         <section className="mt-16 border-t border-border pt-16">
           <h2 className="font-heading text-xl font-bold text-text">
             L&apos;accompagnement est inclus dans chaque formule
@@ -122,19 +116,13 @@ export default function AccompagnementPage() {
               {ACCOMPANIMENT_COPY.surMesure.body}
             </p>
             <p className="mt-3 text-sm text-muted">{PRICING_HEADING.customFitFootnote}</p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-6">
               <Link
                 href={rendezVousHref({ offre: "sur-mesure" })}
                 className="btn-bracket btn-bracket-primary justify-center"
               >
                 {ACCOMPANIMENT_COPY.surMesure.cta}
                 <span aria-hidden>→</span>
-              </Link>
-              <Link
-                href={rendezVousHref({ offre: "sur-mesure" })}
-                className="btn-bracket btn-bracket-outline justify-center"
-              >
-                Sur mesure artisan BTP
               </Link>
             </div>
           </div>
@@ -161,8 +149,7 @@ export default function AccompagnementPage() {
         <section id="contact" className="mt-16 border-t border-border pt-16 text-center">
           <h2 className="font-heading text-2xl text-text">Prendre rendez-vous avec Nolan</h2>
           <p className="mx-auto mt-4 max-w-readable text-muted">
-            Démo ou cadrage sur mesure : un seul formulaire, réponse sous 24 h. Sans engagement —
-            résiliable en un mail.
+            Démo ou cadrage sur mesure : un seul formulaire, réponse sous 24 h.
           </p>
           <Link
             href={rendezVousHref()}

@@ -7,8 +7,8 @@ import {
   FORM_NAME,
   HUB_CONTACT_REASSURANCE,
   NAP,
-  PROSPECT_SECTEUR_OPTIONS,
-  uniqueProspectSecteurOptions,
+  PROSPECT_ACTIVITE_BY_CATEGORY,
+  PROSPECT_ACTIVITE_CATEGORIES,
   SUR_MESURE_BOOKING_CTA,
 } from "@/lib/constants";
 import { formatFrenchPhoneDisplay } from "@/lib/phone-fr";
@@ -50,6 +50,7 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     telephone: "",
     precisions: "",
     secteur: "",
+    activiteCategorie: "",
   });
   const [offerHint, setOfferHint] = useState<string>("");
   const [sujetHint, setSujetHint] = useState<string>("");
@@ -84,9 +85,12 @@ export function Contact({ variant = "immobilier" }: ContactProps) {
     const nomOk = fields.nom.trim() !== "";
     const phoneOk = fields.telephone.replace(/\D/g, "").length >= 10;
     const emailOk = isHub ? true : fields.email.trim() === "" || isValidEmail(fields.email);
-    const secteurOk = isHub && !isResiliation ? fields.secteur.trim() !== "" : true;
+    const activiteOk =
+      isHub && !isResiliation
+        ? fields.activiteCategorie.trim() !== "" && fields.secteur.trim() !== ""
+        : true;
 
-    if (!nomOk || !phoneOk || !emailOk || !secteurOk) {
+    if (!nomOk || !phoneOk || !emailOk || !activiteOk) {
       return;
     }
 
@@ -204,6 +208,7 @@ type ContactFields = {
   telephone: string;
   precisions: string;
   secteur: string;
+  activiteCategorie: string;
 };
 
 type ContactFormProps = {
@@ -367,36 +372,15 @@ function ContactForm({
               {isResiliation ? (
                 <input type="hidden" name="secteur" value="" />
               ) : (
-                <div>
-                  <label
-                    htmlFor="secteur"
-                    className="text-xs font-semibold uppercase tracking-wide text-muted"
-                  >
-                    {CONTACT_COPY.hubMetierLabel}
-                  </label>
-                  <select
-                    id="secteur"
-                    name="secteur"
-                    required
-                    aria-required="true"
-                    aria-describedby="secteur-error"
-                    value={fields.secteur}
-                    onChange={(e) => setFields((f) => ({ ...f, secteur: e.target.value }))}
-                    className={fieldClass(touched, fields.secteur, true)}
-                  >
-                    <option value="">{CONTACT_COPY.hubMetierPlaceholder}</option>
-                    {uniqueProspectSecteurOptions(PROSPECT_SECTEUR_OPTIONS).map((opt) => (
-                      <option key={opt.value} value={opt.value}>
-                        {opt.label}
-                      </option>
-                    ))}
-                  </select>
-                  {touched && !fields.secteur.trim() && (
-                    <p id="secteur-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
-                      <span aria-hidden>⚠</span> Choisis ton métier.
-                    </p>
-                  )}
-                </div>
+                <HubActiviteFields
+                  touched={touched}
+                  activiteCategorie={fields.activiteCategorie}
+                  secteur={fields.secteur}
+                  onCategorieChange={(categorie) =>
+                    setFields((f) => ({ ...f, activiteCategorie: categorie, secteur: "" }))
+                  }
+                  onSecteurChange={(secteur) => setFields((f) => ({ ...f, secteur }))}
+                />
               )}
               <p className="text-xs text-muted">
                 {isResiliation ? CONTACT_COPY.hubResiliationHint : CONTACT_COPY.hubStep1Hint}
@@ -552,5 +536,103 @@ function ContactForm({
             </p>
           )}
         </form>
+  );
+}
+
+type HubActiviteFieldsProps = {
+  touched: boolean;
+  activiteCategorie: string;
+  secteur: string;
+  onCategorieChange: (categorie: string) => void;
+  onSecteurChange: (secteur: string) => void;
+};
+
+function HubActiviteFields({
+  touched,
+  activiteCategorie,
+  secteur,
+  onCategorieChange,
+  onSecteurChange,
+}: HubActiviteFieldsProps) {
+  const subOptions =
+    activiteCategorie &&
+    activiteCategorie in PROSPECT_ACTIVITE_BY_CATEGORY
+      ? PROSPECT_ACTIVITE_BY_CATEGORY[
+          activiteCategorie as keyof typeof PROSPECT_ACTIVITE_BY_CATEGORY
+        ]
+      : [];
+
+  const showSub = subOptions.length > 0;
+
+  return (
+    <fieldset className="space-y-4">
+      <legend className="sr-only">{CONTACT_COPY.hubMetierLabel}</legend>
+      <div>
+        <label
+          htmlFor="activite-categorie"
+          className="text-xs font-semibold uppercase tracking-wide text-muted"
+        >
+          {CONTACT_COPY.hubActiviteCategoryLabel}
+        </label>
+        <select
+          id="activite-categorie"
+          value={activiteCategorie}
+          onChange={(e) => onCategorieChange(e.target.value)}
+          className={fieldClass(touched, activiteCategorie, true)}
+          aria-required="true"
+          aria-describedby="activite-categorie-error"
+        >
+          <option value="">{CONTACT_COPY.hubActiviteCategoryPlaceholder}</option>
+          {PROSPECT_ACTIVITE_CATEGORIES.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+        {touched && !activiteCategorie.trim() && (
+          <p
+            id="activite-categorie-error"
+            role="alert"
+            className="mt-1 flex items-center gap-1 text-xs font-semibold text-text"
+          >
+            <span aria-hidden>⚠</span> Choisis une catégorie.
+          </p>
+        )}
+      </div>
+      {showSub ? (
+        <div>
+          <label
+            htmlFor="secteur"
+            className="text-xs font-semibold uppercase tracking-wide text-muted"
+          >
+            {CONTACT_COPY.hubActiviteSubLabel}
+          </label>
+          <select
+            id="secteur"
+            name="secteur"
+            required
+            aria-required="true"
+            aria-describedby="secteur-error"
+            value={secteur}
+            onChange={(e) => onSecteurChange(e.target.value)}
+            className={fieldClass(touched, secteur, true)}
+          >
+            <option value="">{CONTACT_COPY.hubActiviteSubPlaceholder}</option>
+            {subOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+          {touched && !secteur.trim() && (
+            <p id="secteur-error" role="alert" className="mt-1 flex items-center gap-1 text-xs font-semibold text-text">
+              <span aria-hidden>⚠</span> Précise ton métier.
+            </p>
+          )}
+        </div>
+      ) : (
+        <input type="hidden" name="secteur" value="" />
+      )}
+    </fieldset>
   );
 }

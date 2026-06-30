@@ -1,5 +1,6 @@
 import React from "react";
 import { Composition } from "remotion";
+import { Accompagnement } from "./compositions/Accompagnement";
 import { VoixDevis } from "./compositions/VoixDevis";
 import { AutomationFlow, durationForAutomation } from "./compositions/AutomationFlow";
 import { VIDEO } from "./theme";
@@ -11,6 +12,15 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="voix-devis"
         component={VoixDevis}
+        durationInFrames={VIDEO.durationInFrames}
+        fps={VIDEO.fps}
+        width={VIDEO.width}
+        height={VIDEO.height}
+      />
+
+      <Composition
+        id="accompagnement"
+        component={Accompagnement}
         durationInFrames={VIDEO.durationInFrames}
         fps={VIDEO.fps}
         width={VIDEO.width}

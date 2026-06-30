@@ -7,7 +7,9 @@ export function NetlifyFormsDetection() {
         <input name="nom" />
         <input name="telephone" />
         <select name="secteur">
-          <option value="artisan">artisan</option>
+          <option value="immo-diagnostiqueur">immo-diagnostiqueur</option>
+          <option value="btp-menuisier">btp-menuisier</option>
+          <option value="tpe-autre">tpe-autre</option>
         </select>
         <textarea name="precisions" />
         <input name="company_website" />

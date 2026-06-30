@@ -856,6 +856,10 @@ export const CONTACT_COPY = {
   hubFounderSub: "Audit 30 min sur ton cas — Nolan te rappelle sous 24 h.",
   secteurLabel: "Secteur d'activité",
   secteurPlaceholder: "Choisis ton secteur",
+  hubActiviteCategoryLabel: "Catégorie",
+  hubActiviteCategoryPlaceholder: "Immobilier, BTP ou TPE…",
+  hubActiviteSubLabel: "Précise ton métier",
+  hubActiviteSubPlaceholder: "Choisis ton métier",
   hubMetierLabel: "Activité",
   hubMetierPlaceholder: "Choisis ton activité",
   hubStep1Hint: "Nom, téléphone et métier suffisent — Nolan te rappelle.",
@@ -878,12 +882,45 @@ export const HUB_CONTACT_REASSURANCE = [
   SOVEREIGNTY_TRUST_LINE,
 ] as const;
 
-export const PROSPECT_SECTEUR_OPTIONS = [
-  { value: "artisan", label: "Artisan / BTP (couvreur, charpentier…)" },
-  { value: "diagnostiqueur", label: "Diagnostiqueur immobilier" },
-  { value: "immobilier", label: "Agent ou pro immobilier (hors diagnostic)" },
+export const PROSPECT_ACTIVITE_CATEGORIES = [
+  { value: "immo", label: "Immobilier" },
+  { value: "btp", label: "BTP" },
   { value: "tpe", label: "TPE / PME (autre secteur)" },
 ] as const;
+
+/** Valeurs `secteur` CRM — préfixe catégorie + métier (ex. `btp-plombier`, `immo-diagnostiqueur`). */
+export const PROSPECT_ACTIVITE_BY_CATEGORY: Record<
+  (typeof PROSPECT_ACTIVITE_CATEGORIES)[number]["value"],
+  ReadonlyArray<{ readonly value: string; readonly label: string }>
+> = {
+  immo: [
+    { value: "immo-diagnostiqueur", label: "Diagnostiqueur immobilier" },
+    { value: "immo-agent", label: "Agent immobilier / mandataire" },
+    { value: "immo-autre", label: "Autre immobilier" },
+  ],
+  btp: [
+    { value: "btp-electricien", label: "Électricien" },
+    { value: "btp-menuisier", label: "Menuisier" },
+    { value: "btp-plombier", label: "Plombier" },
+    { value: "btp-autre", label: "Autre" },
+  ],
+  tpe: [{ value: "tpe-autre", label: "Autre secteur" }],
+};
+
+/** @deprecated Liste plate — préférer PROSPECT_ACTIVITE_CATEGORIES + PROSPECT_ACTIVITE_BY_CATEGORY. */
+export const PROSPECT_SECTEUR_OPTIONS = [
+  ...PROSPECT_ACTIVITE_BY_CATEGORY.immo,
+  ...PROSPECT_ACTIVITE_BY_CATEGORY.btp,
+  ...PROSPECT_ACTIVITE_BY_CATEGORY.tpe,
+] as const;
+
+/** Catégorie déduite d'une valeur `secteur` soumise. */
+export function prospectActiviteCategoryFromSecteur(secteur: string): string {
+  if (secteur.startsWith("immo-")) return "immo";
+  if (secteur.startsWith("btp-")) return "btp";
+  if (secteur.startsWith("tpe-")) return "tpe";
+  return "";
+}
 
 /** Une seule entrée par `value` — évite les doublons si plusieurs listes sont fusionnées. */
 export function uniqueProspectSecteurOptions<

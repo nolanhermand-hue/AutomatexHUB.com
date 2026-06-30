@@ -3,7 +3,7 @@
 import { cn } from "@/lib/cn";
 import { useEffect, useRef, useState } from "react";
 
-export type DemoVideoId = "voix-devis";
+export type DemoVideoId = "voix-devis" | "accompagnement";
 
 type DemoMeta = { width: number; height: number; alt: string };
 
@@ -13,6 +13,11 @@ const DEMOS: Record<DemoVideoId, DemoMeta> = {
     width: 1280,
     height: 800,
     alt: "Démo : un devis dicté à la voix, mis en forme puis envoyé en PDF",
+  },
+  accompagnement: {
+    width: 1280,
+    height: 800,
+    alt: "Démo : installation, point mensuel 20 min, ajustements et ligne directe Nolan à Flers",
   },
 };
 
