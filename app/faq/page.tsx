@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "FAQ — 40 réponses · artisans & TPE Normandie",
   description:
-    `Réponses sur automatisation, RGPD, tarifs, mise en place et accompagnement. ${BRAND_FULL}, Flers (Orne). Démo 30 min gratuite.`,
+    `Réponses sur automatisation, RGPD, tarifs, mise en place et accompagnement. ${BRAND_FULL}, Flers (Orne). Audit 30 min gratuit.`,
   alternates: { canonical: "/faq" },
 };
 

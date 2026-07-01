@@ -241,11 +241,11 @@ export function buildJsonLdGraph(options?: BuildJsonLdGraphOptions) {
   const logoUrl = brandAbsolute(BRAND.symbolSvg, SITE_URL);
 
   const businessDescription = isHome
-    ? "AutomateX installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Démo 30 min ; mise en place en 48 h ouvrées après validation du périmètre."
+    ? "AutomateX installe Réponse aux demandes, devis automatiques, relances et classement Drive pour artisans et TPE en Normandie et dans l'Orne. Audit 30 min ; mise en place en 48 h ouvrées après validation du périmètre."
     : isBtp
-      ? "AutomateX installe SMS appels manqués, devis et relances pour artisans BTP en Normandie et dans l'Orne. Démo 30 min ; mise en place en 48 h ouvrées après validation du périmètre."
+      ? "AutomateX installe SMS appels manqués, devis et relances pour artisans BTP en Normandie et dans l'Orne. Audit 30 min ; mise en place en 48 h ouvrées après validation du périmètre."
       : isTpe
-        ? "AutomateX installe réponse aux messages, devis et relances pour TPE et PME en Normandie. Démo 30 min ; mise en place en 48 h ouvrées après validation du périmètre."
+        ? "AutomateX installe réponse aux messages, devis et relances pour TPE et PME en Normandie. Audit 30 min ; mise en place en 48 h ouvrées après validation du périmètre."
         : "AutomateX installe une réponse immédiate aux demandes agences, un tri de mails et un classement des documents pour diagnostiqueurs immobiliers indépendants en Normandie et dans l'Orne. Mise en place en 48 h ouvrées après validation du périmètre.";
 
   const knowsAbout = isHome
@@ -895,9 +895,9 @@ export function buildRendezVousHowToJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "Réserver ta démo 30 min avec Nolan",
+    name: "Réserver ton audit 30 min avec Nolan",
     description:
-      "Tu remplis le formulaire sur la page rendez-vous : Nolan te rappelle sous 24 h pour une démo gratuite de 30 minutes sur ton cas.",
+      "Tu remplis le formulaire sur la page rendez-vous : Nolan te rappelle sous 24 h pour un audit gratuit de 30 minutes sur ton cas.",
     totalTime: "PT5M",
     step: [
       {
@@ -916,7 +916,7 @@ export function buildRendezVousHowToJsonLd() {
         "@type": "HowToStep",
         position: 3,
         name: "Précise ton métier",
-        text: "Diagnostiqueur, artisan BTP ou TPE : Nolan cale la démo sur ton cas réel.",
+        text: "Diagnostiqueur, artisan BTP ou TPE : Nolan cale l'audit sur ton cas réel.",
       },
       {
         "@type": "HowToStep",

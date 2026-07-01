@@ -71,10 +71,6 @@ export default function AccompagnementPage() {
           <section>
             <h2 className="font-heading text-2xl text-text">{sectionAdjust.h2}</h2>
             <p className="mt-4 max-w-readable text-muted">{sectionAdjust.body}</p>
-            <p className="mt-4 text-sm italic text-muted">
-              Exemple : un couvreur commence la rénovation énergétique — le template de devis est
-              adapté en 48 h, sans surcoût.
-            </p>
           </section>
 
           <section>
@@ -144,20 +140,6 @@ export default function AccompagnementPage() {
               Tarifs artisans BTP
             </Link>
           </div>
-        </section>
-
-        <section id="contact" className="mt-16 border-t border-border pt-16 text-center">
-          <h2 className="font-heading text-2xl text-text">Prendre rendez-vous avec Nolan</h2>
-          <p className="mx-auto mt-4 max-w-readable text-muted">
-            Démo ou cadrage sur mesure : un seul formulaire, réponse sous 24 h.
-          </p>
-          <Link
-            href={rendezVousHref()}
-            className="btn-bracket btn-bracket-primary mt-8 justify-center"
-          >
-            Réserver votre créneau
-            <span aria-hidden>→</span>
-          </Link>
         </section>
       </div>
     </div>

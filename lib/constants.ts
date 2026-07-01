@@ -27,12 +27,12 @@ export const VALUE_PER_LEAD_EUROS = 220;
 export const SETUP_48H_NUANCE =
   "48 h ouvrées après validation de votre périmètre (accès outils, règles, tests)" as const;
 
-/** Libellé CTA — prise de rendez-vous (hors libellé démo principal). */
-export const BOOKING_CTA_LABEL = "Réserver ton appel avec Nolan" as const;
-
 /** CTA audit 30 min — unique sur le site (hors cartes tarifs). Cadre consultatif. */
 export const PRIMARY_DEMO_CTA = "Réserver l'audit 30 min" as const;
 export const PRIMARY_DEMO_CTA_SHORT = "Audit 30 min" as const;
+
+/** Libellé bouton formulaire — aligné PRIMARY_DEMO_CTA (audit 30 min). */
+export const BOOKING_CTA_LABEL = PRIMARY_DEMO_CTA;
 
 /** Offre sur mesure — cadrage périmètre / devis (distinct de l'audit standard). */
 export const SUR_MESURE_BOOKING_CTA =
@@ -124,8 +124,8 @@ export const META = {
   title:
     "AutomateX — Artisans, diagnostiqueurs & TPE · Orne · Normandie",
   description:
-    "Réponse aux appels et messages, devis et relances pendant que tu es sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Démo 30 min · Sans engagement.",
-  ogTitle: "AutomateX — Artisans & TPE en Normandie | Démo 30 min",
+    "Réponse aux appels et messages, devis et relances pendant que tu es sur le terrain. Couvreurs, charpentiers, diagnostiqueurs, TPE. Flers (61). Audit 30 min · Sans engagement.",
+  ogTitle: "AutomateX — Artisans & TPE en Normandie | Audit 30 min",
   ogDescription:
     "Moins de paperasse le soir, réponses plus rapides sur chantier ou en visite. Installé à Flers (Orne). Mistral UE · Automatisations UE · RGPD · Sans engagement.",
 } as const;
@@ -234,7 +234,7 @@ export const HERO_COPY = {
   statAnchor:
     "Mission diagnostic moyenne : hypothèse terrain (voir source sous les chiffres).",
   /** A10 — Compteur social proof crédible */
-  liveCounter: "Onboardings limités pour garder un suivi humain serré — demandez en démo si une place est ouverte",
+  liveCounter: "Onboardings limités pour garder un suivi humain serré — réserve un audit si une place est ouverte",
   /** A15 — Mention hébergeur nommé */
   hostingMention: "Automatisations UE · traitement linguistique Paris/UE",
   /** A7 — Téléphone cliquable */
@@ -329,7 +329,7 @@ export const AGITATION_COPY = {
 export const SOLUTION_HEADING = {
   h2: "Mise en route en 3 étapes (48 h après validation du périmètre)",
   answerFirst:
-    "Vous validez le ton et les scénarios en démo, Nolan branche vos outils, puis les réponses et relances tournent seuls — avec un point mensuel pour ajuster.",
+    "Vous validez le ton et les scénarios en audit, Nolan branche vos outils, puis les réponses et relances tournent seuls — avec un point mensuel pour ajuster.",
 } as const;
 
 export const SOLUTION_STEPS: ReadonlyArray<{
@@ -841,9 +841,9 @@ export const CTA_REASSURANCE_LINE =
 export const MARKETING_REASSURANCE_BANNER = CTA_REASSURANCE_LINE;
 
 export const CONTACT_COPY = {
-  h2: "30 minutes. Aucun engagement. Aucun préparatif.",
+  h2: "Audit 30 min sur ton cas — sans engagement",
   subtitle:
-    "Nolan te montre en direct ce que la configuration fait sur une activité comme la tienne. Si ça ne te convient pas, tu pars sans rien. Nolan en direct, pas un ticket anonyme.",
+    "Nolan te montre en direct ce que la configuration ferait sur une activité comme la tienne. Si ça ne te convient pas, tu pars sans rien. Nolan en direct, pas un ticket anonyme.",
   formTitle: "Tes coordonnées",
   firstNameLabel: "Prénom",
   lastNameLabel: "Nom",
@@ -986,7 +986,7 @@ export const STICKY_CTA_COPY = {
 export const BETA_PHASE_COPY = {
   title: "Phase bêta — places limitées",
   body: "AutomateX onboard au maximum quatre diagnostiqueurs par mois pour garder un suivi humain serré. Pas de témoignages fabricés : des pilotes en cours en Normandie.",
-  badge: "Places limitées — statut sur demande en démo",
+  badge: "Places limitées — statut sur demande en audit",
 } as const;
 
 export const SOCIAL_PROOF_DISCLAIMER =

@@ -344,18 +344,20 @@ export function getByCategory(category: string): CatalogAutomation[] {
   return AUTOMATIONS_CATALOG.filter((item) => item.category === category);
 }
 
+/** Exclut les ids déjà montrés dans #demo (ImmobilierLiveDemoSection). */
 export const FEATURED_IMMO: string[] = [
-  "client-reponse-90s",
+  "client-detection-chaud",
   "tri-7-familles",
   "programme-matin",
-  "note-vocale-compte-rendu",
-  "resume-soir",
+  "alerte-mail-urgent-2h",
+  "classement-drive-auto",
 ];
 
+/** Exclut les ids déjà montrés dans #demo (BtpDemoSection). */
 export const FEATURED_BTP: string[] = [
-  "appel-manque-sms-btp",
-  "note-vocale-devis-btp",
   "relance-devis-btp",
   "resume-soir",
   "programme-matin",
+  "tri-7-familles",
+  "client-relance-j1",
 ];

@@ -261,12 +261,12 @@ export const GEO_MASTER_FAQ: readonly GeoMasterFaqItem[] = [
     id: 37,
     category: "trust",
     q: "Vous débutez : pourquoi vous faire confiance ?",
-    a: "Parce que le site ne montre pas de faux avis : vous pouvez tester sur votre cas en démo 30 min, voir le SIRET et l'adresse à Flers, et arrêter en un mail. Nolan assume une phase de lancement avec peu de clients — la preuve, c'est le scénario qui tourne chez vous.",
+    a: "Parce que le site ne montre pas de faux avis : vous pouvez tester sur votre cas en audit 30 min, voir le SIRET et l'adresse à Flers, et arrêter en un mail. Nolan assume une phase de lancement avec peu de clients — la preuve, c'est le scénario qui tourne chez vous.",
   },
   {
     id: 38,
     category: "trust",
-    q: "Vous proposez une démo gratuite ?",
+    q: "Vous proposez un audit gratuit de 30 minutes ?",
     a: "Oui : 30 minutes sur /rendez-vous, sans engagement, pour montrer ce que la configuration ferait sur votre activité réelle.",
   },
   {

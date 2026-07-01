@@ -1,20 +1,20 @@
-/** Section accompagnement — landing diagnostiqueurs (sans jargon interdit). */
+/** Section accompagnement — teaser landing diagnostiqueurs (détail sur /accompagnement). */
 export const IMMOBILIER_ACCOMPANIMENT = {
-  h2: "Nolan installe et règle — vous gardez vos outils et vos décisions.",
+  h2: "Accompagnement humain inclus — Nolan installe et règle.",
   intro:
-    "Vous n'avez pas à tout configurer seul. Nolan installe, ajuste et rappelle chaque mois — pendant que vous êtes en mission ou chez le vendeur.",
+    "Point mensuel, ajustements et ligne directe à Flers : inclus dans chaque formule, pas en option.",
   pillars: [
     {
-      title: "Point mensuel inclus",
-      body: "Chaque mois, Nolan vous appelle. Il regarde combien de demandes agences ont été traitées, ce qui bloque encore. Puis il ajuste.",
-    },
-    {
-      title: "Ajustements en continu",
-      body: "Nouvelle agence partenaire, nouveau type de mission ? Nolan adapte vos réponses et vos modèles. Sans surcoût.",
+      title: "Inclus dans Déclic, Système et Pilote",
+      body: "Installation, point mensuel et ajustements — sans hotline anonyme.",
     },
     {
       title: "Un interlocuteur à Flers",
-      body: "06 45 38 42 33 — pas une hotline parisienne. Réponse sous 4 h en semaine (pack Pilote).",
+      body: "06 45 38 42 33 · réponse sous 4 h en semaine (pack Pilote).",
+    },
+    {
+      title: "Le détail sur une page",
+      body: "Timeline 12 mois, pérennité et sortie : tout est sur /accompagnement.",
     },
   ],
 } as const;

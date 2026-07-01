@@ -26,7 +26,7 @@ export const CATALOG_CATEGORY_ANSWER: Record<string, string> = {
 };
 
 export const CATALOG_COMPOSITION_INTRO =
-  "Sur le catalogue : 1 scénario = logique pack Déclic (390 € + 99 €/mois). 2 scénarios = addition des mises en place et mensualités N1. 3 à 4 scénarios = équivalent pack Système (990 € + 249 €/mois sur les pages tarifs). 5 scénarios et plus = pack Pilote ou devis sur mesure.";
+  "Tarifs unitaires ci-dessous : chaque scénario du catalogue se facture à part (N1, N2, N3). Les pages immobilier et BTP affichent des packs Déclic / Système / Pilote qui regroupent plusieurs scénarios à prix fixe — souvent plus avantageux que la somme unitaire. 1 scénario ≈ Déclic (390 € + 99 €/mois). 2 scénarios = addition N1. 3 à 4 ≈ Système (990 € + 249 €/mois). 5+ = Pilote ou devis sur mesure.";
 
 export const CATALOG_JSONLD_UNIT_OFFERS = CATALOG_UNIT_TIERS.map(({ tier, setup, monthly, label }) => ({
   name: `Catalogue ${tier} — ${label}`,

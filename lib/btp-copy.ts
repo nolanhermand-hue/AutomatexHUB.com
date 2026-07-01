@@ -71,6 +71,8 @@ export const BTP_AUTOMATIONS = {
 
 export const BTP_ACCOMPANIMENT = {
   h2: "Le système, c'est nous. Pas toi.",
+  teaser:
+    "Point mensuel, ajustements et ligne directe Nolan à Flers — inclus dans chaque formule. Pas de vidéo en double ici : le détail (timeline, pérennité, sortie) est sur la page accompagnement.",
   body:
     "Tu n'as pas à comprendre comment ça fonctionne. Tu n'as pas à l'installer. Tu n'as pas à le former. Et si quelque chose coince un jeudi soir — tu envoies un message à Nolan.",
   pillars: [
@@ -242,7 +244,7 @@ export const ACCOMPANIMENT_PAGE = {
   sub:
     "L'accompagnement est inclus dans chaque formule — pas en option. Les grilles diagnostiqueurs et artisans sont transparentes ; si tu veux moins ou plus que les packs affichés, Nolan part sur une formule sur mesure (prix sur devis après 30 min de cadrage).",
   monthlyIntro:
-    "20 minutes. Nolan regarde les chiffres avec toi : combien de clients ou de chantiers récupérés, combien de devis partis, ce qui bloque encore. Puis il ajuste — immédiatement, sans rendez-vous supplémentaire.",
+    "Chaque mois, Nolan t'appelle. 20 minutes : devis partis, relances, ce qui bloque encore. Puis il ajuste — sans rendez-vous supplémentaire.",
   timelineHorizontal: [
     { month: "Mois 1", text: "Installation · premier point · premiers ajustements" },
     { month: "Mois 2", text: "Le système tourne · Nolan ajuste avec tes retours terrain" },
@@ -266,10 +268,6 @@ export const ACCOMPANIMENT_PAGE = {
     {
       h2: "La ligne directe",
       body: "06 45 38 42 33 — Nolan Hermand, Flers. Réponse sous 4 h en semaine (Pilote). Sous 24 h (Déclic et Système).",
-    },
-    {
-      h2: "Ce que ça change sur 12 mois",
-      body: "Mois 1 : installation. Mois 3 : le système tourne seul. Mois 12 : ROI calculé ensemble — renouveler ou non, ton choix.",
     },
   ],
 } as const;

@@ -52,7 +52,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
     path: "/diagnostiqueurs-alencon",
     metaTitle: `Diagnostiqueur Alençon · demandes agences · ${BRAND_SHORT}`,
     metaDescription:
-      "Ne perds plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Démo 30 min sur ton cas, sans engagement.",
+      "Ne perds plus de créneaux à Alençon et dans l'Orne. Réponse immédiate pour diagnostiqueurs indépendants. Audit 30 min sur ton cas, sans engagement.",
     h1: "Automatisation pour diagnostiqueurs à Alençon et nord de l'Orne",
     intro:
       "Alençon concentre services, agences et prescripteurs pour tout le nord de l'Orne. Les diagnostiqueurs y gèrent un volume de messages supérieur à la moyenne rurale — souvent pendant des missions longues en pavillon ou en lotissement.",
@@ -72,7 +72,7 @@ export const LOCAL_DIAGNOSTIQUEUR_PAGES: ReadonlyArray<LocalDiagnostiqueurPageDa
       {
         h2: "Prise de contact",
         paragraphs: [
-          "Réserve une démo de 30 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
+          "Réserve un audit de 30 minutes depuis cette page ou depuis /immobilier : créneau prioritaire pour les diagnostiqueurs de l'Orne.",
         ],
       },
     ],
